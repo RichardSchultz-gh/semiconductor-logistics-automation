@@ -2,11 +2,12 @@
 
 == Rollenverteilung:
 
+Verwantwortlichkeiten
 |===
 |Projektleader| Marlene
-|Analyist | Enrico & Hoang 
-|Architekten |  
-|Entwickler | Nils & Richard 
+|Analyst | Enrico (& Hoang) 
+|Architekten | ???
+|Entwickler | Nils (& Richard) 
 |Tester | Paul 
 |=== 
-
+Nico und Yannik ?
