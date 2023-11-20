@@ -21,7 +21,13 @@ Abwesende: Paul
 Protokoll:
 
 Nachbeitung:
-ergebene Aufgaben:
+.ergebene Aufgaben:
+*Issues bearbeiten
+*Risk Liste Ergänzen
+*Vision.adoc nochmal anschauen und Ergänzen
+*Fragen mit ins Gespräche zu Ringel Geben
+*Fragen im Praktikum am Dienstag klären
+
 |===
 |Teammitglied|Aufgabe|
 
@@ -56,7 +62,8 @@ Anzeigen wo von
 Wer ist der Nutzer und was für Daten will er haben
 kleinere Funktionalitäten
 RaspberryPi welche Disbitution 
-soll die Datenbank auf dem RaspberryPi liegen oder auf ner Cloud oder Server? 
+soll die Datenbank auf dem RaspberryPi liegen oder auf ner Cloud oder Server?
+
 
 Protokoll:
 
