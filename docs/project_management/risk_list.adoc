@@ -34,6 +34,7 @@ Die Risiken sind in folgender Tabelle: <<table_risks>> dargestellt. Das Datum de
 |===
 include::risks.csv[]
 |===
+---
 
 // PDF-Export: Seite zurück zum Hochformat
 [.portrait]
