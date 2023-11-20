@@ -10,7 +10,7 @@ Anwesende: Enrico, Hoang, Nico, Nils, Richard, Yannik, Marlene
 
 Abwesende: Paul
 
-Agenda:
+.Agenda:
 * Verantwortlichkeiten definieren
 * vision.adoc
 * risk list
