@@ -1,0 +1,40 @@
+= Meetings
+
+== Teammeetings
+=== Teammeeting 1
+
+=== Teammeeting 2
+Anwesende:
+
+Protokoll:
+
+Nachbeitung:
+ergebene Aufgaben:
+
+=== Teammeeting 3
+Anwesende:
+
+Protokoll:
+
+Nachbeitung:
+ergebene Aufgaben:
+
+== Meetings mit Coach
+
+
+== Meetings mit Ringel
+=== Meeting 1
+Anwesende: alle
+Vorbereitung:
+Protokoll:
+
+Nachbeitung:
+ergebene Aufgaben:
+
+=== Meeting 2
+Anwesende: Enrico, Hoang, Paul, Marlene
+Vorbereitung:
+Protokoll:
+
+Nachbeitung:
+ergebene Aufgaben:
