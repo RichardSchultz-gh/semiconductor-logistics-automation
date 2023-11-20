@@ -51,6 +51,13 @@ ergebene Aufgaben:
 === Meeting 2
 Anwesende: Enrico, Hoang, Paul, Marlene
 Vorbereitung:
+
+Anzeigen wo von
+Wer ist der Nutzer und was für Daten will er haben
+kleinere Funktionalitäten
+RaspberryPi welche Disbitution 
+soll die Datenbank auf dem RaspberryPi liegen oder auf ner Cloud oder Server? 
+
 Protokoll:
 
 Nachbeitung:

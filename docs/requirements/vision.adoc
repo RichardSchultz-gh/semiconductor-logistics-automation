@@ -11,8 +11,8 @@ Der Zweck dieses Dokuments ist es, die wesentlichen Bedarfe und Funktionalitäte
 === Zweck
 Der Zweck dieses Dokuments ist es, die wesentlichen Anforderungen an das System aus Sicht und mit den Begriffen der künftigen Anwender zu beschreiben.
 
-=== Gültigkeitsbereich (Scope)
-Dieses Visions-Dokument bezieht sich auf das System "Frau Holle"", das von Team I04 entwickelt wird. Das System wird es <Zielkunde/Auftraggeber> erlauben, <Hauptfunktionen> zu nutzen, um damit <Vorteile> zu erreichen / <Aufgabe> zu erleichtern / <Problem> zu lösen.
+=== Gültigkeitsbereich (Scope) (?)
+Dieses Visions-Dokument bezieht sich auf das System "Frau Holle"", das von Team I04 entwickelt wird. Das System wird es Herr Ringel erlauben, Verwaltung von Datensätzen zu Fertigungsabläufen (?) zu nutzen, um damit <Vorteile> zu erreichen / <Aufgabe> zu erleichtern / <Problem> zu lösen.
 
 === Definitionen, Akronyme und Abkürzungen
 //Verweis passend zum Belegabgabe-Template se1_belegabgabe_t00.adoc
@@ -24,19 +24,25 @@ Siehe <<#glossary, Glossar>>.
 
 == Positionierung
 
-=== Fachliche Motivation
+=== Fachliche Motivation (?)
 //Erläutern Sie kurz den Hintergrund, in dem das Projekt angesiedelt ist. Welches Problem soll gelöst werden, wie ist es entstanden? Welche Verbesserung wird angestrebt. Achten Sie darauf, eine fachliche (organisatorische, betriebswirtschaftliche) Perspektive einzunehmen.
+
+Es soll eine Neuentwicklung einer Software stattfinden. Dabei sollen die Abläufe der Halbleiterfertigung modelliert werden. Beachtet sollen dabei die Anlagen-Ressourcen, die Fertigungspläne und die Materialverwaltung werden. 
+Was zu Halbleiterfertigung. 
 
 === Problem Statement
 //Stellen Sie zusammenfassend das Problem dar, das mit diesem Projekt gelöst werden soll. Das folgende Format kann dazu verwendet werden:
 
 [cols="1,3"]
 |===
-| Das Problem | [beschreiben Sie das Problem]
+| Das Problem | [beschreiben Sie das Problem] Komplexe Produktionsabläufe
 | betrifft | [die Stakeholder, die vom Problem betroffen sind]
-| die Auswirkung davon ist | [welche Auswirkungen hat das Problem?]
-| eine erfolgreiche Lösung wäre | [Führen Sie einige wesentliche Vorteile einer erfolgreichen Lösung auf]
+| die Auswirkung davon ist | fehlende Transparz bei der Produktion
+| eine erfolgreiche Lösung wäre | Datenbankanwendung für Halbleiterproduktion.
 |===
+
+// Problem: Komplexität der Halbleiterfertigung -> wenn Stakeholder = Halbleiterfabiken
+// wer ist der nutzer? Fabrik oder studierende?
 
 ////
 Beispiel:
@@ -50,16 +56,16 @@ Beispiel:
 ////
 
 === Positionierung des Produkts
-//Ein Positionierung des Produkts beschreibt das Einsatzziel der Anwendung und die Bedeutung das Projekts an alle beteiligten Mitarbeiter.
+//Eine Positionierung des Produkts beschreibt das Einsatzziel der Anwendung und die Bedeutung das Projekts an alle beteiligten Mitarbeiter.
 
 //Geben Sie in knapper Form übersichtsartig die Positionierung der angestrebten Lösung im Vergleich zu verfügbaren Alternativen dar. Das folgende Format kann dazu verwendet werden:
 
 [cols="1,3"]
 |===
 | Für | [Zielkunde / Nutzer]
-| der / die | [Angabe des Bedarfs oder Chance]
-| Das Produkt / die Lösung ist ein | [Produktkategorie]
-| Die / Das | [Aussage zum Hauptvorteil / Alleinstellungsmerkmal]
+| der / die | [Angabe des Bedarfs oder Chance] erleichterte Übersicht über die Betriebsabläufe
+| Das Produkt ist eine | Datenbankanwendung
+| Die / Das | [Aussage zum Hauptvorteil / Alleinstellungsmerkmal] 
 | Im Gegensatz zu | [wesentliche Lösungsalternative]
 | Unser Produkt | [Aussage zum Hauptunterschied]
 |===
@@ -85,20 +91,62 @@ Beispiel Produkt:
 |===
 | Name | Beschreibung | Verantwortlichkeiten
 
-| [Benennung des Stakeholder-Typs.]
+| Herr Ringel
 | [Kurze Beschreibung des Stakeholders.]
 | [Fassen Sie die wesentlichen Verantwortlichkeiten des Stakeholder mit Bezug auf das zu entwickelnde System kurz zusammen, d.h. ihr besonderen Interessen. Beispiele: Dieser Stakeholder sorgt dafür, dass das System gewartet wird / dass die angezeigten Daten aktuell sind / überwacht den Projektfortschritt / usw.]
+
+| Halbleiterfabrik
+| 
+| Herstellen der Produke
+
+| Arbeiter der Halbleiterfabrik
+| arbeiten in der Fabrik
+| warten das System und Maschinen
+
+| Wir
+| Entwickler
+| entwickeln die Software
+
+| Zukünftige Teams
+| Entwickler
+| entwickeln die Software weiter
+
+| Professor Anke
+| Kontrolleinheit
+| kontrolliert die Entwicklung
+
+| Manuela
+| Coach
+| coacht
+
+| Lehrende der HTWD
+| Nutzer
+| vorführen der Software 
+
+| Studierende der HTWD
+| Nutzer
+| ??? 
+
+| Gesetzgeber
+| gibt Gesetze/ Vorschriften
+| inhaltliche und technische Einschränkungen
+
 |===
 
 === Benutzerumgebung
 Beschreiben Sie die Arbeitsumgebung des Nutzers. Hier sind einige Anregungen:
 
 //Zutreffendes angeben, nicht zutreffendes streichen oder auskommentieren
-. Anzahl der Personen, die an der Erfüllung der Aufgabe beteiligt sind. Ändert sich das?
+. Anzahl der Personen, die an der Erfüllung der Aufgabe beteiligt sind. Ändert sich das?-> Die WIngs sind nur Teil der Entwicklung bis zum Januar 2024. Sonst bleiben die Akteure bestehen.
+
 . Wie lange dauert die Bearbeitung der Aufgabe? Wie viel Zeit wird für jeden Arbeitsschritt benötigt? Ändert sich das?
+
 . Gibt es besondere Umgebungsbedingungen, z.B. mobil, offline, Außeneinsatz, Touchbedienung, Nutzung durch seh- oder hörbeeinträchtigte Personen?
+
 . Welche Systemplattformen werden heute eingesetzt? Welche sind es ggf. zukünftig?
+-> bisher keine Plattform. 
 . Welche anderen Anwendungen sind im Einsatz? Muss ihre Anwendung mit diesen integriert werden?
+-> bisher keine
 
 Hier können zudem bei Bedarf Teile des Unternehmensmodells (Prozesse, Organigramme, IT-Landschaft, ...) eingefügt werden, um die beteiligten Aufgaben und Rollen zu skizzieren.
 
@@ -120,10 +168,15 @@ Hier können zudem bei Bedarf Teile des Unternehmensmodells (Prozesse, Organigra
 Hinweise:
 
 . Führen Sie die wesentlichen anzuwendenden Standards, Hardware oder andere Plattformanforderungen, Leistungsanforderungen und Umgebungsanforderungen auf
+-> RaspbarryPi, Python 3.12, PostgreSQL, tKinter - Bibliothek (?), Linux
 . Definieren Sie grob die Qualitätsanforderungen für Leistung, Robustheit, Ausfalltoleranz, Benutzbarkeit und ähnliche Merkmale, die nicht von den genannten Features erfasst werden.
+
 . Notieren Sie alle Entwurfseinschränkungen, externe Einschränkungen, Annahmen oder andere Abhängigkeiten, die wenn Sie geändert werden, das Visions-Dokument beeinflussen. Ein Beispiel wäre die Annahme, dass ein bestimmtes Betriebssystem für die vom System erforderliche Hardware verfügbar ist. Ist das Betriebssystem nicht verfügbar, muss das Visions-Dokument angepasst werden.
+
 . Definieren Sie alle Dokumentationsanforderugen, inkl. Benutzerhandbücher, Onlinehilfe, Installations-, Kennzeichnungs- und Auslieferungsanforderungen-
+
 . Definieren Sie die Priorität für diese zusätzlichen Produktanforderungen. Ergänzen Sie, falls sinnvoll, Angaben zu Stabilität, Nutzen, Aufwand und Risiko für diese Anforderungen.
+
 
 [%header, cols="4,1,1"]
 |===

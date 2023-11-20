@@ -35,6 +35,12 @@ Die Risiken sind in folgender Tabelle: <<table_risks>> dargestellt. Das Datum de
 include::risks.csv[]
 |===
 ---
+Notizen zu risk list:
+dauerhafter Ausfall eines Mitgliedes, Krankheit bei Mitgliedern, Meeting können nicht stattfinden/ausfallen, Herr Ringel kündigt/gefeuert, Kommunikationsprobleme intern und mit Auftragsgeber (das sind zwei seperate Risiken),
+fehlendes Fachwissen: Python, RaspberryPi, Schnittstellen zwischen Python und RaspberryPi, Schnittstelle zwischen Python und Datenbank,
+Einzelkompetenz (-> nur ein Mitglied hat das spezifische Wissen), 
+Änderung des Anforderungprofils, Zeitplanung, Technik versagt (RaspberryPi geht kaputt, GitHub), Probleme mit Coach, ...
+
 
 // PDF-Export: Seite zurück zum Hochformat
 [.portrait]
