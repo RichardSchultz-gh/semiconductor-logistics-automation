@@ -2,14 +2,28 @@
 
 == Teammeetings
 === Teammeeting 1
-
+-> füllt Marlene noch aus
 === Teammeeting 2
-Anwesende:
+Anwesende: Enrico, Hoang, Nico, Nils, Richard, Yannik, Marlene
+Abwesende: Paul
+Agenda:
+* Verantwortlichkeiten definieren
+* 
+* vision.adoc
+* risk list
+* Aufgaben bis zum nächsten Meeting
+* Fragen allgemein
+* Fragen an Ringel
 
 Protokoll:
 
 Nachbeitung:
 ergebene Aufgaben:
+|===
+|Teammitglied|Aufgabe|
+
+|===
+
 
 === Teammeeting 3
 Anwesende:
@@ -20,7 +34,7 @@ Nachbeitung:
 ergebene Aufgaben:
 
 == Meetings mit Coach
-
+-> füllt Marlene noch aus
 
 == Meetings mit Ringel
 === Meeting 1
@@ -30,7 +44,7 @@ Protokoll:
 
 Nachbeitung:
 ergebene Aufgaben:
-
+--> füllt Marlene nach aus
 === Meeting 2
 Anwesende: Enrico, Hoang, Paul, Marlene
 Vorbereitung:

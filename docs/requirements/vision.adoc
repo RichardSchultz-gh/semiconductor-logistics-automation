@@ -1,5 +1,4 @@
-= Vision:  Modell eines automatisierten Fabrikbetriebes -
-Frau Holle
+= Vision:  Modell eines automatisierten Fabrikbetriebes - Frau Holle
 Nico Kroll <email@domain.org>; Nils Generlich <email@domain.org>; Paul Marx <email@domain.org>; Hoang Nguyen Sy <email@domain.org>; Yannik Herrchen <email@domain.org>; Richard Schultz  <email@domain.org>; Enrico Kersten <email@domain.org>; Marlene Winter <email@domain.org>;
 {localdatetime}
 include::../_includes/default-attributes.inc.adoc[]
@@ -7,13 +6,13 @@ include::../_includes/default-attributes.inc.adoc[]
 
 
 == Einführung
-Der Zweck dieses Dokuments ist es, die wesentlichen Bedarfe und Funktionalitäten des Systems {project-system-name} zu sammeln, zu analysieren und zu definieren. Der Fokus liegt auf den Fähigkeiten, die von Stakeholdern und adressierten Nutzern benötigt werden, und der Begründung dieser Bedarfe. Die  Details, wie das System {project-system-name} diese Bedarfe erfüllt, werden in der Use-Case und Supplementary Specification beschrieben.
+Der Zweck dieses Dokuments ist es, die wesentlichen Bedarfe und Funktionalitäten des Systems "Frau Holle" zu sammeln, zu analysieren und zu definieren. Der Fokus liegt auf den Fähigkeiten, die von Stakeholdern und adressierten Nutzern benötigt werden, und der Begründung dieser Bedarfe. Die Details, wie das System Frau Holle diese Bedarfe erfüllt, werden in der Use-Case und Supplementary Specification beschrieben.
 
 === Zweck
 Der Zweck dieses Dokuments ist es, die wesentlichen Anforderungen an das System aus Sicht und mit den Begriffen der künftigen Anwender zu beschreiben.
 
 === Gültigkeitsbereich (Scope)
-Dieses Visions-Dokument bezieht sich auf das System {project-system-name}, das von <Team> entwickelt wird. Das System wird es <Zielkunde/Auftraggeber> erlauben, <Hauptfunktionen> zu nutzen, um damit <Vorteile> zu erreichen / <Aufgabe> zu erleichtern / <Problem> zu lösen.
+Dieses Visions-Dokument bezieht sich auf das System "Frau Holle"", das von Team I04 entwickelt wird. Das System wird es <Zielkunde/Auftraggeber> erlauben, <Hauptfunktionen> zu nutzen, um damit <Vorteile> zu erreichen / <Aufgabe> zu erleichtern / <Problem> zu lösen.
 
 === Definitionen, Akronyme und Abkürzungen
 //Verweis passend zum Belegabgabe-Template se1_belegabgabe_t00.adoc
@@ -36,7 +35,7 @@ Siehe <<#glossary, Glossar>>.
 | Das Problem | [beschreiben Sie das Problem]
 | betrifft | [die Stakeholder, die vom Problem betroffen sind]
 | die Auswirkung davon ist | [welche Auswirkungen hat das Problem?]
-| eine erfolgreiche Lösung wäre | Führen Sie einige wesentliche Vorteile einer erfolgreichen Lösung auf]
+| eine erfolgreiche Lösung wäre | [Führen Sie einige wesentliche Vorteile einer erfolgreichen Lösung auf]
 |===
 
 ////
