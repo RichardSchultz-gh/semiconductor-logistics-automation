@@ -3,12 +3,12 @@
 == Teammeetings
 === Teammeeting 1
 -> füllt Marlene noch aus
+
 === Teammeeting 2
 Anwesende: Enrico, Hoang, Nico, Nils, Richard, Yannik, Marlene
 Abwesende: Paul
 Agenda:
 * Verantwortlichkeiten definieren
-* 
 * vision.adoc
 * risk list
 * Aufgaben bis zum nächsten Meeting
