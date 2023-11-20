@@ -5,8 +5,11 @@
 -> füllt Marlene noch aus
 
 === Teammeeting 2
+
 Anwesende: Enrico, Hoang, Nico, Nils, Richard, Yannik, Marlene
+
 Abwesende: Paul
+
 Agenda:
 * Verantwortlichkeiten definieren
 * vision.adoc
