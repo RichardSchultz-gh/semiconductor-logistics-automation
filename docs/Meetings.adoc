@@ -2,7 +2,16 @@
 
 == Teammeetings
 === Teammeeting 1
--> füllt Marlene noch aus
+
+Anwesende: Enrico, Hoang, Nico, Nils, Richard, Paul, Marlene
+
+Abwesende: Yannik
+
+.Agenda:
+* Kennenlernen/Vorstellungsrunde
+* erste Zuweisung der Verantwortlichkeiten
+* Besprechen der Aufgabe 
+* Fragen finden
 
 === Teammeeting 2
 
@@ -39,7 +48,30 @@ Nachbeitung:
 ergebene Aufgaben:
 
 == Meetings mit Coach
--> füllt Marlene noch aus
+
+.Generelles:
+* Meetings vor- und nachbereiten
+* bei Meetings mitschreiben
+* Retroperspektive nach jeder Iteration
+
+.Der Begin:
+* Analysieren
+** Anforderungsanalyse ist recht aufwendig
+* mit OpenUP vertraut machen
+* Vision.adoc durcharbeiten
+* Entwicklung kann erstmal außen vor bleiben
+* Risikoanalyse mit Gegenmaßnahmen
+
+.To do bis Weihnachten:
+* Vision und UseCases fertig stellen
+
+.Belegabgabe:
+* Prototyp
+** Der Prototyp muss noch nicht voll funktionsfähig sein. Beispiel: Man sieht zwar Buttons, aber diese führen noch keine Funktion aus
+* Dokumente haben mehr Gewichtung als der Prototyp
+* es wird folgendes bewertet: Risikoliste, Iterationspläne, Vision, UseCases, Glossar, Domainmodell, Archtitecure Notebook
+
+
 
 == Meetings mit Ringel
 === Meeting 1
