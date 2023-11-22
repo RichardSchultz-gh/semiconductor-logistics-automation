@@ -10,10 +10,21 @@ include::../_includes/default-attributes.inc.adoc[]
 
 
 == Identifizierte Use Cases
-// Liste aller identifizierten Use Cases (priorisiert)
-* *UC01*: ...
-* *UC02*: ...
+// Liste aller identifizierten Use Cases (priorisiert-> wir später gemacht)
+//erste Ideen von Marlene vor dem 2. Meeting mit Ringel
 
+* *UCXX*: Material einfügen
+* *UCXX*: Material löschen
+* *UCXX*: Material anzeigen
+* *UCXX*: fertiges Produkt anzeigen
+* *UCXX*: Fertigungspläne anzeigen
+* *UCXX*: ...
+* *UCXX*:
+* *UCXX*:
+* *UCXX*:
+* ...
+
+//die Liste muss noch nach Prioritäten sortiert werden
 
 == Use Case Diagramm
 // ...

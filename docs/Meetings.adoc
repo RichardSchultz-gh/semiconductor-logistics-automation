@@ -49,6 +49,8 @@ ergebene Aufgaben:
 
 == Meetings mit Coach
 
+=== Meeting 1
+
 .Generelles:
 * Meetings vor- und nachbereiten
 * bei Meetings mitschreiben
@@ -71,7 +73,7 @@ ergebene Aufgaben:
 * Dokumente haben mehr Gewichtung als der Prototyp
 * es wird folgendes bewertet: Risikoliste, Iterationspläne, Vision, UseCases, Glossar, Domainmodell, Archtitecure Notebook
 
-
+=== Meeting 2
 
 == Meetings mit Ringel
 === Meeting 1
@@ -82,18 +84,21 @@ Protokoll:
 Nachbeitung:
 ergebene Aufgaben:
 --> füllt Marlene nach aus
+
 === Meeting 2
+
 Anwesende: Enrico, Hoang, Paul, Marlene
 Vorbereitung:
-
-Anzeigen wo von
-Wer ist der Nutzer und was für Daten will er haben
-kleinere Funktionalitäten
-RaspberryPi welche Disbitution 
-soll die Datenbank auf dem RaspberryPi liegen oder auf ner Cloud oder Server?
+.Fragen:
+* Anzeigen wo von
+* Wer ist der Nutzer und was für Daten will er haben
+* kleinere Funktionalitäten
+* RaspberryPi welche Disbitution 
+* soll die Datenbank auf dem RaspberryPi liegen oder auf ner Cloud oder Server?
 
 
 Protokoll:
 
 Nachbeitung:
+
 ergebene Aufgaben:
