@@ -1,0 +1,22 @@
+= Notizen zu allem was Ringel will
+
+== Marlenes Mitschriften Meeting 2 mit Ringel
+
+Es gibt Menschen die an Maschinen arbeiten
+
+Zustände der Maschinen: kaputt, betriebsbereit, ...  
+-> werden manuell eingegeben
+
+Zustand "betriebsbereit" löst aus, dass das nächste Los produziert wird (bzw. die Produktion an dieser Maschine startet) 
+
+attribute zu Losen: Von wann bis wann sind sie wo (d.h. an welcher Maschine), was ist das Ergebnis, Zustand
+-> Anfangszeit, Endzeit, Ort, Ergebnis, Zustand
+
+automatisch sollen die Daten aus der Datenbank gezogen werden und ggf. geändert werden (auch automatisch) -> im Ende soll es so sein, aber bei uns reicht manuell erstmal auch aus, spätere Teams kümmern sich um das vollautomatische
+
+bei "Material" und "Maschine" soll man Stammdaten ändern und neu hinzufügen können und Zustände ändern können
+
+
+
+
+An Maschinen sind Fertigungsupdates die sagen wo ein Produkt ist

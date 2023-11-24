@@ -20,7 +20,7 @@ Abwesende: Paul (krankheitsbedingt)
 
 Protokoll:
 
-Nachbeitung:
+Nachbereitung:
 .ergebene Aufgaben:
 *Issues bearbeiten
 *Risk Liste Ergänzen
@@ -35,7 +35,7 @@ Anwesende:
 
 Protokoll:
 
-Nachbeitung:
+Nachbereitung:
 ergebene Aufgaben:
 
 == Meetings mit Coach
@@ -47,21 +47,18 @@ Anwesende: alle
 Vorbereitung:
 Protokoll:
 
-Nachbeitung:
+Nachbereitung:
 ergebene Aufgaben:
+
 --> füllt Marlene nach aus
+
 === Meeting 2
+
 Anwesende: Enrico, Hoang, Paul, Marlene
-Vorbereitung:
-
-Anzeigen wo von
-Wer ist der Nutzer und was für Daten will er haben
-kleinere Funktionalitäten
-RaspberryPi welche Disbitution 
-soll die Datenbank auf dem RaspberryPi liegen oder auf ner Cloud oder Server?
-
 
 Protokoll:
 
-Nachbeitung:
-ergebene Aufgaben:
+
+
+.ergebene Aufgaben:
+* Treffen vor Teammeeting, wo wir das erfahrende Besprechen
