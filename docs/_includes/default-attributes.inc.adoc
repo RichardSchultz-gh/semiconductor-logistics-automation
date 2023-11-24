@@ -1,6 +1,5 @@
 // Meta
-:project-name: < Modell eines automatisierten Fabrikbetriebes -
-Frau Holle (I04)>
+:project-name: Modell eines automatisierten Fabrikbetriebes - Frau Holle (I04)
 :project-system-name: <Projektname-System>
 // Settings:
 :toc:
