@@ -18,7 +18,7 @@ include::../_includes/default-attributes.inc.adoc[]
 * *UCXX*: Material anzeigen
 * *UCXX*: fertiges Produkt anzeigen
 * *UCXX*: Fertigungspläne anzeigen
-* *UCXX*: ...
+* *UCXX*: Produktion starten
 * *UCXX*:
 * *UCXX*:
 * *UCXX*:

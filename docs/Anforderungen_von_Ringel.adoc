@@ -16,7 +16,118 @@ automatisch sollen die Daten aus der Datenbank gezogen werden und ggf. geändert
 
 bei "Material" und "Maschine" soll man Stammdaten ändern und neu hinzufügen können und Zustände ändern können
 
-
-
+"Kundenaufträge"
+-> Produktion von Losen werden durch Aufträge gestartet
 
 An Maschinen sind Fertigungsupdates die sagen wo ein Produkt ist
+
+Auswertungen und Veränderungen geschehen automatisch aber Mtiarbeiter können auch manuell -> wir machen erstmal nur manuell
+
+Die Software die das alles automatisch macht, machen nicht wir, sondern nachfolgende Teams
+
+Stamm- und Bewegungsdaten
+
+Lose, Maschine, Bearbeitungszustand von Materialien, Fertigungsflüsse
+
+manuell soll man ändern und anzeigen lassen können
+
+Was muss erfasst werden?
+-> Fertigungsskript, -fluss, Maschine
+
+Entitäten: Anlage Ressourcen, Fertigungspläne, Materialverwaltung
+
+Anlagenressourcen:
+"EMS-Entitäten" due nur Verweise auf Maschinenhaben aber sonst in unserem Projekt außen von gelassen werden sollen
+
+Fertigungspläne (WorkFolw, ProdFlow, Prozesszeiten)-> stellt Ringel zur Verfügung, wenn wir ihm das Datenbankschema (inkl. den Beziehungen, Constrains) vorlegen
+
+=== folgende Anforderungen sollen umgesetzt werden:
+. Lauffähige mit Backup gesicherte PostgreSQL Datenbank auf dem RaspberryPi
+. GUI Dialog wo man die Informationskomponenten eingaben kann und inserts & updates ausführen kann, ohne von Hand als Nutzer die insert/update befehle eingeben zu müssen -> buttons also?
+.. csv daten per Massenupdate in Datenbank reinschieben -> per Skript
+. Möglichkeit Testdaten zu erzeugen
+-> on csv (damit man sich die daten vorher anschauen kann), Dankebank oder Kopie von Datenbank
+
+.folgende Funktionen sollen umgesetzt werden:
+. MoveLot
+.. Softwarekomponente die Lose bewegen kann
+.. Los mit Zustand "fertig" in einer Operation -> wird auf nächste Operation gesetzt + Zustand auf wartend gesetzt <= das geschieht alle 30 sek. (oder 1 Min.)
+. EditLot -> das wird nochmal zusammen mit Ringel überlegt, wie genau das laufen soll
+.. Softwarekomponente die Lose simuliert bearbeiten kann
+.. 
+. StartLot
+.. Softwarekomponente die Lose starten kann
+.. jede Woche werden n viele Lose von einem Produkt gestartet, also deren Produktion wird gestartet
+
+-> mit diesen 3 Funktionen prüft man ob die Datenbank funktionier
+
+. Nutzer + Admin füür die Datenbank anlegen -> wir müssen überlegen was es für Nutzer geben soll
+
+.folgende Funktionen können umgesetzt werden:
+. FinishedLot
+.. bei der letzten Operation von einem Los geht das los danach in den Zustand finished
+
+.Visualisierung:
+. Tabellarische Darstellung/ Anzeigen von Daten
+. z.B.
+.. zeige alle Lose die diese Woche fertig geworden sind
+.. zeige alle Maschinen die ...
+.. diese Sachen per Views schreiben
+. 2-3 Diagramme zum Prove of Concept 
+
+.Anforgerungsspezifikationen an Ringel beim nächsten Mal zeigen:
+* Anwendungsdiagramm
+* Zeigen, was wir für ein Produkt bieten
+* Pflicht und kann Bestandteile des Projekts an ringel vorstellen
+
+-> wir sollen im quasi das Konzept einmal grob vorstellen
+
+=== Todo: 
+
+Produktionssteurerungssystem in einer datenbank googlen
+
+nachschauen ob PostgreSQL auf allen Distributionen läuft
+
+
+=== Produktionsablauf:
+
+Fertige Liziumscheiben kommen bei der Fabrik an
+
+diese werden zu Losen zusammengefasst (Transistoren sortieren die Liziumscheinben)
+
+säuberung der Lose
+
+.Dann Schleife ab hier:
+. Fotolack aufbringen
+. belichten
+. mit Säure auswaschen
+. beschichten
+. Fotolack abmachen
+
+-> solange bis Transistoren fertig sind
+
+Verdrahtung (durch das anbringen von Metall)
+
+3-12 Schichten Metall darüber schichten
+
+Kontaktkugeln aus Zinn anbringen
+
+-> Dauer insgesamt: 30-80 Tage
+
+-> Man weiß nach ca. 50% der Zeit, ob die Lose überhaupt funktionsfähig sind
+
+.RaspberryPi und Technologien
+* beliebiges Linux -> nach "schlanken" Distributionen googlen
+* Datenbank soll auf dem Raspy liegen -> der Raspy spielt quasi Datenbankserver
+* Backup der Datenbank mit drauf hauen
+* DBiver (SQLManagementSystem für Linux)
+* das ganze soll gängigen Standards genügen
+
+.das was er am schluss noch brachte:
+* Produktionssteuerungssystem
+* Mittelware googlen
+* Schnittstelle für die Zwischenebene zwischen Datenbank und GUI liefern
+* ihm einen Vorschlag liefern, wie man das machen kann mit der schnittstelle zur GUI
+* ich verstehe das nicht so recht!!!
+
+== XYZ Mitschriften Meeting 2 mit Ringel
