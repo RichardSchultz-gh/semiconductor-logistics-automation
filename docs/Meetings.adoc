@@ -30,21 +30,44 @@ Abwesende: Paul (krankheitsbedingt)
 Protokoll:
 
 Nachbereitung:
+
 .ergebene Aufgaben:
-*Issues bearbeiten
-*Risk Liste Ergänzen
-*Vision.adoc nochmal anschauen und Ergänzen
-*Fragen mit ins Gespräche zu Ringel Geben
-*Fragen im Praktikum am Dienstag klären
+* Issues bearbeiten
+* Risk Liste Ergänzen
+* Vision.adoc nochmal anschauen und Ergänzen
+* Fragen mit ins Gespräche zu Ringel Geben
+* Fragen im Praktikum am Dienstag klären
 
+=== Analysten Meeting 1
+Anwesende: Enrico, Hoang, Paul, Marlene
 
+.Agenda: 
+* Besprechung Meeting mit Ringel
+** Was sind die Anforderungen
+** Was soll das Endprodukt sein
+* Vision nachbesprechen
+* UseCases überlegen
+** Welche UseCases können wir aus den Anforderungen zeihen
+ 
 
 === Teammeeting 3
+
 Anwesende:
+
+.Agenda:
+* Vorstellung der Anforderungen
+* Vorstellung Technische Aspekte aus Meeting mit Ringel
+* Vorstellung Python, RaspberryPi
+** welche Punkte sind für alle Interessant
+* Planung Iteration 3 besprechen
+** was müssen wir tun 
+** wer muss was tun
+** was müssen wir Ringel vorstellen am Ende der Iteration
 
 Protokoll:
 
 Nachbereitung:
+
 ergebene Aufgaben:
 
 == Meetings mit Coach
@@ -88,25 +111,16 @@ ergebene Aufgaben:
 
 === Meeting 2
 
-
 Anwesende: Enrico, Hoang, Paul, Marlene
 
 
 Protokoll:
 
-
+Nachbeitung:
 
 .ergebene Aufgaben:
 * Treffen vor Teammeeting, wo wir das erfahrende Besprechen
 
-
-
-Protokoll:
-
-Nachbeitung:
-ergebene Aufgaben:
-
-
-Weitere Tipps von Ringel:
-Meetings sind zur besprechung von ergebnissen und nicht zur diskursion
-Agenda min 24h vorher veröffentlcihen, damit sich die Leute einlesen können und Fragen und Anmerkungen schon mal überlegen
+.Weitere Tipps von Ringel:
+* Meetings sind zur besprechung von ergebnissen und nicht zur diskursion
+* Agenda min 24h vorher veröffentlcihen, damit sich die Leute einlesen können und Fragen und Anmerkungen schon mal überlegen

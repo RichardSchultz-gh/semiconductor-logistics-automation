@@ -13,7 +13,10 @@ include::../_includes/default-attributes.inc.adoc[]
 | Meilenstein | Datum
 
 | Beginn der Iteration | 20.11.2023
-| ... | -
+| Aufstellung Anforderungen | -
+| Vision |
+| UseCase| 
+| RiskList|
 | Ende der Iteration | 01.12.2023
 |===
 
@@ -25,7 +28,7 @@ include::../_includes/default-attributes.inc.adoc[]
 * Aufstellen der Risikenliste
 * Aufstellen der Use Cases
 * Einarbeitung in die Technologien
-* ...
+* Spezifikation der Aufforderungen
 
 //Beispiele:
 
@@ -44,7 +47,15 @@ _alternativ:_ Die folgenden Aufgaben werden in dieser Iteration bearbeitet:
 |===
 | Aufgabe bzw. Beschreibung | Priorität | Schätzung der Größe (Punkte) |Status | Referenzen | geplante Iteration | Zugewiesen (Name) | Gearbeite Stunden | Schätzung der verbleibenden Stunden
 
-| x | x | x | x | x | x | x | x | x
+| Erster Entwurf Vision | 4 | 3 | in progress | x | 2 | all | 2 | 1
+| Erster Entwurf RiskList | 4 | 3 | in progress | x | 2 | Marlene + Rest | 2 | 1
+| UseCases erstellen | 4 | 4 | in progress | x | 2 | Marlene (+Rest) | 1 | 3 
+| Einarbeitung Python | 5 | 4 | in progress | x | 2,3 | Paul, Richard, Nils, Nico, Yannik | 0 | 2
+| Einarbeitung PaspberryPi | 5 | 4 | in progress | x | 2,3 | Paul, Richard, Nils, Nico, Yannik | 0 | 2
+| Einarbeitung PostgreSQL | 5 | 4 | in progress | x | 2,3 | Paul, Richard, Nils, Nico, Yannik, Marlene | 0 | 1
+| Einarbeitung Pläne | 5 | 4 | in progress | OpenUP | 2 | Marlene | 1 | 3
+| Kennenlernen Architekture Notebook | 4 | 3 | in progress | x | 2 | Yannik, Nico | 0 | 1,5
+| Aufstellung Anforderungen | 5 | 4 | in  progress | x | 2 | Marlene, Paul, Enrico, Hoang | 1,5 | 2
 |===
 
 
