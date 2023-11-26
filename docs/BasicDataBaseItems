@@ -1,0 +1,58 @@
+Maschine: Tool
+ToolID
+Group
+Type    (z.B. Messmaschine)
+Owner   
+State   Zustand
+MTTR    Mittlere Zeit Reparaturendauer
+MTTF    Mittlere Zeit Anlagefehler
+
+
+Los: Lot
+LotID
+Prio    Priorität
+Pcs
+State   wartend, holend,...
+Product
+Route   teilabschnitt
+Oper    Operation
+Customer    
+Order   
+StartDate   
+DueDate
+EnterOper   wann war es an der Operation (die wurde aber noch nicht gestartet)
+ProcStart   wann hat die bearbeitung begonnen
+DispTool    in welcher Maschine
+
+
+Produkt-Arbeitspläne: ProdFlow
+Product
+Route   Teilfertigungsschritte
+Seq     Sequenz von 1-n
+
+Teil-Arbeitspläne: WorkFlow
+Route   
+Oper
+Desc
+Mandatory   boolean
+StepPerc    wahrscheinlichkeit mit der die ausgeführt wird
+
+
+Prozess-Zeiten: PTime       rein bis raus
+Tool
+Product
+Route
+Oper
+PTime       Planungsdate
+Interval    alle wieviel Zeiteinheiten kam ein neues Produkt in die Maschine rein
+Recipe      String
+-> sagt aus für welche Maschine welche Route-Operation wie lange gedauert hat
+
+
+MES-Entitäten: Entities
+Entity
+Class
+Enabled     Darf das damit was tun?
+State
+Note
+-> Maschine, Mitarbeiter, Arbeitsmaterialien, Werkzeuge

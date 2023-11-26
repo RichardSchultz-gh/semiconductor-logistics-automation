@@ -13,6 +13,15 @@ In diesem Dokument werden die wesentlichen Begriffe aus dem Anwendungsgebiet (Fa
 |===
 | Begriff | Definition und Erläuterung | Synonyme
 //| Kommissionierung | Bereitstellung von Waren aus einem Lager entsprechend eines Kundenauftrags | (keine)
+| Los aka Lot | xx | xx
+| Material | xx | xx
+| Maschine | xx | xx
+| Fertigungsprozess | xx | xx
+| Produkt | xx | xx
+| Fertigungsflüsse | xx | xx
+| Liziumscheiben | xx | xx
+| Transistoren | xx | xx
+| xx | xx | xx
 | Halbleiter | xx | xx
 |===
 
