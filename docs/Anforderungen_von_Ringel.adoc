@@ -42,30 +42,37 @@ Anlagenressourcen:
 Fertigungspläne (WorkFolw, ProdFlow, Prozesszeiten)-> stellt Ringel zur Verfügung, wenn wir ihm das Datenbankschema (inkl. den Beziehungen, Constrains) vorlegen
 
 === folgende Anforderungen sollen umgesetzt werden:
-. Lauffähige mit Backup gesicherte PostgreSQL Datenbank auf dem RaspberryPi
-. GUI Dialog wo man die Informationskomponenten eingaben kann und inserts & updates ausführen kann, ohne von Hand als Nutzer die insert/update befehle eingeben zu müssen -> buttons also?
-.. csv daten per Massenupdate in Datenbank reinschieben -> per Skript
+. Lauffähige mit Backup gesicherte PostgreSQL Datenbank auf dem RaspberryPi 
+. GUI Dialog wo man die Informationskomponenten eingeben kann und inserts & updates ausführen kann, ohne von Hand als Nutzer die insert/update befehle eingeben zu müssen -> buttons also?
+.. csv (oder ascii) daten per Massenupdate in Datenbank reinschieben -> per Skript
 . Möglichkeit Testdaten zu erzeugen
--> on csv (damit man sich die daten vorher anschauen kann), Dankebank oder Kopie von Datenbank
+-> on csv (damit man sich die daten vorher anschauen kann)(, Dankebank oder Kopie von Datenbank)
 
 .folgende Funktionen sollen umgesetzt werden:
 . MoveLot
 .. Softwarekomponente die Lose bewegen kann
 .. Los mit Zustand "fertig" in einer Operation -> wird auf nächste Operation gesetzt + Zustand auf wartend gesetzt <= das geschieht alle 30 sek. (oder 1 Min.)
+.. wie wechselt das die Zustände sonst
+.. bewegen von losen nur von fertig auf wartend
+.. Los auf nächste Operation setzen
 . EditLot -> das wird nochmal zusammen mit Ringel überlegt, wie genau das laufen soll
 .. Softwarekomponente die Lose simuliert bearbeiten kann
-.. 
+.. was genau soll das machen
+.. Das was in der Operation mit dem Los passiert???
+.. Was passiert mit dem Los während der Bearbeitung
+.. Abgrenzung zur Bewegung des Loses
 . StartLot
 .. Softwarekomponente die Lose starten kann
 .. jede Woche werden n viele Lose von einem Produkt gestartet, also deren Produktion wird gestartet
 
--> mit diesen 3 Funktionen prüft man ob die Datenbank funktionier
+-> mit diesen 3 Funktionen prüft man ob die Datenbank funktioniert
 
 . Nutzer + Admin füür die Datenbank anlegen -> wir müssen überlegen was es für Nutzer geben soll
 
 .folgende Funktionen können umgesetzt werden:
 . FinishedLot
 .. bei der letzten Operation von einem Los geht das los danach in den Zustand finished
+.. es gibt keine Rechnung oder ähnliches. Ende ist bei Ende der Produktion
 
 .Visualisierung:
 . Tabellarische Darstellung/ Anzeigen von Daten
@@ -78,7 +85,7 @@ Fertigungspläne (WorkFolw, ProdFlow, Prozesszeiten)-> stellt Ringel zur Verfüg
 .Anforgerungsspezifikationen an Ringel beim nächsten Mal zeigen:
 * Anwendungsdiagramm
 * Zeigen, was wir für ein Produkt bieten
-* Pflicht und kann Bestandteile des Projekts an ringel vorstellen
+* Pflicht und kann Bestandteile des Projekts an Ringel vorstellen
 
 -> wir sollen im quasi das Konzept einmal grob vorstellen
 
@@ -95,7 +102,7 @@ Fertige Liziumscheiben kommen bei der Fabrik an
 
 diese werden zu Losen zusammengefasst (Transistoren sortieren die Liziumscheinben)
 
-säuberung der Lose
+säuberung/Reinigung der Lose
 
 .Dann Schleife ab hier:
 . Fotolack aufbringen
@@ -129,14 +136,15 @@ Kontaktkugeln aus Zinn anbringen
 * Schnittstelle für die Zwischenebene zwischen Datenbank und GUI liefern
 * ihm einen Vorschlag liefern, wie man das machen kann mit der schnittstelle zur GUI
 * ich verstehe das nicht so recht!!!
+* Architekten bei Ringel nochmal nachfragen
 
 == Paul - Mitschriften Meeting 2 mit Ringel
 
 *To-dos bis zum nächsten Meeting:*
 
--	Anwendungsfalldiagramme erstellen
+-	Anwendungsfalldiagramme/ UseCaseDiagramm erstellen
 -	Anwendungsfalldiagramme beschreiben
--	Datenbankschema skizzieren
+-	Datenbankschema/ER-Diagramm skizzieren
 -	Vision entwerfen
 
 *Nice to know:*
@@ -209,10 +217,13 @@ _Referenzarchitektur erwünscht:_
 .	Reinigung
 .	Fotolack aufbringen
 .	Fotolack belichten
-.	Belichtete Stellen auswaschen
+.	Belichtete Stellen mit Säure auswaschen
 .	Strukturveränderte Maßnahmen -> z.b. Ionen implantieren
 .	Oxidschicht aufbringen
 .	Fotolack abwaschen
 .	Wiederholung von Schritt 2-7, Auftragung von Schichten
 .	Schaltung vervollständigen und Schichten miteinander verdrahten
 
+-> bei Video anschauen
+
+Stakeholder ist die Halbleiterfabrik

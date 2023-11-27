@@ -13,15 +13,15 @@ include::../_includes/default-attributes.inc.adoc[]
 // Liste aller identifizierten Use Cases (priorisiert-> wir später gemacht)
 //erste Ideen von Marlene vor dem 2. Meeting mit Ringel
 
-* *UCXX*: Material einfügen
-* *UCXX*: Material löschen
-* *UCXX*: Material anzeigen
-* *UCXX*: fertiges Produkt anzeigen
-* *UCXX*: Fertigungspläne anzeigen
-* *UCXX*: Produktion starten
-* *UCXX*:
-* *UCXX*:
-* *UCXX*:
+* *UC01*: Los starten
+* *UC02*: Los bewegen
+* *UC03*: Los bearbeiten
+* *UC08*: fertiges Los anzeigen
+* *UC07*: Stammdaten ändern
+* *UC06*: Maschinen anzeigen
+* *UC04*: Stammdaten anzeigen
+* *UC05*: Los anzeigen
+* *UC10*: Statistik aufstellen
 * ...
 
 //die Liste muss noch nach Prioritäten sortiert werden
