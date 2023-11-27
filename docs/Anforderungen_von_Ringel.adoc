@@ -186,7 +186,7 @@ _Referenzarchitektur erwünscht:_
 *Softwarekomponenten:*
 
 .	Bewegung von Losen
--	z.B. wenn ein Lose fertig prozessiert ist (Zustand „fertig“) und gemäß des Fertigungsablaufes auf die nächste Position gesetzt werden können
+-	z.B. wenn ein Los fertig prozessiert ist (Zustand „fertig“) und gemäß des Fertigungsablaufes auf die nächste Position gesetzt werden kann
 -	Skript läuft z.B. 1x die Minute -> Zustand der Lose abfragen -> welchen Flow hat das Los?  -> auf nächste Position mit Zustand „wartend“ setzen
 .	Bearbeiten von Losen (nur simuliert)
 -	z.B. Erkennen der Lose, die sich im Wartezustand befinden -> simuliert das Prozessieren -> Lose gehen in Bearbeitungszustand und sind nach bestimmter Zeit fertig
