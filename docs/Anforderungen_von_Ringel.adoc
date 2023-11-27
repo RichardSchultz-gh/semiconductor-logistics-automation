@@ -163,7 +163,7 @@ Kontaktkugeln aus Zinn anbringen
 
 *Softwarearchitektur:*
 
-Datenbank -> Datenbankschnittellenschicht -> Dienste -> Graphical User Interface
+Datenbank -> Datenbankschnittstellenschicht -> Dienste -> Graphical User Interface
 
 _Middleware/Datenbankschnittstellenschicht:_
 
