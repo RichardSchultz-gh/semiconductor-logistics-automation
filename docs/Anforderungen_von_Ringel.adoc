@@ -145,7 +145,7 @@ Kontaktkugeln aus Zinn anbringen
 -	Empfehlung DBMS: DBeaver
 -	Linux Distribution frei wählbar, aber nach Möglichkeit schlank gehalten und passend zu PostgreSQL
 -	Fertigungspläne werden später von Herr Ringel zur Verfügung gestellt
--	Enitäten: Maschinen, Mitarbeiter, Arbeitsmaterialien
+-	Enitäten ergeben sich aus der Input-Datei von Herr Ringel
 
 *Anforderungen 1. Semester:*
 
@@ -165,14 +165,14 @@ Kontaktkugeln aus Zinn anbringen
 
 Datenbank -> Datenbankschnittellenschicht -> Dienste -> Graphical User Interface
 
-_Middleware/Datenbankschnittstellenschicht:_
--	Softwarekomponente
--	Schicht vermittelt zwischen Datenbanksoftware und Anwendungssoftware
--	bietet bestimmte Dienste an.
+*_Middleware/Datenbankschnittstellenschicht:_
+**Softwarekomponente
+**	Schicht vermittelt zwischen Datenbanksoftware und Anwendungssoftware
+**	bietet bestimmte Dienste an.
 
-_Referenzarchitektur erwünscht:_
--	enthält Richtlinien oder Designmuster für die Strukturierung und das Zusammenspiel der einzelnen Architekturkomponenten
--	Empfehlung für bestimmte Frameworks oder Technologien möglich
+*_Referenzarchitektur erwünscht:_
+** enthält Richtlinien oder Designmuster für die Strukturierung und das Zusammenspiel der einzelnen Architekturkomponenten
+** Empfehlung für bestimmte Frameworks oder Technologien möglich
 
 _Inhaltliche Systembeschreibung:_
 
