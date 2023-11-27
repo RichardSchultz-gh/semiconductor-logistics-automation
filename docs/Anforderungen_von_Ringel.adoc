@@ -137,7 +137,7 @@ Kontaktkugeln aus Zinn anbringen
 -	Anwendungsfalldiagramme erstellen
 -	Anwendungsfalldiagramme beschreiben
 -	Datenbankschema skizzieren
--	Vision fertigstellen
+-	Vision entwerfen
 
 *Nice to know:*
 
