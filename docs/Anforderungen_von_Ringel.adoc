@@ -124,10 +124,10 @@ Kontaktkugeln aus Zinn anbringen
 -> Man weiß nach ca. 50% der Zeit, ob die Lose überhaupt funktionsfähig sind
 
 .RaspberryPi und Technologien
-* beliebiges Linux -> nach "schlanken" Distributionen googlen
+* beliebiges Linux -> nach "schlanken" Distributionen googlen -> Raspian BS
 * Datenbank soll auf dem Raspy liegen -> der Raspy spielt quasi Datenbankserver
-* Backup der Datenbank mit drauf hauen
-* DBiver (SQLManagementSystem für Linux)
+* Backup Jobs der Datenbank mit drauf hauen
+* DBeaver (SQLManagementSystem für Linux)
 * das ganze soll gängigen Standards genügen
 
 .das was er am schluss noch brachte:
@@ -142,10 +142,10 @@ Kontaktkugeln aus Zinn anbringen
 
 *To-dos bis zum nächsten Meeting:*
 
--	Anwendungsfalldiagramme/ UseCaseDiagramm erstellen
--	Anwendungsfalldiagramme beschreiben
--	Datenbankschema/ER-Diagramm skizzieren
--	Vision entwerfen
+-	Anwendungsfalldiagramme/ UseCaseDiagramm erstellen -> Analysten
+-	Anwendungsfalldiagramme beschreiben -> Analysten
+-	Datenbankschema/ER-Diagramm skizzieren -> Architekten
+-	Vision entwerfen -> Marlene
 
 *Nice to know:*
 
@@ -216,6 +216,7 @@ _Referenzarchitektur erwünscht:_
 
 *Prozess Halbleiterfertigung:*
 
+Produktionsschritte:
 .	Reinigung
 .	Fotolack aufbringen
 .	Fotolack belichten
@@ -227,5 +228,7 @@ _Referenzarchitektur erwünscht:_
 .	Schaltung vervollständigen und Schichten miteinander verdrahten
 
 -> bei Video anschauen
+
+-> Funktion MoveLot bringt uns durch die Produktionsschritte 
 
 Stakeholder ist die Halbleiterfabrik

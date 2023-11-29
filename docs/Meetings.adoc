@@ -65,6 +65,18 @@ Anwesende: Yannik, Enrico, Hoang, Nico, Nils, Paul, Marlene
 ** was müssen wir Ringel vorstellen am Ende der Iteration
 
 Protokoll:
+Nils: Python ist machbar. Findet ihr TKinter auch für unsere Anwendung gut?
+Richard: joa, ich fand die ganz passend.
+TKinter wird benutzt.
+Nils: Habe mich mit Hteorie beschäftigt. Wenn wir den Raspy haben, geht das da voran. 
+Richard: Der SQL Server DBiver ist gut. 
+Nils: Postgre funktioniert auch über die Konsole.
+
+Richard würde morgen bei Ringel den Raspy abholen und sich am WE mit dem Raspy beschäftigen. 
+Richard und Nils ziehen sich ein BS auf den Raspy und erstellen eine Datenbank. 
+Yannik und Nico beschäftigen sich mit dem Architekture und erstellen das ER-Diagramm
+Enrico und Hoang erstellen das UseCase Diagramm &UseCases; Paul wird zum Analyst für Iteration 3
+Marlene: Iterationsplan, Vision, RiskList, UseCases, Essence Navigator -> screenshort machen wie stand ist nach iteration
 
 Nachbereitung:
 
