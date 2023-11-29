@@ -9,7 +9,7 @@ Zustände der Maschinen: kaputt, betriebsbereit, ...
 
 Zustand "betriebsbereit" löst aus, dass das nächste Los produziert wird (bzw. die Produktion an dieser Maschine startet) 
 
-attribute zu Losen: Von wann bis wann sind sie wo (d.h. an welcher Maschine), was ist das Ergebnis, Zustand
+Attribute zu Losen: Von wann bis wann sind sie wo (d.h. an welcher Maschine), was ist das Ergebnis, Zustand
 -> Anfangszeit, Endzeit, Ort, Ergebnis, Zustand
 
 automatisch sollen die Daten aus der Datenbank gezogen werden und ggf. geändert werden (auch automatisch) -> im Ende soll es so sein, aber bei uns reicht manuell erstmal auch aus, spätere Teams kümmern sich um das vollautomatische
@@ -23,7 +23,7 @@ An Maschinen sind Fertigungsupdates die sagen wo ein Produkt ist
 
 Auswertungen und Veränderungen geschehen automatisch aber Mtiarbeiter können auch manuell -> wir machen erstmal nur manuell
 
-Die Software die das alles automatisch macht, machen nicht wir, sondern nachfolgende Teams
+Die Software, die das alles automatisch macht, machen nicht wir, sondern nachfolgende Teams
 
 Stamm- und Bewegungsdaten
 
@@ -37,7 +37,7 @@ Was muss erfasst werden?
 Entitäten: Anlage Ressourcen, Fertigungspläne, Materialverwaltung
 
 Anlagenressourcen:
-"EMS-Entitäten" due nur Verweise auf Maschinenhaben aber sonst in unserem Projekt außen von gelassen werden sollen
+"EMS-Entitäten" die nur Verweise auf Maschinen haben aber sonst in unserem Projekt außen von gelassen werden sollen
 
 Fertigungspläne (WorkFolw, ProdFlow, Prozesszeiten)-> stellt Ringel zur Verfügung, wenn wir ihm das Datenbankschema (inkl. den Beziehungen, Constrains) vorlegen
 
@@ -93,7 +93,7 @@ Fertigungspläne (WorkFolw, ProdFlow, Prozesszeiten)-> stellt Ringel zur Verfüg
 
 Produktionssteurerungssystem in einer datenbank googlen
 
-nachschauen ob PostgreSQL auf allen Distributionen läuft
+nachschauen ob PostgreSQL auf allen Distributionen läuft 
 
 
 === Produktionsablauf:
@@ -149,7 +149,7 @@ Kontaktkugeln aus Zinn anbringen
 
 *Nice to know:*
 
--	Studenten (Lehre) sind nicht zwangsweise Stakeholder
+-	Studenten (Lehre) sind nicht (zwangsweise) Stakeholder
 -	Empfehlung DBMS: DBeaver
 -	Linux Distribution frei wählbar, aber nach Möglichkeit schlank gehalten und passend zu PostgreSQL
 -	Fertigungspläne werden später von Herr Ringel zur Verfügung gestellt
@@ -158,8 +158,8 @@ Kontaktkugeln aus Zinn anbringen
 *Anforderungen 1. Semester:*
 
 -	Betrieb und Zweckerfüllung der Datenbank nachweisen
--	Backup Jobs für die Datenbank erstellen
--	Mehrere Nutzerrollen notwendig; Admin-Rolle nicht ausreichend
+-	Backup Jobs für die Datenbank erstellen und mit auf Raspy speichern
+-	Mehrere Nutzerrollen notwendig; Admin-Rolle nicht ausreichend (Admin und mehrere Nutzer, die wir nach unserem Wissen nach entscheiden können)
 -	Abnahme: In einem GUI-Dialog werden Daten aus der Datenbank abgefragt und eingegeben
 
 *Anforderungen 2. Semester:*
@@ -178,6 +178,8 @@ _Middleware/Datenbankschnittstellenschicht:_
 - Softwarekomponente
 - Schicht vermittelt zwischen Datenbanksoftware und Anwendungssoftware
 -	bietet bestimmte Dienste an.
+
+alias "das was er am schluss noch brachte" bei Marlene
 
 _Referenzarchitektur erwünscht:_
 

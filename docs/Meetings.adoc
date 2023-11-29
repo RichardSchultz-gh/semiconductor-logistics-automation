@@ -52,7 +52,7 @@ Anwesende: Enrico, Hoang, Paul, Marlene
 
 === Teammeeting 3
 
-Anwesende:
+Anwesende: Yannik, Enrico, Hoang, Nico, Nils, Paul, Marlene
 
 .Agenda:
 * Vorstellung der Anforderungen
@@ -68,7 +68,22 @@ Protokoll:
 
 Nachbereitung:
 
-ergebene Aufgaben:
+.ergebene Aufgaben:
+* Aufstellung Use Cases
+* Verfeinerung der Vision
+* Verfeinerung der RiskList
+* Recherche zu wie man ein BS auf den Raspy spielt
+* Recherche zu wie man eine Datenbank auf den Raspy sichert
+* informieren DBiver
+
+* Vorbereitung 3.Meeting mit Ringel
+** Anwendungsfalldiagramme/ UseCaseDiagramm erstellen
+**Anwendungsfalldiagramme beschreiben
+** Datenbankschema/ER-Diagramm skizzieren
+** Vision entwerfen
+
+
+Wir warten noch auf den Raspy. Sobald der vorhanden ist, bitte mit der Aufsetzung beginnen. 
 
 == Meetings mit Coach
 
