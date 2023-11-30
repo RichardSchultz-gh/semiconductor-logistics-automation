@@ -12,7 +12,7 @@ Der Zweck dieses Dokuments ist es, die wesentlichen Bedarfe und Funktionalitäte
 Der Zweck dieses Dokuments ist es, die wesentlichen Anforderungen an das System aus Sicht und mit den Begriffen der künftigen Anwender zu beschreiben.
 
 === Gültigkeitsbereich (Scope) (?)
-Dieses Visions-Dokument bezieht sich auf das System "Frau Holle"", das von Team I04 entwickelt wird. Das System wird es Herr Ringel erlauben, Verwaltung von Datensätzen zu Fertigungsabläufen (?) zu nutzen, um damit <Vorteile> zu erreichen / <Aufgabe> zu erleichtern / <Problem> zu lösen.
+Dieses Visions-Dokument bezieht sich auf das System "Frau Holle"", das von Team I04 entwickelt wird. Das System wird es der Halbleiterfabrik (mit Herr Ringel als Vertreter) erlauben, Verwaltung von Datensätzen zu Fertigungsabläufen (?) zu nutzen, um damit <Vorteile> zu erreichen / <Aufgabe> zu erleichtern / <Problem> zu lösen.
 
 === Definitionen, Akronyme und Abkürzungen
 //Verweis passend zum Belegabgabe-Template se1_belegabgabe_t00.adoc
@@ -28,15 +28,16 @@ Siehe <<#glossary, Glossar>>.
 //Erläutern Sie kurz den Hintergrund, in dem das Projekt angesiedelt ist. Welches Problem soll gelöst werden, wie ist es entstanden? Welche Verbesserung wird angestrebt. Achten Sie darauf, eine fachliche (organisatorische, betriebswirtschaftliche) Perspektive einzunehmen.
 
 Es soll eine Neuentwicklung einer Software stattfinden. Dabei sollen die Abläufe der Halbleiterfertigung modelliert werden. Beachtet sollen dabei die Anlagen-Ressourcen, die Fertigungspläne und die Materialverwaltung werden. 
-Was zu Halbleiterfertigung. 
+ 
+Das Ziel der Software ist es die Fertigungsprozesse der Halbleiterherstellung transparent zu machen und so kann die Fabrik die Herstellung ihrer Produkte besser beobachten und bewerten zu können.
 
 === Problem Statement
 //Stellen Sie zusammenfassend das Problem dar, das mit diesem Projekt gelöst werden soll. Das folgende Format kann dazu verwendet werden:
 
 [cols="1,3"]
 |===
-| Das Problem | [beschreiben Sie das Problem] Komplexe Produktionsabläufe
-| betrifft | [die Stakeholder, die vom Problem betroffen sind]
+| Das Problem |irgendwas zu Produkte klein und in Maschinen so kann man die nicht sehen 
+| betrifft | die Halbleiterfabrik (bzw. ihre Mitarbeiter)
 | die Auswirkung davon ist | fehlende Transparz bei der Produktion
 | eine erfolgreiche Lösung wäre | Datenbankanwendung für Halbleiterproduktion.
 |===
@@ -62,8 +63,8 @@ Beispiel:
 
 [cols="1,3"]
 |===
-| Für | [Zielkunde / Nutzer]
-| der / die | [Angabe des Bedarfs oder Chance] erleichterte Übersicht über die Betriebsabläufe
+| Für | die Halbleiterfabrik
+| der / die | Halbleiter herstellen ??? erleichterte Übersicht über die Betriebsabläufe
 | Das Produkt ist eine | Datenbankanwendung
 | Die / Das | [Aussage zum Hauptvorteil / Alleinstellungsmerkmal] 
 | Im Gegensatz zu | [wesentliche Lösungsalternative]
@@ -92,7 +93,7 @@ Beispiel Produkt:
 | Name | Beschreibung | Verantwortlichkeiten
 
 | Herr Ringel
-| [Kurze Beschreibung des Stakeholders.]
+| Vertreter der Halbleiterfabrik
 | [Fassen Sie die wesentlichen Verantwortlichkeiten des Stakeholder mit Bezug auf das zu entwickelnde System kurz zusammen, d.h. ihr besonderen Interessen. Beispiele: Dieser Stakeholder sorgt dafür, dass das System gewartet wird / dass die angezeigten Daten aktuell sind / überwacht den Projektfortschritt / usw.]
 
 | Halbleiterfabrik
@@ -103,7 +104,7 @@ Beispiel Produkt:
 | arbeiten in der Fabrik
 | warten das System und Maschinen
 
-| Wir
+| Projektteam
 | Entwickler
 | entwickeln die Software
 
@@ -118,14 +119,6 @@ Beispiel Produkt:
 | Manuela
 | Coach
 | coacht
-
-| Lehrende der HTWD
-| Nutzer
-| vorführen der Software 
-
-| Studierende der HTWD
-| Nutzer
-| ??? 
 
 | Gesetzgeber
 | gibt Gesetze/ Vorschriften

@@ -52,7 +52,9 @@ Anwesende: Enrico, Hoang, Paul, Marlene
 
 === Teammeeting 3
 
-Anwesende: Yannik, Enrico, Hoang, Nico, Nils, Paul, Marlene
+Anwesende: Hoang, Nico, Nils, Paul, Marlene, Richard
+
+Abwesend: Yannik, Enrico
 
 .Agenda:
 * Vorstellung der Anforderungen
@@ -64,21 +66,26 @@ Anwesende: Yannik, Enrico, Hoang, Nico, Nils, Paul, Marlene
 ** wer muss was tun
 ** was müssen wir Ringel vorstellen am Ende der Iteration
 
-Protokoll:
+*Protokoll:*
+
 Nils: Python ist machbar. Findet ihr TKinter auch für unsere Anwendung gut?
+
 Richard: joa, ich fand die ganz passend.
+
 TKinter wird benutzt.
-Nils: Habe mich mit Hteorie beschäftigt. Wenn wir den Raspy haben, geht das da voran. 
+
+Nils: Habe mich mit Theorie beschäftigt. Wenn wir den Raspy haben, geht das da voran. 
+
 Richard: Der SQL Server DBiver ist gut. 
+
 Nils: Postgre funktioniert auch über die Konsole.
 
-Richard würde morgen bei Ringel den Raspy abholen und sich am WE mit dem Raspy beschäftigen. 
-Richard und Nils ziehen sich ein BS auf den Raspy und erstellen eine Datenbank. 
-Yannik und Nico beschäftigen sich mit dem Architekture und erstellen das ER-Diagramm
-Enrico und Hoang erstellen das UseCase Diagramm &UseCases; Paul wird zum Analyst für Iteration 3
-Marlene: Iterationsplan, Vision, RiskList, UseCases, Essence Navigator -> screenshort machen wie stand ist nach iteration
+*Richard* würde morgen bei Ringel den Raspy abholen und sich am WE mit dem Raspy beschäftigen;
+*Richard und Nils* ziehen sich ein BS auf den Raspy und erstellen eine Datenbank;
+*Yannik und Nico* beschäftigen sich mit dem Architekture und erstellen das ER-Diagramm;
+*Enrico und Hoang* erstellen das UseCase Diagramm & UseCases; *Paul* wird zum Analyst für Iteration 3;
+*Marlene*: Iterationsplan, Vision, RiskList, UseCases, Essence Navigator -> screenshort machen wie stand ist nach iteration
 
-Nachbereitung:
 
 .ergebene Aufgaben:
 * Aufstellung Use Cases
@@ -140,10 +147,9 @@ ergebene Aufgaben:
 
 Anwesende: Enrico, Hoang, Paul, Marlene
 
-
 Protokoll:
+siehe Anforderungen_von_Ringel.adoc
 
-Nachbeitung:
 
 .ergebene Aufgaben:
 * Treffen vor Teammeeting, wo wir das erfahrende Besprechen
