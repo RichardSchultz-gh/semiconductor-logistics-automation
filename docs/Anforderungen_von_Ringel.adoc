@@ -1,4 +1,59 @@
-= Notizen zu allem was Ringel will
+= Anforderungen vom Auftraggeber:
+
+== Inhaltliche Systembeschreibung
+. Produktionssteuerungssystem abbilden
+. Datenbank macht die Fertigung transparent
+. Manuelle Dialogkomponente
+. Andere Systeme verändern Informationen aus der Datenbank
+
+== Anforderungen
+. Lauffähige mit Backup Jobs gesicherte PostgreSQL Datenbank auf dem RaspberryPi
+. GUI Dialog durch den die Daten abgefragt werden
+. Möglichkeit Testdaten zu erzeugen (im csv Format) 
+. Einpflegung großer Datenmengen
+. Tabellarisches Anzeigen von Daten
+. Middleware/Datenbankschnittstellenschicht
+. gängigen Standards wird genügt
+. Betrieb und Zweckerfüllung der Datenbank durch die Soll und Kann Funktionen nachweisen
+
+.Soll Funktionen
+. MoveLot
+.. Softwarekomponente die Lose bewegen kann
+.. Los mit Zustand "fertig" in einer Operation -> wird auf nächste Operation gesetzt + Zustand auf wartend gesetzt <= das geschieht alle 30 sek. (oder 1 Min.)
+.. Wechsel der Produktionsschritte
+. EditLot
+.. Softwarekomponente die Lose simuliert bearbeiten kann
+. StartLot
+.. Softwarekomponente die Lose starten kann
+.. jede Woche werden n viele Lose von einem Produkt gestartet, also deren Produktion wird gestartet
+. verschiedere Nutzerrollen für die Datenbank (Nutzer + Admin)
+
+.Kann Funktionen
+. FinishedLot
+.. Softwarekomponente die Lose in den finalen Zustand setzt
+.. Ende der Produktion ist erreicht, wenn der letzte Prouktionsschritt abgeschlossen wurde
+
+.Produktionsablauf
+. fertige Liziumscheiben kommen in der Fabrik an
+. Zusammenfassen der Liziumscheiben zu Losen
+. Säuberung der Lose
+. Schleife an Schritten die die Lose durchlaufen 
+.. Fotolack aufbringen
+.. Fotolack belichten
+.. mit Säure auswaschen
+.. beschichten
+.. Fotolack abmachen
+. Verdrahtung durch das auftragen von Metall
+. Kontaktkugeln aus Zinn anbringen
+
+-> 30-80 Tage Prozess
+
+-> Man weiß nach ca. 50% der Zeit, ob die Lose überhaupt funktionsfähig sind
+
+
+== Notizen aus Meetings mit Ringel
+
+hier sind genauere Notizen zu dem was Ringel gesagt hat
 
 == Marlenes Mitschriften Meeting 2 mit Ringel
 
@@ -40,6 +95,7 @@ Anlagenressourcen:
 "EMS-Entitäten" die nur Verweise auf Maschinen haben aber sonst in unserem Projekt außen von gelassen werden sollen
 
 Fertigungspläne (WorkFolw, ProdFlow, Prozesszeiten)-> stellt Ringel zur Verfügung, wenn wir ihm das Datenbankschema (inkl. den Beziehungen, Constrains) vorlegen
+
 
 === folgende Anforderungen sollen umgesetzt werden:
 . Lauffähige mit Backup gesicherte PostgreSQL Datenbank auf dem RaspberryPi 
@@ -232,3 +288,5 @@ Produktionsschritte:
 -> Funktion MoveLot bringt uns durch die Produktionsschritte 
 
 Stakeholder ist die Halbleiterfabrik
+
+
