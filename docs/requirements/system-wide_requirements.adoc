@@ -18,6 +18,57 @@ NOTE: Die funktionalen Anforderungen, die sich aus der Interaktion von Nutzern m
 == Systemweite funktionale Anforderungen
 //Angabe von system-weiten funktionalen Anforderungen, die nicht als Use Cases ausgedrückt werden können. Beispiele sind Drucken, Berichte, Authentifizierung, Änderungsverfolgung (Auditing), zeitgesteuerte Aktivitäten (Scheduling), Sicherheit / Maßnahmen zum Datenschutz
 
+.Inhaltliche Systembeschreibung
+. Produktionssteuerungssystem abbilden
+. Datenbank macht die Fertigung transparent
+. Manuelle Dialogkomponente
+. Andere Systeme verändern Informationen aus der Datenbank
+
+.Anforderungen
+. Lauffähige mit Backup Jobs gesicherte PostgreSQL Datenbank auf dem RaspberryPi
+. GUI Dialog durch den die Daten abgefragt werden
+. Möglichkeit Testdaten zu erzeugen (im csv Format) 
+. Einpflegung großer Datenmengen
+. Tabellarisches Anzeigen von Daten
+. Middleware/Datenbankschnittstellenschicht
+. gängigen Standards wird genügt
+. Betrieb und Zweckerfüllung der Datenbank durch die Soll und Kann Funktionen nachweisen
+
+.Soll Funktionen
+. MoveLot
+.. Softwarekomponente die Lose bewegen kann
+.. Los mit Zustand "fertig" in einer Operation -> wird auf nächste Operation gesetzt + Zustand auf wartend gesetzt <= das geschieht alle 30 sek. (oder 1 Min.)
+.. Wechsel der Produktionsschritte
+. EditLot
+.. Softwarekomponente die Lose simuliert bearbeiten kann
+. StartLot
+.. Softwarekomponente die Lose starten kann
+.. jede Woche werden n viele Lose von einem Produkt gestartet, also deren Produktion wird gestartet
+. verschiedere Nutzerrollen für die Datenbank (Nutzer + Admin)
+
+.Kann Funktionen
+. FinishedLot
+.. Softwarekomponente die Lose in den finalen Zustand setzt
+.. Ende der Produktion ist erreicht, wenn der letzte Prouktionsschritt abgeschlossen wurde
+
+.Produktionsablauf
+. fertige Liziumscheiben kommen in der Fabrik an
+. Zusammenfassen der Liziumscheiben zu Losen
+. Säuberung der Lose
+. Schleife an Schritten die die Lose durchlaufen 
+.. Fotolack aufbringen
+.. Fotolack belichten
+.. mit Säure auswaschen
+.. beschichten
+.. Fotolack abmachen
+. Verdrahtung durch das auftragen von Metall
+. Kontaktkugeln aus Zinn anbringen
+
+-> 30-80 Tage Prozess
+
+-> Man weiß nach ca. 50% der Zeit, ob die Lose überhaupt funktionsfähig sind
+
+
 
 == Qualitätsanforderungen für das Gesamtsystem
 //Qualitätsanforderungen repräsentieren das "URPS" im FURPS+ zu Klassifikation von Anforderungen
