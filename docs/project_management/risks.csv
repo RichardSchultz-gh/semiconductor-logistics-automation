@@ -1,6 +1,6 @@
 ﻿ID;Datum;Name;Beschreibung;Typ;IMP;PRB;MAG;Owner;Gegenmaßnahme
 1;20.11.2023;Teammitglied fällt kurzweilig aus;Mitglied des Teams kann  zeitweise nicht mehr am Projekt teilnehmen z.B. wegen Krankheit;ressource;3;70%;2,1;-;Backup-Rollen nutzen und Know-How zwischen diesen Personen kontinuierlich teilen
-2;20.11.2023;Teammitglied fällt endgültig aus;Mitglied des Teams ist kein Teil des Teams mehr z.B. wegen Studiengangswechsel, -abbruch;resource;4;10%;0,4;-;Backup-Rollen nutzen und Know-How zwischen diesen Personen kontinuierlich teilen
+2;20.11.2023;Teammitglied fällt endgültig aus;Mitglied des Teams ist kein Teil des Teams mehr z.B. wegen Studiengangswechsel, -abbruch;ressource;4;10%;0,4;-;Backup-Rollen nutzen und Know-How zwischen diesen Personen kontinuierlich teilen
 3;20.11.2023;Meeting fällt aus;ein Meeting kann nicht stattfinden z.B. durch Corona, Schließung der Räumlichkeiten;geschäftlich;1;20%;0,2;-;Andere Möglichkeiten finden Meetings zu halten wie Discord
 4;20.11.2023;Auftraggeber fällt aus;Herr Ringel kann nicht mehr am Projekt teilnehmen z.B. wegen Krankheit oder Kündigung;geschäftlich & ressource;-;-;-;-;-
 5;20.11.2023;Kommunikation;fehlernde oder missverständliche Kommunikation intern;geschäftlich;4;60%;2,4;-;-

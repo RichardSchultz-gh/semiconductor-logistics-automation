@@ -36,7 +36,7 @@ Das Ziel der Software ist es die Fertigungsprozesse der Halbleiterherstellung tr
 
 [cols="1,3"]
 |===
-| Das Problem |irgendwas zu Produkte klein und in Maschinen so kann man die nicht sehen 
+| Das Problem |Komplexität der Halbleiterfertigung 
 | betrifft | die Halbleiterfabrik (bzw. ihre Mitarbeiter)
 | die Auswirkung davon ist | fehlende Transparz bei der Produktion
 | eine erfolgreiche Lösung wäre | Datenbankanwendung für Halbleiterproduktion.
@@ -64,9 +64,9 @@ Beispiel:
 [cols="1,3"]
 |===
 | Für | die Halbleiterfabrik
-| der / die | Halbleiter herstellen ??? erleichterte Übersicht über die Betriebsabläufe
+| der / die | Halbleiter herstellen und erleichterte Übersicht über die Betriebsabläufe möchte
 | Das Produkt ist eine | Datenbankanwendung
-| Die / Das | [Aussage zum Hauptvorteil / Alleinstellungsmerkmal] 
+| Die / Das | den Mitarbeitern die Prozessschritte visualisiert.
 | Im Gegensatz zu | [wesentliche Lösungsalternative]
 | Unser Produkt | [Aussage zum Hauptunterschied]
 |===
@@ -92,8 +92,8 @@ Beispiel Produkt:
 |===
 | Name | Beschreibung | Verantwortlichkeiten
 
-| Herr Ringel
-| Vertreter der Halbleiterfabrik
+| Vertreter der Halbleiterfabrik (Herr Ringel)
+| vertritt die Halbleiterfabrik im Rahmen des Auftrags
 | [Fassen Sie die wesentlichen Verantwortlichkeiten des Stakeholder mit Bezug auf das zu entwickelnde System kurz zusammen, d.h. ihr besonderen Interessen. Beispiele: Dieser Stakeholder sorgt dafür, dass das System gewartet wird / dass die angezeigten Daten aktuell sind / überwacht den Projektfortschritt / usw.]
 
 | Halbleiterfabrik
@@ -112,13 +112,13 @@ Beispiel Produkt:
 | Entwickler
 | entwickeln die Software weiter
 
-| Professor Anke
+| Modulprofessor (Anke)
 | Kontrolleinheit
 | kontrolliert die Entwicklung
 
-| Manuela
 | Coach
 | coacht
+| kontrolliert die Entwicklung
 
 | Gesetzgeber
 | gibt Gesetze/ Vorschriften
@@ -130,19 +130,36 @@ Beispiel Produkt:
 Beschreiben Sie die Arbeitsumgebung des Nutzers. Hier sind einige Anregungen:
 
 //Zutreffendes angeben, nicht zutreffendes streichen oder auskommentieren
-. Anzahl der Personen, die an der Erfüllung der Aufgabe beteiligt sind. Ändert sich das?-> Die WIngs sind nur Teil der Entwicklung bis zum Januar 2024. Sonst bleiben die Akteure bestehen.
+. Anzahl der Personen, die an der Erfüllung der Aufgabe beteiligt sind. Ändert sich das?-> Die Mitarbeiterzahl, die mit der Software arbeitet, wird voraussichtlich konstant bleiben. 
 
-. Wie lange dauert die Bearbeitung der Aufgabe? Wie viel Zeit wird für jeden Arbeitsschritt benötigt? Ändert sich das?
+. Wie lange dauert die Bearbeitung der Aufgabe? Wie viel Zeit wird für jeden Arbeitsschritt benötigt? Ändert sich das? -> Die Gesamte Produktion dauert 30-80 Tage. Die Zeit der einzelnen Arbeitsschritte ist unbekannt.
 
-. Gibt es besondere Umgebungsbedingungen, z.B. mobil, offline, Außeneinsatz, Touchbedienung, Nutzung durch seh- oder hörbeeinträchtigte Personen?
+. Gibt es besondere Umgebungsbedingungen, z.B. mobil, offline, Außeneinsatz, Touchbedienung, Nutzung durch seh- oder hörbeeinträchtigte Personen? -> bisher nicht bekannt
 
 . Welche Systemplattformen werden heute eingesetzt? Welche sind es ggf. zukünftig?
 -> bisher keine Plattform. 
+
 . Welche anderen Anwendungen sind im Einsatz? Muss ihre Anwendung mit diesen integriert werden?
 -> bisher keine
 
 Hier können zudem bei Bedarf Teile des Unternehmensmodells (Prozesse, Organigramme, IT-Landschaft, ...) eingefügt werden, um die beteiligten Aufgaben und Rollen zu skizzieren.
 
+.Produktionsablauf
+. fertige Liziumscheiben kommen in der Fabrik an
+. Zusammenfassen der Liziumscheiben zu Losen
+. Säuberung der Lose
+. Schleife an Schritten die die Lose durchlaufen 
+.. Fotolack aufbringen
+.. Fotolack belichten
+.. mit Säure auswaschen
+.. beschichten
+.. Fotolack abmachen
+. Verdrahtung durch das auftragen von Metall
+. Kontaktkugeln aus Zinn anbringen
+
+-> 30-80 Tage Prozess
+
+-> Man weiß nach ca. 50% der Zeit, ob die Lose überhaupt funktionsfähig sind
 
 == Produkt-/Lösungsüberblick
 
@@ -162,9 +179,10 @@ Hinweise:
 
 . Führen Sie die wesentlichen anzuwendenden Standards, Hardware oder andere Plattformanforderungen, Leistungsanforderungen und Umgebungsanforderungen auf
 -> RaspbarryPi, Python 3.12, PostgreSQL, tKinter - Bibliothek (?), Linux
+
 . Definieren Sie grob die Qualitätsanforderungen für Leistung, Robustheit, Ausfalltoleranz, Benutzbarkeit und ähnliche Merkmale, die nicht von den genannten Features erfasst werden.
 
-. Notieren Sie alle Entwurfseinschränkungen, externe Einschränkungen, Annahmen oder andere Abhängigkeiten, die wenn Sie geändert werden, das Visions-Dokument beeinflussen. Ein Beispiel wäre die Annahme, dass ein bestimmtes Betriebssystem für die vom System erforderliche Hardware verfügbar ist. Ist das Betriebssystem nicht verfügbar, muss das Visions-Dokument angepasst werden.
+. Notieren Sie alle Entwurfseinschränkungen, externe Einschränkungen, Annahmen oder andere Abhängigkeiten, die wenn Sie geändert werden, das Visions-Dokument beeinflussen. Ein Beispiel wäre die Annahme, dass ein bestimmtes Betriebssystem für die vom System erforderliche Hardware verfügbar ist. Ist das Betriebssystem nicht verfügbar, muss das Visions-Dokument angepasst werden. -> Raspy schränkt das Benutzte Betriebssystem ein. Stand aktuell ist, dass wir Raspian nutzen und nicht ein uns bekanntes Betriebssystem
 
 . Definieren Sie alle Dokumentationsanforderugen, inkl. Benutzerhandbücher, Onlinehilfe, Installations-, Kennzeichnungs- und Auslieferungsanforderungen-
 
