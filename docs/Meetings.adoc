@@ -117,6 +117,7 @@ Abwesende: Nils
 * gibt es Treffen in den Unterteams?
 * sind allen die Aufgaben bewusst?
 * Fragen?
+* bitte im Repository arbeiten
 
 == Meetings mit Coach
 
