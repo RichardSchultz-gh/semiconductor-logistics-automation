@@ -14,13 +14,13 @@ In diesem Dokument werden die wesentlichen Begriffe aus dem Anwendungsgebiet (Fa
 | Begriff | Definition und Erläuterung | Synonyme
 //| Kommissionierung | Bereitstellung von Waren aus einem Lager entsprechend eines Kundenauftrags | (keine)
 | Los aka Lot | Zusammenfassung mehrerer Werkstücke (hier Liziumscheiden) | xx
-| Material | xx | xx
-| Maschine | xx | xx
-| Fertigungsprozess | xx | xx
-| Produkt | xx | xx
-| Fertigungsflüsse | xx | xx
+| Material | Stoffe die zur Herstellung benötigt werden | xx
+| Maschine | Gerät zur Herstellung des Produkts | xx
+| Fertigungsprozess | standardisierter Arbeitsablauf zur Produktherstellung | Produktionsprozess, Fertigungsablauf
+| Produkt | Ergebnis der Produktion | xx
+| Fertigungsflüsse | Arbeitsfortschritt und Bewegung im Fertigungsprozess | xx
 | Liziumscheiben | xx | xx
-| Transistoren | xx | xx
+| Transistoren | elektronisches Halbleiterbauelement, steuert niedrige elektrische Spannungen und Ströme | xx
 | xx | xx | xx
 | Halbleiter | xx | xx
 |===

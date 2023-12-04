@@ -104,6 +104,20 @@ Nils: Postgre funktioniert auch über die Konsole.
 
 Wir warten noch auf den Raspy. Sobald der vorhanden ist, bitte mit der Aufsetzung beginnen. 
 
+=== Teammeeting 4
+
+Anwesende: Enrico, Hoang, Yannik (online), Nico, Richard, Paul, Marlene
+
+Abwesende: Nils
+
+.Agenda:
+* Updates über den Stand der Dinge
+** vor allem Update zum Raspy
+** UseCases
+* gibt es Treffen in den Unterteams?
+* sind allen die Aufgaben bewusst?
+* Fragen?
+
 == Meetings mit Coach
 
 === Meeting 1
