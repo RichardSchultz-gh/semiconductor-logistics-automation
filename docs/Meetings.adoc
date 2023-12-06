@@ -166,6 +166,16 @@ Abwesende: Nils
 
 === Meeting 2
 
+Anwesende:
+
+Abwesende:
+
+Protokoll:
+
+
+.ergebene Aufgaben:
+* 
+
 == Meetings mit Ringel
 === Meeting 1
 Anwesende: alle
@@ -191,3 +201,25 @@ siehe Anforderungen_von_Ringel.adoc
 .Weitere Tipps von Ringel:
 * Meetings sind zur besprechung von ergebnissen und nicht zur diskursion
 * Agenda min 24h vorher veröffentlcihen, damit sich die Leute einlesen können und Fragen und Anmerkungen schon mal überlegen
+
+=== Meeting 3 
+
+Anwesende: Enrico, Hoang, Paul
+
+Protokoll:
+
+
+
+.ergebene Aufgaben:
+* 
+
+
+=== Meeting 4
+
+Anwesende: 
+
+Protokoll:
+
+
+.ergebene Aufgaben:
+* 
