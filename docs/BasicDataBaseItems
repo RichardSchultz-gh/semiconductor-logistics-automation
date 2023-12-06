@@ -1,5 +1,5 @@
-Maschine: Tool
 ToolID
+Maschine: Tool
 Group
 Type    (z.B. Messmaschine)
 Owner   
@@ -56,7 +56,7 @@ Enabled     Darf das damit was tun?
 State
 Note
 -> Maschine, Mitarbeiter, Arbeitsmaterialien, Werkzeuge
-
 Anlagenressourcen:
+
 "EMS-Entitäten" die nur Verweise auf Maschinen haben 
 aber sonst in unserem Projekt außen von gelassen werden sollen

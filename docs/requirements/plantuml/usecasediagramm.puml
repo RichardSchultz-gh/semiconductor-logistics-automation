@@ -1,0 +1,14 @@
+@startuml
+
+left to right direction
+
+usecase (Los starten) as UC01
+usecase (Los bewegen) as UC02
+usecase (Los bearbeiten) as UC03
+
+actor Mitarbeiter as m
+actor Timer as t
+actor Leiter as l
+
+
+@enduml

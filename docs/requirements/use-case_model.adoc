@@ -24,10 +24,18 @@ include::../_includes/default-attributes.inc.adoc[]
 * *UC10*: Statistik aufstellen
 * ...
 
+
 //die Liste muss noch nach Prioritäten sortiert werden
 
 == Use Case Diagramm
 // ...
+
+.UseCaseDiagramm 
+[plantuml, "{diagramsdir}/syntax-example1", svg]  
+....
+include::{plantumlsdir}/usecasediagramm.puml[]
+....
+
 
 //Fügen Sie nachfolgend alle detaillierten Use-Cases per Include ein.
 //Dafür sollten Sie pro Use-Case eine Datei anlegen, die auf dem use_case_01.inc.adoc Template basiert.

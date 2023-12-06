@@ -49,6 +49,7 @@ _alternativ:_ Die folgenden Aufgaben werden in dieser Iteration bearbeitet:
 | Aufstellen ER-Diagramm | 5 | 4 | todo | x | 3 | Nico + Yannik | 0 | 3
 | Klärung wofür Architekturnotebook | 4 | 1 | todo | x | 3 | Nico + Yannik | 0 | 1
 | UseCases aufstellen | 4 | 3 | in progress | x | 3 | Analysten + Marlene | 1 | 2
+| Nachfragen bei Ringel bzgl. der UseCases | 5 | 2 | done | x | 3 | Enrico, Hoang, Paul | 0.5 | 0
 | UseCase Diagramm erstellen | 3 | 2 | todo | x | 3 | Analysten | 0 | 1
 | allgemeine Projektplanung | 4 | 4 |in progress | x | all | Marlene | - | -
 
@@ -72,9 +73,8 @@ _alternativ:_ Die folgenden Aufgaben werden in dieser Iteration bearbeitet:
 
 Beispiele:
 
-* 97% der Testfälle auf Systemebene sind erfolgreich.
-* Gemeinsame Inspektion des Iterations-Ergebnisses (Inkrement) mit den Abteilungen X und Y ergibt positive Rückmeldung.
-* Technische Präsentation / Demo erhält positive Rückmeldungen.
+* Beim Erstellen der UseCases fiehl den Analysten auf, dass sie noch einige essentielle Fragen haben ohne die eine weiterarbeit nicht möglich wäre -> Lösung war ein weiteres kurzes Treffen mit dem Auftraggeber
+* 
 
 
 == Assessment

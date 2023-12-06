@@ -113,10 +113,10 @@ Abwesende: Nils
 .Agenda:
 * Updates über den Stand der Dinge
 ** vor allem Update zum Raspy
-** UseCases
 * gibt es Treffen in den Unterteams?
-* sind allen die Aufgaben bewusst?
+** UseCases
 * Fragen?
+* sind allen die Aufgaben bewusst?
 * bitte im Repository arbeiten
 
 == Meetings mit Coach
