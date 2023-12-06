@@ -1,0 +1,32 @@
+
+To-dos:
+-	Prozess- und Maschinenzustände modellieren
+-	Vision fertigstellen
+-	Wireframe für die GUI erstellen
+-	Erster Architekturentwurf für Middleware (mittelfristig)
+Allgemeine Fragen:
+Inwiefern ist die Modellierung der Tabelle „MES-Entitäten“ im ER-Diagramm notwendig?
+-	Tabelle hat vermutlich keine Beziehung zu anderen Tabellen
+-	Dient als Container für alle wesentlichen Entitäten (z.B. Maschinen oder Werkstücke)
+-	z.B. ist ein Teil der Mitarbeiter gerade zu einer Arbeitsschutzschulung und damit nicht arbeitsfähig -> Abfrage der verfügbaren Mitarbeiter über die MES-Tabelle
+Unterschied Flow und Route?
+-	Route=Fertigungsplan
+-	Flow=Module des Fertigungsplans
+-	Eine Route enthält mehrere Flows
+Ergänzung USE-Cases:
+-	Akteure sollen zwischen reinen Anwendern (Datenansicht) und z.B. einem Fertigungsleiter unterschieden werden (Datenänderung möglich)
+-	Backups erstellen und (viele) Daten einpflegen als weiterer USE-Case
+Ergänzung zu wesentlichen Funktionalitäten:
+Allgemein:
+-	Operationen auf Losen sollen zunächst manuell implementiert werden
+-	Später werden manuelle Prozesse durch automatisierte Skripte ersetzt
+Los starten:
+-	Übergabe von wesentlichen Parametern, z.B. Produkt und Menge
+-	Auslesen von Auftragsdaten aus einem ERP-System muss jetzt noch nicht erfolgen
+-	Berechnung der Anzahl an Losen
+Los bewegen:
+-	Fragt tatsächlich nur ab, welche Lose fertig sind und setzt des Los, gemäß Fertigungsplan, auf die nächste Maschine (Zustand wartend)
+Los bearbeiten:
+-	Ev. weitere Logik erforderlich, welches wartende Lose als nächstes bearbeitet wird -> z.B. mithilfe von Prioritätenklassen oder zeitl. Dringlichkeit. Zunächst FiFo-Prinzip ausreichend (First in first out)
+-	Grober Ablauf: Auswahl des Loses -> Zustandsänderung von „wartend“ auf „in Bearbeitung“  -> nach bestimmter Zeit werden die Lose auf den Zustand „fertig“ gesetzt
+-	Ein geringer Prozentsatz der Lose landet als Ausschuss in einem Fehlerzustand
