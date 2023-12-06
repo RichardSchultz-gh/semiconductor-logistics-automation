@@ -28,7 +28,7 @@ include::../_includes/default-attributes.inc.adoc[]
 //die Liste muss noch nach Prioritäten sortiert werden
 
 == Use Case Diagramm
-// ...
+// das hier ist ein erstes Diagramm um es auszuprobieren. Alles daran könnt ihr ändern
 
 .UseCaseDiagramm 
 [plantuml, "{diagramsdir}/syntax-example1", svg]  
