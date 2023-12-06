@@ -119,6 +119,25 @@ Abwesende: Nils
 * sind allen die Aufgaben bewusst?
 * bitte im Repository arbeiten
 
+.Protokoll:
+* Entwickler:
+** BS ist auf Raspy gespielt
+** Datenbank ist auf Raspy
+** beides läuft
+*** Entwickler testen das ganze jetzt aus
+*** Erstellen einige Versuchs Tabellen und lassen diese über Python ausgeben
+* Analysten: 
+** Erste Version des UseCase Diagramm von Hoang
+** es bestehen Unklarheiten bzgl. der UseCases, die eine Weiterarbeit verhindert
+*** Treffen mit Ringel zum klären der Fragen
+*** danach aufstellen der UseCases (+ diagramm)
+* Architekten:
+** nicht viel passiert
+** haben fragen bzgl. der Enitäten, diese klären die Anaylsten im Treffen mit Ringel
+*** mit den Antworten erstellen die Architekten dann das ER-Diagramm
+* Alle
+*** schauen sich die Vision an und kommentieren
+
 == Meetings mit Coach
 
 === Meeting 1
