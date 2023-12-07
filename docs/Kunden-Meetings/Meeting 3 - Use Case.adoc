@@ -3,9 +3,9 @@
 *To-dos:*
 
 - Prozess- und Maschinenzustände modellieren
--	Vision fertigstellen
+- Vision fertigstellen
 - Wireframe für die GUI erstellen
--	Erster Architekturentwurf für Middleware (mittelfristig)
+- Erster Architekturentwurf für Middleware (mittelfristig)
 
 *Allgemeine Fragen:*
 

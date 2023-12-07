@@ -24,15 +24,8 @@ include::../_includes/default-attributes.inc.adoc[]
 * In Betriebnahme des RaspberryPi
 * ER-Diagramm erstellen
 * UseCases mit Diagramm aufstellen
-* Projekt- und Iterationsplanung inkl. Vision, Risikoliste und Essence Navigator
-* Vorstellen des Standes bei Ringel
-
-//Beispiele:
-
-//* Beheben der Usability-Probleme, die von Abteilung X berichtet wurden
-//* Ausliefern der Hauptszenarios, die die Integration mit System Y zeigen
-//* Present a technical demonstration (demo).
-
+* Projekt- und Iterationsplanung
+* Vorstellen des aktuellen Standes bei Ringel
 
 == Aufgabenzuordnung
 //Dieser Abschnitt sollte einen Verweis auf die Work Items List enthalten, die die für diese Iteration vorgesehenen Aufgaben dokumentiert sowie die Zuordnung dieser Aufgaben zu Teammitgliedern. Alternativ können die Aufgaben für die Iteration und die Zuordnung zu Teammitgliedern in nachfolgender Tabelle dokumentiert werden - je nach dem, was einfacher für die Projektbeteiligten einfacher zu finden ist.
@@ -71,10 +64,9 @@ _alternativ:_ Die folgenden Aufgaben werden in dieser Iteration bearbeitet:
 == Bewertungskriterien
 //Eine kurze Beschreibung, wie Erfüllung die o.g. Ziele bewertet werden sollen.
 
-Beispiele:
 
-* Beim Erstellen der UseCases fiehl den Analysten auf, dass sie noch einige essentielle Fragen haben ohne die eine weiterarbeit nicht möglich wäre -> Lösung war ein weiteres kurzes Treffen mit dem Auftraggeber
 * 
+* i
 
 
 == Assessment
@@ -92,12 +84,24 @@ Beispiele:
 * Beurteilung im Vergleich zu den Zielen
 //Dokumentieren Sie, ob die angestrebten Ziele des Iterationsplans erreicht wurden.
 
-* Geplante vs. erledigte Aufgaben
+*Geplante vs. erledigte Aufgaben*
 //Zusammenfassung, ob alle für die Iteration geplanten Aufgaben bearbeitet wurden und welche Aufgaben verschoben oder hinzugefügt wurden.
 
-* Beurteilung im Vergleich zu den Bewertungskriterien
+*Beurteilung im Vergleich zu den Bewertungskriterien*
 //Document whether you met the evaluation criteria as specified in the Iteration Plan.
 //Geben Sie an, ob Sie die o.g. Bewertungskriterien erfüllt haben. Das kann z.B. folgende Informationen enthalten: “Demo for Department X was well-received, with some concerns raised around usability,” or “495 test cases were automated with a 98% pass rate. 9 test cases were deferred because the corresponding Work Items were postponed.”
 
-* Andere Belange und Abweichungen
+*Andere Belange und Abweichungen*
 //Führen Sie weitere Themen auf, für die eine Bewertung durchgeführt wurde. Beispiele sind Finanzen, Zeitabweichungen oder Feedback von Stakeholdern, die nicht bereits an anderer Stelle dokumentiert wurden.
+
+Beim Erstellen der UseCases fiehl den Analysten auf, dass sie noch einige essentielle Fragen haben ohne die eine weiterarbeit nicht möglich wäre
+
+-> Lösung war ein weiteres kurzes Treffen mit dem Auftraggeber 
+ 
+-> es konnten alle Fragen geklärt werden. 
+
+Daraus holen wir die erkenntnis, dass man bei Fragen, vor allem den großen, direkt sich mit dem Auftragsgeber zusammensetzen muss, um diese zu klären. WIr konnten es verhindern, dass unsere Analysen die Iteration im Dunkeln tappen und erst zum Ende der Iteration zum geplanten Termin mit Ringel ihre Fragen klären konnten. 
+
+== Alphas
+
+.Iteration 3 Alphas

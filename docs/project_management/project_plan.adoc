@@ -27,7 +27,6 @@ In diesem Projektplan werden dafür die Teammitglieder und Praktiken vorgestellt
 
 Enrico und Hoang studieren Wirtschaftsingieneurswesen im 5. Semester und begleiten das Projekt daher nur für ein Semester. Die restlichen Teammitglieder sind Wirtschaftsinformatiker (Yannik und Nico) und Informatiker (Nils, Richard, Paul und Marlene). 
 
-
 === Verantwortlichkeiten
 
 |===
