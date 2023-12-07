@@ -9,6 +9,10 @@ include::../_includes/default-attributes.inc.adoc[]
 // ...
 
 
+.Akteure:
+. Mitarbeiter der Fabrik
+. ?
+
 == Identifizierte Use Cases
 // Liste aller identifizierten Use Cases (priorisiert-> wir später gemacht)
 //erste Ideen von Marlene vor dem 2. Meeting mit Ringel
@@ -24,11 +28,11 @@ include::../_includes/default-attributes.inc.adoc[]
 * *UC10*: Statistik aufstellen
 * ...
 
-
+//Überlegen wie man Use Cases vlt mit includes zusammenfassen kann
 //die Liste muss noch nach Prioritäten sortiert werden
 
 == Use Case Diagramm
-// das hier ist ein erstes Diagramm um es auszuprobieren. Alles daran könnt ihr ändern
+// Marlene: hier ist ein erstes Diagramm um es auszuprobieren. Alles daran könnt ihr ändern -> Änderungen in der Datei: usecasediagramm.puml
 
 .UseCaseDiagramm 
 [plantuml, "{diagramsdir}/syntax-example1", svg]  
