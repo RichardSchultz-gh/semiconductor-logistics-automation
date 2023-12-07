@@ -10,8 +10,9 @@ include::../_includes/default-attributes.inc.adoc[]
 
 
 .Akteure:
-. Mitarbeiter der Fabrik
-. ?
+. Mitarbeiter an Maschine (nur Einsehen)
+. Abteilungsleiter (Einsehen+Änderungen vornehmen)
+. Timer (Softwarekomponenten)
 
 == Identifizierte Use Cases
 // Liste aller identifizierten Use Cases (priorisiert-> wir später gemacht)
@@ -26,7 +27,8 @@ include::../_includes/default-attributes.inc.adoc[]
 * *UC04*: Stammdaten anzeigen
 * *UC05*: Los anzeigen
 * *UC10*: Statistik aufstellen
-* ...
+* *UC11*: größere Datenmenge importieren
+* *UC12*: Datenbankbackup erstellen (optional)
 
 //Überlegen wie man Use Cases vlt mit includes zusammenfassen kann
 //die Liste muss noch nach Prioritäten sortiert werden
