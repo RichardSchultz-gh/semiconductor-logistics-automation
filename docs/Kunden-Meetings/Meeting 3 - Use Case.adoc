@@ -1,4 +1,5 @@
 == Mitschrift Meeting 3 - Use Case 
+:imagesdir: images
 
 *To-dos:*
 
@@ -38,10 +39,16 @@ _Unterschied Flow und Route?_
 
 . *Los bewegen:*
 
--	Fragt tatsächlich nur ab, welche Lose fertig sind und setzt des Los, gemäß Fertigungsplan, auf die nächste Maschine (Zustand wartend)
+-	Fragt tatsächlich nur ab, welche Lose fertig sind und setzt des Los, gemäß Fertigungsplan, auf die nächste Maschine (Zustand wartend) 
+-99% automatisch, manuell nur wenn experimentell in anderen Arbeitsschritt eingefügt werden soll (Softwarekomponente guckt nach Status)
 
 . *Los bearbeiten:*
 
--	Ev. weitere Logik erforderlich, welches wartende Lose als nächstes bearbeitet wird -> z.B. mithilfe von Prioritätenklassen oder zeitl. Dringlichkeit. Zunächst FiFo-Prinzip ausreichend (First in first out)
+-	Ev. weitere Logik erforderlich, welches wartende Lose als nächstes bearbeitet wird -> z.B. mithilfe von Prioritätenklassen oder zeitl. Dringlichkeit. Zunächst FiFo-Prinzip ausreichend (First in first out) 
+--> wird später durch Prioritätsformel berechnet
 -	Grober Ablauf: Auswahl des Loses -> Zustandsänderung von „wartend“ auf „in Bearbeitung“  -> nach bestimmter Zeit werden die Lose auf den Zustand „fertig“ gesetzt
 -	Ein geringer Prozentsatz der Lose landet als Ausschuss in einem Fehlerzustand
+
+pic1
+images/pic1
+
