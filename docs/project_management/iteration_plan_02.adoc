@@ -65,7 +65,7 @@ include::github_names.adoc[]
 
 * grobe Anforderungen wurden deutlich im ganzen Team
 * Technische Aspekte wurden gut erforscht
-* ...
+* die Aufstellung der Use Cases konnte noch nicht durchgeführt werden -> nächste Iteration
 
 
 == Assessment
@@ -83,8 +83,8 @@ include::github_names.adoc[]
 | Assessment Ziel | Verdeutlichung der Anforderungen
 
 | Assessment Datum | 30.11.
-| Teilnehmer | 
-| Projektstatus	| grün
+| Teilnehmer | Analysten
+| Projektstatus	| gelb
 |===
 
 

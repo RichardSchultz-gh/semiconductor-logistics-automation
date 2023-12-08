@@ -13,7 +13,7 @@ include::../_includes/default-attributes.inc.adoc[]
 | Meilenstein | Datum
 
 | Beginn der Iteration | 04.12.2023
-| Erste Vorstellung beim Auftragsgeber | 14.12.2023
+| Erste Vorstellung der Ergebnisse beim Auftragsgeber | 14.12.2023
 | Ende der Iteration | 15.12.2023
 |===
 
@@ -24,6 +24,7 @@ include::../_includes/default-attributes.inc.adoc[]
 * In Betriebnahme des RaspberryPi
 * ER-Diagramm erstellen
 * UseCases mit Diagramm aufstellen
+* Vision finalisieren
 * Projekt- und Iterationsplanung
 * Vorstellen des aktuellen Standes bei Ringel
 
@@ -32,22 +33,14 @@ include::../_includes/default-attributes.inc.adoc[]
 
 Die in dieser Iteration geplanten Aufgaben sind in der Work Items List dargestellt (hier Verweis einfügen).
 
-_alternativ:_ Die folgenden Aufgaben werden in dieser Iteration bearbeitet:
-[%header, cols="3,1,1,1,2,1,1,1,1"]
-|===
-| Aufgabe bzw. Beschreibung | Priorität | Schätzung der Größe (Punkte) |Status | Referenzen | geplante Iteration | Zugewiesen (Name) | Gearbeite Stunden | Schätzung der verbleibenden Stunden
+Stand: 08.12.2023
 
-| Betriebssystem auf Raspy einrichten | 5 | 4 | todo | x | 3 | Richard + Nils | 0 | 2
-| Erstellung einer Datenbank auf dem Raspy | 4 | 4 | todo | x | 3 | Richard + Nils | 0 | 3
-| Aufstellen ER-Diagramm | 5 | 4 | todo | x | 3 | Nico + Yannik | 0 | 3
-| Klärung wofür Architekturnotebook | 4 | 1 | todo | x | 3 | Nico + Yannik | 0 | 1
-| UseCases aufstellen | 4 | 3 | in progress | x | 3 | Analysten + Marlene | 1 | 2
-| Nachfragen bei Ringel bzgl. der UseCases | 5 | 2 | done | x | 3 | Enrico, Hoang, Paul | 0.5 | 0
-| UseCase Diagramm erstellen | 3 | 2 | todo | x | 3 | Analysten | 0 | 1
-| allgemeine Projektplanung | 4 | 4 |in progress | x | all | Marlene | - | -
+image::Iteration3_issues_nichtfinal.png[]
+
+include::github_names.adoc[]
 
 
-|===
+
 
 
 == Probleme (optional)
@@ -57,7 +50,7 @@ _alternativ:_ Die folgenden Aufgaben werden in dieser Iteration bearbeitet:
 |===
 | Problem | Status | Notizen
 
-| x | x | x
+| Wie sollen die Use Cases aussehen? | solved | Es war unklar wie die Use Cases bzw. die Funktionen dahinter funktionieren sollen wegen fehlender Infomationen.
 |===
 
 
@@ -65,8 +58,8 @@ _alternativ:_ Die folgenden Aufgaben werden in dieser Iteration bearbeitet:
 //Eine kurze Beschreibung, wie Erfüllung die o.g. Ziele bewertet werden sollen.
 
 
-* 
-* i
+* Die Inbetriebnahe des RasberryPis ist gut und sogar schneller als geplant verlaufen. 
+* [mehr]
 
 
 == Assessment

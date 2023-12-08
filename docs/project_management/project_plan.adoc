@@ -57,23 +57,48 @@ Die Verantwortlichen sammeln zu Beginn des Projekts das nötige Wissen für ihre
 | Primary objectives +
 (risks and use case scenarios)
 | Scheduled start or milestone
-| Target velocity
+| Target velocity (Work that can be done per iteration)
 | Reference
 
 
 | I1
 |
-* Mitigate Risk1
-* Develop Use Case 3, Scenario 2
-| Date from/Date to
-| 15
+* Kennenlernen im Team
+* Vorgehen besprechen
+* Erste Eindrücke sammeln
+| 06.11.-17.11.
+| -
 |
 
 | I2
 |
-* Mitigate Risk 2
-* Develop Use Case 1, Scenario 2
-| Date from/Date to
+* Risikoliste, Vision
+* Aufstellung der Anforderungen
+| 20.11.-01.12
+| 8
+|
+
+| I3
+|
+* UseCases aufstellen
+* ER-Diagramm aufstellen
+* RaspberryPi in Betrieb nehmen
+| 04.12.-15.12.
+| 17
+|
+
+| I4
+|
+* [...]
+| 18.12.-12.01.
+| 15
+|
+
+| I5
+|
+* [...]
+* Beleg Abgabe
+| 15.01.-26.01.
 | 16
 |
 
