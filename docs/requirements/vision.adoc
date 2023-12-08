@@ -11,8 +11,8 @@ Der Zweck dieses Dokuments ist es, die wesentlichen Bedarfe und Funktionalitäte
 === Zweck
 Der Zweck dieses Dokuments ist es, die wesentlichen Anforderungen an das System aus Sicht und mit den Begriffen der künftigen Anwender zu beschreiben.
 
-=== Gültigkeitsbereich (Scope) (?)
-Dieses Visions-Dokument bezieht sich auf das System "Frau Holle"", das von Team I04 entwickelt wird. Das System wird es der Halbleiterfabrik (mit Herr Ringel als Vertreter) erlauben, Verwaltung von Datensätzen zu Fertigungsabläufen (?) zu nutzen, um damit <Vorteile> zu erreichen / <Aufgabe> zu erleichtern / <Problem> zu lösen.
+=== Gültigkeitsbereich (Scope) 
+Dieses Visions-Dokument bezieht sich auf das System "Frau Holle"", das von Team I04 entwickelt wird. Das System wird es der Halbleiterfabrik erlauben die Fertigungsabläufe der Halbleiter fertigung transparent zu machen und die Daten dazu zu verwalten.
 
 === Definitionen, Akronyme und Abkürzungen
 //Verweis passend zum Belegabgabe-Template se1_belegabgabe_t00.adoc
@@ -97,28 +97,20 @@ Beispiel Produkt:
 | [Fassen Sie die wesentlichen Verantwortlichkeiten des Stakeholder mit Bezug auf das zu entwickelnde System kurz zusammen, d.h. ihr besonderen Interessen. Beispiele: Dieser Stakeholder sorgt dafür, dass das System gewartet wird / dass die angezeigten Daten aktuell sind / überwacht den Projektfortschritt / usw.]
 
 | Halbleiterfabrik
-| 
+| stellt die Produkte her
 | Herstellen der Produke
 
-| Arbeiter der Halbleiterfabrik
+| Arbeiter
 | arbeiten in der Fabrik
-| warten das System und Maschinen
+| sieht Daten durch das System ein
+
+| Abteilungsleiter 
+| arbeitet und leitet in der Fabrik
+| sieht Daten durch das System ein und bearbeitet sie
 
 | Projektteam
 | Entwickler
 | entwickeln die Software
-
-| Zukünftige Teams
-| Entwickler
-| entwickeln die Software weiter
-
-| Modulprofessor (Anke)
-| Kontrolleinheit
-| kontrolliert die Entwicklung
-
-| Coach
-| coacht
-| kontrolliert die Entwicklung
 
 | Gesetzgeber
 | gibt Gesetze/ Vorschriften
@@ -178,13 +170,13 @@ Hier können zudem bei Bedarf Teile des Unternehmensmodells (Prozesse, Organigra
 Hinweise:
 
 . Führen Sie die wesentlichen anzuwendenden Standards, Hardware oder andere Plattformanforderungen, Leistungsanforderungen und Umgebungsanforderungen auf
--> RaspbarryPi, Python 3.12, PostgreSQL, tKinter - Bibliothek (?), Linux
+-> RaspbarryPi, Python 3.12, PostgreSQL, tKinter - Bibliothek, Linux
 
 . Definieren Sie grob die Qualitätsanforderungen für Leistung, Robustheit, Ausfalltoleranz, Benutzbarkeit und ähnliche Merkmale, die nicht von den genannten Features erfasst werden.
 
 . Notieren Sie alle Entwurfseinschränkungen, externe Einschränkungen, Annahmen oder andere Abhängigkeiten, die wenn Sie geändert werden, das Visions-Dokument beeinflussen. Ein Beispiel wäre die Annahme, dass ein bestimmtes Betriebssystem für die vom System erforderliche Hardware verfügbar ist. Ist das Betriebssystem nicht verfügbar, muss das Visions-Dokument angepasst werden. -> Raspy schränkt das Benutzte Betriebssystem ein. Stand aktuell ist, dass wir Raspian nutzen und nicht ein uns bekanntes Betriebssystem
 
-. Definieren Sie alle Dokumentationsanforderugen, inkl. Benutzerhandbücher, Onlinehilfe, Installations-, Kennzeichnungs- und Auslieferungsanforderungen-
+. Definieren Sie alle Dokumentationsanforderugen, inkl. Benutzerhandbücher, Onlinehilfe, Installations-, Kennzeichnungs- und Auslieferungsanforderungen
 
 . Definieren Sie die Priorität für diese zusätzlichen Produktanforderungen. Ergänzen Sie, falls sinnvoll, Angaben zu Stabilität, Nutzen, Aufwand und Risiko für diese Anforderungen.
 

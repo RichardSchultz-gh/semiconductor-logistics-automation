@@ -68,7 +68,7 @@ Die Verantwortlichen sammeln zu Beginn des Projekts das nötige Wissen für ihre
 * Erste Eindrücke sammeln
 | 06.11.-17.11.
 | -
-|
+| Siehe <<#iteration_plan_01, Iterationsplan 1>>.
 
 | I2
 |
