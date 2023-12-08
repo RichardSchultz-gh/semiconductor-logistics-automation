@@ -19,12 +19,12 @@ Dieses Visions-Dokument bezieht sich auf das System "Frau Holle"", das von Team 
 Siehe <<#glossary, Glossar>>.
 
 === Referenzen
-(hier externe Verweise zu anderen Dokumenten, Quellen, Standards etc. einfügen, sofern notwendig)
+// (hier externe Verweise zu anderen Dokumenten, Quellen, Standards etc. einfügen, sofern notwendig)
 
 
 == Positionierung
 
-=== Fachliche Motivation (?)
+=== Fachliche Motivation 
 //Erläutern Sie kurz den Hintergrund, in dem das Projekt angesiedelt ist. Welches Problem soll gelöst werden, wie ist es entstanden? Welche Verbesserung wird angestrebt. Achten Sie darauf, eine fachliche (organisatorische, betriebswirtschaftliche) Perspektive einzunehmen.
 
 Es soll eine Neuentwicklung einer Software stattfinden. Dabei sollen die Abläufe der Halbleiterfertigung modelliert werden. Beachtet sollen dabei die Anlagen-Ressourcen, die Fertigungspläne und die Materialverwaltung werden. 
@@ -124,17 +124,16 @@ Beschreiben Sie die Arbeitsumgebung des Nutzers. Hier sind einige Anregungen:
 //Zutreffendes angeben, nicht zutreffendes streichen oder auskommentieren
 . Anzahl der Personen, die an der Erfüllung der Aufgabe beteiligt sind. Ändert sich das?-> Die Mitarbeiterzahl, die mit der Software arbeitet, wird voraussichtlich konstant bleiben. 
 
-. Wie lange dauert die Bearbeitung der Aufgabe? Wie viel Zeit wird für jeden Arbeitsschritt benötigt? Ändert sich das? -> Die Gesamte Produktion dauert 30-80 Tage. Die Zeit der einzelnen Arbeitsschritte ist unbekannt.
+. Wie lange dauert die Bearbeitung der Aufgabe? Wie viel Zeit wird für jeden Arbeitsschritt benötigt? Ändert sich das? -> Die Gesamte Produktion dauert 30-80 Tage. Die Zeit der einzelnen Arbeitsschritte ist dato unbekannt.
 
 . Gibt es besondere Umgebungsbedingungen, z.B. mobil, offline, Außeneinsatz, Touchbedienung, Nutzung durch seh- oder hörbeeinträchtigte Personen? -> bisher nicht bekannt
 
 . Welche Systemplattformen werden heute eingesetzt? Welche sind es ggf. zukünftig?
--> bisher keine Plattform. 
+-> Bisher gibt es keine eingesetzte Plattform.
 
 . Welche anderen Anwendungen sind im Einsatz? Muss ihre Anwendung mit diesen integriert werden?
 -> bisher keine
 
-Hier können zudem bei Bedarf Teile des Unternehmensmodells (Prozesse, Organigramme, IT-Landschaft, ...) eingefügt werden, um die beteiligten Aufgaben und Rollen zu skizzieren.
 
 .Produktionsablauf
 . fertige Liziumscheiben kommen in der Fabrik an
@@ -161,7 +160,10 @@ Hier können zudem bei Bedarf Teile des Unternehmensmodells (Prozesse, Organigra
 [%header, cols="4,1,4,1"]
 |===
 | Bedarf | Priorität | Features | Geplantes Release
-| xx | xx | xx | xx
+| Bearbeitung der Lose | hoch | xx | xx
+| Starten der Produktion der Lose | hoch | xx | xx
+| Speicherung der Daten | mittelhoch | Backup-Jobs zur Sicherung der Daten | xx
+| Ausgabe der Daten | hoch | tabellarische Darstellung der Datensätze nach Kriterien | xx
 |===
 
 
@@ -184,5 +186,8 @@ Hinweise:
 [%header, cols="4,1,1"]
 |===
 | Anforderung | Priorität | Geplantes Release
-| xx | xx | xx
+| Realisation über RasberryPi, Python, PostgreSQL | hoch | xx
+| System muss für eine häufige Anwendung der Nutzer konzeptioniert sein | niedrig | xx
+| mehrere Nutzerrollen | mittel | xx
+|
 |===
