@@ -30,6 +30,7 @@ Siehe <<#glossary, Glossar>>.
 Es soll eine Neuentwicklung einer Software stattfinden. Dabei sollen die Abläufe der Halbleiterfertigung modelliert werden. Beachtet sollen dabei die Anlagen-Ressourcen, die Fertigungspläne und die Materialverwaltung werden. 
  
 Das Ziel der Software ist es die Fertigungsprozesse der Halbleiterherstellung transparent zu machen und so kann die Fabrik die Herstellung ihrer Produkte besser beobachten und bewerten zu können.
+//Das Ziel der Software besteht darin, die Fertigungsprozesse in der Halbleiterherstellung transparent zu gestalten. Dadurch ermöglichen wir der Fabrik, die Herstellung ihrer Produkte besser zu beobachten und zu //bewerten. (Nico)
 
 === Problem Statement
 //Stellen Sie zusammenfassend das Problem dar, das mit diesem Projekt gelöst werden soll. Das folgende Format kann dazu verwendet werden:
