@@ -138,6 +138,45 @@ Abwesende: Nils
 * Alle
 *** schauen sich die Vision an und kommentieren
 
+
+=== Teammeeting 5
+
+Anwesende: 
+
+Abwesende:
+
+.Agenda:
+* Alle geben kurz Bericht
+* Vision
+* UseCases
+* UseCase Diagramm
+* ER-Diagramm
+* Wireframes
+* Wie steht es um dem Raspy und die Datenbank
+* Architekture Notebook kennengelernt?
+* Raspy vorstellen
+* Fragen klären
+
+
+.Protokoll:
+* ...
+
+.ergebene Aufgaben:
+* ...
+* Marlene will einmal den Raspy vorgestellt bekommen!
+
+*nächste Iteration:*
+
+Analysten:
+
+Architekten:
+
+Entwickler:
+
+Tester:
+
+Projektmanagement:
+
 == Meetings mit Coach
 
 === Meeting 1
