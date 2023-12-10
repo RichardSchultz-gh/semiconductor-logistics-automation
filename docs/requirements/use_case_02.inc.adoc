@@ -1,37 +1,44 @@
 //Nutzen Sie dieses Template als Grundlage für die Spezifikation *einzelner* Use-Cases. Diese lassen sich dann per Include in das Use-Case Model Dokument einbinden (siehe Beispiel dort).
 ifndef::main-document[include::../_includes/default-attributes.inc.adoc[]]
 
+//Softwarekomponente, die Lose bewegen kann--> wird gemäß Operation auf nächste Operation gesetzt (Lot move)
+// Fragt tatsächlich nur ab, welche Lose fertig sind und setzt des Los, gemäß Fertigungsplan, auf die nächste Maschine (Zustand wartend) -99% automatisch, manuell nur wenn experimentell in anderen Arbeitsschritt eingefügt werden soll (Softwarekomponente guckt nach Status)
 
-== Use-Case: UC02 <use-case name>
-
+== Use-Case: UC02 Los bewegen
 === Kurzbeschreibung
-//<Kurze Beschreibung des Use Case>
+Der Use Case beschreibt die Operation, die Lose auf den jeweils nächsten Fertigungsprozess setzen kann.
 
 === Kurzbeschreibung der Akteure
 
-==== <Akteur 1 Name>
+==== <Akteur 1 Mitarbeiter an der Maschine>
+Möchte ...
+==== <Akteur 2 Abteilungsleiter>
+Möchte experimentell manuell Los in anderen Arbeitsschritt einfügen
 
 === Vorbedingungen
 //Vorbedingungen müssen erfüllt, damit der Use Case beginnen kann, z.B. Benutzer ist angemeldet, Warenkorb ist nicht leer...
 
-<Vorbedingung 1>
-
+<Vorbedingung 1> Los ist gestartet
+<Vorbedingung 2> Los ist im Zustand "Fertig"
+ 
 === Standardablauf (Basic Flow)
 //Der Standardablauf definiert die Schritte für den Erfolgsfall ("Happy Path")
 
 . Der Use Case beginnt, wenn <akteur> <macht>…
-. <Standardablauf Schritt 1>
-. …
-. <Standardablauf Schritt n>
+. <Standardablauf Schritt 1> Zustand von Los wird überprüft
+. <Standardablauf Schritt 2> Wenn Los Zustand "Fertig" dann
+                                Los wird auf nächste Operation gesetzt
+                                sonst
+                                
 . Der Use Case ist abgeschlossen.
 
 === Alternative Abläufe
 //Nutzen Sie alternative Abläufe für Fehlerfälle, Ausnahmen und Erweiterungen zum Standardablauf
 
 ==== <Alternativer Ablauf 1>
-Wenn <Akteur> im Schritt <x> des Standardablauf <etwas macht>, dann
-. <Ablauf beschreiben>
-. Der Use Case wird im Schritt <y> fortgesetzt.
+Wenn Abteilungsleiter im Schritt 1 des Standardablauf Lose bewegen möchte, dann
+. bewegt er manuell nach Wunsch Los auf andere Operation
+. Der Use Case wird im Schritt 2 fortgesetzt.
 
 === Unterabläufe (subflows)
 //Nutzen Sie Unterabläufe, um wiederkehrende Schritte auszulagern
