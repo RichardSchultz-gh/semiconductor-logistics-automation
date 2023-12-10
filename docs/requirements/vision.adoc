@@ -12,7 +12,7 @@ Der Zweck dieses Dokuments ist es, die wesentlichen Bedarfe und Funktionalitäte
 Der Zweck dieses Dokuments ist es, die wesentlichen Anforderungen an das System aus Sicht und mit den Begriffen der künftigen Anwender zu beschreiben.
 
 === Gültigkeitsbereich (Scope) 
-Dieses Visions-Dokument bezieht sich auf das System "Frau Holle"", das von Team I04 entwickelt wird. Das System wird es der Halbleiterfabrik erlauben die Fertigungsabläufe der Halbleiter fertigung transparent zu machen und die Daten dazu zu verwalten.
+Dieses Visions-Dokument bezieht sich auf das System "Frau Holle"", das von Team I04 entwickelt wird. Das System wird es der Halbleiterfabrik erlauben die Fertigungsabläufe der Halbleiterfertigung transparent zu machen und die Daten dazu zu verwalten.
 
 === Definitionen, Akronyme und Abkürzungen
 //Verweis passend zum Belegabgabe-Template se1_belegabgabe_t00.adoc
@@ -27,7 +27,7 @@ Siehe <<#glossary, Glossar>>.
 === Fachliche Motivation 
 //Erläutern Sie kurz den Hintergrund, in dem das Projekt angesiedelt ist. Welches Problem soll gelöst werden, wie ist es entstanden? Welche Verbesserung wird angestrebt. Achten Sie darauf, eine fachliche (organisatorische, betriebswirtschaftliche) Perspektive einzunehmen.
 
-Es soll eine Neuentwicklung einer Software stattfinden. Dabei sollen die Abläufe der Halbleiterfertigung modelliert werden. Beachtet sollen dabei die Anlagen-Ressourcen, die Fertigungspläne und die Materialverwaltung werden. 
+Es soll eine Neuentwicklung einer Software stattfinden. Dabei sollen die Abläufe der Halbleiterfertigung modelliert werden. Dabei sollen die Anlagen-Ressourcen, die Fertigungspläne und die Materialverwaltung beachtet werden. 
  
 Das Ziel der Software besteht darin, die Fertigungsprozesse in der Halbleiterherstellung transparent zu gestalten. Dadurch ermöglichen wir der Fabrik, die Herstellung ihrer Produkte besser zu beobachten und zu bewerten. 
 
@@ -38,7 +38,7 @@ Das Ziel der Software besteht darin, die Fertigungsprozesse in der Halbleiterher
 |===
 | Das Problem |Komplexität der Halbleiterfertigung 
 | betrifft | die Halbleiterfabrik (bzw. ihre Mitarbeiter)
-| die Auswirkung davon ist | fehlende Transparz bei der Produktion
+| die Auswirkung davon ist | fehlende Transparenz bei der Produktion
 | eine erfolgreiche Lösung wäre | Datenbankanwendung für Halbleiterproduktion.
 |===
 
@@ -51,11 +51,11 @@ Das Ziel der Software besteht darin, die Fertigungsprozesse in der Halbleiterher
 [cols="1,3"]
 |===
 | Für | die Halbleiterfabrik
-| der / die | Halbleiter herstellen und erleichterte Übersicht über die Betriebsabläufe möchte
+| der / die | Halbleiter herstellen und erleichterte Übersicht über die Betriebsabläufe möchten
 | Das Produkt ist eine | Datenbankanwendung
 | Die / Das | den Mitarbeitern die Prozessschritte visualisiert.
-| Im Gegensatz zu | [wesentliche Lösungsalternative]
-| Unser Produkt | [Aussage zum Hauptunterschied]
+| Im Gegensatz zu | der aktuellen, manuellen Datenermittlung ohne Software in der Halbleiterfertigung.
+| Unser Produkt | bietet Transparenz in die Fertigungsabläufe.
 |===
 
 ////
@@ -85,7 +85,7 @@ Beispiel Produkt:
 
 | Halbleiterfabrik
 | stellt die Produkte her
-| Herstellen der Produke
+| Herstellen der Produkte
 
 | Arbeiter
 | arbeiten in der Fabrik
@@ -123,16 +123,16 @@ Beschreiben Sie die Arbeitsumgebung des Nutzers. Hier sind einige Anregungen:
 
 
 .Produktionsablauf
-. fertige Liziumscheiben kommen in der Fabrik an
+. Fertige Liziumscheiben kommen in der Fabrik an
 . Zusammenfassen der Liziumscheiben zu Losen
 . Säuberung der Lose
 . Schleife an Schritten die die Lose durchlaufen 
 .. Fotolack aufbringen
 .. Fotolack belichten
-.. mit Säure auswaschen
-.. beschichten
+.. Mit Säure auswaschen
+.. Beschichten
 .. Fotolack abmachen
-. Verdrahtung durch das auftragen von Metall
+. Verdrahtung durch das Auftragen von Metall
 . Kontaktkugeln aus Zinn anbringen
 
 -> 30-80 Tage Prozess
