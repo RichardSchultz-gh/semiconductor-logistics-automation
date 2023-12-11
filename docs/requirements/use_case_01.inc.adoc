@@ -49,8 +49,7 @@ Möchte Lose manuell starten
 //Nutzen Sie alternative Abläufe für Fehlerfälle, Ausnahmen und Erweiterungen zum Standardablauf
 
 ==== <Alternativer Ablauf 1>
-Wenn Mitarbeiter, Abteilungsleiter im Schritt 1 des Standardablauf eine negative Waferanzahl oder ein in der Vergangeheit liegendes Datum eingibt, dann
-. Fehlermeldung
+Wenn Mitarbeiter, Abteilungsleiter im Schritt 1 des Standardablauf eine negative Waferanzahl oder ein in der Vergangeheit liegendes Datum eingibt, dann bekommt Akteur eine Fehlermeldung.
 . Der Use Case wird im Schritt 1 fortgesetzt.
 
 === Unterabläufe (subflows)
