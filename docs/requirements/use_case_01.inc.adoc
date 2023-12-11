@@ -17,26 +17,32 @@ ifndef::main-document[include::../_includes/default-attributes.inc.adoc[]]
 === Kurzbeschreibung
 //<Kurze Beschreibung des Use Case>
 Der Use Case beschreibt die Aufbereitung der Lose nach dem Berechnen der Losanzahl aus dem Auftrag.
+
 === Kurzbeschreibung der Akteure
 
-==== <Akteur 1: Mitarbeiter an Maschine>
+==== Mitarbeiter an Maschine
+
 Möchte Lose manuell starten
 
+==== Abteilungsleiter
+
+Möchte ...
 
 === Vorbedingungen
 //Vorbedingungen müssen erfüllt, damit der Use Case beginnen kann, z.B. Benutzer ist angemeldet, Warenkorb ist nicht leer...
 
-<Vorbedingung 1> Mitarbeiter ist angemeldet
-<Vorbedingung 2> Anzahl der startenden Lose ist berechnet
+*Vorbedingung 1:* Mitarbeiter ist angemeldet
+
+*Vorbedingung 2:* Anzahl der startenden Lose ist berechnet
 
 === Standardablauf (Basic Flow)
 //Der Standardablauf definiert die Schritte für den Erfolgsfall ("Happy Path")
 
 . Der Use Case beginnt, wenn Mitarbeiter an Maschine Anzahl Wafer eingibt
-. <Standardablauf Schritt 1> Losanzahl wird errechnet
-. <Standardablauf Schritt 2> Los Start Intervall wird aus Zieldatum und Anzahl Lose errechnet
-. <Standardablauf Schritt 3> Los bekommt eindeutige Nummerierung
-. <Standardablauf Schritt 4> Los wird auf Status wartend gesetzt
+. Losanzahl wird errechnet
+. Los Start Intervall wird aus Zieldatum und Anzahl Lose errechnet
+. Los bekommt eindeutige Nummerierung
+. Los wird auf Status "wartend" gesetzt
 . Der Use Case ist abgeschlossen.
 
 === Alternative Abläufe

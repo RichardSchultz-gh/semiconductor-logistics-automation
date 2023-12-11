@@ -21,6 +21,9 @@ In diesem Dokument werden die wesentlichen Begriffe aus dem Anwendungsgebiet (Fa
 | Fertigungsflüsse | Arbeitsfortschritt und Bewegung im Fertigungsprozess | xx
 | Liziumscheiben | xx | xx
 | Transistoren | elektronisches Halbleiterbauelement, steuert niedrige elektrische Spannungen und Ströme | xx
+| Wafer | xx | xx
+| xx | xx | xx
+| xx | xx | xx
 | xx | xx | xx
 | Halbleiter | xx | xx
 |===
