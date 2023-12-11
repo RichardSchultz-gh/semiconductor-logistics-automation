@@ -1,5 +1,5 @@
 == Mitschrift Meeting 3 - Use Case 
-:imagesdir: images
+:imagesdir: images 
 
 *To-dos:*
 
@@ -49,6 +49,5 @@ _Unterschied Flow und Route?_
 -	Grober Ablauf: Auswahl des Loses -> Zustandsänderung von „wartend“ auf „in Bearbeitung“  -> nach bestimmter Zeit werden die Lose auf den Zustand „fertig“ gesetzt
 -	Ein geringer Prozentsatz der Lose landet als Ausschuss in einem Fehlerzustand
 
-pic1.png
-images/pic1.png
+image::pic1.png[]
 
