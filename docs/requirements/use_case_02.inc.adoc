@@ -13,7 +13,7 @@ Der Use Case beschreibt die Operation, die Lose auf den jeweils nächsten Fertig
 
 ==== Mitarbeiter an der Maschine
 
-Möchte ...
+Möchte manuell Los auf nächsten Arbeitsschritt bewegen
 
 ==== Abteilungsleiter
 
@@ -22,25 +22,26 @@ Möchte experimentell manuell Los in anderen Arbeitsschritt einfügen
 === Vorbedingungen
 //Vorbedingungen müssen erfüllt, damit der Use Case beginnen kann, z.B. Benutzer ist angemeldet, Warenkorb ist nicht leer...
 
-*Vorbedingung 1:* Los ist gestartet
-
-*Vorbedingung 2:* Los ist im Zustand "Fertig"
+*Vorbedingung 1:* Los ist in Zustand "gestartet" oder "wartend".
  
 === Standardablauf (Basic Flow)
 //Der Standardablauf definiert die Schritte für den Erfolgsfall ("Happy Path")
 
-. Der Use Case beginnt, wenn <akteur> <macht>…
-. Zustand von Los wird überprüft
-. Wenn Los Zustand "Fertig" dann Los wird auf nächste Operation gesetzt sonst ...
-. Der Use Case ist abgeschlossen.
+1. Der Use Case beginnt, wenn Mitarbeiter, Abteilungsleiter manuell auf Benutzeroberfläche Anweisung gibt, ein Los bewegen zu wollen
+2. Zustand von Los wird überprüft
+3. Wenn Los Zustand "gestartet" oder "wartend" dann wird Los auf nächste Operation und Zustand "in Bearbeitung" gesetzt
+4. Der Use Case ist abgeschlossen.
 
 === Alternative Abläufe
 //Nutzen Sie alternative Abläufe für Fehlerfälle, Ausnahmen und Erweiterungen zum Standardablauf
 
 ==== Alternativer Ablauf 1
-Wenn Abteilungsleiter im Schritt 1 des Standardablauf Lose bewegen möchte, dann
-. bewegt er manuell nach Wunsch Los auf andere Operation
-. Der Use Case wird im Schritt 2 fortgesetzt.
+Wenn Abteilungsleiter im Schritt 3 sieht, dass Los weder im Zustand "gestartet" noch "wartend" ist, dann kann er das Los auf beliebigen Status setzen und bewegen.
+. Der Use Case ist abgeschlossen.
+
+==== Alternativer Ablauf 2
+Wenn Mitarbeiter im Schritt 3 sieht, dass Los weder im Zustand "gestartet" noch "wartend" ist, dann kommt eine Fehlermeldung mit aktueller Zustandsangabe.
+. Der Use Case ist abgeschlossen.
 
 === Unterabläufe (subflows)
 //Nutzen Sie Unterabläufe, um wiederkehrende Schritte auszulagern
