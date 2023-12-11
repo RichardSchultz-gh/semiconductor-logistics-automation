@@ -13,19 +13,19 @@ In diesem Dokument werden die wesentlichen Begriffe aus dem Anwendungsgebiet (Fa
 |===
 | Begriff | Definition und Erläuterung | Synonyme
 //| Kommissionierung | Bereitstellung von Waren aus einem Lager entsprechend eines Kundenauftrags | (keine)
-| Los aka Lot | Zusammenfassung mehrerer Werkstücke (hier Liziumscheiden) | xx
+| Los aka Lot | Zusammenfassung mehrerer Werkstücke (hier Liziumscheiben) | xx
 | Material | Stoffe die zur Herstellung benötigt werden | xx
-| Maschine | Gerät zur Herstellung des Produkts | xx
+| Maschine | Gerät zur Herstellung/Prozessierung des Produkts | xx
 | Fertigungsprozess | standardisierter Arbeitsablauf zur Produktherstellung | Produktionsprozess, Fertigungsablauf
 | Produkt | Ergebnis der Produktion | xx
 | Fertigungsflüsse | Arbeitsfortschritt und Bewegung im Fertigungsprozess | xx
-| Liziumscheiben | xx | xx
+| Siliziumscheiben | flache Scheibe aus kristallinem Silizium | xx
 | Transistoren | elektronisches Halbleiterbauelement, steuert niedrige elektrische Spannungen und Ströme | xx
-| Wafer | xx | xx
+| Wafer | Siliziumscheiben auf denen die integrierten Schaltkreise, die Mikrochips, hergestellt werden | xx
 | xx | xx | xx
 | xx | xx | xx
 | xx | xx | xx
-| Halbleiter | xx | xx
+| Halbleiter | Material mit einem elektrischen Leitvermögen, das zwischen einem Leiter und einem Isolator liegt | xx
 |===
 
 
@@ -34,7 +34,7 @@ In diesem Dokument werden die wesentlichen Begriffe aus dem Anwendungsgebiet (Fa
 |===
 | Abkürzung | Bedeutung | Erläuterung
 //| UP | Unified Process | Vorgehensmodell für die Softwareentwicklung
-| xx | xx | xx
+| MES | Manufactoring Execution System | Eine prozessnah operierende Ebene eines mehrschichtigen Fertigungsmanagementsystems
 |===
 
 == Verzeichnis der Datenstrukturen
