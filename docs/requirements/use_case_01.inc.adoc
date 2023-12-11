@@ -16,7 +16,7 @@ ifndef::main-document[include::../_includes/default-attributes.inc.adoc[]]
 
 === Kurzbeschreibung
 //<Kurze Beschreibung des Use Case>
-Der Use Case beschreibt die Aufbereitung der Lose nach dem Berechnen der Losanzahl aus dem Auftrag.
+Der Use Case beschreibt die Aufbereitung, das Starten der Lose nach dem Berechnen der Losanzahl aus dem Auftrag.
 
 === Kurzbeschreibung der Akteure
 
@@ -26,32 +26,32 @@ Möchte Lose manuell starten
 
 ==== Abteilungsleiter
 
-Möchte ...
+Möchte Lose manuell starten
 
 === Vorbedingungen
 //Vorbedingungen müssen erfüllt, damit der Use Case beginnen kann, z.B. Benutzer ist angemeldet, Warenkorb ist nicht leer...
 
 *Vorbedingung 1:* Mitarbeiter ist angemeldet
 
-*Vorbedingung 2:* Anzahl der startenden Lose ist berechnet
+*Vorbedingung 2:* Kundenauftrag ist vorhanden
 
 === Standardablauf (Basic Flow)
 //Der Standardablauf definiert die Schritte für den Erfolgsfall ("Happy Path")
 
-. Der Use Case beginnt, wenn Mitarbeiter an Maschine Anzahl Wafer eingibt
-. Losanzahl wird errechnet
-. Los Start Intervall wird aus Zieldatum und Anzahl Lose errechnet
-. Los bekommt eindeutige Nummerierung
-. Los wird auf Status "wartend" gesetzt
-. Der Use Case ist abgeschlossen.
+1. Der Use Case beginnt, wenn Mitarbeiter an Maschine Anzahl Wafer, Zieldatum eingibt
+2. Losanzahl wird errechnet 
+3. Los Start Intervall wird aus Zieldatum und Losanzahl errechnet
+4. Los bekommt eindeutige Nummerierung
+5. Los wird auf Status "gestartet" gesetzt
+6. Der Use Case ist abgeschlossen.
 
 === Alternative Abläufe
 //Nutzen Sie alternative Abläufe für Fehlerfälle, Ausnahmen und Erweiterungen zum Standardablauf
 
 ==== <Alternativer Ablauf 1>
-Wenn <Akteur> im Schritt <x> des Standardablauf <etwas macht>, dann
-. <Ablauf beschreiben>
-. Der Use Case wird im Schritt <y> fortgesetzt.
+Wenn Mitarbeiter, Abteilungsleiter im Schritt 1 des Standardablauf eine negative Waferanzahl oder ein in der Vergangeheit liegendes Datum eingibt, dann
+. Fehlermeldung
+. Der Use Case wird im Schritt 1 fortgesetzt.
 
 === Unterabläufe (subflows)
 //Nutzen Sie Unterabläufe, um wiederkehrende Schritte auszulagern
