@@ -48,9 +48,17 @@ Das Ziel der Software besteht darin, die Fertigungsprozesse in der Halbleiterher
 
 //Geben Sie in knapper Form übersichtsartig die Positionierung der angestrebten Lösung im Vergleich zu verfügbaren Alternativen dar. Das folgende Format kann dazu verwendet werden:
 
+
+////
+Richard: Positionierung des Produkts:
+-Ich würde eher sagen, dass dass Produkt für die Mitarbeiter ist, denn die bisherige Lösung funktioniert an sich für die Halbleiterfabrik, aber die Mitarbeiter wünschen sich eine Software damit die Arbeitsschritte leichter werden.
+-Dadurch brauch man den Bezug bei "Die/ Das" nicht mehr auf die Mitarbeiter.
+-Grammatik:"bietet Transparenz in den Fertigungsabläufen"
+////
+
 [cols="1,3"]
 |===
-| Für | die Halbleiterfabrik
+| Für | die Halbleiterfabrik  
 | der / die | Halbleiter herstellen und erleichterte Übersicht über die Betriebsabläufe möchten
 | Das Produkt ist eine | Datenbankanwendung
 | Die / Das | den Mitarbeitern die Prozessschritte visualisiert.
@@ -81,7 +89,7 @@ Beispiel Produkt:
 
 | Vertreter der Halbleiterfabrik (Herr Ringel)
 | vertritt die Halbleiterfabrik im Rahmen des Auftrags
-| ...
+| ... 
 
 | Halbleiterfabrik
 | stellt die Produkte her
