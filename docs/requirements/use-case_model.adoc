@@ -38,6 +38,12 @@ include::../_includes/default-attributes.inc.adoc[]
 .UseCaseDiagramm 1
 image::UC_Diagramm.PNG[]
 
+--> Use Cases wurden danach noch mal angepasst, die Unterschiede zwischen den Use Cases sind davon nicht betrofen. Unterschiede sind: 
+
+Timer einmal bei UC01-UC03 und Backup, einmal nur UC01+UC02
+
+Was soll alles nur der Leiter können?
+
 .UseCaseDiagramm 2
 image::usecase_first_version_pmx.png[]
 

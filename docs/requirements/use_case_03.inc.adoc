@@ -5,18 +5,22 @@ ifndef::main-document[include::../_includes/default-attributes.inc.adoc[]]
 == Use-Case: UC03 Los bearbeiten
 
 === Kurzbeschreibung
+
 Der Use Case ermöglicht das manuelle und automatische Bearbeiten von Losen im Produktionsprozess. 
 
 === Kurzbeschreibung der Akteure
 
-==== Admin - Fertigungsleiter
+==== Ableilungsleiter
+
 Möchte Lose prozessieren
 
 ==== Timer
+
 Starten den Use Case in einem vordefinierten Zeitintervall
 
 === Vorbedingungen
-Lose wurden gestartet und befinden sich im Fertigungsprozess
+
+*Vorbedingung 1:* Lose wurden gestartet und befinden sich im Fertigungsprozess
 
 === Standardablauf (Basic Flow)
 
@@ -67,7 +71,7 @@ Lose wurden gestartet und befinden sich im Fertigungsprozess
 === Wesentliche Szenarios
 //Szenarios sind konkrete Instanzen eines Use Case, d.h. mit einem konkreten Akteur und einem konkreten Durchlauf der o.g. Flows. Szenarios können als Vorstufe für die Entwicklung von Flows und/oder zu deren Validierung verwendet werden.
 
-==== Erfolgreiches Proezessieren der Lose
+==== Erfolgreiches Prozessieren der Lose
 
 *Sc1* Das Los wurde erfolgreich an der Maschine bearbeitet und wartet nun auf den nächsten Fertigungsschritt
 
