@@ -2,59 +2,91 @@
 ifndef::main-document[include::../_includes/default-attributes.inc.adoc[]]
 
 
-== Use-Case: UC02 <use-case name>
+== Use-Case: UC03 Los bearbeiten
 
 === Kurzbeschreibung
-//<Kurze Beschreibung des Use Case>
+Der Use Case ermöglicht das manuelle und automatische Bearbeiten von Losen im Produktionsprozess. 
 
 === Kurzbeschreibung der Akteure
 
-==== <Akteur 1 Name>
+==== Admin - Fertigungsleiter
+Möchte Lose prozessieren
+
+==== Timer
+Starten den Use Case in einem vordefinierten Zeitintervall
 
 === Vorbedingungen
-//Vorbedingungen müssen erfüllt, damit der Use Case beginnen kann, z.B. Benutzer ist angemeldet, Warenkorb ist nicht leer...
-
-<Vorbedingung 1>
+Lose wurden gestartet und befinden sich im Fertigungsprozess
 
 === Standardablauf (Basic Flow)
-//Der Standardablauf definiert die Schritte für den Erfolgsfall ("Happy Path")
 
-. Der Use Case beginnt, wenn <akteur> <macht>…
-. <Standardablauf Schritt 1>
-. …
-. <Standardablauf Schritt n>
-. Der Use Case ist abgeschlossen.
+1. Der Use Case beginnt, wenn auf der grafischen Oberfläche der Button „Los bearbeiten“ ausgewählt oder der Timer aktiviert wird
+2. Das System prüft, ob sich Lose im Zustand „wartend“ befinden
+3. Für jedes Los im Zustand „wartend“ wird die nächste Maschine im Fertigungsprozess abgefragt
+4. System fragt ab, ob sich die Maschine im Zustand „betriebsbereit“ befindet
+5. Algorithmus wählt das als nächstes zu bearbeitende Los für jede Maschine aus (FiFo-Prinzip)
+6. Das ausgewählte Los wird vom Zustand “wartend” auf den Zustand “in Bearbeitung” gesetzt 
+7. Das Los verbleibt für die Dauer der Prozesszeit im Zustand „in Bearbeitung“
+8. Prüfung, ob das Los fehlerhaft bearbeitet worden ist
+9. Prüfung, ob das Los das Ende des Fertigungsablaufes erreicht hat
+10. Zustand des Loses wird von „in Bearbeitung“ zu „wartend“ gesetzt
+11. Die Route des Loses wird aktualisiert 
 
 === Alternative Abläufe
 //Nutzen Sie alternative Abläufe für Fehlerfälle, Ausnahmen und Erweiterungen zum Standardablauf
 
-==== <Alternativer Ablauf 1>
-Wenn <Akteur> im Schritt <x> des Standardablauf <etwas macht>, dann
-. <Ablauf beschreiben>
-. Der Use Case wird im Schritt <y> fortgesetzt.
+(2) Prüfung nicht erfolgreich -> alle Lose befindet sich im Produktionsprozess oder kein Los wurde gestartet
 
-=== Unterabläufe (subflows)
+	* Ausgabe, dass kein Los gefunden worden ist
+  * Das System beendet den Standardablauf
+
+(4) Prüfung nicht erfolgreich -> alle Maschinen befinden sich in Produktion, sind defekt oder in Wartung
+
+	* Ausgabe, dass keine Maschine betriebsbereit ist
+	* Das System beendet den Standardablauf
+
+(8) Prüfung erfolgreich -> Los wurde fehlerhaft bearbeitet
+
+	* Ausgabe des fehlerhaften Loses
+	* Los-Zustand wird von „in Bearbeitung“ auf „fehlerhaft“ gesetzt
+
+(9) Prüfung erfolgreich -> Los ist fertig bearbeitet
+
+	* Ausgabe des Loses
+	* Los-Zustand wird von „in Bearbeitung“ auf „fertig“ gesetzt
+
+//=== Unterabläufe (subflows)
 //Nutzen Sie Unterabläufe, um wiederkehrende Schritte auszulagern
 
-==== <Unterablauf 1>
-. <Unterablauf 1, Schritt 1>
-. …
-. <Unterablauf 1, Schritt n>
+//==== <Unterablauf 1>
+//. <Unterablauf 1, Schritt 1>
+//. …
+//. <Unterablauf 1, Schritt n>
+
 
 === Wesentliche Szenarios
 //Szenarios sind konkrete Instanzen eines Use Case, d.h. mit einem konkreten Akteur und einem konkreten Durchlauf der o.g. Flows. Szenarios können als Vorstufe für die Entwicklung von Flows und/oder zu deren Validierung verwendet werden.
 
-==== <Szenario 1>
-. <Szenario 1, Schritt 1>
-. …
-. <Szenario 1, Schritt n>
+==== Erfolgreiches Proezessieren der Lose
+
+*Sc1* Das Los wurde erfolgreich an der Maschine bearbeitet und wartet nun auf den nächsten Fertigungsschritt
+
+*Sc1.2* Das Los wurde erfolgreich an der Maschine bearbeitet und verlässt den Produktionsprozess -> fertig bearbeitet
+
+==== Fehlerhaftes Proezessieren der Lose
+
+*Sc2* Das Los wurde an der Maschine bearbeitet und ist im Anschluss fehlerhaft -> Ausschuss
 
 === Nachbedingungen
 //Nachbedingungen beschreiben das Ergebnis des Use Case, z.B. einen bestimmten Systemzustand.
 
-==== <Nachbedingung 1>
+Bei erfolgreicher Durchführung des Use Case müssen folgende Nachbedingungen erfüllt sein
 
-=== Besondere Anforderungen
+-	Erfolgreich prozessierte Lose befinden sich nach dem Zustand „in Bearbeitung“ wieder im Zustand wartend
+-	Nicht erfolgreich prozessierte Lose befindet sich nach dem Zustand „in Bearbeitung“ im Zustand defekt
+-	Lose, die das Ende ihres Fertigungsprozesses erreicht haben, befinden sich im Zustand „fertig“
+
+//=== Besondere Anforderungen
 //Besondere Anforderungen können sich auf nicht-funktionale Anforderungen wie z.B. einzuhaltende Standards, Qualitätsanforderungen oder Anforderungen an die Benutzeroberfläche beziehen.
 
-==== <Besondere Anforderung 1>
+//==== <Besondere Anforderung 1>
