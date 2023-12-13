@@ -141,9 +141,9 @@ Abwesende: Nils
 
 === Teammeeting 5
 
-Anwesende: 
+Anwesende: Nico, Nils, Richard, Paul, Enrico, Hoang, Marlene
 
-Abwesende:
+Abwesende: Yannik
 
 .Agenda:
 * Alle geben kurz Bericht
@@ -161,6 +161,15 @@ Immer euer Zeug hochladen.
 
 .Protokoll:
 * ...
+
+Achritekten haben eher ein Klassendiagramm als ein ER-Diagramm erstellt -> anpassen
+
+Gibt es besondere Umgebungsbedingungen, z.B. mobil, offline, Außeneinsatz, Touchbedienung, Nutzung durch seh- oder hörbeeinträchtigte Personen? -> bisher nicht bekannt -> nachfragen 
+
+. Definieren Sie grob die Qualitätsanforderungen für Leistung, Robustheit, Ausfalltoleranz, Benutzbarkeit und ähnliche Merkmale, die nicht von den genannten Features erfasst werden.
+-> nachfragen
+
+wie viel kann der einfache Mitarbeiter: Soll er Los bearbeiten können etc
 
 .ergebene Aufgaben:
 * usecase 3,4,5

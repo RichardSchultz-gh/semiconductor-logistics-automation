@@ -28,6 +28,8 @@ Möchte Lose manuell starten
 
 Möchte Lose manuell starten
 
+==== Timer
+
 === Vorbedingungen
 //Vorbedingungen müssen erfüllt, damit der Use Case beginnen kann, z.B. Benutzer ist angemeldet, Warenkorb ist nicht leer...
 

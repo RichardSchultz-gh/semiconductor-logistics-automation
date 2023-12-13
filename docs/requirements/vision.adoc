@@ -51,32 +51,21 @@ Das Ziel der Software besteht darin, die Fertigungsprozesse in der Halbleiterher
 
 ////
 Richard: Positionierung des Produkts:
--Ich würde eher sagen, dass dass Produkt für die Mitarbeiter ist, denn die bisherige Lösung funktioniert an sich für die Halbleiterfabrik, aber die Mitarbeiter wünschen sich eine Software damit die Arbeitsschritte leichter werden.
+-Ich würde eher sagen, dass das Produkt für die Mitarbeiter ist, denn die bisherige Lösung funktioniert an sich für die Halbleiterfabrik, aber die Mitarbeiter wünschen sich eine Software damit die Arbeitsschritte leichter werden.
 -Dadurch brauch man den Bezug bei "Die/ Das" nicht mehr auf die Mitarbeiter.
 -Grammatik:"bietet Transparenz in den Fertigungsabläufen"
 ////
 
 [cols="1,3"]
 |===
-| Für | die Halbleiterfabrik  
-| der / die | Halbleiter herstellen und erleichterte Übersicht über die Betriebsabläufe möchten
+| Für | die Mitarbeiter der Halbleiterfabrik 
+| die | Halbleiter herstellen und erleichterte Übersicht über die Betriebsabläufe möchten
 | Das Produkt ist eine | Datenbankanwendung
-| Die / Das | den Mitarbeitern die Prozessschritte visualisiert.
+| Die | Prozessschritte visualisiert.
 | Im Gegensatz zu | der aktuellen, manuellen Datenermittlung ohne Software in der Halbleiterfertigung.
-| Unser Produkt | bietet Transparenz in die Fertigungsabläufe.
+| Unser Produkt | bietet Transparenz in den Fertigungsabläufen.
 |===
 
-////
-Beispiel Produkt:
-|===
-| Für | Studierende der HTW
-| die | die ihren Studienalltag effizienter organisieren möchten
-| Das Produkt ist eine | mobile App für Smartphones
-| Die | für den Nutzer Informationen zum Stundenplan und Noten darstellt
-| Im Gegensatz zu | Stundenplänen der Website und HIS-Noteneinsicht
-| Unser Produkt | zeigt nur die für den Nutzer relevanten Informationen komfortabel auf dem Smartphone an.
-|===
-////
 
 
 == Stakeholder Beschreibungen
@@ -89,11 +78,7 @@ Beispiel Produkt:
 
 | Vertreter der Halbleiterfabrik (Herr Ringel)
 | vertritt die Halbleiterfabrik im Rahmen des Auftrags
-| ... 
-
-| Halbleiterfabrik
-| stellt die Produkte her
-| Herstellen der Produkte
+| stellt sicherm, dass die Anforderungen der Fabrik umgesetzt werden
 
 | Arbeiter
 | arbeiten in der Fabrik
@@ -119,9 +104,9 @@ Beschreiben Sie die Arbeitsumgebung des Nutzers. Hier sind einige Anregungen:
 //Zutreffendes angeben, nicht zutreffendes streichen oder auskommentieren
 . Anzahl der Personen, die an der Erfüllung der Aufgabe beteiligt sind. Ändert sich das?-> Die Mitarbeiterzahl, die mit der Software arbeitet, wird voraussichtlich konstant bleiben. 
 
-. Wie lange dauert die Bearbeitung der Aufgabe? Wie viel Zeit wird für jeden Arbeitsschritt benötigt? Ändert sich das? -> Die Gesamte Produktion dauert 30-80 Tage. Die Zeit der einzelnen Arbeitsschritte ist dato unbekannt.
+. Wie lange dauert die Bearbeitung der Aufgabe? Wie viel Zeit wird für jeden Arbeitsschritt benötigt? Ändert sich das? -> Die gesamte Produktion dauert 30-80 Tage. Die Zeit der einzelnen Arbeitsschritte ist dato unbekannt.
 
-. Gibt es besondere Umgebungsbedingungen, z.B. mobil, offline, Außeneinsatz, Touchbedienung, Nutzung durch seh- oder hörbeeinträchtigte Personen? -> bisher nicht bekannt
+. Gibt es besondere Umgebungsbedingungen, z.B. mobil, offline, Außeneinsatz, Touchbedienung, Nutzung durch seh- oder hörbeeinträchtigte Personen? -> bisher nicht bekannt -> nachfragen 
 
 . Welche Systemplattformen werden heute eingesetzt? Welche sind es ggf. zukünftig?
 -> Bisher gibt es keine eingesetzte Plattform.
@@ -131,8 +116,8 @@ Beschreiben Sie die Arbeitsumgebung des Nutzers. Hier sind einige Anregungen:
 
 
 .Produktionsablauf
-. Fertige Liziumscheiben kommen in der Fabrik an
-. Zusammenfassen der Liziumscheiben zu Losen
+. Fertige Siliziumscheiben kommen in der Fabrik an
+. Zusammenfassen der Siliziumscheiben zu Losen
 . Säuberung der Lose
 . Schleife an Schritten die die Lose durchlaufen 
 .. Fotolack aufbringen
@@ -164,14 +149,14 @@ Beschreiben Sie die Arbeitsumgebung des Nutzers. Hier sind einige Anregungen:
 
 == Zusätzliche Produktanforderungen
 //Zutreffendes angeben, nicht zutreffendes streichen oder auskommentieren
-Hinweise:
 
 . Führen Sie die wesentlichen anzuwendenden Standards, Hardware oder andere Plattformanforderungen, Leistungsanforderungen und Umgebungsanforderungen auf
--> RaspbarryPi, Python 3.12, PostgreSQL, tKinter - Bibliothek, Linux
+-> RaspbarryPi, Python 3.12, PostgreSQL, (tKinter - Bibliothek -> von uns ausgesucht), Linux
 
 . Definieren Sie grob die Qualitätsanforderungen für Leistung, Robustheit, Ausfalltoleranz, Benutzbarkeit und ähnliche Merkmale, die nicht von den genannten Features erfasst werden.
+-> nachfragen
 
-. Notieren Sie alle Entwurfseinschränkungen, externe Einschränkungen, Annahmen oder andere Abhängigkeiten, die wenn Sie geändert werden, das Visions-Dokument beeinflussen. Ein Beispiel wäre die Annahme, dass ein bestimmtes Betriebssystem für die vom System erforderliche Hardware verfügbar ist. Ist das Betriebssystem nicht verfügbar, muss das Visions-Dokument angepasst werden. -> Raspy schränkt das Benutzte Betriebssystem ein. Stand aktuell ist, dass wir Raspian nutzen und nicht ein uns bekanntes Betriebssystem
+. Notieren Sie alle Entwurfseinschränkungen, externe Einschränkungen, Annahmen oder andere Abhängigkeiten, die wenn Sie geändert werden, das Visions-Dokument beeinflussen. Ein Beispiel wäre die Annahme, dass ein bestimmtes Betriebssystem für die vom System erforderliche Hardware verfügbar ist. Ist das Betriebssystem nicht verfügbar, muss das Visions-Dokument angepasst werden. -> Raspy schränkt das benutzte Betriebssystem ein. Stand aktuell ist, dass wir Raspbian nutzen und nicht ein uns bekanntes Betriebssystem
 
 . Definieren Sie alle Dokumentationsanforderugen, inkl. Benutzerhandbücher, Onlinehilfe, Installations-, Kennzeichnungs- und Auslieferungsanforderungen
 

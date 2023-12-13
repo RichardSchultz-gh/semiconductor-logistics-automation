@@ -19,6 +19,10 @@ Möchte manuell Los auf nächsten Arbeitsschritt bewegen
 
 Möchte experimentell manuell Los in anderen Arbeitsschritt einfügen
 
+==== Timer
+
+
+
 === Vorbedingungen
 //Vorbedingungen müssen erfüllt, damit der Use Case beginnen kann, z.B. Benutzer ist angemeldet, Warenkorb ist nicht leer...
 
