@@ -22,12 +22,11 @@ In diesem Dokument werden die wesentlichen Begriffe aus dem Anwendungsgebiet (Fa
 | Siliziumscheiben | flache Scheibe aus kristallinem Silizium | xx
 | Transistoren | elektronisches Halbleiterbauelement, steuert niedrige elektrische Spannungen und Ströme | xx
 | Wafer | Siliziumscheiben auf denen die integrierten Schaltkreise, die Mikrochips, hergestellt werden | xx
-| xx | xx | xx
-| xx | xx | xx
+| Route | Fertigungsplan; enthält mehrere Flows | xx
+| Flow | Modul des Fertigungsplans | xx
 | xx | xx | xx
 | Halbleiter | Material mit einem elektrischen Leitvermögen, das zwischen einem Leiter und einem Isolator liegt | xx
 |===
-
 
 == Abkürzungen und Akronyme
 [%header]
