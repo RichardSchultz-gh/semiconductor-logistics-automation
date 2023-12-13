@@ -1,4 +1,5 @@
 = Use-Case Model: {project-name}
+:imagesdir: images 
 Vorname Nachname <email@domain.org>; Vorname2 Nachname2 <email2@domain.org>; Vorname3 Nachname3 <email3@domain.org>
 {localdatetime}
 include::../_includes/default-attributes.inc.adoc[]
@@ -21,38 +22,31 @@ include::../_includes/default-attributes.inc.adoc[]
 * *UC01*: Los starten
 * *UC02*: Los bewegen
 * *UC03*: Los bearbeiten
-* *UC08*: fertiges Los anzeigen
-* *UC07*: Stammdaten ändern
-* *UC06*: Maschinen anzeigen
 * *UC04*: Stammdaten anzeigen
-* *UC05*: Los anzeigen
-* *UC10*: Statistik aufstellen
-* *UC11*: größere Datenmenge importieren
-* *UC12*: Datenbankbackup erstellen (optional)
+* *UC05*: Stammdaten bearbeiten
+* *UC06*: Daten exportieren
+* *UC07*: Daten importieren
+* *UC08*: Backup erstellen
+* *UC09*: Daten visualisieren
 
 //Überlegen wie man Use Cases vlt mit includes zusammenfassen kann
 //die Liste muss noch nach Prioritäten sortiert werden
 
 == Use Case Diagramm
-// Marlene: hier ist ein erstes Diagramm um es auszuprobieren. Alles daran könnt ihr ändern -> Änderungen in der Datei: usecasediagramm.puml
+// Marlene: hier ist ein erstes Diagramm um es auszuprobieren. Alles daran könnt ihr ändern -> Änderungen in der Datei: 
 
-.UseCaseDiagramm 
-[plantuml, "{diagramsdir}/syntax-example1", svg]  
-....
-include::{plantumlsdir}/usecasediagramm.puml[]
-....
-
-Analysten haben 2 Usecase Diagramme erstellt:
-
+.UseCaseDiagramm 1
 image::UC_Diagramm.PNG[]
 
+.UseCaseDiagramm 2
 image::usecase_first_version_pmx.png[]
 
-Unterschiede: 
+//Unterschiede: 
 
-TImer bei einem nur für Los starten und bewegen 
+//TImer bei einem nur für Los starten und bewegen 
 
-beim anderen auch noch bearbeiten und Backup erstellen
+//beim anderen auch noch bearbeiten und Backup erstellen
+
 
 //Fügen Sie nachfolgend alle detaillierten Use-Cases per Include ein.
 //Dafür sollten Sie pro Use-Case eine Datei anlegen, die auf dem use_case_01.inc.adoc Template basiert.
@@ -69,8 +63,8 @@ include::use_case_01.inc.adoc[]
 <<<
 include::use_case_02.inc.adoc[]
 
-//<<<
-//include::use_case_03.inc.adoc[]
+<<<
+include::use_case_03.inc.adoc[]
 
 //<<<
 //include::use_case_04.inc.adoc[]
