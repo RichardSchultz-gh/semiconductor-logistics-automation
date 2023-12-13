@@ -157,7 +157,7 @@ Abwesende:
 * Raspy vorstellen
 * Fragen klären
 
-Immer euer Zeug hochladen.
+Immer euer Zeug hochladen. 
 
 .Protokoll:
 * ...

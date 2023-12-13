@@ -56,6 +56,8 @@ Die Verantwortlichen sammeln zu Beginn des Projekts das nötige Wissen für ihre
 
 //Nennung der einsetzten Praktiken für Entwicklung und Management sowie Regeln für die Bewertung (Feststellung der Zielerreichung in Iterationen)
 
+Das Projekt erstreckt sich über einen Zeitraum von zwei Semestern. Begonnen wird der Projekt im Oktober 2023. Nach der ersten Zwischenabgabe im Januar 2024 wird das Projekt bis zum Juni 2024 weitergeführt.
+
 Die Umsetzung des Projekts folgt der iterativen Planung. Es wird für jede Iteration ein Iterationsplan mit Zielen und Aufgaben für diese aufgestellt. Zum Schluss jeder Iteration werden die Resultate und der Arbeitsstand bewertet. Daraus werden Schlüsse für die nächsten Iterationen gezogen. Während dieses Projektes ist eine Iteration immer zwei Wochen lang. 
 
 *Finalisierung von Dokumenten:* Bevor ein Dokument (, Diagramm oder Ähnliches) als Final gilt, wird es von mindestends dem Teamleader gegen geschaut, um die Vollständigkeit und Qualität zu prüfen. Sollte der Teamleader ein Dokument (etc.) erstellen, soll mindestend ein anderes Mitglied das Dokumente gegenlesen.
