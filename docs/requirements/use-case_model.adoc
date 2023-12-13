@@ -42,6 +42,17 @@ include::../_includes/default-attributes.inc.adoc[]
 include::{plantumlsdir}/usecasediagramm.puml[]
 ....
 
+Analysten haben 2 Usecase Diagramme erstellt:
+
+image::UC_Diagramm.PNG[]
+
+image::usecase_first_version_pmx.png[]
+
+Unterschiede: 
+
+TImer bei einem nur für Los starten und bewegen 
+
+beim anderen auch noch bearbeiten und Backup erstellen
 
 //Fügen Sie nachfolgend alle detaillierten Use-Cases per Include ein.
 //Dafür sollten Sie pro Use-Case eine Datei anlegen, die auf dem use_case_01.inc.adoc Template basiert.

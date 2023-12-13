@@ -163,6 +163,14 @@ Immer euer Zeug hochladen.
 * ...
 
 .ergebene Aufgaben:
+* usecase 3,4,5
+* system wide requirements
+* architekture notebook
+* architekture entwurf für middleframe
+* start development
+* erste gedanken zu testing
+* aufarbeitung aller Dokumente
+* Pläne
 * ...
 * Marlene will einmal den Raspy vorgestellt bekommen!
 

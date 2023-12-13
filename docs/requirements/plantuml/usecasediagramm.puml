@@ -8,7 +8,9 @@ usecase (Los bearbeiten) as UC03
 
 actor Mitarbeiter as m
 actor Timer as t
-actor Leiter as l
+actor Abteilungsleiter as al
+
+
 
 
 @enduml

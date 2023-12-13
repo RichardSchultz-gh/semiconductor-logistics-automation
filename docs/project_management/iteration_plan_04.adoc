@@ -23,9 +23,10 @@ include::../_includes/default-attributes.inc.adoc[]
 
 Beispiele:
 
-* Beheben der Usability-Probleme, die von Abteilung X berichtet wurden
-* Ausliefern der Hauptszenarios, die die Integration mit System Y zeigen
-* Present a technical demonstration (demo).
+* System Wide Requirements
+* introduction testing
+* Start development
+* Erster Architekturentwurf für Middleware mit Notebook
 
 // Testfälle für Architektur müssen im Lifecycle Architekture gemacht werden
 // Beginn Architekturbeschreibung
