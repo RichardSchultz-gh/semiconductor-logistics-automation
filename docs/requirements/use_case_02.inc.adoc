@@ -38,12 +38,14 @@ Möchte experimentell manuell Los in anderen Arbeitsschritt einfügen
 
 === Alternative Abläufe
 //Nutzen Sie alternative Abläufe für Fehlerfälle, Ausnahmen und Erweiterungen zum Standardablauf
-
 ==== Alternativer Ablauf 1
+Mithilfe des Timers können automatisch Lose bewegt werden. 
+. Der Use Case wird in Schritt 2 fortgesetzt.
+==== Alternativer Ablauf 2
 Wenn Abteilungsleiter im Schritt 3 sieht, dass Los weder im Zustand "gestartet" noch "wartend" ist, dann kann er das Los auf beliebigen Status setzen und bewegen.
 . Der Use Case ist abgeschlossen.
 
-==== Alternativer Ablauf 2
+==== Alternativer Ablauf 3
 Wenn Mitarbeiter im Schritt 3 sieht, dass Los weder im Zustand "gestartet" noch "wartend" ist, dann kommt eine Fehlermeldung mit aktueller Zustandsangabe.
 . Der Use Case ist abgeschlossen.
 
