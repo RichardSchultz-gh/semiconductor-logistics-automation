@@ -107,7 +107,7 @@ Die Umsetzung des Projekts folgt der iterativen Planung. Es wird für jede Itera
 |
 * System wide Requirements
 * Erster Architekturentwurf für Middleware
-* beginn development
+* Beginn development
 | 18.12.-12.01. (inkl. Weihnachtspause)
 | 35 Gewichtungspunkte
 |

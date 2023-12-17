@@ -21,12 +21,12 @@ include::../_includes/default-attributes.inc.adoc[]
 == Wesentliche Ziele
 //Nennen Sie 1-5 wesentliche Ziele für die Iteration.
 
-* In Betriebnahme des RaspberryPi
-* ER-Diagramm erstellen
-* UseCases mit Diagramm aufstellen
-* Vision finalisieren
-* Projekt- und Iterationsplanung
-* Vorstellen des aktuellen Standes bei Ringel
+. In Betriebnahme des RaspberryPi
+. UseCases mit Diagramm aufstellen
+. Vision finalisieren
+. ER-Diagramm erstellen
+. Projekt- und Iterationsplanung
+. Vorstellen des aktuellen Standes bei Ringel
 
 == Aufgabenzuordnung
 //Dieser Abschnitt sollte einen Verweis auf die Work Items List enthalten, die die für diese Iteration vorgesehenen Aufgaben dokumentiert sowie die Zuordnung dieser Aufgaben zu Teammitgliedern. Alternativ können die Aufgaben für die Iteration und die Zuordnung zu Teammitgliedern in nachfolgender Tabelle dokumentiert werden - je nach dem, was einfacher für die Projektbeteiligten einfacher zu finden ist.
@@ -58,8 +58,16 @@ include::github_names.adoc[]
 //Eine kurze Beschreibung, wie Erfüllung die o.g. Ziele bewertet werden sollen.
 
 
-* Die Inbetriebnahe des RasberryPis ist gut und sogar schneller als geplant verlaufen. 
-* [mehr]
+
+. In Betriebnahme des RaspberryPi
+* Wenn das Betriebssystem und die Datenbank auf dem Raspy laufen  wurde das Ziel erfüllt
+. UseCases mit Diagramm aufstellen 
+* Sind alle Use Cases und der Use Cases Diagramm aufgestellt, wurde das Ziel erreicht
+* Werden die Use Cases und das Diagramm vom Auftragsgeber positiv bewertet und angekommen, kann das Ziel als erfolgreich abgeschlossen angesehen werden
+. Vision finalisieren 
+* Das Ziel kann als erledigt und positiv bewertet werden, wenn die Vision ist vollständig und Auftragsgeber nimmt die Vision so ab 
+. ER-Diagramm erstellen
+* siehe Punkt zu Use Cases
 
 
 == Assessment
@@ -77,23 +85,50 @@ include::github_names.adoc[]
 * Beurteilung im Vergleich zu den Zielen
 //Dokumentieren Sie, ob die angestrebten Ziele des Iterationsplans erreicht wurden.
 
-*Geplante vs. erledigte Aufgaben*
+*Geplante vs. erledigte Aufgaben inkl. Beurteilung im Vergleich zu den Bewertungskriterien*
 //Zusammenfassung, ob alle für die Iteration geplanten Aufgaben bearbeitet wurden und welche Aufgaben verschoben oder hinzugefügt wurden.
 
-*Beurteilung im Vergleich zu den Bewertungskriterien*
+. Die Inbetriebnahe des RasberryPis ist gut und sogar schneller als geplant verlaufen.
+
+. Erstellen der Use Cases inkl. Diagramm: Die Use Cases wurden im guten Maße erstellt. Durch das Meeting mit Herrn Ringel zum Ende der Iteration sind kleinere Anmerkungen zu den Use Cases aufgekommen, die in der nächsten Iteration überarbeitet werden. Das Issue dieser Iteration wurde trotzdem mit Erfolg erledigt, jedoch noch nicht abgeschlossen. Die Analysten haben sich intensiv mit den Use Cases auseinander gesetzt und der Auftragsgeber war im großen Ganzen zufrienden.
+
+. Der erste Entwurf der Wireframes kam als Inspiration für den Auftragsgeber gut an. Bisher hat der Auftragsgeber selber keinen genauen Plan über das aussehen dieser. Die Entwürfe wurden trotzdem mit Interesse entgegen genommen. 
+
+. Die Vision wurde finalisiert. Im Gespräch mit dem Auftragsgeber wurde diesem deutlich, dass das Team den zentralen Inhalt der Vision verinnertlich hat. Die Vision als Ganzes wurde sich nicht angeschaut. Trotzdem kann das Issue als positiv erledigt bewertet werden.
+
+
+. Das Einlesen in das Archtitekur Notebook hat auch nicht stattgefunden. Der Grund scheint zu sein, dass die Aufgabe zu unspezifisch war. Eine solche Aufgabe erfordert eigen Initiative sich mit der Thematik auseinander setzen zu wollen. In der nächsten Iteration muss bereits das Architektur Notebook erstellt werden, weshald das Issue an sich nicht übernommen wird. Issue wird die nächste Iteration ist das Erstellen des Architektur Notebook. Dies wird nun zeitaufwendiger als geplant, da keine Einarbeitung vorher stattfand.
+
+. Das Testing konnte nicht ausgeführt werden, z.T. lag dies an krankheitsbedingten Ausfall eines Mitglieds -> dieses Issue wird in die nächst Iteration übernommen und die Aufgabenstellung klarer gestellt
+
+//*Beurteilung im Vergleich zu den Bewertungskriterien*
 //Document whether you met the evaluation criteria as specified in the Iteration Plan.
 //Geben Sie an, ob Sie die o.g. Bewertungskriterien erfüllt haben. Das kann z.B. folgende Informationen enthalten: “Demo for Department X was well-received, with some concerns raised around usability,” or “495 test cases were automated with a 98% pass rate. 9 test cases were deferred because the corresponding Work Items were postponed.”
+
+ 
 
 *Andere Belange und Abweichungen*
 //Führen Sie weitere Themen auf, für die eine Bewertung durchgeführt wurde. Beispiele sind Finanzen, Zeitabweichungen oder Feedback von Stakeholdern, die nicht bereits an anderer Stelle dokumentiert wurden.
 
-Beim Erstellen der UseCases fiehl den Analysten auf, dass sie noch einige essentielle Fragen haben ohne die eine weiterarbeit nicht möglich wäre
+. Klärung von Unklarheiten:
+
+Beim Erstellen der UseCases fiehl den Analysten auf, dass sie noch einige essentielle Fragen haben ohne die eine Weiterarbeit nicht möglich wäre
 
 -> Lösung war ein weiteres kurzes Treffen mit dem Auftraggeber 
  
 -> es konnten alle Fragen geklärt werden. 
 
-Daraus holen wir die erkenntnis, dass man bei Fragen, vor allem den großen, direkt sich mit dem Auftragsgeber zusammensetzen muss, um diese zu klären. WIr konnten es verhindern, dass unsere Analysen die Iteration im Dunkeln tappen und erst zum Ende der Iteration zum geplanten Termin mit Ringel ihre Fragen klären konnten. 
+Daraus holen wir die Erkenntnis, dass man bei Fragen, vor allem den großen, direkt sich mit dem Auftragsgeber zusammensetzen muss, um diese zu klären. Wir konnten es verhindern, dass unsere Analysen die Iteration im Dunkeln tappen und erst zum Ende der Iteration zum geplanten Termin mit Ringel ihre Fragen klären konnten. 
+
+. Zusammenarbeit:
+
+Es fällt auf, dass Enrico und Hoang als Duo gut und viel zusammenarbeiten. Paul, als dritter im Bunde der Analysten, arbeitet zwar eher alleine, aber die Kommunikation zwischen den drein scheint zu funktionieren und die Endrodukte sind gut.
+
+Nils und Richard als Entwickler arbeiten auch zusammen. Da die Entwicklung erst anfängt, lassen sich noch keine genaueren Aussagen treffen, aber ich bin positiv gestimmt.
+
+Die Architekten scheinen bisher noch nicht als Team zu arbeiten. Aufgefallen ist dies, da die beiden zum einen seperate Klassendiagramme gemacht haben. Es schien nicht so als hätte man sich zusammen gesetzt und zusammen die Dinge erarbeitet. Durch die fehlende Zusammenarbeit hat auch die Erfüllung der Issues diese Iteration gelitten. Die Projektleitung wird daher zukünftig dieses Duo genauer beobachten und klar vermitteln, dass eine Zusammenarbeit notwendig ist. 
+
+-> Lösung: Allen verdeutlichen das sich die Teilteams vor dem Meeting im gesamten Team absprechen müssen. Das Teammeeting ist nicht dafür da, die bessere Version von mehreren rauszusuchen
 
 == Alphas
 
