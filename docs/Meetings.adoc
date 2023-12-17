@@ -198,15 +198,43 @@ Software Framework, etc.
 
 *nächste Iteration:*
 
-Analysten:
+.Analysten:
+* Überarbeitung nach Treffen mit Ringel
+** Zustandsdiagramm
+*** hold statt fehlerhaft
+*** material: hold wieder in wartend oder in Ausschuss gehen
+*** 
+** Wireframes
+*** zusatztreffen mit Ringel
+** Use Case Diagramm
+*** Mitarbeiter kann die in hold zustand ansehen und entscheiden, was mit den passiert
+*** neuer möglicher Akteur: Ingenieur, der für die Reparatur verantwortlich ist
+*** wird per se so abgesegnet wie es gerade ist (also das von Paul)
+** Use Case 
+*** siehe Kommentare in Dateien
+*** Use Case 2 Alternative Abläufe
+* Glossar weiter führen
+* System wide requirements (da macht Marlene mit)
+
 
 Architekten:
+* Anmerkungen aus Meeting mit Ringel austauschen mit Richard
+* Architekture Notebook ausfüllen
+** Architektur überlegen
+*** z.B. Software Komponente
+* mit den Entwickler kann man hier zusammen arbeiten
 
 Entwickler:
+* erstellen der Tabellen
+* erstellung einer Gui die mit der Datenbank in verbindung steht
 
 Tester:
+* heraus finden, was man als tester wie tun muss und was da geplant werden muss
 
 Projektmanagement:
+* Iterationspläne
+* Projektplan
+* Bewertung
 
 == Meetings mit Coach
 

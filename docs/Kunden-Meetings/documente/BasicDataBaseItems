@@ -1,0 +1,57 @@
+Maschine: Tool
+ToolID
+Group
+Type
+Owner
+State
+MTTR
+MTTF
+
+
+Los: Lot
+LotID
+Prio
+Pcs
+State
+Product
+Route
+Oper
+Customer
+Order
+StartDate
+DueDate
+EnterOper
+ProcStart
+DispTool
+
+
+Produkt-Arbeitspläne: ProdFlow
+Product
+Route
+Seq
+
+Teil-Arbeitspläne: WorkFlow
+Route
+Oper
+Desc
+Mandatory
+StepPerc
+
+
+Prozess-Zeiten: PTime
+Tool
+Product
+Route
+Oper
+PTime
+Interval
+Recipe
+
+
+MES-Entitäten: Entities
+Entity
+Class
+Enabled
+State
+Note
+

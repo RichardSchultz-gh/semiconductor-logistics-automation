@@ -40,7 +40,7 @@ include::../_includes/default-attributes.inc.adoc[]
 
 Die in dieser Iteration geplanten Aufgaben sind in der Work Items List dargestellt (hier Verweis einfügen).
 
-
+image::Iteration4_issues_begin_iteration.png[]
 
 == Probleme (optional)
 //Optional: Führen Sie alle Probleme auf, die in dieser Iteration adressiert werden sollen. Aktualisieren Sie den Status, wenn neue Probleme bei den täglichen / regelmäßigen Abstimmungen berichtet werden.

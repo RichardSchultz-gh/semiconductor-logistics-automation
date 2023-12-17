@@ -4,8 +4,6 @@ Nico Kroll <email@domain.org>; Nils Generlich <email@domain.org>; Paul Marx <ema
 include::../_includes/default-attributes.inc.adoc[]
 // Platzhalter für weitere Dokumenten-Attribute
 
-// Was macht die Vision:
-// beschreibt das gemeinsame Zeil das das Team mit dem Kunden verfolgt; Zielbeschreibung/-definiert
 
 //Datenabnk = Grandlage Produktionssteuerungssystems
 //anwendungsfälle zeigen, dass es funktioniert
@@ -14,7 +12,7 @@ include::../_includes/default-attributes.inc.adoc[]
 Der Zweck dieses Dokuments ist es, die wesentlichen Bedarfe und Funktionalitäten des Systems "Frau Holle" zu sammeln, zu analysieren und zu definieren. Der Fokus liegt auf den Fähigkeiten, die von Stakeholdern und adressierten Nutzern benötigt werden, und der Begründung dieser Bedarfe. Die Details, wie das System Frau Holle diese Bedarfe erfüllt, werden in der Use-Case und Supplementary Specification beschrieben.
 
 === Zweck
-Der Zweck dieses Dokuments ist es, die wesentlichen Anforderungen an das System aus Sicht und mit den Begriffen der künftigen Anwender zu beschreiben.
+Der Zweck dieses Dokuments ist es, die wesentlichen Anforderungen an das System aus Sicht und mit den Begriffen der künftigen Anwender zu beschreiben. Die Vision beschreibt das gemeinsame Ziel, welches das Team mit dem Kunden verfolgt.
 
 === Gültigkeitsbereich (Scope) 
 Dieses Visions-Dokument bezieht sich auf das System "Frau Holle"", das von Team I04 entwickelt wird. Das System wird es der Halbleiterfabrik erlauben die Fertigungsabläufe der Halbleiterfertigung transparent zu machen und die Daten dazu zu verwalten.
@@ -54,12 +52,6 @@ Das Ziel der Software besteht darin, die Fertigungsprozesse in der Halbleiterher
 //Geben Sie in knapper Form übersichtsartig die Positionierung der angestrebten Lösung im Vergleich zu verfügbaren Alternativen dar. Das folgende Format kann dazu verwendet werden:
 
 
-////
-Richard: Positionierung des Produkts:
--Ich würde eher sagen, dass das Produkt für die Mitarbeiter ist, denn die bisherige Lösung funktioniert an sich für die Halbleiterfabrik, aber die Mitarbeiter wünschen sich eine Software damit die Arbeitsschritte leichter werden.
--Dadurch brauch man den Bezug bei "Die/ Das" nicht mehr auf die Mitarbeiter.
--Grammatik:"bietet Transparenz in den Fertigungsabläufen"
-////
 
 [cols="1,3"]
 |===

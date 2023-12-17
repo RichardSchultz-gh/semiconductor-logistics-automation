@@ -35,7 +35,7 @@ Die in dieser Iteration geplanten Aufgaben sind in der Work Items List dargestel
 
 Stand: 08.12.2023
 
-image::Iteration3_issues_nichtfinal.png[]
+image::Iteration3_issues.png[]
 
 include::github_names.adoc[]
 
