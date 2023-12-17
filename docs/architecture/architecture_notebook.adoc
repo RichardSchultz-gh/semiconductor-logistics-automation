@@ -4,6 +4,8 @@ Vorname Nachname <email@domain.org>; Vorname2 Nachname2 <email2@domain.org>; Vor
 include::../_includes/default-attributes.inc.adoc[]
 // Platzhalter für weitere Dokumenten-Attribute
 
+// Classdiagramm: Datentypen und Beispiele dahinterschreiben und arbeiten das in das ER-Modell mit ein und dann an Ringel schicken zur Abnahme
+// Ringel kann Beispiel daten uns liefen (danach in Mail fragen) so kann man die Größe von char und so was alles rausfinden
 
 == Zweck
 Dieses Dokument beschreibt die Philosophie, Entscheidungen, Nebenbedingungen, Begründungen, wesentliche Elemente und andere übergreifende Aspekte des Systems, die Einfluss auf Entwurf und Implementierung haben.

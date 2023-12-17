@@ -42,12 +42,12 @@ Prozess-Zeiten: PTime       rein bis raus
 Tool
 Product
 Route
-Oper
+Operation
 PTime       Planungsdate
-Interval    alle wieviel Zeiteinheiten kam ein neues Produkt in die Maschine rein
-Recipe      String
--> sagt aus für welche Maschine welche Route-Operation wie lange gedauert hat
-
+Interval    alle wieviel Zeiteinheiten kann ein neues Produkt in die Maschine rein
+Recipe      String; wie ich die Aktion machen -> die beeinflusst die Zeit
+-> sagt aus für welche Maschine welche Route-Operation wie lange dauert
+-> zeit ist abhängig von Produkt Route operation und Rezept
 
 MES-Entitäten: Entities
 Entity

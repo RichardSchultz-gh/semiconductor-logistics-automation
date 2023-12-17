@@ -1,6 +1,7 @@
 //Nutzen Sie dieses Template als Grundlage für die Spezifikation *einzelner* Use-Cases. Diese lassen sich dann per Include in das Use-Case Model Dokument einbinden (siehe Beispiel dort).
 ifndef::main-document[include::../_includes/default-attributes.inc.adoc[]]
 
+// Zustandsnamen bekommen wir im Englischen und dann alle UseCases an Ringel schicken zur Abnahme
 
 == Use-Case: UC03 Los bearbeiten
 
@@ -20,7 +21,8 @@ Starten den Use Case in einem vordefinierten Zeitintervall
 
 === Vorbedingungen
 
-*Vorbedingung 1:* Lose wurden gestartet und befinden sich im Fertigungsprozess
+*Vorbedingung 1:* Lose wurden gestartet und befinden sich im Fertigungsprozess 
+
 
 === Standardablauf (Basic Flow)
 
@@ -30,11 +32,18 @@ Starten den Use Case in einem vordefinierten Zeitintervall
 4. System fragt ab, ob sich die Maschine im Zustand „betriebsbereit“ befindet
 5. Algorithmus wählt das als nächstes zu bearbeitende Los für jede Maschine aus (FiFo-Prinzip)
 6. Das ausgewählte Los wird vom Zustand “wartend” auf den Zustand “in Bearbeitung” gesetzt 
+// Maschinenzustand ändert sich nach 6
 7. Das Los verbleibt für die Dauer der Prozesszeit im Zustand „in Bearbeitung“
 8. Prüfung, ob das Los fehlerhaft bearbeitet worden ist
 9. Prüfung, ob das Los das Ende des Fertigungsablaufes erreicht hat
-10. Zustand des Loses wird von „in Bearbeitung“ zu „wartend“ gesetzt
-11. Die Route des Loses wird aktualisiert 
+10. Zustand des Loses wird von „in Bearbeitung“ zu "completed" gesetzt
+//11. Die Route des Loses wird aktualisiert -> gehört nicht in das UseCase; fliegt raus
+
+// Änderung der Zustände beachten -> wartend wurde ja jetzt angepasszt 
+// Das ist der jetzige wartend Zustand
+
+// 10tes habe ich bereits angepasst
+//
 
 === Alternative Abläufe
 //Nutzen Sie alternative Abläufe für Fehlerfälle, Ausnahmen und Erweiterungen zum Standardablauf
@@ -42,12 +51,14 @@ Starten den Use Case in einem vordefinierten Zeitintervall
 (2) Prüfung nicht erfolgreich -> alle Lose befindet sich im Produktionsprozess oder kein Los wurde gestartet
 
 	* Ausgabe, dass kein Los gefunden worden ist
-  * Das System beendet den Standardablauf
+    * Das System beendet den Standardablauf
 
 (4) Prüfung nicht erfolgreich -> alle Maschinen befinden sich in Produktion, sind defekt oder in Wartung
 
 	* Ausgabe, dass keine Maschine betriebsbereit ist
 	* Das System beendet den Standardablauf
+
+// aus 7) kommt man mit fehlerhaft oder nicht fehlerhaft stehen -> die Wahr das was fehlerhaft ist muss irgendwo stehen in der Datenbank 
 
 (8) Prüfung erfolgreich -> Los wurde fehlerhaft bearbeitet
 

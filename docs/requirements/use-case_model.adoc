@@ -10,6 +10,39 @@ include::../_includes/default-attributes.inc.adoc[]
 // ...
 
 
+// Notizen zu Zustandsdiagramm:
+// material: fehlerhaft wieder in wartend gehen
+// hold statt fehlerhaft (wird durch ingeniieur geprüft) paussiert
+// -> daraus in wartend oder Ausschuss
+// Maschine produziert in wartung kann auch möglich sein; passt aber so auch
+
+// Alle Zustände ins Englisch übersetzen
+
+// Notzien zu Wireframes: 
+
+// zu startend:
+// noch wochentag hinzufügen
+
+// zu bearbeitend:
+// produkt, Route, operation und  Zustand wartend
+// klincke auch Los und kann dann das Bearbeiten, da geht oben was auf wo man das bearbeiten kann (und hold setzen kann)
+// eine Maschine auswählen können
+
+// zu bewegen:
+// eingabemaske -> wohin bewegen
+
+// es muss wenn man ein Los ausgewählt hat bei Maschinen nur die Maschinen auftauchen, in die das Los kommen kann. Wen ich eine Freie Maschine wähle, kann ich den Button drücken
+
+// Maschinen Zustand manuell ändern nur bei Zustand: wartend (in Wartung) nach BEtriebsbereit oder in Wartung setzen
+
+// Ringel möchte noch mal nachdenken -> nach Weihnachten
+
+// Wireframes hintenran stellen erstmal vor Weihnachten
+
+// nächste Woche am Do Wireframes in UseCases umwandeln (in Kunden/ Auftragnehmer Perspektive) WIe Soll das Produkt aussehen
+
+// 
+
 .Akteure:
 . Mitarbeiter an Maschine (nur Einsehen)
 . Abteilungsleiter (Einsehen+Änderungen vornehmen)
@@ -46,6 +79,18 @@ Was soll alles nur der Leiter können?
 
 .UseCaseDiagramm 2
 image::usecase_first_version_pmx.png[]
+
+// Notizen dazu:
+//auf welche UseCases soll der Mitarbeiter zugriff haben: 
+// timer: macht sinn - Ringel
+// Mitarbeiter: macht sinn
+// frage kann mitarbeitr los bearbeiten - fragt sich ringel
+// wir lassen das hier so stehen (später andere mal machen)
+// Mitarbiter kann die in hold zustand ansehen und entscheiden was mit den passiert
+
+// neuer Akteur: Ingenieur das die Repariert 
+
+// wird so abgesegnet wie es gerade ist (also das von Paul)
 
 //Unterschiede: 
 

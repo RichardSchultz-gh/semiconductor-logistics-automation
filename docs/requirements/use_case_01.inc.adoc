@@ -37,6 +37,15 @@ Möchte Lose manuell starten
 
 *Vorbedingung 2:* Kundenauftrag ist vorhanden
 
+// Produkt, Zeitpunkt KW, Wafer
+// wir wissen wir müssen diese woche 200 Stück von dem Auftrag in diese KW starten
+// alles andere ist in der Fabrikplannung
+
+// Fertigungskapazität -> müsste durch Planung auch gemacht sein also nicht teil unseres Projektes
+// 
+//
+//
+
 === Standardablauf (Basic Flow)
 //Der Standardablauf definiert die Schritte für den Erfolgsfall ("Happy Path")
 
@@ -51,11 +60,15 @@ Möchte Lose manuell starten
 //Nutzen Sie alternative Abläufe für Fehlerfälle, Ausnahmen und Erweiterungen zum Standardablauf
 
 ==== <Alternativer Ablauf 1>
+
 Wenn Mitarbeiter, Abteilungsleiter im Schritt 1 des Standardablauf eine negative Waferanzahl oder ein in der Vergangenheit liegendes Datum eingibt, dann bekommt Akteur eine Fehlermeldung.
 . Der Use Case wird im Schritt 1 fortgesetzt.
+
 ==== <Alternativer Ablauf 2>
+
 Nach im Schritt 2 ausgeführten Losanzahl und Zieldatum Berechnung, kann Prozess mit Timer automatisiert beauftragt werden. 
 . Der Use Case wird im Schritt 3 fortgesetzt.
+
 === Unterabläufe (subflows)
 //Nutzen Sie Unterabläufe, um wiederkehrende Schritte auszulagern
 

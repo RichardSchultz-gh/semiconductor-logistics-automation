@@ -4,6 +4,11 @@ Nico Kroll <email@domain.org>; Nils Generlich <email@domain.org>; Paul Marx <ema
 include::../_includes/default-attributes.inc.adoc[]
 // Platzhalter für weitere Dokumenten-Attribute
 
+// Was macht die Vision:
+// beschreibt das gemeinsame Zeil das das Team mit dem Kunden verfolgt; Zielbeschreibung/-definiert
+
+//Datenabnk = Grandlage Produktionssteuerungssystems
+//anwendungsfälle zeigen, dass es funktioniert
 
 == Einführung
 Der Zweck dieses Dokuments ist es, die wesentlichen Bedarfe und Funktionalitäten des Systems "Frau Holle" zu sammeln, zu analysieren und zu definieren. Der Fokus liegt auf den Fähigkeiten, die von Stakeholdern und adressierten Nutzern benötigt werden, und der Begründung dieser Bedarfe. Die Details, wie das System Frau Holle diese Bedarfe erfüllt, werden in der Use-Case und Supplementary Specification beschrieben.

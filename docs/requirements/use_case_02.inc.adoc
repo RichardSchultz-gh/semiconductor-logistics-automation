@@ -33,21 +33,50 @@ Möchte experimentell manuell Los in anderen Arbeitsschritt einfügen
 
 1. Der Use Case beginnt, wenn Mitarbeiter, Abteilungsleiter manuell auf Benutzeroberfläche Anweisung gibt, ein Los bewegen zu wollen
 2. Zustand von Los wird überprüft
-3. Wenn Los Zustand "gestartet" oder "wartend" dann wird Los auf nächste Operation und Zustand "in Bearbeitung" gesetzt
+3. Wenn Los Zustand "gestartet" oder "wartend", dann wird Los auf nächste Operation und Zustand "in Bearbeitung" gesetzt
 4. Der Use Case ist abgeschlossen.
+
+// warte Zustand :
+// War in bearbeitung -> wartend
+// los war nicht  ncith in Bearbeitung -> wartend
+// man weis nicht ob das Los schon bearbeitet wurden, da beise den gleichen Zustand haben
+// es braucht einen Zustand wartend vor der Bearbeitung und einen Zustand wartend nachher
+// wartend - zu bearbeiten
+// completed - wurden bearbeitet und wartet darauf, dass die auf die nächste Operation/Maschine/produktionsschritt gepackt werden
+
+// dieser Zustand macht: bewegen macht schauen ebi Losen von Completed was als nächstes passiert
+
+// geht von complet bei der nöchsten Operation in den ZUstand wartend oder fertig gesetzt
+
+// gestartet geht automatisch in wartend über
 
 === Alternative Abläufe
 //Nutzen Sie alternative Abläufe für Fehlerfälle, Ausnahmen und Erweiterungen zum Standardablauf
 ==== Alternativer Ablauf 1
+
 Mithilfe des Timers können automatisch Lose bewegt werden. 
 . Der Use Case wird in Schritt 2 fortgesetzt.
+
 ==== Alternativer Ablauf 2
-Wenn Abteilungsleiter im Schritt 3 sieht, dass Los weder im Zustand "gestartet" noch "wartend" ist, dann kann er das Los auf beliebigen Status setzen und bewegen.
+
+Wenn Abteilungsleiter im Schritt 3 sieht, dass das Los weder im Zustand "gestartet" noch "wartend" ist, dann kann er das Los auf beliebigen Status setzen und bewegen.
 . Der Use Case ist abgeschlossen.
 
+// geht so nicht 
+// manuelles Bewegen von Losen geht nur von Losen die im Zustand wartend sind!
+// oder im Zustand hold ist
+// Abteilungsleiter kann dann dort den Zustand beliebig ändern und irgendwo hin tuen (Operation)
+// und manuell von wartend auf hold setzen
+// man kann die Lose nur manuell zwischen wartend und hold wechseln keine anderen Zustände
+
 ==== Alternativer Ablauf 3
+
 Wenn Mitarbeiter im Schritt 3 sieht, dass Los weder im Zustand "gestartet" noch "wartend" ist, dann kommt eine Fehlermeldung mit aktueller Zustandsangabe.
 . Der Use Case ist abgeschlossen.
+
+// macht so auch keinen Sinn
+// was sinn macht, ist einen Meldung es gibt gerade keine manuell zu bewegenden Lose 
+// überarbeiten und dann an Ringel schicken -> davor muss natürlich das Zustanddiagramm angepassst werden
 
 === Unterabläufe (subflows)
 //Nutzen Sie Unterabläufe, um wiederkehrende Schritte auszulagern
