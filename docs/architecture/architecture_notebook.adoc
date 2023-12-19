@@ -32,9 +32,10 @@ Dieses Dokument beschreibt die Philosophie, Entscheidungen, Nebenbedingungen, Be
 == Entscheidungen, Nebenbedingungen und Begründungen
 //[List the decisions that have been made regarding architectural approaches and the constraints being placed on the way that the developers build the system. These will serve as guidelines for defining architecturally significant parts of the system. Justify each decision or constraint so that developers understand the importance of building the system according to the context created by those decisions and constraints. This may include a list of DOs and DON’Ts to guide the developers in building the system.]
 
-. Entscheidung oder Einschränkung oder Begründung 1
-. Entscheidung oder Einschränkung oder Begründung 2
-
+. Verwendung eines Raspberry Pi wurde uns vorgegeben
+. Verwendung des Betriebsystems Rasbpian, hielten wir für die einsteigerfreundlichste Wahl
+. Verwendung von Python wurde uns vorgegeben und einige aus unserem Team kannten auch schon den grundsätzlichen Umgang
+.
 
 == Architekturmechanismen
 https://www2.htw-dresden.de/~anke/openup/core.tech.common.extend_supp/guidances/concepts/arch_mechanism_2932DFB6.html[Doku "Concept: Architectural Mechanism"]
