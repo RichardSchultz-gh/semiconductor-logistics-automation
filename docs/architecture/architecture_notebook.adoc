@@ -52,8 +52,11 @@ https://www2.htw-dresden.de/~anke/openup/core.tech.common.extend_supp/guidances/
 
 //Beschreiben Sie den Zweck, Eigenschaften und Funktion der Architekturmechanismen.
 
-. Sicherheit
-. Persistenz
+. relationales DBMS
+.. Sicherheit
+.. Persistenz
+.. Terminierung (scheduling)
+.. Mega-Daten
 
 == Wesentliche Abstraktionen
 //[List and briefly describe the key abstractions of the system. This should be a relatively short list of the critical concepts that define the system. The key abstractions will usually translate to the initial analysis classes and important patterns.]
