@@ -31,8 +31,8 @@
 
 *Architektur/Implementierung*
 
-- Framework-Empfehlung Architektur: FLASK oder DJANGO 
-- GUI besser nicht über TKInter, sondern über PySimple GUI (einfacher und mehr Funktionalität) für stand alone application   -> Website im Framework verankert
+- Framework-Empfehlung Architektur: FLASK oder DJANGO -> Nils findet FLASK gut
+- GUI besser nicht über TKInter, sondern über PySimple GUI (einfacher und mehr Funktionalität) für stand alone application -> Website im Framework verankert
 - Beim Auslösen einer Abfrage keine direkte Abfragen mittels UPDATE oder INSERT auf die Datenbank -> erst werden über eine Schnittstelle Dienste aus der Middleware aufgerufen und diese führen die SQL-Befehle aus 
 - mehr Infos bei Google unter: "Client Server Web Application Architecture Python" // bitte ggf. korrigieren 
 - optional: PDF-Reports sollen über Buttons erzeugt werden ->  Shellskript -> R-Skript (SQL-Bfehle) -> Generierung PDF
