@@ -1,1 +1,43 @@
+== Mitschrift Meeting 5 - Wireframes
 
+:imagesdir: images 
+
+*Ergebnis 1. Semester*
+
+- Grundgerüst intakt: Datenbank -> Middleware -> GUI
+- Tabellen mit Beispieldaten (.csv von Herr Ringel nutzbar)
+- 1-2 Elemente der GUI vorhanden (TOOL-Tabelle oder LOS-Tabelle)
+- 1-2 Schnittstellen vorhanden
+- harte SQL-Befehle müssen in der GUI sichtbar werden (z.B. UPDATE)
+
+*Anpassungen Wirframes*
+
+- Los bewegen entfernen
+- Tabellen aus Cockpit-View entfernen
+- Filter in Operations einfügen 
+- Daten visualisieren im Cockpit-View entfernen
+- In den Operations bei Los die Maschine hinzufügen und umgekehrt
+- Los bearbeiten -> Ergänzung einer Spalte, welche die nächsten möglichen Maschinen angibt
+- In den Operations Buttons & Co über der Tabelle platzieren
+- Los bearbeiten über Eingabefeld realisieren 
+  -> reg. Expression: State LosID Tool -> Bsp.: PROC - U784 - SNK2001; MVNEXT - U7832; DOWN SNK2001 
+- Ergänzung von KPIs im Cockpit-View: 
+ .. WIP (work in progress): Anzahl Waver im Zustand HOLD, WAIT, OP COMPLETED, PROC
+..  HOLD: Anzahl Waver im Zustand hold
+..  FIN: Anzahl Waver im Zustand finished
+..  TOOLS IDLE PROD MAIN DOWN (Anz. je Zustand + Gesamtwert)
+..  Optional: MVS/1hr: Anzahl Waver mit Übergang von PROC zu OP COMPLETED innerhalb von 1h; Hilfstabelle notw. 
+- Ergänzung von Report-Buttons im Cockpit-View
+
+*Architektur/Implementierung*
+
+- Framework-Empfehlung Architektur: FLASK oder DJANGO 
+- GUI besser nicht über TKInter, sondern über PySimple GUI (einfacher und mehr Funktionalität) für stand alone application   -> Website im Framework verankert
+- Beim Auslösen einer Abfrage keine direkte Abfragen mittels UPDATE oder INSERT auf die Datenbank -> erst werden über eine Schnittstelle Dienste aus der Middleware aufgerufen und diese führen die SQL-Befehle aus 
+- mehr Infos bei Google unter: "Client Server Web Application Architecture Python" // bitte ggf. korrigieren 
+- optional: PDF-Reports sollen über Buttons erzeugt werden ->  Shellskript -> R-Skript (SQL-Bfehle) -> Generierung PDF
+
+*Notizen Rob Ringel*
+
+image::meeting5_rob_notiz1.jpg[]
+image::meeting5_rob_notiz2.jpg[]
