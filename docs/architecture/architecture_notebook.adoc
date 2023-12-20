@@ -28,7 +28,7 @@ Dieses Dokument beschreibt die Philosophie, Entscheidungen, Nebenbedingungen, Be
 
 . Einfach verständlich und robust geschriebener Code (notwendig um spätere Weiterentwicklung zu gewähren)
 . Umgang mit großen Datenmengen
-. Mehere Rollen, mit verschiedenen Rechten im System (z.B. Abteilungsleiter und einfacher Arbeiter)
+. Mehrere Rollen mit verschiedenen Rechten im System (z.B. Abteilungsleiter und einfacher Arbeiter)
 . Nutzung auf verschiedenen Endgeräten (PC und Tablet)
 
 == Architektur-relevante Anforderungen
@@ -40,7 +40,7 @@ Dieses Dokument beschreibt die Philosophie, Entscheidungen, Nebenbedingungen, Be
 //[List the decisions that have been made regarding architectural approaches and the constraints being placed on the way that the developers build the system. These will serve as guidelines for defining architecturally significant parts of the system. Justify each decision or constraint so that developers understand the importance of building the system according to the context created by those decisions and constraints. This may include a list of DOs and DON’Ts to guide the developers in building the system.]
 
 . Verwendung eines Raspberry Pi wurde uns vorgegeben
-. Verwendung des Betriebsystems Rasbpian, hielten wir für die einsteigerfreundlichste Wahl
+. Verwendung des Betriebsystems Rasbpian hielten wir für die einsteigerfreundlichste Wahl
 . Verwendung von Python wurde uns vorgegeben und einige aus unserem Team kannten auch schon den grundsätzlichen Umgang
 .
 
@@ -54,6 +54,7 @@ https://www2.htw-dresden.de/~anke/openup/core.tech.common.extend_supp/guidances/
 
 
 . Sicherheit
+
 .Persistenz
 .. relationales DBMS
 ... PostgresSQL

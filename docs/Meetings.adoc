@@ -236,6 +236,30 @@ Projektmanagement:
 * Projektplan
 * Bewertung
 
+=== Teammeeting 6
+
+Anwesende:
+
+Abwesende:
+
+.Agenda:
+* Was wurden die letzten Tage gemacht
+* Wireframes
+* Haben sich die Architekten und Richard getroffen und besprochen?
+* Prio der UseCases
+* Weiß jeder was er zu tun hat?
+* Welche Fragen gibt es noch?
+*
+
+.Hinweise:
+* Arbeitet in euren kleinen Teams zusammen und besprecht euch. Beim nächsten Meeting sollt ihr vorstellen, was gemacht wurde.
+* Die Analysten sollen alle Dokumente die sie angefangen haben finalisieren (Es kommt vlt noch die Aufgabe mehr UseCases auszuarbeiten.)
+* Architekten bitte intensiv arbeiten und ggf auch zusammen mit den Entwicklern arbeiten
+* schaut immer in die Issues
+* ladet eure Arbeitsstände immer hoch
+* gedanken über den Prototypen machen uns im Issue Kommentieren
+
+
 == Meetings mit Coach
 
 === Meeting 1
