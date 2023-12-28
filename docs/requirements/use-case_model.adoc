@@ -60,7 +60,9 @@ include::../_includes/default-attributes.inc.adoc[]
 * *UC06*: Daten exportieren
 * *UC07*: Daten importieren
 * *UC08*: Backup erstellen
-* *UC09*: Daten visualisieren
+* *UC09*: Report erstellen
+* *UC10*: Maschine bearbeiten
+* *UC11*: Daten visualisieren
 
 //Überlegen wie man Use Cases vlt mit includes zusammenfassen kann
 //die Liste muss noch nach Prioritäten sortiert werden
@@ -68,17 +70,70 @@ include::../_includes/default-attributes.inc.adoc[]
 == Use Case Diagramm
 // Marlene: hier ist ein erstes Diagramm um es auszuprobieren. Alles daran könnt ihr ändern -> Änderungen in der Datei: 
 
-.UseCaseDiagramm 1
-image::UC_Diagramm.PNG[]
+.UseCaseDiagramm 
+image::usecase_second_version_pmx.png[]
 
---> Use Cases wurden danach noch mal angepasst, die Unterschiede zwischen den Use Cases sind davon nicht betrofen. Unterschiede sind: 
+//  --> Use Cases wurden danach noch mal angepasst, die Unterschiede zwischen den Use Cases sind davon nicht betrofen. // Unterschiede sind: 
 
-Timer einmal bei UC01-UC03 und Backup, einmal nur UC01+UC02
+// Timer einmal bei UC01-UC03 und Backup, einmal nur UC01+UC02
 
-Was soll alles nur der Leiter können?
+// Was soll alles nur der Leiter können?
 
-.UseCaseDiagramm 2
-image::usecase_first_version_pmx.png[]
+// .UseCaseDiagramm 2
+// image::usecase_first_version_pmx.png[]
+
+== Priorisierung der Use-Cases
+
+[cols="1,1,1"]
+|===
+|*UC-ID*
+|*Use-Case Name*
+|*Priorität (1-5)* 
+
+|UC01
+|Los starten
+|5
+
+|UC02
+|Los bewegen
+|5
+
+|UC03
+|Los bearbeiten
+|5
+
+|UC04
+|Stammdaten anzeigen 
+|4
+
+|UC05 
+|Stammdaten bearbeiten
+|4
+
+|UC06
+|Daten exportieren
+|3
+
+|UC07
+|Daten importieren
+|3
+
+|UC08
+|Backup erstellen
+|3
+
+|UC09
+|Report erstellen
+|2
+
+|UC10
+|Maschine bearbeiten
+|3
+
+|UC11
+|Daten visualisieren
+|4
+|=== 
 
 // Notizen dazu:
 //auf welche UseCases soll der Mitarbeiter zugriff haben: 
