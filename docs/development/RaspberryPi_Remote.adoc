@@ -1,3 +1,5 @@
+include::../_includes/default-attributes.inc.adoc[]
+:imagesdir: images
 = Anleitung zur Remote-Verbindung mit dem Raspberry Pi
 
 . *VNC Viewer installieren*
@@ -18,5 +20,6 @@
 
 . *Verbindung mit dem Raspberry Pi trennen*
 * obige Taskleiste (siehe Screenshot) wird angezeigt, wenn man mit der Maus nach oben fährt
+
 .Screenshot Raspberry Pi Benutzeroberfläche und "Sitzung beenden"-Button
-image::images/raspberry_pi_sitzung_beenden.png[]
+image::pi_signout.png[]
