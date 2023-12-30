@@ -36,7 +36,7 @@ def index():
         show_data = True
 
     # Daten aus der Funktion abrufen
-    records = get_cars_data()
+    records = get_entity_data()
 
     # HTML-Template rendern und Daten übergeben
     return render_template("index.html", records=records, show_data=show_data)
