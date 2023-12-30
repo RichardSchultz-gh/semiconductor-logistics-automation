@@ -1,5 +1,6 @@
 include::../_includes/default-attributes.inc.adoc[]
 :imagesdir: images
+
 = Architekturvorschlag
 
 == Architekturkomponenten
@@ -35,7 +36,7 @@ Flask definiert Routen und Schnittstellen für Anfragen wie das Hinzufügen, Anz
 Die Benutzeroberfläche interagiert über HTTP-Anfragen mit der Middleware. Flask routet diese Anfragen zu den entsprechenden Funktionen in der Middleware und verarbeitet die Antwort für die Darstellung.
 
 
-== Schnittstellen:
+== Schnittstelle
 
 . *Datenbank-Middleware-Schnittstelle:*
 Die Python-Bibliothek psycopg2 ermöglicht eine sichere Verbindung und den Austausch von SQL-Abfragen und Transaktionen zwischen der Middleware und der PostgreSQL-Datenbank.
