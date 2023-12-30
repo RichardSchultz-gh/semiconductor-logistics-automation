@@ -25,8 +25,7 @@ include::../_includes/default-attributes.inc.adoc[]
 * System Wide Requirements
 * introduction testing
 * Start development
-* Erster Architekturentwurf für Middleware mit Notebook
-* Architekten ER Diagramm fertig stellen 
+* Architekturentwurf für Middleware mit Notebook
 * ...
 
 // Testfälle für Architektur müssen im Lifecycle Architekture gemacht werden
