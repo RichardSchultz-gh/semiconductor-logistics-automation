@@ -1,0 +1,51 @@
+include::../_includes/default-attributes.inc.adoc[]
+:imagesdir: images
+= Architekturvorschlag
+
+== Architekturkomponenten
+. *Datenbankebene (PostgreSQL):*
+* _Datenbank-Server:_
+PostgreSQL wurde als Datenbankmanagementsystem ausgewählt, aufgrund seiner Skalierbarkeit und die Eigenschaft der effizienten Ressourcennutzung. Dies ermöglicht den Einsatz auf einem Raspberry Pi, einem System mit begrenzten Ressourcen. Außerdem ist es Open-Source und kostenfrei.
+Der PostgreSQL-Server verwaltet die Speicherung, Organisation und den Zugriff auf die Daten. Er stellt auch die ACID-Eigenschaften (Atomicity, Consistency, Isolation, Durability) sicher.
+
+.  *Middleware-Ebene (Python):*
+* _Python-Anwendung:_ 
+Sie dient als Middleware zwischen der Datenbank und der GUI. Hier werden Anfragen von der Benutzeroberfläche entgegengenommen, Datenbankoperationen durchgeführt und die Ergebnisse an die Benutzeroberfläche zurückgegeben.
+
+* _Datenbankzugriffsschicht:_
+Die Datenbankzugriffsschicht verwendet die Bibliothek psycopg2, um mit der PostgreSQL-Datenbank zu interagieren. Psycopg2 bietet eine effiziente und gut integrierte Möglichkeit, PostgreSQL aus Python heraus zu verwenden.
+Es ermöglicht das Ausführen von SQL-Abfragen, das Arbeiten mit Transaktionen und das Verarbeiten von Ergebnissen.
+
+* _Logikschicht:_
+Die Logikschicht beinhaltet die Anwendungslogik, einschließlich der Verarbeitung von Anfragen, der Validierung von Daten und der Vorbereitung von Daten für die Anzeige. Hier werden auch spezifische Logiken für die Erfassung und Verarbeitung von Halbleiterfertigungsdaten implementiert.
+
+. *Benutzeroberfläche (Flask-GUI) mit PySimpleGUI:*
+* _Flask als Web-Framework:_  
+Flask wird als Web-Framework verwendet, um eine Webanwendung als GUI zu erstellen und zu verwalten. Es erleichtert die Erstellung von Webanwendungen durch Bereitstellung von Routen, einer Vorlagen-Engine und einem integrierten Entwicklungsserver.
+
+* _PySimpleGUI für die Benutzeroberfläche:_
+PySimpleGUI ist eine benutzerfreundliche GUI-Bibliothek für Python und wurde gewählt, um die Benutzeroberfläche zu erstellen.
+Es ermöglicht die einfache Erstellung von GUI-Anwendungen mit einer minimalen Menge an Code.
+So erleichtert es die Integration von Benutzeroberflächenkomponenten wie Buttons, Textfeldern und Listen.
+
+* _Schnittstellen und Routen:_
+Flask definiert Routen und Schnittstellen für Anfragen wie das Hinzufügen, Anzeigen, Bearbeiten und Löschen von Daten. Die Routen (definieren eine URL) werden mit den entsprechenden Funktionen verknüpft, die die Anfragen verarbeiten und die Ergebnisse an die Benutzeroberfläche zurückgeben.
+
+* _Interaktion mit der Middleware:_
+Die Benutzeroberfläche interagiert über HTTP-Anfragen mit der Middleware. Flask routet diese Anfragen zu den entsprechenden Funktionen in der Middleware und verarbeitet die Antwort für die Darstellung.
+
+
+== Schnittstellen:
+
+. *Datenbank-Middleware-Schnittstelle:*
+Die Python-Bibliothek psycopg2 ermöglicht eine sichere Verbindung und den Austausch von SQL-Abfragen und Transaktionen zwischen der Middleware und der PostgreSQL-Datenbank.
+
+. *Middleware-GUI-Schnittstelle:*
+Die Middleware stellt RESTful API-Endpunkte (spezifische URLs) bereit, die von der Benutzeroberfläche aufgerufen werden, um Funktionen wie das Anzeigen, Hinzufügen und Löschen von Daten auszuführen.
+
+
+. *Benutzeroberfläche-Endbenutzer-Schnittstelle:*
+PySimpleGUI bietet eine gut strukturierte Schnittstelle für den Endbenutzer, um intuitiv mit den erfassten Daten zu interagieren. Es ermöglicht die einfache Erstellung einer benutzerfreundlichen grafischen Benutzeroberfläche für die Webanwendung. So wird eine zusätzliche Flexibilität bei der Gestaltung und Implementierung der Benutzeroberfläche geboten.
+
+
+-> Diese Architektur sollte eine effiziente Überwachung und Steuerung der Halbleiterfertigungsprozesse ermöglichen, selbst auf einem Raspberry Pi mit begrenzten Ressourcen.
