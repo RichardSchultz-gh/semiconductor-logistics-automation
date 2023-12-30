@@ -8,7 +8,7 @@ include::../_includes/default-attributes.inc.adoc[]
 == Allgemeine Informationen
 
 . Fortschritt 29.12.2023
-* Tabellen angelegt
+* Tabelle entities angelegt
 * GUI mit Zugriff auf Tabelle Entities klappt auf Raspberry Pi (Hinzufügen und Anzeigen von Einträgen)
 
 == ...

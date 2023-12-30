@@ -3,7 +3,7 @@ import psycopg2
 
 app = Flask(__name__)
 
-def get_cars_data():
+def get_entity_data():
     # Verbindungsparameter
     host = "localhost"
     port = 5432
@@ -16,7 +16,7 @@ def get_cars_data():
     # Cursor erstellen
     cursor = conn.cursor()
 
-    # cars-Tabelle auslesen
+    # entities-Tabelle auslesen
     cursor.execute("SELECT * FROM entities;")
 
     # Ergebnisse in Liste speichern
