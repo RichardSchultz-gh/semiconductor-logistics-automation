@@ -126,5 +126,21 @@ Folgende Sichten werden empfohlen:
 === Physische Sicht (Betriebssicht)
 //Beschreibt die physischen Knoten (Rechner) des Systems, der Prozesse, Threads und Komponenten, die in diesen Knoten ausgeführt werden. Diese Sicht wird nicht benötigt, wenn das System in einem einzelnen Prozess oder Thread ausgeführt wird.
 
+.C4-Modelldiagram mit PlantUML
+[plantuml, "{diagramsdir}/Frau_Holle_System_Context_C4", svg]
+....
+include::{plantumlsdir}/Frau_Holle_System_Context_C4.puml[]
+....
+
+
+.C4-Modelldiagram mit PlantUML
+[plantuml, "{diagramsdir}/Frau_Holle_Container_C4", svg]
+....
+include::{plantumlsdir}/Frau_Holle_Container_C4.puml[]
+....
+
 === Use cases
 //Eine Liste oder ein Diagramm der Use Cases, die architektur-relevante Anforderungne enthalten.
+
+.UseCaseDiagramm 
+image::usecase_second_version_pmx.png[]

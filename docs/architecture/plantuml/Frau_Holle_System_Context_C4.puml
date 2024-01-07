@@ -1,0 +1,20 @@
+@startuml Frau_Holle_System_Context_C4
+
+' C4 Model
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml
+
+LAYOUT_TOP_DOWN()
+
+title System Context diagram for Frau Holle
+
+Person(worker, "Fabrikarbeiter", "Arbeiter, der in der Halbleiterfabrik arbeitet und die Fertigungsprozesse einsehen kann.")
+Person(manager, "Abteilungsleiter", "Verantwortlich für die Überwachung der Produktionsabläufe.")
+System(frauHolle, "Frau Holle System", "Hier passieren die Fertigungsprozesse.")
+
+System_Ext(manufacturing, "Fertigung", "System zur Steuerung und Überwachung der Halbleiterproduktionslinie.")
+
+Rel(worker, frauHolle, "Benutzt")
+Rel(manager, frauHolle, "Benutzt, überwacht und bearbeitet")
+Rel(frauHolle, manufacturing, "Speichert und holt Daten")
+
+@enduml
