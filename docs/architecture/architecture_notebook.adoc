@@ -30,6 +30,7 @@ Dieses Dokument beschreibt die Philosophie, Entscheidungen, Nebenbedingungen, Be
 . Umgang mit großen Datenmengen
 . Mehrere Rollen mit verschiedenen Rechten im System (z.B. Abteilungsleiter und einfacher Arbeiter)
 . Nutzung auf verschiedenen Endgeräten (PC und Tablet)
+. Datensicherheit gewaehrleisten
 
 == Architektur-relevante Anforderungen
 //Fügen Sie eine Referenz / Link zu den Anforderungen ein, die implementiert werden müssen, um die Architektur zu erzeugen.
@@ -53,21 +54,66 @@ https://www2.htw-dresden.de/~anke/openup/core.tech.common.extend_supp/guidances/
 //Beschreiben Sie den Zweck, Eigenschaften und Funktion der Architekturmechanismen.
 
 
-. Sicherheit
+## Persistenz (Persistence)
+- **Zweck:** Lesen und Schreiben von gespeicherten Daten.
+- **Eigenschaften:** Unterstützt die dauerhafte Speicherung von Daten.
+- **Funktion:** Verwendung eines relationalen DBMS (PostgreSQL) zur Datenpersistenz.
 
-.Persistenz
-.. relationales DBMS
-... PostgresSQL
-. Terminierung (scheduling)
-. Mega-Daten
+## Sicherheit (Security)
+- **Zweck:** Schutz des Zugriffs auf Ressourcen oder Informationen.
+- **Eigenschaften:** Beinhaltet Authentifizierung, Autorisierung und Datenverschlüsselung.
+- **Funktion:** Gewährleistung der Datensicherheit und des beschränkten Zugriffs basierend auf Benutzerrollen.
+
+## Transaktionsmanagement (Transaction Management)
+- **Zweck:** Handhabung von ACID-Transaktionen.
+- **Eigenschaften:** Unterstützt die Integrität und Zuverlässigkeit von Datenbankoperationen.
+- **Funktion:** PostgreSQL bietet native Unterstützung für Transaktionsmanagement, um Konsistenz und Zuverlässigkeit der Daten zu gewährleisten.
+
+## Mega-Daten (Mega-data)
+- **Zweck:** Unterstützung für die Verarbeitung sehr großer Datenmengen.
+- **Eigenschaften:** Skalierbare Datenverarbeitung und -speicherung.
+- **Funktion:** PostgreSQL und Python-Middleware für effiziente Handhabung und Verarbeitung großer Datensätze.
+
+## Terminierung (Scheduling)
+- **Zweck:** Ermöglicht die Planung und Ausführung von Aufgaben zu bestimmten Zeiten oder unter bestimmten Bedingungen.
+- **Eigenschaften:** Unterstützt zeitgesteuerte und ereignisbasierte Aufgaben. Flexibel einsetzbar für regelmäßige oder einmalige Ereignisse.
+- **Funktion:** Im System ermöglicht dies die Automatisierung von Datenerfassung und Wartungsaufgaben, für zeitgesteuerte Datenbank-Updates.
+
+Diese Architekturmechanismen sind essentiell für die Entwicklung einer robusten, sicheren und skalierbaren Datenbankanwendung, die auf einem Raspberry Pi mit Raspbian Betriebssystem betrieben wird.
 
 == Wesentliche Abstraktionen
 //[List and briefly describe the key abstractions of the system. This should be a relatively short list of the critical concepts that define the system. The key abstractions will usually translate to the initial analysis classes and important patterns.]
 
+Die Architektur zielt darauf ab, eine langlebige, erweiterbare und robuste Datenbankanwendung zu bieten, die große Datenmengen verarbeitet und auf verschiedenen Endgeräten nutzbar ist. Folgende Schlüsselabstraktionen sind identifiziert:
+
+- **Datenbank-Server (PostgreSQL):** Zentral für die Datenspeicherung und -organisation, ausgewählt für seine Skalierbarkeit und Effizienz auf dem Raspberry Pi.
+- **Middleware (Python-Anwendung):** Verbindet die Datenbank mit der GUI, nimmt Anfragen entgegen, führt Datenbankoperationen durch und gibt Ergebnisse zurück.
+- **Benutzeroberfläche (Flask-GUI mit PySimpleGUI):** Ermöglicht die Interaktion der Endbenutzer mit dem System über eine benutzerfreundliche Web-GUI.
+- **Schnittstellen und Routen:** Wichtig für die Kommunikation zwischen den verschiedenen Systemkomponenten.
 
 == Schichten oder Architektur-Framework
 //[Describe the architectural pattern that you will use or how the architecture will be consistent and uniform. This could be a simple reference to an existing or well-known architectural pattern, such as the Layer framework, a reference to a high-level model of the framework, or a description of how the major system components should be put together.]
+Die Architektur basiert auf einem mehrschichtigen Framework, das Folgendes umfasst:
 
+### Datenbankebene (PostgreSQL)
+- **Verantwortlich für die Speicherung und das Management der Daten**, mit Fokus auf Effizienz und Skalierbarkeit für den Einsatz auf einem Raspberry Pi.
+
+### Middleware-Ebene (Python)
+- **Python-Anwendung:** Dient als zentrale Vermittlungsstelle zwischen Datenbank und Benutzeroberfläche.
+- **Datenbankzugriffsschicht:** Nutzt die Psycopg2-Bibliothek zur Interaktion mit PostgreSQL.
+- **Logikschicht:** Beinhaltet die Geschäftslogik, Datenvalidierung und -aufbereitung.
+
+### Benutzeroberflächenebene (Flask-GUI mit PySimpleGUI)
+- **Flask als Web-Framework:** Vereinfacht die Erstellung und Verwaltung von Webanwendungen.
+- **PySimpleGUI:** Ermöglicht die Gestaltung einer intuitiven Benutzeroberfläche.
+- **Schnittstellen und Routen:** Definieren den Zugang zur Middleware und ermöglichen die Benutzerinteraktion.
+
+### Schnittstellen
+- **Datenbank-Middleware-Schnittstelle:** Sicherer Datenaustausch über Psycopg2.
+- **Middleware-GUI-Schnittstelle:** RESTful API-Endpunkte für die GUI-Kommunikation.
+- **Benutzeroberfläche-Endbenutzer-Schnittstelle:** PySimpleGUI für die Interaktion mit dem Endbenutzer.
+
+Diese Architektur fördert die langfristige Nutzbarkeit und Weiterentwicklung der Anwendung, selbst auf einem Raspberry Pi mit begrenzten Ressourcen.
 
 == Architektursichten (Views)
 //[Describe the architectural views that you will use to describe the software architecture. This illustrates the different perspectives that you will make available to review and to document architectural decisions.]
