@@ -143,5 +143,5 @@ include::{plantumlsdir}/Frau_Holle_Container_C4.puml[]
 //Eine Liste oder ein Diagramm der Use Cases, die architektur-relevante Anforderungne enthalten.
 
 .UseCaseDiagram
-image::usecase_second_version_pmx.png[]
+image::images/usecase_second_version_pmx.png[]
 
