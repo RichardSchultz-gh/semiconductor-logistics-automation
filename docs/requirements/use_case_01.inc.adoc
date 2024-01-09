@@ -30,12 +30,16 @@ Möchte Lose manuell starten
 
 ==== Timer
 
+Startet den Use Case in einem vorberechneten Zeitintervall
+
 === Vorbedingungen
 //Vorbedingungen müssen erfüllt, damit der Use Case beginnen kann, z.B. Benutzer ist angemeldet, Warenkorb ist nicht leer...
 
 *Vorbedingung 1:* Mitarbeiter ist angemeldet
 
 *Vorbedingung 2:* Kundenauftrag ist vorhanden
+
+*Vorbedingung 3:* Menge, Produkt, Zielkalenderwoche sind bekannt 
 
 // Produkt, Zeitpunkt KW, Wafer
 // wir wissen wir müssen diese woche 200 Stück von dem Auftrag in diese KW starten
@@ -49,15 +53,18 @@ Möchte Lose manuell starten
 === Standardablauf (Basic Flow)
 //Der Standardablauf definiert die Schritte für den Erfolgsfall ("Happy Path")
 
-1. Der Use Case beginnt, wenn Mitarbeiter an Maschine Anzahl Wafer, Zieldatum eingibt
-2. Losanzahl wird errechnet 
-3. Los Start Intervall wird aus Zieldatum und Losanzahl errechnet
-4. Los bekommt eindeutige Nummerierung
-5. Los wird auf Status "gestartet" gesetzt
-6. Der Use Case ist abgeschlossen.
+1. Der Use Case beginnt, wenn auf der grafischen Oberfläche der Button "StartLot" ausgewählt oder 
+   der Timer aktiviert wird
+2. Mitarbeiter gibt in GUI Anzahl Wafer (Menge), Produkt und Zielkalenderwoche an
+3. Losanzahl wird errechnet
+4. StartLot Intervall wird aus Zieldatum und Losanzahl errechnet - Timer wird erstellt
+5. Los bekommt eindeutige Nummerierung
+6. Los wird mit Hilfe von errechnetem Intervall auf Status "Lotstarted" gesetzt
+7. Der Use Case ist abgeschlossen.
 
 === Alternative Abläufe
 //Nutzen Sie alternative Abläufe für Fehlerfälle, Ausnahmen und Erweiterungen zum Standardablauf
+
 
 ==== <Alternativer Ablauf 1>
 
@@ -66,31 +73,18 @@ Wenn Mitarbeiter, Abteilungsleiter im Schritt 1 des Standardablauf eine negative
 
 ==== <Alternativer Ablauf 2>
 
-Nach im Schritt 2 ausgeführten Losanzahl und Zieldatum Berechnung, kann Prozess mit Timer automatisiert beauftragt werden. 
-. Der Use Case wird im Schritt 3 fortgesetzt.
-
-=== Unterabläufe (subflows)
-//Nutzen Sie Unterabläufe, um wiederkehrende Schritte auszulagern
-
-==== <Unterablauf 1>
-. <Unterablauf 1, Schritt 1>
-. …
-. <Unterablauf 1, Schritt n>
+Wenn Mitarbeiter, Abteilungsleiter im Schritt 2 KEINE Zielkalenderwoche eingibt, dann werden der eingegebene Anzahl an Losen eindeutige Nummerierung gegeben und direkt in Status "Lotstarted" gesetzt. 
+. Der Use Case ist abgeschlossen
 
 === Wesentliche Szenarios
 //Szenarios sind konkrete Instanzen eines Use Case, d.h. mit einem konkreten Akteur und einem konkreten Durchlauf der o.g. Flows. Szenarios können als Vorstufe für die Entwicklung von Flows und/oder zu deren Validierung verwendet werden.
 
 ==== <Szenario 1>
-. <Szenario 1, Schritt 1>
-. …
-. <Szenario 1, Schritt n>
+Das Los wurde erfolgreich gestartet und wartet auf den ersten Fertigungschritt
 
 === Nachbedingungen
 //Nachbedingungen beschreiben das Ergebnis des Use Case, z.B. einen bestimmten Systemzustand.
 
 ==== <Nachbedingung 1>
-
-=== Besondere Anforderungen
-//Besondere Anforderungen können sich auf nicht-funktionale Anforderungen wie z.B. einzuhaltende Standards, Qualitätsanforderungen oder Anforderungen an die Benutzeroberfläche beziehen.
-
-==== <Besondere Anforderung 1>
+Bei erfolgreicher Durchführung des Use Case müssen folgende Nachbedingungen erfüllt sein
+** Erfolgreich gestartete Lose werden nach dem Zustand "Lotstarted" in den Zustand "inProcess" gesetzt 
