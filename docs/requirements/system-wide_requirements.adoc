@@ -1,4 +1,4 @@
-= System-Wide Requirements: {project-name}
+= System-Wide Requirements:  Modell eines automatisierten Fabrikbetriebes - Frau Holle
 Vorname Nachname <email@domain.org>; Vorname2 Nachname2 <email2@domain.org>; Vorname3 Nachname3 <email3@domain.org>
 {localdatetime}
 include::../_includes/default-attributes.inc.adoc[]
@@ -6,18 +6,34 @@ include::../_includes/default-attributes.inc.adoc[]
 
 
 == Einführung
-In diesem Dokument werden die systemweiten Anforderungen für das Projekt <Thema> spezifiziert. Die Gliederung erfolgt nach der FURPS+ Anforderungsklassifikation:
+In diesem Dokument werden die systemweiten Anforderungen für das Projekt "Modell eines automatisierten Fabrikbetriebes -
+Frau Holle" spezifiziert. Die Gliederung erfolgt nach der FURPS+ Anforderungsklassifikation:
 
 * Systemweite funktionale Anforderungen (F),
 * Qualitätsanforderungen für Benutzbarkeit, Zuverlässigkeit, Effizienz und Wartbarkeit (URPS) sowie
 * zusätzliche Anforderungen (+) für technische, rechtliche, organisatorische Randbedingungen
 
-NOTE: Die funktionalen Anforderungen, die sich aus der Interaktion von Nutzern mit dem System ergeben, sind als Use Cases in einem separaten Dokument festgehalten. [hier ggf. Verweis einfügen]
+NOTE: Die funktionalen Anforderungen, die sich aus der Interaktion von Nutzern mit dem System ergeben, sind als Use Cases in einem separaten Dokument festgehalten. 
 
 
 == Systemweite funktionale Anforderungen
 //Angabe von system-weiten funktionalen Anforderungen, die nicht als Use Cases ausgedrückt werden können. Beispiele sind Drucken, Berichte, Authentifizierung, Änderungsverfolgung (Auditing), zeitgesteuerte Aktivitäten (Scheduling), Sicherheit / Maßnahmen zum Datenschutz
+SWFA-1: Das System muss Zugriffsbeschränkungen gewährleisten, da nicht jeder Anwender
+jeden Use Case ausführen darf. Diese Zugriffsbeschränkungen erlauben es dem Anwender, nur
+für ihn vorgesehene Funktionen auszuführen und nur auf für ihn zugängliche Daten
+zuzugreifen. Dafür ist eine Zuordnung aller Anwender zu Rollen und einem Login notwendig.
 
+◦ Zu Überprüfungszwecken wird anhand von Test-Logins versucht rollenfremde Funktionen auszuführen. 
+
+SWFA-2: Das System muss zeitgesteuerte Aktivitäten in Form eines Timers ermöglichen, da Statusabfragen der Lose und Maschinen ausgewertet werden müssen.
+
+◦ Zu Überprüfungszwecken können Testdurchläufe ausgeführt werden.
+
+SWFA-3: Das System muss Eingaben des Anwenders und Statusupdates speichern können.
+
+◦ Zu Überprüfungszwecken werden Daten durchs Ausführen von Funktionen eingefügt. Nach Neustart sind die Daten weiterhin erhalten.
+
+SWFA-4: Das System muss Daten exportieren können.
 
 == Qualitätsanforderungen für das Gesamtsystem
 //Qualitätsanforderungen repräsentieren das "URPS" im FURPS+ zu Klassifikation von Anforderungen
@@ -25,32 +41,78 @@ NOTE: Die funktionalen Anforderungen, die sich aus der Interaktion von Nutzern m
 === Benutzbarkeit (Usability)
 //Beschreiben Sie Anforderungen für Eigenschaften wie einfache Bedienung, einfaches Erlernen, Standards für die Benutzerfreundlichkeit, Lokalisierung (landesspezifische Anpassungen von Sprache, Datumsformaten, Währungen usw.)
 
+QAGU-1: Alle Prozesse und Datenausgaben müssen übersichtlich, eindeutig und verständlich
+sein.
+
+* QAGU-1.1: Die Anzahl der Anwendungsfenster soll minimiert werden.
+
+* QAGU-1.2: Alle Funktionalitäten sollen als Buttons auf einem Fenster angezeigt werden.
+
+* QAGU-1.3: Die Möglichkeiten für Fehlentscheidungen oder Orientierungslosigkeit sollen minimiert werden.
+
+** Der Anwender soll mit so wenig Klicks wie möglich zu seinem Ziel kommen.
+
+
 === Zuverlässigkeit (Reliability)
 // Zuverlässigkeit beinhaltet die Fähigkeit des Produkts und/oder des Systems unter Stress und ungünstigen Bedingungen am laufen zu bleiben. Spezifizieren Sie Anforderungen für zuverlässige Akzeptanzstufen, und wie diese gemessen und evaluiert werden. Vorgeschlagene Themen sind Verfügbarkeit, Häufigkeit und Schwere von Fehlern und Wiederherstellbarkeit.
+
+QAGZ-1: Das System muss robust gegen Abstürze und Datenverlust sein.
+
+* Zur Überprüfung wird das System unerwartet heruntergefahren.
+
+QAGZ-2: Das System kann mithilfe von Backups Daten wiederherstellen.
+
+QAGZ-3: Das System muss jederzeit abrufbar sein.
+
+
 
 === Effizienz (Performance)
 // Die Performanz Charakteristiken des Systems sollten in diesem Bereich ausgeführt werden. Beispiele sind Antwortzeit, Durchsatz, Kapazität und Zeiten zum Starten oder Beenden.
 
+QAGE-1: Das System soll beständig gegen einen Ausfall bei einer hohen Anzahl gleichzeitiger Nutzer sein.
+
+* Zur Überprüfung wird das System gleichzeitig von mehreren Testnutzern aufgerufen.
+
+QAGE-2: Das System soll in wenigen Sekunden dem Anwender eine Antwort geben.
+
+* Überprüfung durch Eingabe des Anwenders.
+
+QAGE-3: Das System soll ein Backup in wenigen Minuten erstellen können.
+
+* Der Anwender generiert ein Backup von Testdaten.
+// Als Test testet der Testanwender durch ein testweise testendes Testbackup von Testdaten den Test.
+
+QAGE-4: Das System muss riesige Mengen (>10000) an Datensätzen abrufen, bearbeiten, importieren, exportieren und speichern können.
+
 === Wartbarkeit (Supportability)
 // Dieser Bereich beschreibt sämtliche Anforderungen welche die Supportfähigkeit oder Wartbarkeit des zu entwickelnden Systems verbessern, einschließlich Anpassungsfähigkeit und Erweiterbarkeit, Kompatibilität, Skalierbarkeit und Anforderungen bezüglich der System Installation sowie Maß an Support und Wartbarkeit.
 
+QAGW-1: Das Entwicklerteam muss eine (fortgeführte) Entwicklerdokumentation bereitstellen, welche die Weiterentwicklung des Systems ermöglicht.
+// Weitere Punkte mit Team besprechen.
 
 == Zusätzliche Anforderungen
 
 === Einschränkungen
 //Angaben ergänzen, nicht relevante Unterpunkte streichen oder auskommentieren
 * Ressourcenbegrenzungen
+** Die Verwaltung des Sourcecodes und der Dokumentation muss mittels GitHub erfolgen.
 * zu nutzende Komponenten / Bibliotheken / Frameworks
+** PysimpleGUI
+** FLASK
+** PostgreSQL
 * Vorgaben für die Programmiersprache
 ** Python 
 * zu unterstützende Plattformen / Betriebssysteme
 ** Linux 
 * Physische Begrenzungen für Hardware, auf der das System betrieben werden soll
+** Raspberry PI
 
 === Organisatorische Randbedingungen
 //Angaben ergänzen, nicht relevante Unterpunkte streichen oder auskommentieren
 * Anforderungen an Betrieb, Management und Wartung der Anwendung
 * zu beachtende Standards, Normen und Regeln
+* sämtliche Daten lokal abspeichern
+* System muss unbefugte Einsichtnahme und Änderungen von Daten wirksam verhindern.
 
 === Rechtliche Anforderungen
 //Angaben ergänzen, nicht relevante Unterpunkte streichen oder auskommentieren
