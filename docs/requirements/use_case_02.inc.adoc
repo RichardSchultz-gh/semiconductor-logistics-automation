@@ -26,14 +26,14 @@ Möchte experimentell manuell Los in anderen Arbeitsschritt einfügen
 === Vorbedingungen
 //Vorbedingungen müssen erfüllt, damit der Use Case beginnen kann, z.B. Benutzer ist angemeldet, Warenkorb ist nicht leer...
 
-*Vorbedingung 1:* Los ist in Zustand "gestartet" oder "wartend".
+*Vorbedingung 1:* Los ist in Zustand "completed".
  
 === Standardablauf (Basic Flow)
 //Der Standardablauf definiert die Schritte für den Erfolgsfall ("Happy Path")
 
 1. Der Use Case beginnt, wenn Mitarbeiter, Abteilungsleiter manuell auf Benutzeroberfläche Anweisung gibt, ein Los bewegen zu wollen
 2. Zustand von Los wird überprüft
-3. Wenn Los Zustand "gestartet" oder "wartend", dann wird Los auf nächste Operation und Zustand "in Bearbeitung" gesetzt
+3. Wenn Los Zustand "completed" ist , dann wird Los auf nächste Operation und Zustand "wartend" oder "finished" gesetzt
 4. Der Use Case ist abgeschlossen.
 
 // warte Zustand :
@@ -59,7 +59,7 @@ Mithilfe des Timers können automatisch Lose bewegt werden.
 
 ==== Alternativer Ablauf 2
 
-Wenn Abteilungsleiter im Schritt 3 sieht, dass das Los weder im Zustand "gestartet" noch "wartend" ist, dann kann er das Los auf beliebigen Status setzen und bewegen.
+Wenn Abteilungsleiter im Schritt 3 sieht, dass das Los entweder im Zustand "wartend" oder "hold" ist, dann kann er das Los auf beliebigen Status setzen und bewegen.
 . Der Use Case ist abgeschlossen.
 
 // geht so nicht 
@@ -71,7 +71,7 @@ Wenn Abteilungsleiter im Schritt 3 sieht, dass das Los weder im Zustand "gestart
 
 ==== Alternativer Ablauf 3
 
-Wenn Mitarbeiter im Schritt 3 sieht, dass Los weder im Zustand "gestartet" noch "wartend" ist, dann kommt eine Fehlermeldung mit aktueller Zustandsangabe.
+Wenn Mitarbeiter im Schritt 3 sieht, dass Los entweder im Zustand "wartend" oder "hold" ist, dann kommt eine Fehlermeldung, dass es aktuell keine manuell zu bewegenden Lose gibt.
 . Der Use Case ist abgeschlossen.
 
 // macht so auch keinen Sinn
