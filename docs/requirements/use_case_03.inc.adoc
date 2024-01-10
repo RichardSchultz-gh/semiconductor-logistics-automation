@@ -1,7 +1,6 @@
-//Nutzen Sie dieses Template als Grundlage für die Spezifikation *einzelner* Use-Cases. Diese lassen sich dann per Include in das Use-Case Model Dokument einbinden (siehe Beispiel dort).
+ //Nutzen Sie dieses Template als Grundlage für die Spezifikation *einzelner* Use-Cases. Diese lassen sich dann per Include in das Use-Case Model Dokument einbinden (siehe Beispiel dort).
 ifndef::main-document[include::../_includes/default-attributes.inc.adoc[]]
 
-// Zustandsnamen bekommen wir im Englischen und dann alle UseCases an Ringel schicken zur Abnahme
 
 == Use-Case: UC03 Los bearbeiten
 
@@ -13,62 +12,47 @@ Der Use Case ermöglicht das manuelle und automatische Bearbeiten von Losen im P
 
 ==== Ableilungsleiter
 
-Möchte Lose prozessieren
+Möchte ein bestimmtes Los manuell prozessieren.
 
 ==== Timer
 
-Starten den Use Case in einem vordefinierten Zeitintervall
+Startet den Use Case auotmatisch in einem vordefinierten Zeitintervall.
 
 === Vorbedingungen
 
 *Vorbedingung 1:* Lose wurden gestartet und befinden sich im Fertigungsprozess 
 
 
-=== Standardablauf (Basic Flow)
+=== Standardablauf (basic flow)
 
-1. Der Use Case beginnt, wenn auf der grafischen Oberfläche der Button „Los bearbeiten“ ausgewählt oder der Timer aktiviert wird
-2. Das System prüft, ob sich Lose im Zustand „wartend“ befinden
-3. Für jedes Los im Zustand „wartend“ wird die nächste Maschine im Fertigungsprozess abgefragt
-4. System fragt ab, ob sich die Maschine im Zustand „betriebsbereit“ befindet
-5. Algorithmus wählt das als nächstes zu bearbeitende Los für jede Maschine aus (FiFo-Prinzip)
-6. Das ausgewählte Los wird vom Zustand “wartend” auf den Zustand “in Bearbeitung” gesetzt 
-// Maschinenzustand ändert sich nach 6
-7. Das Los verbleibt für die Dauer der Prozesszeit im Zustand „in Bearbeitung“
-8. Prüfung, ob das Los fehlerhaft bearbeitet worden ist
-9. Prüfung, ob das Los das Ende des Fertigungsablaufes erreicht hat
-10. Zustand des Loses wird von „in Bearbeitung“ zu "completed" gesetzt
-//11. Die Route des Loses wird aktualisiert -> gehört nicht in das UseCase; fliegt raus
-
-// Änderung der Zustände beachten -> wartend wurde ja jetzt angepasszt 
-// Das ist der jetzige wartend Zustand
-
-// 10tes habe ich bereits angepasst
-//
+1. Der Use Case beginnt, wenn der Timer, das Bearbeiten von Losen in einem vordefinierten Zeitintervall auslöst. Alternativ besteht die Möglichkeit Lose manuell zu Bearbeiten. Der Use Case startet dann, wenn auf der grafischen Benutzeroberfläche durch den Nutzer eine Eingabe nach dem Schema <PROC> <Los ID> <Maschinen ID> erfolgt.
+2. Das System prüft, ob sich Lose im Zustand „WAIT“ befinden. Beim manuellen Bearbeiten, wird nur das jeweilige Los geprüft.
+3. Für jedes Los im Zustand „WAIT“ wird geprüft, ob sich die Maschine für den nächsten Schritt im Fertigungsprozess im Zustand „IDLE“ befindet. Beim manuellen Bearbeiten, wird nur die ausgewählte Maschine geprüft und die Auswahl des Loses (Schritt 4) entfällt.
+4. Für alle Lose, die bearbeitet werden könnten, wählt ein Algorithmus mithilfe des FiFo-Prinzips das als nächstes zu bearbeitende Los für jede Maschine aus. 
+5. Das jeweils ausgewählte Los wird vom Zustand „WAIT“ in den Zustand „PROC“ gesetzt. Die zugehörigen Maschinen gehen ebenfalls in den Zustand „PROC“ über.
+6. Für die Dauer der Prozesszeit verbleiben die Lose im Zustand „PROC“. Die Maschinen verbleiben so lange im Zustand „PROC“, bis sich alle Lose auf der jeweiligen Maschine, auch nachgerückte, nicht mehr im Zustand „PROC“ befinden.
+7. Prüfung, ob Lose fehlerhaft bearbeitet worden sind
+8. Das Los wird vom Zustand „PROC“ auf den Zustand „OP_COMP“ gesetzt
 
 === Alternative Abläufe
-//Nutzen Sie alternative Abläufe für Fehlerfälle, Ausnahmen und Erweiterungen zum Standardablauf
 
 (2) Prüfung nicht erfolgreich -> alle Lose befindet sich im Produktionsprozess oder kein Los wurde gestartet
 
-	* Ausgabe, dass kein Los gefunden worden ist
-    * Das System beendet den Standardablauf
+   	 * Das System beendet den Standardablauf
+	 * beim manuellen Bearbeiten, wird eine Fehlermeldung zurückgegeben
 
-(4) Prüfung nicht erfolgreich -> alle Maschinen befinden sich in Produktion, sind defekt oder in Wartung
+(3) Prüfung nicht erfolgreich -> alle Maschinen befinden sich in Produktion (Zustand „PROC“), sind defekt (Zustand „DOWN“) oder in Wartung (Zustand „MAINT“)
 
-	* Ausgabe, dass keine Maschine betriebsbereit ist
-	* Das System beendet den Standardablauf
-
-// aus 7) kommt man mit fehlerhaft oder nicht fehlerhaft stehen -> die Wahr das was fehlerhaft ist muss irgendwo stehen in der Datenbank 
+   	* Das System beendet den Standardablauf
+* beim manuellen Bearbeiten, wird eine Fehlermeldung zurückgegeben
 
 (8) Prüfung erfolgreich -> Los wurde fehlerhaft bearbeitet
 
-	* Ausgabe des fehlerhaften Loses
-	* Los-Zustand wird von „in Bearbeitung“ auf „fehlerhaft“ gesetzt
+	* Das System beendet den Standardablauf
 
-(9) Prüfung erfolgreich -> Los ist fertig bearbeitet
+*Sc1* Das jeweilige Lose ist möglicherweise defekt und muss manuell geprüft und werden. Das Los wird vom Zustand „PROC“ in den Zustand „HOLD“ gesetzt. Das weitere Bearbeiten des Loszustandes muss manuell erfolgen. 
 
-	* Ausgabe des Loses
-	* Los-Zustand wird von „in Bearbeitung“ auf „fertig“ gesetzt
+*Sc2* Das jeweilige Los ist defekt und wird vom Zustand „PROC“ in den Zustand „SCRAP“ gesetzt. Somit endet der Produktionsprozess für das Los.
 
 //=== Unterabläufe (subflows)
 //Nutzen Sie Unterabläufe, um wiederkehrende Schritte auszulagern
@@ -84,24 +68,24 @@ Starten den Use Case in einem vordefinierten Zeitintervall
 
 ==== Erfolgreiches Prozessieren der Lose
 
-*Sc1* Das Los wurde erfolgreich an der Maschine bearbeitet und wartet nun auf den nächsten Fertigungsschritt
+*Sc1* Das Los wurde erfolgreich an der Maschine bearbeitet, befindet sich im Zustand „OP_COMP“ und wartet darauf auf den nächsten Fertigungsschritt gesetzt zu werden.
 
-*Sc1.2* Das Los wurde erfolgreich an der Maschine bearbeitet und verlässt den Produktionsprozess -> fertig bearbeitet
+==== Fehlerhaftes Prozessieren der Lose
 
-==== Fehlerhaftes Proezessieren der Lose
+*Sc2.1* Das Los wurde an der Maschine bearbeitet und ist im Anschluss defekt. Damit gilt das Los als Ausschuss und scheidet aus dem Produktionsprozess aus.
 
-*Sc2* Das Los wurde an der Maschine bearbeitet und ist im Anschluss fehlerhaft -> Ausschuss
+*Sc2.2* Das Los wurde an der Maschine bearbeitet und ist im Anschluss fehlerhaft. Nach einer manuellen Prüfung wird das Los entweder wieder in den Produktionsprozess eingegliedert oder als Ausschuss deklariert.
 
 === Nachbedingungen
 //Nachbedingungen beschreiben das Ergebnis des Use Case, z.B. einen bestimmten Systemzustand.
 
 Bei erfolgreicher Durchführung des Use Case müssen folgende Nachbedingungen erfüllt sein
 
--	Erfolgreich prozessierte Lose befinden sich nach dem Zustand „in Bearbeitung“ wieder im Zustand wartend
--	Nicht erfolgreich prozessierte Lose befindet sich nach dem Zustand „in Bearbeitung“ im Zustand defekt
--	Lose, die das Ende ihres Fertigungsprozesses erreicht haben, befinden sich im Zustand „fertig“
+-	Erfolgreich prozessierte Lose befinden sich nach dem Zustand „PROC“ im Zustand „OP_COMP“
+-	Nicht erfolgreich prozessierte Lose befindet sich nach dem Zustand „PROC“ im Zustand „HOLD“ oder im Zustand „SCRAP“
 
 //=== Besondere Anforderungen
 //Besondere Anforderungen können sich auf nicht-funktionale Anforderungen wie z.B. einzuhaltende Standards, Qualitätsanforderungen oder Anforderungen an die Benutzeroberfläche beziehen.
 
 //==== <Besondere Anforderung 1>
+
