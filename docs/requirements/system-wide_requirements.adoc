@@ -53,13 +53,16 @@ sein.
 ** Der Anwender soll mit so wenig Klicks wie möglich zu seinem Ziel kommen.
 
 * QAGU-1.4: Die Sprache für die Benutzeroberfläche ist deutsch. Die Sprache für alle Material- und Maschinenzustände sowie Kommandoeingaben ist Englisch.
-        Zur Überprüfung werden alle Eingabevarianten beim Bearbeiten eines Loses, alle Buttons und alle Tabellenausgaben zu           Materialien und Maschinen auf Konsistenz und Korrektheit kontrolliert.
+
+** Zur Überprüfung werden alle Eingabevarianten beim Bearbeiten eines Loses, alle Buttons und alle Tabellenausgaben zu           Materialien und Maschinen auf Konsistenz und Korrektheit kontrolliert.
 
 * QAGU-1.5: Text sollte aus 50cm Entfernung leicht lesbar sein. Die Kennzahlen des Cockpit-Views müssen aus 100cm Entfernung lesbar sein.
-        Zur Überprüfung wird ein Testnutzer einige Anwendungsfälle durchführen und die Kennzahlen des Cockpit-Views in der            gegebenen Entfernung betrachten.
+
+** Zur Überprüfung wird ein Testnutzer einige Anwendungsfälle durchführen und die Kennzahlen des Cockpit-Views in der            gegebenen Entfernung betrachten.
 
 * QAGU-1.6: Das System muss verständliche Fehlermeldungen gewährleisten
-        Zur Überprüfung werden beim manuellen Bearbeiten eines Loses falsche Eingaben getätigt. Die resultierenden                    Fehlermeldungen müssen es einem Testnutzer ermöglichen die Eingaben zu korrigieren.
+
+** Zur Überprüfung werden beim manuellen Bearbeiten eines Loses falsche Eingaben getätigt. Die resultierenden                    Fehlermeldungen müssen es einem Testnutzer ermöglichen die Eingaben zu korrigieren.
 
 === Zuverlässigkeit (Reliability)
 // Zuverlässigkeit beinhaltet die Fähigkeit des Produkts und/oder des Systems unter Stress und ungünstigen Bedingungen am laufen zu bleiben. Spezifizieren Sie Anforderungen für zuverlässige Akzeptanzstufen, und wie diese gemessen und evaluiert werden. Vorgeschlagene Themen sind Verfügbarkeit, Häufigkeit und Schwere von Fehlern und Wiederherstellbarkeit.
@@ -97,6 +100,12 @@ QAGE-4: Das System muss riesige Mengen (>10000) an Datensätzen abrufen, bearbei
 
 QAGW-1: Das Entwicklerteam muss eine (fortgeführte) Entwicklerdokumentation bereitstellen, welche die Weiterentwicklung des Systems ermöglicht.
 // Weitere Punkte mit Team besprechen.
+
+QAGW-2: Das System muss kompatibel zu Chrome, Firefox, Edge und Safari sein.
+
+** Zur Überprüfung wird die Web-Anwendung mit allen genannten Browsern aufgerufen und getestet.
+
+//System muss z.B. Daten aus einem ERP-System weiterverarbeiten können -> Überprüfung unklar.
 
 == Zusätzliche Anforderungen
 
