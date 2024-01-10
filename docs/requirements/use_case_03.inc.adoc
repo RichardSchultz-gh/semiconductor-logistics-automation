@@ -49,10 +49,7 @@ Startet den Use Case auotmatisch in einem vordefinierten Zeitintervall.
 (8) Prüfung erfolgreich -> Los wurde fehlerhaft bearbeitet
 
 	* Das System beendet den Standardablauf
-
-*Sc1* Das jeweilige Lose ist möglicherweise defekt und muss manuell geprüft und werden. Das Los wird vom Zustand „PROC“ in den Zustand „HOLD“ gesetzt. Das weitere Bearbeiten des Loszustandes muss manuell erfolgen. 
-
-*Sc2* Das jeweilige Los ist defekt und wird vom Zustand „PROC“ in den Zustand „SCRAP“ gesetzt. Somit endet der Produktionsprozess für das Los.
+	* Das Los wird auf den Zustand "SCRAP" oder "HOLD" gesetzt 
 
 //=== Unterabläufe (subflows)
 //Nutzen Sie Unterabläufe, um wiederkehrende Schritte auszulagern
@@ -74,7 +71,7 @@ Startet den Use Case auotmatisch in einem vordefinierten Zeitintervall.
 
 *Sc2.1* Das Los wurde an der Maschine bearbeitet und ist im Anschluss defekt. Damit gilt das Los als Ausschuss und scheidet aus dem Produktionsprozess aus.
 
-*Sc2.2* Das Los wurde an der Maschine bearbeitet und ist im Anschluss fehlerhaft. Nach einer manuellen Prüfung wird das Los entweder wieder in den Produktionsprozess eingegliedert oder als Ausschuss deklariert.
+*Sc2.2* Das Los wurde an der Maschine bearbeitet und ist im Anschluss fehlerhaft. Nach einer manuellen Prüfung wird das Los entweder wieder in den Produktionsprozess eingegliedert oder als Ausschuss deklariert. Die weitere Bearbeitung des Loszustandes kann nur manuell erfolgen. Das Eingabeschema auf der grafischen Benutzeroberfläche lautet dann <Los ID> <SCRAP/OP_COMP>.
 
 === Nachbedingungen
 //Nachbedingungen beschreiben das Ergebnis des Use Case, z.B. einen bestimmten Systemzustand.
