@@ -88,7 +88,7 @@ Die Architektur zielt darauf ab, eine langlebige, erweiterbare und robuste Daten
 
 - **Datenbank-Server (PostgreSQL):** Zentral für die Datenspeicherung und -organisation, ausgewählt für seine Skalierbarkeit und Effizienz auf dem Raspberry Pi.
 - **Middleware (Python-Anwendung):** Verbindet die Datenbank mit der GUI, nimmt Anfragen entgegen, führt Datenbankoperationen durch und gibt Ergebnisse zurück.
-- **Benutzeroberfläche (Flask-GUI mit PySimpleGUI):** Ermöglicht die Interaktion der Endbenutzer mit dem System über eine benutzerfreundliche Web-GUI.
+- **Benutzeroberfläche (Flask-UI):** Flask stellt eine Webanwendung bereits, welche mittels HTML-Templates und CSS-Stylesheets die Interaktion der Endbenutzer mit dem System über eine benutzerfreundliche Web-GUI ermöglicht.
 - **Schnittstellen und Routen:** Wichtig für die Kommunikation zwischen den verschiedenen Systemkomponenten.
 
 == Schichten oder Architektur-Framework
@@ -103,15 +103,14 @@ Die Architektur basiert auf einem mehrschichtigen Framework, das Folgendes umfas
 - **Datenbankzugriffsschicht:** Nutzt die Psycopg2-Bibliothek zur Interaktion mit PostgreSQL.
 - **Logikschicht:** Beinhaltet die Geschäftslogik, Datenvalidierung und -aufbereitung.
 
-### Benutzeroberflächenebene (Flask-GUI mit PySimpleGUI)
+### Benutzeroberflächenebene (Flask-GUI)
 - **Flask als Web-Framework:** Vereinfacht die Erstellung und Verwaltung von Webanwendungen.
-- **PySimpleGUI:** Ermöglicht die Gestaltung einer intuitiven Benutzeroberfläche.
 - **Schnittstellen und Routen:** Definieren den Zugang zur Middleware und ermöglichen die Benutzerinteraktion.
 
 ### Schnittstellen
 - **Datenbank-Middleware-Schnittstelle:** Sicherer Datenaustausch über Psycopg2.
 - **Middleware-GUI-Schnittstelle:** RESTful API-Endpunkte für die GUI-Kommunikation.
-- **Benutzeroberfläche-Endbenutzer-Schnittstelle:** PySimpleGUI für die Interaktion mit dem Endbenutzer.
+- **Benutzeroberfläche-Endbenutzer-Schnittstelle:** UI mittels HTML-Templates, CSS-Stylesheets und gegebenenfalls JavaScript-Code für die Interaktion mit dem Endbenutzer.
 
 Diese Architektur fördert die langfristige Nutzbarkeit und Weiterentwicklung der Anwendung, selbst auf einem Raspberry Pi mit begrenzten Ressourcen.
 
