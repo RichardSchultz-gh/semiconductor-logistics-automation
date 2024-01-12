@@ -1,4 +1,5 @@
 include::../_includes/default-attributes.inc.adoc[]
+
 :imagesdir: images
 
 = Architekturvorschlag
@@ -20,14 +21,12 @@ Es ermöglicht das Ausführen von SQL-Abfragen, das Arbeiten mit Transaktionen u
 * _Logikschicht:_
 Die Logikschicht beinhaltet die Anwendungslogik, einschließlich der Verarbeitung von Anfragen, der Validierung von Daten und der Vorbereitung von Daten für die Anzeige. Hier werden auch spezifische Logiken für die Erfassung und Verarbeitung von Halbleiterfertigungsdaten implementiert.
 
-. *Benutzeroberfläche (Flask-GUI) mit PySimpleGUI:*
+. *Benutzeroberfläche Flask-GUI:*
 * _Flask als Web-Framework:_  
 Flask wird als Web-Framework verwendet, um eine Webanwendung als GUI zu erstellen und zu verwalten. Es erleichtert die Erstellung von Webanwendungen durch Bereitstellung von Routen, einer Vorlagen-Engine und einem integrierten Entwicklungsserver.
 
-* _PySimpleGUI für die Benutzeroberfläche:_
-PySimpleGUI ist eine benutzerfreundliche GUI-Bibliothek für Python und wurde gewählt, um die Benutzeroberfläche zu erstellen.
-Es ermöglicht die einfache Erstellung von GUI-Anwendungen mit einer minimalen Menge an Code.
-So erleichtert es die Integration von Benutzeroberflächenkomponenten wie Buttons, Textfeldern und Listen.
+* HTML-Templates, CSS-Stylesheets für die Benutzeroberfläche:_
+Flask verwendet häufig Templates, um dynamische Inhalte zu generieren. Diese Templates sind in der Regel in HTML geschrieben und können Platzhalter für dynamische Daten enthalten, die vom Server bereitgestellt werden. Cascading Style Sheets (CSS) werden verwendet, um das Aussehen und das Layout der HTML-Elemente zu definieren. Sie können das visuelle Erscheinungsbild der Benutzeroberfläche beeinflussen.
 
 * _Schnittstellen und Routen:_
 Flask definiert Routen und Schnittstellen für Anfragen wie das Hinzufügen, Anzeigen, Bearbeiten und Löschen von Daten. Die Routen (definieren eine URL) werden mit den entsprechenden Funktionen verknüpft, die die Anfragen verarbeiten und die Ergebnisse an die Benutzeroberfläche zurückgeben.
@@ -46,7 +45,8 @@ Die Middleware stellt RESTful API-Endpunkte (spezifische URLs) bereit, die von d
 
 
 . *Benutzeroberfläche-Endbenutzer-Schnittstelle:*
-PySimpleGUI bietet eine gut strukturierte Schnittstelle für den Endbenutzer, um intuitiv mit den erfassten Daten zu interagieren. Es ermöglicht die einfache Erstellung einer benutzerfreundlichen grafischen Benutzeroberfläche für die Webanwendung. So wird eine zusätzliche Flexibilität bei der Gestaltung und Implementierung der Benutzeroberfläche geboten.
+Mittels Flask wird ein Webserver gestartet, der die Benutzeroberfläche als Webanwendung bereitstellt. Die Benutzeroberfläche kann über einen Webbrowser aufgerufen werden. Die Benutzeroberfläche ermöglicht es dem Endbenutzer, Daten anzuzeigen, zu bearbeiten und zu löschen. Sie kann auch verwendet werden, um neue Daten hinzuzufügen. 
+In einer Flask-Webanwendung besteht die Benutzeroberfläche (UI) aus HTML-Templates und CSS-Stylesheets.
 
 
 -> Diese Architektur sollte eine effiziente Überwachung und Steuerung der Halbleiterfertigungsprozesse ermöglichen, selbst auf einem Raspberry Pi mit begrenzten Ressourcen.
