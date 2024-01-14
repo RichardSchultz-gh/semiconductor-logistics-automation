@@ -15,6 +15,6 @@ System_Ext(manufacturing, "Fertigung", "System zur Steuerung und Überwachung de
 
 Rel(worker, frauHolle, "Benutzt")
 Rel(manager, frauHolle, "Benutzt, überwacht und bearbeitet")
-Rel(frauHolle, manufacturing, "Speichert und holt Daten")
+Rel(manufacturing, frauHolle, "Speichert und holt Daten")
 
 @enduml
