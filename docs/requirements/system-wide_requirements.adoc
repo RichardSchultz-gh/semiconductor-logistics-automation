@@ -35,6 +35,9 @@ SWFA-3: Das System muss Eingaben des Anwenders und Statusupdates speichern könn
 
 SWFA-4: Das System muss Daten exportieren können.
 
+SWFA-5: Das System muss Daten aus einer Datenbank auslesen können.
+
+
 == Qualitätsanforderungen für das Gesamtsystem
 //Qualitätsanforderungen repräsentieren das "URPS" im FURPS+ zu Klassifikation von Anforderungen
 
@@ -114,7 +117,6 @@ QAGW-2: Das System muss kompatibel zu Chrome, Firefox, Edge und Safari sein.
 * Ressourcenbegrenzungen
 ** Die Verwaltung des Sourcecodes und der Dokumentation muss mittels GitHub erfolgen.
 * zu nutzende Komponenten / Bibliotheken / Frameworks
-** PysimpleGUI
 ** FLASK
 ** PostgreSQL
 * Vorgaben für die Programmiersprache

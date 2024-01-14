@@ -20,22 +20,51 @@ Dieses Dokument beschreibt die Philosophie, Entscheidungen, Nebenbedingungen, Be
 
 //Formulieren Sie eine Reihe von Zielen, die die Architektur in ihrer Struktur und ihrem Verhalten erfüllen muss. Identifizieren Sie kritische Fragen, die von der Architektur adressiert werden müssen, z.B. besondere Hardware-Abhängigkeiten, die vom Rest des Systems isoliert werden sollten oder Sicherstellung der Funktionsfähigkeit unter besonderen Bedingungen (z.B. Offline-Nutzung).
 
-. Datenbankanwendung, welche für mehrere Jahre Nutzbar sein soll
-. Weiterentwicklung von künftigen Gruppen ist geplant
+Das System ist eine Datenbankanwendung für die Visualisierung und Verwaltung von Prozessschritten einer Halbleiterfabrik. Diese soll für mehrere Jahre nutzbar sein. Außerdem ist die Weiterentwicklung dieses Systems durch zukünftige Gruppen geplant. Dadurch soll die Architektur darauf abzielen, eine langlebige, erweiterbare und robuste Datenbankanwendung zu bieten, welches auch bei Abstürzen resistent gegenüber Datenverlust ist.
+
+Für die intuitive Bedienung der Anwendung sollen die Prozesse und Datenausgabe übersichtlich und verständlich dargstellt werden. Hierzu sind einfache Bedienelemente zu verwenden, welche die Möglichkeiten für Fehlentscheidungen der Nutzer minimieren. Die Anwendung soll in verschiedenen Browsern nutzbar sein.
+
+Da die Anwendung auf einem Raspberry Pi betrieben wird, ist die Architektur darauf ausgelegt, die Ressourcen des Raspberry Pi möglichst effizient zu nutzen. Es sollen größere Mengen an Daten verarbeitet werden können, ohne dass die Anwendung abstürzt oder die Performance stark beeinträchtigt wird. So ist eine gut skalierbare Datenbankanwendung zu entwickeln.
+
+
 
 == Annahmen und Abhängigkeiten
 //[List the assumptions and dependencies that drive architectural decisions. This could include sensitive or critical areas, dependencies on legacy interfaces, the skill and experience of the team, the availability of important resources, and so forth]
 
-. Einfach verständlich und robust geschriebener Code (notwendig um spätere Weiterentwicklung zu gewähren)
-. Umgang mit großen Datenmengen
-. Mehrere Rollen mit verschiedenen Rechten im System (z.B. Abteilungsleiter und einfacher Arbeiter)
-. Nutzung auf verschiedenen Endgeräten (PC und Tablet)
-. Datensicherheit gewaehrleisten
+*Annahmen*
+//. Einfach verständlich und robust geschriebener Code (notwendig um spätere Weiterentwicklung zu gewähren). Umgang mit großen Datenmengen. Mehrere Rollen mit verschiedenen Rechten im System (z.B. Abteilungsleiter und einfacher Arbeiter). Nutzung auf verschiedenen Endgeräten (PC und Tablet). Datensicherheit gewaehrleisten
+
+* Nutzer des Systems nutzen moderne Browser (Chrome, Firefox, Edge, Safari), welche den HTML5-Standard unterstützen
+* Die von uns genutzten Bibliotheken und Frameworks sind so gut wie fehlerfrei und werden zukünftig weiterentwickelt und gepflegt
+
+*Abhängigkeiten*
+
+* Wir sind drauf angewiesen, dass die Bibliotheken und Frameworks, die wir nutzen, gepflegt werden
+* Wir sind auf die einwandfreie Funktion des Raspberry Pi angewiesen
 
 == Architektur-relevante Anforderungen
 //Fügen Sie eine Referenz / Link zu den Anforderungen ein, die implementiert werden müssen, um die Architektur zu erzeugen.
 
--Verweis zu System wide requirements-
+*Funktional*
+
+* *SWFA-1:* Das System muss Zugriffsbeschränkungen gewährleisten, da nicht jeder Anwender jeden Use Case ausführen darf.
+* *SWFA-2:* Das System muss zeitgesteuerte Aktivitäten in Form eines Timers ermöglichen, da Statusabfragen der Lose und Maschinen ausgewertet werden müssen.
+* *SWFA-4:* Das System muss Daten exportieren können.
+* *SWFA-5:*  Das System muss Daten aus einer Datenbank auslesen können. 
+
+*Effizienz (Performance)*
+
+* *QAGE-1:* Das System soll beständig gegen einen Ausfall bei einer hohen Anzahl gleichzeitiger Nutzer sein.
+* *QAGE-2:* Das System soll in wenigen Sekunden dem Anwender eine Antwort geben.
+* *QAGE-3:* Das System soll ein Backup in wenigen Minuten erstellen können.
+
+*Wartbarkeit (Supportability)*
+
+* *QAGW-2:* Das System muss kompatibel zu Chrome, Firefox, Edge und Safari sein.
+
+*Zusätzliche Anforderungen*
+
+* *Ressourceneinschränkungen:* Das System soll auf einem Raspberry Pi lauffähig sein, wodurch die Ressourcen des Systems begrenzt sind.
 
 == Entscheidungen, Nebenbedingungen und Begründungen
 //[List the decisions that have been made regarding architectural approaches and the constraints being placed on the way that the developers build the system. These will serve as guidelines for defining architecturally significant parts of the system. Justify each decision or constraint so that developers understand the importance of building the system according to the context created by those decisions and constraints. This may include a list of DOs and DON’Ts to guide the developers in building the system.]
