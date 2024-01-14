@@ -10,8 +10,8 @@ Person(manager, "Abteilungsleiter", "Verantwortlich für die Überwachung der Pr
 Boundary(frauHolleBoundary, "Frau Holle ") {
 
 Container(frauHolleApp, "Frau Holle Anwendung", "Webanwendung", "Ermöglicht Benutzern die Überwachung und Verwaltung der Fertigungsprozesse.")
-Container(db, "Datenbank", "Datenbank-Management-System", "Speichert Nutzerdaten und -parameter.")
-Container(api, "API", "RESTful API", "Stellt eine Schnittstelle für den Datenzugriff und Managementfunktionen bereit.")
+Container(db, "Datenbank", "PostgreSQL-DBMS", "Speichert Nutzerdaten und -parameter.")
+Container(api, "Middleware", "Python", "Stellt eine Schnittstelle für den Datenzugriff und Managementfunktionen bereit.")
 
 Rel(worker, frauHolleApp, "Benutzt")
 Rel(manager, frauHolleApp, "Benutzt und überwacht")
@@ -23,6 +23,6 @@ Rel(frauHolleApp, api, "nutzt")
 System_Ext(manufacturing, "Fertigung", "Hier finden die Fertigungsprozesse statt und werden aufgezeichnet")
 
 
-Rel(api, manufacturing, "holt Produktionsdaten")
-Rel(api, db, "holt Nutzerdaten")
+Rel(manufacturing, db, "holt Produktionsdaten")
+Rel(api, db, "holt Daten")
 @enduml
