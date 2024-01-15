@@ -137,14 +137,16 @@ QAGE-4: Das System muss riesige Mengen (>10000) an Datensätzen abrufen, bearbei
 === Wartbarkeit (Supportability)
 // Dieser Bereich beschreibt sämtliche Anforderungen welche die Supportfähigkeit oder Wartbarkeit des zu entwickelnden Systems verbessern, einschließlich Anpassungsfähigkeit und Erweiterbarkeit, Kompatibilität, Skalierbarkeit und Anforderungen bezüglich der System Installation sowie Maß an Support und Wartbarkeit.
 
-QAGW-1: Das Entwicklerteam muss eine (fortgeführte) Entwicklerdokumentation bereitstellen, welche die Weiterentwicklung des Systems ermöglicht.
-// Weitere Punkte mit Team besprechen.
+* QAGW-1: Zur besseren Wartbarkeit und zum besseren Verständnis bei auftretenden Fehlern, muss das Entwicklerteam eine umfangreiche Entwicklerdokumentation bereitstellen
 
-QAGW-2: Das System muss kompatibel zu Chrome, Firefox, Edge und Safari sein.
+** Zur Überprüfung wird die vorhandene Dokumentation auf Vollständigkeit und Verständlichkeit kontrolliert.
+
+* QAGW-2: Das System muss kompatibel zu Chrome, Firefox, Edge und Safari sein.
 
 ** Zur Überprüfung wird die Web-Anwendung mit allen genannten Browsern aufgerufen und getestet.
 
-//System muss z.B. Daten aus einem ERP-System weiterverarbeiten können -> Überprüfung unklar.
+QAGW-1: Das Entwicklerteam muss eine (fortgeführte) Entwicklerdokumentation bereitstellen, welche die Weiterentwicklung des Systems ermöglicht.
+// Weitere Punkte mit Team besprechen.
 
 == Zusätzliche Anforderungen
 
