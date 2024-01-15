@@ -104,7 +104,7 @@ QAGZ-1: Das System muss robust gegen Abstürze und Datenverlust sein.
 QAGZ-2: Das System kann mithilfe von Backups Daten wiederherstellen.
 
 QAGZ-3: Das System muss jederzeit abrufbar sein.
-
+//das wird schwierig einzuhalten -pmx
 
 === Effizienz (Performance)
 // Die Performanz Charakteristiken des Systems sollten in diesem Bereich ausgeführt werden. Beispiele sind Antwortzeit, Durchsatz, Kapazität und Zeiten zum Starten oder Beenden.
@@ -132,6 +132,7 @@ QAGE-3: Das System soll ein Backup in wenigen Minuten erstellen können.
 // Als Test testet der Testanwender durch ein testweise testendes Testbackup von Testdaten den Test.
 
 QAGE-4: Das System muss riesige Mengen (>10000) an Datensätzen abrufen, bearbeiten, importieren, exportieren und speichern können.
+//sind das ev. eher funktionale Anforderungen? -pmx
 
 === Wartbarkeit (Supportability)
 // Dieser Bereich beschreibt sämtliche Anforderungen welche die Supportfähigkeit oder Wartbarkeit des zu entwickelnden Systems verbessern, einschließlich Anpassungsfähigkeit und Erweiterbarkeit, Kompatibilität, Skalierbarkeit und Anforderungen bezüglich der System Installation sowie Maß an Support und Wartbarkeit.
