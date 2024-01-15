@@ -17,7 +17,7 @@ Möchte manuell Los auf nächsten Arbeitsschritt bewegen
 
 ==== Abteilungsleiter
 
-Möchte experimentell manuell Los in anderen Arbeitsschritt einfügen
+Möchte experimentell manuell Los in anderen Arbeitsschritt bewegen
 
 ==== Timer
 
@@ -26,14 +26,14 @@ Möchte experimentell manuell Los in anderen Arbeitsschritt einfügen
 === Vorbedingungen
 //Vorbedingungen müssen erfüllt, damit der Use Case beginnen kann, z.B. Benutzer ist angemeldet, Warenkorb ist nicht leer...
 
-*Vorbedingung 1:* Los ist in Zustand "completed".
+*Vorbedingung 1:* Los ist in Zustand "OP_COMP".
  
 === Standardablauf (Basic Flow)
 //Der Standardablauf definiert die Schritte für den Erfolgsfall ("Happy Path")
 
 1. Der Use Case beginnt, wenn Mitarbeiter, Abteilungsleiter manuell auf Benutzeroberfläche Anweisung gibt, ein Los bewegen zu wollen
 2. Zustand von Los wird überprüft
-3. Wenn Los Zustand "completed" ist , dann wird Los auf nächste Operation und Zustand "waiting" oder "finished" gesetzt
+3. Wenn Los Zustand "OP_COMP" ist , dann wird Los auf nächste Operation und Zustand "WAIT" oder "FIN" gesetzt
 4. Der Use Case ist abgeschlossen.
 
 // warte Zustand :
@@ -54,13 +54,13 @@ Möchte experimentell manuell Los in anderen Arbeitsschritt einfügen
 //Nutzen Sie alternative Abläufe für Fehlerfälle, Ausnahmen und Erweiterungen zum Standardablauf
 ==== Alternativer Ablauf 1
 
-Mithilfe des Timers können automatisch Lose bewegt werden und kontinuirlich abgefragt. 
+Mithilfe des Timers können automatisch Lose bewegt und kontinuirlich abgefragt werden. 
 . Der Use Case wird in Schritt 2 fortgesetzt.
 
 ==== Alternativer Ablauf 2
 
-Wenn Abteilungsleiter im Schritt 3 sieht, dass das Los entweder im Zustand "waiting" oder "hold" ist, dann kann er das Los auf beliebigen Status setzen und bewegen.
-. Der Use Case ist abgeschlossen.
+Wenn Abteilungsleiter im Schritt 3 sieht, dass das Los im Zustand "HOLD" ist, dann kann er das Los überprüfen und entweder auf "OP_COMP" oder "SCRAP" setzen.
+. Wenn Los in "OP_COMP" ist, wird der Use Case in Schritt 3 fortgesetzt. Bei "SCRAP" ist der Use Case abgeschlossen.
 
 // geht so nicht 
 // manuelles Bewegen von Losen geht nur von Losen die im Zustand wartend sind!
@@ -71,7 +71,7 @@ Wenn Abteilungsleiter im Schritt 3 sieht, dass das Los entweder im Zustand "wait
 
 ==== Alternativer Ablauf 3
 
-Wenn Mitarbeiter im Schritt 3 sieht, dass Los entweder im Zustand "waiting" oder "hold" ist, dann kommt eine Fehlermeldung, dass es aktuell keine manuell zu bewegenden Lose gibt.
+Wenn Mitarbeiter im Schritt 3 sieht, dass das Los im Zustand "HOLD" ist, dann kommt eine Fehlermeldung, dass es aktuell keine manuell zu bewegenden Lose gibt.
 . Der Use Case ist abgeschlossen.
 
 // macht so auch keinen Sinn
@@ -80,9 +80,10 @@ Wenn Mitarbeiter im Schritt 3 sieht, dass Los entweder im Zustand "waiting" oder
 
 ==== Alternativer Ablauf 4
 
-Wenn in Schritt 3 das Los den Zustand "Lotstarted" hat, fragt System ab ob nächste Maschine in "ready" ist. Wenn die Maschine "ready" ist wird das Los auf die Maschine und den Zustand "inProcess" gesetzt.
+Wenn in Schritt 3 das Los den Zustand "WAIT" hat, fragt System ab ob nächste Maschine in "IDLE" ist. Wenn die Maschine "IDLE" ist wird das Los auf die Maschine und den Zustand "PROC" gesetzt.
 . Der Use Case ist abgeschlossen.
 
+//Use Case Los bewegen für "WAIT" auf "PROC" zuständig? 
 === Unterabläufe (subflows)
 //Nutzen Sie Unterabläufe, um wiederkehrende Schritte auszulagern
 
