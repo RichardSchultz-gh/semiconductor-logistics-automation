@@ -65,21 +65,5 @@ In diesem Dokument werden die wesentlichen Begriffe aus dem Anwendungsgebiet (Fa
 | Emailadresse muss `@`-Zeichen und `.` Punkt enthalten.
 | Login
 
-| Maschine
-| xx
-| xx
-| xx
-| xx
 
-| Los
-| xx
-| xx
-| xx
-| xx
-
-| Mitarbeiter
-| xx
-| xx
-| xx
-| xx
 |===
