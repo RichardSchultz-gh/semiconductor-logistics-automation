@@ -109,6 +109,15 @@ QAGZ-3: Das System muss jederzeit abrufbar sein.
 === Effizienz (Performance)
 // Die Performanz Charakteristiken des Systems sollten in diesem Bereich ausgeführt werden. Beispiele sind Antwortzeit, Durchsatz, Kapazität und Zeiten zum Starten oder Beenden.
 
+* QAGE-1: Das System soll eine stabile Nutzung bei mehreren gleichzeitigen Nutzern gewährleisten.
+
+** Zur Überprüfung wird das System einem Stresstest mit 5 parallelen Nutzern unterzogen.
+
+* QAGE-2 Das System soll eine maximale Antwortzeit von unter 10 Sekunden aufweisen.
+
+** Zur Überprüfung werden simuliert ein Testnutzer die Verwendung der Software. Gleichzeitig werden die Antwortzeiten bei gedrückten Buttons oder bei Abfragen aus Tabellen dokumentiert.
+
+
 QAGE-1: Das System soll beständig gegen einen Ausfall bei einer hohen Anzahl gleichzeitiger Nutzer sein.
 
 * Zur Überprüfung wird das System gleichzeitig von mehreren Testnutzern aufgerufen.
