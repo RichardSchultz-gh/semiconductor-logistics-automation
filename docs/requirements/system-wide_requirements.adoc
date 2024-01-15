@@ -44,6 +44,31 @@ SWFA-5: Das System muss Daten aus einer Datenbank auslesen können.
 === Benutzbarkeit (Usability)
 //Beschreiben Sie Anforderungen für Eigenschaften wie einfache Bedienung, einfaches Erlernen, Standards für die Benutzerfreundlichkeit, Lokalisierung (landesspezifische Anpassungen von Sprache, Datumsformaten, Währungen usw.)
 
+* QAGU-1 Deskriptive Buttons sollen einfache Nutzerinteraktionen ermöglich
+
+** Zur Überprüfung wird kontrolliert, ob aus der Beschreibung eines jeden Buttons eindeutig die jeweilige Funktionalität hervorgeht. 
+
+* QAGU-2 Die Gesamtheit der Interaktionselemente soll minimiert werden
+
+** Zur Überprüfung wird kontrolliert, dass keine Doppelbelegungen vorkommen, die den Nutzer verunsichern könnten. Jede Funktionalität von Buttons, Filtern oder Tabellen darf nur einmalig vorhanden sein.
+
+* QAGU-3 Die Auswahl von Optionen oder die Filterung von Daten muss ohne Vorkenntnisse erfolgen können
+
+** Es wird kontrolliert und abgeglichen, ob für jeden Filter oder jede Auswahloption ein Dropdown-Menü vorhanden ist, welches alle wesentlichen Informationen abbildet
+
+* QAGU-4: Die Sprache für die Benutzeroberfläche ist deutsch. Die Sprache für alle Material- und Maschinenzustände sowie Kommandoeingaben ist Englisch.
+
+** Zur Überprüfung werden alle Eingabevarianten beim Bearbeiten eines Loses, alle Buttons und alle Tabellenausgaben zu           Materialien und Maschinen auf Konsistenz und Korrektheit kontrolliert.
+
+* QAGU-5: Text sollte aus 50cm Entfernung leicht lesbar sein. Die Kennzahlen des Cockpit-Views müssen aus 100cm Entfernung lesbar sein.
+
+** Zur Überprüfung wird ein Testnutzer einige Anwendungsfälle durchführen und die Kennzahlen des Cockpit-Views in der            gegebenen Entfernung betrachten.
+
+* QAGU-6: Das System muss verständliche Fehlermeldungen gewährleisten
+
+** Zur Überprüfung werden beim manuellen Bearbeiten eines Loses falsche Eingaben getätigt. Die resultierenden                    Fehlermeldungen müssen es einem Testnutzer ermöglichen die Eingaben zu korrigieren.
+
+
 QAGU-1: Alle Prozesse und Datenausgaben müssen übersichtlich, eindeutig und verständlich
 sein.
 
@@ -55,17 +80,6 @@ sein.
 
 ** Der Anwender soll mit so wenig Klicks wie möglich zu seinem Ziel kommen.
 
-* QAGU-1.4: Die Sprache für die Benutzeroberfläche ist deutsch. Die Sprache für alle Material- und Maschinenzustände sowie Kommandoeingaben ist Englisch.
-
-** Zur Überprüfung werden alle Eingabevarianten beim Bearbeiten eines Loses, alle Buttons und alle Tabellenausgaben zu           Materialien und Maschinen auf Konsistenz und Korrektheit kontrolliert.
-
-* QAGU-1.5: Text sollte aus 50cm Entfernung leicht lesbar sein. Die Kennzahlen des Cockpit-Views müssen aus 100cm Entfernung lesbar sein.
-
-** Zur Überprüfung wird ein Testnutzer einige Anwendungsfälle durchführen und die Kennzahlen des Cockpit-Views in der            gegebenen Entfernung betrachten.
-
-* QAGU-1.6: Das System muss verständliche Fehlermeldungen gewährleisten
-
-** Zur Überprüfung werden beim manuellen Bearbeiten eines Loses falsche Eingaben getätigt. Die resultierenden                    Fehlermeldungen müssen es einem Testnutzer ermöglichen die Eingaben zu korrigieren.
 
 === Zuverlässigkeit (Reliability)
 // Zuverlässigkeit beinhaltet die Fähigkeit des Produkts und/oder des Systems unter Stress und ungünstigen Bedingungen am laufen zu bleiben. Spezifizieren Sie Anforderungen für zuverlässige Akzeptanzstufen, und wie diese gemessen und evaluiert werden. Vorgeschlagene Themen sind Verfügbarkeit, Häufigkeit und Schwere von Fehlern und Wiederherstellbarkeit.
