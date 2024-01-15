@@ -5,16 +5,30 @@ Vorname Nachname <email@domain.org>; Vorname2 Nachname2 <email2@domain.org>; Vor
 include::../_includes/default-attributes.inc.adoc[]
 // Platzhalter für weitere Dokumenten-Attribute
 
+Für den konzeptionellen Entwurf der Web-Anwendung wurden diverse Wireframes als horizontale Protoypen erstellt.
 
+== 1. Nutzerlogin
 
-image::WireframeA.png[]
+image::WireframeA.PNG[]
 
+* *Beschreibung:* Das System soll beim Start die Auswahl eines Nutzerkontos ermöglichen. Je nach Nutzerprofil, werden dem Nutzer verschiedene Berechtigungen für die Software zur Verfügung gestellt. Der Nutzerlogin enthält ein Eingabefeld für den Nutzernamen und ein Eingabefeld für das zugehörige Passwort.
+
+== 2. Cockpit
 
 image::v3_cockpit_pmx.png[]
 
+* *Beschreibung:* Das Cockpit ist das MainWindow der Anwendung und stellt alle wesentlichen Funktionalitäten bereit. Jeder Usecase wird hierbei jeweils über einen eigenen Button visualisiert. Im oberen Bereichen des Cockpit-Views werden wesentlichen Kennzahlen des Produktionssteuerungssystems bereitgestellt, welche dem Nutzer einen schnellen Überblick über das System ermöglich sollen. 
 
-image::v3_Los_bearbeiten_pmx.png[]
+== 3. Los bearbeiten/bewegen
 
+image::v3_Los bearbeiten_pmx.png[]
+
+* *Beschreibung:* Sobald im Cockpit der Button "Los bearbeiten" gedrückt wird, gelangt der Nutzer in diese Sicht. Eine Eingabezeile ermöglich das Bewegen und Bearbeiten von Losen. Die Datenvisualisierung findet mithilfe von zwei Tabellen statt, die wichtige Informationen über Lose oder Maschinen abbilden. Es ist möglich die Daten der Tabellen unter Nutzung der Filter einzuschränken. 
+
+== 4. Los starten
 
 image::v3_Los_starten_pmx.png[]
+
+* *Beschreibung:* Sobald im Cockpit der Button "Los starten" gedrückt wird, gelangt der Nutzer in diese Sicht. Über Eingabefelder werden die wichtige Informationen, nämlich Menge, Produkt und Kalenderwoche, zum Starten eines Loses abgefragt.
+Auch in dieser Sicht gibt es eine Tabelle, welche wichtige Informationen zu Losen und Maschinen abbildet. Somit kann das Starten der Lose für den Anwender transparent gemacht werden.
 
