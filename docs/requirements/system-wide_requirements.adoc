@@ -115,7 +115,7 @@ QAGZ-3: Das System muss jederzeit abrufbar sein.
 
 * QAGE-2 Das System soll eine maximale Antwortzeit von unter 10 Sekunden aufweisen.
 
-** Zur Überprüfung werden simuliert ein Testnutzer die Verwendung der Software. Gleichzeitig werden die Antwortzeiten bei gedrückten Buttons oder bei Abfragen aus Tabellen dokumentiert.
+** Zur Überprüfung simuliert ein Testnutzer die Verwendung der Software. Gleichzeitig werden die Antwortzeiten bei gedrückten Buttons oder bei Abfragen aus Tabellen dokumentiert.
 
 
 QAGE-1: Das System soll beständig gegen einen Ausfall bei einer hohen Anzahl gleichzeitiger Nutzer sein.
