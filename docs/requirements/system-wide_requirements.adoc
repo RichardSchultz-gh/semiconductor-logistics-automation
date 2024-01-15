@@ -29,14 +29,15 @@ SWFA-2: Das System muss zeitgesteuerte Aktivitäten in Form eines Timers ermögl
 
 ◦ Zu Überprüfungszwecken können Testdurchläufe ausgeführt werden.
 
-SWFA-3: Das System muss Eingaben des Anwenders und Statusupdates speichern können.
+SWFA-3: Das System muss Eingaben des Anwenders und Statusupdates persistent speichern können.
 
-◦ Zu Überprüfungszwecken werden Daten durchs Ausführen von Funktionen eingefügt. Nach Neustart sind die Daten weiterhin erhalten.
+◦ Zu Überprüfungszwecken werden Daten durch das Ausführen von Funktionen eingefügt. Nach Neustart sind die Daten weiterhin erhalten.
 
-SWFA-4: Das System muss Daten exportieren können.
+//SWFA-4: Das System muss Daten exportieren können.
+//das gehört zum UseCase "Daten exportieren" und ist keine systemweite Anforderung -pmx
 
-SWFA-5: Das System muss Daten aus einer Datenbank auslesen können.
-
+//SWFA-5: Das System muss Daten aus einer Datenbank auslesen können.
+// sehe ich eher im Use-Case "Los bearbeiten", "Los starten" etc. -pmx
 
 == Qualitätsanforderungen für das Gesamtsystem
 //Qualitätsanforderungen repräsentieren das "URPS" im FURPS+ zu Klassifikation von Anforderungen
