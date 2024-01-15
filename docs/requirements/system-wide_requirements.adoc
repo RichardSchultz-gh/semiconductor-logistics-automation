@@ -18,20 +18,20 @@ NOTE: Die funktionalen Anforderungen, die sich aus der Interaktion von Nutzern m
 
 == Systemweite funktionale Anforderungen
 //Angabe von system-weiten funktionalen Anforderungen, die nicht als Use Cases ausgedrückt werden können. Beispiele sind Drucken, Berichte, Authentifizierung, Änderungsverfolgung (Auditing), zeitgesteuerte Aktivitäten (Scheduling), Sicherheit / Maßnahmen zum Datenschutz
-SWFA-1: Das System muss Zugriffsbeschränkungen gewährleisten, da nicht jeder Anwender
+* SWFA-1: Das System muss Zugriffsbeschränkungen gewährleisten, da nicht jeder Anwender
 jeden Use Case ausführen darf. Diese Zugriffsbeschränkungen erlauben es dem Anwender, nur
 für ihn vorgesehene Funktionen auszuführen und nur auf für ihn zugängliche Daten
 zuzugreifen. Dafür ist eine Zuordnung aller Anwender zu Rollen und einem Login notwendig.
 
-◦ Zu Überprüfungszwecken wird anhand von Test-Logins versucht rollenfremde Funktionen auszuführen. 
+** Zu Überprüfungszwecken wird anhand von Test-Logins versucht rollenfremde Funktionen auszuführen. 
 
-SWFA-2: Das System muss zeitgesteuerte Aktivitäten in Form eines Timers ermöglichen, da Statusabfragen der Lose und Maschinen ausgewertet werden müssen.
+* SWFA-2: Das System muss zeitgesteuerte Aktivitäten in Form eines Timers ermöglichen, da Statusabfragen der Lose und Maschinen ausgewertet werden müssen.
 
-◦ Zu Überprüfungszwecken können Testdurchläufe ausgeführt werden.
+** Zu Überprüfungszwecken können Testdurchläufe ausgeführt werden.
 
-SWFA-3: Das System muss Eingaben des Anwenders und Statusupdates persistent speichern können.
+* SWFA-3: Das System muss Eingaben des Anwenders und Statusupdates persistent speichern können.
 
-◦ Zu Überprüfungszwecken werden Daten durch das Ausführen von Funktionen eingefügt. Nach Neustart sind die Daten weiterhin erhalten.
+** Zu Überprüfungszwecken werden Daten durch das Ausführen von Funktionen eingefügt. Nach Neustart sind die Daten weiterhin erhalten.
 
 //SWFA-4: Das System muss Daten exportieren können.
 //das gehört zum UseCase "Daten exportieren" und ist keine systemweite Anforderung -pmx
