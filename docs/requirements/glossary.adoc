@@ -25,7 +25,7 @@ In diesem Dokument werden die wesentlichen Begriffe aus dem Anwendungsgebiet (Fa
 | Route | Fertigungsplan; enthält mehrere Flows | xx
 | Flow | Modul des Fertigungsplans | xx
 | Halbleiter | Material mit einem elektrischen Leitvermögen, das zwischen einem Leiter und einem Isolator liegt | xx
-| ProcStart | Beginn der Bearbeitung eines Loses | xx
+| ProcStart | Zeitpunkt, bei dem die Bearbeitung eines Loses beginnt| xx
 | Oper | Operation im Fertigungsprozess | xx
 | EnterOper | Zeitpunkt zu dem Los an der Operation ankommt | xx
 | PTime | Prozesszeit: Zeit, die ein Los auf der Maschine bearbeitet wird | xx
