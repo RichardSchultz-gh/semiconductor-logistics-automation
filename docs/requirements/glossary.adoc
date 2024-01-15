@@ -13,9 +13,9 @@ In diesem Dokument werden die wesentlichen Begriffe aus dem Anwendungsgebiet (Fa
 |===
 | Begriff | Definition und Erläuterung | Synonyme
 //| Kommissionierung | Bereitstellung von Waren aus einem Lager entsprechend eines Kundenauftrags | (keine)
-| Los aka Lot | Zusammenfassung mehrerer Werkstücke (hier Liziumscheiben) | xx
+| Los | Zusammenfassung mehrerer Werkstücke (hier Liziumscheiben) | Lot
 | Material | Stoffe die zur Herstellung benötigt werden | xx
-| Maschine | Gerät zur Herstellung/Prozessierung des Produkts | xx
+| Maschine | Gerät zur Herstellung/Prozessierung des Produkts | Tool
 | Fertigungsprozess | standardisierter Arbeitsablauf zur Produktherstellung | Produktionsprozess, Fertigungsablauf
 | Produkt | Ergebnis der Produktion | xx
 | Fertigungsflüsse | Arbeitsfortschritt und Bewegung im Fertigungsprozess | xx
@@ -24,8 +24,22 @@ In diesem Dokument werden die wesentlichen Begriffe aus dem Anwendungsgebiet (Fa
 | Wafer | Siliziumscheiben auf denen die integrierten Schaltkreise, die Mikrochips, hergestellt werden | xx
 | Route | Fertigungsplan; enthält mehrere Flows | xx
 | Flow | Modul des Fertigungsplans | xx
-| xx | xx | xx
 | Halbleiter | Material mit einem elektrischen Leitvermögen, das zwischen einem Leiter und einem Isolator liegt | xx
+| ProcStart | Beginn der Bearbeitung eines Loses | xx
+| Oper | Operation im Fertigungsprozess | xx
+| EnterOper | Zeitpunkt zu dem Los an der Operation ankommt | xx
+| PTime | Prozesszeit: Zeit, die ein Los auf der Maschine bearbeitet wird | xx
+| Interval | Gibt an, alle wie viel Zeitheiten ein neues Produkt von der Maschine verabeitet werden kann | xx
+| IDLE | Maschinen-Zustand: betriebsbereit | xx
+| PROC | Maschinen- und Materialzsutand: produziert/wird verarbeitet | xx
+| MAINT | Maschinen-Zustand: Maschine ist in Wartung | xx
+| DOWN | Maschinen-Zustand: Maschine ist defekt | xx
+| WAIT | Los-Zustand: Los wartet auf Bearbeitung | xx
+| OP_COMP | Los-Zustand: Los wartet darauf, dass nächster Schritt im Fertigungsablauf gesetzt wird | xx
+| FIN | Los-Zustand: Los ist fertiggestellt | xx
+| HOLD | Los-Zustand: Los ist möglicherweise defekt. Folgezustand muss manuell gesetzt werden | xx
+| SCRAP | Los-Zustand: Los ist Ausschuss | xx
+| xx | xx | xx
 |===
 
 == Abkürzungen und Akronyme
@@ -34,6 +48,10 @@ In diesem Dokument werden die wesentlichen Begriffe aus dem Anwendungsgebiet (Fa
 | Abkürzung | Bedeutung | Erläuterung
 //| UP | Unified Process | Vorgehensmodell für die Softwareentwicklung
 | MES | Manufactoring Execution System | Eine prozessnah operierende Ebene eines mehrschichtigen Fertigungsmanagementsystems
+| WIP | Work In Progress| Anzahl von Wavern im Zustand HOLD, WAIT, OP COMPLETED und PROC
+| MTTR | Mean Time To Repair| Mittlere Repraraturzeit nach einem Systemausfall
+| MTTF | Mean Time To Failure| Gibt durchschnittle Betriebsdauer bis zum Ausfall einer Anlage
+
 |===
 
 == Verzeichnis der Datenstrukturen
