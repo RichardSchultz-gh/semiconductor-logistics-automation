@@ -61,27 +61,19 @@ Da die Anwendung auf einem Raspberry Pi betrieben wird, ist die Architektur dara
 * *QAGU-4:* Die Sprache für die Benutzeroberfläche ist deutsch. Die Sprache für alle Material- und Maschinenzustände sowie Kommandoeingaben ist Englisch.
 * *QAGU-5:* Text sollte aus 50cm Entfernung leicht lesbar sein. Die Kennzahlen des Cockpit-Views müssen aus 100cm Entfernung lesbar sein.
 * *QAGU-6:* Das System muss verständliche Fehlermeldungen gewährleisten
-
-
-QAGU-1: Alle Prozesse und Datenausgaben müssen übersichtlich, eindeutig und verständlich sein.
-
-QAGU-1.1: Die Anzahl der Anwendungsfenster soll minimiert werden.
-
-QAGU-1.2: Alle Funktionalitäten sollen als Buttons auf einem Fenster angezeigt werden.
-
-QAGU-1.3: Die Möglichkeiten für Fehlentscheidungen oder Orientierungslosigkeit sollen minimiert werden.
+* *QAGU-1:* Alle Prozesse und Datenausgaben müssen übersichtlich, eindeutig und verständlich sein.
+* *QAGU-1.1:* Die Anzahl der Anwendungsfenster soll minimiert werden.
+* *QAGU-1.2:* Alle Funktionalitäten sollen als Buttons auf einem Fenster angezeigt werden.
+* *QAGU-1.3:* Die Möglichkeiten für Fehlentscheidungen oder Orientierungslosigkeit sollen minimiert werden.
 
 *Zuverlässigkeit (Reliability)*
 
 * *QAGZ-1:* Das System soll Mechanismen zur Datenwiederherstellung besitzen
 * *QAGZ-2:* Das System darf durch einen Netzwerkausfall nicht beschädigt werden
 * *QAGZ-3:* Es dürfen keine falschen Nutzernamen oder Passwörter eingegeben werden
-
-QAGZ-1: Das System muss robust gegen Abstürze und Datenverlust sein.
-
-QAGZ-2: Das System kann mithilfe von Backups Daten wiederherstellen.
-
-QAGZ-3: Das System muss jederzeit abrufbar sein.
+* *QAGZ-1:* Das System muss robust gegen Abstürze und Datenverlust sein.
+* *QAGZ-2:* Das System kann mithilfe von Backups Daten wiederherstellen.
+* *QAGZ-3:* Das System muss jederzeit abrufbar sein.
 
 *Effizienz (Performance)*
 
@@ -179,14 +171,12 @@ Diese Architekturmechanismen sind essentiell für die Entwicklung einer robusten
 Typen werden gebildet, um die Daten, die zur Laufzeit im Programm benötigt werden, zur
 Verfügung zu haben und zwar an unterschiedlichen Stellen im System.
 
-* *Los*:
-* *Mitarbeiter*:
-* **:
-* **:
-* **:
-* **:
-* **:
-* **:
+* *Los*: enthält alle Informationen zum Los
+* *Tool*: enthält alle Informationen zu den Maschienen
+* *Prodflow*: enthält die n-zu-m-Verbindung von Workflow zu Los 
+* *Workflow*: enthält alle Informationen zu den Teilplänen (einzelnen Fertigungschritte)
+* *PTime*: enthält alle Informationen zu Prozesszeiten
+* *Entities*: enthält alle Informationen zu den MES Entitäten
 * *User*: enthält alle Fremdschlüssel zu Nutzerinformationen
 * *User_Information*: enthält alle Information, die keine Adressdaten sind
 * *Address*: enthält alle Adressinformationen
