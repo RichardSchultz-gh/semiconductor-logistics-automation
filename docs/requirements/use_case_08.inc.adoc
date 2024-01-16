@@ -1,0 +1,59 @@
+//Nutzen Sie dieses Template als Grundlage für die Spezifikation *einzelner* Use-Cases. Diese lassen sich dann per Include in das Use-Case Model Dokument einbinden (siehe Beispiel dort).
+ifndef::main-document[include::../_includes/default-attributes.inc.adoc[]]
+
+== Use-Case: UC08 Backup erstellen
+
+=== Kurzbeschreibung
+//<Kurze Beschreibung des Use Case>
+Der Use Case beschreibt das Speichern von Daten als Backup-Datei.
+
+=== Kurzbeschreibung der Akteure
+
+==== Abteilungsleiter
+
+Möchte manuell ein Backup erstellen 
+
+==== Timer
+
+Erstellt automatisch zu einem vorgegebenen Zeitintervall/-punkt Backups
+
+=== Vorbedingungen
+//Vorbedingungen müssen erfüllt, damit der Use Case beginnen kann, z.B. Benutzer ist angemeldet, Warenkorb ist nicht leer...
+
+*Vorbedingung 1:* Abteilungsleiter ist angemeldet
+
+*Vorbedingung 2:* Zu speichernde Daten sind vorhanden
+
+=== Standardablauf (Basic Flow)
+//Der Standardablauf definiert die Schritte für den Erfolgsfall ("Happy Path")
+
+1. Der Use Case beginnt, wenn auf der grafischen Oberfläche der Button "Backup erstellen" ausgewählt wird.
+2. Eingabe des Zeitintervalls/-punkt der Backup Erstellung
+3. Bestätigung durch Abteilungsleiter
+4. Der Use Case ist abgeschlossen.
+
+=== Alternative Abläufe
+//Nutzen Sie alternative Abläufe für Fehlerfälle, Ausnahmen und Erweiterungen zum Standardablauf
+
+
+==== <Alternativer Ablauf 1>
+
+Wenn Abteilungsleiter im Schritt 2 des Standardablauf kein Zeitintervall/-punkt eingibt, dann einmalige Erstellung des Backups zur aktuellen Ausführung.
+. Der Use Case wird im Schritt 3 fortgesetzt.
+
+==== <Alternativer Ablauf 2>
+
+Wenn Mitarbeiter ein Backup erstellen möchte, dann Fehlermeldung (Kein Recht auf diese Operation, bitte an Abteilungleiter wenden)
+. Der Use Case wird in Schritt 2 fortgesetzt.
+
+=== Wesentliche Szenarios
+//Szenarios sind konkrete Instanzen eines Use Case, d.h. mit einem konkreten Akteur und einem konkreten Durchlauf der o.g. Flows. Szenarios können als Vorstufe für die Entwicklung von Flows und/oder zu deren Validierung verwendet werden.
+
+==== <Szenario 1>
+Das Backup wurde erfolgreich erstellt und die Daten gespeichert.
+
+=== Nachbedingungen
+//Nachbedingungen beschreiben das Ergebnis des Use Case, z.B. einen bestimmten Systemzustand.
+
+==== <Nachbedingung 1>
+Bei erfolgreicher Durchführung des Use Case müssen folgende Nachbedingungen erfüllt sein
