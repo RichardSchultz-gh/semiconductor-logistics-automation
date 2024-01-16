@@ -12,9 +12,12 @@ include::../_includes/default-attributes.inc.adoc[]
 |===
 | Meilenstein | Datum
 
-| Beginn der Iteration | -
-| ... | -
-| Ende der Iteration | -
+| Beginn der Iteration | 15.01.2024
+| Meeting mit Manuela | 17.01.2024
+| Meeting mit Ringel | 18.01.2024
+| Präsentation Prototyp | 22.01.2024
+| Abgabe Beleg | 26.01.2024
+| Ende der Iteration | 26.01.2024
 |===
 
 
@@ -23,7 +26,11 @@ include::../_includes/default-attributes.inc.adoc[]
 
 Beispiele:
 
-* 
+* System-wide-requirements
+* Domänenmodell
+* Architektur Notebook
+* Vorstellung Prototyp
+* Fertigstellung Beleg
 
 
 == Aufgabenzuordnung
@@ -31,7 +38,7 @@ Beispiele:
 
 Die in dieser Iteration geplanten Aufgaben sind in der Work Items List dargestellt (hier Verweis einfügen).
 
-
+image::Iteration5_issues_begin_iteration.png[]
 
 
 == Probleme (optional)
