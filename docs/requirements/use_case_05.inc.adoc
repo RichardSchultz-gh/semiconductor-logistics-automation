@@ -1,0 +1,54 @@
+//Nutzen Sie dieses Template als Grundlage für die Spezifikation *einzelner* Use-Cases. Diese lassen sich dann per Include in das Use-Case Model Dokument einbinden (siehe Beispiel dort).
+ifndef::main-document[include::../_includes/default-attributes.inc.adoc[]]
+
+== Use-Case: UC05 Stammdaten bearbeiten
+
+=== Kurzbeschreibung
+//<Kurze Beschreibung des Use Case>
+Der Use Case beschreibt das manuelle Verändern von Stammdaten, die Grundinformationen über betrieblich relevante Objekte (wie Produkte, Kunden, Personal, Maschine) enthalten.
+
+=== Kurzbeschreibung der Akteure
+
+==== Abteilungsleiter
+
+Möchte manuell die Stammdaten bearbeiten.
+
+=== Vorbedingungen
+//Vorbedingungen müssen erfüllt, damit der Use Case beginnen kann, z.B. Benutzer ist angemeldet, Warenkorb ist nicht leer...
+
+*Vorbedingung 1:* Abteilungsleiter ist angemeldet
+
+*Vorbedingung 2:* Stammdaten sind vorhanden
+
+
+=== Standardablauf (Basic Flow)
+//Der Standardablauf definiert die Schritte für den Erfolgsfall ("Happy Path")
+
+1. Der Use Case beginnt, wenn auf der grafischen Oberfläche der Button "Stammdaten" ausgewählt wird.
+2. Stammdaten des Produktes, Kunden, Personal und Maschine werden in neuem Fenster angezeigt.
+3. Abteilungsleiter kann auf die Stammdaten zugreifen, bearbeiten, löschen und speichern.
+4. Abfrage, ob Änderungen übernommen werden sollen.
+5. Bestätigung des Abteilungsleiters.
+6. Änderungen werden übernommen.
+7. Der Use Case ist abgeschlossen.
+
+=== Alternative Abläufe
+//Nutzen Sie alternative Abläufe für Fehlerfälle, Ausnahmen und Erweiterungen zum Standardablauf
+
+
+==== <Alternativer Ablauf 1>
+
+Wenn Mitarbeiter versucht die Stammdaten zu bearbeiten, dann Fehlermeldung (Kein Recht auf diese Operation, bitte an Abteilungleiter wenden)
+. Der Use Case wird im Schritt 3 fortgesetzt.
+
+=== Wesentliche Szenarios
+//Szenarios sind konkrete Instanzen eines Use Case, d.h. mit einem konkreten Akteur und einem konkreten Durchlauf der o.g. Flows. Szenarios können als Vorstufe für die Entwicklung von Flows und/oder zu deren Validierung verwendet werden.
+
+==== <Szenario 1>
+Die Veränderungen wurden richtig übernommen und gespeichert.
+
+=== Nachbedingungen
+//Nachbedingungen beschreiben das Ergebnis des Use Case, z.B. einen bestimmten Systemzustand.
+
+==== <Nachbedingung 1>
+Bei erfolgreicher Durchführung des Use Case müssen folgende Nachbedingungen erfüllt sein
