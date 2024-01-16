@@ -53,6 +53,18 @@ Da die Anwendung auf einem Raspberry Pi betrieben wird, ist die Architektur dara
 * *SWFA-4:* Das System muss Daten exportieren können.
 * *SWFA-5:*  Das System muss Daten aus einer Datenbank auslesen können. 
 
+*Zuverlässigkeit (Reliability)*
+
+* *QAGZ-1:* Das System soll Mechanismen zur Datenwiederherstellung besitzen
+* *QAGZ-2:* Das System darf durch einen Netzwerkausfall nicht beschädigt werden
+* *QAGZ-3:* Es dürfen keine falschen Nutzernamen oder Passwörter eingegeben werden
+
+QAGZ-1: Das System muss robust gegen Abstürze und Datenverlust sein.
+
+QAGZ-2: Das System kann mithilfe von Backups Daten wiederherstellen.
+
+QAGZ-3: Das System muss jederzeit abrufbar sein.
+
 *Effizienz (Performance)*
 
 * *QAGE-1:* Das System soll beständig gegen einen Ausfall bei einer hohen Anzahl gleichzeitiger Nutzer sein.
