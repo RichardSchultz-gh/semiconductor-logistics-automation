@@ -175,12 +175,31 @@ Diese Architekturmechanismen sind essentiell für die Entwicklung einer robusten
 == Wesentliche Abstraktionen
 //[List and briefly describe the key abstractions of the system. This should be a relatively short list of the critical concepts that define the system. The key abstractions will usually translate to the initial analysis classes and important patterns.]
 
-Die Architektur zielt darauf ab, eine langlebige, erweiterbare und robuste Datenbankanwendung zu bieten, die große Datenmengen verarbeitet und auf verschiedenen Endgeräten nutzbar ist. Folgende Schlüsselabstraktionen sind identifiziert:
+*Typen:*
+Typen werden gebildet, um die Daten, die zur Laufzeit im Programm benötigt werden, zur
+Verfügung zu haben und zwar an unterschiedlichen Stellen im System.
 
-- **Datenbank-Server (PostgreSQL):** Zentral für die Datenspeicherung und -organisation, ausgewählt für seine Skalierbarkeit und Effizienz auf dem Raspberry Pi.
-- **Middleware (Python-Anwendung):** Verbindet die Datenbank mit der GUI, nimmt Anfragen entgegen, führt Datenbankoperationen durch und gibt Ergebnisse zurück.
-- **Benutzeroberfläche (Flask-UI):** Flask stellt eine Webanwendung bereits, welche mittels HTML-Templates und CSS-Stylesheets die Interaktion der Endbenutzer mit dem System über eine benutzerfreundliche Web-GUI ermöglicht.
-- **Schnittstellen und Routen:** Wichtig für die Kommunikation zwischen den verschiedenen Systemkomponenten.
+* *Los*:
+* *Mitarbeiter*:
+* **:
+* **:
+* **:
+* **:
+* **:
+* **:
+* *User*: enthält alle Fremdschlüssel zu Nutzerinformationen
+* *User_Information*: enthält alle Information, die keine Adressdaten sind
+* *Address*: enthält alle Adressinformationen
+* *Security*: enthält alle Informationen, die einem Nutzer das Anmelden ermöglichen
+
+*Services:* 
+Services werden genutzt, um die Verarbeitung von Daten zu übernehmen. Dies geschieht
+optimalerweise für jeden Typen separat, um eine möglichst geringe Kopplung zu erhalten.
+
+*Workflows:* 
+Workflows beschreiben den Arbeitsablauf des Programms und bilden die Reihenfolge
+ab, mit welcher in einem Programm gearbeitet wird.
+
 
 == Schichten oder Architektur-Framework
 //[Describe the architectural pattern that you will use or how the architecture will be consistent and uniform. This could be a simple reference to an existing or well-known architectural pattern, such as the Layer framework, a reference to a high-level model of the framework, or a description of how the major system components should be put together.]
