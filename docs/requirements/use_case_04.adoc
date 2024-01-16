@@ -1,0 +1,56 @@
+//Nutzen Sie dieses Template als Grundlage für die Spezifikation *einzelner* Use-Cases. Diese lassen sich dann per Include in das Use-Case Model Dokument einbinden (siehe Beispiel dort).
+ifndef::main-document[include::../_includes/default-attributes.inc.adoc[]]
+
+
+//Softwarekomponente, Start von Losen (In der woche vom … werden 30 Lose gleichmm. Über Woche gestartet.
+
+== Use-Case: UC04 Stammdaten anzeigen
+
+=== Kurzbeschreibung
+//<Kurze Beschreibung des Use Case>
+Der Use Case beschreibt das Anzeigen von Stammdaten, die Grundinformationen über betrieblich relevante Objekte (wie Produkte, Kunden, Personal, Maschine) enthalten.
+
+=== Kurzbeschreibung der Akteure
+
+==== Mitarbeiter an Maschine
+
+Möchte manuell sich die Stammdaten anzeigen lassen.
+
+==== Abteilungsleiter
+
+Möchte manuell sich die Stammdaten anzeigen lassen.
+
+
+=== Vorbedingungen
+//Vorbedingungen müssen erfüllt, damit der Use Case beginnen kann, z.B. Benutzer ist angemeldet, Warenkorb ist nicht leer...
+
+*Vorbedingung 1:* Mitarbeiter/Abteilungsleiter ist angemeldet
+
+
+=== Standardablauf (Basic Flow)
+//Der Standardablauf definiert die Schritte für den Erfolgsfall ("Happy Path")
+
+1. Der Use Case beginnt, wenn auf der grafischen Oberfläche der Button "Stammdaten" ausgewählt wird.
+2. Stammdaten des Produktes, Kunden, Personal und Maschine werden in neuem Fenster angezeigt.
+3. Der Use Case ist abgeschlossen.
+
+=== Alternative Abläufe
+//Nutzen Sie alternative Abläufe für Fehlerfälle, Ausnahmen und Erweiterungen zum Standardablauf
+
+
+==== <Alternativer Ablauf 1>
+
+
+
+=== Wesentliche Szenarios
+//Szenarios sind konkrete Instanzen eines Use Case, d.h. mit einem konkreten Akteur und einem konkreten Durchlauf der o.g. Flows. Szenarios können als Vorstufe für die Entwicklung von Flows und/oder zu deren Validierung verwendet werden.
+
+==== <Szenario 1>
+
+
+=== Nachbedingungen
+//Nachbedingungen beschreiben das Ergebnis des Use Case, z.B. einen bestimmten Systemzustand.
+
+==== <Nachbedingung 1>
+Bei erfolgreicher Durchführung des Use Case müssen folgende Nachbedingungen erfüllt sein
+
