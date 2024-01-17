@@ -92,48 +92,49 @@ https://www2.htw-dresden.de/~anke/openup/core.tech.common.extend_supp/guidances/
 - **Zweck:** Lesen und Schreiben von gespeicherten Daten.
 - **Eigenschaften:** Unterstützt die dauerhafte Speicherung von Daten.
 - **Funktion:** Verwendung eines relationalen DBMS (PostgreSQL) zur Datenpersistenz.
-- **Zugehörige SWFA:** SWFA-3
+- **Ausschnit Zugehöriger SWFA:** SWFA-3, QAGE-2
 
 ### Sicherheit (Security)
 - **Zweck:** Schutz des Zugriffs auf Ressourcen oder Informationen.
 - **Eigenschaften:** Beinhaltet Authentifizierung, Autorisierung und Datenverschlüsselung.
 - **Funktion:** Gewährleistung der Datensicherheit und des beschränkten Zugriffs basierend auf Benutzerrollen.
-- **Zugehörige SWFA:** SWFA-1
+- **Ausschnit Zugehöriger SWFA:** SWFA-1, QAGZ-2
 
 ### Transaktionsmanagement (Transaction Management)
 - **Zweck:** Handhabung von ACID-Transaktionen.
 - **Eigenschaften:** Unterstützt die Integrität und Zuverlässigkeit von Datenbankoperationen.
 - **Funktion:** PostgreSQL bietet native Unterstützung für Transaktionsmanagement, um Konsistenz und Zuverlässigkeit der Daten zu gewährleisten.
+- **Ausschnit Zugehöriger SWFA:** SWFA-3, QAGE-1
 
 ### Mega-Daten (Mega-data)
 - **Zweck:** Unterstützung für die Verarbeitung sehr großer Datenmengen.
 - **Eigenschaften:** Skalierbare Datenverarbeitung und -speicherung.
 - **Funktion:** PostgreSQL und Python-Middleware für effiziente Handhabung und Verarbeitung großer Datensätze.
-- **Zugehörige SWFA:** QAGE-4
+- **Ausschnit Zugehöriger SWFA:** QAGE-1, QAGE-2
 
 ### Terminierung (Scheduling)
 - **Zweck:** Ermöglicht die Planung und Ausführung von Aufgaben zu bestimmten Zeiten oder unter bestimmten Bedingungen.
 - **Eigenschaften:** Unterstützt zeitgesteuerte und ereignisbasierte Aufgaben. Flexibel einsetzbar für regelmäßige oder einmalige Ereignisse.
 - **Funktion:** Im System ermöglicht dies die Automatisierung von Datenerfassung und Wartungsaufgaben, für zeitgesteuerte Datenbank-Updates.
-- **Zugehörige SWFA:** SWFA-2
+- **Ausschnit Zugehöriger SWFA:** SWFA-2
 
 ### Archivierung (Archiving)
 - **Zweck:** Verschieben von Daten aus dem aktiven Speicher, wenn sie einen bestimmten Zustand erreicht haben.
 - **Eigenschaften:** Unterstützt Langzeitspeicherung und Entlastung des aktiven Speichers.
 - **Funktion:** Automatisiertes Verschieben alter oder selten genutzter Daten in Archivspeicher.
-- **Zugehörige SWFA:** SWFA-3
+- **Ausschnit Zugehöriger SWFA:** SWFA-3, QAGW-1
 
 ### Fehlermanagement (Error Management)
 - **Zweck:** Erkennung, Weiterleitung und Berichterstattung von Fehlern.
 - **Eigenschaften:** Robuste Fehlerbehandlung und klare Benachrichtigungssysteme.
 - **Funktion:** Implementierung eines Systems, das Fehler effektiv erkennt und dem Benutzer verständliche Meldungen liefert.
-- **Zugehörige SWFA:** QAGU-1.6
+- **Ausschnit Zugehöriger SWFA:** QAGZ-1, QAGU-6, QAGW-1
 
 ### Lokalisierung / Internationalisierung (Localization / Internationalization)
 - **Zweck:** Unterstützung mehrerer menschlicher Sprachen und Darstellung der vom Benutzer bevorzugten Sprache.
 - **Eigenschaften:** Flexibilität in der Sprachwahl, einfache Anpassung an verschiedene Sprachen.
 - **Funktion:** Implementierung eines Systems, das Benutzeroberflächen und Meldungen in verschiedenen Sprachen unterstützt.
-- **Zugehörige SWFA:** QAGU-1.4
+- **ZAusschnit Zugehöriger SWFA:** QAGU-4, QAGW-2
 
 Diese Architekturmechanismen sind essentiell für die Entwicklung einer robusten, sicheren und skalierbaren Datenbankanwendung, die auf einem Raspberry Pi mit Raspbian Betriebssystem betrieben wird.
 
