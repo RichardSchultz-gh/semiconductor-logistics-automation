@@ -39,7 +39,7 @@ Da die Anwendung auf einem Raspberry Pi betrieben wird, ist die Architektur dara
 
 *Abhängigkeiten*
 
-* Wir sind drauf angewiesen, dass die Bibliotheken und Frameworks, die wir nutzen, gepflegt werden
+* Wir sind darauf angewiesen, dass die von uns genutzten Bibliotheken und Frameworks weiterhin gepflegt werden.
 * Wir sind auf die einwandfreie Funktion des Raspberry Pi angewiesen
 
 == Architektur-relevante Anforderungen
