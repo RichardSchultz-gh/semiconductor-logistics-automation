@@ -49,44 +49,17 @@ Da die Anwendung auf einem Raspberry Pi betrieben wird, ist die Architektur dara
 
 * *SWFA-1:* Das System muss Zugriffsbeschränkungen gewährleisten, da nicht jeder Anwender jeden Use Case ausführen darf.
 * *SWFA-2:* Das System muss zeitgesteuerte Aktivitäten in Form eines Timers ermöglichen, da Statusabfragen der Lose und Maschinen ausgewertet werden müssen.
-* *SWFA-3* (Persistente Speicherung): Die Fähigkeit, Daten persistent zu speichern, ist grundlegend für die Datenarchitektur. Sie erfordert Entscheidungen bezüglich Datenbanken, Dateisystemen und Backup Strategien.
-* *SWFA-4:* Das System muss Daten exportieren können.
-* *SWFA-5:*  Das System muss Daten aus einer Datenbank auslesen können. 
-
-*Benutzbarkeit (Usability)*
-
-* *QAGU-1:* Deskriptive Buttons sollen einfache Nutzerinteraktionen ermöglich
-* *QAGU-2:* Die Gesamtheit der Interaktionselemente soll minimiert werden
-* *QAGU-3:* Die Auswahl von Optionen oder die Filterung von Daten muss ohne Vorkenntnisse erfolgen können
-* *QAGU-4:* Die Sprache für die Benutzeroberfläche ist deutsch. Die Sprache für alle Material- und Maschinenzustände sowie Kommandoeingaben ist Englisch.
-* *QAGU-5:* Text sollte aus 50cm Entfernung leicht lesbar sein. Die Kennzahlen des Cockpit-Views müssen aus 100cm Entfernung lesbar sein.
-* *QAGU-6:* Das System muss verständliche Fehlermeldungen gewährleisten
-* *QAGU-1:* Alle Prozesse und Datenausgaben müssen übersichtlich, eindeutig und verständlich sein.
-* *QAGU-1.1:* Die Anzahl der Anwendungsfenster soll minimiert werden.
-* *QAGU-1.2:* Alle Funktionalitäten sollen als Buttons auf einem Fenster angezeigt werden.
-* *QAGU-1.3:* Die Möglichkeiten für Fehlentscheidungen oder Orientierungslosigkeit sollen minimiert werden.
-
-*Zuverlässigkeit (Reliability)*
-
-* *QAGZ-1:* Das System soll Mechanismen zur Datenwiederherstellung besitzen
-* *QAGZ-2:* Das System darf durch einen Netzwerkausfall nicht beschädigt werden
-* *QAGZ-3:* Es dürfen keine falschen Nutzernamen oder Passwörter eingegeben werden
-* *QAGZ-1:* Das System muss robust gegen Abstürze und Datenverlust sein.
-* *QAGZ-2:* Das System kann mithilfe von Backups Daten wiederherstellen.
-* *QAGZ-3:* Das System muss jederzeit abrufbar sein.
+* *SWFA-3:* Das System muss Eingaben des Anwenders und Statusupdates persistent speichern können.
 
 *Effizienz (Performance)*
 
-* *QAGE-1:* Das System soll beständig gegen einen Ausfall bei einer hohen Anzahl gleichzeitiger Nutzer sein.
-* *QAGE-2:* Das System soll in wenigen Sekunden dem Anwender eine Antwort geben.
-* *QAGE-3:* Das System soll ein Backup in wenigen Minuten erstellen können.
-* *QAGE-4* (Verarbeitung großer Datenmengen): Beeinflusst die Datenarchitektur, insbesondere die Auswahl und Konfiguration der Datenbanksysteme, sowie die Verarbeitungslogik für große Datenvolumen.
+* *QAGE-1:* Das System soll eine stabile Nutzung bei mehreren gleichzeitigen Nutzern gewährleisten.
+* *QAGE-2:* Das System soll eine maximale Antwortzeit von unter 10 Sekunden aufweisen.
 
 *Wartbarkeit (Supportability)*
 
-* **QAGW-1:** Das Entwicklerteam muss eine (fortgeführte) Entwicklerdokumentation bereitstellen, welche die Weiterentwicklung des Systems ermöglicht.
+* *QAGW-1:* Zur besseren Wartbarkeit und zum besseren Verständnis bei auftretenden Fehlern, muss das Entwickler Team eine umfangreiche Entwicklerdokumentation bereitstellen
 * *QAGW-2:* Das System muss kompatibel zu Chrome, Firefox, Edge und Safari sein.
-
 
 *Zusätzliche Anforderungen*
 
