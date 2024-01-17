@@ -57,9 +57,7 @@ image::Iteration5_issues_begin_iteration.png[]
 
 Beispiele:
 
-* 97% der Testfälle auf Systemebene sind erfolgreich.
-* Gemeinsame Inspektion des Iterations-Ergebnisses (Inkrement) mit den Abteilungen X und Y ergibt positive Rückmeldung.
-* Technische Präsentation / Demo erhält positive Rückmeldungen.
+* 
 
 
 == Assessment

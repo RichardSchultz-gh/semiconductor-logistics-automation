@@ -86,3 +86,13 @@ image::Iteration4_issues.png[]
 
 * Andere Belange und Abweichungen
 //Führen Sie weitere Themen auf, für die eine Bewertung durchgeführt wurde. Beispiele sind Finanzen, Zeitabweichungen oder Feedback von Stakeholdern, die nicht bereits an anderer Stelle dokumentiert wurden.
+
+*Problem Zugriff RaspberryPi*
+
+Der Raspy lag bei Richard zu Hause. Dies hat Nils in seiner Arbeit gehindert, da er so nicht konstant Zugriff auf den Raspy hatte.
+Es wurde zwar ein Remote Zugriff eingestellt, jedoch muss der Raspy dafür an sein. Da der Raspy nicht dauerhaft an sein kann, muss Richard diesen immer aktiv anstellen, damit Nils was machen kann. Durch kommunikativen Hürden konnte Nils nicht am Raspy arbeiten, wenn er es wollte. Dies hat die Arbeit von Nils stark beeinflusst. 
+
+Als Lösung wird der Raspy von Richard an Nils übergeben. Nils arbeitet aktiv und mit großem Tatendrang, weshalb der Raspy bei ihm besser deponiert ist. So wird Nils Arbeit nicht gehempt.
+
+*Mangelde Arbeit der Architekten*
+
