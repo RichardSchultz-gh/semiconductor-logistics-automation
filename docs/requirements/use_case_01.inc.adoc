@@ -16,7 +16,7 @@ ifndef::main-document[include::../_includes/default-attributes.inc.adoc[]]
 
 === Kurzbeschreibung
 //<Kurze Beschreibung des Use Case>
-Der Use Case beschreibt die Aufbereitung, das Starten der Lose nach dem Berechnen der Losanzahl aus dem Auftrag.
+Der Use Case beschreibt die Aufbereitung und das Starten der Lose
 
 === Kurzbeschreibung der Akteure
 
@@ -59,7 +59,7 @@ Startet den Use Case in einem vorberechneten Zeitintervall
 3. Losanzahl wird errechnet
 4. StartLot Intervall wird aus Zieldatum und Losanzahl errechnet - Timer wird erstellt
 5. Los bekommt eindeutige Nummerierung
-6. Los wird mit Hilfe von errechnetem Intervall auf Status "Lotstarted" gesetzt
+6. Los wird mit Hilfe von errechnetem Intervall auf Status "WAIT" gesetzt
 7. Der Use Case ist abgeschlossen.
 
 === Alternative Abläufe
@@ -73,13 +73,13 @@ Wenn Mitarbeiter, Abteilungsleiter im Schritt 1 des Standardablauf eine negative
 
 ==== <Alternativer Ablauf 2>
 
-Wenn Mitarbeiter, Abteilungsleiter im Schritt 2 KEINE Zielkalenderwoche eingibt, dann werden der eingegebene Anzahl an Losen eindeutige Nummerierung gegeben und direkt in Status "Lotstarted" gesetzt. 
+Wenn Mitarbeiter, Abteilungsleiter im Schritt 2 KEINE Zielkalenderwoche eingibt, dann werden der eingegebene Anzahl an Losen eindeutige Nummerierung gegeben und direkt in Status "WAIT" gesetzt. 
 . Der Use Case ist abgeschlossen
 
 === Wesentliche Szenarios
 //Szenarios sind konkrete Instanzen eines Use Case, d.h. mit einem konkreten Akteur und einem konkreten Durchlauf der o.g. Flows. Szenarios können als Vorstufe für die Entwicklung von Flows und/oder zu deren Validierung verwendet werden.
 
-==== <Szenario 1>
+==== Use Case erfolgreich
 Das Los wurde erfolgreich gestartet und wartet auf den ersten Fertigungschritt
 
 === Nachbedingungen
@@ -87,4 +87,4 @@ Das Los wurde erfolgreich gestartet und wartet auf den ersten Fertigungschritt
 
 ==== <Nachbedingung 1>
 Bei erfolgreicher Durchführung des Use Case müssen folgende Nachbedingungen erfüllt sein
-** Erfolgreich gestartete Lose werden nach dem Zustand "Lotstarted" in den Zustand "inProcess" gesetzt 
+** Erfolgreich gestartete Lose werden nach dem Zustand "WAIT" bei Bedarf in den Zustand "PROC" gesetzt 

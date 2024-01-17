@@ -1,0 +1,61 @@
+== Use-Case: UC06 Daten exportieren
+
+=== Kurzbeschreibung
+//<Kurze Beschreibung des Use Case>
+Der Use Case beschreibt das Exportieren von Datenmengen
+
+=== Kurzbeschreibung der Akteure
+
+==== Nutzer - Mitarbeiter
+
+Möchte Datenmengen exportieren
+
+==== Administrator - Fertigungsleiter
+
+Möchte Datenmengen exportieren
+
+=== Vorbedingungen
+//Vorbedingungen müssen erfüllt, damit der Use Case beginnen kann, z.B. Benutzer ist angemeldet, Warenkorb ist nicht leer...
+
+*Vorbedingung 1:* Akteur ist angemeldet
+
+*Vorbedingung 2:* Datenmengen sind vorhanden
+
+
+
+=== Standardablauf (Basic Flow)
+//Der Standardablauf definiert die Schritte für den Erfolgsfall ("Happy Path")
+
+1. Der Use Case beginnt, wenn auf der grafischen Oberfläche der Button "Daten exportieren" angeklickt wird
+2. Akteur gelangt in neues Fenster, in dem er nach Daten filtern kann (Tool ID, Lot ID, Status usw.)
+3. System zeigt alle gefilterten Daten an
+4. Akteur bestätigt angezeigte Daten
+5. System erstellt Dokument im CSV-Format
+6. Dokument wird im Laufwerk gespeichert
+7. Der Use Case ist abgeschlossen.
+
+//=== Alternative Abläufe
+//Nutzen Sie alternative Abläufe für Fehlerfälle, Ausnahmen und Erweiterungen zum Standardablauf
+
+
+//==== Keine Datenmengen vorhanden
+
+
+
+
+//==== <Alternativer Ablauf 2>
+
+
+
+//=== Wesentliche Szenarios
+//Szenarios sind konkrete Instanzen eines Use Case, d.h. mit einem konkreten Akteur und einem konkreten Durchlauf der o.g. Flows. Szenarios können als Vorstufe für die Entwicklung von Flows und/oder zu deren Validierung verwendet werden.
+
+//==== Use Case erfolgreich
+
+
+//=== Nachbedingungen
+//Nachbedingungen beschreiben das Ergebnis des Use Case, z.B. einen bestimmten Systemzustand.
+
+//==== <Nachbedingung 1>
+//Bei erfolgreicher Durchführung des Use Case müssen folgende Nachbedingungen erfüllt sein
+//

@@ -53,17 +53,27 @@ Da die Anwendung auf einem Raspberry Pi betrieben wird, ist die Architektur dara
 * *SWFA-4:* Das System muss Daten exportieren können.
 * *SWFA-5:*  Das System muss Daten aus einer Datenbank auslesen können. 
 
+*Benutzbarkeit (Usability)*
+
+* *QAGU-1:* Deskriptive Buttons sollen einfache Nutzerinteraktionen ermöglich
+* *QAGU-2:* Die Gesamtheit der Interaktionselemente soll minimiert werden
+* *QAGU-3:* Die Auswahl von Optionen oder die Filterung von Daten muss ohne Vorkenntnisse erfolgen können
+* *QAGU-4:* Die Sprache für die Benutzeroberfläche ist deutsch. Die Sprache für alle Material- und Maschinenzustände sowie Kommandoeingaben ist Englisch.
+* *QAGU-5:* Text sollte aus 50cm Entfernung leicht lesbar sein. Die Kennzahlen des Cockpit-Views müssen aus 100cm Entfernung lesbar sein.
+* *QAGU-6:* Das System muss verständliche Fehlermeldungen gewährleisten
+* *QAGU-1:* Alle Prozesse und Datenausgaben müssen übersichtlich, eindeutig und verständlich sein.
+* *QAGU-1.1:* Die Anzahl der Anwendungsfenster soll minimiert werden.
+* *QAGU-1.2:* Alle Funktionalitäten sollen als Buttons auf einem Fenster angezeigt werden.
+* *QAGU-1.3:* Die Möglichkeiten für Fehlentscheidungen oder Orientierungslosigkeit sollen minimiert werden.
+
 *Zuverlässigkeit (Reliability)*
 
 * *QAGZ-1:* Das System soll Mechanismen zur Datenwiederherstellung besitzen
 * *QAGZ-2:* Das System darf durch einen Netzwerkausfall nicht beschädigt werden
 * *QAGZ-3:* Es dürfen keine falschen Nutzernamen oder Passwörter eingegeben werden
-
-QAGZ-1: Das System muss robust gegen Abstürze und Datenverlust sein.
-
-QAGZ-2: Das System kann mithilfe von Backups Daten wiederherstellen.
-
-QAGZ-3: Das System muss jederzeit abrufbar sein.
+* *QAGZ-1:* Das System muss robust gegen Abstürze und Datenverlust sein.
+* *QAGZ-2:* Das System kann mithilfe von Backups Daten wiederherstellen.
+* *QAGZ-3:* Das System muss jederzeit abrufbar sein.
 
 *Effizienz (Performance)*
 
@@ -81,6 +91,8 @@ QAGZ-3: Das System muss jederzeit abrufbar sein.
 *Zusätzliche Anforderungen*
 
 * *Ressourceneinschränkungen:* Das System soll auf einem Raspberry Pi lauffähig sein, wodurch die Ressourcen des Systems begrenzt sind.
+
+// Anforderungen überarbeiten!! Nur die, die für die Architektur relevant sind!!
 
 == Entscheidungen, Nebenbedingungen und Begründungen
 //[List the decisions that have been made regarding architectural approaches and the constraints being placed on the way that the developers build the system. These will serve as guidelines for defining architecturally significant parts of the system. Justify each decision or constraint so that developers understand the importance of building the system according to the context created by those decisions and constraints. This may include a list of DOs and DON’Ts to guide the developers in building the system.]
@@ -103,48 +115,48 @@ https://www2.htw-dresden.de/~anke/openup/core.tech.common.extend_supp/guidances/
 //Beschreiben Sie den Zweck, Eigenschaften und Funktion der Architekturmechanismen.
 
 
-## Persistenz (Persistence)
+### Persistenz (Persistence)
 - **Zweck:** Lesen und Schreiben von gespeicherten Daten.
 - **Eigenschaften:** Unterstützt die dauerhafte Speicherung von Daten.
 - **Funktion:** Verwendung eines relationalen DBMS (PostgreSQL) zur Datenpersistenz.
 - **Zugehörige SWFA:** SWFA-3
 
-## Sicherheit (Security)
+### Sicherheit (Security)
 - **Zweck:** Schutz des Zugriffs auf Ressourcen oder Informationen.
 - **Eigenschaften:** Beinhaltet Authentifizierung, Autorisierung und Datenverschlüsselung.
 - **Funktion:** Gewährleistung der Datensicherheit und des beschränkten Zugriffs basierend auf Benutzerrollen.
 - **Zugehörige SWFA:** SWFA-1
 
-## Transaktionsmanagement (Transaction Management)
+### Transaktionsmanagement (Transaction Management)
 - **Zweck:** Handhabung von ACID-Transaktionen.
 - **Eigenschaften:** Unterstützt die Integrität und Zuverlässigkeit von Datenbankoperationen.
 - **Funktion:** PostgreSQL bietet native Unterstützung für Transaktionsmanagement, um Konsistenz und Zuverlässigkeit der Daten zu gewährleisten.
 
-## Mega-Daten (Mega-data)
+### Mega-Daten (Mega-data)
 - **Zweck:** Unterstützung für die Verarbeitung sehr großer Datenmengen.
 - **Eigenschaften:** Skalierbare Datenverarbeitung und -speicherung.
 - **Funktion:** PostgreSQL und Python-Middleware für effiziente Handhabung und Verarbeitung großer Datensätze.
 - **Zugehörige SWFA:** QAGE-4
 
-## Terminierung (Scheduling)
+### Terminierung (Scheduling)
 - **Zweck:** Ermöglicht die Planung und Ausführung von Aufgaben zu bestimmten Zeiten oder unter bestimmten Bedingungen.
 - **Eigenschaften:** Unterstützt zeitgesteuerte und ereignisbasierte Aufgaben. Flexibel einsetzbar für regelmäßige oder einmalige Ereignisse.
 - **Funktion:** Im System ermöglicht dies die Automatisierung von Datenerfassung und Wartungsaufgaben, für zeitgesteuerte Datenbank-Updates.
 - **Zugehörige SWFA:** SWFA-2
 
-## Archivierung (Archiving)
+### Archivierung (Archiving)
 - **Zweck:** Verschieben von Daten aus dem aktiven Speicher, wenn sie einen bestimmten Zustand erreicht haben.
 - **Eigenschaften:** Unterstützt Langzeitspeicherung und Entlastung des aktiven Speichers.
 - **Funktion:** Automatisiertes Verschieben alter oder selten genutzter Daten in Archivspeicher.
 - **Zugehörige SWFA:** SWFA-3
 
-## Fehlermanagement (Error Management)
+### Fehlermanagement (Error Management)
 - **Zweck:** Erkennung, Weiterleitung und Berichterstattung von Fehlern.
 - **Eigenschaften:** Robuste Fehlerbehandlung und klare Benachrichtigungssysteme.
 - **Funktion:** Implementierung eines Systems, das Fehler effektiv erkennt und dem Benutzer verständliche Meldungen liefert.
 - **Zugehörige SWFA:** QAGU-1.6
 
-## Lokalisierung / Internationalisierung (Localization / Internationalization)
+### Lokalisierung / Internationalisierung (Localization / Internationalization)
 - **Zweck:** Unterstützung mehrerer menschlicher Sprachen und Darstellung der vom Benutzer bevorzugten Sprache.
 - **Eigenschaften:** Flexibilität in der Sprachwahl, einfache Anpassung an verschiedene Sprachen.
 - **Funktion:** Implementierung eines Systems, das Benutzeroberflächen und Meldungen in verschiedenen Sprachen unterstützt.
@@ -155,12 +167,29 @@ Diese Architekturmechanismen sind essentiell für die Entwicklung einer robusten
 == Wesentliche Abstraktionen
 //[List and briefly describe the key abstractions of the system. This should be a relatively short list of the critical concepts that define the system. The key abstractions will usually translate to the initial analysis classes and important patterns.]
 
-Die Architektur zielt darauf ab, eine langlebige, erweiterbare und robuste Datenbankanwendung zu bieten, die große Datenmengen verarbeitet und auf verschiedenen Endgeräten nutzbar ist. Folgende Schlüsselabstraktionen sind identifiziert:
+*Typen:*
+Typen werden gebildet, um die Daten, die zur Laufzeit im Programm benötigt werden, zur
+Verfügung zu haben und zwar an unterschiedlichen Stellen im System.
 
-- **Datenbank-Server (PostgreSQL):** Zentral für die Datenspeicherung und -organisation, ausgewählt für seine Skalierbarkeit und Effizienz auf dem Raspberry Pi.
-- **Middleware (Python-Anwendung):** Verbindet die Datenbank mit der GUI, nimmt Anfragen entgegen, führt Datenbankoperationen durch und gibt Ergebnisse zurück.
-- **Benutzeroberfläche (Flask-UI):** Flask stellt eine Webanwendung bereits, welche mittels HTML-Templates und CSS-Stylesheets die Interaktion der Endbenutzer mit dem System über eine benutzerfreundliche Web-GUI ermöglicht.
-- **Schnittstellen und Routen:** Wichtig für die Kommunikation zwischen den verschiedenen Systemkomponenten.
+* *Los*: enthält alle Informationen zum Los
+* *Tool*: enthält alle Informationen zu den Maschienen
+* *Prodflow*: enthält die n-zu-m-Verbindung von Workflow zu Los 
+* *Workflow*: enthält alle Informationen zu den Teilplänen (einzelnen Fertigungschritte)
+* *PTime*: enthält alle Informationen zu Prozesszeiten
+* *Entities*: enthält alle Informationen zu den MES Entitäten
+* *User*: enthält alle Fremdschlüssel zu Nutzerinformationen
+* *User_Information*: enthält alle Information, die keine Adressdaten sind
+* *Address*: enthält alle Adressinformationen
+* *Security*: enthält alle Informationen, die einem Nutzer das Anmelden ermöglichen
+
+*Services:* 
+Services werden genutzt, um die Verarbeitung von Daten zu übernehmen. Dies geschieht
+optimalerweise für jeden Typen separat, um eine möglichst geringe Kopplung zu erhalten.
+
+*Workflows:* 
+Workflows beschreiben den Arbeitsablauf des Programms und bilden die Reihenfolge
+ab, mit welcher in einem Programm gearbeitet wird.
+
 
 == Schichten oder Architektur-Framework
 //[Describe the architectural pattern that you will use or how the architecture will be consistent and uniform. This could be a simple reference to an existing or well-known architectural pattern, such as the Layer framework, a reference to a high-level model of the framework, or a description of how the major system components should be put together.]
