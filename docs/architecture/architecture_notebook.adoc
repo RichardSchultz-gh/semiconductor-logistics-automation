@@ -77,6 +77,7 @@ Da die Anwendung auf einem RaspberryPi betrieben wird, ist die Architektur darau
 . Wir benutzen *Psycopg2* als Python-Bibliothek, da diese eine unkomplizierte Interaktion mit PostgreSQL ermöglicht und so eine gute Schnittstelle zur Nutzung der Datenbank herstellt.
 . Wir nutzen *Flask* als Web-Framework, da dieses ein recht leichtgewichtiges Framework ist, welches wenige Resourcen benötigt. Außerdem ist Flask einfach zu erlernen, da es aufgrund seiner aktiven Entwickler-Community viele Tutorials und Hilfestellungen gibt.
 . Wir nutzen *HTML und CSS* für die Benutzeroberfläche, da diese Technologien sehr gut mit Flask integrierbar sind. Diese Technologien ermöglichen die Entwicklung einer ansprechenden und interaktiven Benutzeroberfläche für die Anwendung. Zur Verbesserung der Interaktivität kann auch JavaScript genutzt werden.
+. Für die Generierung von dynamischen Inhalten in der Webanwendung benutzen wir die Template-Engine *Jinja2*. Diese ist weit verbreitet und ist direkt in Flask integriert.
 //evt. Bootstrap??
 
 == Architekturmechanismen
