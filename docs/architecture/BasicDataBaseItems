@@ -27,10 +27,11 @@ DispTool    in welcher Maschine
 
 Produkt-Arbeitspläne: ProdFlow
 Product
-Route   Teilfertigungsschritte
-Seq     Sequenz von 1-n
+Route   Teilfertigungsschritte 
+Seq     Sequenz von 1-n -> was ist das (Wie oft der Teilarbeitsplan benötigt)
 
-Teil-Arbeitspläne: WorkFlow
+
+Teil-Arbeitspläne: WorkFlow -> was macht das/was genau ist das
 Route   
 Oper
 Desc

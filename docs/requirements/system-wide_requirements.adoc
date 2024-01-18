@@ -19,7 +19,7 @@ NOTE: Die funktionalen Anforderungen, die sich aus der Interaktion von Nutzern m
 == Systemweite funktionale Anforderungen
 //Angabe von system-weiten funktionalen Anforderungen, die nicht als Use Cases ausgedrückt werden können. Beispiele sind Drucken, Berichte, Authentifizierung, Änderungsverfolgung (Auditing), zeitgesteuerte Aktivitäten (Scheduling), Sicherheit / Maßnahmen zum Datenschutz
 * SWFA-1: Das System muss Zugriffsbeschränkungen gewährleisten, da nicht jeder Anwender
-jeden Use Case ausführen darf. Diese Zugriffsbeschränkungen erlauben es dem Anwender, nur
+jeden Use Case ausführen darf. Diese Zugriffsbeschränkungen erlauben es dem Anwender nur
 für ihn vorgesehene Funktionen auszuführen und nur auf für ihn zugängliche Daten
 zuzugreifen. Dafür ist eine Zuordnung aller Anwender zu Rollen und einem Login notwendig.
 
@@ -54,15 +54,15 @@ zuzugreifen. Dafür ist eine Zuordnung aller Anwender zu Rollen und einem Login 
 
 * QAGU-4: Die Sprache für die Benutzeroberfläche ist deutsch. Die Sprache für alle Material- und Maschinenzustände sowie Kommandoeingaben ist Englisch.
 
-** Zur Überprüfung werden alle Eingabevarianten beim Bearbeiten eines Loses, alle Buttons und alle Tabellenausgaben zu           Materialien und Maschinen auf Konsistenz und Korrektheit kontrolliert.
+** Zur Überprüfung werden alle Eingabevarianten beim Bearbeiten eines Loses, alle Buttons und alle Tabellenausgaben zu Materialien und Maschinen auf Konsistenz und Korrektheit kontrolliert.
 
 * QAGU-5: Text sollte aus 50cm Entfernung leicht lesbar sein. Die Kennzahlen des Cockpit-Views müssen aus 100cm Entfernung lesbar sein.
 
-** Zur Überprüfung wird ein Testnutzer einige Anwendungsfälle durchführen und die Kennzahlen des Cockpit-Views in der            gegebenen Entfernung betrachten.
+** Zur Überprüfung wird ein Testnutzer einige Anwendungsfälle durchführen und die Kennzahlen des Cockpit-Views in der gegebenen Entfernung betrachten.
 
 * QAGU-6: Das System muss verständliche Fehlermeldungen gewährleisten
 
-** Zur Überprüfung werden beim manuellen Bearbeiten eines Loses falsche Eingaben getätigt. Die resultierenden                    Fehlermeldungen müssen es einem Testnutzer ermöglichen die Eingaben zu korrigieren.
+** Zur Überprüfung werden beim manuellen Bearbeiten eines Loses falsche Eingaben getätigt. Die resultierenden Fehlermeldungen müssen es einem Testnutzer ermöglichen die Eingaben zu korrigieren.
 
 
 === Zuverlässigkeit (Reliability)
@@ -109,7 +109,8 @@ zuzugreifen. Dafür ist eine Zuordnung aller Anwender zu Rollen und einem Login 
 * Ressourcenbegrenzungen
 ** Die Verwaltung des Sourcecodes und der Dokumentation muss mittels GitHub erfolgen.
 * zu nutzende Komponenten / Bibliotheken / Frameworks
-** FLASK
+** FLASK 
+//wurde Flask entfohlen oder vorgegeben?
 ** PostgreSQL
 * Vorgaben für die Programmiersprache
 ** Python 

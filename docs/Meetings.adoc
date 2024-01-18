@@ -354,3 +354,13 @@ Protokoll:
 
 .ergebene Aufgaben:
 * 
+
+
+Fragen zu Ringel:
+
+* nachfragen zu den BasicDatabaseItems
+-> Route, Teilarbeitsschritte, Sequenz,
+-> vieles in Unklar
+-> 
+
+* 

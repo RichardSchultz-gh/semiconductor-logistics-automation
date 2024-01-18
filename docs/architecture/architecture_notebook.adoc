@@ -24,7 +24,7 @@ Das System ist eine Datenbankanwendung für die Visualisierung und Verwaltung vo
 
 Für die intuitive Bedienung der Anwendung sollen die Prozesse und Datenausgabe übersichtlich und verständlich dargstellt werden. Hierzu sind einfache Bedienelemente zu verwenden, welche die Möglichkeiten für Fehlentscheidungen der Nutzer minimieren. Die Anwendung soll in verschiedenen Browsern nutzbar sein.
 
-Da die Anwendung auf einem Raspberry Pi betrieben wird, ist die Architektur darauf ausgelegt, die Ressourcen des Raspberry Pi möglichst effizient zu nutzen. Es sollen größere Mengen an Daten verarbeitet werden können, ohne dass die Anwendung abstürzt oder die Performance stark beeinträchtigt wird. So ist eine gut skalierbare Datenbankanwendung zu entwickeln.
+Da die Anwendung auf einem RaspberryPi betrieben wird, ist die Architektur darauf ausgelegt, die Ressourcen des RaspberryPi möglichst effizient zu nutzen. Es sollen größere Mengen an Daten verarbeitet werden können, ohne dass die Anwendung abstürzt oder die Performance stark beeinträchtigt wird. So ist eine gut skalierbare Datenbankanwendung zu entwickeln.
 
 
 
@@ -40,7 +40,7 @@ Da die Anwendung auf einem Raspberry Pi betrieben wird, ist die Architektur dara
 *Abhängigkeiten*
 
 * Wir sind drauf angewiesen, dass die Bibliotheken und Frameworks, die wir nutzen, gepflegt werden
-* Wir sind auf die einwandfreie Funktion des Raspberry Pi angewiesen
+* Wir sind auf die einwandfreie Funktion des RaspberryPi angewiesen
 
 == Architektur-relevante Anforderungen
 //Fügen Sie eine Referenz / Link zu den Anforderungen ein, die implementiert werden müssen, um die Architektur zu erzeugen.
@@ -97,13 +97,13 @@ Da die Anwendung auf einem Raspberry Pi betrieben wird, ist die Architektur dara
 == Entscheidungen, Nebenbedingungen und Begründungen
 //[List the decisions that have been made regarding architectural approaches and the constraints being placed on the way that the developers build the system. These will serve as guidelines for defining architecturally significant parts of the system. Justify each decision or constraint so that developers understand the importance of building the system according to the context created by those decisions and constraints. This may include a list of DOs and DON’Ts to guide the developers in building the system.]
 
-. Wir nutzen eine relationale Datenbank mit dem Datenbankmanagementsystem PostgreSQL, da die Nutzung von PostgreSQL uns vorgegeben wurde und dieses bekannt für seine Zuverlässigkeit und Skalierbarkeit ist.
+. Wir nutzen eine relationale Datenbank mit dem Datenbankmanagementsystem *PostgreSQL*, da die Nutzung von PostgreSQL uns vorgegeben wurde und dieses bekannt für seine Zuverlässigkeit und Skalierbarkeit ist.
 . Wir implementieren die Anwendung auf einem Raspberry Pi, da uns dieser vorgegeben wurde.
-. Als Betriebssystem nutzen wir Raspbian, da dieses Betriebssystem für den Raspberry Pi optimiert ist und eine einfache Bedienung ermöglicht.
-. Wir nutzen Python als Programmiersprache für die Middleware, da uns diese vorgegeben wurde und diese eine einfache und schnelle Entwicklung ermöglicht.
-. Wir benutzen Psycopg2 als Python-Bibliothek, da diese eine unkomplizierte Interaktion mit PostgreSQL ermöglicht und so eine gute Schnittstelle zur Nutzung der Datenbank herstellt.
-. Wir nutzen Flask als Web-Framework, da dieses ein recht leichtgewichtiges Framework ist, welches wenige Resourcen benötigt. Außerdem ist Flask einfach zu erlernen, da es aufgrund seiner aktiven Entwickler-Community viele Tutorials und Hilfestellungen gibt.
-. Wir nutzen HTML und CSS für die Benutzeroberfläche, da diese Technologien sehr gut mit Flask integrierbar sind. Diese Technologien ermöglichen die Entwicklung einer ansprechenden und interaktiven Benutzeroberfläche für die Anwendung. Zur Verbesserung der Interaktivität kann auch JavaScript genutzt werden.
+. Als Betriebssystem nutzen wir *Raspbian*, da dieses Betriebssystem für den Raspberry Pi optimiert ist und eine einfache Bedienung ermöglicht.
+. Wir nutzen *Python* als Programmiersprache für die Middleware, da uns diese vorgegeben wurde und diese eine einfache und schnelle Entwicklung ermöglicht.
+. Wir benutzen *Psycopg2* als Python-Bibliothek, da diese eine unkomplizierte Interaktion mit PostgreSQL ermöglicht und so eine gute Schnittstelle zur Nutzung der Datenbank herstellt.
+. Wir nutzen *Flask* als Web-Framework, da dieses ein recht leichtgewichtiges Framework ist, welches wenige Resourcen benötigt. Außerdem ist Flask einfach zu erlernen, da es aufgrund seiner aktiven Entwickler-Community viele Tutorials und Hilfestellungen gibt.
+. Wir nutzen *HTML und CSS* für die Benutzeroberfläche, da diese Technologien sehr gut mit Flask integrierbar sind. Diese Technologien ermöglichen die Entwicklung einer ansprechenden und interaktiven Benutzeroberfläche für die Anwendung. Zur Verbesserung der Interaktivität kann auch JavaScript genutzt werden.
 //evt. Bootstrap??
 
 == Architekturmechanismen
@@ -244,4 +244,3 @@ include::{plantumlsdir}/Frau_Holle_Container_C4.puml[]
 
 .UseCaseDiagram
 image::images/usecase_second_version_pmx.png[]
-
