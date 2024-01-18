@@ -39,8 +39,8 @@ Da die Anwendung auf einem RaspberryPi betrieben wird, ist die Architektur darau
 
 *Abhängigkeiten*
 
-* Wir sind drauf angewiesen, dass die Bibliotheken und Frameworks, die wir nutzen, gepflegt werden
-* Wir sind auf die einwandfreie Funktion des RaspberryPi angewiesen
+* Wir sind darauf angewiesen, dass die von uns genutzten Bibliotheken und Frameworks weiterhin gepflegt werden.
+* Wir sind auf die einwandfreie Funktion des Raspberry Pi angewiesen
 
 == Architektur-relevante Anforderungen
 //Fügen Sie eine Referenz / Link zu den Anforderungen ein, die implementiert werden müssen, um die Architektur zu erzeugen.
@@ -49,44 +49,17 @@ Da die Anwendung auf einem RaspberryPi betrieben wird, ist die Architektur darau
 
 * *SWFA-1:* Das System muss Zugriffsbeschränkungen gewährleisten, da nicht jeder Anwender jeden Use Case ausführen darf.
 * *SWFA-2:* Das System muss zeitgesteuerte Aktivitäten in Form eines Timers ermöglichen, da Statusabfragen der Lose und Maschinen ausgewertet werden müssen.
-* *SWFA-3* (Persistente Speicherung): Die Fähigkeit, Daten persistent zu speichern, ist grundlegend für die Datenarchitektur. Sie erfordert Entscheidungen bezüglich Datenbanken, Dateisystemen und Backup Strategien.
-* *SWFA-4:* Das System muss Daten exportieren können.
-* *SWFA-5:*  Das System muss Daten aus einer Datenbank auslesen können. 
-
-*Benutzbarkeit (Usability)*
-
-* *QAGU-1:* Deskriptive Buttons sollen einfache Nutzerinteraktionen ermöglich
-* *QAGU-2:* Die Gesamtheit der Interaktionselemente soll minimiert werden
-* *QAGU-3:* Die Auswahl von Optionen oder die Filterung von Daten muss ohne Vorkenntnisse erfolgen können
-* *QAGU-4:* Die Sprache für die Benutzeroberfläche ist deutsch. Die Sprache für alle Material- und Maschinenzustände sowie Kommandoeingaben ist Englisch.
-* *QAGU-5:* Text sollte aus 50cm Entfernung leicht lesbar sein. Die Kennzahlen des Cockpit-Views müssen aus 100cm Entfernung lesbar sein.
-* *QAGU-6:* Das System muss verständliche Fehlermeldungen gewährleisten
-* *QAGU-1:* Alle Prozesse und Datenausgaben müssen übersichtlich, eindeutig und verständlich sein.
-* *QAGU-1.1:* Die Anzahl der Anwendungsfenster soll minimiert werden.
-* *QAGU-1.2:* Alle Funktionalitäten sollen als Buttons auf einem Fenster angezeigt werden.
-* *QAGU-1.3:* Die Möglichkeiten für Fehlentscheidungen oder Orientierungslosigkeit sollen minimiert werden.
-
-*Zuverlässigkeit (Reliability)*
-
-* *QAGZ-1:* Das System soll Mechanismen zur Datenwiederherstellung besitzen
-* *QAGZ-2:* Das System darf durch einen Netzwerkausfall nicht beschädigt werden
-* *QAGZ-3:* Es dürfen keine falschen Nutzernamen oder Passwörter eingegeben werden
-* *QAGZ-1:* Das System muss robust gegen Abstürze und Datenverlust sein.
-* *QAGZ-2:* Das System kann mithilfe von Backups Daten wiederherstellen.
-* *QAGZ-3:* Das System muss jederzeit abrufbar sein.
+* *SWFA-3:* Das System muss Eingaben des Anwenders und Statusupdates persistent speichern können.
 
 *Effizienz (Performance)*
 
-* *QAGE-1:* Das System soll beständig gegen einen Ausfall bei einer hohen Anzahl gleichzeitiger Nutzer sein.
-* *QAGE-2:* Das System soll in wenigen Sekunden dem Anwender eine Antwort geben.
-* *QAGE-3:* Das System soll ein Backup in wenigen Minuten erstellen können.
-* *QAGE-4* (Verarbeitung großer Datenmengen): Beeinflusst die Datenarchitektur, insbesondere die Auswahl und Konfiguration der Datenbanksysteme, sowie die Verarbeitungslogik für große Datenvolumen.
+* *QAGE-1:* Das System soll eine stabile Nutzung bei mehreren gleichzeitigen Nutzern gewährleisten.
+* *QAGE-2:* Das System soll eine maximale Antwortzeit von unter 10 Sekunden aufweisen.
 
 *Wartbarkeit (Supportability)*
 
-* **QAGW-1:** Das Entwicklerteam muss eine (fortgeführte) Entwicklerdokumentation bereitstellen, welche die Weiterentwicklung des Systems ermöglicht.
+* *QAGW-1:* Zur besseren Wartbarkeit und zum besseren Verständnis bei auftretenden Fehlern, muss das Entwickler Team eine umfangreiche Entwicklerdokumentation bereitstellen
 * *QAGW-2:* Das System muss kompatibel zu Chrome, Firefox, Edge und Safari sein.
-
 
 *Zusätzliche Anforderungen*
 
@@ -119,48 +92,49 @@ https://www2.htw-dresden.de/~anke/openup/core.tech.common.extend_supp/guidances/
 - **Zweck:** Lesen und Schreiben von gespeicherten Daten.
 - **Eigenschaften:** Unterstützt die dauerhafte Speicherung von Daten.
 - **Funktion:** Verwendung eines relationalen DBMS (PostgreSQL) zur Datenpersistenz.
-- **Zugehörige SWFA:** SWFA-3
+- **Ausschnit Zugehöriger SWFA:** SWFA-3, QAGE-2
 
 ### Sicherheit (Security)
 - **Zweck:** Schutz des Zugriffs auf Ressourcen oder Informationen.
 - **Eigenschaften:** Beinhaltet Authentifizierung, Autorisierung und Datenverschlüsselung.
 - **Funktion:** Gewährleistung der Datensicherheit und des beschränkten Zugriffs basierend auf Benutzerrollen.
-- **Zugehörige SWFA:** SWFA-1
+- **Ausschnit Zugehöriger SWFA:** SWFA-1, QAGZ-2
 
 ### Transaktionsmanagement (Transaction Management)
 - **Zweck:** Handhabung von ACID-Transaktionen.
 - **Eigenschaften:** Unterstützt die Integrität und Zuverlässigkeit von Datenbankoperationen.
 - **Funktion:** PostgreSQL bietet native Unterstützung für Transaktionsmanagement, um Konsistenz und Zuverlässigkeit der Daten zu gewährleisten.
+- **Ausschnit Zugehöriger SWFA:** SWFA-3, QAGE-1
 
 ### Mega-Daten (Mega-data)
 - **Zweck:** Unterstützung für die Verarbeitung sehr großer Datenmengen.
 - **Eigenschaften:** Skalierbare Datenverarbeitung und -speicherung.
 - **Funktion:** PostgreSQL und Python-Middleware für effiziente Handhabung und Verarbeitung großer Datensätze.
-- **Zugehörige SWFA:** QAGE-4
+- **Ausschnit Zugehöriger SWFA:** QAGE-1, QAGE-2
 
 ### Terminierung (Scheduling)
 - **Zweck:** Ermöglicht die Planung und Ausführung von Aufgaben zu bestimmten Zeiten oder unter bestimmten Bedingungen.
 - **Eigenschaften:** Unterstützt zeitgesteuerte und ereignisbasierte Aufgaben. Flexibel einsetzbar für regelmäßige oder einmalige Ereignisse.
 - **Funktion:** Im System ermöglicht dies die Automatisierung von Datenerfassung und Wartungsaufgaben, für zeitgesteuerte Datenbank-Updates.
-- **Zugehörige SWFA:** SWFA-2
+- **Ausschnit Zugehöriger SWFA:** SWFA-2
 
 ### Archivierung (Archiving)
 - **Zweck:** Verschieben von Daten aus dem aktiven Speicher, wenn sie einen bestimmten Zustand erreicht haben.
 - **Eigenschaften:** Unterstützt Langzeitspeicherung und Entlastung des aktiven Speichers.
 - **Funktion:** Automatisiertes Verschieben alter oder selten genutzter Daten in Archivspeicher.
-- **Zugehörige SWFA:** SWFA-3
+- **Ausschnit Zugehöriger SWFA:** SWFA-3, QAGW-1
 
 ### Fehlermanagement (Error Management)
 - **Zweck:** Erkennung, Weiterleitung und Berichterstattung von Fehlern.
 - **Eigenschaften:** Robuste Fehlerbehandlung und klare Benachrichtigungssysteme.
 - **Funktion:** Implementierung eines Systems, das Fehler effektiv erkennt und dem Benutzer verständliche Meldungen liefert.
-- **Zugehörige SWFA:** QAGU-1.6
+- **Ausschnit Zugehöriger SWFA:** QAGZ-1, QAGU-6, QAGW-1
 
 ### Lokalisierung / Internationalisierung (Localization / Internationalization)
 - **Zweck:** Unterstützung mehrerer menschlicher Sprachen und Darstellung der vom Benutzer bevorzugten Sprache.
 - **Eigenschaften:** Flexibilität in der Sprachwahl, einfache Anpassung an verschiedene Sprachen.
 - **Funktion:** Implementierung eines Systems, das Benutzeroberflächen und Meldungen in verschiedenen Sprachen unterstützt.
-- **Zugehörige SWFA:** QAGU-1.4
+- **ZAusschnit Zugehöriger SWFA:** QAGU-4, QAGW-2
 
 Diese Architekturmechanismen sind essentiell für die Entwicklung einer robusten, sicheren und skalierbaren Datenbankanwendung, die auf einem Raspberry Pi mit Raspbian Betriebssystem betrieben wird.
 
