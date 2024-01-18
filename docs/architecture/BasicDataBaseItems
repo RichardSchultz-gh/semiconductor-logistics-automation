@@ -11,7 +11,7 @@ MTTF    Mittlere Zeit Anlagefehler
 Los: Lot
 LotID
 Prio    Priorität
-Pcs
+Pcs     Anzahl Silizumscheiben pro Kiste 0-25
 State   wartend, holend,...
 Product
 Route   teilabschnitt
@@ -28,7 +28,7 @@ DispTool    in welcher Maschine
 Produkt-Arbeitspläne: ProdFlow
 Product
 Route   Teilfertigungsschritte 
-Seq     Sequenz von 1-n -> was ist das (Wie oft der Teilarbeitsplan benötigt)
+Seq     
 
 
 Teil-Arbeitspläne: WorkFlow -> was macht das/was genau ist das

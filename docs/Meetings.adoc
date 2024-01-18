@@ -356,7 +356,17 @@ Protokoll:
 * 
 
 
-Fragen zu Ringel:
+
+______
+
+
+
+Fragen von Analysten
+Architektur
+BasicDatabaseItems
+Prototyp
+
+Fragen an Ringel:
 
 * nachfragen zu den BasicDatabaseItems
 -> Route, Teilarbeitsschritte, Sequenz,
@@ -364,3 +374,99 @@ Fragen zu Ringel:
 -> 
 
 * 
+
+
+*Mitschriften Meeting Ringel 18.01.*
+
+Zustandsübergangsmodell:
+
+UC06/UC07
+
+-> nur Ableitungsleiter
+
+-> Dateneingabe über Maske soll es geben und über csv Datei -> beides soll unterstützt werden
+
+UC08
+
+-> manuelles Backup, keine Zeitintervalle etc. 
+
+-> es müsste eine Datei benannt werden (Name und Wo sie liegt)
+
+-> Backup muss als Datei gespeichert werden (entweder immer mit vorbereiteten Dateinamen und Ort oder man kann das selber auswählen)
+
+-> Ausgabe: Backup läuft (da das Backup einige Zeit dauern kann)
+
+UC09
+
+-> ist noch seeehr wage
+
+-> nice to have
+
+-> R-Skripte 
+
+-> über ein Statistiksystem -> pdf Datei wird darauf exportiert
+
+-> GUI: Button wird gedrückt -> pdf Datei wird angezeigt
+
+-> Skritp und welche Protudkt raus kommt (Grafik oder textdatei)
+
+-> Prove of conzept bauen wenn am Ende Zeit besteht
+
+-> keine Statistiken programmieren
+
+-> 
+
+UC11
+
+-> welche Ergebnis daten werden dort angezeigt -> müssen wir uns noch mit Ringel besprechen
+
+-> daten visualiseren hard gecodet oder generisch
+
+-> spezialfall zu dem davor 
+
+-> testing: per select (sql) (alle 5 Minuten oder so) Abfragen so abfragen, dass man die Änderungen sieht
+
+UC10
+
+-> Maschine bearbeiten: ans Zustandsdiagramm halten
+
+UC03
+
+-> Frage Lose nur auf nächsten Zusatnd im Modell setzen können: Antwort ja gefällt ihm 
+
+Beispieldatensätze:
+
+Los 0-25 Siliziumscheiben
+
+Pcs Anzahl Silizumscheiben pro Kiste 0-25
+
+Enthält ein Auftrag nur ein Produkt? ja
+
+Infos eines Auftrags: Wer ist Kunde, wann liefertermin, Anzahl der Scheiden, Start des Auftrags, ein Produkt 
+
+Ein Produkt definiert nicht die Anzahl der Scheiben
+
+
+
+Jedes Produkt kann mehrere Routes haben. Jedes Produkt hat einen Fertigungsfluss/ProdFlow 
+ProdFlow besteht aus einer menge von routes. Jede Route kommt einmal in einem Fluss vor. (ROute a kann aber in mehreren Produkten vorkommen)
+Sequenz sagt an welcher Stelle die Route im ProdFlow ist
+
+Architektur:
+
+passt so weit
+
+Gibt es überlegungen zu dem grauen MES Kasten -> Vorschläge dazu (Spezifikation) (Auch schon für den Prototyp)
+
+!!! Über der Datenbank brauchen wir eine (Software-)Schnittstelle wo die Fertigung andocken kann -> Andockpunkt für Zukunft
+
+wir implemetieren das schon oder schreiben das erstaml auf wie was  -> im 2. Semester
+wie sieht die Schnittstelle auf und einen Prototypen dafür in SE2 machen
+
+frühzeitig im S4 darüber treffen und bereden was zu tun und wie viel wollen wir implementieren
+
+es sollen andere Softwarekomponeten andocken können wie z.B. eine Software der Fertigung
+
+wir sollen das nicht komplet machen, sondern erst im S4 mit ihm besprechen (am besten ein Archtitekten/Entwickler/Ringel Treffen)
+
+
