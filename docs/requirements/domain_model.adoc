@@ -1,11 +1,21 @@
-= Domain Model: {project-name}
+= Domain-Modell:  Modell eines automatisierten Fabrikbetriebes - Frau Holle
+:imagesdir: images 
 Vorname Nachname <email@domain.org>; Vorname2 Nachname2 <email2@domain.org>; Vorname3 Nachname3 <email3@domain.org>
 {localdatetime}
 include::../_includes/default-attributes.inc.adoc[]
 // Platzhalter für weitere Dokumenten-Attribute
 
+== Hinweise:
 
-== Allgemeine Informationen
+* *Beziehung: Produkt - Route* 
+** Jedes Produkt enthält mehrere Routes, die über die Klasse "Produkt Arbeitsplan" gemappt werden. Die Sequenz gibt die Reihenfolge an, in der die Routes durchlaufen werden.
 
+* *Beziehung: Los - Route* 
+** Jedes Los bewegt sich auf einer Route. Das bedeutet, dass für jedes Lost die aktuelle Route inkl. aktueller Operation festgehalten wird. Der nächste Fertigungsschritt wird durch die Produktzugehörigkeit des Loses bestimmt.
 
-== ...
+* *Klasse: Nutzer* 
+** Der Nutzer kann mit dem gesamten Produktionssteuerungssystem interagieren und manuell (fast) alle Klassen beeinflussen.
+
+== Grafik:
+
+image::dämonen_modell_pmx.jpg[]
