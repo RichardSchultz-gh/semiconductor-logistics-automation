@@ -23,6 +23,6 @@ Rel(frauHolleApp, api, "nutzt")
 System_Ext(manufacturing, "Fertigung", "Hier finden die Fertigungsprozesse statt und werden aufgezeichnet")
 
 
-Rel(manufacturing, db, "holt Produktionsdaten")
+Rel(manufacturing, db, "speichert und holt Produktionsdaten")
 Rel(api, db, "holt Daten")
 @enduml
