@@ -43,6 +43,8 @@ Wir haben uns klar entschieden keine festen Rollen zu vergeben, sondern Verantwo
 
 Die Verantwortlichen sammeln zu Beginn des Projekts das nötige Wissen für ihre Rollen an, welches sie zu gegebener Zeit an die restlichen Mitglieder weitergeben. 
 
+Backup Rollen für PL
+
 === Strukturen
 
 *Kommunikationswege:* Für die Aufgabenverwaltung wird GitHub genutzt, wo über Issues die Aufgaben verteilt werden. Akute Änderungen, Fragen oder Meetinginformationen werden zusätzlich über eine gemeinsame WhatsApp-Gruppe geklärt. Dadurch haben auch alle Mitglieder die Kontaktdaten der Anderen. In dieser Gruppe in neben den Mitglieder auch der Coach. 

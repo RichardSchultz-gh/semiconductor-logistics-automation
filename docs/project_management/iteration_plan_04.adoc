@@ -22,11 +22,10 @@ include::../_includes/default-attributes.inc.adoc[]
 //Nennen Sie 1-5 wesentliche Ziele für die Iteration.
 
 
-* System Wide Requirements
-* introduction testing
-* Start development
-* Architekturentwurf für Middleware mit Notebook
-* ...
+. System Wide Requirements
+. Fertigstellung Use Cases 01-03, Glossar, Wireframes
+. Start development Prototyp
+. Architekturentwurf für Middleware mit Notebook
 
 // Testfälle für Architektur müssen im Lifecycle Architekture gemacht werden
 // Beginn Architekturbeschreibung
@@ -55,7 +54,18 @@ image::Iteration4_issues.png[]
 == Bewertungskriterien
 //Eine kurze Beschreibung, wie Erfüllung die o.g. Ziele bewertet werden sollen.
 
-
+. System Wide Requirements
+* Anforderungen sollen erfasst und Qualitativ beschrieben sein
+. Fertigstellung aktuelle Analyse Dokumente
+* darunter fallen Use Cases, Wireframes, Glossar
+* Die Dokumente sollen fertiggestellt und Qualitativ hoch sein
+* Der Auftragsgeber nimmt diese ab
+. Start development Prototyp
+* Es sollen die Grundlagen für den Prototypen geschaffen sein
+* 
+. Architekturentwurf für Middleware
+* Architekturnotebook ist entworfen und vollständig
+* Middleware ist ...
 
 
 . 
@@ -75,8 +85,22 @@ image::Iteration4_issues.png[]
 * Beurteilung im Vergleich zu den Zielen
 //Dokumentieren Sie, ob die angestrebten Ziele des Iterationsplans erreicht wurden.
 
+*Fertigstellung aktuelle Analyse Dokumente*
+
+*System wide requirements*
+
+
+*Architekturentwurf*
+
+Zur Erarbeitung des Architekturentwurf sollte das Architektur Notebook erstellt werden. 
+
+
+*Development Prototyp*
+
+
 * Geplante vs. erledigte Aufgaben
 //Zusammenfassung, ob alle für die Iteration geplanten Aufgaben bearbeitet wurden und welche Aufgaben verschoben oder hinzugefügt wurden.
+
 
 
 
