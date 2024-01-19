@@ -14,8 +14,8 @@ include::../_includes/default-attributes.inc.adoc[]
 ** Jedes Los bewegt sich auf einer Route. Das bedeutet, dass für jedes Lost die aktuelle Route inkl. aktueller Operation festgehalten wird. Der nächste Fertigungsschritt wird durch die Produktzugehörigkeit des Loses bestimmt.
 
 * *Klasse: Nutzer* 
-** Der Nutzer kann mit dem gesamten Produktionssteuerungssystem interagieren und manuell (fast) alle Klassen beeinflussen.
+** Der Nutzer kann mit dem gesamten Produktionssteuerungssystem interagieren und fast alle Klassen beeinflussen. Die genaueren Spezifikationen der Klassen "Abteilungsleiter" und "Mitarbeiter", die von der Klasse "Nutzer" erben, ergeben sich bei der Implementierung. 
 
-== Grafik:
+== Domain-Modell:
 
 image::dämonen_modell_pmx.jpg[]
