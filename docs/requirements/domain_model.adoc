@@ -14,7 +14,7 @@ include::../_includes/default-attributes.inc.adoc[]
 ** Jedes Los bewegt sich auf einer Route. Das bedeutet, dass für jedes Los die aktuelle Route inkl. aktueller Operation festgehalten wird. Der nächste Fertigungsschritt wird durch die Produktzugehörigkeit des Loses bestimmt.
 
 * *Klasse: Nutzer* 
-** Der Nutzer kann mit dem gesamten Produktionssteuerungssystem interagieren und fast alle Klassen beeinflussen. Die genauen Attirubte der Klassen "Abteilungsleiter" und "Mitarbeiter", die von der Klasse "Nutzer" erben, ergeben sich bei der Implementierung. 
+** Der Nutzer kann mit dem gesamten Produktionssteuerungssystem interagieren und fast alle Klassen beeinflussen. Die genauen Attribute der Klassen "Abteilungsleiter" und "Mitarbeiter", die von der Klasse "Nutzer" erben, ergeben sich bei der Implementierung. 
 
 == Domain-Modell:
 
