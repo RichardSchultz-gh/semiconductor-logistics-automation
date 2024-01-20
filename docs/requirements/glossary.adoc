@@ -13,9 +13,9 @@ In diesem Dokument werden die wesentlichen Begriffe aus dem Anwendungsgebiet (Fa
 |===
 | Begriff | Definition und Erläuterung | Synonyme
 //| Kommissionierung | Bereitstellung von Waren aus einem Lager entsprechend eines Kundenauftrags | (keine)
-| Los | Zusammenfassung mehrerer Werkstücke (hier Liziumscheiben) | Lot
+| Los | Zusammenfassung mehrerer Werkstücke (hier Siliziumscheiben) | Lot
 | Material | Stoffe die zur Herstellung benötigt werden | xx
-| Maschine | Gerät zur Herstellung/Prozessierung des Produkts | Tool
+| Maschine | Gerät zur Herstellung/ Prozessierung des Produkts | Tool
 | Fertigungsprozess | standardisierter Arbeitsablauf zur Produktherstellung | Produktionsprozess, Fertigungsablauf
 | Produkt | Ergebnis der Produktion | xx
 | Fertigungsflüsse | Arbeitsfortschritt und Bewegung im Fertigungsprozess | xx
@@ -28,10 +28,10 @@ In diesem Dokument werden die wesentlichen Begriffe aus dem Anwendungsgebiet (Fa
 | ProcStart | Zeitpunkt, bei dem die Bearbeitung eines Loses beginnt| xx
 | Oper | Operation im Fertigungsprozess | xx
 | EnterOper | Zeitpunkt zu dem Los an der Operation ankommt | xx
-| PTime | Prozesszeit: Zeit, die ein Los auf der Maschine bearbeitet wird | xx
+| PTime | Prozesszeit; Zeit, die ein Los auf der Maschine bearbeitet wird | xx
 | Interval | Gibt an, alle wie viel Zeitheiten ein neues Produkt von der Maschine verabeitet werden kann | xx
 | IDLE | Maschinen-Zustand: betriebsbereit | xx
-| PROC | Maschinen- und Materialzsutand: produziert/wird verarbeitet | xx
+| PROC | Maschinen- und Materialzustand: produziert/wird verarbeitet | xx
 | MAINT | Maschinen-Zustand: Maschine ist in Wartung | xx
 | DOWN | Maschinen-Zustand: Maschine ist defekt | xx
 | WAIT | Los-Zustand: Los wartet auf Bearbeitung | xx

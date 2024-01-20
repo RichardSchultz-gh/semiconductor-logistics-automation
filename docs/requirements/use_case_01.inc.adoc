@@ -80,11 +80,12 @@ Wenn Mitarbeiter/Fertigungsleiter im Schritt 2 KEINE Zielkalenderwoche eingibt, 
 //Szenarios sind konkrete Instanzen eines Use Case, d.h. mit einem konkreten Akteur und einem konkreten Durchlauf der o.g. Flows. Szenarios können als Vorstufe für die Entwicklung von Flows und/oder zu deren Validierung verwendet werden.
 
 ==== Use Case erfolgreich
-Das Los wurde erfolgreich gestartet und wartet auf den ersten Fertigungschritt
+*Sc1* Das Los wurde erfolgreich gestartet und wartet auf den ersten Fertigungschritt
 
 === Nachbedingungen
 //Nachbedingungen beschreiben das Ergebnis des Use Case, z.B. einen bestimmten Systemzustand.
 
 ==== Nachbedingung 1
-.Bei erfolgreicher Durchführung des Use Case müssen folgende Nachbedingungen erfüllt sein:
-* Erfolgreich gestartete Lose werden nach dem Zustand "WAIT" bei Bedarf in den Zustand "PROC" gesetzt 
+Bei erfolgreicher Durchführung des Use Case müssen folgende Nachbedingungen erfüllt sein:
+
+- Erfolgreich gestartete Lose werden nach dem Zustand "WAIT" bei Bedarf in den Zustand "PROC" gesetzt 

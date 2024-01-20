@@ -40,15 +40,15 @@ zuzugreifen. Dafür ist eine Zuordnung aller Anwender zu Rollen und einem Login 
 === Benutzbarkeit (Usability)
 //Beschreiben Sie Anforderungen für Eigenschaften wie einfache Bedienung, einfaches Erlernen, Standards für die Benutzerfreundlichkeit, Lokalisierung (landesspezifische Anpassungen von Sprache, Datumsformaten, Währungen usw.)
 
-* QAGU-1 Deskriptive Buttons sollen einfache Nutzerinteraktionen ermöglich
+* QAGU-1: Deskriptive Buttons sollen einfache Nutzerinteraktionen ermöglich
 
 ** Zur Überprüfung wird kontrolliert, ob aus der Beschreibung eines jeden Buttons eindeutig die jeweilige Funktionalität hervorgeht. 
 
-* QAGU-2 Die Gesamtheit der Interaktionselemente soll minimiert werden
+* QAGU-2: Die Gesamtheit der Interaktionselemente soll minimiert werden
 
 ** Zur Überprüfung wird kontrolliert, dass keine Doppelbelegungen vorkommen, die den Nutzer verunsichern könnten. Jede Funktionalität von Buttons, Filtern oder Tabellen darf nur einmalig vorhanden sein.
 
-* QAGU-3 Die Auswahl von Optionen oder die Filterung von Daten muss ohne Vorkenntnisse erfolgen können
+* QAGU-3: Die Auswahl von Optionen oder die Filterung von Daten muss ohne Vorkenntnisse erfolgen können
 
 ** Es wird kontrolliert und abgeglichen, ob für jeden Filter oder jede Auswahloption ein Dropdown-Menü vorhanden ist, welches alle wesentlichen Informationen abbildet
 
@@ -84,7 +84,7 @@ zuzugreifen. Dafür ist eine Zuordnung aller Anwender zu Rollen und einem Login 
 
 ** Zur Überprüfung wird das System einem Stresstest mit 5 parallelen Nutzern unterzogen.
 
-* QAGE-2 Das System soll eine maximale Antwortzeit von unter 10 Sekunden aufweisen.
+* QAGE-2: Das System soll eine maximale Antwortzeit von unter 10 Sekunden aufweisen.
 
 ** Zur Überprüfung simuliert ein Testnutzer die Verwendung der Software. Gleichzeitig werden die Antwortzeiten bei gedrückten Buttons oder bei Abfragen aus Tabellen dokumentiert.
 
@@ -109,7 +109,7 @@ zuzugreifen. Dafür ist eine Zuordnung aller Anwender zu Rollen und einem Login 
 * Ressourcenbegrenzungen
 ** Die Verwaltung des Sourcecodes und der Dokumentation muss mittels GitHub erfolgen.
 * zu nutzende Komponenten / Bibliotheken / Frameworks
-** FLASK 
+//** FLASK 
 //wurde Flask entfohlen oder vorgegeben?
 ** PostgreSQL
 * Vorgaben für die Programmiersprache
