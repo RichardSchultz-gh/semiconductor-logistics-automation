@@ -8,7 +8,7 @@ include::../_includes/default-attributes.inc.adoc[]
 == Einführung
 //Briefly describe the content of the project plan.
 
-Im Verlauf des Projektes "Modell eines automatisierten Fabrikbetriebs - Frau Holle" wird das Team eine Datenbankanwendung entwickeln, die es dem Nutzer erlaubt Fertigungsprozesse zu visualisieren. 
+Im Verlauf des Projektes "Modell eines automatisierten Fabrikbetriebs - Frau Holle" wird das Team I04 eine Datenbankanwendung entwickeln, die es dem Nutzer erlaubt Fertigungsprozesse zu visualisieren. 
 
 In diesem Projektplan werden dafür die Teammitglieder und Praktiken vorgestellt, die zur Lösungsfindung eingesetzt werden. Um den Ablauf verfolgen zu können, werden zu dem die Ziele der Iterationen und Erkenntnisse aus jenen festgehalten.
 
@@ -37,13 +37,19 @@ Enrico und Hoang studieren Wirtschaftsingieneurswesen im 5. Semester und begleit
 |Tester | Paul 
 |=== 
 
-Zu Beginn des Projekts wurden teamintern die *Verantwortungsbereiche* verteilt. Dabei wurde versucht auf die *Stärken und Interessen* aller zu achten. Auf Grund der Tatsache, das die Rolle des Testers zu Beginn nicht gebraucht wird, arbeitet Paul erstmal als Analyst mit und sammelt so Erfahrungen, die er an die Gruppe weitergeben kann, wenn Enrico und Hoang weg sind. 
+Zu Beginn des Projekts wurden teamintern die *Verantwortungsbereiche* verteilt. Dabei wurde versucht auf die *Stärken und Interessen* aller zu achten. Auf Grund der Tatsache, das die Rolle des Testers zu Beginn nicht gebraucht wird, arbeitet Paul erstmal als Analyst mit und sammelt so Erfahrungen, die er an die Gruppe weitergeben kann, wenn Enrico und Hoang im Sommersemester nicht mehr Teil des Projektes sind. 
 
 Wir haben uns klar entschieden keine festen Rollen zu vergeben, sondern Verantwortlichkeiten, da wir so flexibler in der Aufgabenverteilung sind. Bei einer festen Rollenverteilung achtet jeder nur auf seine eigene Rolle, informiert sich aber nicht mit den anderen Aspekten des Projekts. Dies kann zu Problemen führen, wenn z.B. ein Mitglied ausfällt oder die Arbeitslast in einem Teilgebiet zu groß wird. 
 
 Die Verantwortlichen sammeln zu Beginn des Projekts das nötige Wissen für ihre Rollen an, welches sie zu gegebener Zeit an die restlichen Mitglieder weitergeben. 
 
-Backup Rollen für PL
+Die Rollen der Analysten, Architekten und Entwickler sind je doppelt besetzt. So teilen sich zum einen die Mitglieder die Arbeitslast, haben zusätzlich aber immer einen Ansprechpartner, der im Thema steht. So wird zu dem ein personeller Ausfall abgedeckt.
+Das einzeln belegte Testing kann im Falle eines Ausfalls von den Entwicklern kurzweilig übernommen werden. 
+
+Die Projektleitung ist ebenfalls einzeln belegt. Eine Doppelspitze kann zwar erfolgreich sein, jedoch sehen wir es für unser Projekt als vorteilhafter an einen Projektleiter zu haben, der sich um die Organisation etc, kümmert und die Verantwortung trägt. Im Falle eines Ausfalls des Projektsleiters kann das Team die aktuelle Iteration an Hand der aktuellen WorkItems selbstständig arbeiten. Die Projektleitung ist bemüht stehts im Vorfeld klar auszustellen, was in den folgenden Wochen zu tun ist. Bei einem längerfristigen Ausfall der Projektleitung ....
+
+würde Paul übernehmen?????????
+
 
 === Strukturen
 
@@ -51,7 +57,7 @@ Backup Rollen für PL
 
 *Dokumente:*
 
-*Meetingstruktur:* Wöchentliche Teammeetings zum Austauschen und klären von allgemeinen Fragen und Aufgaben. Dazu kommen die Meetings mit dem Coach und pro Iteration ein Treffen mit dem Auftragsgeber. Alle Treffen werden mit Agenda vorbereitet. Während der internen Meetings führt Marlene die Mitschriften. Bei Treffen mit dem Auftragsgeber führen mehrere Teammitglieder Mitschriften. Dies dient der Tatsache, dass einen einzelne Person nicht alle Informationen aufnehmen und niederschreiben kann. Dadurch erhoffen wir uns keinen Informationsverlust zu haben. Die Nachbereitung der Meeting werden von den Entsprechenden Anwesenden vorgenommen bevor die Erkenntnisse der Gruppe mitgeteilt werden.
+*Meetingstruktur:* Es finden wöchentliche Teammeetings zum Austauschen und klären von allgemeinen Fragen und Aufgaben statt. Dazu kommen die Meetings mit dem Coach und pro Iteration ein Treffen mit dem Auftragsgeber. Alle Treffen werden mit Agenda vorbereitet. Während der internen Meetings führt Marlene die Mitschriften. Bei Treffen mit dem Auftragsgeber führen mehrere Teammitglieder Mitschriften. Dies dient der Tatsache, dass einen einzelne Person nicht alle Informationen aufnehmen und niederschreiben kann. Dadurch erhoffen wir uns keinen Informationsverlust zu haben. Die Nachbereitung der Meeting werden von den entsprechenden Anwesenden vorgenommen bevor die Erkenntnisse der Gruppe mitgeteilt werden.
 
 == Praktiken und Bewertung
 //Describe or reference which management and technical practices will be used in the project, such as iterative development, continuous integration, independent testing and list any changes or particular configuration to the project. Specify how you will track progress in each practice. As an example, for iterative development the team may decide to use iteration assessments and iteration burndown reports and collect metrics such as velocity (completed work item points/ iteration).
@@ -62,9 +68,9 @@ Das Projekt erstreckt sich über einen Zeitraum von zwei Semestern. Begonnen wir
 
 Die Umsetzung des Projekts folgt der iterativen Planung. Es wird für jede Iteration ein Iterationsplan mit Zielen und Aufgaben für diese aufgestellt. Zum Schluss jeder Iteration werden die Resultate und der Arbeitsstand bewertet. Daraus werden Schlüsse für die nächsten Iterationen gezogen. Während dieses Projektes ist eine Iteration immer zwei Wochen lang. 
 
-*Finalisierung von Dokumenten:* Bevor ein Dokument (, Diagramm oder Ähnliches) als Final gilt, wird es von mindestends dem Teamleader gegen geschaut, um die Vollständigkeit und Qualität zu prüfen. Sollte der Teamleader ein Dokument (etc.) erstellen, soll mindestend ein anderes Mitglied das Dokumente gegenlesen.
+*Finalisierung von Dokumenten:* Bevor ein Dokument (, Diagramm oder Ähnliches) als Final gilt, wird es von mindestends dem Projektleiter gegen geschaut, um die Vollständigkeit und Qualität zu prüfen. Sollte der Projektleiter ein Dokument (etc.) erstellen, soll mindestend ein anderes Mitglied das Dokumente gegenlesen.
 
-*Regeln für die Bewertung:* Durch das Melden der Arbeitsstände an den Teamleader wird überprüft, ob eine Aufgabe erledigt wurde. Der Teamleader schaut sich darauf in an, in welchem Umfang die Aufgabe erledigt wurde und in welcher Qualtität. Ein Ziel der Iteration kann erst erfolgreich erreicht sein, wenn es zum einen an sich erledig wurde und zum anderen keine anderen Mitglieder Anmerkungen oder Fragen zu der Thematik haben. [...]
+*Regeln für die Bewertung:* Durch das Melden der Arbeitsstände an den Projektleiter wird überprüft, ob eine Aufgabe erledigt wurde. Der Projektleiter schaut sich darauf in an, in welchem Umfang die Aufgabe erledigt wurde und in welcher Qualtität. Ein Ziel der Iteration kann erst erfolgreich erreicht sein, wenn es zum einen an sich erledig wurde und zum anderen keine anderen Mitglieder Anmerkungen oder Fragen zu der Thematik haben. [...]
 
 == Meilensteine und Ziele
 //Define and describe the high-level objectives for the iterations and define milestones. For example, use the following table to lay out the schedule. If needed you may group the iterations into phases and use a separate table for each phase
@@ -92,7 +98,7 @@ Die Umsetzung des Projekts folgt der iterativen Planung. Es wird für jede Itera
 |
 * Risikoliste, Vision
 * Aufstellung der Anforderungen
-| 20.11.-01.12
+| 20.11.-01.12 Lifecycle Objectives Milestone
 | 8 Issues aka 19 Gewichtungspunkte
 |
 
@@ -119,7 +125,7 @@ Die Umsetzung des Projekts folgt der iterativen Planung. Es wird für jede Itera
 * Finalisierung aller Dokumente für die Abgabe
 * Fertigstellung des Prototyps
 * Beleg Abgabe
-| 15.01.-26.01.
+| 15.01.-26.01. Lifecycle Architecture Milestone
 | 20 Gewichtungspunkte
 |
 
@@ -135,3 +141,5 @@ Dem Auftragsgeber wird zum Ende des Projekts der RaspberryPi übergeben. Auf die
 == Erkenntnisse (Lessons learned)
 //List lessons learned from the retrospective, with special emphasis on actions to be taken to improve, for example: the development environment, the process, or team collaboration.
 // Sammlung wichtiger Erkenntnisse, Erfahrungen, Lösungsstrategien im Projekt
+
+
