@@ -17,7 +17,7 @@ include::../_includes/default-attributes.inc.adoc[]
 ** Der Nutzer kann mit dem gesamten Produktionssteuerungssystem interagieren und fast alle Klassen beeinflussen. Die genauen Attribute der Klassen "Abteilungsleiter" und "Mitarbeiter", die von der Klasse "Nutzer" erben, ergeben sich bei der Implementierung. 
 
 * *Klasse: Operation* 
-** Jeder Operation enthält unter dem Attribut "Oper" eine Zahl vom Typ integer, z.B. 100, 200, 300 oder 400. Durch die Vergabe von numerischen Werten kann innerhalb der Operationen eine Reihenfolge hergestellt werden. Analog: die Reihenfolge der Routes für ein Produkt wird über die Sequenz bestimmt (siehe oben).
+** Jede Operation enthält unter dem Attribut "Oper" eine Zahl vom Typ integer, z.B. 100, 200, 300 oder 400. Durch die Vergabe von numerischen Werten kann innerhalb der Operationen eine Reihenfolge hergestellt werden. Analog: die Reihenfolge der Routes für ein Produkt wird über die Sequenz bestimmt (siehe oben).
 
 == Domain-Modell:
 
