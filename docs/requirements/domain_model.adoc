@@ -7,10 +7,10 @@ include::../_includes/default-attributes.inc.adoc[]
 
 == Hinweise:
 
-* *Beziehung: Produkt - Route* 
+* *Assoziation: Produkt - Route* 
 ** Jedes Produkt enthält mehrere Routes, die über die Klasse "Produkt Arbeitsplan" gemappt werden. Die Sequenz gibt die Reihenfolge an, in der die Routes durchlaufen werden.
 
-* *Beziehung: Los - Route* 
+* *Assoziation: Los - Route* 
 ** Jedes Los bewegt sich auf einer Route. Das bedeutet, dass für jedes Los die aktuelle Route inklusive aktueller Operation festgehalten wird. Die nächste Route des Loses wird durch seine Produktzugehörigkeit bestimmt.
 
 * *Klasse: Nutzer* 
