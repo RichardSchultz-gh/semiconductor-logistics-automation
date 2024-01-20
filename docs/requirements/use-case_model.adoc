@@ -45,7 +45,7 @@ include::../_includes/default-attributes.inc.adoc[]
 
 .Akteure:
 . Mitarbeiter an Maschine (nur Einsehen)
-. Abteilungsleiter (Einsehen+Änderungen vornehmen)
+. Fertigungsleiter (Einsehen + Änderungen vornehmen)
 . Timer (Softwarekomponenten)
 
 == Identifizierte Use Cases
@@ -132,7 +132,7 @@ image::usecase_second_version_pmx.png[]
 
 |UC11
 |Daten visualisieren
-|4
+|3
 |=== 
 
 // Notizen dazu:
@@ -172,20 +172,20 @@ include::use_case_02.inc.adoc[]
 <<<
 include::use_case_03.inc.adoc[]
 
-//<<<
-//include::use_case_04.inc.adoc[]
+<<<
+include::use_case_04.inc.adoc[]
 
-//<<<
-//include::use_case_05.inc.adoc[]
+<<<
+include::use_case_05.inc.adoc[]
 
-//<<<
-//include::use_case_06.inc.adoc[]
+<<<
+include::use_case_06.inc.adoc[]
 
 //<<<
 //include::use_case_07.inc.adoc[]
 
-//<<<
-//include::use_case_08.inc.adoc[]
+<<<
+include::use_case_08.inc.adoc[]
 
 //<<<
 //include::use_case_09.inc.adoc[]

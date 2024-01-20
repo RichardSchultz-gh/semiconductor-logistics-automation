@@ -30,7 +30,7 @@ Siehe <<#glossary, Glossar>>.
 === Fachliche Motivation 
 //Erläutern Sie kurz den Hintergrund, in dem das Projekt angesiedelt ist. Welches Problem soll gelöst werden, wie ist es entstanden? Welche Verbesserung wird angestrebt. Achten Sie darauf, eine fachliche (organisatorische, betriebswirtschaftliche) Perspektive einzunehmen.
 
-Es soll eine Neuentwicklung einer Software stattfinden. Dabei sollen die Abläufe der Halbleiterfertigung modelliert werden. Dabei sollen die Anlagen-Ressourcen, die Fertigungspläne und die Materialverwaltung beachtet werden. 
+Es soll eine Neuentwicklung einer Software stattfinden. Dabei sollen die Abläufe der Halbleiterfertigung modelliert werden. Es sollen die Anlagen-Ressourcen, die Fertigungspläne und die Materialverwaltung beachtet werden. 
  
 Das Ziel der Software besteht darin, die Fertigungsprozesse in der Halbleiterherstellung transparent zu gestalten. Dadurch ermöglichen wir der Fabrik, die Herstellung ihrer Produkte besser zu beobachten und zu bewerten. 
 
@@ -39,10 +39,10 @@ Das Ziel der Software besteht darin, die Fertigungsprozesse in der Halbleiterher
 
 [cols="1,3"]
 |===
-| Das Problem |Komplexität der Halbleiterfertigung 
+| Das Problem | die Komplexität der Halbleiterfertigung 
 | betrifft | die Halbleiterfabrik (bzw. ihre Mitarbeiter)
 | die Auswirkung davon ist | fehlende Transparenz bei der Produktion
-| eine erfolgreiche Lösung wäre | Datenbankanwendung für Halbleiterproduktion.
+| eine erfolgreiche Lösung wäre | eine Datenbankanwendung für die Halbleiterproduktion.
 |===
 
 
@@ -73,15 +73,15 @@ Das Ziel der Software besteht darin, die Fertigungsprozesse in der Halbleiterher
 |===
 | Name | Beschreibung | Verantwortlichkeiten
 
-| Vertreter der Halbleiterfabrik (Herr Ringel)
+| Vertreter der Halbleiterfabrik
 | vertritt die Halbleiterfabrik im Rahmen des Auftrags
 | stellt sicherm, dass die Anforderungen der Fabrik umgesetzt werden
 
-| Arbeiter
+| Mitarbeiter
 | arbeiten in der Fabrik
 | sieht Daten durch das System ein
 
-| Abteilungsleiter 
+| Fertigungsleiter 
 | arbeitet und leitet in der Fabrik
 | sieht Daten durch das System ein und bearbeitet sie
 
@@ -94,6 +94,8 @@ Das Ziel der Software besteht darin, die Fertigungsprozesse in der Halbleiterher
 | inhaltliche und technische Einschränkungen
 
 |===
+
+*Anmerkung:* Im Rahmen des Projektes wird sich eine mögliche Halbleiterfabrik vorgestellt, welche den Auftrag gibt. Herr Ringel tritt hierfür in der Funktion als Vertreter der Halbleiterfabrik auf.
 
 === Benutzerumgebung
 Beschreiben Sie die Arbeitsumgebung des Nutzers. Hier sind einige Anregungen:

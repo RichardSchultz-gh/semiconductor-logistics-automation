@@ -15,7 +15,7 @@ Der Use Case beschreibt die Operation, die Lose auf den jeweils nächsten Fertig
 
 Möchte manuell Los auf nächsten Arbeitsschritt bewegen
 
-==== Abteilungsleiter
+==== Fertigungsleiter
 
 Möchte experimentell manuell Los in anderen Arbeitsschritt bewegen
 

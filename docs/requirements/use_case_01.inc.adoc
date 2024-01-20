@@ -20,11 +20,11 @@ Der Use Case beschreibt die Aufbereitung und das Starten der Lose
 
 === Kurzbeschreibung der Akteure
 
-==== Mitarbeiter an Maschine
+==== Mitarbeiter
 
 Möchte Lose manuell starten
 
-==== Abteilungsleiter
+==== Fertigungsleiter
 
 Möchte Lose manuell starten
 
@@ -55,7 +55,7 @@ Startet den Use Case in einem vorberechneten Zeitintervall
 
 1. Der Use Case beginnt, wenn auf der grafischen Oberfläche der Button "StartLot" ausgewählt oder 
    der Timer aktiviert wird
-2. Mitarbeiter gibt in GUI Anzahl Wafer (Menge), Produkt und Zielkalenderwoche an
+2. Mitarbeiter gibt in der GUI die Anzahl Wafer (Menge), Produkt und Zielkalenderwoche an
 3. Losanzahl wird errechnet
 4. StartLot Intervall wird aus Zieldatum und Losanzahl errechnet - Timer wird erstellt
 5. Los bekommt eindeutige Nummerierung
@@ -66,15 +66,15 @@ Startet den Use Case in einem vorberechneten Zeitintervall
 //Nutzen Sie alternative Abläufe für Fehlerfälle, Ausnahmen und Erweiterungen zum Standardablauf
 
 
-==== <Alternativer Ablauf 1>
+==== Alternativer Ablauf 1
 
-Wenn Mitarbeiter, Abteilungsleiter im Schritt 1 des Standardablauf eine negative Waferanzahl oder ein in der Vergangenheit liegendes Datum eingibt, dann bekommt Akteur eine Fehlermeldung.
-. Der Use Case wird im Schritt 1 fortgesetzt.
+Wenn Mitarbeiter/Fertigungsleiter im Schritt 1 des Standardablauf eine negative Waferanzahl oder ein in der Vergangenheit liegendes Datum eingibt, dann bekommt Akteur eine Fehlermeldung.
+-> Der Use Case wird im Schritt 1 fortgesetzt.
 
-==== <Alternativer Ablauf 2>
+==== Alternativer Ablauf 2
 
-Wenn Mitarbeiter, Abteilungsleiter im Schritt 2 KEINE Zielkalenderwoche eingibt, dann werden der eingegebene Anzahl an Losen eindeutige Nummerierung gegeben und direkt in Status "WAIT" gesetzt. 
-. Der Use Case ist abgeschlossen
+Wenn Mitarbeiter/Fertigungsleiter im Schritt 2 KEINE Zielkalenderwoche eingibt, dann werden der eingegebene Anzahl an Losen eindeutige Nummerierung gegeben und direkt in Status "WAIT" gesetzt. 
+-> Der Use Case ist abgeschlossen
 
 === Wesentliche Szenarios
 //Szenarios sind konkrete Instanzen eines Use Case, d.h. mit einem konkreten Akteur und einem konkreten Durchlauf der o.g. Flows. Szenarios können als Vorstufe für die Entwicklung von Flows und/oder zu deren Validierung verwendet werden.
@@ -85,6 +85,6 @@ Das Los wurde erfolgreich gestartet und wartet auf den ersten Fertigungschritt
 === Nachbedingungen
 //Nachbedingungen beschreiben das Ergebnis des Use Case, z.B. einen bestimmten Systemzustand.
 
-==== <Nachbedingung 1>
-Bei erfolgreicher Durchführung des Use Case müssen folgende Nachbedingungen erfüllt sein
-** Erfolgreich gestartete Lose werden nach dem Zustand "WAIT" bei Bedarf in den Zustand "PROC" gesetzt 
+==== Nachbedingung 1
+.Bei erfolgreicher Durchführung des Use Case müssen folgende Nachbedingungen erfüllt sein:
+* Erfolgreich gestartete Lose werden nach dem Zustand "WAIT" bei Bedarf in den Zustand "PROC" gesetzt 

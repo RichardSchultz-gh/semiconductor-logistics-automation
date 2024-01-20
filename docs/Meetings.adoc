@@ -459,7 +459,7 @@ Prototyp gefällt ihm
 
 GUI und Datenbank mit Schnittstelle
 
-einordnen worum es geht Datenbank mit ganzeinfacher Benutzer oberfläche um ein Produktionssytem grundlegend zu simulieren
+einordnen worum es geht: Datenbank mit ganzeinfacher Benutzer oberfläche um ein Produktionssytem grundlegend zu simulieren
 
 Lose, Maschinen und ihre Zustände gibte es 
 
