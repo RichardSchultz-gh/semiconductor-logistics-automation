@@ -46,9 +46,7 @@ Die Verantwortlichen sammeln zu Beginn des Projekts das nötige Wissen für ihre
 Die Rollen der Analysten, Architekten und Entwickler sind je doppelt besetzt. So teilen sich zum einen die Mitglieder die Arbeitslast, haben zusätzlich aber immer einen Ansprechpartner, der im Thema steht. So wird zu dem ein personeller Ausfall abgedeckt.
 Das einzeln belegte Testing kann im Falle eines Ausfalls von den Entwicklern kurzweilig übernommen werden. 
 
-Die Projektleitung ist ebenfalls einzeln belegt. Eine Doppelspitze kann zwar erfolgreich sein, jedoch sehen wir es für unser Projekt als vorteilhafter an einen Projektleiter zu haben, der sich um die Organisation etc, kümmert und die Verantwortung trägt. Im Falle eines Ausfalls des Projektsleiters kann das Team die aktuelle Iteration an Hand der aktuellen WorkItems selbstständig arbeiten. Die Projektleitung ist bemüht stehts im Vorfeld klar auszustellen, was in den folgenden Wochen zu tun ist. Bei einem längerfristigen Ausfall der Projektleitung ....
-
-würde Paul übernehmen?????????
+Die Projektleitung ist ebenfalls einzeln belegt. Eine Doppelspitze kann zwar erfolgreich sein, jedoch sehen wir es für unser Projekt als vorteilhafter an einen Projektleiter zu haben, der sich um die Organisation etc, kümmert und die Verantwortung trägt. Im Falle eines Ausfalls des Projektsleiters kann das Team die aktuelle Iteration an Hand der aktuellen WorkItems selbstständig arbeiten. Die Projektleitung ist bemüht stehts im Vorfeld klar auszustellen, was in den folgenden Wochen zu tun ist. Bei einem längerfristigen Ausfall der Projektleitung übernimmt Paul die Aufgaben der Projektleitung. 
 
 
 === Strukturen

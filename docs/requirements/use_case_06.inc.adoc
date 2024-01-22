@@ -6,11 +6,11 @@ Der Use Case beschreibt das Exportieren von Datenmengen
 
 === Kurzbeschreibung der Akteure
 
-==== Nutzer - Mitarbeiter
+==== Mitarbeiter
 
 Möchte Datenmengen exportieren
 
-==== Administrator - Fertigungsleiter
+==== Fertigungsleiter
 
 Möchte Datenmengen exportieren
 

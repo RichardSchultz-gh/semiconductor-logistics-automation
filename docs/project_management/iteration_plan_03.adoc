@@ -133,3 +133,5 @@ Die Architekten scheinen bisher noch nicht als Team zu arbeiten. Aufgefallen ist
 == Alphas
 
 .Iteration 3 Alphas
+
+image::iteration3_alphas.png[]
