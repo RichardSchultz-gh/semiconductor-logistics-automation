@@ -52,7 +52,7 @@ zuzugreifen. Dafür ist eine Zuordnung aller Anwender zu Rollen und einem Login 
 
 ** Es wird kontrolliert und abgeglichen, ob für jeden Filter oder jede Auswahloption ein Dropdown-Menü vorhanden ist, welches alle wesentlichen Informationen abbildet
 
-* QAGU-4: Die Sprache für die Benutzeroberfläche ist deutsch. Die Sprache für alle Material- und Maschinenzustände sowie Kommandoeingaben ist Englisch.
+* QAGU-4: Die Sprache für die Benutzeroberfläche ist Deutsch. Die Sprache für alle Material- und Maschinenzustände sowie Kommandoeingaben ist Englisch.
 
 ** Zur Überprüfung werden alle Eingabevarianten beim Bearbeiten eines Loses, alle Buttons und alle Tabellenausgaben zu Materialien und Maschinen auf Konsistenz und Korrektheit kontrolliert.
 

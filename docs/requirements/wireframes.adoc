@@ -11,7 +11,7 @@ Für den konzeptionellen Entwurf der Web-Anwendung wurden diverse Wireframes als
 
 image::WireframeA.PNG[]
 
-* *Beschreibung:* Das System soll beim Start die Auswahl eines Nutzerkontos ermöglichen. Je nach Nutzerprofil, werden dem Nutzer verschiedene Berechtigungen für die Software zur Verfügung gestellt. Der Nutzerlogin enthält ein Eingabefeld für den Nutzernamen und ein Eingabefeld für das zugehörige Passwort.
+* *Beschreibung:* Das System soll beim Start die Auswahl eines Nutzerkontos ermöglichen. Je nach Nutzerprofil werden dem Nutzer verschiedene Berechtigungen für die Software zur Verfügung gestellt. Der Nutzerlogin enthält ein Eingabefeld für den Nutzernamen und ein Eingabefeld für das zugehörige Passwort.
 
 == Cockpit
 

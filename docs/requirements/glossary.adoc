@@ -39,8 +39,8 @@ In diesem Dokument werden die wesentlichen Begriffe aus dem Anwendungsgebiet (Fa
 | FIN | Los-Zustand: Los ist fertiggestellt | xx
 | HOLD | Los-Zustand: Los ist möglicherweise defekt. Folgezustand muss manuell gesetzt werden | xx
 | SCRAP | Los-Zustand: Los ist Ausschuss | xx
-| Fertigungsleiter | xx | Abteilungsleiter
-|Mitarbeiter| xx | xx
+| Fertigungsleiter | Mitarbeiter in höherer Produktion mit mehr Nutzerrechten | Abteilungsleiter
+|Mitarbeiter| Arbeiter mit eingeschränkten Nutzerrechten | xx
 |===
 
 == Abkürzungen und Akronyme

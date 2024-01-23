@@ -104,18 +104,11 @@ Beschreiben Sie die Arbeitsumgebung des Nutzers. Hier sind einige Anregungen:
 
 Komplett überarbeiten (mithilfe der Musterlösung aus dem Praktikum):
 
+* Die Anzahl der Mitarbeiter/Fertigungsleiter sind unbekannt. Die Anzahl bleibt jedoch (voraussichtlich) konstant.
 
-. Anzahl der Personen, die an der Erfüllung der Aufgabe beteiligt sind. Ändert sich das?-> Die Mitarbeiterzahl, die mit der Software arbeitet, wird voraussichtlich konstant bleiben. 
+* Die gesamte Produktion der Lose dauert 30-80 Tage. Für die einzelnen Produktionsschritte können keine pauschalen Aussagen getroffen werden. Die Produktionsschritte haben eine fixe Dauer
 
-. Wie lange dauert die Bearbeitung der Aufgabe? Wie viel Zeit wird für jeden Arbeitsschritt benötigt? Ändert sich das? -> Die gesamte Produktion dauert 30-80 Tage. Die Zeit der einzelnen Arbeitsschritte ist dato unbekannt.
-
-. Gibt es besondere Umgebungsbedingungen, z.B. mobil, offline, Außeneinsatz, Touchbedienung, Nutzung durch seh- oder hörbeeinträchtigte Personen? -> bisher nicht bekannt -> nachfragen 
-
-. Welche Systemplattformen werden heute eingesetzt? Welche sind es ggf. zukünftig?
--> Bisher gibt es keine eingesetzte Plattform.
-
-. Welche anderen Anwendungen sind im Einsatz? Muss ihre Anwendung mit diesen integriert werden?
--> bisher keine
+* Bisher wird keine andere Software in der Halbleiterfabrik für die Aufgabe unserer Software eingesetzt. 
 
 
 .Produktionsablauf
@@ -143,7 +136,7 @@ Komplett überarbeiten (mithilfe der Musterlösung aus dem Praktikum):
 [%header, cols="4,1,4,1"]
 |===
 | Bedarf | Priorität | Features | Geplantes Release
-| Bearbeitung der Lose | hoch | xx | xx
+| Bearbeitung der Lose | hoch | Bewegen der Lose zwischen den Produktionsschritten und Änderung des Zustands innerhalb eines Produktionsschritts | xx
 | Starten der Produktion der Lose | hoch | xx | xx
 | Speicherung der Daten | mittelhoch | Backup-Jobs zur Sicherung der Daten | xx
 | Ausgabe der Daten | hoch | tabellarische Darstellung der Datensätze nach Kriterien | xx
@@ -155,26 +148,17 @@ Komplett überarbeiten (mithilfe der Musterlösung aus dem Praktikum):
 
 . wesentlichen anzuwendenden Standards, Hardware oder andere Plattformanforderungen, Leistungsanforderungen und Umgebungsanforderungen 
 * RaspbarryPi
+** Der RaspberryPi schränk das benutzte Betriebssystem ein. Es wurde sich für Raspian entschieden
 * Python 3.12
 * PostgreSQL
 * Linux
-
-
-. Notieren Sie alle Entwurfseinschränkungen, externe Einschränkungen, Annahmen oder andere Abhängigkeiten, die wenn Sie geändert werden, das Visions-Dokument beeinflussen. Ein Beispiel wäre die Annahme, dass ein bestimmtes Betriebssystem für die vom System erforderliche Hardware verfügbar ist. Ist das Betriebssystem nicht verfügbar, muss das Visions-Dokument angepasst werden. 
-* Raspy schränkt das benutzte Betriebssystem ein. Es wurde sich für Raspian entschieden.
-
-. Dokumentationsanforderugen, inkl. Benutzerhandbücher, Onlinehilfe, Installations-, Kennzeichnungs- und Auslieferungsanforderungen
-* 
-
-. Priorität für diese zusätzlichen Produktanforderungen. Ergänzen Sie, falls sinnvoll, Angaben zu Stabilität, Nutzen, Aufwand und Risiko für diese Anforderungen.
-* 
 
 
 [%header, cols="4,1,1"]
 |===
 | Anforderung | Priorität | Geplantes Release
 | Realisation über RasberryPi, Python, PostgreSQL | hoch | xx
-| System muss für eine häufige Anwendung der Nutzer konzeptioniert sein | niedrig | xx
-| mehrere Nutzerrollen | mittel | xx
+| System muss für eine häufige Anwendung der Nutzer konzeptioniert sein | mittel | xx
+| mehrere Nutzerrollen | hoch | xx
 |
 |===

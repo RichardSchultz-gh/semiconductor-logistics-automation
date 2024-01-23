@@ -269,6 +269,17 @@ Nils:
 
 remote verbindung auf raspy wurde eingebunden  --> teilen
 
+
+
+=== Teammeeting am 24.01.2024
+
+.Agenda:
+* Stand jeglicher Dokumente
+* Issues
+* Was haben wir bis jetzt für Erkenntnisse am Projekt gezogen
+* Aufgabe für über die Ferien
+* Wie geht es weiter
+
 == Meetings mit Coach
 
 === Meeting 1
