@@ -16,13 +16,13 @@ In diesem Projektplan werden dafür die Teammitglieder und Praktiken vorgestellt
 //Introduce the project team, team members, and roles that they play during this project. If applicable, introduce work areas, domains, or technical work packages that are assigned to team members. Introduce neighboring projects, relationships, and communication channels. If the project is introduced somewhere else, reference that location with a link.
 
 === Teammitglieder
-* Enrico Kersten
-* Hoang Nguyen Sy
-* Yannik-Joel Herrchen
-* Nico Kroll
 * Nils Generlich
-* Richard Schultz
+* Yannik-Joel Herrchen
+* Enrico Kersten
+* Nico Kroll
 * Paul Marx
+* Hoang Nguyen Sy
+* Richard Schultz
 * Marlene Winter
 
 Enrico und Hoang studieren Wirtschaftsingieneurswesen im 5. Semester und begleiten das Projekt daher nur für ein Semester. Die restlichen Teammitglieder sind Wirtschaftsinformatiker (Yannik und Nico) und Informatiker (Nils, Richard, Paul und Marlene). 
@@ -30,8 +30,9 @@ Enrico und Hoang studieren Wirtschaftsingieneurswesen im 5. Semester und begleit
 === Verantwortlichkeiten
 
 |===
+|*Funktion* | *Teammitglied*
 |Projektleiter | Marlene
-|Analyst | Enrico & Hoang
+|Analysten | Enrico & Hoang
 |Architekten | Yannik & Nico
 |Entwickler | Nils & Richard
 |Tester | Paul 
@@ -117,7 +118,7 @@ Die Umsetzung des Projekts folgt der iterativen Planung. Es wird für jede Itera
 * Erster Architekturentwurf für Middleware
 * Beginn development
 | 18.12.-12.01. (inkl. Weihnachtspause)
-| 35 Gewichtungspunkte
+| 18 Issues 
 |
 
 | I5
@@ -126,12 +127,12 @@ Die Umsetzung des Projekts folgt der iterativen Planung. Es wird für jede Itera
 * Fertigstellung des Prototyps
 * Beleg Abgabe
 | 15.01.-26.01. Lifecycle Architecture Milestone
-| 20 Gewichtungspunkte
+| 14 Issues
 |
 
 |===
 
-*Sommersemester*
+*kommende Iterationen*
 
 Im folgenden Semester wird das Development Hauptaspekt des Projektes werden. 
 

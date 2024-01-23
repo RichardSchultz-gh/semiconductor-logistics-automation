@@ -1,4 +1,4 @@
-= Vision:  Modell eines automatisierten Fabrikbetriebes - Frau Holle
+= Vision: {project-name}
 Nico Kroll <email@domain.org>; Nils Generlich <email@domain.org>; Paul Marx <email@domain.org>; Hoang Nguyen Sy <email@domain.org>; Yannik Herrchen <email@domain.org>; Richard Schultz  <email@domain.org>; Enrico Kersten <email@domain.org>; Marlene Winter <email@domain.org>;
 {localdatetime}
 include::../_includes/default-attributes.inc.adoc[]
