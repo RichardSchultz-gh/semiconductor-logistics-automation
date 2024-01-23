@@ -30,32 +30,34 @@ Enrico und Hoang studieren Wirtschaftsingieneurswesen im 5. Semester und begleit
 === Verantwortlichkeiten
 
 |===
-|Projektleader| Marlene
+|Projektleiter | Marlene
 |Analyst | Enrico & Hoang
 |Architekten | Yannik & Nico
 |Entwickler | Nils & Richard
 |Tester | Paul 
 |=== 
 
-Zu Beginn des Projekts wurden teamintern die *Verantwortungsbereiche* verteilt. Dabei wurde versucht auf die *Stärken und Interessen* aller zu achten. Auf Grund der Tatsache, das die Rolle des Testers zu Beginn nicht gebraucht wird, arbeitet Paul erstmal als Analyst mit und sammelt so Erfahrungen, die er an die Gruppe weitergeben kann, wenn Enrico und Hoang im Sommersemester nicht mehr Teil des Projektes sind. 
+Zu Beginn des Projekts wurden teamintern die *Verantwortungsbereiche* verteilt. Dabei wurde versucht auf die *Stärken und Interessen* aller zu achten. Auf Grund der Tatsache, dass die Rolle des Testers zu Beginn nicht gebraucht wird, arbeitet Paul erstmal als Analyst mit und sammelt so Erfahrungen, die er an die Gruppe weitergeben kann, wenn Enrico und Hoang im Sommersemester nicht mehr Teil des Projektes sind. 
 
 Wir haben uns klar entschieden keine festen Rollen zu vergeben, sondern Verantwortlichkeiten, da wir so flexibler in der Aufgabenverteilung sind. Bei einer festen Rollenverteilung achtet jeder nur auf seine eigene Rolle, informiert sich aber nicht mit den anderen Aspekten des Projekts. Dies kann zu Problemen führen, wenn z.B. ein Mitglied ausfällt oder die Arbeitslast in einem Teilgebiet zu groß wird. 
 
 Die Verantwortlichen sammeln zu Beginn des Projekts das nötige Wissen für ihre Rollen an, welches sie zu gegebener Zeit an die restlichen Mitglieder weitergeben. 
 
-Die Rollen der Analysten, Architekten und Entwickler sind je doppelt besetzt. So teilen sich zum einen die Mitglieder die Arbeitslast, haben zusätzlich aber immer einen Ansprechpartner, der im Thema steht. So wird zu dem ein personeller Ausfall abgedeckt.
+Die Rollen der Analysten, Architekten und Entwickler sind je doppelt besetzt. So teilen sich zum einen die Mitglieder die Arbeitslast, haben zusätzlich aber immer einen Ansprechpartner, der im Thema steht. So wird zudem ein personeller Ausfall abgedeckt.
 Das einzeln belegte Testing kann im Falle eines Ausfalls von den Entwicklern kurzweilig übernommen werden. 
 
-Die Projektleitung ist ebenfalls einzeln belegt. Eine Doppelspitze kann zwar erfolgreich sein, jedoch sehen wir es für unser Projekt als vorteilhafter an einen Projektleiter zu haben, der sich um die Organisation etc, kümmert und die Verantwortung trägt. Im Falle eines Ausfalls des Projektsleiters kann das Team die aktuelle Iteration an Hand der aktuellen WorkItems selbstständig arbeiten. Die Projektleitung ist bemüht stehts im Vorfeld klar auszustellen, was in den folgenden Wochen zu tun ist. Bei einem längerfristigen Ausfall der Projektleitung übernimmt Paul die Aufgaben der Projektleitung. 
+Die Projektleitung ist ebenfalls einzeln belegt. Eine Doppelspitze kann zwar erfolgreich sein, jedoch sehen wir es für unser Projekt als vorteilhafter an einen Projektleiter zu haben, der sich um die Organisation etc. kümmert und die Verantwortung trägt. Im Falle eines Ausfalls des Projektsleiters kann das Team die aktuelle Iteration anhand der aktuellen WorkItems selbstständig arbeiten. Die Projektleitung ist bemüht stehts im Vorfeld klar auszustellen, was in den folgenden Wochen zu tun ist. Bei einem längerfristigen Ausfall der Projektleitung übernimmt Paul die Aufgaben der Projektleitung. 
 
 
 === Strukturen
 
 *Kommunikationswege:* Für die Aufgabenverwaltung wird GitHub genutzt, wo über Issues die Aufgaben verteilt werden. Akute Änderungen, Fragen oder Meetinginformationen werden zusätzlich über eine gemeinsame WhatsApp-Gruppe geklärt. Dadurch haben auch alle Mitglieder die Kontaktdaten der Anderen. In dieser Gruppe in neben den Mitglieder auch der Coach. 
 
+*Meetingstruktur:* Es finden wöchentliche Teammeetings zum Austauschen und klären von allgemeinen Fragen und Aufgaben statt. Dazu kommen die Meetings mit dem Coach und pro Iteration ein Treffen mit dem Auftragsgeber. Alle Treffen werden mit Agenda vorbereitet. Während der internen Meetings führt Marlene die Mitschriften. Bei Treffen mit dem Auftragsgeber führen mehrere Teammitglieder Mitschriften. Dies dient der Tatsache, dass eine einzelne Person nicht alle Informationen aufnehmen und niederschreiben kann. Dadurch erhoffen wir uns keinen Informationsverlust zu haben. Die Nachbereitung der Meeting werden von den entsprechenden Anwesenden vorgenommen bevor die Erkenntnisse der Gruppe mitgeteilt werden.
+
 *Dokumente:* 
 
-*Meetingstruktur:* Es finden wöchentliche Teammeetings zum Austauschen und klären von allgemeinen Fragen und Aufgaben statt. Dazu kommen die Meetings mit dem Coach und pro Iteration ein Treffen mit dem Auftragsgeber. Alle Treffen werden mit Agenda vorbereitet. Während der internen Meetings führt Marlene die Mitschriften. Bei Treffen mit dem Auftragsgeber führen mehrere Teammitglieder Mitschriften. Dies dient der Tatsache, dass einen einzelne Person nicht alle Informationen aufnehmen und niederschreiben kann. Dadurch erhoffen wir uns keinen Informationsverlust zu haben. Die Nachbereitung der Meeting werden von den entsprechenden Anwesenden vorgenommen bevor die Erkenntnisse der Gruppe mitgeteilt werden.
+
 
 == Praktiken und Bewertung
 //Describe or reference which management and technical practices will be used in the project, such as iterative development, continuous integration, independent testing and list any changes or particular configuration to the project. Specify how you will track progress in each practice. As an example, for iterative development the team may decide to use iteration assessments and iteration burndown reports and collect metrics such as velocity (completed work item points/ iteration).

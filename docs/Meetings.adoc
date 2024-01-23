@@ -275,6 +275,8 @@ remote verbindung auf raspy wurde eingebunden  --> teilen
 
 .Agenda:
 * Stand jeglicher Dokumente
+* Architektur Notebook besprechen und Architekten sollen erklären, was sie sich gedacht haben
+** Alle Architektur relevanten Anforderungen sollen einem Mechanismus zugeordnet werden (so gut es geht)
 * Issues
 * Was haben wir bis jetzt für Erkenntnisse am Projekt gezogen
 * Aufgabe für über die Ferien
