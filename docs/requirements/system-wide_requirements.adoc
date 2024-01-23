@@ -40,17 +40,17 @@ zuzugreifen. Dafür ist eine Zuordnung aller Anwender zu Rollen und einem Login 
 === Benutzbarkeit (Usability)
 //Beschreiben Sie Anforderungen für Eigenschaften wie einfache Bedienung, einfaches Erlernen, Standards für die Benutzerfreundlichkeit, Lokalisierung (landesspezifische Anpassungen von Sprache, Datumsformaten, Währungen usw.)
 
-* QAGU-1: Deskriptive Buttons sollen einfache Nutzerinteraktionen ermöglich
+* QAGU-1: Deskriptive Buttons sollen einfache Nutzerinteraktionen ermöglichen.
 
 ** Zur Überprüfung wird kontrolliert, ob aus der Beschreibung eines jeden Buttons eindeutig die jeweilige Funktionalität hervorgeht. 
 
-* QAGU-2: Die Gesamtheit der Interaktionselemente soll minimiert werden
+* QAGU-2: Die Gesamtheit der Interaktionselemente soll minimiert werden.
 
 ** Zur Überprüfung wird kontrolliert, dass keine Doppelbelegungen vorkommen, die den Nutzer verunsichern könnten. Jede Funktionalität von Buttons, Filtern oder Tabellen darf nur einmalig vorhanden sein.
 
-* QAGU-3: Die Auswahl von Optionen oder die Filterung von Daten muss ohne Vorkenntnisse erfolgen können
+* QAGU-3: Die Auswahl von Optionen oder die Filterung von Daten muss ohne Vorkenntnisse erfolgen können.
 
-** Es wird kontrolliert und abgeglichen, ob für jeden Filter oder jede Auswahloption ein Dropdown-Menü vorhanden ist, welches alle wesentlichen Informationen abbildet
+** Es wird kontrolliert und abgeglichen, ob für jeden Filter oder jede Auswahloption ein Dropdown-Menü vorhanden ist, welches alle wesentlichen Informationen abbildet.
 
 * QAGU-4: Die Sprache für die Benutzeroberfläche ist Deutsch. Die Sprache für alle Material- und Maschinenzustände sowie Kommandoeingaben ist Englisch.
 
@@ -68,11 +68,11 @@ zuzugreifen. Dafür ist eine Zuordnung aller Anwender zu Rollen und einem Login 
 === Zuverlässigkeit (Reliability)
 // Zuverlässigkeit beinhaltet die Fähigkeit des Produkts und/oder des Systems unter Stress und ungünstigen Bedingungen am laufen zu bleiben. Spezifizieren Sie Anforderungen für zuverlässige Akzeptanzstufen, und wie diese gemessen und evaluiert werden. Vorgeschlagene Themen sind Verfügbarkeit, Häufigkeit und Schwere von Fehlern und Wiederherstellbarkeit.
 
-* QAGZ-1: Das System darf durch einen Netzwerkausfall nicht beschädigt werden
+* QAGZ-1: Das System darf durch einen Netzwerkausfall nicht beschädigt werden.
 
-** Zur Überprüfung wird ein Verbindungsabbruch beim Bewegen eines Loses erzwungen
+** Zur Überprüfung wird ein Verbindungsabbruch beim Bewegen eines Loses erzwungen.
 
-* QAGZ-2: Es dürfen keine falschen Nutzernamen oder Passwörter eingegeben werden
+* QAGZ-2: Es dürfen keine falschen Nutzernamen oder Passwörter eingegeben werden.
 
 ** Zur Überprüfung wird getestet, ob der Anwender in diesen Fällen mit einer entsprechenden Fehlermeldung zur Korrektur der Eingabe aufgefordert wird.
 
@@ -93,7 +93,7 @@ zuzugreifen. Dafür ist eine Zuordnung aller Anwender zu Rollen und einem Login 
 === Wartbarkeit (Supportability)
 // Dieser Bereich beschreibt sämtliche Anforderungen welche die Supportfähigkeit oder Wartbarkeit des zu entwickelnden Systems verbessern, einschließlich Anpassungsfähigkeit und Erweiterbarkeit, Kompatibilität, Skalierbarkeit und Anforderungen bezüglich der System Installation sowie Maß an Support und Wartbarkeit.
 
-* QAGW-1: Zur besseren Wartbarkeit und zum besseren Verständnis bei auftretenden Fehlern, muss das Entwicklerteam eine umfangreiche Entwicklerdokumentation bereitstellen
+* QAGW-1: Zur besseren Wartbarkeit und zum besseren Verständnis bei auftretenden Fehlern, muss das Entwicklerteam eine umfangreiche Entwicklerdokumentation bereitstellen.
 
 ** Zur Überprüfung wird die vorhandene Dokumentation auf Vollständigkeit und Verständlichkeit kontrolliert.
 
