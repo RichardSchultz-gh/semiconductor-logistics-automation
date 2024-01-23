@@ -25,7 +25,7 @@ Startet den Use Case auotmatisch in einem vordefinierten Zeitintervall.
 
 === Standardablauf (basic flow)
 
-1. Der Use Case beginnt, wenn der Timer, das Bearbeiten von Losen in einem vordefinierten Zeitintervall auslöst. Alternativ besteht die Möglichkeit Lose manuell zu Bearbeiten. Der Use Case startet dann, wenn auf der grafischen Benutzeroberfläche durch den Nutzer eine Eingabe nach dem Schema <PROC> <Los ID> <Maschinen ID> erfolgt.
+1. Der Use Case beginnt, wenn der Timer das Bearbeiten von Losen in einem vordefinierten Zeitintervall auslöst. Alternativ besteht die Möglichkeit Lose manuell zu Bearbeiten. Der Use Case startet dann, wenn auf der grafischen Benutzeroberfläche durch den Nutzer eine Eingabe nach dem Schema <PROC> <Los ID> <Maschinen ID> erfolgt.
 2. Das System prüft, ob sich Lose im Zustand WAIT befinden. Beim manuellen Bearbeiten, wird nur das jeweilige Los geprüft.
 3. Für jedes Los im Zustand WAIT wird geprüft, ob sich die Maschine für den nächsten Schritt im Fertigungsprozess im Zustand IDLE befindet. Beim manuellen Bearbeiten, wird nur die ausgewählte Maschine geprüft und die Auswahl des Loses (Schritt 4) entfällt.
 4. Für alle Lose, die bearbeitet werden könnten, wählt ein Algorithmus mithilfe des FiFo-Prinzips das als nächstes zu bearbeitende Los für jede Maschine aus. 
@@ -41,14 +41,14 @@ Startet den Use Case auotmatisch in einem vordefinierten Zeitintervall.
 Schritt 2: Prüfung nicht erfolgreich -> alle Lose befindet sich im Produktionsprozess oder kein Los wurde gestartet
 
    	 * Das System beendet den Standardablauf
-	 * beim manuellen Bearbeiten, wird eine Fehlermeldung zurückgegeben
+	 * beim manuellen Bearbeiten wird eine Fehlermeldung zurückgegeben
 
 ==== Alternativer Ablauf 2
 
 Schritt 3: Prüfung nicht erfolgreich -> alle Maschinen befinden sich in Produktion (Zustand „PROC“), sind defekt (Zustand „DOWN“) oder in Wartung (Zustand „MAINT“)
 
    	* Das System beendet den Standardablauf
-* beim manuellen Bearbeiten, wird eine Fehlermeldung zurückgegeben
+* beim manuellen Bearbeiten wird eine Fehlermeldung zurückgegeben
 
 ==== Alternativer Ablauf 3
 
