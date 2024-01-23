@@ -6,10 +6,6 @@ Der Use Case beschreibt das Exportieren von Datenmengen
 
 === Kurzbeschreibung der Akteure
 
-==== Mitarbeiter
-
-Möchte Datenmengen exportieren
-
 ==== Fertigungsleiter
 
 Möchte Datenmengen exportieren
@@ -31,7 +27,7 @@ Möchte Datenmengen exportieren
 3. System zeigt alle gefilterten Daten an
 4. Akteur bestätigt angezeigte Daten
 5. System erstellt Dokument im CSV-Format
-6. Dokument wird im Laufwerk gespeichert
+6. Dokument wird im Laufwerk (gewünschter Ort) gespeichert
 7. Der Use Case ist abgeschlossen.
 
 //=== Alternative Abläufe

@@ -121,3 +121,9 @@ Rückblickend auf diese Iteration wird deutlich, dass Faktoren wie Belegarbeiten
 Daraus lernen wir zum einen, dass für die nächsten Vorlesungspause sinnvolle aber nicht zu große Aufgaben gestellt werden müssen. Ein zu großen Arbeitspensum erscheint als wenig sinnvoll, da die Ferien zum erholen gedacht sind und zusätzlich die Mitglieder lange allein arbeiten würden ohne mit dem restlichen Team den Arbeitsstand abzugleichen. Dies kann dazu führen, dass einzelne Mitglieder in die falsche Richtung arbeiten. 
 
 Im Zuge unseres Projektes scheint es als lokrativ an sich in den Ferien vor dem Sommersemester mit der Programmiersprache Python und dem Framework des Projektes zu beschäftigen und den Umgang zu erlernen.
+
+== Alphas
+
+.Iteration 4 Alphas
+
+image::iteration4_alphas.png[]

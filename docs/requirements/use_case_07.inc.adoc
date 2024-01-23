@@ -1,0 +1,41 @@
+== Use-Case: UC07 Daten importieren
+
+=== Kurzbeschreibung
+
+Der Use Case ermöglicht das Importieren von Daten
+
+=== Kurzbeschreibung der Akteure
+
+==== Fertigungsleiter
+
+Möchte Datenmengen importieren
+
+=== Vorbedingungen
+
+*Vorbedingung 1:* Akteur ist angemeldet
+
+
+=== Standardablauf (basic flow)
+
+1. Der Use Case beginnt, wenn auf der grafischen Oberfläche der Button "Daten importieren" angeklickt wird
+2. Akteur gelangt in neues Fenster, in dem er gewünschte Daten in Maske eintragen kann (ToolID, Group, Type, Owner ...)
+3. System prüft, ob Daten bereits vorhanden sind
+4. Akteur bekommt Rückmeldung vom System, ob import erfolgreich gewesen ist
+
+
+=== Alternative Abläufe
+
+==== Alternativer Ablauf 1
+
+Schritt 2: Akteur kann in Maske Aktion auswählen, eine CSV-Datei hochzuladen, welche gewünschte Daten enthält
+          * Akteur wählt CSV-Datei aus und bestätigt
+          * das System ließt CSV-Datei und importiert Daten
+          * System prüft, ob Daten bereits vorhanden sind
+          * Akteur bekommt Rückmeldung vom System, ob import erfolgreich gewesen ist
+          
+==== Alternativer Ablauf 2
+
+Schritt 3: Das System findet bei Prüfung bereits vorhandene oder fehlerhafte Daten
+          * Das System gibt Fehlermeldung mit Anzeige der betroffenen Daten
+          * Der Use Case ist beendet
+          
