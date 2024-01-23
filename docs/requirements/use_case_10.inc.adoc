@@ -1,0 +1,85 @@
+//Nutzen Sie dieses Template als Grundlage für die Spezifikation *einzelner* Use-Cases. Diese lassen sich dann per Include in das Use-Case Model Dokument einbinden (siehe Beispiel dort).
+ifndef::main-document[include::../_includes/default-attributes.inc.adoc[]]
+
+
+== Use-Case: UC10 Maschine bearbeiten
+
+=== Kurzbeschreibung
+
+Der Use Case ermöglicht das manuelle Bearbeiten von Maschinen im Produktionsprozess. 
+
+=== Kurzbeschreibung der Akteure
+
+==== Fertigungsleiter
+
+Möchte eine bestimmte Maschine manuell prozessieren.
+
+
+=== Vorbedingungen
+
+*Vorbedingung 1:* Maschinen sind vorhanden 
+
+
+=== Standardablauf (basic flow)
+
+1. Der Use Case beginnt, indem der Maschinenzustand überprüft wird.
+2. Maschine ist im Zustand "IDLE".
+3. Lose werden auf die Maschine gesetzt.
+4. Die Maschine geht vom Zustand "IDLE" über zum Zustand "PROC". Die Maschine bearbeitet Lose.
+5. Produktionsprozess ist abgeschlossen und Maschine wird wieder auf den Zustand "IDLE" gesetzt.
+6. Der Use Case ist abgeschlossen.
+
+=== Alternative Abläufe
+
+==== Alternativer Ablauf 1
+
+Schritt 2: Der Fertigungsleiter kann nach manueller Prüfung die Maschine von "IDLE" auf "MAINT" setzen. 
+Maschine ist in Wartung und nach Überprüfung kann sie entweder wieder auf "IDLE" oder "DOWN" gesetzt werden. 
+*Wenn Maschine auf "IDLE" dann wird der Use Case in Schritt 2 fortgesetzt.
+
+
+==== Alternativer Ablauf 2
+
+Schritt 1: Wenn der Maschinenzustand "DOWN" ist dann kann der Fertigungsleiter manuell die Maschine in "MAINT" oder "IDLE" setzen.
+*Wenn Maschine auf "MAINT" dann wird der Use Case in ALternativ Ablauf 1 fortgesetzt.
+*Wenn Maschine auf "IDLE" dann wird der Use Case in Schritt 2 fortgesetzt.
+==== Alternativer Ablauf 3
+
+Schritt 5: Maschine kann durch den Fertigungsleiter manuell vom "PROC" Zustand zu "MAINT" oder "DOWN" übergehen. 
+*Wenn Maschine auf "DOWN" dann wird der Use Case in Alternativ Ablauf 2 fortgesetzt.
+*Wenn Maschine auf "MAINT" dann wird der Use Case in Alternativ Ablauf 1 fortgesetzt.
+
+
+
+//=== Unterabläufe (subflows)
+//Nutzen Sie Unterabläufe, um wiederkehrende Schritte auszulagern
+
+//==== <Unterablauf 1>
+//. <Unterablauf 1, Schritt 1>
+//. …
+//. <Unterablauf 1, Schritt n>
+
+
+=== Wesentliche Szenarios
+//Szenarios sind konkrete Instanzen eines Use Case, d.h. mit einem konkreten Akteur und einem konkreten Durchlauf der o.g. Flows. Szenarios können als Vorstufe für die Entwicklung von Flows und/oder zu deren Validierung verwendet werden.
+
+==== Erfolgreicher Durchlauf der Maschine
+
+*Sc1* Die Maschine hat die Lose erfolgreich bearbeitet und ist wieder im Ausgangszustand "IDLE".
+
+==== Fehlerhafter Durchlauf der Maschine
+
+*Sc2* Die Maschine ist nach oder während dem Prozess defekt "DOWN" oder muss gewartet werden "MAINT".  
+
+=== Nachbedingungen
+//Nachbedingungen beschreiben das Ergebnis des Use Case, z.B. einen bestimmten Systemzustand.
+
+Bei erfolgreicher Durchführung des Use Case müssen folgende Nachbedingungen erfüllt sein:
+
+-	Maschine ist im Zustand "IDLE".
+
+
+//=== Besondere Anforderungen
+//Besondere Anforderungen können sich auf nicht-funktionale Anforderungen wie z.B. einzuhaltende Standards, Qualitätsanforderungen oder Anforderungen an die Benutzeroberfläche beziehen.
+
+//==== <Besondere Anforderung 1>
