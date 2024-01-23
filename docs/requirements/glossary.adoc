@@ -19,7 +19,7 @@ In diesem Dokument werden die wesentlichen Begriffe aus dem Anwendungsgebiet (Fa
 | Fertigungsprozess | standardisierter Arbeitsablauf zur Produktherstellung | Produktionsprozess, Fertigungsablauf
 | Produkt | Ergebnis der Produktion | xx
 | Fertigungsflüsse | Arbeitsfortschritt und Bewegung im Fertigungsprozess | xx
-| Siliziumscheiben | flache Scheibe aus kristallinem Silizium | xx
+| Siliziumscheiben | flache Scheibe aus kristallinem Silizium | Peaces
 | Transistoren | elektronisches Halbleiterbauelement, steuert niedrige elektrische Spannungen und Ströme | xx
 | Wafer | Siliziumscheiben auf denen die integrierten Schaltkreise, die Mikrochips, hergestellt werden | xx
 | Route | Fertigungsplan; enthält mehrere Flows | xx
