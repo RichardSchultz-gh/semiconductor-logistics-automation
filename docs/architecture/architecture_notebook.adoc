@@ -51,6 +51,10 @@ Da die Anwendung auf einem RaspberryPi betrieben wird, ist die Architektur darau
 * *SWFA-2:* Das System muss zeitgesteuerte Aktivitäten in Form eines Timers ermöglichen, da Statusabfragen der Lose und Maschinen ausgewertet werden müssen.
 * *SWFA-3:* Das System muss Eingaben des Anwenders und Statusupdates persistent speichern können.
 
+*Zuverlässigkeit*
+
+* *QAGZ-1:* Das System darf durch einen Netzwerkausfall nicht beschädigt werden.
+
 *Effizienz (Performance)*
 
 * *QAGE-1:* Das System soll eine stabile Nutzung bei mehreren gleichzeitigen Nutzern gewährleisten.
@@ -58,20 +62,18 @@ Da die Anwendung auf einem RaspberryPi betrieben wird, ist die Architektur darau
 
 *Wartbarkeit (Supportability)*
 
-* *QAGW-1:* Zur besseren Wartbarkeit und zum besseren Verständnis bei auftretenden Fehlern, muss das Entwickler Team eine umfangreiche Entwicklerdokumentation bereitstellen
 * *QAGW-2:* Das System muss kompatibel zu Chrome, Firefox, Edge und Safari sein.
 
 *Zusätzliche Anforderungen*
 
 * *Ressourceneinschränkungen:* Das System soll auf einem Raspberry Pi lauffähig sein, wodurch die Ressourcen des Systems begrenzt sind.
 
-// Anforderungen überarbeiten!! Nur die, die für die Architektur relevant sind!!
 
 == Entscheidungen, Nebenbedingungen und Begründungen
 //[List the decisions that have been made regarding architectural approaches and the constraints being placed on the way that the developers build the system. These will serve as guidelines for defining architecturally significant parts of the system. Justify each decision or constraint so that developers understand the importance of building the system according to the context created by those decisions and constraints. This may include a list of DOs and DON’Ts to guide the developers in building the system.]
 
 . Wir nutzen eine relationale Datenbank mit dem Datenbankmanagementsystem *PostgreSQL*, da die Nutzung von PostgreSQL uns vorgegeben wurde und dieses bekannt für seine Zuverlässigkeit und Skalierbarkeit ist.
-. Wir implementieren die Anwendung auf einem Raspberry Pi, da uns dieser vorgegeben wurde.
+. Wir implementieren die Anwendung auf einem *Raspberry Pi*, da uns dieser vorgegeben wurde.
 . Als Betriebssystem nutzen wir *Raspbian*, da dieses Betriebssystem für den Raspberry Pi optimiert ist und eine einfache Bedienung ermöglicht.
 . Wir nutzen *Python* als Programmiersprache für die Middleware, da uns diese vorgegeben wurde und diese eine einfache und schnelle Entwicklung ermöglicht.
 . Wir benutzen *Psycopg2* als Python-Bibliothek, da diese eine unkomplizierte Interaktion mit PostgreSQL ermöglicht und so eine gute Schnittstelle zur Nutzung der Datenbank herstellt.
@@ -93,7 +95,7 @@ https://www2.htw-dresden.de/~anke/openup/core.tech.common.extend_supp/guidances/
 - **Zweck:** Lesen und Schreiben von gespeicherten Daten.
 - **Eigenschaften:** Unterstützt die dauerhafte Speicherung von Daten.
 - **Funktion:** Verwendung eines relationalen DBMS (PostgreSQL) zur Datenpersistenz.
-- **Ausschnit Zugehöriger SWFA:** SWFA-3, QAGE-2
+- **Ausschnit Zugehöriger SWFA:** SWFA-3, QAGZ-1
 
 ### Sicherheit (Security)
 - **Zweck:** Schutz des Zugriffs auf Ressourcen oder Informationen.
@@ -105,13 +107,13 @@ https://www2.htw-dresden.de/~anke/openup/core.tech.common.extend_supp/guidances/
 - **Zweck:** Handhabung von ACID-Transaktionen.
 - **Eigenschaften:** Unterstützt die Integrität und Zuverlässigkeit von Datenbankoperationen.
 - **Funktion:** PostgreSQL bietet native Unterstützung für Transaktionsmanagement, um Konsistenz und Zuverlässigkeit der Daten zu gewährleisten.
-- **Ausschnit Zugehöriger SWFA:** SWFA-3, QAGE-1
+- **Ausschnit Zugehöriger SWFA:** SWFA-3, QAGE-1, QAGZ-1
 
 ### Mega-Daten (Mega-data)
 - **Zweck:** Unterstützung für die Verarbeitung sehr großer Datenmengen.
 - **Eigenschaften:** Skalierbare Datenverarbeitung und -speicherung.
 - **Funktion:** PostgreSQL und Python-Middleware für effiziente Handhabung und Verarbeitung großer Datensätze.
-- **Ausschnit Zugehöriger SWFA:** QAGE-1, QAGE-2
+- **Ausschnit Zugehöriger SWFA:** QAGE-1, QAGE-2, Ressourceneinschränkungen
 
 ### Terminierung (Scheduling)
 - **Zweck:** Ermöglicht die Planung und Ausführung von Aufgaben zu bestimmten Zeiten oder unter bestimmten Bedingungen.
@@ -123,13 +125,13 @@ https://www2.htw-dresden.de/~anke/openup/core.tech.common.extend_supp/guidances/
 - **Zweck:** Verschieben von Daten aus dem aktiven Speicher, wenn sie einen bestimmten Zustand erreicht haben.
 - **Eigenschaften:** Unterstützt Langzeitspeicherung und Entlastung des aktiven Speichers.
 - **Funktion:** Automatisiertes Verschieben alter oder selten genutzter Daten in Archivspeicher.
-- **Ausschnit Zugehöriger SWFA:** SWFA-3, QAGW-1
+- **Ausschnit Zugehöriger SWFA:** SWFA-3
 
 ### Fehlermanagement (Error Management)
 - **Zweck:** Erkennung, Weiterleitung und Berichterstattung von Fehlern.
 - **Eigenschaften:** Robuste Fehlerbehandlung und klare Benachrichtigungssysteme.
 - **Funktion:** Implementierung eines Systems, das Fehler effektiv erkennt und dem Benutzer verständliche Meldungen liefert.
-- **Ausschnit Zugehöriger SWFA:** QAGZ-1, QAGU-6, QAGW-1
+- **Ausschnit Zugehöriger SWFA:** QAGZ-1, QAGU-6
 
 ### Lokalisierung / Internationalisierung (Localization / Internationalization)
 - **Zweck:** Unterstützung mehrerer menschlicher Sprachen und Darstellung der vom Benutzer bevorzugten Sprache.
@@ -145,6 +147,7 @@ Diese Architekturmechanismen sind essentiell für die Entwicklung einer robusten
 *Typen:*
 Typen werden gebildet, um die Daten, die zur Laufzeit im Programm benötigt werden, zur
 Verfügung zu haben und zwar an unterschiedlichen Stellen im System.
+// aus Musterlösung
 
 * *Los*: enthält alle Informationen zum Los
 * *Tool*: enthält alle Informationen zu den Maschienen
@@ -160,6 +163,8 @@ Verfügung zu haben und zwar an unterschiedlichen Stellen im System.
 *Services:* 
 Services werden genutzt, um die Verarbeitung von Daten zu übernehmen. Dies geschieht
 optimalerweise für jeden Typen separat, um eine möglichst geringe Kopplung zu erhalten.
+// aus Musterlösung
+
 
 *Workflows:* 
 Workflows beschreiben den Arbeitsablauf des Programms und bilden die Reihenfolge
@@ -180,12 +185,13 @@ Die Architektur basiert auf einem mehrschichtigen Framework, das Folgendes umfas
 
 ### Benutzeroberflächenebene (Flask-GUI)
 - **Flask als Web-Framework:** Vereinfacht die Erstellung und Verwaltung von Webanwendungen.
-- **Schnittstellen und Routen:** Definieren den Zugang zur Middleware und ermöglichen die Benutzerinteraktion.
+- **User Interface: ** UI mittels HTML-Templates, CSS-Stylesheets und gegebenenfalls JavaScript-Code für die Interaktion mit dem Endbenutzer.
 
 ### Schnittstellen
 - **Datenbank-Middleware-Schnittstelle:** Sicherer Datenaustausch über Psycopg2.
-- **Middleware-GUI-Schnittstelle:** RESTful API-Endpunkte für die GUI-Kommunikation.
-- **Benutzeroberfläche-Endbenutzer-Schnittstelle:** UI mittels HTML-Templates, CSS-Stylesheets und gegebenenfalls JavaScript-Code für die Interaktion mit dem Endbenutzer.
+- **Middleware-GUI-Schnittstelle:** 
+** RESTful API-Endpunkte, die mit einer bestimmten HTTP-Methoden verbunden sind um entsprechende Middleware-Aktionen aufzurufen
+** Jinja2 als Template-Engine, mit welcher dynamische Inhalte auf HTML-Webseite abgebildet werden können 
 
 Diese Architektur fördert die langfristige Nutzbarkeit und Weiterentwicklung der Anwendung, selbst auf einem Raspberry Pi mit begrenzten Ressourcen.
 
