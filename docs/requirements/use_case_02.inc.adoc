@@ -11,16 +11,12 @@ Der Use Case beschreibt die Operation, die Lose auf den jeweils nächsten Fertig
 
 === Kurzbeschreibung der Akteure
 
-==== Mitarbeiter an der Maschine
-
-Möchte manuell Los auf nächsten Arbeitsschritt bewegen
-
 ==== Fertigungsleiter
 
-Möchte experimentell manuell Los in anderen Arbeitsschritt bewegen
+Möchte experimentell manuell Los auf nächsten Arbeitsschritt bewegen
 
 ==== Timer
-
+Startet den Use Case in einem vorberechneten Zeitintervall
 
 
 === Vorbedingungen
@@ -31,7 +27,7 @@ Möchte experimentell manuell Los in anderen Arbeitsschritt bewegen
 === Standardablauf (Basic Flow)
 //Der Standardablauf definiert die Schritte für den Erfolgsfall ("Happy Path")
 
-1. Der Use Case beginnt, wenn Mitarbeiter/Fertigungsleiter manuell auf Benutzeroberfläche Anweisung gibt, ein Los bewegen zu wollen
+1. Der Use Case beginnt, wenn Fertigungsleiter manuell auf Benutzeroberfläche Anweisung gibt, ein Los bewegen zu wollen
 2. Zustand von Los wird überprüft
 3. Wenn Los Zustand "OP_COMP" ist , dann wird Los auf nächste Operation und Zustand "WAIT" oder "FIN" gesetzt
 4. Der Use Case ist abgeschlossen.
@@ -54,7 +50,7 @@ Möchte experimentell manuell Los in anderen Arbeitsschritt bewegen
 //Nutzen Sie alternative Abläufe für Fehlerfälle, Ausnahmen und Erweiterungen zum Standardablauf
 ==== Alternativer Ablauf 1
 
-Mithilfe des Timers können automatisch Lose bewegt und kontinuirlich abgefragt werden. 
+Der Fertigungsleiter kann mithilfe des Timers automatisch Lose, in einem von ihm eingegebenen Zeitintervall, bewegen lassen.
 -> Der Use Case wird in Schritt 2 fortgesetzt.
 
 ==== Alternativer Ablauf 2
@@ -70,15 +66,6 @@ Wenn Abteilungsleiter im Schritt 3 sieht, dass das Los im Zustand "HOLD" ist, da
 // man kann die Lose nur manuell zwischen wartend und hold wechseln keine anderen Zustände
 
 ==== Alternativer Ablauf 3
-
-Wenn Mitarbeiter im Schritt 3 sieht, dass das Los im Zustand "HOLD" ist, dann kommt eine Fehlermeldung, dass es aktuell keine manuell zu bewegenden Lose gibt.
--> Der Use Case ist abgeschlossen.
-
-// macht so auch keinen Sinn
-// was sinn macht, ist einen Meldung es gibt gerade keine manuell zu bewegenden Lose 
-// überarbeiten und dann an Ringel schicken -> davor muss natürlich das Zustanddiagramm angepassst werden
-
-==== Alternativer Ablauf 4
 
 Wenn in Schritt 3 das Los den Zustand "WAIT" hat, fragt System ab ob nächste Maschine in "IDLE" ist. Wenn die Maschine "IDLE" ist wird das Los auf die Maschine und den Zustand "PROC" gesetzt.
 -> Der Use Case ist abgeschlossen.
