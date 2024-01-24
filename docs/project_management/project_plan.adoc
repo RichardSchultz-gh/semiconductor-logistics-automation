@@ -25,7 +25,8 @@ In diesem Projektplan werden dafür die Teammitglieder und Praktiken vorgestellt
 * Richard Schultz
 * Marlene Winter
 
-Enrico und Hoang studieren Wirtschaftsingieneurswesen im 5. Semester und begleiten das Projekt daher nur für ein Semester. Die restlichen Teammitglieder sind Wirtschaftsinformatiker (Yannik und Nico) und Informatiker (Nils, Richard, Paul und Marlene). 
+Enrico und Hoang studieren Wirtschaftsingieneurswesen im 5. Semester und begleiten das Projekt daher nur für ein Semester. Yannik und Nico studieren Wirtschaftsinformatik im 3. Semester. Aus dem Informatikstudiengang sind Nils, Richard, Paul und Marlene. 
+
 
 === Verantwortlichkeiten
 
@@ -47,17 +48,20 @@ Die Verantwortlichen sammeln zu Beginn des Projekts das nötige Wissen für ihre
 Die Rollen der Analysten, Architekten und Entwickler sind je doppelt besetzt. So teilen sich zum einen die Mitglieder die Arbeitslast, haben zusätzlich aber immer einen Ansprechpartner, der im Thema steht. So wird zudem ein personeller Ausfall abgedeckt.
 Das einzeln belegte Testing kann im Falle eines Ausfalls von den Entwicklern kurzweilig übernommen werden. 
 
-Die Projektleitung ist ebenfalls einzeln belegt. Eine Doppelspitze kann zwar erfolgreich sein, jedoch sehen wir es für unser Projekt als vorteilhafter an einen Projektleiter zu haben, der sich um die Organisation etc. kümmert und die Verantwortung trägt. Im Falle eines Ausfalls des Projektsleiters kann das Team die aktuelle Iteration anhand der aktuellen WorkItems selbstständig arbeiten. Die Projektleitung ist bemüht stehts im Vorfeld klar auszustellen, was in den folgenden Wochen zu tun ist. Bei einem längerfristigen Ausfall der Projektleitung übernimmt Paul die Aufgaben der Projektleitung. 
+Die Projektleitung ist ebenfalls einzeln belegt. Eine Doppelspitze kann zwar erfolgreich sein, jedoch sehen wir es für unser Projekt als vorteilhafter an einen Projektleiter zu haben, der sich um die Organisation kümmert und die Verantwortung trägt. Im Falle eines kurzweiligen Ausfalls des Projektsleiters kann das Team die aktuelle Iteration anhand der aktuellen WorkItems selbstständig arbeiten. Die Projektleitung ist bemüht stehts im Vorfeld klar auszustellen, was in den folgenden Wochen zu tun ist. Bei einem längerfristigen Ausfall der Projektleitung übernimmt Paul die Aufgaben der Projektleitung. 
 
 
 === Strukturen
 
-*Kommunikationswege:* Für die Aufgabenverwaltung wird GitHub genutzt, wo über Issues die Aufgaben verteilt werden. Akute Änderungen, Fragen oder Meetinginformationen werden zusätzlich über eine gemeinsame WhatsApp-Gruppe geklärt. Dadurch haben auch alle Mitglieder die Kontaktdaten der Anderen. In dieser Gruppe in neben den Mitglieder auch der Coach. 
+*Aufgabenverwaltung:* Für die Aufgabenverwaltung wird GitHub genutzt, wo über Issues die Aufgaben verteilt werden. Dafür erstellt der Projektleiter zu Beginn jeder Iteration die entsprechenden Issues und ergänzt diese sollten weitere Aufgaben aufkommen. Teammitglieder können zusätzlich eigende Issues erstellen, wenn sich Unteraufgaben ergeben. Wird ein Issue abgearbeitet, setzt das Mitglied den Status auf done. So kann die Projektleitung den Fortschritt sehen und überprüfen. Wurde das Issue erfolgreich bearbeitet, schließt die Projektleitung das Issue.
 
-*Meetingstruktur:* Es finden wöchentliche Teammeetings zum Austauschen und klären von allgemeinen Fragen und Aufgaben statt. Dazu kommen die Meetings mit dem Coach und pro Iteration ein Treffen mit dem Auftragsgeber. Alle Treffen werden mit Agenda vorbereitet. Während der internen Meetings führt Marlene die Mitschriften. Bei Treffen mit dem Auftragsgeber führen mehrere Teammitglieder Mitschriften. Dies dient der Tatsache, dass eine einzelne Person nicht alle Informationen aufnehmen und niederschreiben kann. Dadurch erhoffen wir uns keinen Informationsverlust zu haben. Die Nachbereitung der Meeting werden von den entsprechenden Anwesenden vorgenommen bevor die Erkenntnisse der Gruppe mitgeteilt werden.
 
-*Dokumente:* 
+*Kommunikationswege:* Alle Teammitglieder sind Teil einer WhatsApp-Gruppe. Dort werden akute Änderungen, Fragen oder Meetinginformationen geklärt. Dadurch haben auch alle Mitglieder die Kontaktdaten der Anderen. In der WhatsApp-Gruppe ist neben den Mitglieder auch der Coach.
 
+*Meetingstruktur:* Es finden wöchentliche Teammeetings zu festen Zeiten zum Austauschen und klären von allgemeinen Fragen und Aufgaben statt. Dazu kommen die Meetings mit dem Coach und pro Iteration min. ein Treffen mit dem Auftragsgeber. Alle Treffen werden mit Agenda vorbereitet. Während der internen Meetings führt Marlene die Mitschriften. Bei Treffen mit dem Auftragsgeber führen mehrere Teammitglieder Mitschriften. Dies dient der Tatsache, dass eine einzelne Person nicht alle Informationen aufnehmen und niederschreiben kann. Dadurch erhoffen wir uns einen geringen Informationsverlust zu haben. Die Nachbereitung der Meeting werden von den entsprechenden Anwesenden vorgenommen bevor die Erkenntnisse der Gruppe mitgeteilt werden.
+
+
+*Dokumente:* [...]
 
 
 == Praktiken und Bewertung
@@ -67,11 +71,13 @@ Die Projektleitung ist ebenfalls einzeln belegt. Eine Doppelspitze kann zwar erf
 
 Das Projekt erstreckt sich über einen Zeitraum von zwei Semestern. Begonnen wird der Projekt im Oktober 2023. Nach der ersten Zwischenabgabe im Januar 2024 wird das Projekt bis zum Juni 2024 weitergeführt.
 
-Die Umsetzung des Projekts folgt der iterativen Planung. Es wird für jede Iteration ein Iterationsplan mit Zielen und Aufgaben für diese aufgestellt. Zum Schluss jeder Iteration werden die Resultate und der Arbeitsstand bewertet. Daraus werden Schlüsse für die nächsten Iterationen gezogen. Während dieses Projektes ist eine Iteration immer zwei Wochen lang. 
+Die Umsetzung des Projekts folgt der *iterativen Planung*. Es wird für jede Iteration ein Iterationsplan mit Zielen und Aufgaben für diese aufgestellt. Zum Schluss jeder Iteration werden die Resultate und der Arbeitsstand bewertet. Daraus werden Schlüsse für die nächsten Iterationen gezogen. Während dieses Projektes ist eine Iteration immer zwei Wochen lang. 
 
-*Finalisierung von Dokumenten:* Bevor ein Dokument (, Diagramm oder Ähnliches) als Final gilt, wird es von mindestends dem Projektleiter gegen geschaut, um die Vollständigkeit und Qualität zu prüfen. Sollte der Projektleiter ein Dokument (etc.) erstellen, soll mindestend ein anderes Mitglied das Dokumente gegenlesen.
+*Finalisierung von Dokumenten:* Erarbeitete Dokumente, Diagramme oder ähnliches werden zunächst von den Verantwortlichen des Themas überprüft und ggf. korrekiert. Bevor ein Dokument o.ä. als Final gilt, wird es zusätzlich von mindestends dem Projektleiter gegen geschaut, um die Vollständigkeit und Qualität zu prüfen. Sollte der Projektleiter ein Dokument o.ä. erstellen, soll mindestend ein anderes Mitglied das Dokumente gegenlesen. 
 
 *Regeln für die Bewertung:* Durch das Melden der Arbeitsstände an den Projektleiter wird überprüft, ob eine Aufgabe erledigt wurde. Der Projektleiter schaut sich darauf in an, in welchem Umfang die Aufgabe erledigt wurde und in welcher Qualtität. Ein Ziel der Iteration kann erst erfolgreich erreicht sein, wenn es zum einen an sich erledig wurde und zum anderen keine anderen Mitglieder Anmerkungen oder Fragen zu der Thematik haben. [...]
+
+[...]
 
 == Meilensteine und Ziele
 //Define and describe the high-level objectives for the iterations and define milestones. For example, use the following table to lay out the schedule. If needed you may group the iterations into phases and use a separate table for each phase
@@ -134,23 +140,22 @@ Die Umsetzung des Projekts folgt der iterativen Planung. Es wird für jede Itera
 
 *kommende Iterationen*
 
-Im folgenden Semester wird das Development Hauptaspekt des Projektes werden. 
+Zwischen der 5. und 6. Iteration ist im Zeitraum vom 30.01. bis zum 09.03. die vorlesungsfreie Zeit. In dieser Zeit findet keine reguläre Arbeit am Projekt statt. Um die Ferien trotzdem sinnvoll zu nutzen, werden die Teammitglieder sich in dieser Zeit Python erlernen. In Eigenarbeit sollen sich alle Mitglieder die Grundlagen der Pythonprogrammierung aneignen und das Framework Flask kennenlernen. Da im folgenden Semester wird das Development Hauptaspekt des Projektes wird, werden alle Mitglieder am Development teilnehmen müssen, dafür werden Kenntnisse in Python gebraucht. Da SQL in den Modulen Datenbanksysteme 1 und Datenbanksysteme 2 behandelt wurde, können die Grundfähigkeiten in SQL vorausgesetzt werden. 
 
-Zu Beginn des Semesters werden die restlichen Use Cases beleuchtet. Da Hoang und Enrico als Analysten nicht mehr Teil des Teams sind werden, wird die Analyse von Paul und Marlene aufgefangen. Während dessen kann mit der Umsetzung der Use Cases UC01, UC02 und UC03 begonnen werden. 
+Zu Beginn des Semesters werden die Use Cases 4 bis 11 genauer beleuchtet. Da Hoang und Enrico als Analysten nicht mehr Teil des Teams sind werden, wird die Analyse von Paul und Marlene aufgefangen. Während dessen kann mit der Umsetzung der Use Cases UC01, UC02 und UC03 begonnen werden. 
 
-Dazu kommt die Realisierung der Wireframes in der GUI und danach die entsprechende Anbindung an die Datenbank durch die Middleware.
+Dazu kommt die Realisierung der Wireframes in der GUI und danach die entsprechende Anbindung an die Datenbank durch die Middleware. 
 
 Damit jeglicher Fortschritt auf Funktionalität getestet werden kann, wird das Testing beginnen. Dafür werden Test Cases entwickelt und entsprechend genutzt.
 
 Da sich die Aufgabenverteilung im Sommersemester verschieben, wird die Rollenverteilung entsprechen darauf reagieren. So werden z.B. alle Teammitglieder die Entwickler bei der Implemention unterstützen.
 
 
-
 == Deployment
 //Outline the strategy for deploying the software (and its updates) into the production environment.
 // Beschreibung des Bereitstellungswegs bzw. Übergabeform der Software in die Produktivumgebung (eigener Server, Appstore, Kundenserver, „USB-Stick“, Repo-Link, …)
 
-Dem Auftragsgeber wird zum Ende des Projekts der RaspberryPi übergeben. Auf diesem wird die PostgreSQL Datenbank inkl. Backup-Jobs liegen. (Der RaspberryPi wurde vom Auftragsgeber zur Verfügung gestellt. (Hier die Fak. Informatik.)) Zusätzlich wird des Link des GitHub Repositories, wo der Code für die GUI sowie Dokumentationen liegen wird, an den Auftragsgeber weitergegeben. 
+Dem Auftragsgeber wird zum Ende des Projekts der RaspberryPi übergeben. Auf diesem wird die PostgreSQL Datenbank inkl. Backup-Jobs liegen. (Der RaspberryPi wurde vom Auftragsgeber zur Verfügung gestellt. (Hier die Fak. Informatik.)) Zusätzlich wird das GitHub Repositories, wo der Code für die GUI sowie Dokumentationen liegen wird, an den Auftragsgeber weitergegeben. 
 
 == Erkenntnisse (Lessons learned)
 //List lessons learned from the retrospective, with special emphasis on actions to be taken to improve, for example: the development environment, the process, or team collaboration.
