@@ -170,8 +170,8 @@ include::use_case_05.inc.adoc[]
 <<<
 include::use_case_06.inc.adoc[]
 
-//<<<
-//include::use_case_07.inc.adoc[]
+<<<
+include::use_case_07.inc.adoc[]
 
 <<<
 include::use_case_08.inc.adoc[]
@@ -179,5 +179,8 @@ include::use_case_08.inc.adoc[]
 //<<<
 //include::use_case_09.inc.adoc[]
 
+<<<
+include::use_case_10.inc.adoc[]
+
 //<<<
-//include::use_case_10.inc.adoc[]
+//include::use_case_11.inc.adoc[]

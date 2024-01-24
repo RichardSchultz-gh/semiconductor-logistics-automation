@@ -7,8 +7,8 @@ LAYOUT_TOP_DOWN()
 
 title System Context diagram for Frau Holle
 
-Person(worker, "Fabrikarbeiter", "Arbeiter, der in der Halbleiterfabrik arbeitet und die Fertigungsprozesse einsehen kann.")
-Person(manager, "Abteilungsleiter", "Verantwortlich für die Überwachung der Produktionsabläufe.")
+Person(worker, "Mitarbeiter", "Arbeiter, der in der Halbleiterfabrik arbeitet und die Fertigungsprozesse einsehen kann.")
+Person(manager, "Fertigungsleiter", "Verantwortlich für die Überwachung der Produktionsabläufe.")
 System(frauHolle, "Frau Holle System", "Visualisiert und verwaltet die Fertigungsprozesse.")
 
 System_Ext(manufacturing, "Fertigung", "System zur Steuerung und Überwachung der Halbleiterproduktionslinie.")

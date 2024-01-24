@@ -4,8 +4,8 @@
 
 title Container diagram for Frau Holle System
 
-Person(worker, "Fabrikarbeiter", "Ein Benutzer, der in der Halbleiterfabrik arbeitet und die Fertigungsprozesse überwacht.")
-Person(manager, "Abteilungsleiter", "Verantwortlich für die Überwachung der Produktionsabläufe.")
+Person(worker, "Mitarbeiter", "Ein Benutzer, der in der Halbleiterfabrik arbeitet und die Fertigungsprozesse überwacht.")
+Person(manager, "Fertigungsleiter", "Verantwortlich für die Überwachung der Produktionsabläufe.")
 
 Boundary(frauHolleBoundary, "Frau Holle ") {
 

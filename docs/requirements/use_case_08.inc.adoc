@@ -20,7 +20,7 @@ Erstellt automatisch zu einem vorgegebenen Zeitintervall/-punkt Backups
 === Vorbedingungen
 //Vorbedingungen müssen erfüllt, damit der Use Case beginnen kann, z.B. Benutzer ist angemeldet, Warenkorb ist nicht leer...
 
-*Vorbedingung 1:* Abteilungsleiter ist angemeldet
+*Vorbedingung 1:* Fertigungsleiter ist angemeldet
 
 *Vorbedingung 2:* Zu speichernde Daten sind vorhanden
 
@@ -38,7 +38,7 @@ Erstellt automatisch zu einem vorgegebenen Zeitintervall/-punkt Backups
 
 ==== Alternativer Ablauf 1
 
-Wenn Abteilungsleiter im Schritt 2 des Standardablauf kein Zeitintervall/-punkt eingibt, dann einmalige Erstellung des Backups zur aktuellen Ausführung.
+Wenn Fertigungsleiter im Schritt 2 des Standardablauf kein Zeitintervall/-punkt eingibt, dann einmalige Erstellung des Backups zur aktuellen Ausführung.
 -> Der Use Case wird im Schritt 3 fortgesetzt.
 
 ==== Alternativer Ablauf 2

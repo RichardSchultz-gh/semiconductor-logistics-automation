@@ -55,7 +55,7 @@ Der Fertigungsleiter kann mithilfe des Timers automatisch Lose, in einem von ihm
 
 ==== Alternativer Ablauf 2
 
-Wenn Abteilungsleiter im Schritt 3 sieht, dass das Los im Zustand "HOLD" ist, dann kann er das Los überprüfen und entweder auf "OP_COMP" oder "SCRAP" setzen.
+Wenn Fertigungsleiter im Schritt 3 sieht, dass das Los im Zustand "HOLD" ist, dann kann er das Los überprüfen und entweder auf "OP_COMP" oder "SCRAP" setzen.
 -> Wenn Los in "OP_COMP" ist, wird der Use Case in Schritt 3 fortgesetzt. Bei "SCRAP" ist der Use Case abgeschlossen.
 
 // geht so nicht 

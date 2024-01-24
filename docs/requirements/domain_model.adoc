@@ -13,7 +13,7 @@ include::../_includes/default-attributes.inc.adoc[]
 ** Jedes Los bewegt sich auf einer Route. Das bedeutet, dass für jedes Los die aktuelle Route inklusive aktueller Operation festgehalten wird. Die nächste Route des Loses wird durch seine Produktzugehörigkeit bestimmt.
 
 * *Klasse: Nutzer* 
-** Der Nutzer kann mit dem gesamten Produktionssteuerungssystem interagieren und fast alle Klassen beeinflussen. Die genauen Attribute der Klassen "Abteilungsleiter" und "Mitarbeiter", die von der Klasse "Nutzer" erben, ergeben sich bei der Implementierung. 
+** Der Nutzer kann mit dem gesamten Produktionssteuerungssystem interagieren und fast alle Klassen beeinflussen. Die genauen Attribute der Klassen "Fertigungsleiter" und "Mitarbeiter", die von der Klasse "Nutzer" erben, ergeben sich bei der Implementierung. 
 
 * *Klasse: Operation* 
 ** Jede Operation enthält unter dem Attribut "Oper" eine Zahl vom Typ integer, z.B. 100, 200, 300 oder 400. Durch die Vergabe von numerischen Werten kann innerhalb der Operationen eine Reihenfolge hergestellt werden. 
