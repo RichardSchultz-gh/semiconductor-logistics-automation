@@ -17,11 +17,11 @@ Um die grundsätzliche Funktionsfähigkeit des vertikalen Protoypen sicherzustel
 |===
 | *Beschreibung* | Der Test Case 01 stellt sicher, dass Informationen aus der Datenbank über die Webanwendung angezeigt werden können.
 | *Vorbedingung* | 
-  - Raspberry Pi ist hochgefahren 
+  - Raspberry Pi ist hochgefahren.
   +
-  - Internetverbindung ist auf dem Raspberry Pi hergestellt
+  - Internetverbindung ist auf dem Raspberry Pi hergestellt.
   +
-  - Web-Anwedung ist in einem Browser geöffnet
+  - Web-Anwedung ist in einem Browser geöffnet.
 | *Testablauf* | 
  1. Der Button"Show Data" wird auf der Web-Anwendung gedrückt.
   +
@@ -35,13 +35,13 @@ image::ausgabe.jpg[]
 |===
 | *Beschreibung* | Der Test Case 02 stellt sicher, dass ein neuer Datensatz über die Webanwendung in die Datenbank eingefügt werden kann.
 | *Vorbedingung* | 
-  - Raspberry Pi ist hochgefahren 
+  - Raspberry Pi ist hochgefahren.
   +
-  - Internetverbindung ist auf dem Raspberry Pi hergestellt
+  - Internetverbindung ist auf dem Raspberry Pi hergestellt.
   +
-  - Web-Anwedung ist in einem Browser geöffnet
+  - Web-Anwedung ist in einem Browser geöffnet.
  +
-  - Konsole ist auf dem Raspberry Pi geöffnet
+  - Konsole ist auf dem Raspberry Pi geöffnet.
 | *Testablauf* | 
  1. In den Eingabefeldern der Webanwendung werden in den Feldern "Entity", "Class", "Note" und "State" Testdaten eingegeben.
   +
