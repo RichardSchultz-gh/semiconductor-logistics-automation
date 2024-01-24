@@ -26,10 +26,6 @@ Um die grundsätzliche Funktionsfähigkeit des vertikalen Protoypen sicherzustel
  1. Der Button"Show Data" wird auf der Web-Anwendung gedrückt.
   +
 2. Es wird kontrolliert, ob die Entitäten-Tabelle der Datenbank über die Web-Anwendung ausgegeben wird.
-  +
-  - Web-Anwedung ist in einem Browser geöffnet
- +
-  - Konsole ist auf dem Raspberry Pi geöffnet
 |===
 
 
