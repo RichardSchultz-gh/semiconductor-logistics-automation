@@ -31,7 +31,7 @@ Um die grundsätzliche Funktionsfähigkeit des vertikalen Protoypen sicherzustel
 
 === Test Case 02 - Einfügen von Daten
 |===
-| *Beschreibung* | Der Test Case 02 stellt sicher, dass ein neuer Datensatz über die Webanwendung in der Datenbank eingefügt wird. 
+| *Beschreibung* | Der Test Case 02 stellt sicher, dass ein neuer Datensatz über die Webanwendung in die Datenbank eingefügt werden kann.
 | *Vorbedingung* | 
   - Raspberry Pi ist hochgefahren 
   +
