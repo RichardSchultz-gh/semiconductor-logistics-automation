@@ -16,7 +16,7 @@ Um die grundsätzliche Funktionsfähigkeit des vertikalen Protoypen sicherzustel
 
 |===
 | *Beschreibung* | Der Test Case 01 stellt sicher, dass Informationen aus der Datenbank über die Webanwendung angezeigt werden können.
-| *Vorbedingung* | 
+| *Vorbedingungen* | 
   - Raspberry Pi ist hochgefahren.
   +
   - Internetverbindung ist auf dem Raspberry Pi hergestellt.
@@ -34,7 +34,7 @@ image::ausgabe.jpg[]
 === Test Case 02 - Einfügen von Daten
 |===
 | *Beschreibung* | Der Test Case 02 stellt sicher, dass ein neuer Datensatz über die Webanwendung in die Datenbank eingefügt werden kann.
-| *Vorbedingung* | 
+| *Vorbedingungen* | 
   - Raspberry Pi ist hochgefahren.
   +
   - Internetverbindung ist auf dem Raspberry Pi hergestellt.
