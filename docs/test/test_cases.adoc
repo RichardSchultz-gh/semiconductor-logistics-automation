@@ -1,14 +1,52 @@
-= Test Cases: {project-name}
+= Test Cases:  Modell eines automatisierten Fabrikbetriebes - Frau Holle
 Vorname Nachname <email@domain.org>; Vorname2 Nachname2 <email2@domain.org>; Vorname3 Nachname3 <email3@domain.org>
 {localdatetime}
 include::../_includes/default-attributes.inc.adoc[]
 // Platzhalter für weitere Dokumenten-Attribute
 
-
 == Allgemeine Informationen
 
 == Test Cases
 
-=== Test Case 01
+=== Test Case 01 - Daten anzeigen
 
-=== Test Case 02
+
+|===
+| *Beschreibung* | Der Test Case 01 stellt sicher, dass Informationen aus der Datenbank über die Webanwendung angezeigt werden können.
+| *Vorbedingung* | 
+  - Raspberry Pi ist hochgefahren 
+  +
+  - Internetverbindung ist auf dem Raspberry Pi hergestellt
+  +
+  - Web-Anwedung ist in einem Browser geöffnet
+| *Testablauf* | 
+ 1. Der Button"Show Data" wird auf der Web-Anwendung gedrückt.
+  +
+2. Es wird kontrolliert, ob die Entitäten-Tabelle der Datenbank über die Web-Anwendung ausgegeben wird.
+  +
+  - Web-Anwedung ist in einem Browser geöffnet
+ +
+  - Konsole ist auf dem Raspberry Pi geöffnet
+|===
+
+
+=== Test Case 02 - Einfügen von Daten
+|===
+| *Beschreibung* | Der Test Case 02 stellt sicher, dass ein neuer Datensatz über die Webanwendung in der Datenbank eingefügt wird. 
+| *Vorbedingung* | 
+  - Raspberry Pi ist hochgefahren 
+  +
+  - Internetverbindung ist auf dem Raspberry Pi hergestellt
+  +
+  - Web-Anwedung ist in einem Browser geöffnet
+ +
+  - Konsole ist auf dem Raspberry Pi geöffnet
+| *Testablauf* | 
+ 1. In den Eingabefeldern der Webanwendung werden in den Feldern "Entity", "Class", "Note" und "State" Testdaten eingegeben.
+  +
+2. Über die Tickbox wird das Feld "Enabled" ausgewählt.
+  +
+3. Die Testdaten werden über das Drücken des Buttons "Insert Data" in die Datenbank eingefügt
+ +
+4. Über einen SELECT-Befehl wird in der Konsole gerpüft, ob der Datensatz korrekt in der Datenbank eingepflegt worden ist.
+|===
