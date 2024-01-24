@@ -140,13 +140,11 @@ Die Umsetzung des Projekts folgt der *iterativen Planung*. Es wird für jede Ite
 
 *kommende Iterationen*
 
-Zwischen der 5. und 6. Iteration ist im Zeitraum vom 30.01. bis zum 09.03. die vorlesungsfreie Zeit. In dieser Zeit findet keine reguläre Arbeit am Projekt statt. Um die Ferien trotzdem sinnvoll zu nutzen, werden die Teammitglieder sich in dieser Zeit Python erlernen. In Eigenarbeit sollen sich alle Mitglieder die Grundlagen der Pythonprogrammierung aneignen und das Framework Flask kennenlernen. Da im folgenden Semester wird das Development Hauptaspekt des Projektes wird, werden alle Mitglieder am Development teilnehmen müssen, dafür werden Kenntnisse in Python gebraucht. Da SQL in den Modulen Datenbanksysteme 1 und Datenbanksysteme 2 behandelt wurde, können die Grundfähigkeiten in SQL vorausgesetzt werden. 
+Zwischen der 5. und 6. Iteration ist im Zeitraum vom 30.01. bis zum 09.03. die vorlesungsfreie Zeit. In dieser Zeit findet keine reguläre Arbeit am Projekt statt. Um die Ferien trotzdem sinnvoll zu nutzen, werden die Teammitglieder sich in dieser Zeit Python erlernen. In Eigenarbeit sollen sich alle Mitglieder die Grundlagen der Pythonprogrammierung aneignen und das Framework Flask sowie die HTML-Programmierung kennenlernen. Da im folgenden Semester wird das Development Hauptaspekt des Projektes wird, werden alle Mitglieder am Development teilnehmen müssen, dafür werden Kenntnisse in Python gebraucht. Da SQL in den Modulen Datenbanksysteme 1 und Datenbanksysteme 2 behandelt wurde, können die Grundfähigkeiten in SQL vorausgesetzt werden.
 
-Zu Beginn des Semesters werden die Use Cases 4 bis 11 genauer beleuchtet. Da Hoang und Enrico als Analysten nicht mehr Teil des Teams sind werden, wird die Analyse von Paul und Marlene aufgefangen. Während dessen kann mit der Umsetzung der Use Cases UC01, UC02 und UC03 begonnen werden. 
+Zu Beginn des Semesters werden die Use Cases 4 bis 11 genauer beleuchtet. Da Hoang und Enrico als Analysten nicht mehr Teil des Teams sind werden, wird die Analyse von Paul und Marlene aufgefangen. Während dessen kann mit der Umsetzung der Use Cases UC01, UC02 und UC03 begonnen werden. Dazu kommt die Realisierung der Wireframes in der GUI und danach die entsprechende Anbindung an die Datenbank durch die Middleware. 
 
-Dazu kommt die Realisierung der Wireframes in der GUI und danach die entsprechende Anbindung an die Datenbank durch die Middleware. 
-
-Damit jeglicher Fortschritt auf Funktionalität getestet werden kann, wird das Testing beginnen. Dafür werden Test Cases entwickelt und entsprechend genutzt.
+Damit jeglicher Fortschritt auf Funktionalität getestet werden kann, wird das Testing beginnen. Dafür sollen Test Cases entwickelt und entsprechend genutzt werden. 
 
 Da sich die Aufgabenverteilung im Sommersemester verschieben, wird die Rollenverteilung entsprechen darauf reagieren. So werden z.B. alle Teammitglieder die Entwickler bei der Implemention unterstützen.
 

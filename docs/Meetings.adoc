@@ -281,10 +281,15 @@ remote verbindung auf raspy wurde eingebunden  --> teilen
 ** Anpassung Domänmodell: Abteilungsleiter muss zu Fertigungsleiter werden
 * wer hat wo mal gegengelesen?
 * Was haben wir bis jetzt für Erkenntnisse am Projekt gezogen
-* Aufgabe für über die Ferien
-** Python 
-** Flask
 * Wie geht es weiter
+** Testing - paul, nico?, yannik?
+** Umsetzung usecases - funktionalität - nils, richard, nico?, yannik?
+** Umsetzung wireframes - marlene
+*** wer will in etwa was machen und damit auch vorbereitem
+* Aufgabe für über die Ferien
+** Python
+** Flask
+** html 
 * Alles bitte bis Freitag 12 Uhr fertigstellen, so kann Marlene korrektur lesen betreiben und zur größten Not noch kleinere Aufgaben verteilen
 
 
