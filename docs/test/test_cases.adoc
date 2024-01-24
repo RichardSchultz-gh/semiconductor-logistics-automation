@@ -7,7 +7,7 @@ include::docs/test/images/
 
 == Allgemeine Informationen
 
-Um die grundsätzliche Funktionsfähigkeit des vertikalen Protoypen sicherzustellen, wurden 2 Test Cases durchgeführt. 
+Um die grundsätzliche Funktionsfähigkeit des vertikalen Protoypen sicherzustellen wurden 2 Test Cases durchgeführt. 
 
 == Test Cases
 
