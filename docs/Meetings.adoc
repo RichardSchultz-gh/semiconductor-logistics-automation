@@ -275,12 +275,26 @@ remote verbindung auf raspy wurde eingebunden  --> teilen
 
 .Agenda:
 * Stand jeglicher Dokumente
+* props an Paul fürs alphabetische Sortieren des glossars
 * Architektur Notebook besprechen und Architekten sollen erklären, was sie sich gedacht haben
 ** Alle Architektur relevanten Anforderungen sollen einem Mechanismus zugeordnet werden (so gut es geht)
 * Issues
 * Was haben wir bis jetzt für Erkenntnisse am Projekt gezogen
 * Aufgabe für über die Ferien
 * Wie geht es weiter
+* Alles bitte bis Freitag 12 Uhr fertigstellen, so kann Marlene korrektur lesen betreiben und zur größten Not noch kleinere Aufgaben verteilen
+* Anpassung Domänmodell: Abteilungsleiter muss zu Fertigungsleiter werden
+
+Todo:
+* UC09, UC11
+* Testcases
+* Iterationplan
+* Projektplan
+* Beleg.adoc
+
+
+
+
 
 == Meetings mit Coach
 
