@@ -144,10 +144,7 @@ Diese Architekturmechanismen sind essentiell für die Entwicklung einer robusten
 == Wesentliche Abstraktionen
 //[List and briefly describe the key abstractions of the system. This should be a relatively short list of the critical concepts that define the system. The key abstractions will usually translate to the initial analysis classes and important patterns.]
 
-*Typen:*
-Typen werden gebildet, um die Daten, die zur Laufzeit im Programm benötigt werden, zur
-Verfügung zu haben und zwar an unterschiedlichen Stellen im System.
-// aus Musterlösung
+
 
 * *Los*: enthält alle Informationen zum Los
 * *Tool*: enthält alle Informationen zu den Maschienen
@@ -160,10 +157,6 @@ Verfügung zu haben und zwar an unterschiedlichen Stellen im System.
 * *Address*: enthält alle Adressinformationen
 * *Security*: enthält alle Informationen, die einem Nutzer das Anmelden ermöglichen
 
-*Services:* 
-Services werden genutzt, um die Verarbeitung von Daten zu übernehmen. Dies geschieht
-optimalerweise für jeden Typen separat, um eine möglichst geringe Kopplung zu erhalten.
-// aus Musterlösung
 
 
 *Workflows:* 
