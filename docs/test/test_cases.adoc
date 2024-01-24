@@ -27,7 +27,7 @@ Um die grundsätzliche Funktionsfähigkeit des vertikalen Protoypen sicherzustel
   +
 
 . Ausgabe der Entitäten-Tabelle
-image::docs/test/ausgabe.png
+image::ausgabe.png[]
 
 2. Es wird kontrolliert, ob die Entitäten-Tabelle der Datenbank über die Web-Anwendung ausgegeben wird.
 |===
@@ -55,7 +55,7 @@ image::docs/test/ausgabe.png
 |===
 
 . Eingabe der Testdaten 
-image::docs/test/eingabe.png
+image::eingabe.png[]
 
 . Verfizierung über Konsole
-image::docs/test/konsole.png
+image::konsole.png[]
