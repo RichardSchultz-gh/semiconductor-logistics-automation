@@ -275,22 +275,30 @@ remote verbindung auf raspy wurde eingebunden  --> teilen
 
 .Agenda:
 * Stand jeglicher Dokumente
-* props an Paul fürs alphabetische Sortieren des glossars
 * Architektur Notebook besprechen 
 * Issues
 ** Anpassung Domänmodell: Abteilungsleiter muss zu Fertigungsleiter werden
 * wer hat wo mal gegengelesen?
 * Was haben wir bis jetzt für Erkenntnisse am Projekt gezogen
+
+wichtig sind oft mit kunden reden -> assued vorbeugen -> bei allen dingen direkt mit kunden reden
+
+gute arbeitsverteilung -> issues sind gut,
+status bei issues bringt übersicht über Projektstand
+
+
+
 * Wie geht es weiter
-** Testing - paul, nico?, yannik?
-** Umsetzung usecases - funktionalität - nils, richard, nico?, yannik?
+** Testing - paul, yannik
+** Umsetzung usecases - funktionalität - nils, richard, nico, yannik
 ** Umsetzung wireframes - marlene
 *** wer will in etwa was machen und damit auch vorbereitem
 * Aufgabe für über die Ferien
-** Python
-** Flask
-** html 
-* Alles bitte bis Freitag 12 Uhr fertigstellen, so kann Marlene korrektur lesen betreiben und zur größten Not noch kleinere Aufgaben verteilen
+** Python 
+** Flask 
+** html, css
+
+
 
 
 Todo:
@@ -299,6 +307,7 @@ Todo:
 * Iterationplan
 * Projektplan
 * Beleg.adoc
+* Use Cases Diagramm anpassen
 
 
 
