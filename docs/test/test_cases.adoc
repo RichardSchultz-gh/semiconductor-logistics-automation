@@ -2,7 +2,7 @@
 Vorname Nachname <email@domain.org>; Vorname2 Nachname2 <email2@domain.org>; Vorname3 Nachname3 <email3@domain.org>
 {localdatetime}
 include::../_includes/default-attributes.inc.adoc[]
-include::docs/test/images/
+
 // Platzhalter für weitere Dokumenten-Attribute
 
 == Allgemeine Informationen
@@ -27,7 +27,7 @@ Um die grundsätzliche Funktionsfähigkeit des vertikalen Protoypen sicherzustel
   +
 
 . Ausgabe der Entitäten-Tabelle
-image::ausgabe.jpg[]
+images/image::ausgabe.jpg[]
 
 2. Es wird kontrolliert, ob die Entitäten-Tabelle der Datenbank über die Web-Anwendung ausgegeben wird.
 |===
@@ -55,7 +55,7 @@ image::ausgabe.jpg[]
 |===
 
 . Eingabe der Testdaten 
-image::eingabe.jpg[]
+images/image::eingabe.jpg[]
 
 . Verfizierung über Konsole
-image::konsole.jpg[]
+images/image::konsole.jpg[]
