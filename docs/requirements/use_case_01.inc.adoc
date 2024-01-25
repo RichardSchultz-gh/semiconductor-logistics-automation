@@ -69,11 +69,14 @@ Startet den Use Case in einem vorberechneten Zeitintervall
 ==== Alternativer Ablauf 1
 
 Wenn Mitarbeiter/Fertigungsleiter im Schritt 1 des Standardablauf eine negative Waferanzahl oder ein in der Vergangenheit liegendes Datum eingibt, dann bekommt Akteur eine Fehlermeldung.
+
 -> Der Use Case wird im Schritt 1 fortgesetzt.
 
 ==== Alternativer Ablauf 2
 
 Wenn Mitarbeiter/Fertigungsleiter im Schritt 2 KEINE Zielkalenderwoche eingibt, dann werden der eingegebene Anzahl an Losen eindeutige Nummerierung gegeben und direkt in Status "WAIT" gesetzt. 
+Der Nutzer bekommt im Fenster eine Rückmeldung vom System angezeigt, wie viele Lose gestartet wurden
+
 -> Der Use Case ist abgeschlossen
 
 === Wesentliche Szenarios
