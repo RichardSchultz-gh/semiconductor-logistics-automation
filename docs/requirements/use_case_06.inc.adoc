@@ -17,6 +17,8 @@ Möchte Datenmengen exportieren
 
 *Vorbedingung 2:* Datenmengen sind vorhanden
 
+*Vorbedingung 3:* Akteur besitzt erforderliche Rechte
+
 
 
 === Standardablauf (Basic Flow)
