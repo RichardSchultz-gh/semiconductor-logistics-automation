@@ -17,6 +17,8 @@ Möchte Datenmengen exportieren
 
 *Vorbedingung 2:* Datenmengen sind vorhanden
 
+*Vorbedingung 3:* Akteur besitzt erforderliche Rechte
+
 
 
 === Standardablauf (Basic Flow)
@@ -25,10 +27,10 @@ Möchte Datenmengen exportieren
 1. Der Use Case beginnt, wenn auf der grafischen Oberfläche der Button "Daten exportieren" angeklickt wird
 2. Akteur gelangt in neues Fenster, in dem er nach Daten filtern kann (Tool ID, Lot ID, Status usw.)
 3. System zeigt alle gefilterten Daten an
-4. Akteur bestätigt angezeigte Daten
-5. System erstellt Dokument im CSV-Format
-6. Dokument wird im Laufwerk (gewünschter Ort) gespeichert
-7. Der Use Case ist abgeschlossen.
+4. Akteur bestätigt angezeigte Daten mittels button
+5. Dokument wird im Laufwerk (gewünschter Ort) gespeichert
+6. System erstellt Dokument im CSV-Format
+7. Der Use Case ist abgeschlossen
 
 //=== Alternative Abläufe
 //Nutzen Sie alternative Abläufe für Fehlerfälle, Ausnahmen und Erweiterungen zum Standardablauf

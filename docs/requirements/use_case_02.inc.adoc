@@ -23,6 +23,8 @@ Startet den Use Case in einem vorberechneten Zeitintervall
 //Vorbedingungen müssen erfüllt, damit der Use Case beginnen kann, z.B. Benutzer ist angemeldet, Warenkorb ist nicht leer...
 
 *Vorbedingung 1:* Los ist in Zustand "OP_COMP".
+
+*Vorbedingung 2:* Akteur besitzt erforderliche Rechte
  
 === Standardablauf (Basic Flow)
 //Der Standardablauf definiert die Schritte für den Erfolgsfall ("Happy Path")

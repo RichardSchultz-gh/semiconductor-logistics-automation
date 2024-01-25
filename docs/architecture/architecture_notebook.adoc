@@ -101,7 +101,7 @@ https://www2.htw-dresden.de/~anke/openup/core.tech.common.extend_supp/guidances/
 - **Zweck:** Schutz des Zugriffs auf Ressourcen oder Informationen.
 - **Eigenschaften:** Beinhaltet Authentifizierung, Autorisierung und Datenverschlüsselung.
 - **Funktion:** Gewährleistung der Datensicherheit und des beschränkten Zugriffs basierend auf Benutzerrollen.
-- **Ausschnit Zugehöriger SWFA:** SWFA-1, QAGZ-2
+- **Ausschnit Zugehöriger SWFA:** SWFA-1
 
 ### Transaktionsmanagement (Transaction Management)
 - **Zweck:** Handhabung von ACID-Transaktionen.
@@ -113,7 +113,7 @@ https://www2.htw-dresden.de/~anke/openup/core.tech.common.extend_supp/guidances/
 - **Zweck:** Unterstützung für die Verarbeitung sehr großer Datenmengen.
 - **Eigenschaften:** Skalierbare Datenverarbeitung und -speicherung.
 - **Funktion:** PostgreSQL und Python-Middleware für effiziente Handhabung und Verarbeitung großer Datensätze.
-- **Ausschnit Zugehöriger SWFA:** QAGE-1, QAGE-2, Ressourceneinschränkungen
+- **Ausschnit Zugehöriger SWFA:** QAGE-2, Ressourceneinschränkungen
 
 ### Terminierung (Scheduling)
 - **Zweck:** Ermöglicht die Planung und Ausführung von Aufgaben zu bestimmten Zeiten oder unter bestimmten Bedingungen.
@@ -137,7 +137,7 @@ https://www2.htw-dresden.de/~anke/openup/core.tech.common.extend_supp/guidances/
 - **Zweck:** Unterstützung mehrerer menschlicher Sprachen und Darstellung der vom Benutzer bevorzugten Sprache.
 - **Eigenschaften:** Flexibilität in der Sprachwahl, einfache Anpassung an verschiedene Sprachen.
 - **Funktion:** Implementierung eines Systems, das Benutzeroberflächen und Meldungen in verschiedenen Sprachen unterstützt.
-- **ZAusschnit Zugehöriger SWFA:** QAGU-4, QAGW-2
+- **Ausschnit Zugehöriger SWFA:** QAGU-4, QAGW-2
 
 Diese Architekturmechanismen sind essentiell für die Entwicklung einer robusten, sicheren und skalierbaren Datenbankanwendung, die auf einem Raspberry Pi mit Raspbian Betriebssystem betrieben wird.
 
