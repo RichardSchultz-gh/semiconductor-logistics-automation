@@ -101,7 +101,7 @@ https://www2.htw-dresden.de/~anke/openup/core.tech.common.extend_supp/guidances/
 - **Zweck:** Schutz des Zugriffs auf Ressourcen oder Informationen.
 - **Eigenschaften:** Beinhaltet Authentifizierung, Autorisierung und Datenverschlüsselung.
 - **Funktion:** Gewährleistung der Datensicherheit und des beschränkten Zugriffs basierend auf Benutzerrollen.
-- **Ausschnit Zugehöriger SWFA:** SWFA-1, QAGZ-2
+- **Ausschnit Zugehöriger SWFA:** SWFA-1
 
 ### Transaktionsmanagement (Transaction Management)
 - **Zweck:** Handhabung von ACID-Transaktionen.
@@ -113,7 +113,7 @@ https://www2.htw-dresden.de/~anke/openup/core.tech.common.extend_supp/guidances/
 - **Zweck:** Unterstützung für die Verarbeitung sehr großer Datenmengen.
 - **Eigenschaften:** Skalierbare Datenverarbeitung und -speicherung.
 - **Funktion:** PostgreSQL und Python-Middleware für effiziente Handhabung und Verarbeitung großer Datensätze.
-- **Ausschnit Zugehöriger SWFA:** QAGE-1, QAGE-2, Ressourceneinschränkungen
+- **Ausschnit Zugehöriger SWFA:** QAGE-2, Ressourceneinschränkungen
 
 ### Terminierung (Scheduling)
 - **Zweck:** Ermöglicht die Planung und Ausführung von Aufgaben zu bestimmten Zeiten oder unter bestimmten Bedingungen.
