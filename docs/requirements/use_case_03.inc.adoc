@@ -22,6 +22,8 @@ Startet den Use Case auotmatisch in einem vordefinierten Zeitintervall.
 
 *Vorbedingung 1:* Lose wurden gestartet und befinden sich im Fertigungsprozess 
 
+*Vorbedingung 2:* Akteur besitzt erforderliche Rechte
+
 
 === Standardablauf (basic flow)
 
