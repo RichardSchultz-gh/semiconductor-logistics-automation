@@ -1,0 +1,42 @@
+== Use-Case: UC09 Report erstellen
+
+=== Kurzbeschreibung
+
+Der Use Case ermöglicht das manuelle Erstellen eines Reports
+
+=== Kurzbeschreibung der Akteure
+
+==== Fertigungsleiter
+
+Möchte einen Report erstellen
+
+==== Mitarbeiter
+
+Möchte einen Report erstellen
+
+=== Vorbedingungen
+
+*Vorbedingung 1:* Akteur ist angemeldet
+
+*Vorbedingung 2:* Daten für Report sind vorhanden
+
+
+=== Standardablauf (basic flow)
+
+1. Der Use Case beginnt, wenn auf der grafischen Benutzeroberfläche der button "Report erstellen" gedrückt wird
+
+2. System zeigt PDF Datei an, welche Report enthält
+
+3. Nutzer kann Dateinamen und Speicherort angeben und Report speichern
+
+4. Der Use Case ist abgeschlossen
+
+=== Alternative Abläufe
+//Nutzen Sie alternative Abläufe für Fehlerfälle, Ausnahmen und Erweiterungen zum Standardablauf
+
+
+==== Alternativer Ablauf 1
+
+Wenn keine Daten für Report vorhanden sind, dann gibt System Fehlermeldung aus 
+
+-> Der Use Case ist abgeschlossen

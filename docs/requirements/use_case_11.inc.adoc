@@ -1,0 +1,35 @@
+//Nutzen Sie dieses Template als Grundlage für die Spezifikation *einzelner* Use-Cases. Diese lassen sich dann per Include in das Use-Case Model Dokument einbinden (siehe Beispiel dort).
+ifndef::main-document[include::../_includes/default-attributes.inc.adoc[]]
+
+== Use-Case: UC11 Daten visualisieren
+
+=== Kurzbeschreibung
+
+Der Use Case ermöglicht das visualisieren von Daten
+
+=== Kurzbeschreibung der Akteure
+
+==== Mitarbeiter
+
+Möchte Daten visualisieren
+
+==== Fertigungsleiter
+
+Möchte Daten visualisieren
+
+=== Vorbedingungen
+
+*Vorbedingung 1:* Nutzer ist angemeldet
+
+*Vorbedingung 2:* zu visualisierende Daten sind vorhanden
+
+
+=== Standardablauf (basic flow)
+
+1. Der Use Case beginnt, wenn auf der grafischen Benutzeroberfläche der button "Datenvisualisierung" gedrückt wird
+
+2. Akteur gelangt in neues Fenster, wo tabellarisch Daten angezeigt werden
+
+3. Akteur kann nach gewünschten Daten filtern
+
+4. Der Use Case ist abgeschlossen
