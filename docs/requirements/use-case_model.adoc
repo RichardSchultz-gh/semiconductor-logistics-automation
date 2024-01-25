@@ -51,6 +51,10 @@ include::../_includes/default-attributes.inc.adoc[]
 // Liste aller identifizierten Use Cases (priorisiert-> wir später gemacht)
 //erste Ideen von Marlene vor dem 2. Meeting mit Ringel
 
+** Information:
+Detailreich wurden jediglich UC01 bis UC03 ausgearbeitet. Alle anderen Use Cases erfahren weitere Vertiefungen in SE2
+
+
 * *UC01*: Los starten
 * *UC02*: Los bewegen
 * *UC03*: Los bearbeiten
