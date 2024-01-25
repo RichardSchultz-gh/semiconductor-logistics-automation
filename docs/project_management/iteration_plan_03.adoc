@@ -33,14 +33,9 @@ include::../_includes/default-attributes.inc.adoc[]
 
 Die in dieser Iteration geplanten Aufgaben sind in der Work Items List dargestellt.
 
-Stand: 08.12.2023
-
 image::Iteration3_issues.png[]
 
 include::github_names.adoc[]
-
-
-
 
 
 == Probleme 
@@ -50,7 +45,7 @@ include::github_names.adoc[]
 |===
 | Problem | Status | Notizen
 
-| Wie sollen die Use Cases aussehen? | solved | Es war unklar wie die Use Cases bzw. die Funktionen dahinter funktionieren sollen wegen fehlender Infomationen.
+| Wie sollen die Use Cases aussehen? | solved | Es war unklar während der Bearbeitung wie die Use Cases bzw. die Funktionen dahinter funktionieren sollen wegen fehlender Infomationen.
 |===
 
 
@@ -60,9 +55,9 @@ include::github_names.adoc[]
 
 
 . In Betriebnahme des RaspberryPi
-* Wenn das Betriebssystem und die Datenbank auf dem Raspy laufen  wurde das Ziel erfüllt
+* Wenn das Betriebssystem und die Datenbank auf dem Raspy laufen wurde das Ziel erfüllt
 . UseCases mit Diagramm aufstellen 
-* Sind alle Use Cases und der Use Cases Diagramm aufgestellt, wurde das Ziel erreicht
+* Sind die wichtigen Use Cases und der Use Cases Diagramm aufgestellt, wurde das Ziel erreicht
 * Werden die Use Cases und das Diagramm vom Auftragsgeber positiv bewertet und angekommen, kann das Ziel als erfolgreich abgeschlossen angesehen werden
 . Vision finalisieren 
 * Das Ziel kann als erledigt und positiv bewertet werden, wenn die Vision ist vollständig und Auftragsgeber nimmt die Vision so ab 
@@ -71,44 +66,31 @@ include::github_names.adoc[]
 
 
 == Assessment
-//In diesem Abschnitt werden die Ergebnisse und Maßnahmen der Bewertung erfasst und kommuniziert. Die Bewertung wird üblicherweise am Ende jeder Iteration durchgeführt. Wenn Sie diese Bewertungen nicht machen, ist das Team möglicherweise nicht in der Lage, die eigene Arbeitsweise ("Way of Working") zu verbessern.
 
-[%header, cols="1,3"]
-|===
-| Assessment Ziel | Das kann die gesamte Iteration oder eine spezifische Komponente sein
+In dieser Iteration konnten die Ziele weitesgehend erfolgreich erledigt werden. Es konnte ein großer Fortschritt im Projekt, vor allem der Analyse, erzielt werden. Im Folgenden werden die Ziele, hinsichtlich ihrer Erfüllung, bewertet.
 
-| Assessment Datum | ...
-| Teilnehmer | ...
-| Projektstatus	| Zum Beispiel ausgedrückt als rot, gelb oder grün.
-|===
+*Inbetriebnahme des RaspberryPi*
 
-* Beurteilung im Vergleich zu den Zielen
-//Dokumentieren Sie, ob die angestrebten Ziele des Iterationsplans erreicht wurden.
+Der RaspberryPi wurde erfolgreich in Betrieb genommen und die Datenbank wurde auf diesem erstellt. Bisher hat, auf Grund von einem krankheitsbedingten Ausfall, kein Testing der Datenbank stattgefunden.
 
-*Geplante vs. erledigte Aufgaben inkl. Beurteilung im Vergleich zu den Bewertungskriterien*
-//Zusammenfassung, ob alle für die Iteration geplanten Aufgaben bearbeitet wurden und welche Aufgaben verschoben oder hinzugefügt wurden.
+*Erstellung der Use Cases inkl. Diagramm*
 
-. Die Inbetriebnahe des RasberryPis ist gut und sogar schneller als geplant verlaufen.
+Die Use Cases wurden im guten Maße aufgestellt und die wichtisten drei Use Cases erarbeitet. Durch das Meeting mit Herrn Ringel zum Ende der Iteration sind kleinere Anmerkungen zu den Use Cases aufgekommen, die in der nächsten Iteration überarbeitet werden. Die Aufgabe dieser Iteration wurde trotzdem mit Erfolg erledigt, jedoch noch nicht abgeschlossen. Die Analysten haben sich intensiv mit den Use Cases auseinander gesetzt und der Auftragsgeber war im großen Ganzen zufrienden.
 
-. Erstellen der Use Cases inkl. Diagramm: Die Use Cases wurden im guten Maße erstellt. Durch das Meeting mit Herrn Ringel zum Ende der Iteration sind kleinere Anmerkungen zu den Use Cases aufgekommen, die in der nächsten Iteration überarbeitet werden. Das Issue dieser Iteration wurde trotzdem mit Erfolg erledigt, jedoch noch nicht abgeschlossen. Die Analysten haben sich intensiv mit den Use Cases auseinander gesetzt und der Auftragsgeber war im großen Ganzen zufrienden.
+*Erster Entwurf der Wireframes*
 
-. Der erste Entwurf der Wireframes kam als Inspiration für den Auftragsgeber gut an. Bisher hat der Auftragsgeber selber keinen genauen Plan über das aussehen dieser. Die Entwürfe wurden trotzdem mit Interesse entgegen genommen. 
+Der erste Entwurf der Wireframes kam als Inspiration für den Auftragsgeber gut an. Bisher hat der Auftragsgeber selber keinen genaue Vorstellung über das aussehen dieser. Die Entwürfe wurden trotzdem mit Interesse entgegen genommen. Es wird ein Treffen zwischen Herrn Ringel und den Analysten geben wo, aufbauend auf den aktuellen Wireframes, das Design der Webanwendung besprochen wird. In der nächsten Iteration werden daraufhin die Wireframes erstellt werden.
 
-. Die Vision wurde finalisiert. Im Gespräch mit dem Auftragsgeber wurde diesem deutlich, dass das Team den zentralen Inhalt der Vision verinnertlich hat. Die Vision als Ganzes wurde sich nicht angeschaut. Trotzdem kann das Issue als positiv erledigt bewertet werden.
+*Finalisierung der Vision*
 
+Die Vision wurde finalisiert. Im Gespräch mit dem Auftragsgeber wurde diesem deutlich, dass das Team den zentralen Inhalt der Vision verinnertlich hat. Die Vision als Ganzes wurde sich nicht angeschaut. Trotzdem kann das Ziel als positiv erledigt bewertet werden. 
 
-. Das Einlesen in das Archtitekur Notebook hat auch nicht stattgefunden. Der Grund scheint zu sein, dass die Aufgabe zu unspezifisch war. Eine solche Aufgabe erfordert eigen Initiative sich mit der Thematik auseinander setzen zu wollen. In der nächsten Iteration muss bereits das Architektur Notebook erstellt werden, weshald das Issue an sich nicht übernommen wird. Issue wird die nächste Iteration ist das Erstellen des Architektur Notebook. Dies wird nun zeitaufwendiger als geplant, da keine Einarbeitung vorher stattfand.
+*Einlesen in das Architektur Notebook*
 
-. Das Testing konnte nicht ausgeführt werden, z.T. lag dies an krankheitsbedingten Ausfall eines Mitglieds -> dieses Issue wird in die nächst Iteration übernommen und die Aufgabenstellung klarer gestellt
+Das Einlesen in das Architektur Notebook hat nicht stattgefunden. Der Grund scheint zu sein, dass die Aufgabe zu unspezifisch war. Eine solche Aufgabe erfordert Eigeninitiative sich mit der Thematik auseinander setzen zu wollen. In der nächsten Iteration muss bereits das Architektur Notebook erstellt werden, weshald das Issue an sich nicht übernommen wird. Issue wird die nächste Iteration ist das Erstellen des Architektur Notebook. Dies wird nun zeitaufwendiger als geplant, da keine Einarbeitung vorher stattfand.
 
-//*Beurteilung im Vergleich zu den Bewertungskriterien*
-//Document whether you met the evaluation criteria as specified in the Iteration Plan.
-//Geben Sie an, ob Sie die o.g. Bewertungskriterien erfüllt haben. Das kann z.B. folgende Informationen enthalten: “Demo for Department X was well-received, with some concerns raised around usability,” or “495 test cases were automated with a 98% pass rate. 9 test cases were deferred because the corresponding Work Items were postponed.”
-
- 
 
 *Andere Belange und Abweichungen*
-//Führen Sie weitere Themen auf, für die eine Bewertung durchgeführt wurde. Beispiele sind Finanzen, Zeitabweichungen oder Feedback von Stakeholdern, die nicht bereits an anderer Stelle dokumentiert wurden.
 
 . Klärung von Unklarheiten:
 
@@ -118,17 +100,19 @@ Beim Erstellen der UseCases fiehl den Analysten auf, dass sie noch einige essent
  
 -> es konnten alle Fragen geklärt werden. 
 
-Daraus holen wir die Erkenntnis, dass man bei Fragen, vor allem den großen, direkt sich mit dem Auftragsgeber zusammensetzen muss, um diese zu klären. Wir konnten es verhindern, dass unsere Analysen die Iteration im Dunkeln tappen und erst zum Ende der Iteration zum geplanten Termin mit Ringel ihre Fragen klären konnten. 
+Daraus holen wir die Erkenntnis, dass man bei Fragen direkt sich mit dem Auftragsgeber zusammensetzen muss, um diese zu klären. Da solche Fragen unerwartet aufkommen, muss das Team spontan darauf reagieren und ein Meeting mit dem Auftragsgeber einleiten. Auf Grund der Tatsache, dass Herr Ringel ein Mitarbeiter der Hochschule ist, ist eine Terminfindung vergleichsweise einfach. Bei einem externen Auftragsgeber könnten durch Schwierigkeiten bei der Terminfindung und der räumlichen Distanz zwischen Team und Auftragsgeber Telefonate im Falle von spontanen, akuten Fragen eine Lösung darstellen.
+
+Wir konnten es verhindern, dass unsere Analysen die Iteration in ihrer Arbeit gehempt sind und erst zum Ende der Iteration zum geplanten Termin mit Ringel ihre Fragen klären konnten. 
 
 . Zusammenarbeit:
 
-Es fällt auf, dass Enrico und Hoang als Duo gut und viel zusammenarbeiten. Paul, als dritter im Bunde der Analysten, arbeitet zwar eher alleine, aber die Kommunikation zwischen den drein scheint zu funktionieren und die Endrodukte sind gut.
+Es fällt auf, dass Enrico und Hoang als Duo gut und viel zusammenarbeiten. Paul, als Dritter im Bunde der Analysten, arbeitet zwar eher alleine, aber die Kommunikation zwischen den Analysten funktioniert gut und die Endrodukte sind qualitativ zufriedenstellend.
 
-Nils und Richard als Entwickler arbeiten auch zusammen. Da die Entwicklung erst anfängt, lassen sich noch keine genaueren Aussagen treffen, aber ich bin positiv gestimmt.
+Nils und Richard als Entwickler arbeiten ebenfalls zusammen. Da die Entwicklung erst anfängt, lassen sich noch keine genaueren Aussagen treffen, aber bisherige Beobachtungen sind positiv diesbezüglich.
 
 Die Architekten scheinen bisher noch nicht als Team zu arbeiten. Aufgefallen ist dies, da die beiden zum einen seperate Klassendiagramme gemacht haben. Es schien nicht so als hätte man sich zusammen gesetzt und zusammen die Dinge erarbeitet. Durch die fehlende Zusammenarbeit hat auch die Erfüllung der Issues diese Iteration gelitten. Die Projektleitung wird daher zukünftig dieses Duo genauer beobachten und klar vermitteln, dass eine Zusammenarbeit notwendig ist. 
 
--> Lösung: Allen verdeutlichen das sich die Teilteams vor dem Meeting im gesamten Team absprechen müssen. Das Teammeeting ist nicht dafür da, die bessere Version von mehreren rauszusuchen
+-> Lösung: Allen verdeutlichen das sich die Teilteams vor dem Meeting im gesamten Team absprechen müssen. Das Teammeeting ist nicht dafür da, die bessere Version von mehreren rauszusuchen.
 
 == Alphas
 
