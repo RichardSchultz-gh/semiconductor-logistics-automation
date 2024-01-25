@@ -34,6 +34,9 @@ Die in dieser Iteration geplanten Aufgaben sind in der Work Items List dargestel
 
 image::Iteration4_issues.png[]
 
+include::github_names.adoc[]
+
+
 
 == Bewertungskriterien
 //Eine kurze Beschreibung, wie Erfüllung die o.g. Ziele bewertet werden sollen.
@@ -42,14 +45,15 @@ image::Iteration4_issues.png[]
 * Anforderungen sollen erfasst und Qualitativ beschrieben sein
 . Fertigstellung aktuelle Analyse Dokumente
 * darunter fallen Use Cases, Wireframes, Glossar
-* Die Dokumente sollen fertiggestellt und Qualitativ hoch sein
+* Die Dokumente sollen fertiggestellt und Qualitativ sein
 * Der Auftragsgeber nimmt diese ab
 . Start development Prototyp
 * Es sollen die Grundlagen für den Prototypen geschaffen sein
-* 
+** es gibt Tabellen mit Daten
+** es gibt es GUI
+** GUI ist an die Datenbank angebunden
 . Architekturentwurf für Middleware
 * Architekturnotebook ist entworfen und vollständig
-* Middleware ist ...
 
 
 == Assessment
