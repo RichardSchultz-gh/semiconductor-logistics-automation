@@ -14,11 +14,11 @@ Der Use Case beschreibt das Anzeigen von Stammdaten, die Grundinformationen übe
 
 ==== Mitarbeiter
 
-Möchte manuell sich die Stammdaten anzeigen lassen.
+Möchte sich manuell ausgewählte Stammdaten anzeigen lassen.
 
 ==== Fertigungsleiter
 
-Möchte manuell sich die Stammdaten anzeigen lassen.
+Möchte sich manuell ausgewählte Stammdaten anzeigen lassen.
 
 
 === Vorbedingungen
@@ -31,26 +31,27 @@ Möchte manuell sich die Stammdaten anzeigen lassen.
 //Der Standardablauf definiert die Schritte für den Erfolgsfall ("Happy Path")
 
 1. Der Use Case beginnt, wenn auf der grafischen Oberfläche der Button "Stammdaten" ausgewählt wird.
-2. Stammdaten des Produktes, Kunden, Personal und Maschine werden in neuem Fenster angezeigt.
+3. Nutzer gelangt in Fenster, wo er unter diversen Angaben (Produktes, Kunden, Personal und Maschine...) nach Stammdaten filtern kann.
+2. Die gewünschten Stammdaten werden dem Nutzer im selben Fenster tabellarisch angezeigt.
 3. Der Use Case ist abgeschlossen.
 
-=== Alternative Abläufe
+//=== Alternative Abläufe
 //Nutzen Sie alternative Abläufe für Fehlerfälle, Ausnahmen und Erweiterungen zum Standardablauf
 
 
-==== Alternativer Ablauf 1
+//==== Alternativer Ablauf 1
 
 
 
-=== Wesentliche Szenarios
+//=== Wesentliche Szenarios
 //Szenarios sind konkrete Instanzen eines Use Case, d.h. mit einem konkreten Akteur und einem konkreten Durchlauf der o.g. Flows. Szenarios können als Vorstufe für die Entwicklung von Flows und/oder zu deren Validierung verwendet werden.
 
-==== Szenario 1
+//==== Szenario 1
 
 
-=== Nachbedingungen
+//=== Nachbedingungen
 //Nachbedingungen beschreiben das Ergebnis des Use Case, z.B. einen bestimmten Systemzustand.
 
-==== Nachbedingung 1
-Bei erfolgreicher Durchführung des Use Case müssen folgende Nachbedingungen erfüllt sein.
+//==== Nachbedingung 1
+//Bei erfolgreicher Durchführung des Use Case müssen folgende Nachbedingungen erfüllt sein.
 
