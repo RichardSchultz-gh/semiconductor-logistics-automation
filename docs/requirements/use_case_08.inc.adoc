@@ -20,7 +20,7 @@ Erstellt automatisch zu einem vorgegebenen Zeitintervall/-punkt Backups
 === Vorbedingungen
 //Vorbedingungen müssen erfüllt, damit der Use Case beginnen kann, z.B. Benutzer ist angemeldet, Warenkorb ist nicht leer...
 
-*Vorbedingung 1:* Fertigungsleiter ist angemeldet
+*Vorbedingung 1:* Akteur hat erforderliche Rechte
 
 *Vorbedingung 2:* Zu speichernde Daten sind vorhanden
 
@@ -28,20 +28,15 @@ Erstellt automatisch zu einem vorgegebenen Zeitintervall/-punkt Backups
 //Der Standardablauf definiert die Schritte für den Erfolgsfall ("Happy Path")
 
 1. Der Use Case beginnt, wenn auf der grafischen Oberfläche der Button "Backup erstellen" ausgewählt wird.
-2. Eingabe des Zeitintervalls/-punkt der Backup Erstellung
-3. Bestätigung durch Fertigungsleiter
-4. Der Use Case ist abgeschlossen.
+2. manuelles bestätigen durch Fertigungsleiter
+3. Dateiname und Speicherort werden von Fertigungsleiter angegeben und bestätigt
+4. Rückmeldung vom System, wenn Backup erfolgreich durchgeführt wurde
+5. Der Use Case ist abgeschlossen.
 
 === Alternative Abläufe
 //Nutzen Sie alternative Abläufe für Fehlerfälle, Ausnahmen und Erweiterungen zum Standardablauf
 
-
 ==== Alternativer Ablauf 1
-
-Wenn Fertigungsleiter im Schritt 2 des Standardablauf kein Zeitintervall/-punkt eingibt, dann einmalige Erstellung des Backups zur aktuellen Ausführung.
--> Der Use Case wird im Schritt 3 fortgesetzt.
-
-==== Alternativer Ablauf 2
 
 Wenn Mitarbeiter ein Backup erstellen möchte, dann Fehlermeldung (Kein Recht auf diese Operation, bitte an Abteilungleiter wenden)
 -> Der Use Case wird in Schritt 2 fortgesetzt.
@@ -52,8 +47,8 @@ Wenn Mitarbeiter ein Backup erstellen möchte, dann Fehlermeldung (Kein Recht au
 ==== Szenario 1
 Das Backup wurde erfolgreich erstellt und die Daten gespeichert.
 
-=== Nachbedingungen
+//=== Nachbedingungen
 //Nachbedingungen beschreiben das Ergebnis des Use Case, z.B. einen bestimmten Systemzustand.
 
-==== Nachbedingung 1
-Bei erfolgreicher Durchführung des Use Case müssen folgende Nachbedingungen erfüllt sein
+//==== Nachbedingung 1
+//Bei erfolgreicher Durchführung des Use Case müssen folgende Nachbedingungen erfüllt sein
