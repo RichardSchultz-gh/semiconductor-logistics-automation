@@ -25,10 +25,10 @@ Möchte manuell die Stammdaten bearbeiten.
 //Der Standardablauf definiert die Schritte für den Erfolgsfall ("Happy Path")
 
 1. Der Use Case beginnt, wenn auf der grafischen Oberfläche der Button "Stammdaten" ausgewählt wird.
-2. Stammdaten des Produktes, Kunden, Personal und Maschine werden in neuem Fenster angezeigt.
+2. Stammdaten des Produktes, Kunden, Personal und Maschine werden in neuem Fenster angezeigt und können beliebig gefiltert werden.
 3. Fertigungsleiter kann auf die Stammdaten zugreifen, bearbeiten, löschen und speichern.
 4. Abfrage, ob Änderungen übernommen werden sollen.
-5. Bestätigung des Fertigungsleiter.
+5. Bestätigung durch Fertigungsleiter.
 6. Änderungen werden übernommen.
 7. Der Use Case ist abgeschlossen.
 
@@ -47,8 +47,8 @@ Wenn Mitarbeiter versucht die Stammdaten zu bearbeiten, dann Fehlermeldung (Kein
 ==== Szenario 1
 Die Veränderungen wurden richtig übernommen und gespeichert.
 
-=== Nachbedingungen
+//=== Nachbedingungen
 //Nachbedingungen beschreiben das Ergebnis des Use Case, z.B. einen bestimmten Systemzustand.
 
-==== Nachbedingung 1
-Bei erfolgreicher Durchführung des Use Case müssen folgende Nachbedingungen erfüllt sein
+//==== Nachbedingung 1
+//Bei erfolgreicher Durchführung des Use Case müssen folgende Nachbedingungen erfüllt sein
