@@ -188,3 +188,16 @@ include::use_case_10.inc.adoc[]
 
 <<<
 include::use_case_11.inc.adoc[]
+
+<<<
+== Anlage zu Use Cases
+
+Als Grundlage wurden vom Auftraggeber zwei Zustandsübergangsmodelle zur Verfügung gestellt. Auf Grundlage dieser prozesse wurden die Use Cases erstellt:
+
+
+.Zustandsübergänge Maschinen
+image::maschinenzustände_ringel.png[]
+
+
+.Zustandsübergänge Materialien
+image::materialzustände_ringel.png[]
