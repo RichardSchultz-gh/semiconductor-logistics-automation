@@ -192,7 +192,7 @@ include::use_case_11.inc.adoc[]
 <<<
 == Anlage zu Use Cases
 
-Als Grundlage wurden vom Auftraggeber zwei Zustandsübergangsmodelle zur Verfügung gestellt. Auf Grundlage dieser prozesse wurden die Use Cases erstellt:
+Als Grundlage wurden vom Auftraggeber zwei Zustandsübergangsmodelle zur Verfügung gestellt. Auf Grundlage dieser Prozesse wurden die Use Cases erstellt:
 
 
 .Zustandsübergänge Maschinen
