@@ -6,13 +6,14 @@ Der Use Case ermöglicht das manuelle Erstellen eines Reports
 
 === Kurzbeschreibung der Akteure
 
+==== Mitarbeiter
+
+Möchte einen Report erstellen
+
 ==== Fertigungsleiter
 
 Möchte einen Report erstellen
 
-==== Mitarbeiter
-
-Möchte einen Report erstellen
 
 === Vorbedingungen
 

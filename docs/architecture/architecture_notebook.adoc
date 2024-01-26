@@ -20,11 +20,11 @@ Dieses Dokument beschreibt die Philosophie, Entscheidungen, Nebenbedingungen, Be
 
 //Formulieren Sie eine Reihe von Zielen, die die Architektur in ihrer Struktur und ihrem Verhalten erfüllen muss. Identifizieren Sie kritische Fragen, die von der Architektur adressiert werden müssen, z.B. besondere Hardware-Abhängigkeiten, die vom Rest des Systems isoliert werden sollten oder Sicherstellung der Funktionsfähigkeit unter besonderen Bedingungen (z.B. Offline-Nutzung).
 
-Das System ist eine Datenbankanwendung für die Visualisierung und Verwaltung von Prozessschritten einer Halbleiterfabrik. Diese soll für mehrere Jahre nutzbar sein. Außerdem ist die Weiterentwicklung dieses Systems durch zukünftige Gruppen geplant. Dadurch soll die Architektur darauf abzielen, eine langlebige, erweiterbare und robuste Datenbankanwendung zu bieten, welches auch bei Abstürzen resistent gegenüber Datenverlust ist.
+Das System ist eine Datenbankanwendung für die Visualisierung und Verwaltung von Prozessschritten einer Halbleiterfabrik. Diese soll für mehrere Jahre nutzbar sein. Außerdem ist die Weiterentwicklung dieses Systems durch zukünftige Gruppen geplant. Dadurch soll die Architektur darauf abzielen, eine *langlebige, erweiterbare und robuste Datenbankanwendung* zu bieten, welches auch bei Abstürzen resistent gegenüber Datenverlust ist.
 
-Für die intuitive Bedienung der Anwendung sollen die Prozesse und Datenausgabe übersichtlich und verständlich dargstellt werden. Hierzu sind einfache Bedienelemente zu verwenden, welche die Möglichkeiten für Fehlentscheidungen der Nutzer minimieren. Die Anwendung soll in verschiedenen Browsern nutzbar sein.
+Für die intuitive Bedienung der Anwendung sollen die Prozesse und Datenausgabe übersichtlich und verständlich dargstellt werden. Hierzu sind *einfache Bedienelemente* zu verwenden, welche die Möglichkeiten für Fehlentscheidungen der Nutzer minimieren. Die Anwendung soll in verschiedenen Browsern nutzbar sein.
 
-Da die Anwendung auf einem RaspberryPi betrieben wird, ist die Architektur darauf ausgelegt, die Ressourcen des RaspberryPi möglichst effizient zu nutzen. Es sollen größere Mengen an Daten verarbeitet werden können, ohne dass die Anwendung abstürzt oder die Performance stark beeinträchtigt wird. So ist eine gut skalierbare Datenbankanwendung zu entwickeln.
+Da die Anwendung auf einem RaspberryPi betrieben wird, ist die Architektur darauf ausgelegt die Ressourcen des RaspberryPi möglichst effizient zu nutzen. Es sollen größere Mengen an Daten verarbeitet werden können, ohne dass die Anwendung abstürzt oder die Performance stark beeinträchtigt wird. So ist eine gut skalierbare Datenbankanwendung zu entwickeln.
 
 
 
@@ -66,7 +66,7 @@ Da die Anwendung auf einem RaspberryPi betrieben wird, ist die Architektur darau
 
 *Zusätzliche Anforderungen*
 
-* *Ressourceneinschränkungen:* Das System soll auf einem Raspberry Pi lauffähig sein, wodurch die Ressourcen des Systems begrenzt sind.
+* *Ressourceneinschränkungen:* Das System soll auf einem RaspberryPi lauffähig sein, wodurch die Ressourcen des Systems begrenzt sind.
 
 
 == Entscheidungen, Nebenbedingungen und Begründungen
@@ -74,7 +74,7 @@ Da die Anwendung auf einem RaspberryPi betrieben wird, ist die Architektur darau
 
 . Wir nutzen eine relationale Datenbank mit dem Datenbankmanagementsystem *PostgreSQL*, da die Nutzung von PostgreSQL uns vorgegeben wurde und dieses bekannt für seine Zuverlässigkeit und Skalierbarkeit ist.
 . Wir implementieren die Anwendung auf einem *Raspberry Pi*, da uns dieser vorgegeben wurde.
-. Als Betriebssystem nutzen wir *Raspbian*, da dieses Betriebssystem für den Raspberry Pi optimiert ist und eine einfache Bedienung ermöglicht.
+. Als Betriebssystem nutzen wir *Raspbian*, da dieses Betriebssystem für den Raspberry Pi optimal ist und eine einfache Bedienung ermöglicht.
 . Wir nutzen *Python* als Programmiersprache für die Middleware, da uns diese vorgegeben wurde und diese eine einfache und schnelle Entwicklung ermöglicht.
 . Wir benutzen *Psycopg2* als Python-Bibliothek, da diese eine unkomplizierte Interaktion mit PostgreSQL ermöglicht und so eine gute Schnittstelle zur Nutzung der Datenbank herstellt.
 . Wir nutzen *Flask* als Web-Framework, da dieses ein recht leichtgewichtiges Framework ist, welches wenige Resourcen benötigt. Außerdem ist Flask einfach zu erlernen, da es aufgrund seiner aktiven Entwickler-Community viele Tutorials und Hilfestellungen gibt.
@@ -139,12 +139,10 @@ https://www2.htw-dresden.de/~anke/openup/core.tech.common.extend_supp/guidances/
 - **Funktion:** Implementierung eines Systems, das Benutzeroberflächen und Meldungen in verschiedenen Sprachen unterstützt.
 - **Ausschnit Zugehöriger SWFA:** QAGU-4, QAGW-2
 
-Diese Architekturmechanismen sind essentiell für die Entwicklung einer robusten, sicheren und skalierbaren Datenbankanwendung, die auf einem Raspberry Pi mit Raspbian Betriebssystem betrieben wird.
+Diese Architekturmechanismen sind essentiell für die Entwicklung einer robusten, sicheren und skalierbaren Datenbankanwendung, die auf einem RaspberryPi mit Raspbian Betriebssystem betrieben wird.
 
 == Wesentliche Abstraktionen
 //[List and briefly describe the key abstractions of the system. This should be a relatively short list of the critical concepts that define the system. The key abstractions will usually translate to the initial analysis classes and important patterns.]
-
-
 
 * *Los*: enthält alle Informationen zum Los
 * *Tool*: enthält alle Informationen zu den Maschienen
@@ -156,12 +154,7 @@ Diese Architekturmechanismen sind essentiell für die Entwicklung einer robusten
 * *User_Information*: enthält alle Information, die keine Adressdaten sind
 * *Address*: enthält alle Adressinformationen
 * *Security*: enthält alle Informationen, die einem Nutzer das Anmelden ermöglichen
-
-
-
-*Workflows:* 
-Workflows beschreiben den Arbeitsablauf des Programms und bilden die Reihenfolge
-ab, mit welcher in einem Programm gearbeitet wird.
+* *Workflows*: beschreiben den Arbeitsablauf des Programms und bilden die Reihenfolge ab, mit welcher in einem Programm gearbeitet wird.
 
 
 == Schichten oder Architektur-Framework
@@ -169,7 +162,7 @@ ab, mit welcher in einem Programm gearbeitet wird.
 Die Architektur basiert auf einem mehrschichtigen Framework, das Folgendes umfasst:
 
 ### Datenbankebene (PostgreSQL)
-- **Verantwortlich für die Speicherung und das Management der Daten**, mit Fokus auf Effizienz und Skalierbarkeit für den Einsatz auf einem Raspberry Pi.
+- **Verantwortlich für die Speicherung und das Management der Daten** mit Fokus auf Effizienz und Skalierbarkeit für den Einsatz auf einem Raspberry Pi.
 
 ### Middleware-Ebene (Python)
 - **Python-Anwendung:** Dient als zentrale Vermittlungsstelle zwischen Datenbank und Benutzeroberfläche.
@@ -178,7 +171,7 @@ Die Architektur basiert auf einem mehrschichtigen Framework, das Folgendes umfas
 
 ### Benutzeroberflächenebene (Flask-GUI)
 - **Flask als Web-Framework:** Vereinfacht die Erstellung und Verwaltung von Webanwendungen.
-- **User Interface: ** UI mittels HTML-Templates, CSS-Stylesheets und gegebenenfalls JavaScript-Code für die Interaktion mit dem Endbenutzer.
+- **User Interface:** UI mittels HTML-Templates, CSS-Stylesheets und gegebenenfalls JavaScript-Code für die Interaktion mit dem Endbenutzer.
 
 ### Schnittstellen
 - **Datenbank-Middleware-Schnittstelle:** Sicherer Datenaustausch über Psycopg2.
@@ -196,7 +189,7 @@ Folgende Sichten werden empfohlen:
 === Logische Sicht
 //Beschreibt die Struktur und das Verhalten Systemteilen, die hohen Einfluss auf die Architektur haben. Dies kann die Paketstruktur, kritische Schnittstellen, wichtige Klassen und Subsysteme sowie die Beziehungen zwischen diesen Elementen enthalten. Zudem sollten die physische und logische Sicht persistenter Daten beschrieben werden, wenn es diesen Aspekt im System gibt. Dies ist ein hier dokumentierter Teilaspekt des Entwurfs.
 
-image::images/Logic_Holle.jpg[]
+image::Logic_Holle.jpg[]
 
 === Physische Sicht (Betriebssicht)
 //Beschreibt die physischen Knoten (Rechner) des Systems, der Prozesse, Threads und Komponenten, die in diesen Knoten ausgeführt werden. Diese Sicht wird nicht benötigt, wenn das System in einem einzelnen Prozess oder Thread ausgeführt wird.
@@ -218,4 +211,4 @@ include::{plantumlsdir}/Frau_Holle_Container_C4.puml[]
 //Eine Liste oder ein Diagramm der Use Cases, die architektur-relevante Anforderungne enthalten.
 
 .UseCaseDiagram
-image::images/usecase_second_version_pmx.png[]
+image::usecase_second_version_pmx.png[]

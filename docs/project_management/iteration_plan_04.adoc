@@ -73,17 +73,12 @@ Die Erarbeitung der System wide requirements wurde in dieser Iteration nicht abg
 
 Zur Erarbeitung des Architekturentwurf sollte das Architektur Notebook erstellt werden. Da die Analysten die System wide requirements nicht fertigstellen konnten, hat auch die Arbeit am Architektur Notebook gelitten. Eine Fertigstellung ist erst möglich, wenn die System wide requirements stehen, daher wird das Ziel mit in die nächste Iteration genommen. Aus diesem Sachverhalt ziehen wir die Erkenntnis, dass die Erteilung einer Aufgabe, welche auf einer anderen Aufgabe bassiert, erst erteilt werden sollte, wenn die vorherige Aufgabe erfüllt wurde. 
 
-Auch ohne die System wide requirements als Grundlage zu haben, sollten sich Gedanke über die Grundstruktur der Archtiktur gemacht werden. 
-
-...
-
-_Mangelde Arbeit der Architekten:_
-
+Es wurden sich trotz der fehlenden System wide requirements erste Überlegungen zu der Architektur gemacht. Diese Überlegungen dienen in der nächsten Iteration als Grundlage für das Architektur Notebook.
 
 
 *Development Prototyp*
 
-Die Arbeit am Prototyp hat eigenständig funktioniert. Es wurden die gewünschten Tabellen der Datenbank erstellt und bereits die ersten Testdaten in die Datenbank gelesen. Zudem wurde eine Demo-GUI für den Prototypen erstellt. 
+Die Arbeit am Prototyp hat eigenständig funktioniert. Es wurden die gewünschten Tabellen der Datenbank erstellt und bereits die ersten Testdaten in die Datenbank gelesen. Zudem wurde eine Demo-GUI für den Prototypen erstellt. Auch die Anbindung an die Datenbank war erfolgreich. Das Ziel kann als erfolgreich erledigt angesehen werden.
 
 _Problem Zugriff RaspberryPi:_
 
@@ -98,25 +93,22 @@ Als Lösung wird der Raspy von Richard an Nils übergeben. Nils arbeitet aktiv u
 
 Rückblickend auf diese Iteration wird deutlich, dass Faktoren wie Belegarbeiten anderer Module und die Weihnachtspause stärkere Auswirkungen auf das Projekt haben als vorher angenommen. 
 
-... 
+Rückblickend erscheint es als sinnvoller in einer Vorlesungspause die Arbeit am Projekt zu pausieren und diese Zeit für individuelle Aufgaben, wie das Erlernen einer benötigten Fähigkeit oder das Verstehen eines komplexen Sachzusammenhangs, zu nutzen. Ein zu großes Arbeitspensum erscheint als wenig sinnvoll, da die Ferien zum erholen gedacht sind und zusätzlich die Mitglieder lange allein arbeiten würden ohne mit dem restlichen Team den Arbeitsstand abzugleichen. Dies kann dazu führen, dass einzelne Mitglieder in die falsche Richtung arbeiten. Im Zuge unseres Projektes scheint es als lokrativ an sich in den Ferien vor dem Sommersemester mit der Programmiersprache Python und dem Framework des Projektes zu beschäftigen und den Umgang zu erlernen. 
 
+Nach der Vorlesungspause muss dann ein direkter, produkiver Einstieg in die Projektarbeit stattfinden. Hierfür kann ein Teammeeting am ersten Tag nach der Pause zielführend sein. In dieser Iteration hat das Teammeeting erst ca. eine Woche nach der Pause stattgefunden. So gab es keinen Abgleich der Aufgaben im Team und damit keine neuen Aufgaben für die Mitglieder. 
 
-
-Daraus lernen wir zum einen, dass für die nächsten Vorlesungspause sinnvolle aber nicht zu große Aufgaben gestellt werden müssen. Ein zu großen Arbeitspensum erscheint als wenig sinnvoll, da die Ferien zum erholen gedacht sind und zusätzlich die Mitglieder lange allein arbeiten würden ohne mit dem restlichen Team den Arbeitsstand abzugleichen. Dies kann dazu führen, dass einzelne Mitglieder in die falsche Richtung arbeiten. 
-
-Im Zuge unseres Projektes scheint es als lokrativ an sich in den Ferien vor dem Sommersemester mit der Programmiersprache Python und dem Framework des Projektes zu beschäftigen und den Umgang zu erlernen.
 
 *Andere Belange und Abweichungen*
 
-. Zusammenarbeit:
+. Arbeit im Team:
 
 Die Analysten haben sich als Teilteam gut eingefunden und arbeiten produktiv zusammen. Es findet eine iterne Aufteilung der Aufgaben statt. Zudem wird gegenseitig draufgeachtet, dass die Aufgaben erfüllt werden und die Anforderungen erfüllen. 
 
 Die Arbeit der Entwickler war diese Arbeit eher Individual als, wie zuvor, teamorientiert. Die Aufgaben wurden erfolgreich erledigt, weshalb dies erstmal nicht zu bemägeln ist. Die Projektleitung wird die Zusammenarbeit der beiden sowie die individuelle Arbeit beider in den folge Iterationen beobachten und, sollte sich die Teamarbeit, wider Erwatens, nicht wieder einfinden, eingreifen.
 
-Die Architekten ...
+_Mangelde Arbeit der Architekten:_
 
-
+In dieser Iteration fiel verstärkt auf, dass die Architekten ihre Arbeit nicht zufriedenstellen erledigen. Die Arbeitsmoral beider wurde vom restlichen Team infrage gestellt und die mangelde Eigeninitiative der Architekten aufgezeigt. Dies wurde den Architekten mit der Bitte der Besserung mitgeteilt, sowie an den Coach berichtet. Die Projektleitung wird in den kommenden Iterationen die Arbeit und Arbeitsweise der Architekten verschärft beobachten und den Architekten mehr Leitung in der Abarbeitung ihrer Aufgaben zu geben, durch z.B. kleinere Aufgaben mit klareren Anforderungen an die Lösung. Eine Verbesserung der Arbeit sieht das Team als essentiell an, damit eine weitere Zusammenarbeit möglich ist. 
 
 == Alphas
 

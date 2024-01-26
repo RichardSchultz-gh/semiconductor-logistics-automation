@@ -1,4 +1,4 @@
-= System-Wide Requirements:  Modell eines automatisierten Fabrikbetriebes - Frau Holle
+= System-Wide Requirements: {project-name}
 Vorname Nachname <email@domain.org>; Vorname2 Nachname2 <email2@domain.org>; Vorname3 Nachname3 <email3@domain.org>
 {localdatetime}
 include::../_includes/default-attributes.inc.adoc[]
@@ -109,15 +109,14 @@ zuzugreifen. Dafür ist eine Zuordnung aller Anwender zu Rollen und einem Login 
 * Ressourcenbegrenzungen
 ** Die Verwaltung des Sourcecodes und der Dokumentation muss mittels GitHub erfolgen.
 * zu nutzende Komponenten / Bibliotheken / Frameworks
-//** FLASK 
-//wurde Flask entfohlen oder vorgegeben?
+** FLASK (wurde vom Auftragsgeber empfohlen)
 ** PostgreSQL
 * Vorgaben für die Programmiersprache
 ** Python 
 * zu unterstützende Plattformen / Betriebssysteme
 ** Linux 
 * Physische Begrenzungen für Hardware, auf der das System betrieben werden soll
-** Raspberry PI
+** Raspberry Pi
 
 === Organisatorische Randbedingungen
 //Angaben ergänzen, nicht relevante Unterpunkte streichen oder auskommentieren
