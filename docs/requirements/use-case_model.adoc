@@ -51,7 +51,7 @@ include::../_includes/default-attributes.inc.adoc[]
 // Liste aller identifizierten Use Cases (priorisiert-> wir später gemacht)
 //erste Ideen von Marlene vor dem 2. Meeting mit Ringel
 
-** Information:
+*Information:*
 Detailreich wurden lediglich UC01 bis UC03 ausgearbeitet. Alle anderen Use Cases erfahren weitere Vertiefungen in SE2
 
 
@@ -188,3 +188,16 @@ include::use_case_10.inc.adoc[]
 
 <<<
 include::use_case_11.inc.adoc[]
+
+<<<
+== Anlage zu Use Cases
+
+Als Grundlage wurden vom Auftraggeber zwei Zustandsübergangsmodelle zur Verfügung gestellt. Auf Grundlage dieser Prozesse wurden die Use Cases erstellt:
+
+
+.Zustandsübergänge Maschinen
+image::maschinenzustände_ringel.png[]
+
+
+.Zustandsübergänge Materialien
+image::materialzustände_ringel.png[]

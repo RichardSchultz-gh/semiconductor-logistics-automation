@@ -30,10 +30,10 @@ Möchte sich manuell ausgewählte Stammdaten anzeigen lassen.
 === Standardablauf (Basic Flow)
 //Der Standardablauf definiert die Schritte für den Erfolgsfall ("Happy Path")
 
-1. Der Use Case beginnt, wenn auf der grafischen Oberfläche der Button "Stammdaten" ausgewählt wird.
-3. Nutzer gelangt in Fenster, wo er unter diversen Angaben (Produktes, Kunden, Personal und Maschine...) nach Stammdaten filtern kann.
-2. Die gewünschten Stammdaten werden dem Nutzer im selben Fenster tabellarisch angezeigt.
-3. Der Use Case ist abgeschlossen.
+. Der Use Case beginnt, wenn auf der grafischen Oberfläche der Button "Stammdaten" ausgewählt wird.
+. Nutzer gelangt in Fenster, wo er unter diversen Angaben (Produktes, Kunden, Personal und Maschine...) nach Stammdaten filtern kann.
+. Die gewünschten Stammdaten werden dem Nutzer im selben Fenster tabellarisch angezeigt.
+. Der Use Case ist abgeschlossen.
 
 //=== Alternative Abläufe
 //Nutzen Sie alternative Abläufe für Fehlerfälle, Ausnahmen und Erweiterungen zum Standardablauf
