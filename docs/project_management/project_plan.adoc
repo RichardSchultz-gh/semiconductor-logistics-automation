@@ -148,6 +148,35 @@ Damit jeglicher Fortschritt auf Funktionalität getestet werden kann, wird das T
 
 Da sich die Aufgabenverteilung im Sommersemester verschieben, wird die Rollenverteilung entsprechen darauf reagieren. So werden z.B. alle Teammitglieder die Entwickler bei der Implemention unterstützen.
 
+[%header, cols="1,3a,2,1,1"]
+|===
+| Iteration
+| Primary objectives +
+(risks and use case scenarios)
+| Scheduled start or milestone
+| Target velocity (Work that can be done per iteration)
+| Reference
+
+| I6
+|
+* Planung Semester
+* Planung Angehen Umsetzung Use Cases
+* Programmierkonventionen erarbeiten
+* mapper nutzen?
+| 11.03.-22.03.
+| 
+|
+
+| I7
+|
+* erster Entwurf GUI 
+* Umsetzung UC01
+* Aufstellen Testcases zu UC01
+| 25.03.-05.04.
+| 
+|
+
+|===
 
 == Deployment
 //Outline the strategy for deploying the software (and its updates) into the production environment.
