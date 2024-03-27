@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entity Data</title>
+</head>
+<body>
+    <h1>Entity Data</h1>
+    
+    <form method="post" action="{{ url_for('entities.entities_insert_data') }}">
+        <label for="entity">Entity:</label>
+        <input type="text" name="entity" required><br>
+
+        <label for="class">Class:</label>
+        <input type="text" name="class" required><br>
+
+        <label for="enabled">Enabled:</label>
+        <input type="checkbox" name="enabled" value="1"><br>
+
+        <label for="note">Note:</label>
+        <input type="text" name="note" required><br>
+
+        <label for="state">State:</label>
+        <input type="text" name="state" required><br>
+
+        <input type="submit" value="Insert Data">
+    </form>
+
+    <hr>
+
+    <form method="post" action="{{ url_for('entities.entities_index') }}">
+        <input type="submit" name="show_data" value="Show Data">
+    </form>
+
+    {% if show_data %}
+    <table border="1">
+        <tr>
+            <th>Entity</th>
+            <th>Class</th>
+            <th>Enabled</th>
+            <th>Note</th>
+            <th>State</th>
+        </tr>
+        {% for record in records %}
+            <tr>
+                <td>{{ record.entity }}</td>
+                <td>{{ record.class_ }}</td>
+                <td>{{ record.enabled }}</td>
+                <td>{{ record.note }}</td>
+                <td>{{ record.state }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+
+    <hr>
+
+    <form method="post" action="{{ url_for('entities.entities_delete_data') }}">
+        <label for="entity">Entity:</label>
+        <input type="text" name="d_entity" required><br>
+
+        <label for="class">Class:</label>
+        <input type="text" name="d_class" required><br>
+
+        <label for="enabled">Enabled:</label>
+        <input type="checkbox" name="d_enabled" value="1"><br>
+
+        <label for="note">Note:</label>
+        <input type="text" name="d_note" required><br>
+
+        <label for="state">State:</label>
+        <input type="text" name="d_state" required><br>
+
+        <input type="submit" value="Delete Data">
+    </form>
+
+    <hr>
+    <a href="{{ url_for('main.main') }}"><button>Back to Main Page</button></a>
+</body>
+</html>

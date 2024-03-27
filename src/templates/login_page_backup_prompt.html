@@ -1,0 +1,82 @@
+<!-- login_page.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <h1>Login</h1>
+    
+    <form id="loginForm">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br>
+
+        <input type="submit" value="Login">
+    </form>
+
+    <script>
+        function showLogin() {
+            var usern = prompt("Enter your username:");
+            var passw = prompt("Enter your password:");
+
+        function sendAjaxRequest(url, data, callback) {
+            fetch(url, {
+                method: 'POST', // oder 'GET', 'PUT', usw., je nach Bedarf
+                headers: {
+                    'Content-Type': 'application/json', // oder andere benötigte Header
+                },
+                body: JSON.stringify(data), // Daten in das gewünschte Format umwandeln (JSON)
+            })
+            .then(response => response.json()) // Antwort in JSON-Format parsen
+            .then(data => {
+                // Daten verarbeiten (z. B. Rückgabewerte überprüfen)
+                callback(data);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                // Fehlerbehandlung, z. B. eine Fehlermeldung anzeigen
+            });
+        }
+
+        // Beispielaufruf der AJAX-Anfrage
+        var url = '/login_check'; // Ziel-URL
+        var requestData = {
+            username: usern,
+            password: passw
+        };
+
+        sendAjaxRequest(url, requestData, function(responseData) {
+            // Verarbeitung der Antwort
+            console.log('Response:', responseData);
+            // Hier können Sie die Antwort weiter verarbeiten oder entsprechende Aktionen ausführen
+
+            // Beispiel: Weiterleitung zur Insert-Seite bei erfolgreicher Anmeldung
+            if (responseData.status === "success") {
+                window.location.href = "/main"; // Weiter zur Insert-Seite
+            } else {
+                alert("Invalid username or password. Please try again.");
+                showLogin(); // Zeige das Login-Formular erneut
+            }
+        });
+
+
+            /*// Für dieses Beispiel verwenden wir eine statische Überprüfung
+            if (username === "admin" && password === "password") {
+                window.location.href = "/"; // Weiter zur Insert-Seite
+            } else {
+                alert("Invalid username or password. Please try again.");
+                showLogin(); // Zeige das Login-Formular erneut
+            }*/
+        }
+
+        // Rufe die Funktion showLogin beim Laden der Seite auf
+        window.onload = showLogin;
+    </script>
+
+</body>
+</html>
