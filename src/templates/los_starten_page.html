@@ -5,10 +5,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Los starten</title>
+    <style>
+        .main-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 10px;
+        }
+    </style>
 </head>
 <body>
     <h1>Los starten</h1>
+    <a href="{{ url_for('main.main') }}" class="main-btn"><button>Back to Main Page</button></a>
     <hr>
-    <a href="{{ url_for('main.main') }}"><button>Back to Main Page</button></a>
+    <form action="{{ url_for('los_starten.los_starten_page') }}" method="POST">
+        
+        <label for="lot_id">Lot ID:</label>
+        <input type="text" name="lot_id" id="lot_id" required>
+        <br><br>
+
+        <label for="product_id">product:</label>
+        <select name="product_id" id="product_id">
+            {% for product_id in products %}
+                <option value="{{ product_id }}">{{ product_id }}</option>
+            {% endfor %}
+        </select>
+        <br><br>
+
+        <label for="amount">pieces:</label>
+        <input type="number" name="amount" id="amount" min="1" max="1000" required>
+        <br><br>
+
+        <label for="target_date">duedate:</label>
+        <input type="date" name="target_date" id="target_date" required>
+        <br><br>
+
+        <input type="submit" value="Start Lot">
+    </form>
 </body>
 </html>
