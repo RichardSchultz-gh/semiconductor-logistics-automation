@@ -18,10 +18,14 @@
     <h1>Los starten</h1>
     <a href="{{ url_for('los_starten.los_starten_page') }}" class="main-btn"><button>Back to Los-Starten-Page</button></a>
    <hr>
-    <h2>Los erfolgreich gestartet</h2>
-    <p>Lot ID: {{ lot_id }}</p>
-    <p>product: {{ product }}</p>
-    <p>pieces: {{ pieces }}</p>
-    <p>duedate: {{ duedate }}</p>
+    <!-- Anzeige von wie viel Lose erfolgreich gestartet wurden + LotIDs-->
+    <h2>Lose erfolgreich gestartet</h2>
+    <p>{{ amount }} Lose wurden erfolgreich gestartet.</p>
+    <p>Die gestarteten LotIDs lauten:</p>
+    <ul>
+        {% for lot_id in lot_data %}
+            <li>{{ lot_id }}</li>
+        {% endfor %}
+    </ul>
 </body>
 </html>
