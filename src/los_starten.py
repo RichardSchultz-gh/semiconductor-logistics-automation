@@ -1,10 +1,12 @@
 # los_starten.py
 from flask import Blueprint, render_template, request, redirect, url_for
 from mapper import Lot, ProdFlow
+#from timer import timer
 from database_connection import get_database_url
 from sqlalchemy import create_engine, Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
+import datetime
 
 los_starten_bp = Blueprint('los_starten', __name__)
 
@@ -48,21 +50,34 @@ def los_starten():
     # die Zeit x wird dann von DueDate abgezogen
 
     #TODO: Hier muss die Zeit berechnet werden, die benötigt wird, um das Produkt zu produzieren
+    
+    duedate = datetime.datetime.strptime(duedate, "%Y-%m-%d")
+    startdate = duedate - datetime.timedelta(days=31) # Std-Wert 31 Tage (ändern)
+    print("Startdatum: " + str(startdate))
 
     #errechnen, wie viele Lose erstellt werden müssen (pieces / pieces_per_lot)
     pieces_per_lot = 10 # woher kommt die Zahl?
     lots_to_create = int(pieces) // pieces_per_lot
     if int(pieces) % pieces_per_lot != 0:
         lots_to_create += 1
+
+    #Route herausfinden
+    if(product == "A100"):
+        route = "10-TST"
+    elif(product == "B200"):
+        route = "20-TXT"
+    elif(product == "2009MF"):
+        route = "GT2"
+
     # Erstellen der Lose
     lot_ids = []
     for i in range(lots_to_create):
         lot_id=generateLotID(lot_ids)
         try:
             if(int(pieces)%pieces_per_lot!=0 and i==lots_to_create-1):
-                new_lot = Lot(lotid=lot_id, priority=10, pieces=int(pieces) % pieces_per_lot, state="WAIT", product=product, route="GT2", customer=customer, order=order, duedate=duedate)
+                new_lot = Lot(lotid=lot_id, priority=10, pieces=int(pieces) % pieces_per_lot, state="WAIT", product=product, route=route, customer=customer, order=order, duedate=duedate, startdate=startdate)
             else:
-                new_lot = Lot(lotid=lot_id, priority=10, pieces=pieces_per_lot, state="WAIT", product=product, route="GT2", customer=customer, order=order, duedate=duedate)
+                new_lot = Lot(lotid=lot_id, priority=10, pieces=pieces_per_lot, state="WAIT", product=product, route=route, customer=customer, order=order, duedate=duedate, startdate=startdate)
             session.add(new_lot)
             #jede LotID, die hier erstellt wird wird zu Liste hinzugefügt
             lot_ids.append(lot_id)
@@ -77,6 +92,9 @@ def los_starten():
     #ToDO: Fehlerbehandlung, falls falsche Eingaben gemacht wurden
     # Prüfung ob alle Lose erstellt wurden, die erstellt werden sollten
     if(len(lot_ids)==lots_to_create):
+        # neues timer-Objekt für jedes Los anlegen
+        #for lot_id in lot_ids:
+            #timer(lot_id, duedate) # Timer wird gestartet
         # Weitergeben des neu eingefügten Loses an die Funktion los_starten_success()
         return los_starten_success(lot_ids)
     else:
