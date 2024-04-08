@@ -310,8 +310,47 @@ Todo:
 * Use Cases Diagramm anpassen
 
 
+=== Teammeeting 03.04.2024
+
+An sich sind alle Use Cases gut. Nur Report erstellen und Daten visualisieren brauchen noch arbeit -> nicht so hoch prio daher erst später machen
+
+-> Analyse ist durch
+
+-> Fertigungssystem ist noch Fragezeichen
+
+sql skript für Datenbank auf lokalen Rechner ziehen
+
+objekt relationaler mapper wird genutzt -> besser und einfacher -> Architektur entscheidung muss dokumentiert werden
+
+log in log out umsetzung ist fraglich -> zeitnah angehen und ein Konzept aufstellen (WInfs)
+Vogt fragen wie er seine pdf Seiten passwort schützt und ob das auch für html so geht, dass sich das Passwort speichert.
+
+Use Case orientiert
+
+Prozeduales Programm wo man auf die Klassen vom Mapper zugreift. 
 
 
+Nils und Richard machen die UC01-UC03 -> erstmal ohne timer
+
+Nico und Yannik die Randfunktionen
+
+Timer: startet sobald der User sich eingelogt hat (erstmal bei öffnen der APP) -> Nils schaut sich das an 
+Timer läuft immer neben bei.
+
+alle müssen Datenbank einrichten auf lokalen Ordner
+
+beispiel datensätze durchschauen und erschließen, welche Attribute abhängig von einander sind und welche Daten dei Los starten manuell eingegeben werden müssen und welche Attribute aus welchen folgern. (ID durch inkrementieren oder so erstellen, damit die eizigartigkeit bleibt.)
+bei klassendiagramm nachschauen
+
+
+
+Frage an Ringel: Woraus setzt sich die ID zusammen? und wie wird sie erstellt (automatisch)
+wie mit timer (wie soll der laufen)
+
+Nils & Richard: UC01
+Nico & Yannik: Wireframes & irgendwas
+Paul: Datensätze, schaut nochmal auf die Use Cases
+Alle: Datenbank installieren
 
 == Meetings mit Coach
 

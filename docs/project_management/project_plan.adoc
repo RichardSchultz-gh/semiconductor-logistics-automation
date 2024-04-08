@@ -170,9 +170,48 @@ Da sich die Aufgabenverteilung im Sommersemester verschieben, wird die Rollenver
 | I7
 |
 * erster Entwurf GUI 
-* Umsetzung UC01
-* Aufstellen Testcases zu UC01
+* Projektplan
+* Klassendiagramm
 | 25.03.-05.04.
+| 
+|
+
+| I8
+|
+* UC04-UC13 Analyse
+* Konzept Fertigungssystem
+* Umsetzung UC01+UC02 (inkl. Anschließen an GUI)
+* Überlegung User Sign in
+* TestCases UC01/UC02
+| 08.04.-19.04.
+| 
+|
+
+| I9
+|
+* 
+| 22.04.-03.05
+| 
+|
+
+| I10
+|
+* 
+| 06.05.-17.05.
+| 
+|
+
+| I11
+|
+* 
+| 20.05.-31.05.
+| 
+|
+
+| I12
+|
+* 
+| 03.06.-14.06.
 | 
 |
 
