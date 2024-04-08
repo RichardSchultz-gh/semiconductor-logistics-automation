@@ -1,0 +1,31 @@
+<!-- los_starten_page.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Los starten</title>
+    <style>
+        .main-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Los starten</h1>
+    <a href="{{ url_for('los_starten.los_starten_page') }}" class="main-btn"><button>Back to Los-Starten-Page</button></a>
+   <hr>
+    <!-- Anzeige von wie viel Lose erfolgreich gestartet wurden + LotIDs-->
+    <h2>Lose erfolgreich gestartet</h2>
+    <p>{{ amount }} Lose wurden erfolgreich gestartet.</p>
+    <p>Die gestarteten LotIDs lauten:</p>
+    <ul>
+        {% for lot_id in lot_data %}
+            <li>{{ lot_id }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

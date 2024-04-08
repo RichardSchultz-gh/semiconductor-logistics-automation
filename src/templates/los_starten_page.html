@@ -5,10 +5,123 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Los starten</title>
+    <style>
+        .main-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 10px;
+        }
+    </style>
 </head>
 <body>
     <h1>Los starten</h1>
+    <a href="{{ url_for('main.main') }}" class="main-btn"><button>Back to Main Page</button></a>
     <hr>
-    <a href="{{ url_for('main.main') }}"><button>Back to Main Page</button></a>
+    <form action="{{ url_for('los_starten.los_starten_page') }}" method="POST">
+        
+        <!--<label for="lot_id">Lot ID:</label>
+        <input type="text" name="lot_id" id="lot_id" required>
+        <br><br>-->
+
+        <label for="customer">customer:</label>
+        <input type="text" name="customer" id="customer" required>
+        <br><br>
+
+        <label for="order">order:</label>
+        <input type="text" name="order" id="order" required>
+        <br><br>
+
+        <label for="product_id">product:</label>
+        <select name="product_id" id="product_id">
+            {% for product_id in products %}
+                <option value="{{ product_id }}">{{ product_id }}</option>
+            {% endfor %}
+        </select>
+        <br><br>
+
+        <label for="amount">amount of wafer:</label>
+        <input type="number" name="amount" id="amount" min="1" max="1000" required>
+        <br><br>
+
+        <label for="target_date">duedate:</label>
+        <input type="date" name="target_date" id="target_date" required>
+        <br><br>
+
+        <input type="submit" value="Start Lot">
+    </form>
+
+    <hr>
+    <!-- Anzeige aller Lots -->
+    <!--<form action="{{ url_for('los_starten.los_starten_page') }}" method="POST"></form>
+        <label for="product_id_2">product:</label>
+            <select name="product_id" id="product_id_2">
+                {% for product_id in products %}
+                    <option value="{{ product_id }}">{{ product_id }}</option>
+                {% endfor %}
+            </select>
+        <br><br>
+        <label for="lot_id">Lot ID:</label>
+             <select name="lot_id" id="lot_id">
+                {% for lot_id in lotids %}
+                    <option value="{{ lot_id }}">{{ lot_id }}</option>
+                {% endfor %}
+        <input type="submit" value="Show Lots">
+    </form>-->
+
+    <h2>Alle Lots</h2>
+    <!-- Tabelle soll Randlinien haben -->
+    <table style="border-collapse: collapse;">
+        <tr>
+            <th>Lot ID</th>
+            <th>Priority</th>
+            <th>Pieces</th>
+            <th>State</th>
+            <th>Product</th>
+            <th>Route</th>
+            <th>Oper</th>
+            <th>Customer</th>
+            <th>Order</th>
+            <th>Duedate</th>
+            <th>Startdate</th>
+            <th>Enteroper</th>
+            <th>Procstart</th>
+            <th>Disptool</th>
+        </tr>
+        {% for lot in lots %}
+            <tr>
+                <td>{{ lot.lotid }}</td>
+                <td>{{ lot.priority }}</td>
+                <td>{{ lot.pieces }}</td>
+                <td>{{ lot.state }}</td>
+                <td>{{ lot.product }}</td>
+                <td>{{ lot.route }}</td>
+                <td>{{ lot.oper }}</td>
+                <td>{{ lot.customer }}</td>
+                <td>{{ lot.order }}</td>
+                <td>{{ lot.duedate }}</td>
+                <td>{{ lot.startdate }}</td>
+                <td>{{ lot.enteroper }}</td>
+                <td>{{ lot.procstart }}</td>
+                <td>{{ lot.disptool }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    <br>
+    <!-- Paginierungssteuerelemente -->
+    <div>
+        {% if page > 1 %}
+            <a href="{{ url_for('los_starten.los_starten_page', page=1) }}">First</a>
+            <a href="{{ url_for('los_starten.los_starten_page', page=page-1) }}">Previous</a>
+        {% endif %}
+        
+        Page {{ page }}
+
+        {% if has_next %}
+            <a href="{{ url_for('los_starten.los_starten_page', page=page+1) }}">Next</a>
+            <a href="{{ url_for('los_starten.los_starten_page', page=last_page) }}">Last</a>
+        {% endif %}
+
+    </div>
 </body>
 </html>

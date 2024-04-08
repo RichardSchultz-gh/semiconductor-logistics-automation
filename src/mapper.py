@@ -19,12 +19,12 @@ class Lot(Base):
     lotid = Column(String(15), primary_key=True)
     priority = Column(Integer)
     pieces = Column(Integer)
-    state = Column(String(15))
+    state = Column('STATE',String(15))
     product = Column(String(15))
     route = Column(String(15))
     oper = Column(String(15))
     customer = Column(String(15))
-    order = Column(String(15))
+    order = Column('ORDER',String(15))
     duedate = Column(Date)
     startdate = Column(Date)
     enteroper = Column(TIMESTAMP)
@@ -57,7 +57,7 @@ class Tool(Base):
     tooltype = Column(String(25))
     mttr = Column(Integer)
     mttf = Column(Integer)
-    state = Column(String(15))
+    state = Column('STATE',String(15))
 
 class Workflow(Base):
     __tablename__ = 'workflow'
