@@ -345,12 +345,14 @@ bei klassendiagramm nachschauen
 
 
 Frage an Ringel: Woraus setzt sich die ID zusammen? und wie wird sie erstellt (automatisch)
-wie mit timer (wie soll der laufen)
+wie mit timer (wie soll der laufen) -> "immer" also immer wenn Raspy an ist
 
 Nils & Richard: UC01
 Nico & Yannik: Wireframes & irgendwas
 Paul: Datensätze, schaut nochmal auf die Use Cases
 Alle: Datenbank installieren
+
+
 
 == Meetings mit Coach
 
@@ -389,6 +391,11 @@ Protokoll:
 
 .ergebene Aufgaben:
 * 
+
+
+=== Meeting 09.04.2024
+
+
 
 == Meetings mit Ringel
 === Meeting 1
@@ -558,3 +565,50 @@ testdaten (ein paar Tausend Datensätze haben wir -> große Datenmenge)
 
 ShowCase:
 Datenbank erstzeigen (select) dann GUI (eine Testdatensatz einfügen) (und evtl. nochmal die Datenbank zeigen, dass der Datensatz jetzt drine ist)
+
+
+=== Meeting 5 08.04.
+
+(wissen wann ringel was gesagt hat um nachzufolgen können dass er das gesagt hat.)
+
+AP15-0
+Aplle 15 Bestellung Nr 0
+
+-> uns was sinnvolles ausdenken, dass dann als System gilt und automatisch generiert wird
+
+25 default wert pro Scheibe
+
+anlegen Lose:
+
+route auswählen: 
+hat nils verstanden
+
+berechnung startdatum:
+manuelles Startdatum setzen
+bei Start Lot startet das Los in diesem Moment
+bei Timer: müssen dann und dann fertig sein. einer muss sagen, wann erstes los startet und wann letztes Startet. dann weiß man wie oft lose starten. Nach intervall starten, ausrechnen wie viele lose pro Intervall starten müssen.
+
+Er will:
+* agil itertiv in sprints
+* alle 14 Tage ein Software Teil vorlegen, frei geben zum Kundentest oder ggf. schon Abnehmen
+
+Ringel: Raspy in einem Netz verfügbar sein, so kann Ringel auf den Raspyzugreifen. Raspy im Netz der Fakultät ist (und Raspy liegt dann bei Ringel) oder dass die Datenbank auf einem Server liegt.
+--> ne Lösung überlegen bis zum nächsten Meeting
+Ringel will dauerhafte Zugriffsmöglichkeit.
+
+Final soll es nur noch auf dem Raspy laufen.
+
+Testing --> Unit Tests
+geschützt vor nem Crash, simulieren von Horrorfällen, was wenn Datenbank abstürtzt etc. 
+
+
+
+Übergabe (kann man aber auch schon neben bei machen (UC weise zum Beispiel)):
+
+Abnahme läuft Dokumentieren, funktionale und nicht-funktionale Anforderungen müssen abgenommen werden. 
+
+Lizenz überlegen -> ihm vorschlagen; er will lizenz, dass andere Studenten und Mitarbeiter an der Software weiterarbeiten können.
+Lizenz muss in datein vermerkt werden.
+"Sehen sie zu dass sie jegliche Verantwortung/Haftung rauskommen."
+
+

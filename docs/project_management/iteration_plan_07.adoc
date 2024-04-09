@@ -32,9 +32,17 @@ include::../_includes/default-attributes.inc.adoc[]
 
 Die in dieser Iteration geplanten Aufgaben sind in der Work Items List dargestellt (hier Verweis einfügen).
 
-//image::Iteration7_issues_begin_iteration.png[]
+//image::Iteration7_issues.png[]
 
+Nils hat grob die Wireframes umgesetzt. nicht die 3 die es als aufgabe hatten
 
+paul hat seinen job gemacht
+
+die anderen 3 gar nichts
+
+wir arbeiten ab jetzt mit abgabedaten für alle. ich schaue es mir dann an.
+
+start war schwer, da marlene personelle schwierigkeiten hatte und daher nicht 100 pro am Projekt arbeiten konnte und ich glaube darunter hat die arbeit aller gelitten. Nils ist der einzige proaktive und Paul und Richard brauchen klaren aufgaben und arbeiten nicht mal drauf los. Nico und Yannik brauchen mehr kontrolle. 
 
 == Probleme (optional)
 //Optional: Führen Sie alle Probleme auf, die in dieser Iteration adressiert werden sollen. Aktualisieren Sie den Status, wenn neue Probleme bei den täglichen / regelmäßigen Abstimmungen berichtet werden.
