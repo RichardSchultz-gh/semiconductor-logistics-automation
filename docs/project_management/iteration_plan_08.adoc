@@ -33,7 +33,7 @@ include::../_includes/default-attributes.inc.adoc[]
 
 Die in dieser Iteration geplanten Aufgaben sind in der Work Items List dargestellt (hier Verweis einfügen).
 
-//image::Iteration8_issues_begin_iteration.png[]
+image::Iteration8_issues_begin_iteration.png[]
 
 
 == Probleme (optional)
