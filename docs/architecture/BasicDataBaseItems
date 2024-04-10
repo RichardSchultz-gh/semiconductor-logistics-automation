@@ -1,6 +1,6 @@
 ToolID
 Maschine: Tool
-Group
+Group (in den Beispieldatensätze als TOOLFAM angegeben)
 Type    (z.B. Messmaschine)
 Owner   
 State   Zustand
@@ -39,13 +39,13 @@ Mandatory   boolean; verpflichtende Arbeitsschritte
 StepPerc    Wahrscheinlichkeit mit der Operation ausgeführt wird; bei Mandatory=1 derzeit NULL in den Beispieldatensätzen; ansonsten Zahl pos. Zahl >0 und <100
 
 
-Prozess-Zeiten: PTime       rein bis raus
-Tool
+Prozess-Zeiten: PTime : Wie lange wird das Produkt bei einer bestimmten Operation aus einer Route bearbeitet?
+Tool Maschine
 Product
-Route
+Route: Teilabschnitt der Produktion (besteht aus Operations)
 Operation
-PTime       Planungsdate
-Interval    alle wieviel Zeiteinheiten kann ein neues Produkt in die Maschine rein
+PTime       int; Prozesszeit; Zeit, die ein Los auf der Maschine bearbeitet wird
+Interval    int; Gibt an, alle wie viel Zeitheiten ein neues Produkt von der Maschine verabeitet werden kann
 Recipe      String; wie ich die Aktion machen -> die beeinflusst die Zeit
 -> sagt aus für welche Maschine welche Route-Operation wie lange dauert
 -> zeit ist abhängig von Produkt Route operation und Rezept
