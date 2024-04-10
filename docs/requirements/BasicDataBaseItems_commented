@@ -1,0 +1,63 @@
+ToolID
+Maschine: Tool
+Group (in den Beispieldatensätze als TOOLFAM angegeben)
+Type    (z.B. Messmaschine)
+Owner   
+State   Zustand
+MTTR    Mittlere Zeit Reparaturendauer
+MTTF    Mittlere Zeit Anlagefehler
+
+
+Los: Lot:
+LotID
+Prio    int, Priorität des Loses
+Pcs     int, Anzahl Silizumscheiben pro Kiste 0-25, i.d.R. mit 10 initialisiert
+State   Los-Zustand: WAIT, OP_COMP, FIN, PROC, HOLD, SCRAP
+Product Jedes Los gehört zu einem Produkt
+Route   Teilabschnitt der Produktion (besteht aus Operations)
+Oper    Operation; einzelne Schritte einer Route; Durchlauf in bestimmter Reihenfolge
+Customer Char, Kundenname
+Order   Auftrag, mehrere Lose können zu einem Auftrag gehören
+StartDate Startdatum
+DueDate Fälligkeitsdatum
+EnterOper  Zeistempel; Ankunft des Loses bei Operation
+ProcStart   Zeistempel; Start der Bearbeitung des Loses
+DispTool    Maschine auf der das los bearbeitet wird; NULL falls Los nicht im Zustand PROC
+
+
+Produkt-Arbeitspläne: ProdFlow : Welches Produkt durchläuft welches Routes in welcher Reihenfolge?
+Product
+Route   Teilabschnitt der Produktion (besteht aus Operations)
+Seq     int; gibt an in welcher Reihenfolge die Routes für ein bestimmtes Produkt durchlaufen werden
+
+
+Teil-Arbeitspläne: WorkFlow : Welche Operations enthält die Route?
+Route   Teilabschnitt der Produktion (besteht aus Operations)
+Oper int; in 100er Schritten -> somit Reihenfolge der Operations identifizierbar
+Desc Char, Buchstaben- und Zahlenkombi, welche die Operation beschreibt
+Mandatory   boolean; verpflichtende Arbeitsschritte
+StepPerc    Wahrscheinlichkeit mit der Operation ausgeführt wird; bei Mandatory=1 derzeit NULL in den Beispieldatensätzen; ansonsten Zahl pos. Zahl >0 und <100
+
+
+Prozess-Zeiten: PTime : Wie lange wird das Produkt bei einer bestimmten Operation aus einer Route bearbeitet?
+Tool Maschine
+Product
+Route: Teilabschnitt der Produktion (besteht aus Operations)
+Operation
+PTime       int; Prozesszeit; Zeit, die ein Los auf der Maschine bearbeitet wird
+Interval    int; Gibt an, alle wie viel Zeitheiten ein neues Produkt von der Maschine verabeitet werden kann
+Recipe      String; wie ich die Aktion machen -> die beeinflusst die Zeit
+-> sagt aus für welche Maschine welche Route-Operation wie lange dauert
+-> zeit ist abhängig von Produkt Route operation und Rezept
+
+MES-Entitäten: Entities
+Entity
+Class
+Enabled     Darf das damit was tun?
+State
+Note
+-> Maschine, Mitarbeiter, Arbeitsmaterialien, Werkzeuge
+Anlagenressourcen:
+
+"EMS-Entitäten" die nur Verweise auf Maschinen haben 
+aber sonst in unserem Projekt außen von gelassen werden sollen
