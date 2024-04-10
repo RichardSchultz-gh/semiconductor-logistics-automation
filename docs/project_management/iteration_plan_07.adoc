@@ -23,7 +23,7 @@ include::../_includes/default-attributes.inc.adoc[]
 
 * Umsetzung der Wireframes (Schemenhaft)
 * Entscheidung mapper
-* Klassendiagramm
+* Bearbeitung Klassendiagramm
 * Projektplan
 
 
@@ -32,7 +32,7 @@ include::../_includes/default-attributes.inc.adoc[]
 
 Die in dieser Iteration geplanten Aufgaben sind in der Work Items List dargestellt (hier Verweis einfügen).
 
-//image::Iteration7_issues.png[]
+image::iteration7_issues.png[]
 
 Nils hat grob die Wireframes umgesetzt. nicht die 3 die es als aufgabe hatten
 
@@ -72,16 +72,21 @@ start war schwer, da marlene personelle schwierigkeiten hatte und daher nicht 10
 == Assessment
 //In diesem Abschnitt werden die Ergebnisse und Maßnahmen der Bewertung erfasst und kommuniziert. Die Bewertung wird üblicherweise am Ende jeder Iteration durchgeführt. Wenn Sie diese Bewertungen nicht machen, ist das Team möglicherweise nicht in der Lage, die eigene Arbeitsweise ("Way of Working") zu verbessern.
 
+*Umsetzung Wireframes*
+Die Wireframes wurden nicht vollständig umgesetzt. Nils hat grob die Wireframes implementiert und die Schnittstellen hergestellt. Dabei wurde das Cockpit sowie die Wireframes Los starten und Los bearbeiten schemenhaft umgesetzt. Diese Umsetzungen sind jedoch noch nicht final. Jene die die Aufgaben zur Umsetzung der Wireframes bekommen haben, haben keine detailiertere Implementierung vorgenommen. Das Ziel wurde daher in dieser Iteration nicht erreicht und wird zu Beginn der nächsten Iteration angegangen.
+Positiv zu bewerten ist, dass das Cockpit bereits grob angefangen wurde, sowie die Funktionaltität des Wechseln zwischen den Seiten.
 
-* Beurteilung im Vergleich zu den Zielen
-//Dokumentieren Sie, ob die angestrebten Ziele des Iterationsplans erreicht wurden.
+Bei der Bearbeitung des Aspekts wurden sich Gedanken zum LogIn gemacht und es wurde ersichtlich, dass man sich zeitnah Gedanken machen muss, wie dies gelöst wird.
 
-* Geplante vs. erledigte Aufgaben
-//Zusammenfassung, ob alle für die Iteration geplanten Aufgaben bearbeitet wurden und welche Aufgaben verschoben oder hinzugefügt wurden.
+*Entscheidung mapper*
 
-* Beurteilung im Vergleich zu den Bewertungskriterien
-//Document whether you met the evaluation criteria as specified in the Iteration Plan.
-//Geben Sie an, ob Sie die o.g. Bewertungskriterien erfüllt haben. Das kann z.B. folgende Informationen enthalten: “Demo for Department X was well-received, with some concerns raised around usability,” or “495 test cases were automated with a 98% pass rate. 9 test cases were deferred because the corresponding Work Items were postponed.”
+*Klassendiagramm*
+
+*Projektplan*
+
+
+
+
 
 * Andere Belange und Abweichungen
-//Führen Sie weitere Themen auf, für die eine Bewertung durchgeführt wurde. Beispiele sind Finanzen, Zeitabweichungen oder Feedback von Stakeholdern, die nicht bereits an anderer Stelle dokumentiert wurden.
+

@@ -1,0 +1,62 @@
+= Abnahme- und Übergabeprotokoll
+
+Software Engineering II – Team I04: Modell eines automatisierten Fabrikbetriebes
+
+Sommersemester 2024 – Prof. Dr. Jürgen Anke – HTW Dresden
+
+== Abnahmedokumentation
+=== Abnahme
+
+=== Lieferumfang
+
+=== Funktionalitäten
+
+=== Systemweite Anforderungen
+
+
+Hiermit wird die Abnahme bestätigt.
+
+//Unterschrift Ringel
+
+
+== Vereinbarungen
+
+Zwischen
+
+* Nils Generlich
+* Yannik-Joel Herrchen
+* Enrico Kersten
+* Nico Kroll
+* Paul Marx
+* Hoang Nguyen Sy
+* Richard Schultz
+* Marlene Winter
+
+von der Hochschule für Technik und Wirtschaft Dresden (nachfolgend „Team“ genannt)
+
+und 
+
+* Robert Ringel
+
+von der Hochschule für Technik und Wirtschaft Dresden (nachfolgend „Auftragsgeber“)
+
+wird für das Softwaresystem
+
+* Modell eines automatisierten Fabrikbetriebes (nachfolgend „Software“ genannt)
+
+folgendes vereinbart:
+
+
+== Lizenzvereinbarung
+
+== Haftungsausschuss
+
+== Ausschluss zukünfiger Unterstützung
+
+...
+
+
+Mit meiner Unterschrift erkäre ich mich mit allen obenstehend aufgeführten Vereinbarungen einverstanden.
+
+//hier alle unterschreiben
+

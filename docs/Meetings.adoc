@@ -352,6 +352,16 @@ Nico & Yannik: Wireframes & irgendwas
 Paul: Datensätze, schaut nochmal auf die Use Cases
 Alle: Datenbank installieren
 
+=== Teammeeting 10.04.2024
+
+nutzen pull request und branches
+
+Nico hat LogIn gemacht. Funktioniert auch soweit. Nils muss einmal raufschauen. 
+Es gibt user1 und user2 die durch verschiedene Rechte auf verschiedene main seiten geleitet werden.
+
+timer schaut sich richard an
+Nils setzt sich mit den Dingen die Ringel sagte im Meeting
+
 
 
 == Meetings mit Coach
@@ -394,6 +404,17 @@ Protokoll:
 
 
 === Meeting 09.04.2024
+
+bei den nicht-funktionalen Anforderungen einige noch mal rausstreichen -> Paul
+
+Lizenzen: 
+    bei Arten von Software Lizenzen schauen was es da so gibt und was passt
+"freie softwarelizenz"
+
+Was abgeben:
+Entwurfsdoku: Architekture Notebook, Testdoku: Testfälle, betriebsdoku: , Anwenderdoku: wie das system anzuwenden ist, Entwicklerdoku: code mit kommentaren.
+Projektbericht: 
+
 
 
 
@@ -603,12 +624,14 @@ geschützt vor nem Crash, simulieren von Horrorfällen, was wenn Datenbank abst�
 
 
 
-Übergabe (kann man aber auch schon neben bei machen (UC weise zum Beispiel)):
+Übergabe (kann man aber auch schon neben bei machen (UC-weise zum Beispiel)):
 
-Abnahme läuft Dokumentieren, funktionale und nicht-funktionale Anforderungen müssen abgenommen werden. 
+Abnahme läuft Dokumentieren, funktionale und nicht-funktionale Anforderungen müssen abgenommen werden. -> das wird dann von allen unterschrieben
 
 Lizenz überlegen -> ihm vorschlagen; er will lizenz, dass andere Studenten und Mitarbeiter an der Software weiterarbeiten können.
 Lizenz muss in datein vermerkt werden.
-"Sehen sie zu dass sie jegliche Verantwortung/Haftung rauskommen."
+"Sehen sie zu, dass sie jegliche Verantwortung/Haftung rauskommen."
 
+Termin für Fertigungskonzept mit Ringel und Paul, mit und (Nils) machen
 
+ 
