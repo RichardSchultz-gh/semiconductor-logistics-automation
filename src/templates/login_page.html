@@ -1,17 +1,17 @@
 <!-- login_page.html -->
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='login.css') }}">
+    </head>
     <h1>Login</h1>
     
     <form id="loginForm">
         <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required><br>
+        <input type="text" id="username" name="username" autocomplete="off" required><br>
 
         <label for="password">Password:</label>
         <input type="password" id="password" name="password" required><br>
@@ -47,9 +47,13 @@
                 console.log('Response:', data);
                 // Hier können Sie die Antwort weiter verarbeiten oder entsprechende Aktionen ausführen
 
-                // Beispiel: Weiterleitung zur Insert-Seite bei erfolgreicher Anmeldung
+                // Beispiel: Weiterleitung zur entsprechenden Seite bei erfolgreicher Anmeldung
                 if (data.status === "success") {
-                    window.location.href = "/main"; // Weiter zur Insert-Seite
+                    if (data.user === "user1") {
+                        window.location.href = "/main"; // Weiter zur Profilseite für user1
+                    } else if (data.user === "user2") {
+                        window.location.href = "/main2"; // Weiter zur Profilseite für user2
+                    }
                 } else {
                     alert("Invalid username or password. Please try again.");
                 }
@@ -58,39 +62,6 @@
                 console.error('Error:', error);
                 // Fehlerbehandlung, z. B. eine Fehlermeldung anzeigen
             });
-        });
-
-        function sendAjaxRequest(url, data, callback) {
-            fetch(url, {
-                method: 'POST', // oder 'GET', 'PUT', usw., je nach Bedarf
-                headers: {
-                    'Content-Type': 'application/json', // oder andere benötigte Header
-                },
-                body: JSON.stringify(data), // Daten in das gewünschte Format umwandeln (JSON)
-            })
-            .then(response => response.json()) // Antwort in JSON-Format parsen
-            .then(data => {
-                // Daten verarbeiten (z. B. Rückgabewerte überprüfen)
-                callback(data);
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                // Fehlerbehandlung, z. B. eine Fehlermeldung anzeigen
-            });
-        }
-
-        sendAjaxRequest(url, requestData, function(responseData) {
-            // Verarbeitung der Antwort
-            console.log('Response:', responseData);
-            // Hier können Sie die Antwort weiter verarbeiten oder entsprechende Aktionen ausführen
-
-            // Beispiel: Weiterleitung zur Insert-Seite bei erfolgreicher Anmeldung
-            if (responseData.status === "success") {
-                window.location.href = "/main"; // Weiter zur Insert-Seite
-            } else {
-                alert("Invalid username or password. Please try again.");
-                showLogin(); // Zeige das Login-Formular erneut
-            }
         });
     </script>
 
