@@ -53,7 +53,7 @@ class Tool(Base):
 
     tool = Column(String(15), primary_key=True)
     toolfam = Column(String(15))
-    owner = Column(String(25))
+    owner = Column('OWNER',String(25))
     tooltype = Column(String(25))
     mttr = Column(Integer)
     mttf = Column(Integer)

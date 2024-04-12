@@ -12,7 +12,7 @@ los_starten_bp = Blueprint('los_starten', __name__)
 
 # Funktion zur Überprüfung der Benutzeranmeldung
 def check_user_session():
-    return 'username' in session and session['username'] in ['user1', 'user2']
+    return 'username' in session and session['username'] in ['user1']
 
 @los_starten_bp.route("/main/los_starten", methods=["GET"])
 def los_starten_page():
@@ -123,8 +123,9 @@ def generateLotID(create_lot_ids):
 
 def los_starten_success(lot_ids):
     #Anzahl Einträge in der Liste lot_ids
-    i = len(lot_ids)
-    return render_template("los_starten_success.html", lot_data=lot_ids, amount=i)
+    if check_user_session():
+        i = len(lot_ids)
+        return render_template("los_starten_success.html", lot_data=lot_ids, amount=i)
 
 def get_all_lot_ids():
     # Hiermit rufen wir alle LotIDs aus der Datenbank ab und geben sie zurück

@@ -77,12 +77,26 @@
 
     <hr>
     <button onclick="goBack()">Back</button>
+    <button id="mainPageBtn">Back to Main Page</button>
 
-<script>
-    function goBack() {
-        window.history.back();
-    }
-</script>
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    
+        var username = "{{ username }}"; //aus Jinja2 Template
+    
+        var mainPageBtn = document.getElementById('mainPageBtn');
+        mainPageBtn.addEventListener('click', function() {
+            if (username === 'user1') {
+                //zurück zu main-Page
+                window.location.href = "{{ url_for('main.main') }}";
+            } else if (username === 'user2') {
+                //zurück zu main2
+                window.location.href = "{{ url_for('main.main2') }}";
+            }
+        });
+    </script>    
 
 </body>
 </html>

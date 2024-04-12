@@ -25,11 +25,12 @@ def entities_index():
         if request.method == "POST" and "show_data" in request.form:
             show_data = True
 
-        session = Session()
-        records = session.query(Entities).all()
-        session.close()
+        session_e = Session()
+        records = session_e.query(Entities).all()
+        session_e.close()
+        usern=session['username']
 
-        return render_template("entities_page.html", records=records, show_data=show_data)
+        return render_template("entities_page.html", records=records, show_data=show_data, username=usern)
     else:
         return "Unauthorized", 401  # Fehlermeldung anzeigen oder Umleitung durchführen
 
