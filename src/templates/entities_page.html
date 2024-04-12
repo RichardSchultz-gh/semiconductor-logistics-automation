@@ -76,6 +76,13 @@
     </form>
 
     <hr>
-    <a href="{{ url_for('main.main') }}"><button>Back to Main Page</button></a>
+    <button onclick="goBack()">Back</button>
+
+<script>
+    function goBack() {
+        window.history.back();
+    }
+</script>
+
 </body>
 </html>

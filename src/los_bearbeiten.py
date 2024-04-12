@@ -1,6 +1,6 @@
 # los_bearbeiten.py
 from flask import Blueprint, render_template, request, redirect, url_for
-from mapper import Lot, Machine
+from mapper import Lot, Tool
 from database_connection import get_database_url
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
@@ -8,14 +8,14 @@ import datetime
 
 los_bearbeiten_bp = Blueprint('los_bearbeiten', __name__)
 
-@los_bearbeiten_bp.route("/los_bearbeiten", methods=["GET"])
+@los_bearbeiten_bp.route("/main/los_bearbeiten", methods=["GET"])
 def los_bearbeiten_page():
     lots = get_all_lots()  # alle Lose abrufen
     machines = get_all_machines()  # alle Maschinen abrufen
 
     return render_template("los_bearbeiten_page.html", lots=lots, machines=machines)
 
-@los_bearbeiten_bp.route("/los_bearbeiten", methods=["POST"])
+@los_bearbeiten_bp.route("/main/los_bearbeiten", methods=["POST"])
 def bearbeite_lose():
     lot_id = request.form.get("lot_id")
     machine_id = request.form.get("machine_id")
@@ -40,7 +40,7 @@ def bearbeite_lose():
     lot = session.query(Lot).filter_by(id=lot_id).first()
 
     # Maschine abrufen
-    machine = session.query(Machine).filter_by(id=machine_id).first()
+    machine = session.query(Tool).filter_by(id=machine_id).first()
 
     if not lot:
         return render_template("los_bearbeiten_error.html", error_message="Los nicht gefunden")
@@ -76,6 +76,6 @@ def get_all_machines():
     engine = create_engine(DATABASE_URL)
     Session = sessionmaker(bind=engine)
     session = Session()
-    machines = session.query(Machine).all()
+    machines = session.query(Tool).all()
     session.close()
     return machines
