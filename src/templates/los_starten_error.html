@@ -12,15 +12,24 @@
             right: 10px;
             padding: 10px;
         }
+        .err{
+            /*fette Schrift*/
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
-    <h1>Los starten</h1>
+    <h1>Error - Page</h1>
     <a href="{{ url_for('los_starten.los_starten_page') }}" class="main-btn"><button>Back to Los-Starten-Page</button></a>
    <hr>
-    <h2>Lose hinzufügen gescheitert</h2>
-    <p>Es ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.</p>
-    <p>Der Fehler lautet:</p>
-    <p>{{ error_message }}</p>
+   <!-- wenn id=1, dann Ausgabe-->
+    {% if id==1 %}
+    <h2>Auftrag registrieren gescheitert</h2>
+    {% endif %}
+    {% if id==2 %}
+    <h2>Lot manuell starten gescheitert</h2>
+    {% endif %}
+    <p>Es ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut. Der Fehler lautet:</p>
+    <p class="err">{{ error_message }}</p>
 </body>
 </html>
