@@ -1,0 +1,58 @@
+<!-- los_bewegen_page.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Los bewegen</title>
+    <style>
+         .main-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+        .back-btn {
+            position: absolute;
+            top: 10px;
+            right: 150px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Los bewegen</h1>
+    <button onclick="goBack()" class="back-btn">Back</button>
+    <a id="backtoMainPage" class="main-btn"><button>Back to Main Page</button></a>
+    <hr>
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+
+        var username = "{{ username }}"; //aus Jinja2 Template
+        
+        var mainPageBtn = document.getElementById('backtoMainPage');
+        mainPageBtn.addEventListener('click', function() {
+            if (username === 'user1') {
+                //zurück zu main-Page
+                window.location.href = "{{ url_for('main.main') }}";
+            } else if (username === 'user2') {
+                //zurück zu main2
+                window.location.href = "{{ url_for('main.main2') }}";
+            }
+        });
+    </script>
+
+    <form action="{{ url_for('los_bewegen.los_bewegen_page') }}" method="POST">
+        <label for="lot_id">Lot ID:</label>
+        <input type="text" name="lot_id" id="lot_id" list="lot_ids" required>
+        <datalist id="lot_ids">
+            {% for lotid in lotids %}
+                <option value="{{ lotid }}">
+            {% endfor %}
+        </datalist>
+        <br><br>
+        <input type="submit" value="Move Lot">
+        <br><br>
+    </form>
+</body>
+</html>

@@ -1,14 +1,52 @@
-<!-- los_bearbeiten.html -->
+<!-- los_bearbeiten_page.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Los bearbeiten</title>
+    <style>
+         .main-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+        .back-btn {
+            position: absolute;
+            top: 10px;
+            right: 150px;
+        }
+    </style>
 </head>
 <body>
     <h1>Los bearbeiten</h1>
+    <button onclick="goBack()" class="back-btn">Back</button>
+    <a id="backtoMainPage" class="main-btn"><button>Back to Main Page</button></a>
     <hr>
-    <a href="{{ url_for('main.main') }}"><button>Back to Main Page</button></a>
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+
+        var username = "{{ username }}"; //aus Jinja2 Template
+        
+        var mainPageBtn = document.getElementById('backtoMainPage');
+        mainPageBtn.addEventListener('click', function() {
+            if (username === 'user1') {
+                //zurück zu main-Page
+                window.location.href = "{{ url_for('main.main') }}";
+            } else if (username === 'user2') {
+                //zurück zu main2
+                window.location.href = "{{ url_for('main.main2') }}";
+            }
+        });
+    </script>
+
+    <form action="{{ url_for('los_bearbeiten.los_bearbeiten_page') }}" method="POST">
+        <label for="los">Los:</label>
+        <input type="text" id="lot_id" name="lot_id" value="{{ los }}">
+        <br>
+        <input type="submit" value="Los bearbeiten">
+    </form>
 </body>
 </html>

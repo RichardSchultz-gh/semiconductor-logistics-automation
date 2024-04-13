@@ -64,7 +64,6 @@ def los_starten():
 
         DATABASE_URL = get_database_url()
         engine = create_engine(DATABASE_URL)
-        Base = declarative_base()
         Session = sessionmaker(bind=engine)
         session = Session()
 

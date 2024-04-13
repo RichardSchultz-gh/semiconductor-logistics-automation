@@ -1,5 +1,5 @@
 # los_bearbeiten.py
-from flask import Blueprint, render_template, request, redirect, url_for
+from flask import Blueprint, render_template, request, redirect, url_for, session
 from mapper import Lot, Tool
 from database_connection import get_database_url
 from sqlalchemy import create_engine
@@ -8,12 +8,20 @@ import datetime
 
 los_bearbeiten_bp = Blueprint('los_bearbeiten', __name__)
 
+def check_user_session():
+    return 'username' in session and session['username'] in ['user1']
+
 @los_bearbeiten_bp.route("/main/los_bearbeiten", methods=["GET"])
 def los_bearbeiten_page():
-    lots = get_all_lots()  # alle Lose abrufen
-    machines = get_all_machines()  # alle Maschinen abrufen
+    if check_user_session():
+        lots = get_all_lots()  # alle Lose abrufen
+        machines = get_all_machines()  # alle Maschinen abrufen
 
-    return render_template("los_bearbeiten_page.html", lots=lots, machines=machines)
+        usern=session['username']
+
+        return render_template("los_bearbeiten_page.html", lots=lots, machines=machines, username=usern)
+    else:
+        return "Unauthorized", 401  # Fehlermeldung anzeigen oder Umleitung durchführen
 
 @los_bearbeiten_bp.route("/main/los_bearbeiten", methods=["POST"])
 def bearbeite_lose():
