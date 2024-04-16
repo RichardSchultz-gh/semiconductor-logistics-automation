@@ -20,7 +20,7 @@ Mit der einmaligen Kombination aus „OPER“ und „ROUTE“ wird für das jewe
 
 NextOperation=CurrentOperation+100;
 
-Prüfe, ob für die Route eines Loses eine Nextoperation in der Tabelle „WORKFLOW“ vorhanden ist.
+Prüfung, ob für die Route eines Loses eine Nextoperation in der Tabelle „WORKFLOW“ vorhanden ist.
 
 - Falls ja-> Prüfung, ob die nächste Operation ausgeführt wird:
 
@@ -32,7 +32,7 @@ Prüfe, ob für die Route eines Loses eine Nextoperation in der Tabelle „WORKF
 
 ** Falls Nein -> Springe zu I) des Ablaufes 
 
-* FinishMoveLot: Operation des Loses in der Tabelle „Lot“ auf NextOperation setzen und „State“ in der Tabelle „Lot“ auf „WAIT“ setzen.
+* FinishMoveLot: Operation des Loses in der Tabelle „Lot“ auf NextOperation setzen und „STATE“ in der Tabelle „LOT“ auf „WAIT“ setzen.
 
 - Falls Nein -> weiter mit II)
 
