@@ -58,3 +58,16 @@ Eventuell zu bedenken:
 * das eingegbene Los befindet sich nicht im Zustand "OP_COMP"
 
 * die Eingabe ist unzulässig, z.B. falsche Los ID oder ungültiger Befehl
+
+*Alternative Abläufe (manuell):*
+
+Für den Timer gibt es keine alternativen Abläufe.
+
+*Über das Eingabefeld sollen weitere Zustandsübergänge möglich sein.*
+
+- Ein Los, welches sich im Zustand HOLD befindet, ist möglicherweise defekt und der Folgezustand muss manuell gesetzt werden. Entweder wird  "OP_COMP" gesetzt, wenn das Los in Ordnung ist oder "SCRAP" falls das Los tatsächlich defekt ist. Über das Eingabefeld erfolgt eine Eingabe nach dem Schema: <Los ID> <SCRAP/OP_COMP>. Hierbei wird lediglich geprüft, ob sich das Los tatsächlich im Zustand "HOLD" befindet. Falls ja, wir der neue "STATE" in der Los-Tabelle gesetzt und falls nein, wird eine Fehlermeldung ausgegeben.
+
+- der manuelle Übergang des Loszustandes von "WAIT" zu "PROC" wird im "Use Case 03 - Los bearbeiten" realisiert.
+
+
+
