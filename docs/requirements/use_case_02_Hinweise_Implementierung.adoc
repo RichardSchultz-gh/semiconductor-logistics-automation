@@ -50,5 +50,9 @@ NextRoute=SEQ.CurrentRoute+1;
 * Falls nein-> Ende des Fertigungsprozesses wurde erreicht. Setzte „STATE“ in der Tabelle „LOT“ auf „FIN“
 
 
+*Standardablauf (Manuell):*
 
-
+Im Wesentlichen analog zum Timer, aber kein automatisierter Start, sondern durch eine Benutzereingabe und nur für ein einzelnes Los. Die Eingabe erfolgt in einem Textfeld nach dem Schema <Los ID> <MOVE>. 
+Eventuell zu bedenken:
+*das eingegbene Los befindet sich nicht im Zustand "OP_COMP"
+*die Eingabe ist unzulässig, z.B. falsche Los ID oder ungültiger Befehl
