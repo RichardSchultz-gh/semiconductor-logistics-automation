@@ -46,7 +46,7 @@ Aufruf der Tabelle „PRODFLOW“ anhand der Spalte „PRODUCT“ und der „ROU
 
 NextRoute=SEQ.CurrentRoute+1;
 
-* Falls ja -> Setze „ROUTE“ in der Tabelle „LOT“ auf NextRoute und „STATE“ in der Tabelle „LOT“ auf „WAIT“
+* Falls ja -> Setze „ROUTE“ in der Tabelle „LOT“ auf NextRoute und „STATE“ in der Tabelle „LOT“ auf „WAIT“ und "OPERATION" auf "0100" (vermutlich immer "0100", nicht alle Datensätze geprüft). 
 * Falls nein-> Ende des Fertigungsprozesses wurde erreicht. Setzte „STATE“ in der Tabelle „LOT“ auf „FIN“
 
 
