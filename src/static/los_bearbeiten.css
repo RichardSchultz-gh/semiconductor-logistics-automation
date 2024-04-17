@@ -45,7 +45,7 @@ main {
 h2 {
     color: #333;
     font-size: 20px;
-    margin-top: 50px; /* Warum wurde das geändert? */
+    margin-top: 50px; 
     margin-bottom: 10px;
 }
 
@@ -84,13 +84,13 @@ th, td {
 .fixed_header th {
     background-color: #469fff;
     color: #333333;
-    width: auto; /* Anpassung: Breite automatisch */
+    width: auto; 
 }
 
 .fixed_header td {
     background-color: #dfdfdf;
     color: #333333;
-    width: 100%; /* Anpassung: Breite automatisch */
+    width: 100%; 
 }
 
 .back-btn, .main-btn button, #aktualisierenBtn, #editLotBtn .edit-btn {
