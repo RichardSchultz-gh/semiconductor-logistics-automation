@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cockpit</title>
+    <link rel="stylesheet" href="v3_Cockpit.css"/>
+</head>
+<body>
+
+<header>
+    <h1>Fabrikbetrieb - Frau Holle</h1>
+</header>
+
+<!-- <nav>
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+</nav> -->
+
+<a href="{{ url_for('main.main') }}" id="logoutbutton"><button>Log out</button></a>
+
+
+<div class="information-container">
+    <div class="infohor">
+        <label class="infolabel">WIP</label><output type="number">100000</output>
+    </div>
+    <div class="infohor">
+        <label class="infolabel">HOLD</label><output type="number">10</output>
+    </div>
+    <div class="infohor">
+        <label class="infolabel">MVS/hr</label><output type="number">10</output>
+    </div>
+    <br>
+    <div class="infohor">
+        <label class="infolabel">HOLD</label><output type="number">10</output>
+    </div>
+    <div class="infohor">
+        <label class="infolabel">FIN</label><output type="number">10</output>
+    </div>
+</div>
+
+<div class="information-container">
+    <div class="infovert">
+        <label class="infolabel">TOOLS</label><br>
+        <output type="number">10</output>
+    </div>
+    <div class="infovert">
+        <label class="infolabel">IDLE</label><br>
+        <output type="number">10</output>
+    </div>
+    <div class="infovert">
+        <label class="infolabel">PROD</label><br>
+        <output type="number">10</output>
+    </div>
+    <div class="infovert">
+        <label class="infolabel">MAINT</label><br>
+        <output type="number">10</output>
+    </div>
+    <div class="infovert">
+        <label class="infolabel">DOWN</label><br>
+        <output type="number">10</output>
+    </div>
+</div>
+
+
+
+<div class="functions-container">
+    <div class="functionbuttons">
+        <label>Operations</label><br>
+        <button type="button">starten</button><br>
+        <button type="button">bearbeiten</button><br>
+        <button type="button">bewegen</button>
+    </div>
+
+    <div class="functionbuttons">
+        <label>Anpassung</label><br>
+        <button type="button">Stammdaten</button><br>
+        <button type="button">Testsystem</button>
+    </div>
+    
+    <div class="functionbuttons">
+        <label>Funktionen</label><br>
+        <button type="button">Daten visualisieren</button><br>
+        <button type="button">Backup erstellen</button><br>
+        <button type="button">Fertigungsplan ansehen</button>
+    </div>
+    
+    <div class="functionbuttons">
+        <label>Daten</label><br>
+        <button type="button">Daten importieren</button><br>
+        <button type="button">Daten exportieren</button>
+    </div>
+</div>
+
+<!-- <main>
+    <h2>About Us</h2>
+    <p>This is a simple website created with HTML.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed accumsan dignissim velit, eu tincidunt arcu posuere sed. Donec euismod nisi ac nulla elementum, nec ultricies dui ullamcorper. Sed quis mi eget risus ullamcorper rutrum.</p>
+</main> -->
+
+
+</body>
+</html>

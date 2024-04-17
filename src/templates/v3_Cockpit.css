@@ -1,0 +1,92 @@
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+main {
+    padding: 20px;
+}
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+button {
+    font-size: 20px;
+}
+
+select {
+    font-size: 20px;
+
+}
+
+input {
+    font-size: 20px;
+    width: 170px;
+}
+
+output {
+    width: 120px; /* Set the width to 200 pixels */
+    border: 1px solid #ccc; /* Border style */
+    padding: 0px 10px; /* Padding: 5px top/bottom, 10px left/right */
+    border-radius: 5px; /* Rounded corners */
+    background-color: #f9f9f9; /* Background color */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Shadow effect */
+    display: inline-block;
+}
+
+.information-container {
+    font-size: 25px;
+    margin: 50px;
+}
+
+.infohor {
+    display:inline-block;
+    margin-right: 40px;
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.infovert {
+    display:inline-block;
+    margin-right: 40px;
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.infolabel {
+    width: 100px;
+    display: inline-block;
+}
+
+.functions-container {
+    margin: 50px;
+    font-size: 25px;
+    text-align: left;
+    line-height: 1.5;
+    width: 100%;
+}
+
+.functionbuttons {
+    display: inline-block;
+    margin-right: 40px;
+    vertical-align: top;
+}
+
+#logoutbutton {
+    position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 10px;
+}
