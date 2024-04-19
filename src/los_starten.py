@@ -124,13 +124,12 @@ def los_starten():
             session = Session()
 
             for lot_id in lot_ids:
-                # neues timer-Objekt für jedes Los anlegen
-                #timer(lot_id, duedate,startTime) # Timer wird gestartet
-
                 # Startzeit des aktuellen Loses in der Datenbank speichern
                 lot = session.query(Lot).filter(Lot.lotid == lot_id).first()
                 lot.startdate = startTime
                 session.commit()
+
+                #startTimer(lotid)
 
                 startTime = startTime + datetime.timedelta(hours=time_next_lot) # Startzeit für das nächste Los wird berechnet (ungenau auf Stunden gerundet)
 
@@ -233,6 +232,7 @@ def manuell_starten():
     lot = session.query(Lot).filter(Lot.lotid == lotid).first()
     if(lot.state == "INIT"):
         lot.state = "WAIT"
+        lot.startdate = datetime.datetime.now()
         #timer(lotid, lot.duedate, datetime.datetime.now()) # Timer wird gestartet
         session.commit()
         session.close()
