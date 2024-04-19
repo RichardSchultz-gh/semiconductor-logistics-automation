@@ -55,6 +55,15 @@ def main2():
         toolsdown = session_d.query(Tool).filter(Tool.state == "DOWN").count()
         session_d.close()
 
-        return render_template("main.html", username=session['username'], toolsanzahl=toolsanzahl, toolsidle=toolsidle, toolsprod=toolsprod, toolsmaint=toolsmaint, toolsdown=toolsdown)
+        #Anzahl Lose in Zustand OP_COMP, HOLD, WAIT oder PROC
+        lotsopcomp = session_d.query(Lot).filter(Lot.state == "OP_COMP").count()
+        lotshold = session_d.query(Lot).filter(Lot.state == "HOLD").count()
+        lotswait = session_d.query(Lot).filter(Lot.state == "WAIT").count()
+        lotsproc = session_d.query(Lot).filter(Lot.state == "PROC").count()
+        WIPA = lotsopcomp + lotshold + lotswait + lotsproc
+        lotsfin = session_d.query(Lot).filter(Lot.state == "FIN").count()
+        session_d.close()
+
+        return render_template("main.html", username=session['username'], toolsanzahl=toolsanzahl, toolsidle=toolsidle, toolsprod=toolsprod, toolsmaint=toolsmaint, toolsdown=toolsdown, WIPA=WIPA, lotsfin=lotsfin, lotsopcomp=lotsopcomp, lotshold=lotshold)
     else:
         return "Unauthorized", 401  # Zeigen Sie eine Fehlermeldung oder eine Umleitung an
