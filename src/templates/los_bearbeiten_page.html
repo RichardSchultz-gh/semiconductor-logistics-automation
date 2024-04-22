@@ -11,7 +11,8 @@
     <header>
         <h1>Los bearbeiten</h1>
         <button onclick="goBack()" class="back-btn">Back</button>
-        <!--<a id="backtoMainPage" class="main-btn"><button>Back to Main Page</button></a>-->
+        <a id="backtoMainPage" class="main-btn"><button>Back to Main Page</button></a>
+        <br>
         <hr>
     </header>
     <script>
@@ -50,7 +51,7 @@
                     </ul>
                 </div>
                 <div class="section">
-                    <h2>Zustände / Befehle Los</h2>
+                    <h2>Zustände Los</h2>
                     <ul>
                         <li>MOVE</li>
                         <li>PROC</li>
@@ -62,7 +63,7 @@
                     </ul>
                 </div>
                 <div class="section">
-                    <h2>Zustände / Befehle Maschine</h2>
+                    <h2>Zustände Maschine</h2>
                     <ul>
                         <li>MAINT</li>
                         <li>IDLE</li>
@@ -76,19 +77,38 @@
             <div class="eingabefeld">
                 <label for="befehlInput">Los ID:</label>
                 <select id="losIdDropdown">
-                    <!-- Options werden später über .py eingefügt -->
+                    {% for lot in lots %}
+                        <option value="{{ lot.lotid }}">{{ lot.lotid }}</option>
+                    {% endfor %}
+                    <option value="none">none</option> <!-- für leere Auswahl -->
                 </select>
                 <label for="zustand1Dropdown">Los Zustand :</label>
                 <select id="zustand1Dropdown">
-                    <!-- Options werden später über .py eingefügt -->
+                    <!-- Optionen: MOVE, PROC, HOLD, OP_COMP, FIN, WAIT, SCRAP-->
+                    <option value="MOVE">MOVE</option>
+                    <option value="PROC">PROC</option>
+                    <option value="HOLD">HOLD</option>
+                    <option value="OP_COMP">OP_COMP</option>
+                    <option value="FIN">FIN</option>
+                    <option value="WAIT">WAIT</option>
+                    <option value="SCRAP">SCRAP</option>
+                    <option value="none">none</option> <!-- für leere Auswahl -->
                 </select>
                 <label for="toolIdDropdown">Tool ID:</label>
                 <select id="toolIdDropdown">
-                    <!-- Options werden später über .py eingefügt -->
+                    {% for tool in machines %}
+                        <option value="{{ tool.tool }}">{{ tool.tool }}</option>
+                    {% endfor %}
+                    <option value="none">none</option> <!-- für leere Auswahl -->
                 </select>
                 <label for="zustand2Dropdown">Tool Zustand :</label>
                 <select id="zustand2Dropdown">
-                    <!-- Options werden später über .py eingefügt -->
+                    <!-- Optionen: MAINT; IDLE; PROC; DOWN-->
+                    <option value="MAINT">MAINT</option>
+                    <option value="IDLE">IDLE</option>
+                    <option value="PROC">PROC</option>
+                    <option value="DOWN">DOWN</option>
+                    <option value="none">none</option> <!-- für leere Auswahl -->
                 </select>
             </div>
             <div>

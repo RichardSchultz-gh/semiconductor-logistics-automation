@@ -87,3 +87,23 @@ def get_all_machines():
     machines = session.query(Tool).all()
     session.close()
     return machines
+
+def filter_lots_by_id(lot_id_filter):
+    # Hiermit filtern wir Lose nach Lot-ID
+    DATABASE_URL = get_database_url()
+    engine = create_engine(DATABASE_URL)
+    Session = sessionmaker(bind=engine)
+    session = Session()
+    lots = session.query(Lot).filter(Lot.lotid==lot_id_filter).all()
+    session.close()
+    return lots
+
+def filter_lots_by_state(lot_state_filter):
+    # Hiermit filtern wir Lose nach Zustand
+    DATABASE_URL = get_database_url()
+    engine = create_engine(DATABASE_URL)
+    Session = sessionmaker(bind=engine)
+    session = Session()
+    lots = session.query(Lot).filter(Lot.state==lot_state_filter).all()
+    session.close()
+    return lots
