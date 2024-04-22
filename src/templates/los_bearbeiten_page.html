@@ -5,29 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Los bearbeiten</title>
-    <style>
-         .main-btn {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-        }
-        .back-btn {
-            position: absolute;
-            top: 10px;
-            right: 150px;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='los_bearbeiten.css') }}">
 </head>
 <body>
-    <h1>Los bearbeiten</h1>
-    <button onclick="goBack()" class="back-btn">Back</button>
-    <a id="backtoMainPage" class="main-btn"><button>Back to Main Page</button></a>
-    <hr>
+    <header>
+        <h1>Los bearbeiten</h1>
+        <button onclick="goBack()" class="back-btn">Back</button>
+        <!--<a id="backtoMainPage" class="main-btn"><button>Back to Main Page</button></a>-->
+        <hr>
+    </header>
     <script>
         function goBack() {
             window.history.back();
         }
-
+    
         var username = "{{ username }}"; //aus Jinja2 Template
         
         var mainPageBtn = document.getElementById('backtoMainPage');
@@ -41,12 +32,120 @@
             }
         });
     </script>
-
-    <form action="{{ url_for('los_bearbeiten.los_bearbeiten_page') }}" method="POST">
-        <label for="los">Los:</label>
-        <input type="text" id="lot_id" name="lot_id" value="{{ los }}">
-        <br>
-        <input type="submit" value="Los bearbeiten">
-    </form>
+    
+    <main>
+        <div class="left-column">
+            <div id="editLotBtn">
+                <form action="{{ url_for('los_bearbeiten.los_bearbeiten_page') }}" method="POST">
+                    <label for="los">Los:</label>
+                    <input type="text" id="lot_id" name="lot_id" value="{{ los }}">
+                    <input type="submit" value="Los bearbeiten" class="edit-btn">
+                </form>
+            </div>
+            <div class="container">
+                <div class="section">
+                    <h2>Syntax: </h2>
+                    <ul>
+                        <li>State - ID - (Object)</li>
+                    </ul>
+                </div>
+                <div class="section">
+                    <h2>Zustände / Befehle Los</h2>
+                    <ul>
+                        <li>MOVE</li>
+                        <li>PROC</li>
+                        <li>HOLD</li>
+                        <li>OP_COMP</li>
+                        <li>FIN</li>
+                        <li>WAIT</li>
+                        <li>SCRAP</li>
+                    </ul>
+                </div>
+                <div class="section">
+                    <h2>Zustände / Befehle Maschine</h2>
+                    <ul>
+                        <li>MAINT</li>
+                        <li>IDLE</li>
+                        <li>PROC</li>
+                        <li>DOWN</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="right-column">
+            <div class="eingabefeld">
+                <label for="befehlInput">Los ID:</label>
+                <select id="losIdDropdown">
+                    <!-- Options werden später über .py eingefügt -->
+                </select>
+                <label for="zustand1Dropdown">Los Zustand :</label>
+                <select id="zustand1Dropdown">
+                    <!-- Options werden später über .py eingefügt -->
+                </select>
+                <label for="toolIdDropdown">Tool ID:</label>
+                <select id="toolIdDropdown">
+                    <!-- Options werden später über .py eingefügt -->
+                </select>
+                <label for="zustand2Dropdown">Tool Zustand :</label>
+                <select id="zustand2Dropdown">
+                    <!-- Options werden später über .py eingefügt -->
+                </select>
+            </div>
+            <div>
+                <button id="aktualisierenBtn">Aktualisieren</button>
+            </div>
+            <div class="table-container">
+                <h2>Lose</h2>
+                <table id="losTable" class="fixed_header">
+                    <thead>
+                        <tr>
+                            <th>Los ID</th>
+                            <th>Zustand</th>
+                            <th>Operation</th>
+                            <th>Route</th>
+                            <th>Product</th>
+                            <th>Tool</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for lot in lots %}
+                        <tr>
+                            <td>{{ lot.lotid }}</td>
+                            <td>{{ lot.state }}</td>
+                            <td>{{ lot.oper }}</td>
+                            <td>{{ lot.route }}</td>
+                            <td>{{ lot.product }}</td>
+                            <td>{{ lot.disptool }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <div class="table-container">
+                <h2>Maschinen</h2>
+                <table id="machineTable" class="fixed_header">
+                    <thead>
+                        <tr>
+                            <th>Tool</th>
+                            <th>Zustand</th>
+                            <th>Masch. Art</th>
+                            <th>Masch. Fam.</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for tool in machines %}
+                        <tr>
+                            <td>{{ tool.tool }}</td>
+                            <td>{{ tool.state }}</td>
+                            <td>{{ tool.tooltype }}</td>
+                            <td>{{ tool.toolfam }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+    <script src="los_bearbeiten.js"></script>
 </body>
 </html>
