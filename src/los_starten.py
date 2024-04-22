@@ -109,7 +109,7 @@ def los_starten():
         timeint2 = datetime.datetime.strptime(timeint2, "%Y-%m-%d")
         time_interval = timeint2 - timeint1 # Zeitabstand zwischen den zwei eingegebenen date-time-Daten
         # Zeitabstand in Stunden umrechnen
-        time_interval = time_interval.total_seconds() / 3600
+        time_interval = time_interval.total_seconds() / 3600 + 24 #letzter Tag wird auch berücksichtigt
         # Anzahl der Stunden bis nächstes Los gestartet wird
         time_next_lot = time_interval/lots_to_create
 

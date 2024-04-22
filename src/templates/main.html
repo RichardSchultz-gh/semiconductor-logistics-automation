@@ -73,8 +73,8 @@
 
             <!-- nächste 2 Buttons werden nur angezeigt, wenn per Jinja2 übergebener username=user1-->
             {% if username == 'user1' %}
-                <a href="{{ url_for('los_bewegen.los_bewegen_page') }}"><button type="button">bearbeiten</button><br></a>
-                <a href="{{ url_for('los_bearbeiten.los_bearbeiten_page') }}"><button type="button">bewegen</button></a>
+                <a href="{{ url_for('los_bearbeiten.los_bearbeiten_page') }}"><button type="button">bearbeiten</button><br></a>
+                <a href="{{ url_for('los_bewegen.los_bewegen_page') }}"><button type="button">bewegen</button></a>
             {% endif %}
         </div>
 
