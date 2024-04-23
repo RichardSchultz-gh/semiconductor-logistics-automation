@@ -644,8 +644,8 @@ Feedback zur Umsetzung der Wireframes:
 CronJob:
 * CronJob führt Shellscript aus, in welchem dann Pythonscripte aufgerufen werden
 * alle 5 Minuten werden Pythonskripte aufgerufen für:
-** Maschinen schauen ob Arbeit zu tun ist (Prüfen ob irgendein Los als nächstes zu ihnen kommt) -> FIFO-Prinzip
-** Prüfen ob Zeit (PROCSTART+PTIME) abgelaufen ist und Maschine freigeben und Los auf nächsten Bearbeitungsstatus setzen
+ Maschinen schauen ob Arbeit zu tun ist (Prüfen ob irgendein Los als nächstes zu ihnen kommt) -> FIFO-Prinzip,
+ Prüfen ob Zeit (PROCSTART+PTIME) abgelaufen ist und Maschine freigeben und Los auf nächsten Bearbeitungsstatus setzen
 * ( 1x pro Tag CronJob, welcher Lose startet, die aufgrund von Startzeitpunkt gestartet werden sollen)
 
 Festhalten im Meetingprotokoll!: Herr Ringel reicht die Simulation von einfachen Maschinen, bei welchen nur PTIME (kein Intervall) beachtet wird. (PTIME bezieht sich nur auf Arbeitszeit die eine Maschine benötigt um ein Los zu bearbeiten in Sekunden)
@@ -661,5 +661,5 @@ Für den Fall, dass Anforderungen zu viel und nicht alles geschafft wird:
 
 Nächstes Meeting mit Herr Ringel:
 * Vorzeigen des Entwicklungsstandes:
-** Übergabe von Raspberry Pi, auf welchem aktuelle Version läuft
-** Übergabe der Software mit Anleitung, wie er es auf einem anderen Raspberry Pi laufen lassen kann
+ Übergabe von Raspberry Pi, auf welchem aktuelle Version läuft,
+ Übergabe der Software mit Anleitung, wie er es auf einem anderen Raspberry Pi laufen lassen kann
