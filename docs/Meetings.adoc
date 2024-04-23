@@ -640,6 +640,7 @@ Feedback zur Umsetzung der Wireframes:
 * allg. geordneter (UC01) -> d.h. Formular einheitliche Länge
 * Tabellen (der einzelnen UC) sollen gleich aussehen
 * Tabelle (UC03) Headerspalten und Datenspalten übereinander liegen
+* bei Cockpit angeben ob in Wafer oder Lose angegeben (besser: in Wafer)
 
 CronJob:
 * CronJob führt Shellscript aus, in welchem dann Pythonscripte aufgerufen werden
