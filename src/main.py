@@ -25,15 +25,26 @@ def main():
         toolsdown = session_d.query(Tool).filter(Tool.state == "DOWN").count()
 
         #Anzahl Lose in Zustand OP_COMP, HOLD, WAIT oder PROC
-        lotsopcomp = session_d.query(Lot).filter(Lot.state == "OP_COMP").count()
-        lotshold = session_d.query(Lot).filter(Lot.state == "HOLD").count()
-        lotswait = session_d.query(Lot).filter(Lot.state == "WAIT").count()
-        lotsproc = session_d.query(Lot).filter(Lot.state == "PROC").count()
-        WIPA = lotsopcomp + lotshold + lotswait + lotsproc
-        lotsfin = session_d.query(Lot).filter(Lot.state == "FIN").count()
+        c_opcomp = c_hold = c_wait = c_proc = c_fin =0
+        lotsopcomp = session_d.query(Lot).filter(Lot.state == "OP_COMP").all()
+        for lot in lotsopcomp:
+            c_opcomp += lot.pieces
+        lotshold = session_d.query(Lot).filter(Lot.state == "HOLD").all()
+        for lot in lotshold:
+            c_hold += lot.pieces
+        lotswait = session_d.query(Lot).filter(Lot.state == "WAIT").all()
+        for lot in lotswait:
+            c_wait += lot.pieces
+        lotsproc = session_d.query(Lot).filter(Lot.state == "PROC").all()
+        for lot in lotsproc:
+            c_proc += lot.pieces
+        wipa = c_opcomp + c_hold + c_wait + c_proc
+        lotsfin = session_d.query(Lot).filter(Lot.state == "FIN").all()
+        for lot in lotsfin:
+            c_fin += lot.pieces
         session_d.close()
 
-        return render_template("main.html", username=session['username'], toolsanzahl=toolsanzahl, toolsidle=toolsidle, toolsprod=toolsprod, toolsmaint=toolsmaint, toolsdown=toolsdown, WIPA=WIPA, lotsfin=lotsfin, lotsopcomp=lotsopcomp, lotshold=lotshold)
+        return render_template("main.html", username=session['username'], toolsanzahl=toolsanzahl, toolsidle=toolsidle, toolsprod=toolsprod, toolsmaint=toolsmaint, toolsdown=toolsdown, WIPA=wipa, lotsfin=c_fin, lotsopcomp=c_opcomp, lotshold=c_hold)
     else:
         return "Unauthorized", 401  # Zeigen Sie eine Fehlermeldung oder eine Umleitung an
 

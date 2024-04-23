@@ -97,3 +97,7 @@ output {
             right: 10px;
             padding: 10px;
 }
+
+#hinweis{
+    font-style: italic;
+}

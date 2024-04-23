@@ -1,6 +1,6 @@
 # los_starten.py
 from flask import Blueprint, render_template, request, redirect, url_for,session
-from mapper import Lot, ProdFlow
+from mapper import Lot, ProdFlow, Tool
 #from timer import timer
 from database_connection import get_database_url
 from sqlalchemy import create_engine, Column, Integer, String
@@ -19,33 +19,25 @@ def los_starten_page():
     if check_user_session():  # Überprüfen, ob der Benutzer angemeldet ist
         products = get_all_products()  # alle Produkte aus ProdFlow abrufen
         lotids = get_all_lot_ids()  # alle LotIDs aus Lot abrufen
-
-        page = request.args.get('page', 1, type=int)
-        per_page = 10
+        tools = get_all_tools()  # alle Werkzeuge aus Tool abrufen
 
          # Lot-ID- und Zustandsfilterung
         lot_id_filter = request.args.get('lot_id_f')
         lot_state_filter = request.args.get('lot_state_f')
+        lot_tool_filter = request.args.get('lot_tool_f')
 
         if lot_id_filter:
             lots = filter_lots_by_id(lot_id_filter)
-            total_lots = len(lots) 
-            has_next = False
-            last_page = 1
         elif lot_state_filter:
             lots = filter_lots_by_state(lot_state_filter)
-            total_lots = len(lots)
-            has_next = page * per_page < total_lots
-            last_page = total_lots // per_page + (1 if total_lots % per_page > 0 else 0)
+        elif lot_tool_filter:
+            lots = filter_lots_by_tool(lot_tool_filter)
         else:
-            lots = get_lots_for_page(page, per_page)  # Hier implementieren Sie Ihre Logik zum Abrufen von Lots für die angeforderte Seite
-            total_lots = count_total_lots()  # Hier implementieren Sie Ihre Logik zum Zählen der gesamten Lots
-            has_next = page * per_page < total_lots
-            last_page = total_lots // per_page + (1 if total_lots % per_page > 0 else 0)
+            lots = get_all_lots()  # Hier implementieren Sie Ihre Logik zum Abrufen von Lots für die angeforderte Seite
 
         usern = session['username']
 
-        return render_template("los_starten_page.html", products=products, lotids=lotids, lots=lots,page=page, has_next=has_next, last_page=last_page, username=usern)
+        return render_template("los_starten_page.html", products=products, lotids=lotids, lots=lots, tools=tools, username=usern)
     else:
         return "Unauthorized", 401  # Fehlermeldung anzeigen oder Umleitung durchführen
 
@@ -257,6 +249,29 @@ def filter_lots_by_state(lot_state_filter):
     session.close()
     return lots
 
+def filter_lots_by_tool(lot_tool_filter):
+    # Hiermit filtern wir Lose nach Werkzeug
+    DATABASE_URL = get_database_url()
+    engine = create_engine(DATABASE_URL)
+    Base = declarative_base()
+    Session = sessionmaker(bind=engine)
+    session = Session()
+    lots = session.query(Lot).filter(Lot.disptool==lot_tool_filter).all()
+    session.close()
+    return lots
+
+def get_all_tools():
+    # Hiermit rufen wir alle Werkzeuge aus der Datenbank ab und geben sie zurück
+    DATABASE_URL = get_database_url()
+    engine = create_engine(DATABASE_URL)
+    Base = declarative_base()
+    Session = sessionmaker(bind=engine)
+    session = Session()
+    tools = session.query(Tool.tool).all()
+    tools = [tool[0] for tool in tools]
+    session.close()
+    return tools
+
 @los_starten_bp.route("/main/manuell_starten", methods=["POST"])
 def manuell_starten():
     print("Manuell Starten")
@@ -279,4 +294,3 @@ def manuell_starten():
         session.close()
         return render_template("los_starten_error.html", error_message="Das Los kann nicht manuell gestartet werden, da es bereits gestartet wurde oder beendet ist.", id=2)
 
-    
