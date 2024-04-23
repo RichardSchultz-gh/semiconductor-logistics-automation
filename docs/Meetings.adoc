@@ -634,4 +634,32 @@ Lizenz muss in datein vermerkt werden.
 
 Termin für Fertigungskonzept mit Ringel und Paul, mit und (Nils) machen
 
- 
+=== Meeting 23.04.2024
+Feedback zur Umsetzung der Wireframes:
+* Cockpit soll gleich große Buttons haben
+* allg. geordneter (UC01) -> d.h. Formular einheitliche Länge
+* Tabellen (der einzelnen UC) sollen gleich aussehen
+* Tabelle (UC03) Headerspalten und Datenspalten übereinander liegen
+
+CronJob:
+* CronJob führt Shellscript aus, in welchem dann Pythonscripte aufgerufen werden
+* alle 5 Minuten werden Pythonskripte aufgerufen für:
+** Maschinen schauen ob Arbeit zu tun ist (Prüfen ob irgendein Los als nächstes zu ihnen kommt) -> FIFO-Prinzip
+** Prüfen ob Zeit (PROCSTART+PTIME) abgelaufen ist und Maschine freigeben und Los auf nächsten Bearbeitungsstatus setzen
+* ( 1x pro Tag CronJob, welcher Lose startet, die aufgrund von Startzeitpunkt gestartet werden sollen)
+
+Festhalten im Meetingprotokoll!: Herr Ringel reicht die Simulation von einfachen Maschinen, bei welchen nur PTIME (kein Intervall) beachtet wird. (PTIME bezieht sich nur auf Arbeitszeit die eine Maschine benötigt um ein Los zu bearbeiten in Sekunden)
+
+Crashsicherheit der gesamten Anwendung:
+* wenn DB nicht da ist, soll GUI eine Meldung ausgeben, dass diese nicht erreichbar ist und jeglichen Dienst unverfügbar machen
+* GUI soll sich nicht aufhängen, wenn DB nicht erreichbar ist
+* CronJob darf nicht crashen, wenn DB nicht erreichbar ist (sondern soll in eine log-Datei einen Error schreiben)
+* etc...
+
+Für den Fall, dass Anforderungen zu viel und nicht alles geschafft wird:
+* Dokumentieren was getestet wurde und so funktioniert und auflisten was noch zu tun/zu implementieren ist
+
+Nächstes Meeting mit Herr Ringel:
+* Vorzeigen des Entwicklungsstandes:
+** Übergabe von Raspberry Pi, auf welchem aktuelle Version läuft
+** Übergabe der Software mit Anleitung, wie er es auf einem anderen Raspberry Pi laufen lassen kann
