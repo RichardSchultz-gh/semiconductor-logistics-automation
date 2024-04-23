@@ -22,10 +22,26 @@ def los_starten_page():
 
         page = request.args.get('page', 1, type=int)
         per_page = 10
-        lots = get_lots_for_page(page, per_page)  # Hier implementieren Sie Ihre Logik zum Abrufen von Lots für die angeforderte Seite
-        total_lots = count_total_lots()  # Hier implementieren Sie Ihre Logik zum Zählen der gesamten Lots
-        has_next = page * per_page < total_lots
-        last_page = total_lots // per_page + (1 if total_lots % per_page > 0 else 0)
+
+         # Lot-ID- und Zustandsfilterung
+        lot_id_filter = request.args.get('lot_id_f')
+        lot_state_filter = request.args.get('lot_state_f')
+
+        if lot_id_filter:
+            lots = filter_lots_by_id(lot_id_filter)
+            total_lots = len(lots) 
+            has_next = False
+            last_page = 1
+        elif lot_state_filter:
+            lots = filter_lots_by_state(lot_state_filter)
+            total_lots = len(lots)
+            has_next = page * per_page < total_lots
+            last_page = total_lots // per_page + (1 if total_lots % per_page > 0 else 0)
+        else:
+            lots = get_lots_for_page(page, per_page)  # Hier implementieren Sie Ihre Logik zum Abrufen von Lots für die angeforderte Seite
+            total_lots = count_total_lots()  # Hier implementieren Sie Ihre Logik zum Zählen der gesamten Lots
+            has_next = page * per_page < total_lots
+            last_page = total_lots // per_page + (1 if total_lots % per_page > 0 else 0)
 
         usern = session['username']
 
@@ -218,6 +234,28 @@ def count_total_lots():
     total_lots = session.query(Lot).count()
     session.close()
     return total_lots
+
+def filter_lots_by_id(lot_id_filter):
+    # Hiermit filtern wir Lose nach Lot-ID
+    DATABASE_URL = get_database_url()
+    engine = create_engine(DATABASE_URL)
+    Base = declarative_base()
+    Session = sessionmaker(bind=engine)
+    session = Session()
+    lots = session.query(Lot).filter(Lot.lotid==lot_id_filter).all()
+    session.close()
+    return lots
+
+def filter_lots_by_state(lot_state_filter):
+    # Hiermit filtern wir Lose nach Zustand
+    DATABASE_URL = get_database_url()
+    engine = create_engine(DATABASE_URL)
+    Base = declarative_base()
+    Session = sessionmaker(bind=engine)
+    session = Session()
+    lots = session.query(Lot).filter(Lot.state==lot_state_filter).all()
+    session.close()
+    return lots
 
 @los_starten_bp.route("/main/manuell_starten", methods=["POST"])
 def manuell_starten():

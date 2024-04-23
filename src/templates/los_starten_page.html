@@ -136,9 +136,6 @@
                 <br><br>
             </form>
             <!-- wenn man_start_flag (Übergebn von Jinja2) true ist, wird hier angezeigt, dass erfolgreich gestartet wurde-->
-            {% if success_start == 1 %}
-                <p>Lot {{ lot_id }} erfolgreich gestartet</p>
-            {% endif %}
 
         </div>
     </div>
@@ -147,7 +144,28 @@
     <hr>
     
     <h2>Alle Lots</h2>
-    <!-- Tabelle soll Randlinien haben -->
+    <form action="{{ url_for('los_starten.los_starten_page') }}" method="GET">
+        <label for="lot_id">Lot ID:</label>
+        <input type="text" name="lot_id_f" id="lot_id_f" list="lot_ids">
+                <datalist id="lot_ids">
+                    {% for lotid in lotids %}
+                        <option value="{{ lotid }}">
+                    {% endfor %}
+                </datalist>
+        <label for="lot_state">Zustand:</label>
+        <input type="text" id="lot_state_f" name="lot_state_f" list="lot_states">
+            <datalist id="lot_states">
+                <option value="MOVE">
+                <option value="PROC">
+                <option value="HOLD">
+                <option value="OP_COMP">
+                <option value="FIN">
+                <option value="WAIT">
+                <option value="SCRAP">
+            </datalist>
+        <button type="submit">Filtern</button>
+    </form>
+    <br>        
     <table style="border-collapse: collapse;">
         <tr>
             <th>Lot ID</th>

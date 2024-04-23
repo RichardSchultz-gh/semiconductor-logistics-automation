@@ -84,6 +84,13 @@ output {
     vertical-align: top;
 }
 
+.functionbuttons button {
+    width: 250px; 
+    height: 30px;
+    margin-bottom: 10px;
+  
+}
+
 #logoutbutton {
     position: absolute;
             top: 10px;
