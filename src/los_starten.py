@@ -81,19 +81,15 @@ def los_starten():
         if int(pieces) % pieces_per_lot != 0:
             lots_to_create += 1
 
-        #1. Route des Produkts ermitteln
-        route = session.query(ProdFlow.route).filter(ProdFlow.product == product, ProdFlow.seq == 1).first()
-        route = route[0]
-
         # Erstellen der Lose
         lot_ids = []
         for i in range(lots_to_create):
             lot_id = generateLotID(lot_ids, customer, order)
             try:
                 if (int(pieces) % pieces_per_lot != 0 and i == lots_to_create-1):
-                    new_lot = Lot(lotid=lot_id, priority=10, pieces=int(pieces) % pieces_per_lot, state="INIT", product=product, route=route, customer=customer, order=order, duedate=duedate)
+                    new_lot = Lot(lotid=lot_id, priority=10, pieces=int(pieces) % pieces_per_lot, state="INIT", product=product, customer=customer, order=order, duedate=duedate)
                 else:
-                    new_lot = Lot(lotid=lot_id, priority=10, pieces=pieces_per_lot, state="INIT", product=product, route=route, customer=customer, order=order, duedate=duedate)
+                    new_lot = Lot(lotid=lot_id, priority=10, pieces=pieces_per_lot, state="INIT", product=product, customer=customer, order=order, duedate=duedate)
                 session.add(new_lot)
                 #jede LotID, die hier erstellt wird wird zu Liste hinzugefügt
                 lot_ids.append(lot_id)
@@ -285,8 +281,8 @@ def manuell_starten():
     lot = session.query(Lot).filter(Lot.lotid == lotid).first()
     if(lot.state == "INIT"):
         lot.state = "WAIT"
-        lot.startdate = datetime.datetime.now()
-        #timer(lotid, lot.duedate, datetime.datetime.now()) # Timer wird gestartet
+        lot.startdate = datetime.datetime.now().date()
+        lot.enteroper = datetime.datetime.now()
         session.commit()
         session.close()
         return render_template("los_starten_success.html", lot_data='', amount=1, id=2, lot_id_1=lotid)
