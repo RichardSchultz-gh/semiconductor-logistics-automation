@@ -9,7 +9,7 @@ import datetime
 los_bearbeiten_bp = Blueprint('los_bearbeiten', __name__)
 
 def check_user_session():
-    return 'username' in session and session['username'] in ['user1']
+    return 'username' in session and session['username'] == 'user1'
 
 @los_bearbeiten_bp.route("/main/los_bearbeiten", methods=["GET"])
 def los_bearbeiten_page():
@@ -17,7 +17,7 @@ def los_bearbeiten_page():
         lots = get_all_lots()  # alle Lose abrufen
         machines = get_all_machines()  # alle Maschinen abrufen
 
-        usern=session['username']
+        usern = session['username']
 
         return render_template("los_bearbeiten_page.html", lots=lots, machines=machines, username=usern)
     else:
@@ -42,13 +42,13 @@ def bearbeite_lose():
     DATABASE_URL = get_database_url()
     engine = create_engine(DATABASE_URL)
     Session = sessionmaker(bind=engine)
-    session = Session()
+    db_session = Session()
 
     # Los abrufen
-    lot = session.query(Lot).filter_by(id=lot_id).first()
+    lot = db_session.query(Lot).filter_by(id=lot_id).first()
 
     # Maschine abrufen
-    machine = session.query(Tool).filter_by(id=machine_id).first()
+    machine = db_session.query(Tool).filter_by(id=machine_id).first()
 
     if not lot:
         return render_template("los_bearbeiten_error.html", error_message="Los nicht gefunden")
@@ -62,9 +62,8 @@ def bearbeite_lose():
     # Maschine aktualisieren
     lot.machine = machine
 
-    
-    session.commit()
-    session.close()
+    db_session.commit()
+    db_session.close()
 
     return redirect(url_for('los_bearbeiten.los_bearbeiten_page'))
 
@@ -73,9 +72,9 @@ def get_all_lots():
     DATABASE_URL = get_database_url()
     engine = create_engine(DATABASE_URL)
     Session = sessionmaker(bind=engine)
-    session = Session()
-    lots = session.query(Lot).all()
-    session.close()
+    db_session = Session()
+    lots = db_session.query(Lot).all()
+    db_session.close()
     return lots
 
 def get_all_machines():
@@ -83,9 +82,9 @@ def get_all_machines():
     DATABASE_URL = get_database_url()
     engine = create_engine(DATABASE_URL)
     Session = sessionmaker(bind=engine)
-    session = Session()
-    machines = session.query(Tool).all()
-    session.close()
+    db_session = Session()
+    machines = db_session.query(Tool).all()
+    db_session.close()
     return machines
 
 def filter_lots_by_id(lot_id_filter):
@@ -93,9 +92,9 @@ def filter_lots_by_id(lot_id_filter):
     DATABASE_URL = get_database_url()
     engine = create_engine(DATABASE_URL)
     Session = sessionmaker(bind=engine)
-    session = Session()
-    lots = session.query(Lot).filter(Lot.lotid==lot_id_filter).all()
-    session.close()
+    db_session = Session()
+    lots = db_session.query(Lot).filter(Lot.lotid == lot_id_filter).all()
+    db_session.close()
     return lots
 
 def filter_lots_by_state(lot_state_filter):
@@ -103,7 +102,7 @@ def filter_lots_by_state(lot_state_filter):
     DATABASE_URL = get_database_url()
     engine = create_engine(DATABASE_URL)
     Session = sessionmaker(bind=engine)
-    session = Session()
-    lots = session.query(Lot).filter(Lot.state==lot_state_filter).all()
-    session.close()
+    db_session = Session()
+    lots = db_session.query(Lot).filter(Lot.state == lot_state_filter).all()
+    db_session.close()
     return lots
