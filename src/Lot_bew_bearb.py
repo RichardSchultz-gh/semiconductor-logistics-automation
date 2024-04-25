@@ -3,6 +3,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from database_connection import get_database_url
 import datetime
+import random
 
 def test_if_tool_is_done(tool):
     if(tool.state == "PROC"):
@@ -17,16 +18,22 @@ def test_if_tool_is_done(tool):
         oper = lot.oper
         # Suche in Ptime nach Prozesszeit für die Operation der Route
         ptime = session_d.query(PTime).filter(PTime.route == route).filter(PTime.oper == oper).first()
-        print("Prozesszeit: " + str(ptime.ptime))
+        if ptime is None:
+            tool.state = "DOWN"
+            session_d.add(tool)
+            session_d.commit()
+            lot.state = "SCRAP"
+            session_d.add(lot)
+            session_d.commit()
+            return False
 
         # Wenn PROCSTART + Prozesszeit (in Stunden) < aktuelle Zeit, dann ist das Tool fertig
-        procstart = lot.procstart
-        print("Startzeit: " + str(procstart))
+        #konvertiere procstart in datetime
+        procstart = datetime.datetime.strptime(str(lot.procstart), '%Y-%m-%d %H:%M:%S.%f')
+        # muss auch mit Jahreszahl gemacht werden, weil die Prozesszeit auch in Jahren sein kann
         finisheddatetime = datetime.timedelta(hours=ptime.ptime) + procstart
-        print("Fertig um: " + str(finisheddatetime))
 
         # aktuelle Zeit
-        print("Aktuelle Zeit: " + str(datetime.datetime.now()))
         if(finisheddatetime < datetime.datetime.now()):
             database_disconnection(session_d)
             return True
@@ -48,96 +55,137 @@ def database_disconnection(session_d):
     session_d.close()
 
 '''Schauen, ob das Lot, welches eine Maschine bearbeitet, fertig ist'''
-session_d = database_connection()
-tools = session_d.query(Tool).filter(Tool.state == "PROC").all()
-for tool in tools:
-    if test_if_tool_is_done(tool):
-        print("Tool " + tool.tool + " is done")
-        tool.state = "IDLE" 
-        # tool nicht in session_d ist (nur in session_d.query(Tool)), deshalb muss tool in session_d gespeichert werden
-        session_d.add(tool)
-        session_d.commit()
-        # Lot-Tabelle aktualisieren
-        lot = session_d.query(Lot).filter(Lot.disptool == tool.tool).first()
-        lot.state = "OP_COMP"
-        # TODO: Zu einer bestimmten Prozentzahl ist das Lot Ausschuss
-        lot.disptool = None
-        lot.procstart = None
-        session_d.commit()
-    else:
-        print("Tool " + tool.tool + " is not done")
-
+def lotop_finished(session_d):
+    print("Checking if a tool is done")
+    tools = session_d.query(Tool).filter(Tool.state == "PROC").all()
+    for tool in tools:
+        if test_if_tool_is_done(tool):
+            print("Tool " + tool.tool + " is done (PROC -> IDLE)")
+            tool.state = "IDLE" 
+            # tool nicht in session_d ist (nur in session_d.query(Tool)), deshalb muss tool in session_d gespeichert werden
+            session_d.add(tool)
+            session_d.commit()
+            # Lot-Tabelle aktualisieren
+            lot = session_d.query(Lot).filter(Lot.disptool == tool.tool).first()
+            lot.state = "OP_COMP"
+            print("Lot " + lot.lotid + " is OP_COMP now\n")
+            # TODO: Zu einer bestimmten Prozentzahl ist das Lot Ausschuss:
+            '''
+            # zu 5% geht es in Zustand SCRAP und zu 10% in Zustand HOLD
+            if random.randint(1, 100) <= 5:
+                lot.state = "SCRAP"
+            elif random.randint(1, 100) <= 10:
+                lot.state = "HOLD"
+            else:
+                lot.state = "OP_COMP"
+            '''
+            lot.disptool = None
+            lot.procstart = None
+            session_d.commit()
+        else:
+            print("Tool " + tool.tool + " is not done")
 
 '''Maschinen suchen nach einem Lot, das auf diese wartet'''
-# tools-Liste leeren und alle Tools in IDLE-Zustand suchen
-tools = []
-tools = session_d.query(Tool).filter(Tool.state == "IDLE").all()
-waiting_lots = []
-for tool in tools:
-    #Liste an Operationen, die das Tool bearbeiten kann und Routen dazu
-    route_oper_list = session_d.query(PTime).filter(PTime.tool == tool.tool).all()
-    # nach Lot suchen, die auf das Tool warten
-    for route_oper in route_oper_list:
-        lot = session_d.query(Lot).filter(Lot.route == route_oper.route).filter(Lot.oper == route_oper.oper).filter(Lot.state == "WAIT").first()
-        if lot is not None:
-            waiting_lots.append(lot)
+#TODO: Laufzeitoptimierung
+def tool_searches_for_lots(session_d):
+    print("Searching for tools that are IDLE and waiting for lots")
+    # tools-Liste erzeugen und alle Tools in IDLE-Zustand suchen
+    tools = []
+    tools = session_d.query(Tool).filter(Tool.state == "IDLE").all()
+    waiting_lots = []
+    for tool in tools:
+        #Liste an Operationen, die das Tool bearbeiten kann und Routen dazu
+        #TODO: Einbezug oder Fix von Operationen/Routen, welche keinen PTime-Eintrag haben und so auch keinem Tool zugeordnet werden können
+        route_oper_list = session_d.query(PTime).filter(PTime.tool == tool.tool).all()
+        # nach Lot suchen, die auf das Tool warten
+        for route_oper in route_oper_list:
+            lot = session_d.query(Lot).filter(Lot.route == route_oper.route).filter(Lot.oper == route_oper.oper).filter(Lot.state == "WAIT").first()
+            if lot is not None:
+                waiting_lots.append(lot)
 
-    # wenn es keine Lots gibt, die auf das Tool warten, dann wird das Tool in den IDLE-Zustand versetzt
-    if len(waiting_lots) == 0:
-        for tool in tools:
+        # wenn es keine Lots gibt, die auf das Tool warten, dann wird das Tool in den IDLE-Zustand versetzt
+        if len(waiting_lots) == 0:
             tool.state = "IDLE"
             session_d.add(tool)
             session_d.commit()
-            print("Tool " + tool.tool + " is IDLE now")
-    else:
-        print("There are lots waiting for tools")
-        #sortieren der Lots nach frühster ENTEROPER-Zeit, die bei WAIT neu gesetzt wird
-        waiting_lots.sort(key=lambda x: x.enteroper)
-        #das Tool, das am längsten wartet, wird ausgewählt
-        lot = waiting_lots[0]
-        print("Lot " + lot.lotid + " is selected")
-        lot.state = "PROC"
-        lot.disptool = tool.tool
-        lot.procstart = datetime.datetime.now()
-        session_d.add(lot) 
-        session_d.commit()
-        tool.state = "PROC"
-        session_d.add(tool)
-        session_d.commit()
-        print("Tool " + tool.tool + " is PROC now")
-        print("Lot " + lot.lotid + " is PROC now")
-        waiting_lots.clear()
+            #print("Tool " + tool.tool + " keep being IDLE, because there are no lots waiting for it\n")
+        else:
+            print("There are lots waiting for the tool " + tool.tool + " in IDLE state")
+            #sortieren der Lots nach frühster ENTEROPER-Zeit, die bei WAIT neu gesetzt wird (aber in reverse)
+            waiting_lots.sort(key=lambda x: x.enteroper, reverse=True)
+            #das Tool, das am längsten wartet, wird ausgewählt
+            lot = waiting_lots[0]
+            print("Lot " + lot.lotid + " is selected")
+            lot.state = "PROC"
+            lot.disptool = tool.tool
+            lot.procstart = datetime.datetime.now()
+            session_d.add(lot) 
+            session_d.commit()
+            if lot.state == "PROC":
+                print("Lot " + lot.lotid + " is PROC now")
+            tool.state = "PROC"
+            session_d.add(tool)
+            session_d.commit()
+            if tool.state == "PROC":
+                print("Tool " + tool.tool + " is PROC now")
+            waiting_lots.clear()
+
 
 '''Schauen, ob ein Lot in OP-COMP-Zustand ist und versetzen des Lot auf nächsten Produktionsschritt'''
-lots = session_d.query(Lot).filter(Lot.state == "OP_COMP").all()
-for lot in lots:
-    route = lot.route
-    oper_int = int(lot.oper)
-    #Oper = '0100' soll zu '0200' werden usw...
-    if(oper_int < 1000):
-        next_oper = '0' + str(oper_int+100)
-    else:
-        next_oper = str(oper_int+100)
-    next = session_d.query(Workflow).filter(Workflow.route == route).filter(Workflow.oper == next_oper).first()
-    if next is None:
-        route = session_d.query(ProdFlow).filter(ProdFlow.product == lot.product).filter(ProdFlow.route == route).first()
-        newseq = route.seq + 1
-        next_route = session_d.query(ProdFlow).filter(ProdFlow.product == lot.product).filter(ProdFlow.seq == newseq).first()
-        if next_route is None:
-            print("Produktionsfluss ist zu Ende")
-            lot.state = "FIN"
+def moveLot(session_d):
+    print("Checking if a lot is in OP_COMP state")
+    lots = session_d.query(Lot).filter(Lot.state == "OP_COMP").all()
+    for lot in lots:
+        route = lot.route
+        oper_int = int(lot.oper)
+        #Oper = '0100' soll zu '0200' werden usw...
+        if(oper_int < 1000):
+            next_oper = '0' + str(oper_int+100)
+        else:
+            next_oper = str(oper_int+100)
+        next = session_d.query(Workflow).filter(Workflow.route == route).filter(Workflow.oper == next_oper).first()
+        if next is None:
+            route = session_d.query(ProdFlow).filter(ProdFlow.product == lot.product).filter(ProdFlow.route == route).first()
+            newseq = route.seq + 1
+            next_route = session_d.query(ProdFlow).filter(ProdFlow.product == lot.product).filter(ProdFlow.seq == newseq).first()
+            if next_route is None:
+                print("Produktionsfluss von Lot"+ lot.lot + "ist zu Ende")
+                lot.state = "FIN"
+                session_d.add(lot)
+                session_d.commit()
+                continue
+            next_oper = '0100'
+            lot.route = next_route.route
             session_d.add(lot)
             session_d.commit()
-            continue
-        next_oper = '0100'
-        lot.route = next_route.route
+            next = session_d.query(Workflow).filter(Workflow.route == next_route.route).filter(Workflow.oper == next_oper).first()
+        lot.oper = next.oper
+        lot.state = "WAIT"
+        lot.enteroper = datetime.datetime.now()
         session_d.add(lot)
         session_d.commit()
-        next = session_d.query(Workflow).filter(Workflow.route == next_route.route).filter(PTime.oper == next_oper).first()
-    lot.oper = next.oper
-    lot.state = "WAIT"
-    lot.enteroper = datetime.datetime.now()
-    session_d.add(lot)
-    session_d.commit()
+        print("Lot " + lot.lotid + " is WAIT now (next operation: " + lot.oper + ")")
 
+def test_if_lots_are_stuck(session_d):
+    #alle Lose, die in WAIT-Zustand sind
+    lots = session_d.query(Lot).filter(Lot.state == "WAIT").all()
+    #Prüfen, ob es für nächste Operation und Route ein PTime-Eintrag gibt
+    for lot in lots:
+        route = lot.route
+        oper = lot.oper
+        ptime = session_d.query(PTime).filter(PTime.route == route).filter(PTime.oper == oper).first()
+        if ptime is None:
+            print("Lot " + lot.lotid + " is stuck")
+            lot.state = "SCRAP"
+            session_d.add(lot)
+            session_d.commit()
+        else:
+            print("Lot " + lot.lotid + " is not stuck")
+
+# Main
+session_d = database_connection()
+lotop_finished(session_d)
+tool_searches_for_lots(session_d)
+test_if_lots_are_stuck(session_d)
+moveLot(session_d)
 database_disconnection(session_d)
