@@ -358,11 +358,17 @@ nutzen pull request und branches
 
 Nico hat LogIn gemacht. Funktioniert auch soweit. Nils muss einmal raufschauen. 
 Es gibt user1 und user2 die durch verschiedene Rechte auf verschiedene main seiten geleitet werden.
-
+ 
 timer schaut sich richard an
 Nils setzt sich mit den Dingen die Ringel sagte im Meeting
 
+Customer muss am UC01 eingepflegt werden 
 
+Soll man lose oder auftrag starten? Auftrag. Die Anzahl Lose ergibt sich daruas.
+
+Paul: UC nochmal anschauen und Vorschlag schreiben in welcher Tabelle was passieren muss. 
+
+Lotte bei DreMoWabe mal fragen, wie die das haben, dass das im Netz der Fakultät liegt. 
 
 == Meetings mit Coach
 
