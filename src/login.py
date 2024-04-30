@@ -1,23 +1,45 @@
 # login.py
-
-from flask import Blueprint, render_template, request, jsonify
+from flask import Blueprint, render_template, request, jsonify, session, redirect, url_for
+from werkzeug.security import check_password_hash, generate_password_hash
 
 login_bp = Blueprint('login', __name__)
 
-@login_bp.route("/login", methods=["GET"])
+# Dummy-Benutzerdaten mit gehashten Passwörtern
+users = {
+    'user1': generate_password_hash('pass1'),  # Passwort: pass1
+    'user2': generate_password_hash('pass2'),  # Passwort: pass2
+}
+
+@login_bp.route("/", methods=["GET"])
 def login():
     return render_template("login_page.html")
 
 @login_bp.route('/login_check', methods=['POST'])
 def login_check():
-    data = request.json  # Die Daten der AJAX-Anfrage erhalten
+    data = request.json
+    print(data)  # Debugging-Anweisung
+    if not data:
+        return jsonify({'status': 'error', 'message': 'No data provided'})
+
     username = data.get('username')
     password = data.get('password')
+    print("Username:", username)  # Debugging-Anweisung
+    print("Password:", password)  # Debugging-Anweisung
 
-    # Hier führen Sie die Authentifizierung durch
-    # Zum Beispiel, Sie überprüfen die Anmeldeinformationen in der Datenbank
+    if not username or not password:
+        return jsonify({'status': 'error', 'message': 'Username or password missing'})
 
-    if username == 'user' and password == 'pass':
-        return jsonify({'status': 'success', 'message': 'Login successful'})
+    # Authentifizierung überprüfen
+    if username in users and check_password_hash(users[username], password):
+        # Sitzungsinformationen setzen
+        session['username'] = username
+        return jsonify({'status': 'success', 'message': 'Login successful', 'user': username})
     else:
         return jsonify({'status': 'error', 'message': 'Invalid username or password'})
+
+@login_bp.route('/logout', methods=['GET'])
+def logout():
+    # Session löschen, um den Benutzer auszuloggen
+    session.pop('username', None)
+    # Weiterleitung zur Login-Seite
+    return redirect(url_for('login.login'))

@@ -44,16 +44,16 @@ class PTime(Base):
     tool = Column(String(15), primary_key=True)
     product = Column(String(15), primary_key=True)
     route = Column(String(15), primary_key=True)
-    oper = Column(String(10), primary_key=True)
+    oper = Column(String(15), primary_key=True)
     ptime = Column(Integer)
-    int_ = Column(Integer)
+    int_ = Column('INT',Integer)
 
 class Tool(Base):
     __tablename__ = 'tool'
 
     tool = Column(String(15), primary_key=True)
     toolfam = Column(String(15))
-    owner = Column(String(25))
+    owner = Column('OWNER',String(25))
     tooltype = Column(String(25))
     mttr = Column(Integer)
     mttf = Column(Integer)
@@ -64,6 +64,6 @@ class Workflow(Base):
 
     route = Column(String(15), primary_key=True)
     oper = Column(String(10), primary_key=True)
-    desc = Column(String(255))
+    desc = Column('DESC',String(255))
     mandatory = Column(Integer)
     stepperc = Column(DECIMAL(10, 2))

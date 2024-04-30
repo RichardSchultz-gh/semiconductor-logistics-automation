@@ -1,0 +1,125 @@
+/* Allgemeine Stile */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 24px;
+}
+
+main {
+    display: flex;
+    justify-content: space-between;
+    margin: 40px;
+}
+
+.left-column {
+    width: 30%;
+}
+
+.right-column {
+    width: 60%;
+}
+
+
+#aktualisierenBtn {
+    margin-top: 20px;
+}
+
+.section {
+    margin-bottom: 30px;
+}
+
+h2 {
+    color: #333;
+    font-size: 20px;
+    margin-top: 50px; 
+    margin-bottom: 10px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 0.1px solid #dddd;
+    border-left: 0.1px solid #dddd;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 20px;
+}
+
+.fixed_header thead {
+    display: table;
+    width: 100%;
+}
+
+.fixed_header tbody {
+    display: block;
+    overflow: auto;
+    max-height: 215px;
+}
+
+.fixed_header th {
+    background-color: #333;
+    color:white;
+    width: auto; 
+}
+
+.fixed_header td {
+    background-color: #dfdfdf;
+    color: #333333;
+    width: 100%;
+}
+
+
+.back-btn, .main-btn button, #aktualisierenBtn, #editLotBtn .edit-btn {
+    background-color: #333;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.back-btn:hover, .main-btn button:hover, #aktualisierenBtn:hover, #editLotBtn .edit-btn:hover {
+    background-color: #6f6f6f;
+}
+
+.main-btn {
+    display: block;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.main-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+.back-btn {
+    position: absolute;
+    top: 10px;
+    right: 180px;
+}

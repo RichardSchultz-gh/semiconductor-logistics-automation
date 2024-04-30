@@ -1,0 +1,272 @@
+.container {
+    display: flex; /* Flex-Container */
+}
+
+.div1, .div2, .div3 {
+    flex: 1; /* Jedes Div soll gleich viel Platz einnehmen */
+    /*border: 1px solid black; /* Umrandung für Sichtbarkeit */
+    padding: 10px; /* Innenabstand für Inhalt */
+    margin: 10px; /* Außenabstand für Trennung */
+    /*linker Randabstand der Schrift erhöhen*/
+    padding-left: 20px; 
+    /*oberer Randabstand der Schrift verringern*/
+    padding-top: 0px;
+}
+
+.div3 {
+    flex: 1; /* Jedes Div soll gleich viel Platz einnehmen */
+    padding: 10px; /* Innenabstand für Inhalt */
+    margin: 10px 10px 10px 20px; /* Außenabstand für Trennung, 20px links */
+    /*zentriert*/
+    text-align: center;
+}
+
+.div1{
+    border-right: 1px solid #333;
+}
+
+.div1 p, .div2 p {
+    font-style: italic; /* Kursiver Stil für die Beschreibung */
+    font-size: 18px; /* Schriftgröße für die Beschreibung */
+}
+
+table {
+    border-collapse: collapse; /* Zusammenführen von Zellenrändern */
+    width: 90%; /* Volle Breite der Tabelle */
+    /*in Mitte ausgerichtet*/
+    margin-left: auto;
+    margin-right: auto;
+}
+
+th, td {
+    border: 1px solid black; /* Umrandung für Sichtbarkeit */
+    padding: 8px; /* Innenabstand für Inhalt */
+    text-align: left; /* Linksbündige Ausrichtung */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 24px;
+}
+
+main {
+    display: flex;
+    justify-content: space-between;
+    margin: 40px;
+}
+
+.left-column {
+    width: 30%;
+}
+
+.right-column {
+    width: 60%;
+}
+
+h2 {
+    color: #333;
+    font-size: 22px;
+    margin-top: 50px; 
+    margin-bottom: 10px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.back-btn, .main-btn button, .btn {
+    background-color: #333;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.back-btn:hover, .main-btn button:hover, .btn:hover {
+    background-color: #6f6f6f;
+}
+
+.main-btn {
+    display: block;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.main-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+.back-btn {
+    position: absolute;
+    top: 10px;
+    right: 180px;
+}
+
+.form-table {
+    display: flex;
+    flex-direction: column;
+    max-width: 670px; /* Optional: Set the max width of the form */
+}
+
+.form-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.form-row label {
+    width: 270px; /* Width of the labels */
+    flex-shrink: 0;
+}
+
+.form-row select,
+.form-row input[type="text"],
+.form-row input[type="number"],
+.form-row input[type="date"] {
+    flex: 1;
+    padding: 8px;
+    font-size: 16px; /* Adjust the font size as needed */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.time-interval-separator {
+    margin: 0 10px;
+}
+
+.btn {
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #555;
+}
+
+.div2 input[type="text"] {
+    width: calc(100% - 140px); /* Breite des Textfelds anpassen */
+}
+
+.div3 table {
+    width: 100%; /* Volle Breite der Tabelle */
+    border: 1px solid black; /* Umrandung für Sichtbarkeit */
+    border-collapse: collapse; /* Zusammenführen von Zellenrändern */
+    margin-top: 20px; /* Abstand nach oben */
+}
+
+.div3 th, .div3 td {
+    border: 1px solid black; /* Umrandung für Zellen */
+    padding: 8px; /* Innenabstand für Inhalt */
+    text-align: left; /* Linksbündige Ausrichtung */
+}
+
+.div3 th {
+    background-color: #333; /* Hintergrundfarbe für Tabellenüberschriften */
+    color: white; /* Textfarbe für Tabellenüberschriften */
+}
+
+.form-abfragetabelle table {
+    width: 100%; /* Volle Breite der Tabelle */
+    border-collapse: collapse; /* Zusammenführen von Zellenrändern */
+    margin-bottom: 20px; /* Abstand nach unten */
+}
+
+.form-abfragetabelle td {
+    padding: 8px; /* Innenabstand für Inhalt */
+    border: none;
+}
+
+.form-abfragetabelle label {
+    display: block; /* Labels als Blockelemente anzeigen */
+    font-size: 20px; /* Schriftgröße für Labels */
+}
+
+.form-abfragetabelle input[type="text"] {
+    width: 100%; /* Volle Breite der Textfelder */
+    padding: 8px; /* Innenabstand für Textfelder */
+    font-size: 16px; /* Schriftgröße für Textfelder */
+    border: 1px solid #ccc; /* Rahmen für Textfelder */
+    border-radius: 4px; /* Abgerundete Ecken für Textfelder */
+}
+
+.form-abfragetabelle button {
+    padding: 10px 20px; /* Innenabstand für Button */
+    background-color: #333; /* Hintergrundfarbe für Button */
+    color: white; /* Textfarbe für Button */
+    border: none; /* Kein Rahmen für Button */
+    border-radius: 4px; /* Abgerundete Ecken für Button */
+    cursor: pointer; /* Zeigerzeichen beim Überfahren des Buttons */
+}
+
+.form-abfragetabelle button:hover {
+    background-color: #555; /* Hintergrundfarbe ändern beim Überfahren */
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 0.1px solid #dddd;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 20px;
+}
+
+.fixed_header thead {
+    display: table;
+    width: 100%;
+}
+
+.fixed_header tbody {
+    display: block;
+    overflow: scroll;
+    max-height: 215px;
+    width: 100%;
+}
+
+.fixed_header th {
+    background-color: #333;
+    color:white;
+    width: auto;
+}
+
+.fixed_header td {
+    background-color: #dfdfdf;
+    color: #333333;
+    white-space: nowrap; /* Verhindert das Umbruch von langen Texten */
+    overflow: hidden; /* Verhindert das Anzeigen von überlaufendem Inhalt */
+    text-overflow: ellipsis; /* Zeigt "..." an, wenn der Text über die Zelle hinausragt */
+    width: 1%;
+}
+
+#alleLotsh2 {
+    /*in Mitte*/
+    text-align: center;
+}

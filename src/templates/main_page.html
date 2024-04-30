@@ -24,7 +24,7 @@
 </head>
 <body>
     <h1>Fabrikbetrieb - Frau Holle</h1>
-    <a href="{{ url_for('main.main') }}" class="logout-btn"><button>Logout</button></a>
+    <a href="{{ url_for('login.logout') }}" class="logout-btn"><button>Logout</button></a>
     <hr>
     <br>
     
@@ -43,6 +43,12 @@
             <td></td>
             <td><a href="{{ url_for('entities.entities_index') }}"><button>Entities (Prototyp)</button></a></td>
         </tr>
+        <tr>
+            <td><a href="{{ url_for('los_bewegen.los_bewegen_page') }}"><button>Los bewegen</button></a></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
         <tr>
             <td><a href="{{ url_for('los_bearbeiten.los_bearbeiten_page') }}"><button>Los bearbeiten</button></a></td>
             <td></td>

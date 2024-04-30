@@ -1,0 +1,73 @@
+== Use Case 02 – Hinweise Implementierung ==
+
+*Standardablauf (Timer):*
+
+_1.	Der Use Case beginnt, wenn der Timer das Bewegen der Lose automatisch startet_
+
+-	Aufruf der Methode „MoveLot“ der Klasse „Lot“
+
+_2.	Zustand des Loses wird überprüft_
+
+-	SELECT * FROM LOT WHERE STATE=‘OP_COMP‘
+
+_3.	Wenn Los Zustand "OP_COMP" ist , dann wird Los auf nächste Operation und Zustand "WAIT" oder "FIN" gesetzt_
+
+*Hintergrundwissen:*
+
+Mit der einmaligen Kombination aus „OPER“ und „ROUTE“ wird für das jeweilige Los die Tabelle „WORKFLOW“ aufgerufen. Die WORKFLOW-Tabelle enthält Informationen, welche Operations zu einer Route gehören. Die Operations sind numerisch in 100er Schritten hinterlegt, sodass eine Reihenfolge identifizierbar ist. Außerdem gibt es verpflichtende Operations, welche in der Spalte „MANDATORY“ mit 1 gekennzeichnet sind und optionale Operations, wo der Wert 0 hinterlegt ist. Für optionale Operations gibt es in der Spalte „STEPPREC“ eine Wahrscheinlichkeit zwischen 1-99 mit der die jeweilige Operation ausgeführt wird.
+
+*I)	Prüfung, ob weitere Operation für Route vorhanden ist.*
+
+NextOperation=CurrentOperation+100;
+
+Prüfung, ob für die Route eines Loses eine Nextoperation in der Tabelle „WORKFLOW“ vorhanden ist.
+
+- Falls ja-> Prüfung, ob die nächste Operation ausgeführt wird:
+
+* Falls „MANDATORY“=1 -> Ausführung von „FinishMoveLot“ (siehe unten)
+
+* Falls „MANDATORY“=0 -> Aufruf einer Funktion „CalculateNextStep“, welche mithilfe der „STEPPREC“ aus der Tabelle „WORKFLOW“ berechnet, ob der nächste Schritt ausgeführt wird. 
+
+** Falls Ja -> Ausführung von „FinishMoveLot“ (siehe unten). 
+
+** Falls Nein -> Springe zu I) des Ablaufes 
+
+* FinishMoveLot: Operation des Loses in der Tabelle „Lot“ auf NextOperation setzen und „STATE“ in der Tabelle „LOT“ auf „WAIT“ setzen.
+
+- Falls Nein -> weiter mit II)
+
+*II)	Prüfung, ob weitere Route für Produkt vorhanden ist.*
+
+*Hintergrundwissen:*
+
+Aufruf der Tabelle „PRODFLOW“ anhand der Spalte „PRODUCT“ und der „ROUTE“ aus der Tabelle „LOT“. Die Tabelle „PRODFLOW“ enthält für die jeweiligen Produkte die zugehörigen Routes. Die Reihenfolge der Routes wird in der Spalte „SEQ“ hinterlegt. Es handelt sich hierbei um eine natürliche Zahl von 1-n. 
+
+*Prüfung, ob für die Route eines Loses eine NextRoute in der Tabelle „PRODFLOW“ für das Produkt vorhanden ist.*
+
+NextRoute=SEQ.CurrentRoute+1;
+
+* Falls ja -> Setze „ROUTE“ in der Tabelle „LOT“ auf NextRoute und „STATE“ in der Tabelle „LOT“ auf „WAIT“ und "OPERATION" auf "0100" (vermutlich immer "0100", nicht alle Datensätze geprüft). 
+* Falls nein-> Ende des Fertigungsprozesses wurde erreicht. Setze „STATE“ in der Tabelle „LOT“ auf „FIN“
+
+
+*Standardablauf (Manuell):*
+
+Im Wesentlichen analog zum Timer, aber kein automatisierter Start, sondern durch eine Benutzereingabe und nur für ein einzelnes Los. Die Eingabe erfolgt in einem Textfeld nach dem Schema <Los ID> <MOVE>. 
+Eventuell zu bedenken:
+
+* das eingegbene Los befindet sich nicht im Zustand "OP_COMP"
+
+* die Eingabe ist unzulässig, z.B. falsche Los ID oder ungültiger Befehl
+
+*Alternative Abläufe (manuell):*
+
+Für den Timer gibt es keine alternativen Abläufe.
+
+*Über das Eingabefeld sollen weitere Zustandsübergänge möglich sein.*
+
+- Ein Los, welches sich im Zustand HOLD befindet, ist möglicherweise defekt und der Folgezustand muss manuell gesetzt werden. Entweder wird  "OP_COMP" gesetzt, wenn das Los in Ordnung ist oder "SCRAP" falls das Los tatsächlich defekt ist. Über das Eingabefeld erfolgt eine Eingabe nach dem Schema: <Los ID> <SCRAP/OP_COMP>. Hierbei wird lediglich geprüft, ob sich das Los tatsächlich im Zustand "HOLD" befindet. Falls ja, wir der neue "STATE" in der Los-Tabelle gesetzt und falls nein, wird eine Fehlermeldung ausgegeben.
+
+- der manuelle Übergang des Loszustandes von "WAIT" zu "PROC" wird im "Use Case 03 - Los bearbeiten" realisiert.
+
+
+

@@ -5,123 +5,163 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Los starten</title>
-    <style>
-        .main-btn {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            padding: 10px;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='los_starten.css') }}">
 </head>
 <body>
     <h1>Los starten</h1>
-    <a href="{{ url_for('main.main') }}" class="main-btn"><button>Back to Main Page</button></a>
-    <hr>
-    <form action="{{ url_for('los_starten.los_starten_page') }}" method="POST">
-        
-        <!--<label for="lot_id">Lot ID:</label>
-        <input type="text" name="lot_id" id="lot_id" required>
-        <br><br>-->
-
-        <label for="customer">customer:</label>
-        <input type="text" name="customer" id="customer" required>
-        <br><br>
-
-        <label for="order">order:</label>
-        <input type="text" name="order" id="order" required>
-        <br><br>
-
-        <label for="product_id">product:</label>
-        <select name="product_id" id="product_id">
-            {% for product_id in products %}
-                <option value="{{ product_id }}">{{ product_id }}</option>
-            {% endfor %}
-        </select>
-        <br><br>
-
-        <label for="amount">amount of wafer:</label>
-        <input type="number" name="amount" id="amount" min="1" max="1000" required>
-        <br><br>
-
-        <label for="target_date">duedate:</label>
-        <input type="date" name="target_date" id="target_date" required>
-        <br><br>
-
-        <input type="submit" value="Start Lot">
-    </form>
-
-    <hr>
-    <!-- Anzeige aller Lots -->
-    <!--<form action="{{ url_for('los_starten.los_starten_page') }}" method="POST"></form>
-        <label for="product_id_2">product:</label>
-            <select name="product_id" id="product_id_2">
-                {% for product_id in products %}
-                    <option value="{{ product_id }}">{{ product_id }}</option>
-                {% endfor %}
-            </select>
-        <br><br>
-        <label for="lot_id">Lot ID:</label>
-             <select name="lot_id" id="lot_id">
-                {% for lot_id in lotids %}
-                    <option value="{{ lot_id }}">{{ lot_id }}</option>
-                {% endfor %}
-        <input type="submit" value="Show Lots">
-    </form>-->
-
-    <h2>Alle Lots</h2>
-    <!-- Tabelle soll Randlinien haben -->
-    <table style="border-collapse: collapse;">
-        <tr>
-            <th>Lot ID</th>
-            <th>Priority</th>
-            <th>Pieces</th>
-            <th>State</th>
-            <th>Product</th>
-            <th>Route</th>
-            <th>Oper</th>
-            <th>Customer</th>
-            <th>Order</th>
-            <th>Duedate</th>
-            <th>Startdate</th>
-            <th>Enteroper</th>
-            <th>Procstart</th>
-            <th>Disptool</th>
-        </tr>
-        {% for lot in lots %}
-            <tr>
-                <td>{{ lot.lotid }}</td>
-                <td>{{ lot.priority }}</td>
-                <td>{{ lot.pieces }}</td>
-                <td>{{ lot.state }}</td>
-                <td>{{ lot.product }}</td>
-                <td>{{ lot.route }}</td>
-                <td>{{ lot.oper }}</td>
-                <td>{{ lot.customer }}</td>
-                <td>{{ lot.order }}</td>
-                <td>{{ lot.duedate }}</td>
-                <td>{{ lot.startdate }}</td>
-                <td>{{ lot.enteroper }}</td>
-                <td>{{ lot.procstart }}</td>
-                <td>{{ lot.disptool }}</td>
-            </tr>
-        {% endfor %}
-    </table>
+    <button onclick="goBack()" class="back-btn">Back</button>
+    <a id="backtoMainPage" class="main-btn"><button>Back to Main Page</button></a>
     <br>
-    <!-- Paginierungssteuerelemente -->
-    <div>
-        {% if page > 1 %}
-            <a href="{{ url_for('los_starten.los_starten_page', page=1) }}">First</a>
-            <a href="{{ url_for('los_starten.los_starten_page', page=page-1) }}">Previous</a>
-        {% endif %}
+    <hr>
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+
+        var username = "{{ username }}"; //aus Jinja2 Template
         
-        Page {{ page }}
+        var mainPageBtn = document.getElementById('backtoMainPage');
+        mainPageBtn.addEventListener('click', function() {
+            if (username === 'user1') {
+                //zurück zu main-Page
+                window.location.href = "{{ url_for('main.main') }}";
+            } else if (username === 'user2') {
+                //zurück zu main2
+                window.location.href = "{{ url_for('main.main2') }}";
+            }
+        });
+    </script>
 
-        {% if has_next %}
-            <a href="{{ url_for('los_starten.los_starten_page', page=page+1) }}">Next</a>
-            <a href="{{ url_for('los_starten.los_starten_page', page=last_page) }}">Last</a>
-        {% endif %}
-
+    <div class="container">
+        <div class="div1">
+            <h2>Auftrag anlegen</h2>
+            <p>Lose werden angelegt und je nach gegebenem Intervall automatisch gestartet</p>
+            <br>
+            <form action="{{ url_for('los_starten.los_starten_page') }}" method="POST" class="form-table">
+                <div class="form-row">
+                    <label for="customer">Customer:</label>
+                    <input type="text" name="customer" id="customer" required>
+                </div>
+                <div class="form-row">
+                    <label for="order">Order:</label>
+                    <input type="text" name="order" id="order" required>
+                </div>
+                <div class="form-row">
+                    <label for="product_id">Product:</label>
+                    <select name="product_id" id="product_id">
+                        {% for product_id in products %}
+                            <option value="{{ product_id }}">{{ product_id }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="form-row">
+                    <label for="amount">Amount of wafer:</label>
+                    <input type="number" name="amount" id="amount" min="1" max="1000" value="25" required>
+                </div>
+                <div class="form-row">
+                    <label for="target_date">Due date:</label>
+                    <input type="date" name="target_date" id="target_date" required>
+                </div>
+                <div class="form-row">
+                    <label for="time_interval">Time interval (start lot):</label>
+                    <input type="date" name="time_interval1" id="time_interval1" required>
+                    <span class="time-interval-separator">until</span>
+                    <input type="date" name="time_interval2" id="time_interval2" required>
+                </div>
+                <input type="submit" value="Register Order" class="btn">
+                <br>
+            </form>
+            
+        </div>
+        <div class="div2">
+            <h2>Los manuell starten</h2>
+            <p>Sich in Wartestellung befindliches Los wird manuell in Produktionszyklus gebracht</p>
+            <br>
+            <form action="{{ url_for('los_starten.manuell_starten') }}" method="POST" class="form-table">
+                <div class="form-row">
+                    <label for="lot_id">Lot ID:</label>
+                    <input type="text" name="lot_id" id="lot_id" list="lot_ids" required>
+                    <datalist id="lot_ids">
+                        {% for lotid in lotids %}
+                            <option value="{{ lotid }}">
+                        {% endfor %}
+                    </datalist>
+                </div>
+                <br>
+                <input type="submit" value="Start Lot" class="btn">
+            </form>
+            <!-- Wenn man_start_flag (Übergebn von Jinja2) true ist, wird hier angezeigt, dass erfolgreich gestartet wurde-->
+        </div>
+        
     </div>
+
+
+    <hr>
+    
+    <div id="div3">
+        <h2 id="alleLotsh2">Alle Lose</h2>
+        <form action="{{ url_for('los_starten.los_starten_page') }}" method="GET" class="form-abfragetabelle">
+            <table>
+                <tr>
+                    <td><label for="lot_id_f">Lot ID:</label></td>
+                    <td><input type="text" name="lot_id_f" id="lot_id_f" list="lot_ids"></td>
+                    <td><datalist id="lot_ids">
+                        {% for lotid in lotids %}
+                            <option value="{{ lotid }}">
+                        {% endfor %}
+                    </datalist></td>
+                    <td><label for="lot_state_f">Zustand:</label></td>
+                    <td><input type="text" id="lot_state_f" name="lot_state_f" list="lot_states"></td>
+                    <td><datalist id="lot_states">
+                        <option value="INIT">
+                        <option value="MOVE">
+                        <option value="PROC">
+                        <option value="HOLD">
+                        <option value="OP_COMP">
+                        <option value="FIN">
+                        <option value="WAIT">
+                        <option value="SCRAP">
+                    </datalist></td>
+                    <td><label for="lot_tool_f">Tool:</label></td>
+                    <td><input type="text" name="lot_tool_f" id="lot_tool_f" list="lot_tools"></td>
+                    <td><datalist id="lot_tools">
+                        {% for tool in tools %}
+                            <option value="{{ tool }}">
+                        {% endfor %}
+                    </datalist></td>
+                    <td><button type="submit" class="btn">Filtern</button></td>
+                </tr>
+            </table>
+        </form>         
+        <br>
+        <div class="table-container">
+        <table style="border-collapse: collapse;" id="losTable" class="fixed_header">
+            <thead>
+            <tr>
+                <th>Lot ID</th>
+                <th>State</th>
+                <th>Oper</th>
+                <th>Route</th>
+                <th>Product</th>
+                <th>Tool</th>
+            </tr>
+            </thead>
+            <tbody>
+                {% for lot in lots %}
+                    <tr>
+                        <td>{{ lot.lotid }}</td>
+                        <td>{{ lot.state }}</td>
+                        <td>{{ lot.oper }}</td>
+                        <td>{{ lot.route }}</td>
+                        <td>{{ lot.product }}</td>
+                        <td>{{ lot.disptool }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        </div>
+    </div>
+    <br>
 </body>
 </html>
