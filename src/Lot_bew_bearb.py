@@ -83,7 +83,7 @@ def lotop_finished(session_d):
             lot.procstart = None
             session_d.commit()
         else:
-            print("Tool " + tool.tool + " is not done")
+            print("Tool " + tool.tool + " is not done\n")
 
 '''Maschinen suchen nach einem Lot, das auf diese wartet'''
 #TODO: Laufzeitoptimierung
@@ -154,17 +154,44 @@ def moveLot(session_d):
                 session_d.add(lot)
                 session_d.commit()
                 continue
-            next_oper = '0100'
+            #Erste Operation der Route setzen
+            workflows_per_route = session_d.query(Workflow).filter(Workflow.route == next_route.route).all()
+            # sortieren nach kleinster oper-Zahl (zuerst in INT-Wert umwandeln)
+            min_oper = 10000
+            for wf in workflows_per_route:
+                if(int(wf.oper) < min_oper):
+                    min_oper = int(wf.oper)
+                    next_oper = wf.oper
             lot.route = next_route.route
             session_d.add(lot)
             session_d.commit()
             next = session_d.query(Workflow).filter(Workflow.route == next_route.route).filter(Workflow.oper == next_oper).first()
         lot.oper = next.oper
-        lot.state = "WAIT"
-        lot.enteroper = datetime.datetime.now()
-        session_d.add(lot)
-        session_d.commit()
-        print("Lot " + lot.lotid + " is WAIT now (next operation: " + lot.oper + ")")
+
+        #Test, ob Mandatory-Flag gesetzt ist
+        if next.mandatory == 1:
+            lot.state = "WAIT"
+            lot.enteroper = datetime.datetime.now()
+            session_d.add(lot)
+            session_d.commit()
+            print("Lot " + lot.lotid + " is WAIT now (next operation: " + lot.oper + ")")
+        else: #falls Los nicht zwingend in nächste Operation muss
+            print("Lot " + lot.lotid + " is not mandatory for next operation: " + lot.oper)
+            # erzeuge Random Wert zwischen 1 und 100 für Simulation der Wahrscheinlichkeit
+            random_value = random.randint(1, 100)
+            #Test, ob random_value kleiner als stepperc ist
+            if random_value < next.stepperc:
+                lot.state = "WAIT"
+                lot.enteroper = datetime.datetime.now()
+                session_d.add(lot)
+                session_d.commit()
+                print("Lot " + lot.lotid + " is WAIT now (next operation: " + lot.oper + ")")
+            else:
+                # am Ende von lots-Liste wird das Lot nocheinmal angehangen
+                lots.append(lot)
+                session_d.add(lot)
+                session_d.commit()
+                print("Lot " + lot.lotid + " skips next operation: " + lot.oper)
 
 def test_if_lots_are_stuck(session_d):
     #alle Lose, die in WAIT-Zustand sind
