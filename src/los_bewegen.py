@@ -4,6 +4,7 @@ from mapper import Lot, Tool
 from database_connection import get_database_url
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
+from los_starten import get_all_lot_ids
 
 los_bewegen_bp = Blueprint('los_bewegen', __name__)
 
@@ -13,8 +14,9 @@ def check_user_session():
 @los_bewegen_bp.route("/main/los_bewegen", methods=["GET"])
 def los_bewegen_page():
     if check_user_session():
+        print("Los bewegen")
         username = session['username']
-        #Alle Lose aus Datenbank holen
+        #Alle Lots aus Datenbank holen
         lotids = get_all_lot_ids()
         return render_template("los_bewegen_page.html", username=username, lotids=lotids)
     else:
