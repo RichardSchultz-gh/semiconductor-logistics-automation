@@ -20,15 +20,15 @@
             window.history.back();
         }
     
-        var username = "{{ username }}"; //aus Jinja2 Template
+        var username = "{{ username }}"; // aus Jinja2 Template
         
         var mainPageBtn = document.getElementById('backtoMainPage');
         mainPageBtn.addEventListener('click', function() {
             if (username === 'user1') {
-                //zurück zu main-Page
+                // zurück zu main-Page
                 window.location.href = "{{ url_for('main.main') }}";
             } else if (username === 'user2') {
-                //zurück zu main2
+                // zurück zu main2
                 window.location.href = "{{ url_for('main.main2') }}";
             }
         });
@@ -36,24 +36,12 @@
     
     <main>
         <div class="left-column">
-            <div id="editLotBtn">
-                <form action="{{ url_for('los_bearbeiten.los_bearbeiten_page') }}" method="POST">
-                    <label for="los">Los:</label>
-                    <input type="text" id="lot_id" name="lot_id" value="{{ los }}">
-                    <input type="submit" value="Los bearbeiten" class="edit-btn">
-                </form>
-            </div>
+            
             <div class="container">
-                <div class="section">
-                    <h2>Syntax: </h2>
-                    <ul>
-                        <li>State - ID - (Object)</li>
-                    </ul>
-                </div>
+
                 <div class="section">
                     <h2>Zustände Los</h2>
                     <ul>
-                        <li>MOVE</li>
                         <li>PROC</li>
                         <li>HOLD</li>
                         <li>OP_COMP</li>
@@ -72,51 +60,59 @@
                     </ul>
                 </div>
             </div>
+
+            <div id="editLotBtn">
+                <form action="{{ url_for('los_bearbeiten.los_bearbeiten_page') }}" method="POST">
+                    <table id="borderless"> 
+                        <tr>
+                            <td><label for="lot_id_i">Lot ID:</label></td>
+                            <td><input type="text" name="lot_id" id="lot_id_i" list="lot_ids" placeholder="Lot ID auswählen"></td>
+                            <datalist id="lot_ids">
+                                {% for lotid in lotids %}
+                                    <option value="{{ lotid }}">
+                                {% endfor %}
+                            </datalist>
+                        </tr>
+                        <tr>
+                            <td colspan="3"><input type="submit" value="Los bearbeiten" class="edit-btn"></td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+            
+
         </div>
         <div class="right-column">
-            <div class="eingabefeld">
-                <label for="befehlInput">Los ID:</label>
-                <select id="losIdDropdown">
-                    {% for lot in lots %}
-                        <option value="{{ lot.lotid }}">{{ lot.lotid }}</option>
-                    {% endfor %}
-                    <option value="none">none</option> <!-- für leere Auswahl -->
-                </select>
-                <label for="zustand1Dropdown">Los Zustand :</label>
-                <select id="zustand1Dropdown">
-                    <!-- Optionen: MOVE, PROC, HOLD, OP_COMP, FIN, WAIT, SCRAP-->
-                    <option value="MOVE">MOVE</option>
-                    <option value="PROC">PROC</option>
-                    <option value="HOLD">HOLD</option>
-                    <option value="OP_COMP">OP_COMP</option>
-                    <option value="FIN">FIN</option>
-                    <option value="WAIT">WAIT</option>
-                    <option value="SCRAP">SCRAP</option>
-                    <option value="none">none</option> <!-- für leere Auswahl -->
-                </select>
-                <label for="toolIdDropdown">Tool ID:</label>
-                <select id="toolIdDropdown">
-                    {% for tool in machines %}
-                        <option value="{{ tool.tool }}">{{ tool.tool }}</option>
-                    {% endfor %}
-                    <option value="none">none</option> <!-- für leere Auswahl -->
-                </select>
-                <label for="zustand2Dropdown">Tool Zustand :</label>
-                <select id="zustand2Dropdown">
-                    <!-- Optionen: MAINT; IDLE; PROC; DOWN-->
-                    <option value="MAINT">MAINT</option>
-                    <option value="IDLE">IDLE</option>
-                    <option value="PROC">PROC</option>
-                    <option value="DOWN">DOWN</option>
-                    <option value="none">none</option> <!-- für leere Auswahl -->
-                </select>
-            </div>
-            <div>
-                <button id="aktualisierenBtn">Aktualisieren</button>
+            <div id="div3">
+                <h2 id="alleLotsh2">Alle Lose</h2>
+                <form action="{{ url_for('los_bearbeiten.los_bearbeiten_page') }}" method="GET" class="form-abfragetabelle">
+                    <table>
+                        <tr>
+                            <td><label for="lot_id_f">Lot ID:</label></td>
+                            <td><input type="text" name="lot_id_f" id="lot_id_f" list="lot_ids"></td>
+                            <td><datalist id="lot_ids">
+                                {% for lotid in lotids %}
+                                    <option value="{{ lotid }}">
+                                {% endfor %}
+                            </datalist></td>
+                            <td><label for="lot_state_f">Zustand:</label></td>
+                            <td><input type="text" id="lot_state_f" name="lot_state_f" list="lot_statess"></td>
+                            <td><datalist id="lot_statess">
+                                <option value="INIT"></option>
+                                <option value="PROC"></option>
+                                <option value="HOLD"></option>
+                                <option value="OP_COMP"></option>
+                                <option value="FIN"></option>
+                                <option value="WAIT"></option>
+                                <option value="SCRAP"></option>
+                            </datalist></td>
+                            <td><button type="submit" class="btn">Filtern</button></td>
+                        </tr>
+                    </table>
+                </form> 
             </div>
             <div class="table-container">
-                <h2>Lose</h2>
-                <table id="losTable" class="fixed_header">
+                <table class="table">
                     <thead>
                         <tr>
                             <th>Los ID</th>
@@ -141,19 +137,43 @@
                     </tbody>
                 </table>
             </div>
+            <div id="div3">
+                <h2 id="alleLotsh2">Alle Tools</h2>
+                <form action="{{ url_for('los_bearbeiten.los_bearbeiten_page') }}" method="GET" class="form-abfragetabelle">
+                    <table>
+                        <tr>
+                            <td><label for="tool_f">Tool:</label></td>
+                            <td><input type="text" name="tool_f" id="tool_f" list="tools_s"></td>
+                            <td><datalist id="tools_s">
+                                {% for tool in toolids %}
+                                    <option value="{{ tool }}"></option>
+                                {% endfor %}
+                            </datalist></td>
+                            <td><label for="tool_state_f">Zustand:</label></td>
+                            <td><input type="text" id="tool_state_f" name="tool_state_f" list="tool_statess"></td>
+                            <td><datalist id="tool_statess">
+                                <option value="MAINT">MAINT</option>
+                                <option value="IDLE">IDLE</option>
+                                <option value="PROC">PROC</option>
+                                <option value="DOWN">DOWN</option>
+                            </datalist></td>
+                            <td><button type="submit" class="btn">Filtern</button></td>
+                        </tr>
+                    </table>
+                </form> 
+            </div>
             <div class="table-container">
-                <h2>Maschinen</h2>
-                <table id="machineTable" class="fixed_header">
+                <table class="table">
                     <thead>
                         <tr>
                             <th>Tool</th>
                             <th>Zustand</th>
-                            <th>Masch. Art</th>
-                            <th>Masch. Fam.</th>
+                            <th>Tool Art</th>
+                            <th>Tool Fam.</th>
                         </tr>
                     </thead>
                     <tbody>
-                        {% for tool in machines %}
+                        {% for tool in tools %}
                         <tr>
                             <td>{{ tool.tool }}</td>
                             <td>{{ tool.state }}</td>
@@ -164,7 +184,7 @@
                     </tbody>
                 </table>
             </div>
-        </div>
+        </div>          
     </main>
     <script src="los_bearbeiten.js"></script>
 </body>

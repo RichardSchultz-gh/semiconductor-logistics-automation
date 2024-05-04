@@ -115,7 +115,7 @@ def tool_searches_for_lots(session_d):
             waiting_lots.sort(key=lambda x: x.enteroper, reverse=True)
             #das Tool, das am längsten wartet, wird ausgewählt
             lot = waiting_lots[0]
-            print("Lot " + lot.lotid + " is selected")
+            print("Lot " + lot.lotid + " is selected to be processed by tool " + tool.tool + "\n")
             lot.state = "PROC"
             lot.disptool = tool.tool
             lot.procstart = datetime.datetime.now()

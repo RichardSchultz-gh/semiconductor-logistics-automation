@@ -32,6 +32,7 @@ def start_lot():
                     lot.oper = workflow.oper
             session.add(lot)
             session.commit()
+            print(f"Lot {lot.lotid} is now in WAIT state (started at {datetime.datetime.now()})")
     session.close()
 
 start_lot()

@@ -1,6 +1,6 @@
 # los_starten.py
 from flask import Blueprint, render_template, request, redirect, url_for,session
-from mapper import Lot, ProdFlow, Tool
+from mapper import Lot, ProdFlow, Tool, Workflow
 #from timer import timer
 from database_connection import get_database_url
 from sqlalchemy import create_engine, Column, Integer, String
@@ -281,8 +281,21 @@ def manuell_starten():
     lot = session.query(Lot).filter(Lot.lotid == lotid).first()
     if(lot.state == "INIT"):
         lot.state = "WAIT"
-        lot.startdate = datetime.datetime.now().date()
         lot.enteroper = datetime.datetime.now()
+        product = lot.product
+        #1. Route des Produkts ermitteln
+        route = session.query(ProdFlow.route).filter(ProdFlow.product == product, ProdFlow.seq == 1).first()
+        route = route[0]
+        lot.route = route
+        #2. Erste Operation der Route setzen
+        workflows_per_route = session.query(Workflow).filter(Workflow.route == route).all()
+        #sortieren nach kleinster oper-Zahl (zuerst in INT-Wert umwandeln)
+        min_oper = 10000
+        for workflow in workflows_per_route:
+            if(int(workflow.oper) < min_oper):
+                min_oper = int(workflow.oper)
+                lot.oper = workflow.oper
+        session.add(lot)
         session.commit()
         session.close()
         return render_template("los_starten_success.html", lot_data='', amount=1, id=2, lot_id_1=lotid)
