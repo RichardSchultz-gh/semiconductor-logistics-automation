@@ -9,15 +9,15 @@ from los_starten import get_all_lot_ids
 los_bewegen_bp = Blueprint('los_bewegen', __name__)
 
 def check_user_session():
-    return 'username' in session and session['username'] in ['user1']
+    return 'username' in session and session['username'] == 'user1'
 
 @los_bewegen_bp.route("/main/los_bewegen", methods=["GET"])
 def los_bewegen_page():
     if check_user_session():
         print("Los bewegen")
         username = session['username']
-        # alle Lots aus der Datenbank holen
-        lotids= get_all_lot_ids()
+        #Alle Lots aus Datenbank holen
+        lotids = get_all_lot_ids()
         return render_template("los_bewegen_page.html", username=username, lotids=lotids)
     else:
         return "Unauthorized", 401
@@ -25,32 +25,48 @@ def los_bewegen_page():
 @los_bewegen_bp.route("/main/los_bewegen", methods=["POST"])
 def los_bewegen():
     if check_user_session():
-        print("Los bewegen")
-        username = session['username']
         lotid = request.form.get("lot_id")
-        print("Lot ID: " + lotid)
-
-        # lot für die lot_id holen
+        username = session['username']
         DATABASE_URL = get_database_url()
         engine = create_engine(DATABASE_URL)
         Session = sessionmaker(bind=engine)
         db_session = Session()
         lot = db_session.query(Lot).filter(Lot.lotid == lotid).first()
-        db_session.close()
-
-        print(lot.state)
-
-        if(lot.state == "OP_COMP"): # nur Lots im Zustand OP_COMP dürfen bewegt werden
-            # lot in die nächste Station bewegen
+        
+        if lot is None:
+            return render_template("los_bewegen_error.html", username=username, error_message="Lot ID nicht gefunden")
+        
+        if lot.state == "OP_COMP":
             move_lot_to_next_station(lot)
+            db_session.commit()
+            db_session.close()
             return redirect(url_for('los_bewegen.los_bewegen_page'))
         else:
-            return render_template("los_bewegen_error.html", username=username, error_message="Lot  befindet sich nicht im Zustand OP_COMP")
+            db_session.close()
+            return render_template("los_bewegen_error.html", username=username, error_message="Lot befindet sich nicht im Zustand OP_COMP")
         
     else:
         return "Unauthorized", 401
     
 def move_lot_to_next_station(lot):
-    # lot in die nächste Station bewegen
-    print('TODO: Lot in die nächste Station bewegen')
-    return lot
+    if lot.state == "OP_COMP":
+        next_operation = lot.operation + 100
+        if is_next_operation_available(lot.route, next_operation):
+            lot.operation = next_operation
+            lot.state = "WAIT"
+        else:
+            next_route = lot.route + 1
+            if is_next_route_available(lot.product, next_route):
+                lot.route = next_route
+                lot.state = "WAIT"
+                lot.operation = 100
+            else:
+                lot.state = "FIN"
+    else:
+        print("Los ist nicht im Zustand OP_COMP")
+
+def is_next_operation_available(route, next_operation):
+    return True 
+
+def is_next_route_available(product, next_route):
+    return True 
