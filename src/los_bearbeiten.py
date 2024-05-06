@@ -1,11 +1,12 @@
 # los_bearbeiten.py
 from flask import Blueprint, render_template, request, redirect, url_for, session
-from mapper import Lot, Tool, PTime, Workflow, ProdFlow
+from mapper import Lot, Tool, PTime
 from database_connection import get_database_url
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 import datetime
 from sqlalchemy.ext.declarative import declarative_base
+import random
 
 los_bearbeiten_bp = Blueprint('los_bearbeiten', __name__)
 
@@ -40,7 +41,6 @@ def los_bearbeiten_page():
             tools = get_all_tools()
 
         usern = session['username']
-
         return render_template("los_bearbeiten_page.html", lotids=lotids, toolids=toolids, lots=lots, tools=tools, username=usern)
     else:
         return "Unauthorized", 401  # Fehlermeldung anzeigen oder Umleitung durchführen
@@ -80,8 +80,9 @@ def moveLot():
         print(f"No idle-tool found for route {route} and operation {oper} of product {product}")
         return render_template("los_bearbeiten_error.html", username=session['username'], error_message=f"No idle-tool found for route {route} and operation {oper} of product {product}")
     
-    # Auswahl einer Maschine für das Los
-    PTIMEtool = tools_for_lotoper[0]
+    # Auswahl einer Maschine für das Los (per Zufall)
+    randomindex = random.randint(0, len(tools_for_lotoper)-1)
+    PTIMEtool = tools_for_lotoper[randomindex]
     tool = session_d.query(Tool).filter(Tool.tool == PTIMEtool.tool).first()
     print("Lot " + lot.lotid + " is selected to be processed by tool " + tool.tool + "\n")
     lot.state = "PROC"
@@ -97,7 +98,7 @@ def moveLot():
     if tool.state == "PROC":
         print("Tool " + tool.tool + " is PROC now")
     database_disconnection(session_d)
-    return redirect(url_for('los_bearbeiten.los_bearbeiten_page'))
+    return render_template("los_bearbeiten_success.html", username=session['username'], success_message=f"Lot with ID {lot_id} is now in PROC state and is processed by tool {tool.tool}")
 
 
 def database_connection():

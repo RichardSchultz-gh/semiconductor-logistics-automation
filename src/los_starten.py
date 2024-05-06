@@ -1,7 +1,6 @@
 # los_starten.py
 from flask import Blueprint, render_template, request, redirect, url_for,session
 from mapper import Lot, ProdFlow, Tool, Workflow
-#from timer import timer
 from database_connection import get_database_url
 from sqlalchemy import create_engine, Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
@@ -132,8 +131,6 @@ def los_starten():
                 lot = session.query(Lot).filter(Lot.lotid == lot_id).first()
                 lot.startdate = startTime
                 session.commit()
-
-                #startTimer(lotid)
 
                 startTime = startTime + datetime.timedelta(hours=time_next_lot) # Startzeit für das nächste Los wird berechnet (ungenau auf Stunden gerundet)
 
@@ -279,6 +276,10 @@ def manuell_starten():
     Session = sessionmaker(bind=engine)
     session = Session()
     lot = session.query(Lot).filter(Lot.lotid == lotid).first()
+    #Fehlerbehandlung, falls LotID nicht existiert
+    if lot is None:
+        session.close()
+        return render_template("los_starten_error.html", error_message="Das Los mit der ID " + lotid + " existiert nicht.", id=2)
     if(lot.state == "INIT"):
         lot.state = "WAIT"
         lot.enteroper = datetime.datetime.now()
