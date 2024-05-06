@@ -1,0 +1,34 @@
+== Vereinfachte Testdatensätze
+
+----
+INSERT INTO PRODFLOW VALUES 
+
+('TestProductA', 'RouteA', 1),
+('TestProductA', 'RouteB', 2);
+
+INSERT INTO WORKFLOW VALUES 
+
+('RouteA', '0100', 'initial checking', 1, NULL),
+('RouteA', '0200', 'processing', 1, NULL),
+('RouteA', '0300', 'fnishing', 0, '20,00'),
+('RouteB', '0100', 'pre proc', 1, NULL),
+('RouteB', '0200', 'proc', 1, NULL);
+
+INSERT INTO TOOL VALUES 
+('TestMachineA', 'ALN1000', 'Robert', 'Part', 6, 100, 'UKN'),
+('TestMachineB', 'ALN1000', 'Robert', 'Part', 6, 100, 'UKN');
+
+INSERT INTO PTIME VALUES 
+('TestMachineA', 'TestProductA', 'RouteA', '0100', 15, 0),
+('TestMachineA', 'TestProductA', 'RouteA', '0100', 15, 0),
+('TestMachineA', 'TestProductA', 'RouteA', '0100', 15, 0),
+('TestMachineB', 'TestProductA', 'RouteB', '0100', 15, 0),
+('TestMachineB', 'TestProductA', 'RouteB', '0200', 15, 0);
+
+INSERT INTO ENTITIES VALUES 
+('TestMachineA', 'TOOL', 1, 'a VWP tool', 'REG'),
+('TestMachineB', 'TOOL', 1, 'a VWP tool', 'REG');
+
+INSERT INTO LOT VALUES 
+('TestLot', 44, 10, 'UKN', 'TestProductA', 'RouteA', '0100', 'TestCustomer', '2024-07-06', '2024-02-02', NULL, NULL, NULL, NULL);
+----
