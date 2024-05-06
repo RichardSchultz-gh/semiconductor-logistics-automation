@@ -10,7 +10,7 @@ INSERT INTO WORKFLOW VALUES
 
 ('RouteA', '0100', 'initial checking', 1, NULL),
 ('RouteA', '0200', 'processing', 1, NULL),
-('RouteA', '0300', 'fnishing', 0, '20,00'),
+('RouteA', '0300', 'fnishing', 0, '20.00'),
 ('RouteB', '0100', 'pre proc', 1, NULL),
 ('RouteB', '0200', 'proc', 1, NULL);
 
