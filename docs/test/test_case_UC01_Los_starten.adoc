@@ -84,7 +84,7 @@ Time interval: 08.05.2024-09,05.2024
   +
   - der Button "Los starten" wurde angeklickt
 | *Testdurchführung* | 
- 1. Eingabe bzw. Auswahl eines Loses, welches gestartet werden soll
+ 1. Eingabe bzw. Auswahl eines Loses, welches gestartet werden soll und sich im Zustand INIT befindet
   +
 2. Los über den Button "Start Lot" starten
   +
@@ -102,3 +102,30 @@ Auswahl eines beliebigen Loses mit dem Zustand INIT
 | *To-dos* | /
 | *Korrekturstatus* | /
 |===
+
+|===
+| *Test-ID* | 4 
+| *Zweck* | Verifikation Los manuell starten
+| *Testart* | Manuell, Negativ-Test
+| *Vorbedingungen* | 
+  - Fertigungsleiter oder Mitarbeiter ist in der Web-Anwendung angemeldet
+  +
+  - der Button "Los starten" wurde angeklickt
+| *Testdurchführung* | 
+ 1. Fehlerhafte Eingaben: Los nicht im Zustand INIT; Falsche LosID
+  +
+2. Los über den Button "Start Lot" starten
+  +
+3. Prüfung, ob deskriptive Fehlermeldungen ausgegeben werden
+  +
+| *Nachbedingungen* | 
+Bei erfolgreicher Testausführung wurde kein fehlerhaftes Los gestartet
+| *Eingabedaten* | 
+
+Auswahl eines beliebigen Loses mit dem Zustand !=INIT und Eingabe einer fehlerhaften Los ID (z.B. xy34950)
+
+| *Ergebnis* | PASS
+| *To-dos* | /
+| *Korrekturstatus* | /
+|===
+
