@@ -68,7 +68,37 @@ Time interval: 08.05.2024-09,05.2024
 
  Analog zu TID1
 
-| *Ergebnis* | Success
+| *Ergebnis* | PASS
+| *To-dos* | /
+| *Korrekturstatus* | /
+|===
+
+'''
+
+|===
+| *Test-ID* | 3 
+| *Zweck* | Verifikation Los manuell starten
+| *Testart* | Manuell, Positiv-Test
+| *Vorbedingungen* | 
+  - Fertigungsleiter oder Mitarbeiter ist in der Web-Anwendung angemeldet
+  +
+  - der Button "Los starten" wurde angeklickt
+| *Testdurchführung* | 
+ 1. Eingabe bzw. Auswahl eines Loses, welches gestartet werden soll
+  +
+2. Los über den Button "Start Lot" starten
+  +
+3. Prüfung, ob die zugehörige Los-Tabelle aktualisiert wird
+  +
+4. Prüfung, ob Los-Zustand von INIT auf WAIT wechselt; Prüfung, ob Operation und Route gesetzt werden
+  +
+| *Nachbedingung* | 
+Bei erfolgreicher Testausführung wird das Los korrekt in den Fertigungsprozess eingebunden 
+| *Eingabedaten* | 
+
+Auswahl eines beliebigen Loses mit dem Zustand INIT
+
+| *Ergebnis* | PASS
 | *To-dos* | /
 | *Korrekturstatus* | /
 |===
