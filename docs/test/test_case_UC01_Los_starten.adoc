@@ -33,8 +33,35 @@ Due date: 09,06.2024
 Time interval: 08.05.2024-09,05.2024
   +
 
-| *Ergebnis* | Success
+| *Ergebnis* | PASS
 | *Korrektur* | Nicht nötig
 |===
 
+|===
+| *Test-ID* | 2 
+| *Zweck* | Verifikation Auftragsanlage
+| *Testart* | Manuell, Negativ-Test
+| *Vorbedingungen* | 
+  - Fertigungsleiter oder Mitarbeiter ist in der Web-Anwendung angemeldet
+  +
+  - der Button "Los starten" wurde angeklickt, sodass die Eingabemaske erscheint
+| *Testdurchführung* | 
+ 1. Eingabe: Customer, Order, Product, Amount of wafer, Due date, Time interval
+  +
+2. Auftragsanlage über Button "Register Order" abschließen
+  +
+3. Prüfung, ob das System fehlende Eingaben erkennt
++
+4. Prüfung, ob invalide Datumskombinationen erkannt werden (due date < start date, end date < start date, start date/current date/end date < current date)
+| *Nachbedingung* | 
+- Bei erfolgreicher Testausführung erscheinen deskriptive Fehlermeldungen. 
+  +
+- das Los darf nicht auf der Datenbank eingeplant werden
+  +
+| *Eingabedaten* | 
 
+ Analog zu TID1
+
+| *Ergebnis* | Success
+| *Korrektur* | Nicht nötig
+|===
