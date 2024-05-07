@@ -26,17 +26,21 @@ def los_bearbeiten_page():
         tool_filter = request.args.get('tool_f')
         tool_state_filter = request.args.get('tool_state_f')
 
-        if lot_id_filter:
+        if lot_id_filter and not lot_state_filter:
             lots = filter_lots_by_id(lot_id_filter)
-        elif lot_state_filter:
+        elif lot_state_filter and not lot_id_filter:
             lots = filter_lots_by_state(lot_state_filter)
+        elif lot_id_filter and lot_state_filter:
+            lots = filter_lots_by_id_and_state(lot_id_filter, lot_state_filter)
         else:
             lots = get_all_lots()  # Hier implementieren Sie Ihre Logik zum Abrufen von Lots für die angeforderte Seite
 
-        if tool_filter:
+        if tool_filter and not tool_state_filter:
             tools = filter_tools_by_tool(tool_filter)
-        elif tool_state_filter:
+        elif tool_state_filter and not tool_filter:
             tools = filter_tools_by_tool_state(tool_state_filter)
+        elif tool_filter and tool_state_filter:
+            tools = filter_tools_by_tool_and_state(tool_filter, tool_state_filter)
         else:
             tools = get_all_tools()
 
@@ -202,3 +206,25 @@ def get_all_tool_ids():
     tool_ids = [tool_id[0] for tool_id in tool_ids]
     session.close()
     return tool_ids
+
+def filter_lots_by_id_and_state(lot_id_filter, lot_state_filter):
+    # Hiermit filtern wir Lose nach Lot-ID und Zustand
+    DATABASE_URL = get_database_url()
+    engine = create_engine(DATABASE_URL)
+    Base = declarative_base()
+    Session = sessionmaker(bind=engine)
+    session = Session()
+    lots = session.query(Lot).filter(Lot.lotid==lot_id_filter).filter(Lot.state==lot_state_filter).all()
+    session.close()
+    return lots
+
+def filter_tools_by_tool_and_state(tool_filter, tool_state_filter):
+    # Hiermit filtern wir Lose nach Werkzeug und Werkzeugzustand
+    DATABASE_URL = get_database_url()
+    engine = create_engine(DATABASE_URL)
+    Base = declarative_base()
+    Session = sessionmaker(bind=engine)
+    session = Session()
+    tools = session.query(Tool).filter(Tool.tool==tool_filter).filter(Tool.state==tool_state_filter).all()
+    session.close()
+    return tools

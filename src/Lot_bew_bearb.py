@@ -148,7 +148,7 @@ def moveLot(session_d):
             newseq = route.seq + 1
             next_route = session_d.query(ProdFlow).filter(ProdFlow.product == lot.product).filter(ProdFlow.seq == newseq).first()
             if next_route is None:
-                print("Produktionsfluss von Lot"+ lot.lot + "ist zu Ende")
+                print("Produktionsfluss von Lot"+ lot.lotid + "ist zu Ende")
                 lot.state = "FIN"
                 session_d.add(lot)
                 session_d.commit()
