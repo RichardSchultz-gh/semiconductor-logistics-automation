@@ -1,5 +1,5 @@
-== Test Case UC01 - Lose starten
 
+== Test Case UC01 - Lose starten
 
 |===
 | *Test-ID* | 1 
@@ -14,7 +14,7 @@
   +
 2. Auftragsanlage über Button "Register Order" abschließen
   +
-3. Prüfung, ob das Los im Zustand "init" in die Datenbank übertragen worden ist und alle Eingaben korrekt übertragen worden sind
+3. Prüfung, ob das Los im Zustand "init" in die Datenbank übertragen worden ist und alle Eingaben korrekt übertragen worden (SELECT * FROM LOT)
 | *Nachbedingung* | 
 - Bei erfolgreicher Testausführung befinden sich die zugehörigen Lose im Zustand "init" in der Datenbank
   +
@@ -22,5 +22,18 @@
   +
 | *Eingabedaten* | 
 
-| *Ergebnis* | 
+Customer:     Paul
+  +
+Order: Bestellung_2
+  +
+Product: TestProductA
+  +
+Due date: 09,06.2024
+  +
+Time interval: 08.05.2024-09,05.2024
+  +
+
+| *Ergebnis* | Success
 |===
+
+
