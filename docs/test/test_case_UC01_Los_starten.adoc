@@ -15,7 +15,7 @@
 2. Auftragsanlage über Button "Register Order" abschließen
   +
 3. Prüfung, ob das Los im Zustand "init" in die Datenbank übertragen worden ist und alle Eingaben korrekt übertragen worden (SELECT * FROM LOT)
-| *Nachbedingung* | 
+| *Nachbedingungen* | 
 - Bei erfolgreicher Testausführung befinden sich die zugehörigen Lose im Zustand "init" in der Datenbank
   +
 - alle Wertefelder müssen korrekt in der Datenbank in der Tabelle "Lot" übertragen worden sein
@@ -59,7 +59,7 @@ Time interval: 08.05.2024-09,05.2024
   +
 4. Prüfung, ob invalide Datumskombinationen erkannt werden (due date < start date, end date < start date, start date/current date/end date < current date)
   +
-| *Nachbedingung* | 
+| *Nachbedingungen* | 
 - Bei erfolgreicher Testausführung erscheinen deskriptive Fehlermeldungen. 
   +
 - das Los darf nicht auf der Datenbank eingeplant werden
@@ -92,7 +92,7 @@ Time interval: 08.05.2024-09,05.2024
   +
 4. Prüfung, ob Los-Zustand von INIT auf WAIT wechselt; Prüfung, ob Operation und Route gesetzt werden
   +
-| *Nachbedingung* | 
+| *Nachbedingungen* | 
 Bei erfolgreicher Testausführung wird das Los korrekt in den Fertigungsprozess eingebunden 
 | *Eingabedaten* | 
 
