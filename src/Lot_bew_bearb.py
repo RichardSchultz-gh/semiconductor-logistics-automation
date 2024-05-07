@@ -23,7 +23,7 @@ def test_if_tool_is_done(tool):
             tool.state = "DOWN"
             session_d.add(tool)
             session_d.commit()
-            lot.state = "SCRAP"
+            lot.state = "HOLD"
             session_d.add(lot)
             session_d.commit()
             return False
