@@ -154,7 +154,7 @@ Auswahl aller Zustände in Kombinationen mit stichprobenartig ausgewählten Masc
 
 | *Ergebnis* | FAIL
 | *To-dos* | 
-Das Filtern der Lose funktioniert nach dem Prinzip, dass alle Lose angezeigt werden, bei denen mindestens 1 Suchkriterium wahr ist. Es muss sichergestellt sein, dass alle Suchkriterien gleichzeitig zutreffen müssen (siehe Screenshot).
+Das Filtern der Lose funktioniert nach dem Prinzip, dass alle Lose angezeigt werden, bei denen mindestens 1 Suchkriterium wahr ist. Es muss sichergestellt sein, dass alle Suchkriterien gleichzeitig zutreffen (siehe Screenshot).
 | *Korrekturstatus* | offen
 |===
 
