@@ -103,6 +103,8 @@ Auswahl eines beliebigen Loses mit dem Zustand INIT
 | *Korrekturstatus* | /
 |===
 
+'''
+
 |===
 | *Test-ID* | 4 
 | *Zweck* | Verifikation Los manuell starten
@@ -128,4 +130,34 @@ Auswahl eines beliebigen Loses mit dem Zustand !=INIT und Eingabe einer fehlerha
 | *To-dos* | /
 | *Korrekturstatus* | /
 |===
+
+'''
+
+|===
+| *Test-ID* | 5 
+| *Zweck* | Verifikation Filteroptionen der Los-Tabelle
+| *Testart* | Manuell, Positiv-Test
+| *Vorbedingungen* | 
+  - Fertigungsleiter oder Mitarbeiter ist in der Web-Anwendung angemeldet
+  +
+  - der Button "Los starten" wurde angeklickt
+| *Testdurchführung* | 
+ 1. Diverse Filterkombinationen im Drop-Down-Menü auswählen
+  +
+2. Kontrolle, ob die Datensätze korrekt gefiltert werden und sich die Los-Tabelle automatisch aktualisiert
+  +
+| *Nachbedingungen* | 
+Bei erfolgreicher Testausführung befindet sich alle Lose, die den Filterkriterien entsprechen, in der Los-Tabelle
+| *Eingabedaten* | 
+
+Auswahl aller Zustände in Kombinationen mit stichprobenartig ausgewählten Maschinen und Losen
+
+| *Ergebnis* | FAIL
+| *To-dos* | 
+Das Filtern der Lose funktioniert nach dem Prinzip, dass alle Lose angezeigt werden, bei denen mindestens 1 Suchkriterium wahr ist. Es muss sichergestellt sein, dass alle Suchkriterien gleichzeitig zutreffen müssen. (Siehe Screenshot).
+| *Korrekturstatus* | offen
+|===
+
+.TID 5: Fehlerhafter Filter
+image::images/UC01_TID5_Filter.png[]
 
