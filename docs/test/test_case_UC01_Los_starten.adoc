@@ -1,6 +1,13 @@
 
 == Test Case UC01 - Lose starten
 
+*Tests mit Fokus auf folgende Funktionalitäten:*
+
+* Auftragsanlage
+* Los starten
+* Datenvisualisierung über Los-Tabelle
+
+'''
 |===
 | *Test-ID* | 1 
 | *Zweck* | Verifikation Auftragsanlage
