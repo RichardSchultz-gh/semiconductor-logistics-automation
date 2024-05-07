@@ -20,8 +20,8 @@ INSERT INTO TOOL VALUES
 
 INSERT INTO PTIME VALUES 
 ('TestMachineA', 'TestProductA', 'RouteA', '0100', 15, 0),
-('TestMachineA', 'TestProductA', 'RouteA', '0100', 15, 0),
-('TestMachineA', 'TestProductA', 'RouteA', '0100', 15, 0),
+('TestMachineA', 'TestProductA', 'RouteA', '0200', 15, 0),
+('TestMachineA', 'TestProductA', 'RouteA', '0300', 15, 0),
 ('TestMachineB', 'TestProductA', 'RouteB', '0100', 15, 0),
 ('TestMachineB', 'TestProductA', 'RouteB', '0200', 15, 0);
 
