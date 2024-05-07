@@ -36,7 +36,8 @@ Time interval: 08.05.2024-09,05.2024
 
 
 | *Ergebnis* | PASS
-| *Korrektur* | Nicht nötig
+| *To-dos* | /
+| *Korrekturstatus* | /
 |===
 
 '''
@@ -55,9 +56,9 @@ Time interval: 08.05.2024-09,05.2024
 2. Auftragsanlage über Button "Register Order" abschließen
   +
 3. Prüfung, ob das System fehlende Eingaben erkennt
-+
+  +
 4. Prüfung, ob invalide Datumskombinationen erkannt werden (due date < start date, end date < start date, start date/current date/end date < current date)
-+
+  +
 | *Nachbedingung* | 
 - Bei erfolgreicher Testausführung erscheinen deskriptive Fehlermeldungen. 
   +
@@ -68,5 +69,6 @@ Time interval: 08.05.2024-09,05.2024
  Analog zu TID1
 
 | *Ergebnis* | Success
-| *Korrektur* | Nicht nötig
+| *To-dos* | /
+| *Korrekturstatus* | /
 |===
