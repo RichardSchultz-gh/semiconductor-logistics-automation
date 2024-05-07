@@ -1,1 +1,20 @@
+== Test Case UC01 - Lose starten
 
+
+|===
+| *Test-ID* | Der Test Case 01 stellt sicher, dass Informationen aus der Datenbank über die Webanwendung angezeigt werden können.
+| *Testart* | 
+| *Vorbedingungen* | 
+  - Raspberry Pi ist hochgefahren.
+  +
+  - Internetverbindung ist auf dem Raspberry Pi hergestellt.
+  +
+  - Web-Anwedung ist in einem Browser geöffnet.
+| *Testdurchführung* | 
+ 1. Der Button"Show Data" wird auf der Web-Anwendung gedrückt.
+  +
+2. Es wird kontrolliert, ob die Entitäten-Tabelle der Datenbank über die Web-Anwendung ausgegeben wird.
+| *Nachbedingung* | 
+| *Eingabedaten* | 
+| *Ergebnis* | 
+|===
