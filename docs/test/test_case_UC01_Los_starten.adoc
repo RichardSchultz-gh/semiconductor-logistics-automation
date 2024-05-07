@@ -34,6 +34,7 @@ Time interval: 08.05.2024-09,05.2024
   +
 
 | *Ergebnis* | Success
+| *Korrektur* | Nicht nötig
 |===
 
 
