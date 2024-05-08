@@ -3,4 +3,4 @@
 
 *Test Case UC01 - Lose starten*
 
-* TID 5: Filterfunktionen
+* TID 5: Filterfunktionen &#x2713;
