@@ -57,7 +57,7 @@ def database_disconnection(session_d):
 
 '''Schauen, ob das Lot, welches eine Maschine bearbeitet, fertig ist'''
 def lotop_finished(session_d):
-    print("Checking if a tool is done")
+    print("\n***Checking if a tool is done***")
     tools = session_d.query(Tool).filter(Tool.state == "PROC").all()
     for tool in tools:
         if test_if_tool_is_done(tool):
@@ -89,7 +89,7 @@ def lotop_finished(session_d):
 '''Maschinen suchen nach einem Lot, das auf diese wartet'''
 #TODO: Laufzeitoptimierung
 def tool_searches_for_lots(session_d):
-    print("Searching for tools that are IDLE and waiting for lots")
+    print("\n***Searching for tools that are IDLE and waiting for lots***")
     # tools-Liste erzeugen und alle Tools in IDLE-Zustand suchen
     tools = []
     tools = session_d.query(Tool).filter(Tool.state == "IDLE").all()
@@ -132,7 +132,7 @@ def tool_searches_for_lots(session_d):
 
 '''Schauen, ob ein Lot in OP-COMP-Zustand ist und versetzen des Lot auf nächsten Produktionsschritt'''
 def moveLot(session_d):
-    print("Checking if a lot is in OP_COMP state")
+    print("\n*** Checking if a lot is in OP_COMP state ***")
     lots = session_d.query(Lot).filter(Lot.state == "OP_COMP").all()
     for lot in lots:
         route = lot.route
@@ -202,7 +202,7 @@ def test_if_lots_are_stuck(session_d):
         ptime = session_d.query(PTime).filter(PTime.route == route).filter(PTime.oper == oper).first()
         if ptime is None:
             print("Lot " + lot.lotid + " is stuck")
-            lot.state = "SCRAP"
+            lot.state = "DOWN"
             session_d.add(lot)
             session_d.commit()
         #else:
