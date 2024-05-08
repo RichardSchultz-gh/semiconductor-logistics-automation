@@ -16,10 +16,11 @@ engine = create_engine(DATABASE_URL)
 Session = sessionmaker(bind=engine)
 session = Session()
 
+#Test der Timer-Funktion lot_start; Datumsvariable muss gesetzt werden & Lose müssen sinnvoll ausgewählt werden
 class UC1_TID6(unittest.TestCase):
     def test_something(self):
-        #setzte Startdatum
-        start_date = datetime(2024, 5, 9)
+        #setze Startdatum
+        start_date = datetime(2024, 5, 8)
 
         #hole alle Lose, die den Zustand INIT aufweisen und dem Startdatum entsprechen
         init_lots = session.query(Lot).filter(Lot.state == "INIT", Lot.startdate == start_date).all()
