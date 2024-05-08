@@ -168,3 +168,29 @@ Das Filtern der Lose funktioniert nach dem Prinzip, dass alle Lose angezeigt wer
 .TID 5: Fehlerhafter Filter
 image::images/UC01_TID5_Filter.png[]
 
+'''
+
+|===
+| *Test-ID* | 6 
+| *Zweck* | Verifikation Timer-Funktion Los starten
+| *Testart* | Unit-Test, Positiv-Test
+| *Vorbedingungen* | 
+  Aufruf des Projektes in der Entwicklungsumgebung und Start der Applikation
+| *Testdurchführung* | 
+ 1. Ausführung des Moduls TC_UC1_TID6.py, welches die Timer-Funktion lot_start aufruft.
+  +
+2. Lose im Zustand INIT einpflegen und Variable für das Startdatum in den gültigen Bereich setzen
+  +
+3. Kontrolle, ob der Test erfolgreich durchläuft und die richtige Lose im Zustand INIT und WAIT ausgegeben werden
+  +
+| *Nachbedingungen* | 
+Bei erfolgreicher Testausführung wechseln für das gewählte Startdatum alle Lose vom Zustand INIT in den Zustand WAIT
+| *Eingabedaten* | 
+
+Anlegen eines Loses und Setzten eines Startdatums<currenttime
+
+| *Ergebnis* | PASS
+| *To-dos* | /
+| *Korrekturstatus* | /
+|===
+
