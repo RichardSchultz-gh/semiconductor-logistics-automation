@@ -4,7 +4,7 @@
 *Tests mit Fokus auf folgende Funktionalitäten:*
 
 * Auftragsanlage
-* Los starten
+* Los starten (manuell + Timer)
 * Datenvisualisierung über Los-Tabelle
 
 '''
