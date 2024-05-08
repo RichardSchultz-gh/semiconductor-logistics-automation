@@ -1,9 +1,8 @@
 # los_starten.py
 from flask import Blueprint, render_template, request, redirect, url_for,session
-from mapper import Lot, ProdFlow, Tool
-#from timer import timer
+from mapper import Lot, ProdFlow, Tool, Workflow
 from database_connection import get_database_url
-from sqlalchemy import create_engine, Column, Integer, String
+from sqlalchemy import create_engine, Table, Column, Integer, String, MetaData
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 import datetime
@@ -26,14 +25,23 @@ def los_starten_page():
         lot_state_filter = request.args.get('lot_state_f')
         lot_tool_filter = request.args.get('lot_tool_f')
 
-        if lot_id_filter:
+        lots = []
+        if lot_id_filter and not lot_state_filter and not lot_tool_filter:
             lots = filter_lots_by_id(lot_id_filter)
-        elif lot_state_filter:
+        elif lot_state_filter and not lot_id_filter and not lot_tool_filter:
             lots = filter_lots_by_state(lot_state_filter)
-        elif lot_tool_filter:
+        elif lot_tool_filter and not lot_id_filter and not lot_state_filter:
             lots = filter_lots_by_tool(lot_tool_filter)
+        elif lot_id_filter and lot_state_filter and not lot_tool_filter:
+            lots = filter_lots_by_id_state(lot_id_filter, lot_state_filter)
+        elif lot_id_filter and lot_tool_filter and not lot_state_filter:
+            lots = filter_lots_by_id_tool(lot_id_filter, lot_tool_filter)
+        elif lot_state_filter and lot_tool_filter and not lot_id_filter:
+            lots = filter_lots_by_state_tool(lot_state_filter, lot_tool_filter)
+        elif lot_id_filter and lot_state_filter and lot_tool_filter:
+            lots = filter_lots_by_id_state_tool(lot_id_filter, lot_state_filter, lot_tool_filter)
         else:
-            lots = get_all_lots()  # Hier implementieren Sie Ihre Logik zum Abrufen von Lots für die angeforderte Seite
+            lots = get_all_lots()
 
         usern = session['username']
 
@@ -132,8 +140,6 @@ def los_starten():
                 lot = session.query(Lot).filter(Lot.lotid == lot_id).first()
                 lot.startdate = startTime
                 session.commit()
-
-                #startTimer(lotid)
 
                 startTime = startTime + datetime.timedelta(hours=time_next_lot) # Startzeit für das nächste Los wird berechnet (ungenau auf Stunden gerundet)
 
@@ -235,7 +241,7 @@ def filter_lots_by_id(lot_id_filter):
     return lots
 
 def filter_lots_by_state(lot_state_filter):
-    # Hiermit filtern wir Lose nach Zustand
+    # Hiermit filtern wir Lose nach ZustandE
     DATABASE_URL = get_database_url()
     engine = create_engine(DATABASE_URL)
     Base = declarative_base()
@@ -268,6 +274,50 @@ def get_all_tools():
     session.close()
     return tools
 
+def filter_lots_by_id_state(lot_id_filter, lot_state_filter):
+    # Hiermit filtern wir Lose nach Lot-ID und Zustand
+    DATABASE_URL = get_database_url()
+    engine = create_engine(DATABASE_URL)
+    Base = declarative_base()
+    Session = sessionmaker(bind=engine)
+    session = Session()
+    lots = session.query(Lot).filter(Lot.lotid==lot_id_filter, Lot.state==lot_state_filter).all()
+    session.close()
+    return lots
+
+def filter_lots_by_id_tool(lot_id_filter, lot_tool_filter):
+    # Hiermit filtern wir Lose nach Lot-ID und Werkzeug
+    DATABASE_URL = get_database_url()
+    engine = create_engine(DATABASE_URL)
+    Base = declarative_base()
+    Session = sessionmaker(bind=engine)
+    session = Session()
+    lots = session.query(Lot).filter(Lot.lotid==lot_id_filter, Lot.disptool==lot_tool_filter).all()
+    session.close()
+    return lots
+
+def filter_lots_by_state_tool(lot_state_filter, lot_tool_filter):
+    # Hiermit filtern wir Lose nach Zustand und Werkzeug
+    DATABASE_URL = get_database_url()
+    engine = create_engine(DATABASE_URL)
+    Base = declarative_base()
+    Session = sessionmaker(bind=engine)
+    session = Session()
+    lots = session.query(Lot).filter(Lot.state==lot_state_filter, Lot.disptool==lot_tool_filter).all()
+    session.close()
+    return lots
+
+def filter_lots_by_id_state_tool(lot_id_filter, lot_state_filter, lot_tool_filter):
+    # Hiermit filtern wir Lose nach Lot-ID, Zustand und Werkzeug
+    DATABASE_URL = get_database_url()
+    engine = create_engine(DATABASE_URL)
+    Base = declarative_base()
+    Session = sessionmaker(bind=engine)
+    session = Session()
+    lots = session.query(Lot).filter(Lot.lotid==lot_id_filter, Lot.state==lot_state_filter, Lot.disptool==lot_tool_filter).all()
+    session.close()
+    return lots
+
 @los_starten_bp.route("/main/manuell_starten", methods=["POST"])
 def manuell_starten():
     print("Manuell Starten")
@@ -279,14 +329,30 @@ def manuell_starten():
     Session = sessionmaker(bind=engine)
     session = Session()
     lot = session.query(Lot).filter(Lot.lotid == lotid).first()
+    #Fehlerbehandlung, falls LotID nicht existiert
+    if lot is None:
+        session.close()
+        return render_template("los_starten_error.html", error_message="Das Los mit der ID " + lotid + " existiert nicht.", id=2)
     if(lot.state == "INIT"):
         lot.state = "WAIT"
-        lot.startdate = datetime.datetime.now().date()
         lot.enteroper = datetime.datetime.now()
+        product = lot.product
+        #1. Route des Produkts ermitteln
+        route = session.query(ProdFlow.route).filter(ProdFlow.product == product, ProdFlow.seq == 1).first()
+        route = route[0]
+        lot.route = route
+        #2. Erste Operation der Route setzen
+        workflows_per_route = session.query(Workflow).filter(Workflow.route == route).all()
+        #sortieren nach kleinster oper-Zahl (zuerst in INT-Wert umwandeln)
+        min_oper = 10000
+        for workflow in workflows_per_route:
+            if(int(workflow.oper) < min_oper):
+                min_oper = int(workflow.oper)
+                lot.oper = workflow.oper
+        session.add(lot)
         session.commit()
         session.close()
         return render_template("los_starten_success.html", lot_data='', amount=1, id=2, lot_id_1=lotid)
     else:
         session.close()
         return render_template("los_starten_error.html", error_message="Das Los kann nicht manuell gestartet werden, da es bereits gestartet wurde oder beendet ist.", id=2)
-

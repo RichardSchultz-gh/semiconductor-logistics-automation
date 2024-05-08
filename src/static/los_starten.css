@@ -30,19 +30,6 @@
     font-size: 18px; /* Schriftgröße für die Beschreibung */
 }
 
-table {
-    border-collapse: collapse; /* Zusammenführen von Zellenrändern */
-    width: 90%; /* Volle Breite der Tabelle */
-    /*in Mitte ausgerichtet*/
-    margin-left: auto;
-    margin-right: auto;
-}
-
-th, td {
-    border: 1px solid black; /* Umrandung für Sichtbarkeit */
-    padding: 8px; /* Innenabstand für Inhalt */
-    text-align: left; /* Linksbündige Ausrichtung */
-}
 
 * {
     margin: 0;
@@ -70,13 +57,7 @@ main {
     margin: 40px;
 }
 
-.left-column {
-    width: 30%;
-}
 
-.right-column {
-    width: 60%;
-}
 
 h2 {
     color: #333;
@@ -176,7 +157,7 @@ li {
 }
 
 .div3 table {
-    width: 100%; /* Volle Breite der Tabelle */
+    width: 100vw; /* Volle Breite der Tabelle */
     border: 1px solid black; /* Umrandung für Sichtbarkeit */
     border-collapse: collapse; /* Zusammenführen von Zellenrändern */
     margin-top: 20px; /* Abstand nach oben */
@@ -230,42 +211,31 @@ li {
     background-color: #555; /* Hintergrundfarbe ändern beim Überfahren */
 }
 
+
+
+.table-container{
+    display: inline-block;
+    height: 10em;
+    overflow-y: scroll;
+    }
+
+.table thead th {
+    position: sticky;
+    top: 0;
+    background-color: #333; /* Hintergrundfarbe für Tabellenüberschriften */
+    color: white; /* Textfarbe für Tabellenüberschriften */
+    z-index: 1;
+    width: 20%;
+}
+
 th, td {
     padding: 12px;
     text-align: left;
-    border-bottom: 0.1px solid #dddd;
-    white-space: nowrap;
-    text-overflow: ellipsis;
+    border-bottom: 0.1px solid #ffffff;
+    border-left: 0.1px solid #ffffff;
     font-size: 20px;
 }
-
-.fixed_header thead {
-    display: table;
-    width: 100%;
-}
-
-.fixed_header tbody {
-    display: block;
-    overflow: scroll;
-    max-height: 215px;
-    width: 100%;
-}
-
-.fixed_header th {
-    background-color: #333;
-    color:white;
-    width: auto;
-}
-
-.fixed_header td {
-    background-color: #dfdfdf;
-    color: #333333;
-    white-space: nowrap; /* Verhindert das Umbruch von langen Texten */
-    overflow: hidden; /* Verhindert das Anzeigen von überlaufendem Inhalt */
-    text-overflow: ellipsis; /* Zeigt "..." an, wenn der Text über die Zelle hinausragt */
-    width: 1%;
-}
-
+    
 #alleLotsh2 {
     /*in Mitte*/
     text-align: center;

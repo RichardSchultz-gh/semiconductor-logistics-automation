@@ -10,28 +10,29 @@ def test_if_tool_is_done(tool):
         # in Lot-Tabelle nach Lot suchen, das von dem Tool bearbeitet wird
         lot = session_d.query(Lot).filter(Lot.disptool == tool.tool).first()
         if lot is None:
-            tool.state = "DOWN"
+            tool.state = "IDLE" #da kein Lot gefunden wurde das von Tool bearbeitet wird, ist das Tool IDLE
             session_d.add(tool)
             session_d.commit()
             return False
         route = lot.route
         oper = lot.oper
-        # Suche in Ptime nach Prozesszeit für die Operation der Route
-        ptime = session_d.query(PTime).filter(PTime.route == route).filter(PTime.oper == oper).first()
+        # Suche in Ptime nach Prozesszeit für die Operation der Route und das Tool (für das Lot mit spezifischen Produkt)
+        ptime = session_d.query(PTime).filter(PTime.route == route).filter(PTime.oper == oper).filter(PTime.tool == tool.tool).filter(PTime.product == lot.product).first()
         if ptime is None:
+            #TODO: Was passiert, wenn Datensätze in PTime fehlen?
             tool.state = "DOWN"
             session_d.add(tool)
             session_d.commit()
-            lot.state = "SCRAP"
+            lot.state = "HOLD"
             session_d.add(lot)
             session_d.commit()
             return False
 
-        # Wenn PROCSTART + Prozesszeit (in Stunden) < aktuelle Zeit, dann ist das Tool fertig
+        # Wenn PROCSTART + Prozesszeit (in Sekunden) < aktuelle Zeit, dann ist das Tool fertig
         #konvertiere procstart in datetime
         procstart = datetime.datetime.strptime(str(lot.procstart), '%Y-%m-%d %H:%M:%S.%f')
         # muss auch mit Jahreszahl gemacht werden, weil die Prozesszeit auch in Jahren sein kann
-        finisheddatetime = datetime.timedelta(hours=ptime.ptime) + procstart
+        finisheddatetime = datetime.timedelta(seconds=ptime.ptime) + procstart
 
         # aktuelle Zeit
         if(finisheddatetime < datetime.datetime.now()):
@@ -83,7 +84,7 @@ def lotop_finished(session_d):
             lot.procstart = None
             session_d.commit()
         else:
-            print("Tool " + tool.tool + " is not done")
+            print("Tool " + tool.tool + " is not done\n")
 
 '''Maschinen suchen nach einem Lot, das auf diese wartet'''
 #TODO: Laufzeitoptimierung
@@ -103,19 +104,17 @@ def tool_searches_for_lots(session_d):
             if lot is not None:
                 waiting_lots.append(lot)
 
-        # wenn es keine Lots gibt, die auf das Tool warten, dann wird das Tool in den IDLE-Zustand versetzt
+        # wenn es keine Lots gibt, die auf das Tool warten, dann bleibt das Tool IDLE
         if len(waiting_lots) == 0:
-            tool.state = "IDLE"
-            session_d.add(tool)
-            session_d.commit()
             #print("Tool " + tool.tool + " keep being IDLE, because there are no lots waiting for it\n")
+            continue
         else:
             print("There are lots waiting for the tool " + tool.tool + " in IDLE state")
             #sortieren der Lots nach frühster ENTEROPER-Zeit, die bei WAIT neu gesetzt wird (aber in reverse)
             waiting_lots.sort(key=lambda x: x.enteroper, reverse=True)
             #das Tool, das am längsten wartet, wird ausgewählt
             lot = waiting_lots[0]
-            print("Lot " + lot.lotid + " is selected")
+            print("Lot " + lot.lotid + " is selected to be processed by tool " + tool.tool)
             lot.state = "PROC"
             lot.disptool = tool.tool
             lot.procstart = datetime.datetime.now()
@@ -127,7 +126,7 @@ def tool_searches_for_lots(session_d):
             session_d.add(tool)
             session_d.commit()
             if tool.state == "PROC":
-                print("Tool " + tool.tool + " is PROC now")
+                print("Tool " + tool.tool + " is PROC now\n")
             waiting_lots.clear()
 
 
@@ -149,22 +148,49 @@ def moveLot(session_d):
             newseq = route.seq + 1
             next_route = session_d.query(ProdFlow).filter(ProdFlow.product == lot.product).filter(ProdFlow.seq == newseq).first()
             if next_route is None:
-                print("Produktionsfluss von Lot"+ lot.lot + "ist zu Ende")
+                print("Produktionsfluss von Lot"+ lot.lotid + "ist zu Ende")
                 lot.state = "FIN"
                 session_d.add(lot)
                 session_d.commit()
                 continue
-            next_oper = '0100'
+            #Erste Operation der Route setzen
+            workflows_per_route = session_d.query(Workflow).filter(Workflow.route == next_route.route).all()
+            # sortieren nach kleinster oper-Zahl (zuerst in INT-Wert umwandeln)
+            min_oper = 10000
+            for wf in workflows_per_route:
+                if(int(wf.oper) < min_oper):
+                    min_oper = int(wf.oper)
+                    next_oper = wf.oper
             lot.route = next_route.route
             session_d.add(lot)
             session_d.commit()
             next = session_d.query(Workflow).filter(Workflow.route == next_route.route).filter(Workflow.oper == next_oper).first()
         lot.oper = next.oper
-        lot.state = "WAIT"
-        lot.enteroper = datetime.datetime.now()
-        session_d.add(lot)
-        session_d.commit()
-        print("Lot " + lot.lotid + " is WAIT now (next operation: " + lot.oper + ")")
+
+        #Test, ob Mandatory-Flag gesetzt ist
+        if next.mandatory == 1:
+            lot.state = "WAIT"
+            lot.enteroper = datetime.datetime.now()
+            session_d.add(lot)
+            session_d.commit()
+            print("Lot " + lot.lotid + " is WAIT now (next operation: " + lot.oper + ")")
+        else: #falls Los nicht zwingend in nächste Operation muss
+            print("Lot " + lot.lotid + " is not mandatory for next operation: " + lot.oper)
+            # erzeuge Random Wert zwischen 1 und 100 für Simulation der Wahrscheinlichkeit
+            random_value = random.randint(1, 100)
+            #Test, ob random_value kleiner als stepperc ist
+            if random_value < next.stepperc:
+                lot.state = "WAIT"
+                lot.enteroper = datetime.datetime.now()
+                session_d.add(lot)
+                session_d.commit()
+                print("Lot " + lot.lotid + " is WAIT now (next operation: " + lot.oper + ")")
+            else:
+                # am Ende von lots-Liste wird das Lot nocheinmal angehangen
+                lots.append(lot)
+                session_d.add(lot)
+                session_d.commit()
+                print("Lot " + lot.lotid + " skips next operation: " + lot.oper)
 
 def test_if_lots_are_stuck(session_d):
     #alle Lose, die in WAIT-Zustand sind
@@ -179,8 +205,8 @@ def test_if_lots_are_stuck(session_d):
             lot.state = "SCRAP"
             session_d.add(lot)
             session_d.commit()
-        else:
-            print("Lot " + lot.lotid + " is not stuck")
+        #else:
+        #    print("Lot " + lot.lotid + " is not stuck")
 
 # Main
 session_d = database_connection()

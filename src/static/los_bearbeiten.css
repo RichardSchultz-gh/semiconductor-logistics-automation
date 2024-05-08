@@ -60,39 +60,26 @@ li {
     font-size: 18px;
 }
 
+.table-container{
+display: inline-block;
+height: 12em;
+overflow-y: scroll;
+}
+.table thead th {
+position: sticky;
+top: 0;
+background-color: #333; /* Hintergrundfarbe für Tabellenüberschriften */
+color: white; /* Textfarbe für Tabellenüberschriften */
+z-index: 1;
+}
+
 th, td {
     padding: 12px;
     text-align: left;
-    border-bottom: 0.1px solid #dddd;
-    border-left: 0.1px solid #dddd;
-    white-space: nowrap;
-    text-overflow: ellipsis;
+    border-bottom: 0.1px solid #ffffff;
+    border-left: 0.1px solid #ffffff;
     font-size: 20px;
 }
-
-.fixed_header thead {
-    display: table;
-    width: 100%;
-}
-
-.fixed_header tbody {
-    display: block;
-    overflow: auto;
-    max-height: 215px;
-}
-
-.fixed_header th {
-    background-color: #333;
-    color:white;
-    width: auto; 
-}
-
-.fixed_header td {
-    background-color: #dfdfdf;
-    color: #333333;
-    width: 100%;
-}
-
 
 .back-btn, .main-btn button, #aktualisierenBtn, #editLotBtn .edit-btn {
     background-color: #333;
@@ -101,6 +88,7 @@ th, td {
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    text-align: left;
 }
 
 .back-btn:hover, .main-btn button:hover, #aktualisierenBtn:hover, #editLotBtn .edit-btn:hover {
@@ -122,4 +110,105 @@ th, td {
     position: absolute;
     top: 10px;
     right: 180px;
+}
+
+#editLotBtn label {
+    display: block; /* Labels als Blockelemente anzeigen */
+    margin-top: 2em; /* Mindestabstand nach oben */
+
+}
+
+#editLotBtn input[type="text"] {
+    display: block; /* Eingabefelder als Blockelemente anzeigen */
+    margin-top: 3em; /* Mindestabstand nach oben */
+    width: 100%; /* Volle Breite der Textfelder */
+    padding: 8px; /* Innenabstand für Textfelder */
+    font-size: 16px; /* Schriftgröße für Textfelder */
+    border: 1px solid #ccc; /* Rahmen für Textfelder */
+    border-radius: 4px; /* Abgerundete Ecken für Textfelder */
+}
+
+#editLotBtn input[type="submit"] {
+    display: block; /* Button als Blockelement anzeigen */
+    /*ganzen Platz ausnutzen*/
+    width: 100%;
+}
+
+.div3 table {
+    width: 100vw; /* Volle Breite der Tabelle */
+    border: 1px solid black; /* Umrandung für Sichtbarkeit */
+    border-collapse: collapse; /* Zusammenführen von Zellenrändern */
+    margin-top: 20px; /* Abstand nach oben */
+}
+
+.div3 th, .div3 td {
+    border: 1px solid black; /* Umrandung für Zellen */
+    padding: 8px; /* Innenabstand für Inhalt */
+    text-align: left; /* Linksbündige Ausrichtung */
+}
+
+.div3 th {
+    background-color: #333; /* Hintergrundfarbe für Tabellenüberschriften */
+    color: white; /* Textfarbe für Tabellenüberschriften */
+}
+
+.form-abfragetabelle table {
+    width: 100%; /* Volle Breite der Tabelle */
+    border-collapse: collapse; /* Zusammenführen von Zellenrändern */
+    margin-bottom: 20px; /* Abstand nach unten */
+}
+
+.form-abfragetabelle td {
+    padding: 8px; /* Innenabstand für Inhalt */
+    border: none;
+}
+
+.form-abfragetabelle label {
+    display: block; /* Labels als Blockelemente anzeigen */
+    font-size: 20px; /* Schriftgröße für Labels */
+}
+
+.form-abfragetabelle input[type="text"] {
+    width: 100%; /* Volle Breite der Textfelder */
+    padding: 8px; /* Innenabstand für Textfelder */
+    font-size: 16px; /* Schriftgröße für Textfelder */
+    border: 1px solid #ccc; /* Rahmen für Textfelder */
+    border-radius: 4px; /* Abgerundete Ecken für Textfelder */
+}
+
+.form-abfragetabelle button {
+    padding: 10px 20px; /* Innenabstand für Button */
+    background-color: #333; /* Hintergrundfarbe für Button */
+    color: white; /* Textfarbe für Button */
+    border: none; /* Kein Rahmen für Button */
+    border-radius: 4px; /* Abgerundete Ecken für Button */
+    cursor: pointer; /* Zeigerzeichen beim Überfahren des Buttons */
+}
+
+.form-abfragetabelle button:hover {
+    background-color: #555; /* Hintergrundfarbe ändern beim Überfahren */
+}
+
+
+ .div3 {
+    flex: 1; /* Jedes Div soll gleich viel Platz einnehmen */
+    /*border: 1px solid black; /* Umrandung für Sichtbarkeit */
+    padding: 10px; /* Innenabstand für Inhalt */
+    margin: 10px; /* Außenabstand für Trennung */
+    /*linker Randabstand der Schrift erhöhen*/
+    padding-left: 20px; 
+    /*oberer Randabstand der Schrift verringern*/
+    padding-top: 0px;
+}
+
+.div3 {
+    flex: 1; /* Jedes Div soll gleich viel Platz einnehmen */
+    padding: 10px; /* Innenabstand für Inhalt */
+    margin: 10px 10px 10px 20px; /* Außenabstand für Trennung, 20px links */
+    /*zentriert*/
+    text-align: center;
+}
+
+#borderless td{
+    border: none;
 }
