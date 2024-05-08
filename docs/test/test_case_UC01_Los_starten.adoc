@@ -187,7 +187,7 @@ image::images/UC01_TID5_Filter.png[]
 Bei erfolgreicher Testausführung wechseln für das gewählte Startdatum alle Lose vom Zustand INIT in den Zustand WAIT
 | *Eingabedaten* | 
 
-Anlegen eines Loses und Setzten eines Startdatums<currenttime
+Anlegen eines Loses und Setzen eines Startdatums<currenttime
 
 | *Ergebnis* | PASS
 | *To-dos* | /
