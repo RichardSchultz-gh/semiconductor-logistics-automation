@@ -189,14 +189,19 @@ Da sich die Aufgabenverteilung im Sommersemester verschieben, wird die Rollenver
 
 | I9
 |
-* 
+* Fertigstellung UC01
+* Timer
+* Crome Jobs
 | 22.04.-03.05
 | 
 |
 
 | I10
 |
-* 
+* Fertigstellung UC02 
+* Fertigstellung UC03
+* Testing UC02 & UC03
+* Raspy ans HTW Netz
 | 06.05.-17.05.
 | 
 |
