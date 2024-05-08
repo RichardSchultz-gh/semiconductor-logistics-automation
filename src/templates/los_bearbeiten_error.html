@@ -1,18 +1,20 @@
 <!-- los_bearbeiten_error.html -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Los bearbeiten</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='los_bearbeiten.css') }}">
+    <title>Fehler - Los bearbeiten</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='los_error.css') }}">
 </head>
 <body>
-    <h1>Error - Page</h1>
-    <a href="{{ url_for('los_bearbeiten.los_bearbeiten_page') }}" class="main-btn"><button>Back to Los-Bearbeiten-Page</button></a>
-   <hr>
-    <h2>Los bearbeiten gescheitert</h2>
-    <p>Es ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut. Der Fehler lautet:</p>
-    <p class="err">{{ error_message }}</p>
+    <div class="error-container">
+        <h1>Fehler - Los bearbeiten</h1>
+        <hr>
+        <h2>Los bearbeiten gescheitert</h2>
+        <p>Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut.</p>
+        <p class="error-message">Fehler: {{ error_message }}</p>
+        <a href="{{ url_for('los_bearbeiten.los_bearbeiten_page') }}" class="main-btn">Zurück zur Los-Bearbeiten-Seite</a>
+    </div>
 </body>
 </html>
