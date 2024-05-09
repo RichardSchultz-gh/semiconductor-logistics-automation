@@ -23,7 +23,7 @@
 4. Das Los wird Schritt für Schritt bis ans Ende des Fertigungsprozesses bewegt. Dabei erfolgt eine Ausgabe, die den Weg des Loses durch den Fertigungsprozess visualisiert. 
   +
 | *Nachbedingungen* | 
-Bei erfolgreicher Testausführung befindet sich das Los am Ende im Zustand FIN und wurde fehlerfrei durch die Fertgigung bewegt.
+Bei erfolgreicher Testausführung befindet sich das Los am Ende im Zustand FIN und wurde fehlerfrei durch die Fertigung bewegt.
   +
 | *Eingabedaten* | TestProductA aus den Testdatensätzen im Zustand OP_COMP auf RouteA und Operation 0100.
 | *Ergebnis* | PASS
