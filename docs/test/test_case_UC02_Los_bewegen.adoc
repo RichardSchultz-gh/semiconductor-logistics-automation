@@ -64,6 +64,8 @@ Bei erfolgreicher Testausführung wird das Los mit einer bestimmten Wahrscheinli
   - Fertigungsleiter oder Mitarbeiter ist in der Web-Anwendung angemeldet
   +
   - der Button "Los bewegen" wurde angeklickt, sodass die Eingabemaske erscheint
+  +
+  - das Test-Los befidnet sich im Zustand OP_COMP
 | *Testdurchführung* | 
  1. Erstellung eines Test-Loses
   +
@@ -71,7 +73,7 @@ Bei erfolgreicher Testausführung wird das Los mit einer bestimmten Wahrscheinli
   +
 3. Prüfung des Los-Zustandes, des Zeitstempels (enteroper), der Route und der Operation auf der Datenbank mithilfe von: SELECT * FROM LOT WHERE lotid='PATE-14'. Der Abgleich erfolgt anhand der Testdatensätze und den dort hinterlegten Fertigungsplänen.
   +
-4. Setzen des Los-Zustandes auf OP_COMP mithilfe von UPDATE lot SET "STATE"='OP_COMP' WHERE lotid='PATE-14'. Hierdurch kann das Los auf die nächste Operation gesetzt werden.
+4. Setzen des Los-Zustandes auf OP_COMP mithilfe von UPDATE lot SET "STATE"='OP_COMP' WHERE lotid='PATE-14'. Hierdurch wird immer wieder die Vorbedingung für das Bewegen des Loses geschaffen.
   +
 5. Springe zu Punkt 2 bis das Los das Ende des Fertigungsprozesses erreicht
 | *Nachbedingungen* | 
