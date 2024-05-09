@@ -51,7 +51,7 @@ class UC2_TID2(unittest.TestCase):
 
             #Ausgabe des Test-Loses
             current_lot = session_d.query(Lot).filter(Lot.lotid == 'TestLotUC2').first()
-            print(f"Ausgabe TC | Lot ID: {current_lot.lotid}, Operaration: {current_lot.oper}, Route: {current_lot.route}, State: {current_lot.state}")
+            print(f"Ausgabe TC | Lot ID: {current_lot.lotid}, Operation: {current_lot.oper}, Route: {current_lot.route}, State: {current_lot.state}")
 
             #Zustand auf OP_COMP setzen
             current_lot.state = 'OP_COMP'
