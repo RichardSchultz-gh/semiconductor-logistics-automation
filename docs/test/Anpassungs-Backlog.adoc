@@ -7,4 +7,4 @@
 
 *Test Case UC02 - Lose bewegen*
 
-* Keine Anpassungen erforderlich &#x1F604;
+* Derzeit keine Anpassungen erforderlich &#x1F604;
