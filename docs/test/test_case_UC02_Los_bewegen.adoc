@@ -4,7 +4,7 @@
 *Tests mit Fokus auf folgende Funktionalitäten:*
 
 * Los bewegen (manuell + Timer) und sauberes Setzen der Zustände WAIT und FIN
-* Fehlerprüfung bei inkostenten Datensätzen
+* Test auf das Bewegen auf optionale Operations
 
 '''
 |===
