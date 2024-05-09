@@ -4,3 +4,7 @@
 *Test Case UC01 - Lose starten*
 
 * TID 5: Filterfunktionen &#x2713;
+
+*Test Case UC02 - Lose bewegen*
+
+* Keine Anpassungen erforderlich
