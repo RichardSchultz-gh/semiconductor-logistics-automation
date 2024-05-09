@@ -1,0 +1,34 @@
+
+== Test Case UC02 - Lose bewegen
+
+*Tests mit Fokus auf folgende Funktionalitäten:*
+
+* Los bewegen (manuell + Timer) und sauberes Setzen der Zustände WAIT und FIN
+* Fehlerprüfung bei inkostenten Datensätzen
+
+'''
+|===
+| *Test-ID* | 1 
+| *Zweck* | Verifikation Los bewegen 
+| *Testart* | Unit-Test, Positiv-Test
+| *Vorbedingungen* | 
+  Aufruf des Projektes in der Entwicklungsumgebung und Start der Applikation
+| *Testdurchführung* | 
+ 1. Ausführung des Moduls TC_UC2_TID1.py
+  +
+2. Der Textcase generiert ein Test-Los zu Beginn des Fertigungsprozesses im Zustand OP_COMP
+  +
+3. Nun wird das Test-Los autoamtisiert durch den Fertigungsprozess bewegt. Hierfür wir das Bewegen des Loses modular getestet und der Fertigungsprozess inkl. Zustandswechsel von WAIT zu PROC und OP_COMP übersprungen. D.h. der Zustand des Loses wird von WAIT direkt auf OP_COMP gesetzt.
+  +
+4. Das Los wird Schritt für Schritt bis ans Ende des Fertigungsprozesses bewegt. Dabei erfolgt eine Ausgabe, die den Weg des Loses durch den Fertigungsprozess visualisiert. 
+  +
+| *Nachbedingungen* | 
+Bei erfolgreicher Testausführung befindet sich das Los am Ende im Zustand FIN und wurde fehlerfrei durch die Fertgigung bewegt.
+  +
+| *Eingabedaten* | TestProductA aus den Testdatensätzen im Zustand OP_COMP auf RouteA und Operation 0100.
+| *Ergebnis* | PASS
+| *To-dos* | /
+| *Korrekturstatus* | /
+|===
+
+'''
