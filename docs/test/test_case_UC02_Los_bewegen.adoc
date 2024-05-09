@@ -47,7 +47,7 @@ Bei erfolgreicher Testausführung befindet sich das Los am Ende im Zustand FIN u
 3. Nun durchläuft das Test-Los 20 Mal das Bewegen vor einer optionalen Operation. Die jeweiligen Operations werden ausgegeben.
   +
 | *Nachbedingungen* | 
-Bei erfolgreicher Testausführung wird das Los mit einer bestimmten Wahrscheinlichkeit auf die optionale Operation bewegen.
+Bei erfolgreicher Testausführung wird das Los mit einer bestimmten Wahrscheinlichkeit auf die optionale Operation bewegt.
   +
 | *Eingabedaten* | TestProductA aus den Testdatensätzen im Zustand OP_COMP auf RouteA und Operation 0200.
 | *Ergebnis* | PASS
