@@ -32,3 +32,25 @@ Bei erfolgreicher Testausführung befindet sich das Los am Ende im Zustand FIN u
 |===
 
 '''
+
+|===
+| *Test-ID* | 2 
+| *Zweck* | Verifikation Los bewegen; Ausführung von optionalen Operations
+| *Testart* | Unit-Test, Postiv-Test
+| *Vorbedingungen* | 
+  Aufruf des Projektes in der Entwicklungsumgebung und Start der Applikation
+| *Testdurchführung* | 
+ 1. Der Textcase erhält die Los-ID eines zuvor in die Datenbank eingepflegten Test-Loses
+  +
+2. Ausführung des Moduls TC_UC2_TID2.py
+  +
+3. Nun durchläuft das Test-Los 20 Mal das Bewegen vor einer optionalen Operation. Die jeweiligen Operations werden ausgegeben.
+  +
+| *Nachbedingungen* | 
+Bei erfolgreicher Testausführung wird das Los mit einer bestimmten Wahrscheinlichkeit auf die optionale Operation bewegen.
+  +
+| *Eingabedaten* | TestProductA aus den Testdatensätzen im Zustand OP_COMP auf RouteA und Operation 0200.
+| *Ergebnis* | PASS
+| *To-dos* | /
+| *Korrekturstatus* | /
+|===
