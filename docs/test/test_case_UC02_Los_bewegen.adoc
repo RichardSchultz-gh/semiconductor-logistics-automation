@@ -93,6 +93,9 @@ Bei erfolgreicher Testausführung befindet sich das Los am Ende im Zustand FIN u
   - Fertigungsleiter oder Mitarbeiter ist in der Web-Anwendung angemeldet
   +
   - der Button "Los bewegen" wurde angeklickt, sodass die Eingabemaske erscheint
+  +
+  - Lose mit einem Zustand != OP_COMP
+  +
 | *Testdurchführung* | 
  1. Erstellung eines Test-Loses
   +
