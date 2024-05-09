@@ -54,3 +54,53 @@ Bei erfolgreicher Testausführung wird das Los mit einer bestimmten Wahrscheinli
 | *To-dos* | /
 | *Korrekturstatus* | /
 |===
+
+'''
+|===
+| *Test-ID* | 3 
+| *Zweck* | Verifikation Los bewegen (Timer)
+| *Testart* | manuell, Positiv-Test
+| *Vorbedingungen* | 
+  - Fertigungsleiter oder Mitarbeiter ist in der Web-Anwendung angemeldet
+  +
+  - der Button "Los bewegen" wurde angeklickt, sodass die Eingabemaske erscheint
+| *Testdurchführung* | 
+ 1. Erstellung eines Test-Loses
+  +
+2. Bewegen des Loses durch den Fertigungsprozess durch mehrfaches Drücken des Buttons "Los bewegen"
+  +
+3. Prüfung des Los-Zustandes, des Zeitstempels (enteroper), der Route und der Operation auf der Datenbank mithilfe von: SELECT * FROM LOT WHERE lotid='PATE-14'. Der Abgleich erfolgt anhand der Testdatensätze und den dort hinterlegten Fertigungsplänen.
+  +
+4. Setzen des Los-Zustandes auf OP_COMP mithilfe von UPDATE lot SET "STATE"='OP_COMP' WHERE lotid='PATE-14'. Hierdurch kann das Los auf die nächste Operation gesetzt werden.
+  +
+5. Springe zu Punkt 2 bis das Los das Ende des Fertigungsprozesses erreicht
+| *Nachbedingungen* | 
+Bei erfolgreicher Testausführung befindet sich das Los am Ende im Zustand FIN und wurde fehlerfrei durch die Fertigung bewegt.
+  +
+| *Eingabedaten* | lotid=PATE-14 und product=TestProductA aus den Testdatensätzen im Zustand OP_COMP auf RouteA und Operation 0100.
+| *Ergebnis* | PASS
+| *To-dos* | /
+| *Korrekturstatus* | /
+|===
+'''
+|===
+| *Test-ID* | 4 
+| *Zweck* | Verifikation Los bewegen (manuell)
+| *Testart* | manuell, Negativ-Test
+| *Vorbedingungen* | 
+  - Fertigungsleiter oder Mitarbeiter ist in der Web-Anwendung angemeldet
+  +
+  - der Button "Los bewegen" wurde angeklickt, sodass die Eingabemaske erscheint
+| *Testdurchführung* | 
+ 1. Erstellung eines Test-Loses
+  +
+2. Los bewegen ausführen, obwohl sich das Los nicht im Zustand OP_COMP befindet und somit nicht bewegt werden darf
+  +
+| *Nachbedingungen* | 
+Bei erfolgreicher Testausführung wird das Los nicht bewegt und es erscheint eine deskriptive Fehlermeldung.
+  +
+| *Eingabedaten* | Verschiede Los-IDs mit unterschiedlichen Los-Zuständen.
+| *Ergebnis* | PASS
+| *To-dos* | /
+| *Korrekturstatus* | /
+|===
