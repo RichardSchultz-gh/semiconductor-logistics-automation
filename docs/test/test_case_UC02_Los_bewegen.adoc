@@ -9,7 +9,7 @@
 '''
 |===
 | *Test-ID* | 1 
-| *Zweck* | Verifikation Los bewegen 
+| *Zweck* | Verifikation Los bewegen (Timer)
 | *Testart* | Unit-Test, Positiv-Test
 | *Vorbedingungen* | 
   Aufruf des Projektes in der Entwicklungsumgebung und Start der Applikation
@@ -58,7 +58,7 @@ Bei erfolgreicher Testausführung wird das Los mit einer bestimmten Wahrscheinli
 '''
 |===
 | *Test-ID* | 3 
-| *Zweck* | Verifikation Los bewegen (Timer)
+| *Zweck* | Verifikation Los bewegen (manuell)
 | *Testart* | manuell, Positiv-Test
 | *Vorbedingungen* | 
   - Fertigungsleiter oder Mitarbeiter ist in der Web-Anwendung angemeldet
