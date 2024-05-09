@@ -18,7 +18,7 @@
   +
 2. Der Textcase generiert ein Test-Los zu Beginn des Fertigungsprozesses im Zustand OP_COMP
   +
-3. Nun wird das Test-Los automatisiert durch den Fertigungsprozess bewegt. Hierfür wir das Bewegen des Loses modular getestet und der Fertigungsprozess inkl. Zustandswechsel von WAIT zu PROC und OP_COMP übersprungen. D.h. der Zustand des Loses wird von WAIT direkt auf OP_COMP gesetzt.
+3. Nun wird das Test-Los automatisiert durch den Fertigungsprozess bewegt. Hierfür wir das Bewegen des Loses modular getestet und das Bearbeiten des Loses wird übersprungen. D.h. der Zustand des Loses wird von WAIT direkt auf OP_COMP gesetzt.
   +
 4. Das Los wird Schritt für Schritt bis ans Ende des Fertigungsprozesses bewegt. Dabei erfolgt eine Ausgabe, die den Weg des Loses durch den Fertigungsprozess visualisiert. 
   +
