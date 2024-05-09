@@ -7,4 +7,6 @@
 
 *Test Case UC02 - Lose bewegen*
 
-* Derzeit keine Anpassungen erforderlich &#x1F604;
+* Fehlende Funktionalität: Lose, die nach der Produktion auf HOLD gesetzt worden sind, müssen manuell geprüft werden. Der Use-Case muss es ermöglichen, dass der Folgezustand dieser Lose manuell auf SCRAP oder OP_COMP gesetzt werden kann (siehe im unteren Bereich von docs/test/docs/requirements/use_case_02_Hinweise_Implementierung.adoc.). Wir haben die UseCases etwas (aber gut!) abweichend von den Wireframes implementiert. Ursprünglich war ein LineEdit gedacht. Einfacher ist eventuell eine Lösung mit einem Dropdown mit allen Losen im Zustand HOLD. Wahlweise dann mit einem weiteren Dropdown der Zustände Hold/Scrap und einem Button oder kein Dropdown mit zwei unterschiedliche Button zum Setzen des Zustandes SCRAP oder OP_COMP.
+
+
