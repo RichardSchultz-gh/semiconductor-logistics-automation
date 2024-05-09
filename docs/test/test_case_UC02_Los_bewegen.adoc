@@ -1,0 +1,56 @@
+
+== Test Case UC02 - Lose bewegen
+
+*Tests mit Fokus auf folgende Funktionalitäten:*
+
+* Los bewegen (manuell + Timer) und sauberes Setzen der Zustände WAIT und FIN
+* Test auf das Bewegen auf optionale Operations
+
+'''
+|===
+| *Test-ID* | 1 
+| *Zweck* | Verifikation Los bewegen 
+| *Testart* | Unit-Test, Positiv-Test
+| *Vorbedingungen* | 
+  Aufruf des Projektes in der Entwicklungsumgebung und Start der Applikation
+| *Testdurchführung* | 
+ 1. Ausführung des Moduls TC_UC2_TID1.py
+  +
+2. Der Textcase generiert ein Test-Los zu Beginn des Fertigungsprozesses im Zustand OP_COMP
+  +
+3. Nun wird das Test-Los automatisiert durch den Fertigungsprozess bewegt. Hierfür wird das Bewegen des Loses modular getestet und das Bearbeiten des Loses wird übersprungen. D.h. der Zustand des Loses wird von WAIT direkt auf OP_COMP gesetzt.
+  +
+4. Das Los wird Schritt für Schritt bis ans Ende des Fertigungsprozesses bewegt. Dabei erfolgt eine Ausgabe, die den Weg des Loses durch den Fertigungsprozess visualisiert. 
+  +
+| *Nachbedingungen* | 
+Bei erfolgreicher Testausführung befindet sich das Los am Ende im Zustand FIN und wurde fehlerfrei durch die Fertigung bewegt.
+  +
+| *Eingabedaten* | TestProductA aus den Testdatensätzen im Zustand OP_COMP auf RouteA und Operation 0100.
+| *Ergebnis* | PASS
+| *To-dos* | /
+| *Korrekturstatus* | /
+|===
+
+'''
+
+|===
+| *Test-ID* | 2 
+| *Zweck* | Verifikation Los bewegen; Ausführung von optionalen Operations
+| *Testart* | Unit-Test, Postiv-Test
+| *Vorbedingungen* | 
+  Aufruf des Projektes in der Entwicklungsumgebung und Start der Applikation
+| *Testdurchführung* | 
+ 1. Der Textcase erhält die Los-ID eines zuvor in die Datenbank eingepflegten Test-Loses
+  +
+2. Ausführung des Moduls TC_UC2_TID2.py
+  +
+3. Nun durchläuft das Test-Los 20 Mal das Bewegen vor einer optionalen Operation. Die jeweiligen Operations werden ausgegeben.
+  +
+| *Nachbedingungen* | 
+Bei erfolgreicher Testausführung wird das Los mit einer bestimmten Wahrscheinlichkeit auf die optionale Operation bewegen.
+  +
+| *Eingabedaten* | TestProductA aus den Testdatensätzen im Zustand OP_COMP auf RouteA und Operation 0200.
+| *Ergebnis* | PASS
+| *To-dos* | /
+| *Korrekturstatus* | /
+|===
