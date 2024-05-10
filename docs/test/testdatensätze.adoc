@@ -15,8 +15,8 @@ INSERT INTO WORKFLOW VALUES
 ('RouteB', '0200', 'proc', 1, NULL);
 
 INSERT INTO TOOL VALUES 
-('TestMachineA', 'ALN1000', 'Robert', 'Part', 6, 100, 'UKN'),
-('TestMachineB', 'ALN1000', 'Robert', 'Part', 6, 100, 'UKN');
+('TestMachineA', 'ALN1000', 'Robert', 'Part', 6, 100, 'IDLE'),
+('TestMachineB', 'ALN1000', 'Robert', 'Part', 6, 100, 'IDLE');
 
 INSERT INTO PTIME VALUES 
 ('TestMachineA', 'TestProductA', 'RouteA', '0100', 15, 0),
