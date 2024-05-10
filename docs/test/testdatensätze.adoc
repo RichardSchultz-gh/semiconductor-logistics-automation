@@ -15,19 +15,19 @@ INSERT INTO WORKFLOW VALUES
 ('RouteB', '0200', 'proc', 1, NULL);
 
 INSERT INTO TOOL VALUES 
-('TestMachineA', 'ALN1000', 'Robert', 'Part', 6, 100, 'IDLE'),
-('TestMachineB', 'ALN1000', 'Robert', 'Part', 6, 100, 'IDLE');
+('TMachineA', 'ALN1000', 'Robert', 'Part', 6, 100, 'IDLE'),
+('TMachineB', 'ALN1000', 'Robert', 'Part', 6, 100, 'IDLE');
 
 INSERT INTO PTIME VALUES 
-('TestMachineA', 'TestProductA', 'RouteA', '0100', 15, 0),
-('TestMachineA', 'TestProductA', 'RouteA', '0200', 15, 0),
-('TestMachineA', 'TestProductA', 'RouteA', '0300', 15, 0),
-('TestMachineB', 'TestProductA', 'RouteB', '0100', 15, 0),
-('TestMachineB', 'TestProductA', 'RouteB', '0200', 15, 0);
+('TMachineA', 'TestProductA', 'RouteA', '0100', 15, 0),
+('TMachineA', 'TestProductA', 'RouteA', '0200', 15, 0),
+('TMachineA', 'TestProductA', 'RouteA', '0300', 15, 0),
+('TMachineA', 'TestProductA', 'RouteB', '0100', 15, 0),
+('TMachineA', 'TestProductA', 'RouteB', '0200', 15, 0);
 
 INSERT INTO ENTITIES VALUES 
-('TestMachineA', 'TOOL', 1, 'a VWP tool', 'REG'),
-('TestMachineB', 'TOOL', 1, 'a VWP tool', 'REG');
+('TMachineA', 'TOOL', 1, 'a VWP tool', 'REG'),
+('TMachineA', 'TOOL', 1, 'a VWP tool', 'REG');
 
 INSERT INTO LOT VALUES 
 ('TestLot', 44, 10, 'UKN', 'TestProductA', 'RouteA', '0100', 'TestCustomer', '2024-07-06', '2024-02-02', NULL, NULL, NULL, NULL);
