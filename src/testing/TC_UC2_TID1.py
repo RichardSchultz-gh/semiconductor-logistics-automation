@@ -16,7 +16,7 @@ Session = sessionmaker(bind=engine)
 session_d = Session()
 
 class UC2_TID2(unittest.TestCase):
-    def test_move_lot(self):
+    def test_case_TID1(self):
         
         #Test-Los in Datenbank einfügen (Voraussetzung: sonstige Testdatensätze (PRODFLOW etc. sind vorhanden))
         test_lot_data = {

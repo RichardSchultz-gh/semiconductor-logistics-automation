@@ -31,7 +31,7 @@ DELETE FROM LOT WHERE lotid='TestLotUC3'
 
 
 class UC2_TID2(unittest.TestCase):
-    def test_move_lot(self):
+    def test_case_TID2(self):
         
         #Test-Los in Datenbank einfügen
         test_lot_data = {
@@ -76,9 +76,10 @@ class UC2_TID2(unittest.TestCase):
             #Aktuelle Operation des Test-Loses abfragen und der Liste anhängen
             optional_operations.append(current_lot.oper)
 
-            #Status und Operation wieder vor die Optionale Operation setzen
+            #Status und Operation und Route wieder vor die Optionale Operation setzen
             current_lot.state = 'OP_COMP'
             current_lot.oper = '0200'
+            current_lot.route='RouteA'
             session_d.commit()
 
         #Zähle die Häufigkeit der optionalen Operation

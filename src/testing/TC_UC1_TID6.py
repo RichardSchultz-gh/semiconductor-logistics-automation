@@ -18,7 +18,7 @@ session = Session()
 
 #Test der Timer-Funktion lot_start; Datumsvariable muss gesetzt werden & Lose müssen sinnvoll ausgewählt werden
 class UC1_TID6(unittest.TestCase):
-    def test_something(self):
+    def test_case_TID6(self):
         #setze Startdatum
         start_date = datetime(2024, 5, 8)
 
