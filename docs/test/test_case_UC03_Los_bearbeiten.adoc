@@ -1,3 +1,17 @@
 Doku folgt ab dem 15.05
 
+////
+manuelles Bearbeiten -> funktionsfähig
 
+Testcase 1:
+
+manuelles Bearbeiten -> Maschinezustand, Lostzsutand müssen sich ändern
+
+Testcase 2:
+
+kein Bearbeiten möglich falls: keine verfügbare Maschine, Los nicht im Zustand wait 
+
+
+Bearbeiten Timer -> in Arbeit
+
+////
