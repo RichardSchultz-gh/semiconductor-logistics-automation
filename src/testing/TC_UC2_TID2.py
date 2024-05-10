@@ -35,13 +35,14 @@ class UC2_TID2(unittest.TestCase):
         
         #Test-Los in Datenbank einfügen
         test_lot_data = {
-            'lotid': 'TestLotUC3',  # Neue Los-ID
+            'lotid': 'TestLotUC3',  
             'priority': 44,
             'pieces': 10,
             'state': 'OP_COMP',
             'product': 'TestProductA',
             'route': 'RouteA',
-            'oper': '0200',  # Starte mit Operation 0200
+            #setze die Operation vor der Optionalen Operation
+            'oper': '0200',  
             'customer': 'TestCustomer',
             'duedate': datetime(2024, 7, 6),
             'startdate': datetime(2024, 2, 2),
