@@ -1,4 +1,4 @@
-<!-- los_starten_page.html -->
+<!-- los_bearbeiten_success.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,11 +8,13 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='los_error_success.css') }}">
 </head>
 <body>
-    <div class="error_success-container"></div>
+    <div class="error_success-container">
     <h1>Erfolg beim Los bearbeiten!</h1>
-   <hr>
+    <hr>
     <h2> Los befindet sich nun in Bearbeitung </h2>
     <p class="success-message"> {{success_message}} </p>
-    <a href="{{ url_for('los_bearbeiten.los_bearbeiten_page') }}" class="main-btn"><button>Back to Los-Bearbeiten-Page</button></a>
+    <a href="{{ url_for('los_bearbeiten.los_bearbeiten_page') }}" class="main-btn">Back to Los-Bearbeiten-Page</a>
+    </div>
 </body>
 </html>
+
