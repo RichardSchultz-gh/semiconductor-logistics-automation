@@ -148,7 +148,7 @@ def moveLot(session_d):
             newseq = route.seq + 1
             next_route = session_d.query(ProdFlow).filter(ProdFlow.product == lot.product).filter(ProdFlow.seq == newseq).first()
             if next_route is None:
-                print("Produktionsfluss von Lot"+ lot.lotid + "ist zu Ende")
+                print("Produktionsfluss von Lot "+ lot.lotid + " ist zu Ende")
                 lot.state = "FIN"
                 session_d.add(lot)
                 session_d.commit()
@@ -165,6 +165,14 @@ def moveLot(session_d):
             session_d.add(lot)
             session_d.commit()
             next = session_d.query(Workflow).filter(Workflow.route == next_route.route).filter(Workflow.oper == next_oper).first()
+            if(next is None):
+                print("Keine Workflow-Informationen für nächste Route gefunden")
+                lot.state = "HOLD"
+                session_d.add(lot)
+                session_d.commit()
+                print("Lot " + lot.lotid + " is HOLD now")
+                continue
+
         lot.oper = next.oper
 
         #Test, ob Mandatory-Flag gesetzt ist
