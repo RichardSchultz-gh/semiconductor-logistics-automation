@@ -211,11 +211,9 @@ li {
     background-color: #555; /* Hintergrundfarbe ändern beim Überfahren */
 }
 
-
-
 .table-container{
     display: inline-block;
-    height: 10em;
+    height: 25em;
     overflow-y: scroll;
     }
 

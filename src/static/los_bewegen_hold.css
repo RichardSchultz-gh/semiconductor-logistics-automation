@@ -42,6 +42,25 @@ body {
 /* Radiobutton-Stil */
 .error_success-container input[type="radio"] {
     margin-right: 10px;
+    width: 16px; /* Breite des Radio-Buttons */
+    height: 16px; /* Höhe des Radio-Buttons */
+}
+
+/* Die Label-Elemente für die Radio-Buttons */
+.error_success-container form label {
+    display: inline-block; /* Jedes Label als Block-Element anzeigen */
+    margin-top: 10px; /* Abstand nach oben hinzufügen */
+    margin-bottom: 10px; /* Abstand nach unten hinzufügen */
+    vertical-align: middle; /* Vertikale Ausrichtung der Labels mittig */
+    font-size: 1.4rem; /* Schriftgröße der Labels */
+}
+
+#lscrap{
+    margin-right: 30px; /* Abstand zwischen den Labels hinzufügen */
+}
+
+#op_comp{
+    margin-left: 30px; /* Abstand zwischen den Labels hinzufügen */
 }
 
 /* Button-Stil */
@@ -54,7 +73,8 @@ body {
     border-radius: 5px;
     transition: background-color 0.3s ease;
     text-decoration: none;
-    font-size: 1.5rem; }
+    font-size: 1.5rem; 
+}
 
 .error_success-container button:hover {
     background-color: #6f6f6f; /* Hintergrundfarbe angepasst */
@@ -80,10 +100,7 @@ h2 {
     font-weight: normal;
     font-size: 1,5rem;
 }
+
 .error_success-container button[type="submit"] {
     margin-top: 20px; 
 }
-.error_success-container form label {
-    font-size: 1.2rem; /* Ändern Sie die Textgröße auf 1.5rem */
-}
-

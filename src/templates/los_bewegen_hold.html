@@ -13,11 +13,11 @@
     <h2> Manuelles Setzen des Zustands für Los {{lotid}}</h2>
     <p> {{message}} </p>
     <form action="{{ url_for('los_bewegen.los_bewegen_page') }}" method="post">
-        <input type="radio" id="scrap" name="state" value="scrap" required>
-        <label for="hold">SCRAP</label>
-        <br>
-        <input type="radio" id="op_comp" name="state" value="op_comp" required>
-        <label for="op_comp">OP_COMP</label>
+        <input type="radio" id="scrap" name="state" value="scrap" class="input" required>
+        <label for="scrap" id="lscrap">SCRAP</label>
+        
+        <input type="radio" id="op_comp" name="state" value="op_comp" class="input" required>
+        <label for="op_comp" id="lop_comp">OP_COMP</label>
         <br>
         <!-- verstecktes Feld mit LotID -->
         <input type="hidden" name="lotid_hidden" value="{{lotid}}">
