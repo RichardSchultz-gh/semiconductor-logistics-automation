@@ -8,11 +8,12 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='los_error_success.css') }}">
 </head>
 <body>
-    <div class="error_success-container"></div>
+    <div class="error_success-container">
     <h1>Erfolg beim Lot bewegen!</h1>
-   <hr>
+    <hr>
     <h2> Das Lot erfolgreich bewegt </h2>
-    <p> {{success_message}} </p>
-    <a href="{{ url_for('los_bewegen.los_bewegen_page') }}" class="main-btn"><button>Back to Los-Bewegen-Page</button></a>
+    <p class="success-message"> {{success_message}} </p>
+    <a href="{{ url_for('los_bewegen.los_bewegen_page') }}" class="main-btn">Back to Los-Bewegen-Page</a>
+    </div>
 </body>
 </html>

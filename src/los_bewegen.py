@@ -74,7 +74,7 @@ def los_bewegen():
         if move_lot_to_next_station(lot, db_session) == 0:
             db_session.commit()
             db_session.close()
-            return render_template("los_bewegen_success.html", success_message="Los wurde bewegt und befindet sich nun in WAIT-Zustand")
+            return render_template("los_bewegen_success.html", success_message="Los wurde bewegt und befindet sich nun im WAIT-Zustand")
         elif move_lot_to_next_station(lot, db_session) == 1:
             db_session.commit()
             db_session.close()
