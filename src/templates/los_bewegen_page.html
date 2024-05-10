@@ -1,22 +1,10 @@
-<!-- los_bewegen_page.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Los bewegen</title>
-    <style>
-         .main-btn {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-        }
-        .back-btn {
-            position: absolute;
-            top: 10px;
-            right: 150px;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='los_bewegen.css') }}">
 </head>
 <body>
     <h1>Los bewegen</h1>
@@ -42,17 +30,75 @@
         });
     </script>
 
-    <form action="{{ url_for('los_bewegen.los_bewegen_page') }}" method="POST">
-        <label for="lot_id">Lot ID:</label>
-        <input type="text" name="lot_id" id="lot_id" list="lot_ids" required>
-        <datalist id="lot_ids">
-            {% for lotid in lotids %}
-                <option value="{{ lotid }}">
-            {% endfor %}
-        </datalist>
-        <br><br>
-        <input type="submit" value="Move Lot">
-        <br><br>
-    </form>
+    <div class="container">
+        <form action="{{ url_for('los_bewegen.los_bewegen_page') }}" method="POST" class="form-abfragetabelle">
+            <label for="lot_id">Lot ID:</label>
+            <input type="text" name="lot_id" id="lot_id" list="lot_ids" required>
+            <datalist id="lot_ids">
+                {% for lotid in lotids %}
+                    <option value="{{ lotid }}">
+                {% endfor %}
+            </datalist>
+            <br><br>
+            <button type="submit" class="move_lot">Move Lot</button>
+            <br><br>
+        </form>
+    </div>
+    
+    <div id="div3">
+        <hr>
+        <form action="{{ url_for('los_bewegen.los_bewegen_page') }}" method="GET" class="form-abfragetabelle">
+            <table>
+                <tr>
+                    <td><label for="lot_id_f">Lot ID:</label></td>
+                    <td><input type="text" name="lot_id_f" id="lot_id_f" list="lot_ids"></td>
+                    <td><datalist id="lot_ids">
+                        {% for lotid in lotids %}
+                            <option value="{{ lotid }}">
+                        {% endfor %}
+                    </datalist></td>
+                    <td><label for="lot_state_f">Zustand:</label></td>
+                    <td><input type="text" id="lot_state_f" name="lot_state_f" list="lot_statess"></td>
+                    <td><datalist id="lot_statess">
+                        <option value="INIT"></option>
+                        <option value="PROC"></option>
+                        <option value="HOLD"></option>
+                        <option value="OP_COMP"></option>
+                        <option value="FIN"></option>
+                        <option value="WAIT"></option>
+                        <option value="SCRAP"></option>
+                    </datalist></td>
+                    <td><button type="submit">Filtern</button></td>
+                </tr>
+            </table>
+        </form> 
+    </div>
+    <div class="table-container">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Los ID</th>
+                    <th>Zustand</th>
+                    <th>Operation</th>
+                    <th>Route</th>
+                    <th>Product</th>
+                    <th>Tool</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for lot in lots %}
+                <tr>
+                    <td>{{ lot.lotid }}</td>
+                    <td>{{ lot.state }}</td>
+                    <td>{{ lot.oper }}</td>
+                    <td>{{ lot.route }}</td>
+                    <td>{{ lot.product }}</td>
+                    <td>{{ lot.disptool }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
 </body>
 </html>
