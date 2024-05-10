@@ -1,38 +1,30 @@
-<!-- los_starten_page.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Los starten</title>
-    <style>
-        .main-btn {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            padding: 10px;
-        }
-    </style>
+    <title>Los starten - Erfolg</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='los_error_success.css') }}">
 </head>
 <body>
-    <h1>Success!</h1>
-    <a href="{{ url_for('los_starten.los_starten_page') }}" class="main-btn"><button>Back to Los-Starten-Page</button></a>
-   <hr>
-
-    {% if id==1 %}
-    <!-- Anzeige von wie viel Lose erfolgreich gestartet wurden + LotIDs-->
-    <h2>Auftrag erfolgreich gestartet</h2>
-    <p>{{ amount }} Lose wurden erfolgreich hinzugefügt.</p>
-    <p>Diese LotIDs werden im zuvor angegebenen Intervall gestartet:</p>
-    <ul>
-        {% for lot_id in lot_data %}
-            <li>{{ lot_id }}</li>
-        {% endfor %}
-    </ul>
-    {% endif %}
-    {% if id==2 %}
-    <h2>Los wurde erfolgreich gestartet</h2>
-    <p>Das Los mit der LotID {{ lot_id_1 }} wurde erfolgreich gestartet.</p>
-    {% endif %}
+    <div class="error_success-container">
+        <h1>Erfolg beim Los starten</h1>
+        <hr>
+        {% if id==1 %}
+        <h2>Auftrag erfolgreich gestartet</h2>
+        <p><span class="amount">{{ amount }}</span> Lose wurden erfolgreich hinzugefügt.</p>
+        <p class="success-message">Diese LotIDs werden im zuvor angegebenen Intervall gestartet:</p>
+        <ul class="success-list">
+            {% for lot_id in lot_data %}
+                <li>{{ lot_id }}</li>
+            {% endfor %} 
+        </ul>
+        {% endif %}
+        {% if id==2 %}
+        <h2>Los erfolgreich gestartet</h2>
+        <p class="success-message">Das Los mit der LotID <span class="lot-id">{{ lot_id_1 }}</span> wurde erfolgreich gestartet.</p>
+        {% endif %}
+        <a href="{{ url_for('los_starten.los_starten_page') }}" class="main-btn">Zurück zur Los-Starten-Seite</a>
+    </div>
 </body>
 </html>
