@@ -14,4 +14,17 @@ kein Bearbeiten möglich falls: keine verfügbare Maschine, Los nicht im Zustand
 
 Bearbeiten Timer -> in Arbeit
 
+TestCase 1 unit test:
+
+ test_if_tool_is_done   prüft, ob ptime erreicht ist und setzt das tool auf IDLE
+
+lotop_finished: ruft test_if_tool_is_done auf -> falls erfolgreich wird auch das los in den Folgezustand gesetzt
+
+
+TestCAse2 unit test:
+
+ tool_searches_for_lots -> wählt das lot aus und startet die Bearbeitung
+
+
+
 ////
