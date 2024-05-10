@@ -12,18 +12,23 @@ body {
     height: 100vh;
 }
 
-.error-container {
+.error_success-container {
     text-align: center;
     max-width: 500px;
 }
 
-.error-container h1 {
+.error_success h1 {
     font-size: 3rem; 
     margin-bottom: 20px;
     white-space: nowrap; 
 }
 
-.error-container p {
+.error_success h2 {
+    font-size: 1,5rem; 
+    margin-bottom: 20px;
+}
+
+.error_success p {
     font-size: 1.5rem; 
     margin-bottom: 20px;
 }
@@ -32,6 +37,25 @@ body {
     color: #dc3545;
     font-weight: bold;
     font-size: 1.2rem; 
+}
+
+.success-message {
+    color: #008000; 
+    font-weight: bold;
+    font-size: 1.2rem; 
+   }
+
+.success-list {
+    color: #008000; 
+    font-weight: bold;
+    font-size: 1.2rem; 
+    list-style: none;
+}
+
+.amount {
+color: #008000; 
+font-weight: bold;
+font-size: 1.2rem; 
 }
 
 .main-btn {
