@@ -12,4 +12,4 @@
 *Test Case UC03 - Lose bearbeiten*
 
 * Nach Möglichkeit die grafische Oberfläche anpassen: Tabellenbreite expandieren und Trennlinien wie bei "Los starten" einfügen
-* Datenbank mit inkosistenten Variablen: Lot-Tabelle Distool mit varchar(10) und Tool-Tabelle mit varchar(15) -> kann dazu führen, dass korrekt eingepflegte Maschinen der Tool-Tabelle das "Los bearbeiten" zum Absturz bringen 
+* Datenbank mit inkosistenten Variablen: Lot-Tabelle mit Distool|varchar(10) und Tool-Tabelle mit Tool|varchar(15) -> kann dazu führen, dass korrekt eingepflegte Maschinen der Tool-Tabelle das "Los bearbeiten" zum Absturz bringen 
