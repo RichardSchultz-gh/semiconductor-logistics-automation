@@ -55,6 +55,8 @@ Bei erfolgreicher Testausführung wird das Los mit einer bestimmten Wahrscheinli
 | *Korrekturstatus* | /
 |===
 
+image::images/TC_UC2_TIDD.png[]
+
 '''
 |===
 | *Test-ID* | 3 
