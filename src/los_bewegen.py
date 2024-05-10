@@ -96,7 +96,7 @@ def los_bewegen():
             return render_template("los_bewegen_hold.html", message="Lot ist möglicherweise defekt - Folgezustand muss manuell gesetzt werden:", lotid=lotid)
         if lot.state != "OP_COMP":
             db_session.close()
-            return render_template("los_bewegen_hold.html", message="Lot ist möglicherweise defekt - Folgezustand muss manuell gesetzt werden:", lotid=lotid)
+           return render_template("los_bewegen_error.html", error_message="Lot befindet sich nicht im Zustand OP_COMP")
 
         if move_lot_to_next_station(lot, db_session) == 0:
             db_session.commit()
