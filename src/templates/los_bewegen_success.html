@@ -5,21 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Los bewegen</title>
-    <style>
-        .main-btn {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            padding: 10px;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='los_error_success.css') }}">
 </head>
 <body>
-    <h1>Success!</h1>
-    <a href="{{ url_for('los_bewegen.los_bewegen_page') }}" class="main-btn"><button>Back to Los-Bewegen-Page</button></a>
+    <div class="error_success-container"></div>
+    <h1>Erfolg beim Lot bewegen!</h1>
    <hr>
-
-    <h2> Lot erfolgreich bewegt </h2>
+    <h2> Das Lot erfolgreich bewegt </h2>
     <p> {{success_message}} </p>
+    <a href="{{ url_for('los_bewegen.los_bewegen_page') }}" class="main-btn"><button>Back to Los-Bewegen-Page</button></a>
 </body>
 </html>

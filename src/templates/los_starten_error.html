@@ -5,21 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Los starten - Fehler</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='los_error.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='los_error_success.css') }}">
 </head>
 <body>
-    <div class="error-container">
-    <h1>Fehler beim Los starten</h1>
-    <hr>
-    {% if id==1 %}
-    <h2>Auftrag registrieren gescheitert</h2>
-    {% endif %}
-    {% if id==2 %}
-    <h2>Manuelles Starten des Lots gescheitert</h2>
-    {% endif %}
-    <p>Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut.</p>
-    <p class="error-message">Fehler: {{ error_message }}</p>
-    <a href="{{ url_for('los_starten.los_starten_page') }}" class="main-btn">Zurück zur Los-Starten-Seite</a>
-</div>
+    <div class="error_success-container">
+        <h1>Fehler beim Los starten</h1>
+        <hr>
+        {% if id==1 %}
+        <h2>Auftrag registrieren gescheitert</h2>
+        {% endif %}
+        {% if id==2 %}
+        <h2>Manuelles Starten des Lots gescheitert</h2>
+        {% endif %}
+        <p>Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut.</p>
+        <p class="error-message">Fehler: {{ error_message }}</p>
+        <a href="{{ url_for('los_starten.los_starten_page') }}" class="main-btn">Zurück zur Los-Starten-Seite</a>
+    </div>
 </body>
 </html>
