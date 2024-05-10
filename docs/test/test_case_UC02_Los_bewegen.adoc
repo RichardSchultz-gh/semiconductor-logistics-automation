@@ -31,6 +31,8 @@ Bei erfolgreicher Testausführung befindet sich das Los am Ende im Zustand FIN u
 | *Korrekturstatus* | /
 |===
 
+image::images/TC_UC2_TID1.png[]
+
 '''
 
 |===
