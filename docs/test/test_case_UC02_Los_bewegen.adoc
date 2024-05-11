@@ -31,7 +31,12 @@ Bei erfolgreicher Testausführung befindet sich das Los am Ende im Zustand FIN u
 | *Korrekturstatus* | /
 |===
 
+.UC2 TID1: Pass
 image::images/TC_UC2_TID1.png[]
+
+
+.UC2 TID1: Coverage Report
+image::images/coverage_uc2_tid1.png[]
 
 '''
 
@@ -57,8 +62,10 @@ Bei erfolgreicher Testausführung wird das Los mit einer bestimmten Wahrscheinli
 | *Korrekturstatus* | /
 |===
 
+.UC2 TID2: Pass
 image::images/TC_UC2_TIDD.png[]
-
+.UC2 TID2: Coverage Report
+image::images/coverage_uc2_tid2.png[]
 '''
 |===
 | *Test-ID* | 3 
