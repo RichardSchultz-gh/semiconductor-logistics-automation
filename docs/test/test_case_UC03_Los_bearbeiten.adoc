@@ -1,4 +1,4 @@
-Doku folgt ab dem 15.05
+Tests durchgeführt & Doku folgt ab dem 15.05
 
 ////
 manuelles Bearbeiten -> funktionsfähig
