@@ -22,6 +22,9 @@ INSERT INTO PTIME VALUES
 ('TMachineA', 'TestProductA', 'RouteA', '0100', 15, 0),
 ('TMachineA', 'TestProductA', 'RouteA', '0200', 15, 0),
 ('TMachineA', 'TestProductA', 'RouteA', '0300', 15, 0),
+('TMachineB', 'TestProductA', 'RouteA', '0100', 15, 0),
+('TMachineB', 'TestProductA', 'RouteA', '0200', 15, 0),
+('TMachineB', 'TestProductA', 'RouteA', '0300', 15, 0),
 ('TMachineA', 'TestProductA', 'RouteB', '0100', 15, 0),
 ('TMachineA', 'TestProductA', 'RouteB', '0200', 15, 0);
 
