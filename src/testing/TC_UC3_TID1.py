@@ -1,13 +1,14 @@
 import unittest
 import sys
 # Pfad muss ggf. geändert werden
-#sys.path.insert(0, 'C:\\Users\\pulst\\Documents\\SE_II_Projekt\\i04-projekt-frau-holle\\src')
-sys.path.insert(0, 'C:\\Users\\marxp\\Documents\\i04-projekt-frau-holle\\src')
+sys.path.insert(0, 'C:\\Users\\pulst\\Documents\\SE_II_Projekt\\i04-projekt-frau-holle\\src')
+#sys.path.insert(0, 'C:\\Users\\marxp\\Documents\\i04-projekt-frau-holle\\src')
+#Voraussetzung für diesen Test: kein anderes Los vor TMachineA
 
 import datetime
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from mapper import Lot
+from mapper import Lot, Tool
 from Lot_bew_bearb import tool_searches_for_lots, lotop_finished
 from database_connection import get_database_url
 
@@ -43,25 +44,26 @@ class UC3_TID1(unittest.TestCase):
         tool_tmachinea.state = 'IDLE'
         session_d.commit()
 
-        #Führe zu testende Funktion aus
-        tool_searches_for_lots(session_d)
-
         #Zustände ausgeben
         test_lot_after = session_d.query(Lot).filter_by(lotid='TestLotUC44').first()
-        print(f"Zustand des Test-Loses nach Ausführung von tool_searches_for_lots: {test_lot_after.state}")
-        print(f"Zustand von TMachineA: {tool_tmachinea.state}")
+        print(f"Zustand des Test-Loses VOR Ausführung von lotop_finished: {test_lot_after.state}")
+        print(f"Zustand von TMachineA VOR Ausführung von lotop_finished: {tool_tmachinea.state}")
 
+
+        #Führe die Funktion lotop_finished aus -> für Start der Bearbeitung
+        tool_searches_for_lots(session_d)
+        
         #warte 20 Sekunden (ptime=15 Sekunden)
         import time
         time.sleep(20)
-
-        #Führe die Funktion lotop_finished aus -> fragt ab, ob Bearbeitung abgeschlossen ist
+        
+        #Führe die Funktion lotop_finished aus -> für Prüfung, ob Bearbeitung beendet ist
         lotop_finished(session_d)
 
         #Zustände erneut ausgeben
         test_lot_after = session_d.query(Lot).filter_by(lotid='TestLotUC44').first()
         print(f"Zustand des Test-Loses nach Ausführung von lotop_finished: {test_lot_after.state}")
-        print(f"Zustand der Maschine mit Tool-ID TMachineA: {tool_tmachinea.state}")
+        print(f"Zustand der Maschine nach Ausführung von lotop_finished: {tool_tmachinea.state}")
 
         #Prüfung, ob Test bestanden ist und Produktion erfoglreich druchlaufen worden istapp
         if tool_tmachinea.state == 'IDLE' and test_lot_after.state in ['SCRAP', 'HOLD', 'OP_COMP']:
