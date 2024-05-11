@@ -45,8 +45,8 @@ class UC3_TID1(unittest.TestCase):
         session_d.commit()
 
         #Zustände ausgeben
-        test_lot_after = session_d.query(Lot).filter_by(lotid='TestLotUC44').first()
-        print(f"Zustand des Test-Loses VOR Ausführung von lotop_finished: {test_lot_after.state}")
+        test_lot_before = session_d.query(Lot).filter_by(lotid='TestLotUC44').first()
+        print(f"Zustand des Test-Loses VOR Ausführung von lotop_finished: {test_lot_before.state}")
         print(f"Zustand von TMachineA VOR Ausführung von lotop_finished: {tool_tmachinea.state}")
 
 
