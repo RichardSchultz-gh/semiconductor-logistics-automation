@@ -1,0 +1,14 @@
+= Benutzeranleitung für Herr Ringel
+
+* Applikation erreichbar im Verzeichnis: _~/Desktop/i04-projekt-frau-holle_
+* per Terminal _python app.py_ ausführen
+* lokaler Testserver mit Applikation unter **http://127.0.0.1:5000** erreichbar
+* Login-Daten (vorrübergehend):
+. Fertigungsleiter: user1 pass1
+. Mitarbeiter: user2 pass2
+* Nachvollziehbarkeit der Applikation durch Testdaten und in Applikation angezeigter Tabelle gegeben
+* Nachvollziehbarkeit des Timers durch Einsehen der Log-Datei unter _timer_log/log.txt_
+* weitergehende Nachvollziehbarkeit mittels Einsicht der Datenbank mit folgende Eingabe in Terminal: 
+. _psql_
+. Verlassen mittels _\q_
+* Umgesetzte UseCases 1, 2, 3 (Los starten, Los bewegen, Los bearbeiten) 
