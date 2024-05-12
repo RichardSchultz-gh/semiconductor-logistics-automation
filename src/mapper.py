@@ -29,7 +29,7 @@ class Lot(Base):
     startdate = Column(Date)
     enteroper = Column(TIMESTAMP)
     procstart = Column(TIMESTAMP)
-    disptool = Column(String(10))
+    disptool = Column(String(15))
 
 class ProdFlow(Base):
     __tablename__ = 'prodflow'
