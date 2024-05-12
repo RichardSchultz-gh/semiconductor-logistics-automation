@@ -104,7 +104,6 @@ def moveLot():
     database_disconnection(session_d)
     return render_template("los_bearbeiten_success.html", username=session['username'], success_message=f"Lot with ID {lot_id} is now in PROC state and is processed by tool {tool.tool}")
 
-
 def database_connection():
     DATABASE_URL = get_database_url()
     engine = create_engine(DATABASE_URL)
@@ -117,11 +116,7 @@ def database_disconnection(session_d):
 
 def get_all_lot_ids():
     # Hiermit rufen wir alle LotIDs aus der Datenbank ab und geben sie zurück
-    DATABASE_URL = get_database_url()
-    engine = create_engine(DATABASE_URL)
-    Base = declarative_base()
-    Session = sessionmaker(bind=engine)
-    session = Session()
+    session = database_connection()
     lot_ids = session.query(Lot.lotid).all()
     # Entfernen von (LotID,) zu LotID
     lot_ids = [lot_id[0] for lot_id in lot_ids]
@@ -130,101 +125,65 @@ def get_all_lot_ids():
 
 def get_all_lots():
     # Hiermit rufen wir alle Lose aus der Datenbank ab und geben sie zurück
-    DATABASE_URL = get_database_url()
-    engine = create_engine(DATABASE_URL)
-    Base = declarative_base()
-    Session = sessionmaker(bind=engine)
-    session = Session()
+    session = database_connection()
     lots = session.query(Lot).all()
     session.close()
     return lots
 
 def get_all_tools():
     # Hiermit rufen wir alle Werkzeuge aus der Datenbank ab und geben sie zurück
-    DATABASE_URL = get_database_url()
-    engine = create_engine(DATABASE_URL)
-    Base = declarative_base()
-    Session = sessionmaker(bind=engine)
-    session = Session()
+    session = database_connection()
     tools = session.query(Tool).all()
     session.close()
     return tools
 
 def filter_lots_by_id(lot_id_filter):
     # Hiermit filtern wir Lose nach Lot-ID
-    DATABASE_URL = get_database_url()
-    engine = create_engine(DATABASE_URL)
-    Base = declarative_base()
-    Session = sessionmaker(bind=engine)
-    session = Session()
+    session = database_connection()
     lots = session.query(Lot).filter(Lot.lotid==lot_id_filter).all()
     session.close()
     return lots
 
 def filter_lots_by_state(lot_state_filter):
     # Hiermit filtern wir Lose nach Zustand
-    DATABASE_URL = get_database_url()
-    engine = create_engine(DATABASE_URL)
-    Base = declarative_base()
-    Session = sessionmaker(bind=engine)
-    session = Session()
+    session = database_connection()
     lots = session.query(Lot).filter(Lot.state==lot_state_filter).all()
     session.close()
     return lots
 
 def filter_tools_by_tool(tool_filter):
     # Hiermit filtern wir Lose nach Werkzeug
-    DATABASE_URL = get_database_url()
-    engine = create_engine(DATABASE_URL)
-    Base = declarative_base()
-    Session = sessionmaker(bind=engine)
-    session = Session()
+    session = database_connection()
     tools = session.query(Tool).filter(Tool.tool==tool_filter).all()
     session.close()
     return tools
 
 def filter_tools_by_tool_state(tool_state_filter):
     # Hiermit filtern wir Lose nach Werkzeugzustand
-    DATABASE_URL = get_database_url()
-    engine = create_engine(DATABASE_URL)
-    Base = declarative_base()
-    Session = sessionmaker(bind=engine)
-    session = Session()
+    session = database_connection()
     tools = session.query(Tool).filter(Tool.state==tool_state_filter).all()
     session.close()
     return tools
 
 def get_all_tool_ids():
     # Hiermit rufen wir alle ToolIDs aus der Datenbank ab und geben sie zurück
-    DATABASE_URL = get_database_url()
-    engine = create_engine(DATABASE_URL)
-    Base = declarative_base()
-    Session = sessionmaker(bind=engine)
-    session = Session()
+    session = database_connection()
     tool_ids = session.query(Tool.tool).all()
     # Entfernen von (ToolID,) zu ToolID
-    tool_ids = [tool_id[0] for tool_id in tool_ids]
+    tool_ids = [tool_id[0] for tool_id in tool_ids] # Entfernen von (ToolID,) zu ToolID
     session.close()
     return tool_ids
 
 def filter_lots_by_id_and_state(lot_id_filter, lot_state_filter):
     # Hiermit filtern wir Lose nach Lot-ID und Zustand
-    DATABASE_URL = get_database_url()
-    engine = create_engine(DATABASE_URL)
-    Base = declarative_base()
-    Session = sessionmaker(bind=engine)
-    session = Session()
+    session = database_connection()
     lots = session.query(Lot).filter(Lot.lotid==lot_id_filter).filter(Lot.state==lot_state_filter).all()
     session.close()
     return lots
 
 def filter_tools_by_tool_and_state(tool_filter, tool_state_filter):
     # Hiermit filtern wir Lose nach Werkzeug und Werkzeugzustand
-    DATABASE_URL = get_database_url()
-    engine = create_engine(DATABASE_URL)
-    Base = declarative_base()
-    Session = sessionmaker(bind=engine)
-    session = Session()
+    session = database_connection()
     tools = session.query(Tool).filter(Tool.tool==tool_filter).filter(Tool.state==tool_state_filter).all()
     session.close()
     return tools
