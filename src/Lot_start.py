@@ -10,6 +10,7 @@ Session = sessionmaker(bind=engine)
 session = Session()
 
 def start_lot():
+    print(f"\n### Starting Lots ({datetime.datetime.now()}) ###")
     # alle Lose in Zustand INIT prüfen
     lots = session.query(Lot).filter(Lot.state == "INIT").all()
     # Prüfen, ob das Startdatum des Loses erreicht ist (nur Datum, keine Uhrzeit)

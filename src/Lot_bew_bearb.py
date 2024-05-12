@@ -57,7 +57,7 @@ def database_disconnection(session_d):
 
 '''Schauen, ob das Lot, welches eine Maschine bearbeitet, fertig ist'''
 def lotop_finished(session_d):
-    print("\n***Checking if a tool is done***")
+    print("\n*** Checking if a tool is done ***")
     tools = session_d.query(Tool).filter(Tool.state == "PROC").all()
     for tool in tools:
         if test_if_tool_is_done(tool):
@@ -87,9 +87,9 @@ def lotop_finished(session_d):
             print("Tool " + tool.tool + " is not done\n")
 
 '''Maschinen suchen nach einem Lot, das auf diese wartet'''
-#TODO: Laufzeitoptimierung
+
 def tool_searches_for_lots(session_d):
-    print("\n***Searching for tools that are IDLE and waiting for lots***")
+    print(f"\n### Processing Lots ({datetime.datetime.now()}) ###")
     # tools-Liste erzeugen und alle Tools in IDLE-Zustand suchen
     tools = []
     tools = session_d.query(Tool).filter(Tool.state == "IDLE").all()
@@ -109,7 +109,7 @@ def tool_searches_for_lots(session_d):
             #print("Tool " + tool.tool + " keep being IDLE, because there are no lots waiting for it\n")
             continue
         else:
-            print("There are lots waiting for the tool " + tool.tool + " in IDLE state")
+            #print("There are lots waiting for the tool " + tool.tool + " in IDLE state")
             #sortieren der Lots nach frühster ENTEROPER-Zeit, die bei WAIT neu gesetzt wird (aber in reverse)
             waiting_lots.sort(key=lambda x: x.enteroper, reverse=True)
             #das Tool, das am längsten wartet, wird ausgewählt
@@ -132,7 +132,7 @@ def tool_searches_for_lots(session_d):
 
 '''Schauen, ob ein Lot in OP-COMP-Zustand ist und versetzen des Lot auf nächsten Produktionsschritt'''
 def moveLot(session_d):
-    print("\n*** Checking if a lot is in OP_COMP state ***")
+    print(f"\n### Moving Lots ({datetime.datetime.now()}) ###")
     lots = session_d.query(Lot).filter(Lot.state == "OP_COMP").all()
     for lot in lots:
         route = lot.route
@@ -148,7 +148,7 @@ def moveLot(session_d):
             newseq = route.seq + 1
             next_route = session_d.query(ProdFlow).filter(ProdFlow.product == lot.product).filter(ProdFlow.seq == newseq).first()
             if next_route is None:
-                print("Produktionsfluss von Lot "+ lot.lotid + " ist zu Ende")
+                print("Produktionsfluss von Lot "+ lot.lotid + " ist zu Ende (FIN)\n")
                 lot.state = "FIN"
                 session_d.add(lot)
                 session_d.commit()
@@ -170,7 +170,7 @@ def moveLot(session_d):
                 lot.state = "HOLD"
                 session_d.add(lot)
                 session_d.commit()
-                print("Lot " + lot.lotid + " is HOLD now")
+                print("Lot " + lot.lotid + " is HOLD now\n")
                 continue
 
         lot.oper = next.oper
@@ -181,7 +181,7 @@ def moveLot(session_d):
             lot.enteroper = datetime.datetime.now()
             session_d.add(lot)
             session_d.commit()
-            print("Lot " + lot.lotid + " is WAIT now (next operation: " + lot.oper + ")")
+            print("Lot " + lot.lotid + " is WAIT now (next operation: " + lot.oper + ")\n")
         else: #falls Los nicht zwingend in nächste Operation muss
             print("Lot " + lot.lotid + " is not mandatory for next operation: " + lot.oper)
             # erzeuge Random Wert zwischen 1 und 100 für Simulation der Wahrscheinlichkeit
@@ -192,13 +192,13 @@ def moveLot(session_d):
                 lot.enteroper = datetime.datetime.now()
                 session_d.add(lot)
                 session_d.commit()
-                print("Lot " + lot.lotid + " is WAIT now (next operation: " + lot.oper + ")")
+                print("Lot " + lot.lotid + " is WAIT now (next operation: " + lot.oper + ")\n")
             else:
                 # am Ende von lots-Liste wird das Lot nocheinmal angehangen
                 lots.append(lot)
                 session_d.add(lot)
                 session_d.commit()
-                print("Lot " + lot.lotid + " skips next operation: " + lot.oper)
+                print("Lot " + lot.lotid + " skips next operation: " + lot.oper + "\n")
 
 def test_if_lots_are_stuck(session_d):
     #alle Lose, die in WAIT-Zustand sind
