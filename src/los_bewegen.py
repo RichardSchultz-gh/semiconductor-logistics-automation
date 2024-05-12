@@ -25,6 +25,7 @@ def los_bewegen_page():
         lot_state_filter = request.args.get('lot_state_f')
         lot_tool_filter = request.args.get('lot_tool_f')
 
+        # Filterung der Lose
         lots = []
         if lot_id_filter and not lot_state_filter and not lot_tool_filter:
             lots = filter_lots_by_id(lot_id_filter)
@@ -52,12 +53,9 @@ def los_bewegen_page():
 @los_bewegen_bp.route("/main/los_bewegen", methods=["POST"])
 def los_bewegen():
     if check_user_session():
-        #wenn request von name state kommt:
+        # wenn request von name state Daten bringt, dann ist das ein POST-Request von den Buttons "SCRAP" oder "OP_COMP" (siehe los_bewegen_hold.html)
         if request.form.get("state"):
-            DATABASE_URL = get_database_url()
-            engine = create_engine(DATABASE_URL)
-            Session = sessionmaker(bind=engine)
-            db_session = Session()
+            db_session = database_connection()
             if(request.form.get("state") == "scrap"):
                 #aus Feld mit name="lotid_hidden" wird die LotID geholt
                 lotid = request.form.get("lotid_hidden")
@@ -80,14 +78,14 @@ def los_bewegen():
                 db_session.close()
                 return render_template("los_bewegen_success.html", success_message="Lot wurde erfolgreich auf OP_COMP gesetzt")
             return redirect(url_for("los_bewegen.los_bewegen_page"))
-
+        
+        # wenn Feld von lot_id Daten hat, dann ist das ein POST-Request von dem Button "Los bewegen" (siehe los_bewegen_page.html)
         lotid = request.form.get("lot_id")
-        DATABASE_URL = get_database_url()
-        engine = create_engine(DATABASE_URL)
-        Session = sessionmaker(bind=engine)
-        db_session = Session()
+        db_session = database_connection()
+        # Lot-Objekt mit der LotID holen
         lot = db_session.query(Lot).filter(Lot.lotid == lotid).first()
         
+        # Fehlerbehandlungen
         if lot is None:
             db_session.close()
             return render_template("los_bewegen_error.html", error_message="Lot ID nicht gefunden")
@@ -98,24 +96,25 @@ def los_bewegen():
             db_session.close()
             return render_template("los_bewegen_error.html", error_message="Lot befindet sich nicht im Zustand OP_COMP")
 
-        if move_lot_to_next_station(lot, db_session) == 0:
+        if move_lot_to_next_station(lot, db_session) == 0: # 0 bedeutet, dass das Los erfolgreich bewegt wurde
             db_session.commit()
             db_session.close()
             return render_template("los_bewegen_success.html", success_message="Los wurde bewegt und befindet sich nun in WAIT-Zustand")
-        elif move_lot_to_next_station(lot, db_session) == 1:
+        elif move_lot_to_next_station(lot, db_session) == 1: # 1 bedeutet, dass das Los den Produktionsfluss abgeschlossen hat
             db_session.commit()
             db_session.close()
             return render_template("los_bewegen_success.html", success_message="Los wurde erfolgreich bewegt und befindet sich nun im FIN-Zustand, da es den Produktionsfluss abgeschlossen hat")
-        else:
+        else: # alle anderen Fälle bedeuten, dass das Los nicht bewegt werden konnte
             db_session.close()
             return render_template("los_bewegen_error.html", error_message="Keine weitere Route verfügbar oder Fehler beim Bewegen des Loses")
     else:
         return "Unauthorized", 401
 
+# Funktion zum Bewegen des Loses zur nächsten Station/Operation
 def move_lot_to_next_station(lot, db_session):
     route = lot.route
     oper_int = int(lot.oper)
-    #Oper = '0100' soll zu '0200' werden usw...
+    #Oper = '0100' wird zu '0200' usw...
     if(oper_int < 1000):
         next_oper = '0' + str(oper_int+100)
     else:
@@ -170,51 +169,30 @@ def move_lot_to_next_station(lot, db_session):
             move_lot_to_next_station(lot, db_session)
     return 0
 
-if __name__ == '__main__':
-    los_bewegen_bp.run(debug=True)
-
-
-
 def filter_lots_by_id(lot_id_filter):
     # Hiermit filtern wir Lose nach Lot-ID
-    DATABASE_URL = get_database_url()
-    engine = create_engine(DATABASE_URL)
-    Base = declarative_base()
-    Session = sessionmaker(bind=engine)
-    session = Session()
+    session = database_connection()
     lots = session.query(Lot).filter(Lot.lotid==lot_id_filter).all()
     session.close()
     return lots
 
 def filter_lots_by_state(lot_state_filter):
     # Hiermit filtern wir Lose nach ZustandE
-    DATABASE_URL = get_database_url()
-    engine = create_engine(DATABASE_URL)
-    Base = declarative_base()
-    Session = sessionmaker(bind=engine)
-    session = Session()
+    session = database_connection()
     lots = session.query(Lot).filter(Lot.state==lot_state_filter).all()
     session.close()
     return lots
 
 def filter_lots_by_tool(lot_tool_filter):
     # Hiermit filtern wir Lose nach Werkzeug
-    DATABASE_URL = get_database_url()
-    engine = create_engine(DATABASE_URL)
-    Base = declarative_base()
-    Session = sessionmaker(bind=engine)
-    session = Session()
+    session = database_connection()
     lots = session.query(Lot).filter(Lot.disptool==lot_tool_filter).all()
     session.close()
     return lots
 
 def get_all_tools():
     # Hiermit rufen wir alle Werkzeuge aus der Datenbank ab und geben sie zurück
-    DATABASE_URL = get_database_url()
-    engine = create_engine(DATABASE_URL)
-    Base = declarative_base()
-    Session = sessionmaker(bind=engine)
-    session = Session()
+    session = database_connection()
     tools = session.query(Tool.tool).all()
     tools = [tool[0] for tool in tools]
     session.close()
@@ -222,11 +200,7 @@ def get_all_tools():
 
 def get_all_products():
     # Hiermit rufen wir alle Produkte aus der Datenbank ab und geben sie zurück
-    DATABASE_URL = get_database_url()
-    engine = create_engine(DATABASE_URL)
-    Base = declarative_base()
-    Session = sessionmaker(bind=engine)
-    session = Session()
+    session = database_connection()
     products = session.query(ProdFlow.product).distinct().all()
     products = [product[0] for product in products]
     session.close()
@@ -234,55 +208,45 @@ def get_all_products():
 
 def filter_lots_by_id_state(lot_id_filter, lot_state_filter):
     # Hiermit filtern wir Lose nach Lot-ID und Zustand
-    DATABASE_URL = get_database_url()
-    engine = create_engine(DATABASE_URL)
-    Base = declarative_base()
-    Session = sessionmaker(bind=engine)
-    session = Session()
+    session = database_connection()
     lots = session.query(Lot).filter(Lot.lotid==lot_id_filter, Lot.state==lot_state_filter).all()
     session.close()
     return lots
 
 def filter_lots_by_id_tool(lot_id_filter, lot_tool_filter):
     # Hiermit filtern wir Lose nach Lot-ID und Werkzeug
-    DATABASE_URL = get_database_url()
-    engine = create_engine(DATABASE_URL)
-    Base = declarative_base()
-    Session = sessionmaker(bind=engine)
-    session = Session()
+    session = database_connection()
     lots = session.query(Lot).filter(Lot.lotid==lot_id_filter, Lot.disptool==lot_tool_filter).all()
     session.close()
     return lots
 
 def filter_lots_by_state_tool(lot_state_filter, lot_tool_filter):
     # Hiermit filtern wir Lose nach Zustand und Werkzeug
-    DATABASE_URL = get_database_url()
-    engine = create_engine(DATABASE_URL)
-    Base = declarative_base()
-    Session = sessionmaker(bind=engine)
-    session = Session()
+    session = database_connection()
     lots = session.query(Lot).filter(Lot.state==lot_state_filter, Lot.disptool==lot_tool_filter).all()
     session.close()
     return lots
 
 def filter_lots_by_id_state_tool(lot_id_filter, lot_state_filter, lot_tool_filter):
     # Hiermit filtern wir Lose nach Lot-ID, Zustand und Werkzeug
-    DATABASE_URL = get_database_url()
-    engine = create_engine(DATABASE_URL)
-    Base = declarative_base()
-    Session = sessionmaker(bind=engine)
-    session = Session()
+    session = database_connection()
     lots = session.query(Lot).filter(Lot.lotid==lot_id_filter, Lot.state==lot_state_filter, Lot.disptool==lot_tool_filter).all()
     session.close()
     return lots
 
 def get_all_lots():
     # Hiermit rufen wir alle Lose aus der Datenbank ab und geben sie zurück
-    DATABASE_URL = get_database_url()
-    engine = create_engine(DATABASE_URL)
-    Base = declarative_base()
-    Session = sessionmaker(bind=engine)
-    session = Session()
+    session = database_connection()
     lots = session.query(Lot).all()
     session.close()
     return lots
+
+def database_connection():
+    DATABASE_URL = get_database_url()
+    engine = create_engine(DATABASE_URL)
+    Session = sessionmaker(bind=engine)
+    session_d = Session()
+    return session_d
+
+if __name__ == '__main__':
+    los_bewegen_bp.run(debug=True)
