@@ -30,8 +30,8 @@ INSERT INTO PTIME VALUES
 
 INSERT INTO ENTITIES VALUES 
 ('TMachineA', 'TOOL', 1, 'a VWP tool', 'REG'),
-('TMachineA', 'TOOL', 1, 'a VWP tool', 'REG');
+('TMachineB', 'TOOL', 1, 'a VWP tool', 'REG');
 
 INSERT INTO LOT VALUES 
-('TestLot', 44, 10, 'UKN', 'TestProductA', 'RouteA', '0100', 'TestCustomer', '2024-07-06', '2024-02-02', NULL, NULL, NULL, NULL);
+('TestLot', 44, 10, 'WAIT', 'TestProductA', 'RouteA', '0100', 'TestCustomer', '2024-07-06', '2024-02-02', NULL, NULL, NULL, NULL);
 ----
