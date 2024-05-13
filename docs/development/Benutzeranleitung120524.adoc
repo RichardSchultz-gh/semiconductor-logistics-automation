@@ -6,9 +6,18 @@
 * Login-Daten (vorrübergehend):
 . Fertigungsleiter: user1 pass1
 . Mitarbeiter: user2 pass2
-* Nachvollziehbarkeit der Applikation durch Testdaten und in Applikation angezeigter Tabelle gegeben
-* Nachvollziehbarkeit des Timers durch Einsehen der Log-Datei unter _timer_log/log.txt_
-* weitergehende Nachvollziehbarkeit mittels Einsicht der Datenbank mit folgende Eingabe in Terminal: 
+* Zustand der Datenbank:
+. Testdaten eingefügt in Form von Lot der ID="TestLot" und dem Produkt "TestProductA", welches vollständigen Produktionsablauf simuliert
+. Produkt "2009-MF" auch mit vollständigen Produktionsablauf, zu welchem bereits sich im Bearbeitungsprozess befindliche Lose hinzugefügt wurden
+. für Produkte "A100" und "B200" fehlen noch teils Daten für vollständigen Produktionsablauf
+* Nachvollziehbarkeit:
+. Nachvollziehbarkeit des Timers durch Einsehen der Log-Datei unter _timer_log/log.txt_
+. Nachvollziehbarkeit der manuellen Funktionen, ausgelöst durch die Buttons, mittels der Tabellen in der Applikation
+* weitergehende Nachvollziehbarkeit mittels Einsicht der Datenbank mit folgender Eingabe in Terminal: 
 . _psql_
 . Verlassen mittels _\q_
-* Umgesetzte UseCases 1, 2, 3 (Los starten, Los bewegen, Los bearbeiten) 
+* Umgesetzte Funktionalität:
+. UseCase 1: Los starten
+. UseCase 2: Los bewegen
+. UseCase 3: Los bearbeiten
+. Timer für automatischen Produktionsablauf mittels 2 CronJobs, welche alle 5 Minuten ausgeführt werden und ihre Ergebnisse in der Log-Datei _timer_log/log.txt_ festhalten
