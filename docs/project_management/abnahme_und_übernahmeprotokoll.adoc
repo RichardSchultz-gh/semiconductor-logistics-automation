@@ -1,34 +1,20 @@
-= Abnahme- und Übergabeprotokoll
+= Lizenzvereinbarung
 
-Software Engineering II – Team I04: Modell eines automatisierten Fabrikbetriebes
+== Projektangaben
+Thema: Modell eines automatisierten Fabrikbetriebs 
 
-Sommersemester 2024 – Prof. Dr. Jürgen Anke – HTW Dresden
+Zeitraum: WS23/24 - SS24
 
-== Abnahmedokumentation
-=== Abnahme
+GitHub Repository: https://github.com/leni04/i04-projekt-frau-holle
 
-=== Lieferumfang
-
-=== Funktionalitäten
-
-=== Systemweite Anforderungen
-
-
-Hiermit wird die Abnahme bestätigt.
-
-//Unterschrift Ringel
-
-
-== Vereinbarungen
+== Vereinbarung
 
 Zwischen
 
 * Nils Generlich
 * Yannik-Joel Herrchen
-* Enrico Kersten
 * Nico Kroll
 * Paul Marx
-* Hoang Nguyen Sy
 * Richard Schultz
 * Marlene Winter
 
@@ -49,14 +35,32 @@ folgendes vereinbart:
 
 == Lizenzvereinbarung
 
-== Haftungsausschuss
+erste Lizenzidee
+
+*MIT-Lizenz*
+
+Copyright (c) 2024 Team I04: Modell eines automatisierten Fabrikbetriebs
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+== Haftungsausschluss
+
+Das Team lehnt hiermit jegliche Haftungsansprüche ab, die im Zusammenhang mit der Software entstehen. Es wird keine Haftung für Schäden, die aus der Verwendung oder dem Betrieb der Software entstehen, übernommen. 
 
 == Ausschluss zukünfiger Unterstützung
 
-...
+Für die Software wird vom Team nach der Übergabe keinerlei Unterstützung angeboten. Es werden keine neuen Funktionen oder Fehlerbehebungen an der Software umgesetzt. 
+
+***
 
 
 Mit meiner Unterschrift erkäre ich mich mit allen obenstehend aufgeführten Vereinbarungen einverstanden.
 
-//hier alle unterschreiben
+
+
+
 
