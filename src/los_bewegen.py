@@ -23,26 +23,20 @@ def los_bewegen_page():
          # Lot-ID- und Zustandsfilterung
         lot_id_filter = request.args.get('lot_id_f')
         lot_state_filter = request.args.get('lot_state_f')
-        lot_tool_filter = request.args.get('lot_tool_f')
+
+        # Sortierung der Lose
+        sorttype = request.args.get('sort')
 
         # Filterung der Lose
         lots = []
-        if lot_id_filter and not lot_state_filter and not lot_tool_filter:
-            lots = filter_lots_by_id(lot_id_filter)
-        elif lot_state_filter and not lot_id_filter and not lot_tool_filter:
-            lots = filter_lots_by_state(lot_state_filter)
-        elif lot_tool_filter and not lot_id_filter and not lot_state_filter:
-            lots = filter_lots_by_tool(lot_tool_filter)
-        elif lot_id_filter and lot_state_filter and not lot_tool_filter:
-            lots = filter_lots_by_id_state(lot_id_filter, lot_state_filter)
-        elif lot_id_filter and lot_tool_filter and not lot_state_filter:
-            lots = filter_lots_by_id_tool(lot_id_filter, lot_tool_filter)
-        elif lot_state_filter and lot_tool_filter and not lot_id_filter:
-            lots = filter_lots_by_state_tool(lot_state_filter, lot_tool_filter)
-        elif lot_id_filter and lot_state_filter and lot_tool_filter:
-            lots = filter_lots_by_id_state_tool(lot_id_filter, lot_state_filter, lot_tool_filter)
+        if lot_id_filter and not lot_state_filter:
+            lots = filter_lots_by_id(lot_id_filter, sorttype)
+        elif lot_state_filter and not lot_id_filter:
+            lots = filter_lots_by_state(lot_state_filter, sorttype)
+        elif lot_id_filter and lot_state_filter:
+            lots = filter_lots_by_id_state(lot_id_filter, lot_state_filter, sorttype)
         else:
-            lots = get_all_lots()
+            lots = get_all_lots(sorttype)
 
         usern = session['username']
 
@@ -169,24 +163,35 @@ def move_lot_to_next_station(lot, db_session):
             move_lot_to_next_station(lot, db_session)
     return 0
 
-def filter_lots_by_id(lot_id_filter):
+def filter_lots_by_id(lot_id_filter, sorttype):
     # Hiermit filtern wir Lose nach Lot-ID
     session = database_connection()
-    lots = session.query(Lot).filter(Lot.lotid==lot_id_filter).all()
+    if(not sorttype):
+        lots= session.query(Lot).filter(Lot.lotid==lot_id_filter).all()
+        session.close()
+        return lots
+    direction = getDirection(sorttype)
+    attribute = getAttribute(sorttype)
+    if(direction == 'asc'):
+        lots = session.query(Lot).filter(Lot.lotid==lot_id_filter).order_by(attribute).all()
+    elif(direction == 'desc'):
+        lots = session.query(Lot).filter(Lot.lotid==lot_id_filter).order_by(attribute.desc()).all()
     session.close()
     return lots
 
-def filter_lots_by_state(lot_state_filter):
-    # Hiermit filtern wir Lose nach ZustandE
+def filter_lots_by_state(lot_state_filter, sorttype):
+    # Hiermit filtern wir Lose nach Zustand
     session = database_connection()
-    lots = session.query(Lot).filter(Lot.state==lot_state_filter).all()
-    session.close()
-    return lots
-
-def filter_lots_by_tool(lot_tool_filter):
-    # Hiermit filtern wir Lose nach Werkzeug
-    session = database_connection()
-    lots = session.query(Lot).filter(Lot.disptool==lot_tool_filter).all()
+    if(not sorttype):
+        lots = session.query(Lot).filter(Lot.state==lot_state_filter).all()
+        session.close()
+        return lots
+    direction = getDirection(sorttype)
+    attribute = getAttribute(sorttype)
+    if(direction == 'asc'):
+        lots = session.query(Lot).filter(Lot.state==lot_state_filter).order_by(attribute).all()
+    elif(direction == 'desc'):
+        lots = session.query(Lot).filter(Lot.state==lot_state_filter).order_by(attribute.desc()).all()
     session.close()
     return lots
 
@@ -206,31 +211,19 @@ def get_all_products():
     session.close()
     return products
 
-def filter_lots_by_id_state(lot_id_filter, lot_state_filter):
+def filter_lots_by_id_state(lot_id_filter, lot_state_filter, sorttype):
     # Hiermit filtern wir Lose nach Lot-ID und Zustand
     session = database_connection()
-    lots = session.query(Lot).filter(Lot.lotid==lot_id_filter, Lot.state==lot_state_filter).all()
-    session.close()
-    return lots
-
-def filter_lots_by_id_tool(lot_id_filter, lot_tool_filter):
-    # Hiermit filtern wir Lose nach Lot-ID und Werkzeug
-    session = database_connection()
-    lots = session.query(Lot).filter(Lot.lotid==lot_id_filter, Lot.disptool==lot_tool_filter).all()
-    session.close()
-    return lots
-
-def filter_lots_by_state_tool(lot_state_filter, lot_tool_filter):
-    # Hiermit filtern wir Lose nach Zustand und Werkzeug
-    session = database_connection()
-    lots = session.query(Lot).filter(Lot.state==lot_state_filter, Lot.disptool==lot_tool_filter).all()
-    session.close()
-    return lots
-
-def filter_lots_by_id_state_tool(lot_id_filter, lot_state_filter, lot_tool_filter):
-    # Hiermit filtern wir Lose nach Lot-ID, Zustand und Werkzeug
-    session = database_connection()
-    lots = session.query(Lot).filter(Lot.lotid==lot_id_filter, Lot.state==lot_state_filter, Lot.disptool==lot_tool_filter).all()
+    if(not sorttype):
+        lots = session.query(Lot).filter(Lot.lotid==lot_id_filter, Lot.state==lot_state_filter).all()
+        session.close()
+        return lots
+    direction = getDirection(sorttype)
+    attribute = getAttribute(sorttype)
+    if(direction == 'asc'):
+        lots = session.query(Lot).filter(Lot.lotid==lot_id_filter, Lot.state==lot_state_filter).order_by(attribute).all()
+    elif(direction == 'desc'):
+        lots = session.query(Lot).filter(Lot.lotid==lot_id_filter, Lot.state==lot_state_filter).order_by(attribute.desc()).all()
     session.close()
     return lots
 
@@ -241,12 +234,43 @@ def get_all_lots():
     session.close()
     return lots
 
+def get_all_lots(sorttype):
+    # Hiermit rufen wir alle Lose aus der Datenbank ab und geben sie zurück
+    session = database_connection()
+    if(not sorttype):
+        lots = session.query(Lot).all()
+        session.close()
+        return lots
+    direction = getDirection(sorttype)
+    attribute = getAttribute(sorttype)
+    if(direction == 'asc'):
+        lots = session.query(Lot).order_by(attribute).all()
+    elif(direction == 'desc'):
+        lots = session.query(Lot).order_by(attribute.desc()).all()
+    session.close()
+    return lots
+
 def database_connection():
     DATABASE_URL = get_database_url()
     engine = create_engine(DATABASE_URL)
     Session = sessionmaker(bind=engine)
     session_d = Session()
     return session_d
+
+def getDirection(sorttype):
+    # aus String sorttype 1. Buchstaben entfernen
+    direction = sorttype[1:]
+    print(direction)
+    return direction
+
+def getAttribute(sorttype):
+    # 1. Buchstaben des Strings sorttype
+    attribute = sorttype[0]
+    if(attribute == 'l'):
+        attribute = Lot.lotid
+    elif(attribute == 'z'):
+        attribute = Lot.state
+    return attribute
 
 if __name__ == '__main__':
     los_bewegen_bp.run(debug=True)

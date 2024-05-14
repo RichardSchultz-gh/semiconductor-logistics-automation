@@ -155,3 +155,13 @@ th, td {
     margin-top: 2em;
 
 }
+
+#lascl, #ldescl, #zascl, #zdescl{
+    display: inline-block;
+}
+
+input[type="radio"] {
+    margin-right: 10px;
+    width: 16px; /* Breite des Radio-Buttons */
+    height: 16px; /* Höhe des Radio-Buttons */
+}

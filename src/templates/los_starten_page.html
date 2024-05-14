@@ -57,7 +57,7 @@
                 </div>
                 <div class="form-row">
                     <label for="amount">Amount of wafer:</label>
-                    <input type="number" name="amount" id="amount" min="1" max="1000" value="25" required>
+                    <input type="number" name="amount" id="amount" min="1" max="100000" value="25" required>
                 </div>
                 <div class="form-row">
                     <label for="target_date">Due date:</label>
@@ -130,6 +130,33 @@
                         {% endfor %}
                     </datalist></td>
                     <td><button type="submit" class="btn">Filtern</button></td>
+                </tr>
+                <tr>
+                    <td>Alphabetic<br>
+                        Sort:</td>
+                    <td><input type="radio" id="lasc" name="sort" value="lasc">
+                    <label for="lasc" id="lascl">LotID aufsteigend</label></td>
+                    <td></td>
+                    <td></td>
+                    <td><input type="radio" id="zasc" name="sort" value="zasc">
+                        <label for="zasc" id="zascl">Zustand aufsteigend</label></td>
+                    <td></td>
+                    <td></td>
+                    <td><input type="radio" id="tasc" name="sort" value="tasc">
+                        <label for="tasc" id="tascl">Tool aufsteigend</label></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input type="radio" id="ldesc" name="sort" value="ldesc">
+                        <label for="ldesc" id="ldescl">LotID absteigend</label></td>
+                    <td></td>
+                    <td></td>
+                    <td><input type="radio" id="zdesc" name="sort" value="zdesc">
+                    <label for="zdesc" id="zdescl">Zustand absteigend</label></td>
+                    <td></td>
+                    <td></td>
+                    <td><input type="radio" id="tdesc" name="sort" value="tdesc">
+                        <label for="tdesc" id="tdescl">Tool absteigend</label></td>
                 </tr>
             </table>
         </form> 

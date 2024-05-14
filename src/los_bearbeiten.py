@@ -26,23 +26,27 @@ def los_bearbeiten_page():
         tool_filter = request.args.get('tool_f')
         tool_state_filter = request.args.get('tool_state_f')
 
+        # Filterung von Losen und Werkzeugen
+        sort_type_Lots = request.args.get('Lsort')
+        sort_type_Tools = request.args.get('Tsort')
+
         if lot_id_filter and not lot_state_filter:
-            lots = filter_lots_by_id(lot_id_filter)
+            lots = filter_lots_by_id(lot_id_filter, sort_type_Lots)
         elif lot_state_filter and not lot_id_filter:
-            lots = filter_lots_by_state(lot_state_filter)
+            lots = filter_lots_by_state(lot_state_filter, sort_type_Lots)
         elif lot_id_filter and lot_state_filter:
-            lots = filter_lots_by_id_and_state(lot_id_filter, lot_state_filter)
+            lots = filter_lots_by_id_and_state(lot_id_filter, lot_state_filter, sort_type_Lots)
         else:
-            lots = get_all_lots()  # Hier implementieren Sie Ihre Logik zum Abrufen von Lots für die angeforderte Seite
+            lots = get_all_lots(sort_type_Lots) # Hier implementieren Sie Ihre Logik zum Abrufen von Lots für die angeforderte Seite
 
         if tool_filter and not tool_state_filter:
-            tools = filter_tools_by_tool(tool_filter)
+            tools = filter_tools_by_tool(tool_filter, sort_type_Tools)
         elif tool_state_filter and not tool_filter:
-            tools = filter_tools_by_tool_state(tool_state_filter)
+            tools = filter_tools_by_tool_state(tool_state_filter, sort_type_Tools)
         elif tool_filter and tool_state_filter:
-            tools = filter_tools_by_tool_and_state(tool_filter, tool_state_filter)
+            tools = filter_tools_by_tool_and_state(tool_filter, tool_state_filter, sort_type_Tools)
         else:
-            tools = get_all_tools()
+            tools = get_all_tools(sort_type_Tools) # Hier implementieren Sie Ihre Logik zum Abrufen von Tools für die angeforderte Seite
 
         usern = session['username']
         return render_template("los_bearbeiten_page.html", lotids=lotids, toolids=toolids, lots=lots, tools=tools, username=usern)
@@ -130,6 +134,22 @@ def get_all_lots():
     session.close()
     return lots
 
+def get_all_lots(sorttype):
+    # Hiermit rufen wir alle Lose aus der Datenbank ab und geben sie zurück
+    session = database_connection()
+    if(not sorttype):
+        lots = session.query(Lot).all()
+        session.close()
+        return lots
+    direction = getDirection(sorttype)
+    attribute = getAttribute(sorttype)
+    if(direction == 'asc'):
+        lots = session.query(Lot).order_by(attribute).all()
+    elif(direction == 'desc'):
+        lots = session.query(Lot).order_by(attribute.desc()).all()
+    session.close()
+    return lots
+
 def get_all_tools():
     # Hiermit rufen wir alle Werkzeuge aus der Datenbank ab und geben sie zurück
     session = database_connection()
@@ -137,31 +157,83 @@ def get_all_tools():
     session.close()
     return tools
 
-def filter_lots_by_id(lot_id_filter):
-    # Hiermit filtern wir Lose nach Lot-ID
+def get_all_tools(sorttype):
+    # Hiermit rufen wir alle Werkzeuge aus der Datenbank ab und geben sie zurück
     session = database_connection()
-    lots = session.query(Lot).filter(Lot.lotid==lot_id_filter).all()
-    session.close()
-    return lots
-
-def filter_lots_by_state(lot_state_filter):
-    # Hiermit filtern wir Lose nach Zustand
-    session = database_connection()
-    lots = session.query(Lot).filter(Lot.state==lot_state_filter).all()
-    session.close()
-    return lots
-
-def filter_tools_by_tool(tool_filter):
-    # Hiermit filtern wir Lose nach Werkzeug
-    session = database_connection()
-    tools = session.query(Tool).filter(Tool.tool==tool_filter).all()
+    if(not sorttype):
+        tools = session.query(Tool).all()
+        session.close()
+        return tools
+    direction = getDirection(sorttype)
+    attribute = getAttribute(sorttype)
+    if(direction == 'asc'):
+        tools = session.query(Tool).order_by(attribute).all()
+    elif(direction == 'desc'):
+        tools = session.query(Tool).order_by(attribute.desc()).all()
     session.close()
     return tools
 
-def filter_tools_by_tool_state(tool_state_filter):
+def filter_lots_by_id(lot_id_filter, sorttype):
+    # Hiermit filtern wir Lose nach Lot-ID
+    session = database_connection()
+    if(not sorttype):
+        lots= session.query(Lot).filter(Lot.lotid==lot_id_filter).all()
+        session.close()
+        return lots
+    direction = getDirection(sorttype)
+    attribute = getAttribute(sorttype)
+    if(direction == 'asc'):
+        lots = session.query(Lot).filter(Lot.lotid==lot_id_filter).order_by(attribute).all()
+    elif(direction == 'desc'):
+        lots = session.query(Lot).filter(Lot.lotid==lot_id_filter).order_by(attribute.desc()).all()
+    session.close()
+    return lots
+
+def filter_lots_by_state(lot_state_filter, sorttype):
+    # Hiermit filtern wir Lose nach Zustand
+    session = database_connection()
+    if(not sorttype):
+        lots = session.query(Lot).filter(Lot.state==lot_state_filter).all()
+        session.close()
+        return lots
+    direction = getDirection(sorttype)
+    attribute = getAttribute(sorttype)
+    if(direction == 'asc'):
+        lots = session.query(Lot).filter(Lot.state==lot_state_filter).order_by(attribute).all()
+    elif(direction == 'desc'):
+        lots = session.query(Lot).filter(Lot.state==lot_state_filter).order_by(attribute.desc()).all()
+    session.close()
+    return lots
+
+def filter_tools_by_tool(tool_filter, sorttype):
+    # Hiermit filtern wir Lose nach Werkzeug
+    session = database_connection()
+    if(not sorttype):
+        tools = session.query(Tool).filter(Tool.tool==tool_filter).all()
+        session.close()
+        return tools
+    direction = getDirection(sorttype)
+    attribute = getAttribute(sorttype)
+    if(direction == 'asc'):
+        tools = session.query(Tool).filter(Tool.tool==tool_filter).order_by(attribute).all()
+    elif(direction == 'desc'):
+        tools = session.query(Tool).filter(Tool.tool==tool_filter).order_by(attribute.desc()).all()
+    session.close()
+    return tools
+
+def filter_tools_by_tool_state(tool_state_filter, sorttype):
     # Hiermit filtern wir Lose nach Werkzeugzustand
     session = database_connection()
-    tools = session.query(Tool).filter(Tool.state==tool_state_filter).all()
+    if(not sorttype):
+        tools = session.query(Tool).filter(Tool.state==tool_state_filter).all()
+        session.close()
+        return tools
+    direction = getDirection(sorttype)
+    attribute = getAttribute(sorttype)
+    if(direction == 'asc'):
+        tools = session.query(Tool).filter(Tool.state==tool_state_filter).order_by(attribute).all()
+    elif(direction == 'desc'):
+        tools = session.query(Tool).filter(Tool.state==tool_state_filter).order_by(attribute.desc()).all()
     session.close()
     return tools
 
@@ -174,16 +246,53 @@ def get_all_tool_ids():
     session.close()
     return tool_ids
 
-def filter_lots_by_id_and_state(lot_id_filter, lot_state_filter):
+def filter_lots_by_id_and_state(lot_id_filter, lot_state_filter, sorttype):
     # Hiermit filtern wir Lose nach Lot-ID und Zustand
     session = database_connection()
-    lots = session.query(Lot).filter(Lot.lotid==lot_id_filter).filter(Lot.state==lot_state_filter).all()
+    if(not sorttype):
+        lots = session.query(Lot).filter(Lot.lotid==lot_id_filter, Lot.state==lot_state_filter).all()
+        session.close()
+        return lots
+    direction = getDirection(sorttype)
+    attribute = getAttribute(sorttype)
+    if(direction == 'asc'):
+        lots = session.query(Lot).filter(Lot.lotid==lot_id_filter, Lot.state==lot_state_filter).order_by(attribute).all()
+    elif(direction == 'desc'):
+        lots = session.query(Lot).filter(Lot.lotid==lot_id_filter, Lot.state==lot_state_filter).order_by(attribute.desc()).all()
     session.close()
     return lots
 
-def filter_tools_by_tool_and_state(tool_filter, tool_state_filter):
+def filter_tools_by_tool_and_state(tool_filter, tool_state_filter, sorttype):
     # Hiermit filtern wir Lose nach Werkzeug und Werkzeugzustand
     session = database_connection()
-    tools = session.query(Tool).filter(Tool.tool==tool_filter).filter(Tool.state==tool_state_filter).all()
+    if(not sorttype):
+        tools = session.query(Tool).filter(Tool.tool==tool_filter).filter(Tool.state==tool_state_filter).all()
+        session.close()
+        return tools
+    direction = getDirection(sorttype)
+    attribute = getAttribute(sorttype)
+    if(direction == 'asc'):
+        tools = session.query(Tool).filter(Tool.tool==tool_filter).filter(Tool.state==tool_state_filter).order_by(attribute).all()
+    elif(direction == 'desc'):
+        tools = session.query(Tool).filter(Tool.tool==tool_filter).filter(Tool.state==tool_state_filter).order_by(attribute.desc()).all()
     session.close()
     return tools
+
+def getDirection(sorttype):
+    # aus String sorttype 1. Buchstaben entfernen
+    direction = sorttype[1:]
+    print(direction)
+    return direction
+
+def getAttribute(sorttype):
+    # 1. Buchstaben des Strings sorttype
+    attribute = sorttype[0]
+    if(attribute == 'l'):
+        attribute = Lot.lotid
+    elif(attribute == 'z'):
+        attribute = Lot.state
+    elif(attribute == 't'):
+        attribute = Tool.tool
+    elif(attribute == 's'):
+        attribute = Tool.state
+    return attribute
