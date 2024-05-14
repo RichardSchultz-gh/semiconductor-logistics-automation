@@ -1,4 +1,4 @@
-= Abnahmeprotokoll Modell eines automatisierten Fabrikbetriebs - Frau Holle
+= Abnahmeprotokoll Frau Holle
 :icons: font
 :lang: de
 //:sectnums: short
@@ -9,11 +9,11 @@
 
 //Autor: {author}, Version {revnumber}, {revdate}
 == Projektangaben
-Thema:
+Thema: Modell eines automatisierten Fabrikbetriebs 
 
-Zeitraum:
+Zeitraum: WS23/24 - SS24
 
-GitHub Repository:
+GitHub Repository: https://github.com/leni04/i04-projekt-frau-holle
 
 
 == Abnahmedokumentation 
@@ -26,25 +26,62 @@ Abnahmeumgebung:
 
 === Lieferumfang
 
-* Software in folgender Form:
+* Software in folgender Form: RaspberryPi
 * Benutzeranleitung
 * Betriebsanleitung
 * Anforderungsspezifikation
 * Entwicklerdokumentation
 * Testdokumentation
+* Lizenz
 
 === Funktionalität
+
 [cols="4,1,5"]
 |===
 |Use Case / Szenario | erfüllt | Anmerkung
 
-|UC1 / Sc1
+|UC1 Los starten
 | ja/nein
-|...
-|UC1 / Sc2
+|
+|UC2 Los bewegen
 | ja/nein
-|...
-
+|
+|UC3 Los starten / Sc1
+| ja/nein
+|
+|UC3 Los starten / Sc2.1
+| ja/nein
+|
+|UC3 Los starten / Sc2.2
+| ja/nein
+|
+|UC4 Stammdaten anzeigen
+| ja/nein
+|
+|UC5 Stammdaten bearbeiten
+| ja/nein
+|
+|UC6 Daten exportieren
+| ja/nein
+|
+|UC7 Daten importieren
+| ja/nein
+|
+|UC8 Backup erstellen
+| ja/nein
+|
+|UC9 Report erstellen
+| ja/nein
+|
+|UC10 Maschine bearbeiten / Sc1
+| ja/nein
+|
+|UC10 Maschine bearbeiten / Sc2
+| ja/nein
+|
+|UC11 Daten visualisieren
+| ja/nein
+|
 |===
 
 ===  Systemweite Anforderungen
@@ -52,20 +89,63 @@ Abnahmeumgebung:
 |===
 |Anforderung | erfüllt | Anmerkung
 
-|NFA1 ...
+|NFA1 SWFA-1
 | ja/nein
-|...
-|NFA2 ...
+|
+|NFA2 SWFA-2
 | ja/nein
-|...
+|
+|NFA3 SWFA-3
+| ja/nein
+|
+|NFA4 QAGU-1
+| ja/nein
+|
+|NFA5 QAGU-2
+| ja/nein
+|
+|NFA6 QAGU-3
+| ja/nein
+|
+|NFA7 QAGU-4
+| ja/nein
+|
+|NFA8 QAGU-5
+| ja/nein
+|
+|NFA9 QAGU-6
+| ja/nein
+|
+|NFA10 QAGZ-1
+| ja/nein
+|
+|NFA11 QAGZ-2
+| ja/nein
+|
+|NFA12 QAGE-1
+| ja/nein
+|
+|NFA13 QAGE-2
+| ja/nein
+|
+|NFA14 QAGW-1
+| ja/nein
+|
+|NFA15 QAGW-2
+| ja/nein
+|
 
 |===
+
+
 
 == Unterschriften
 
 Hiermit wird die Abnahme vollständig / mit Mängeln bestätigt.
 
 Bemerkungen:
+
+
 
 [cols="1,1"]
 |===
