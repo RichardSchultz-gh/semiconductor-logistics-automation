@@ -5,13 +5,14 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
 from los_starten import get_all_lot_ids
+from config import config
 import datetime
 import random
 
 los_bewegen_bp = Blueprint('los_bewegen', __name__)
 
 def check_user_session():
-    return 'username' in session and session['username'] == 'user1'
+    return 'username' in session and session['username'] == config.USER1
 
 @los_bewegen_bp.route("/main/los_bewegen", methods=["GET"])
 def los_bewegen_page():

@@ -4,6 +4,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 from mapper import Entities
 from database_connection import get_database_url
+from config import config
 
 entities_bp = Blueprint('entities', __name__, url_prefix='/main')
 
@@ -15,7 +16,7 @@ Session = sessionmaker(bind=engine)
 
 # Funktion zur Überprüfung der Benutzeranmeldung
 def check_user_session():
-    return 'username' in session and session['username'] in ['user1', 'user2']
+    return 'username' in session and session['username'] in [config.USER1, config.USER2]
 
 @entities_bp.route("/entities", methods=["GET", "POST"])
 def entities_index():

@@ -4,14 +4,15 @@ from mapper import Lot, Tool, PTime
 from database_connection import get_database_url
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-import datetime
 from sqlalchemy.ext.declarative import declarative_base
+from config import config
 import random
+import datetime
 
 los_bearbeiten_bp = Blueprint('los_bearbeiten', __name__)
 
 def check_user_session():
-    return 'username' in session and session['username'] == 'user1'
+    return 'username' in session and session['username'] == config.USER1
 
 @los_bearbeiten_bp.route("/main/los_bearbeiten", methods=["GET"])
 def los_bearbeiten_page():

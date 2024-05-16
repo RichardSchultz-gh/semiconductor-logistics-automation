@@ -5,13 +5,14 @@ from database_connection import get_database_url
 from sqlalchemy import create_engine, Table, Column, Integer, String, MetaData
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
+from config import config
 import datetime
 
 los_starten_bp = Blueprint('los_starten', __name__)
 
 # Funktion zur Überprüfung der Benutzeranmeldung
 def check_user_session():
-    return 'username' in session and session['username'] in ['user1', 'user2']
+    return 'username' in session and session['username'] in [config.USER1, config.USER2]
 
 @los_starten_bp.route("/main/los_starten", methods=["GET"])
 def los_starten_page():

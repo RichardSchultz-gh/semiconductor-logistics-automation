@@ -5,13 +5,13 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 from mapper import Tool, Lot
 from database_connection import get_database_url
-
+from config import config
 
 main_bp = Blueprint('main', __name__)
 
 @main_bp.route('/main', methods=['GET'])
 def main():
-    if 'username' in session and session['username'] == 'user1':
+    if 'username' in session and session['username'] == config.USER1:
         DATABASE_URL = get_database_url()
         engine = create_engine(DATABASE_URL)
         Base = declarative_base()
@@ -53,7 +53,7 @@ def main():
 
 @main_bp.route('/main2', methods=['GET'])
 def main2():
-    if 'username' in session and session['username'] == 'user2':
+    if 'username' in session and session['username'] == config.USER2:
         DATABASE_URL = get_database_url()
         engine = create_engine(DATABASE_URL)
         Base = declarative_base()
