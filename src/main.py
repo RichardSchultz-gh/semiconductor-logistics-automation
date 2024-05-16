@@ -46,7 +46,7 @@ def main():
 
         #TODO: Moves Per Our
 
-        return render_template("main.html", username=session['username'], toolsanzahl=toolsanzahl, toolsidle=toolsidle, toolsprod=toolsprod, toolsmaint=toolsmaint, toolsdown=toolsdown, WIPA=wipa, lotsfin=c_fin, lotsopcomp=c_opcomp, lotshold=c_hold)
+        return render_template("main.html", username=session['username'], toolsanzahl=toolsanzahl, toolsidle=toolsidle, toolsprod=toolsprod, toolsmaint=toolsmaint, toolsdown=toolsdown, WIPA=wipa, lotsfin=c_fin, lotsopcomp=c_opcomp, lotshold=c_hold, appname = config.APP_NAME)
     else:
         return "Unauthorized", 401  # Zeigen Sie eine Fehlermeldung oder eine Umleitung an
 
@@ -86,6 +86,6 @@ def main2():
             c_fin += lot.pieces
         session_d.close()
 
-        return render_template("main.html", username=session['username'], toolsanzahl=toolsanzahl, toolsidle=toolsidle, toolsprod=toolsprod, toolsmaint=toolsmaint, toolsdown=toolsdown, WIPA=wipa, lotsfin=c_fin, lotsopcomp=c_opcomp, lotshold=c_hold)
+        return render_template("main.html", username=session['username'], toolsanzahl=toolsanzahl, toolsidle=toolsidle, toolsprod=toolsprod, toolsmaint=toolsmaint, toolsdown=toolsdown, WIPA=wipa, lotsfin=c_fin, lotsopcomp=c_opcomp, lotshold=c_hold, appname = config.APP_NAME)
     else:
         return "Unauthorized", 401  # Zeigen Sie eine Fehlermeldung oder eine Umleitung an

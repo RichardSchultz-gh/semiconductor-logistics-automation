@@ -1,5 +1,7 @@
 # config.py
 class Config:
+    # Name der Applikation
+    APP_NAME = "Frau Holle"
     # Datenbank Konfiguration
     USERNAME = "se-project"
     PASSWORD = "se-project"
