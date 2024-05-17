@@ -107,26 +107,21 @@ image::images/coverage_uc3_tid2.png[]
 | *Zweck* | Los bearbeiten (manuell) prüfen
 | *Testart* | manuell, Positiv-Test
 | *Vorbedingungen* | 
- - Fertigungsleiter oder Mitarbeiter ist in der Web-Anwendung angemeldet
+ - Fertigungsleiter ist in der Web-Anwendung angemeldet
  +
  - der Button "Los bearbeiten" wurde angeklickt, sodass die Eingabemaske erscheint
 +
  - Lose befindet sich im Zustand WAIT und zugehörige Maschinen im Zustand IDLE
 | *Testdurchführung* | 
- 1. 
+ 1. Auswahl eines Loses im Zustand WAIT im Drop-Down-Menü.
   +
- 2. Der Testcase legt ein Test-Los-1 in der Datenbank im Zustand WAIT an und legt sich schlafen -> ein erster Zeitstempel für ENTEROPER ensteht
+ 2. Drücken des Buttons "bearbeiten"
  +
- 3. Der Testcase legt ein Test-Los-2 in der Datenbank im Zustand WAIT an und legt sich schlafen -> ein zweiter Zeitstempel für ENTEROPER entsteht
+ 3. Abgleich des Los- und Maschinenzustands
 +
- 4. Der Zustand IDLE für das jeweilige Test-Tool gesetzt
- +
- 5. Im Anschluss wird der Zustand des Test-Loses 1 geprüft
- + 
-  Abgleich des Los- und Maschinenzustands
 | *Nachbedingungen* | 
- Der Test gilt als erfolgreich, wenn das Test-Los-1 für die Bearbeitung ausgewählt worden ist (FiFo-Prinzip) und sich folglich im Zustand PROC befindet.
-| *Eingabedaten* | Zwei Test-Lose mit TestProductA aus den Testdatensätzen im Zustand WAIT auf RouteA und Operation 0100.
+ Der Test gilt als erfolgreich, wenn die SUCCESS-Page erscheint und sich das Los und die Maschine im Zustand PROC befindet
+| *Eingabedaten* | /
 | *Ergebnis* | PASS
 | *To-dos* | /
 | *Korrekturstatus* | /
