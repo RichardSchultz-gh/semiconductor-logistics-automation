@@ -212,3 +212,13 @@ th, td {
 #borderless td{
     border: none;
 }
+
+#lascl, #ldescl, #zascl, #zdescl, #tascl, #tdescl, #sascl, #sdescl{
+    display: inline-block;
+}
+
+input[type="radio"] {
+    margin-right: 10px;
+    width: 16px; /* Breite des Radio-Buttons */
+    height: 16px; /* Höhe des Radio-Buttons */
+}

@@ -1,13 +1,15 @@
 # login.py
 from flask import Blueprint, render_template, request, jsonify, session, redirect, url_for
 from werkzeug.security import check_password_hash, generate_password_hash
+from config import config
 
 login_bp = Blueprint('login', __name__)
 
 # Dummy-Benutzerdaten mit gehashten Passwörtern
+# aus config.py Daten lesen
 users = {
-    'user1': generate_password_hash('pass1'),  # Passwort: pass1
-    'user2': generate_password_hash('pass2'),  # Passwort: pass2
+    config.USER1: generate_password_hash(config.PASSWORD_USER1),
+    config.USER2: generate_password_hash(config.PASSWORD_USER2),
 }
 
 @login_bp.route("/", methods=["GET"])
@@ -17,14 +19,14 @@ def login():
 @login_bp.route('/login_check', methods=['POST'])
 def login_check():
     data = request.json
-    print(data)  # Debugging-Anweisung
+    #print(data)  # Debugging-Anweisung
     if not data:
         return jsonify({'status': 'error', 'message': 'No data provided'})
 
     username = data.get('username')
     password = data.get('password')
-    print("Username:", username)  # Debugging-Anweisung
-    print("Password:", password)  # Debugging-Anweisung
+    #print("Username:", username)  # Debugging-Anweisung
+    #print("Password:", password)  # Debugging-Anweisung
 
     if not username or not password:
         return jsonify({'status': 'error', 'message': 'Username or password missing'})

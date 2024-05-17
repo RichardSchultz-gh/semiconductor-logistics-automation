@@ -1,22 +1,22 @@
-= Benutzeranleitung für Herr Ringel
+= Benutzeranleitung (14/05/2024)
 
 * Applikation erreichbar im Verzeichnis: _~/Desktop/i04-projekt-frau-holle_
 * per Terminal _python app.py_ ausführen
 * lokaler Testserver mit Applikation unter **http://127.0.0.1:5000** erreichbar
-* Login-Daten (vorrübergehend):
+* **Login-Daten (vorrübergehend):**
 . Fertigungsleiter: user1 pass1
 . Mitarbeiter: user2 pass2
-* Zustand der Datenbank:
+* **Zustand der Datenbank:**
 . Testdaten eingefügt in Form von Lot der ID="TestLot" und dem Produkt "TestProductA", welches vollständigen Produktionsablauf simuliert
 . Produkt "2009-MF" auch mit vollständigen Produktionsablauf, zu welchem bereits sich im Bearbeitungsprozess befindliche Lose hinzugefügt wurden
 . für Produkte "A100" und "B200" fehlen noch teils Daten für vollständigen Produktionsablauf
-* Nachvollziehbarkeit:
+* **Nachvollziehbarkeit:**
 . Nachvollziehbarkeit des Timers durch Einsehen der Log-Datei unter _timer_log/log.txt_
 . Nachvollziehbarkeit der manuellen Funktionen, ausgelöst durch die Buttons, mittels der Tabellen in der Applikation
-* weitergehende Nachvollziehbarkeit mittels Einsicht der Datenbank mit folgender Eingabe in Terminal: 
-. _psql_
+* weitergehende Nachvollziehbarkeit mittels **Einsicht der Datenbank** mit folgender Eingabe in Terminal: 
+. _psql_ (zu verbindende Datenbank inkl. User und Passwort bereits als Standard festgelegt)
 . Verlassen mittels _\q_
-* Umgesetzte Funktionalität:
+* **Umgesetzte Funktionalität:**
 . UseCase 1: Los starten
 . UseCase 2: Los bewegen
 . UseCase 3: Los bearbeiten

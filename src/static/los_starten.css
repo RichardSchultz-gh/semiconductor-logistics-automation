@@ -238,3 +238,18 @@ th, td {
     /*in Mitte*/
     text-align: center;
 }
+
+#asc, #desc {
+    /*in Mitte*/
+    text-align: center;
+}
+
+#lascl, #ldescl, #zascl, #zdescl, #tascl, #tdescl {
+    display: inline-block;
+}
+
+input[type="radio"] {
+    margin-right: 10px;
+    width: 16px; /* Breite des Radio-Buttons */
+    height: 16px; /* Höhe des Radio-Buttons */
+}
