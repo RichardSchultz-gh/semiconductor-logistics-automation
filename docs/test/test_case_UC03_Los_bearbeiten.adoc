@@ -3,7 +3,7 @@
 *Tests mit Fokus auf folgende Funktionalitäten:*
 
 * Los bearbeiten (manuell + Timer) und sauberes Setzen der Maschinen- und Loszustände
-* Test auf spezifische Fehlerfälle (z.B. keine Maschine verfügbar)
+* Tests auf spezifische Fehlerfälle (z.B. keine Maschine verfügbar)
 
 '''
 |===
@@ -80,7 +80,7 @@ image::images/coverage_uc3_tid2.png[]
  - Fertigungsleiter ist in der Web-Anwendung angemeldet
  +
  - der Button "Los bearbeiten" wurde angeklickt, sodass die Eingabemaske erscheint
-+
+ +
  - Lose befindet sich im Zustand WAIT und zugehörige Maschinen im Zustand IDLE
 | *Testdurchführung* | 
  1. Auswahl eines Loses im Zustand WAIT im Drop-Down-Menü.
@@ -120,7 +120,7 @@ image::images/coverage_uc3_tid2.png[]
 | *Korrekturstatus* | /
 |===
 
-.UC3 TID4: korrekte FAILURE-Page
+.UC3 TID4: korrekte Failure-Page
 image::images/TC_UC3_TID4.png[]
 
 '''
@@ -148,5 +148,5 @@ image::images/TC_UC3_TID4.png[]
 | *Korrekturstatus* | /
 |===
 
-.UC3 TID5: korrekte FAILURE-Page
+.UC3 TID5: korrekte Failure-Page
 image::images/TC_UC3_TID5.png[]
