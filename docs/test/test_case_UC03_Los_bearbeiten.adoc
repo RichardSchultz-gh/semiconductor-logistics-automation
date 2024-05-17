@@ -57,7 +57,6 @@ image::images/coverage_uc3_tid1.png[]
  4. Der Zustand IDLE für das jeweilige Test-Tool gesetzt
  +
  5. Im Anschluss wird der Zustand des Test-Loses 1 geprüft
- + 
   Abgleich des Los- und Maschinenzustands
 | *Nachbedingungen* | 
  Der Test gilt als erfolgreich, wenn das Test-Los-1 für die Bearbeitung ausgewählt worden ist (FiFo-Prinzip) und sich folglich im Zustand PROC befindet.
@@ -89,7 +88,6 @@ image::images/coverage_uc3_tid2.png[]
  2. Drücken des Buttons "bearbeiten"
  +
  3. Abgleich des Los- und Maschinenzustands
-+
 | *Nachbedingungen* | 
  Der Test gilt als erfolgreich, wenn die SUCCESS-Page erscheint und sich das Los und die Maschine im Zustand PROC befindet
 | *Eingabedaten* | /
@@ -106,7 +104,7 @@ image::images/coverage_uc3_tid2.png[]
  - Fertigungsleiter ist in der Web-Anwendung angemeldet
  +
  - der Button "Los bearbeiten" wurde angeklickt, sodass die Eingabemaske erscheint
-+
+ +
  - Lose befindet sich im Zustand WAIT und zugehörige Maschine nicht im Zustand IDLE
 | *Testdurchführung* | 
  1. Auswahl eines Loses im Zustand WAIT im Drop-Down-Menü.
@@ -114,7 +112,6 @@ image::images/coverage_uc3_tid2.png[]
  2. Drücken des Buttons "bearbeiten"
  +
  3. Abgleich des Loszustands
-+
 | *Nachbedingungen* | 
  Der Test gilt als erfolgreich, wenn die FAILURE-Page erscheint und das Los nicht bearbeitet werden konnte
 | *Eingabedaten* | /
@@ -122,6 +119,10 @@ image::images/coverage_uc3_tid2.png[]
 | *To-dos* | /
 | *Korrekturstatus* | /
 |===
+
+.UC3 TID4: korrekte FAILURE-Page
+image::images/TC_UC3_TID4.png[]
+
 '''
 |===
 | *Test-ID* | 5 
@@ -139,7 +140,6 @@ image::images/coverage_uc3_tid2.png[]
  2. Drücken des Buttons "bearbeiten"
  +
  3. Abgleich des Loszustands
-+
 | *Nachbedingungen* | 
  Der Test gilt als erfolgreich, wenn die FAILURE-Page erscheint und das Los nicht bearbeitet werden konnte
 | *Eingabedaten* | /
@@ -147,3 +147,6 @@ image::images/coverage_uc3_tid2.png[]
 | *To-dos* | /
 | *Korrekturstatus* | /
 |===
+
+.UC3 TID5: korrekte FAILURE-Page
+image::images/TC_UC3_TID5.png[]
