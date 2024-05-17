@@ -49,12 +49,14 @@ image::images/coverage_uc2_tid1.png[]
 | *Testdurchführung* | 
  1. Der Textcase erhält die Los-ID eines zuvor in die Datenbank eingepflegten Test-Loses
   +
-2. Ausführung des Moduls TC_UC2_TID2.py
+2. Eingabe der optionalen Operation und der Ausführungswahrscheinlichkeit in die jeweiligen Variablen
   +
-3. Nun durchläuft das Test-Los 20 Mal das Bewegen vor einer optionalen Operation. Die jeweiligen Operations werden ausgegeben.
+3. Ausführung des Moduls TC_UC2_TID2.py 
+  +
+4. Nun durchläuft das Test-Los 100 Mal das Bewegen vor einer optionalen Operation. Die jeweiligen Operations werden ausgegeben.
   +
 | *Nachbedingungen* | 
-Bei erfolgreicher Testausführung wird das Los mit einer bestimmten Wahrscheinlichkeit auf die optionale Operation bewegt.
+Bei erfolgreicher Testausführung wird das Los mit einer bestimmten Wahrscheinlichkeit auf die optionale Operation bewegt. Der Test gilt als bestanden, wenn die theoretische Ausführungswahrscheinlichkeit und die tatsächliche Ausführungswahrscheinlichkeit ein Delta kleiner 10% aufweist.
   +
 | *Eingabedaten* | TestProductA aus den Testdatensätzen im Zustand OP_COMP auf RouteA und Operation 0200.
 | *Ergebnis* | PASS
