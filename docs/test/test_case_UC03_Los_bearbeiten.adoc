@@ -90,7 +90,7 @@ image::images/coverage_uc3_tid2.png[]
  3. Abgleich des Los- und Maschinenzustands
 | *Nachbedingungen* | 
  Der Test gilt als erfolgreich, wenn die SUCCESS-Page erscheint und sich das Los und die Maschine im Zustand PROC befindet
-| *Eingabedaten* | /
+| *Eingabedaten* | Beliebiges Los, welches den Vorbedingungen entspricht
 | *Ergebnis* | PASS
 | *To-dos* | /
 | *Korrekturstatus* | /
@@ -114,7 +114,7 @@ image::images/coverage_uc3_tid2.png[]
  3. Abgleich des Loszustands
 | *Nachbedingungen* | 
  Der Test gilt als erfolgreich, wenn die FAILURE-Page erscheint und das Los nicht bearbeitet werden konnte
-| *Eingabedaten* | /
+| *Eingabedaten* | Beliebiges Los, welches den Vorbedingungen entspricht
 | *Ergebnis* | PASS
 | *To-dos* | /
 | *Korrekturstatus* | /
@@ -142,7 +142,7 @@ image::images/TC_UC3_TID4.png[]
  3. Abgleich des Loszustands
 | *Nachbedingungen* | 
  Der Test gilt als erfolgreich, wenn die FAILURE-Page erscheint und das Los nicht bearbeitet werden konnte
-| *Eingabedaten* | /
+| *Eingabedaten* | Beliebiges Los, welches den Vorbedingungen entspricht
 | *Ergebnis* | PASS
 | *To-dos* | /
 | *Korrekturstatus* | /
