@@ -1,0 +1,51 @@
+= Teil 1: Gruppenleistung
+
+
+== Notizen:
+
+Erfolge:
+    1 arbeitsweise bei der implemention -> Prozess des fertigstellens eines usecases
+    -> bearbeitung (mit nachfragen) pullrequest pullrequest bearbeiten implementierung fertig testing starten tesing anmerkungen umsetzen finalisieren 
+    -> guter flow und ablauf im Team und gute zusammenarbeit 
+    2 keiner hatte vorher erfahrungen mit den ganzen Techniken/Sprachen etc. und wir haben uns gut das wissen angeeignet
+    bzw. der erfolg liegt im aneignungsprozess der techniken, dem beschäftigen mit neuen und dem verständnis der techniken
+    die man nutzt und als neue kompetenz jetzt mit nimmt
+    3 
+
+Misserfolge:
+    1 Kommunikation zu beginn (Archtiektur/Development): keine kommunikation 
+    -> nicht zusammengearbeitet -> nicht zusammenpassende ergebnisse -> mehr arbeit
+    2 verteilung des workload 
+    -> es hatten z.T. einige immer mehr gemacht als die anderen (bsp. nils al
+    3 fehlender wissenstransfer zwischen den rollen 
+    -> beispiel: nils musste sich nochmal komplett in die usecases einlesen um die logik etc zu verstehen um die implementierung dann starten zu können, 
+    oder Paul musste sich um das testing zu starten in den code rein arbeiten. da wäre ein "Abhol"Meeting gut gewesen, 
+    wo der vorarbeiter den nacharbeiter erklärt was getan wurde und fragen beantwortet.( Oder eine noch bessere dauerhafte wissenstransfergewährleistung 
+    wo alle immer überall wissen was abgeht, wobei das bei größeren projekten schwer ist. ) 
+    Dadurch ging Zeit und Aufwand verloren + irgendwie auch wissensverlust, da sich Sachen mehrmals erschlossen werden mussten + mehr spielraum für fehler
+
+
+
+
+== TOP 3 Erfolgen
+
+=== Erfolg 1
+
+
+=== Erfolg 2
+
+
+=== Erfolg 3
+
+
+== TOP 3 Misserfolge
+
+=== Misserfolg 1
+
+
+=== Misserfolg 2
+
+
+=== Misserfolg 3
+
+

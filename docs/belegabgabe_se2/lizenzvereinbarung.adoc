@@ -1,0 +1,64 @@
+= Lizenzvereinbarung
+
+== Projektangaben
+Thema: Modell eines automatisierten Fabrikbetriebs 
+
+Zeitraum: WS23/24 - SS24
+
+GitHub Repository: https://github.com/leni04/i04-projekt-frau-holle
+
+== Vereinbarung
+
+Zwischen
+
+* Nils Generlich
+* Yannik-Joel Herrchen
+* Nico Kroll
+* Paul Marx
+* Richard Schultz
+* Marlene Winter
+
+von der Hochschule für Technik und Wirtschaft Dresden (nachfolgend „Team“ genannt)
+
+und 
+
+* Robert Ringel
+
+von der Hochschule für Technik und Wirtschaft Dresden (nachfolgend „Auftragsgeber“)
+
+wird für das Softwaresystem
+
+* Modell eines automatisierten Fabrikbetriebes (nachfolgend „Software“ genannt)
+
+folgendes vereinbart:
+
+
+=== Lizenzvereinbarung
+
+*MIT-Lizenz*
+
+Copyright (c) 2024 Team I04: Modell eines automatisierten Fabrikbetriebs
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+=== Haftungsausschluss
+
+Das Team lehnt hiermit jegliche Haftungsansprüche ab, die im Zusammenhang mit der Software entstehen. Es wird keine Haftung für Schäden, die aus der Verwendung oder dem Betrieb der Software entstehen, übernommen. 
+
+=== Ausschluss zukünfiger Unterstützung
+
+Für die Software wird vom Team nach der Übergabe keinerlei Unterstützung angeboten. Es werden keine neuen Funktionen oder Fehlerbehebungen an der Software umgesetzt. 
+
+***
+
+
+Mit meiner Unterschrift erkäre ich mich mit allen obenstehend aufgeführten Vereinbarungen einverstanden.
+
+
+
+
+

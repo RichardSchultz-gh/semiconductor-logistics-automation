@@ -1,0 +1,60 @@
+= Iteration Plan 07: {project-name}
+Vorname Nachname <email@domain.org>; Vorname2 Nachname2 <email2@domain.org>; Vorname3 Nachname3 <email3@domain.org>
+{localdatetime}
+include::../_includes/default-attributes.inc.adoc[]
+// Platzhalter für weitere Dokumenten-Attribute
+
+
+== Meilensteine
+//Meilensteine zeigen den Ablauf der Iteration, wie z.B. den Beginn und das Ende, Zwischen-Meilensteine, Synchronisation mit anderen Teams, Demos usw.
+
+[%header, cols="3,1"]
+|===
+| Meilenstein | Datum
+
+| Beginn der Iteration | 06.05.
+| Meeting Auftragsgeber | 14.05.
+| Ende der Iteration | 17.05.
+|===
+
+
+== Wesentliche Ziele
+//Nennen Sie 1-5 wesentliche Ziele für die Iteration.
+
+* Fertigstellung UC02
+* Fertigstellung UC03
+* Testing UC02&UC03
+* Anbinden an HTW Netz
+* Übergabe an Ringel
+
+
+== Aufgabenzuordnung
+//Dieser Abschnitt sollte einen Verweis auf die Work Items List enthalten, die die für diese Iteration vorgesehenen Aufgaben dokumentiert sowie die Zuordnung dieser Aufgaben zu Teammitgliedern. Alternativ können die Aufgaben für die Iteration und die Zuordnung zu Teammitgliedern in nachfolgender Tabelle dokumentiert werden - je nach dem, was einfacher für die Projektbeteiligten einfacher zu finden ist.
+
+Die in dieser Iteration geplanten Aufgaben sind in der Work Items List dargestellt (hier Verweis einfügen).
+
+Nils: Bearbeitung von Pull requests, Reaktion auf Testing
+
+Richard: Anbinden ans Netz der HTW
+
+Paul: Testing UC01 - UC03
+
+Nico: Implementierung UC02, GUI UC03
+
+Yannik: Implementierung UC03
+
+
+== Assessment
+//In diesem Abschnitt werden die Ergebnisse und Maßnahmen der Bewertung erfasst und kommuniziert. Die Bewertung wird üblicherweise am Ende jeder Iteration durchgeführt. Wenn Sie diese Bewertungen nicht machen, ist das Team möglicherweise nicht in der Lage, die eigene Arbeitsweise ("Way of Working") zu verbessern.
+
+Die Anmerungen aus dem letzten Auftragsgebermeeting wurden bearbeitet. 
+
+UC02 wurde mit Hilfe von Nils implementiert und getestet. Das Ziel der Fertigstellung von UC02 wurde damit erstellt.
+Es lässt sich hier der Prozess (wie bein der Bearbeitung von UC0) loben. Nico hat den Use Case eigenständig implementiert. Bei Fragen und Problemen hat er sich Hilfe geholt.
+Nils hat diese geleistet. Nach Implemention des Use Cases wurde es als Pull request hochgeladen. Nils hat sich das pull request angeschaut und akzeptiert. Darauf hin  ist Paul ins Testing des Use Cases übergegangen. Die Anmerkungen, die daraus entstanden sind, wurden zügig bearbeitet.
+Dieser Arbeitsflow ist sehr gut und fordert die Produktivität desa Teams, da man durch klare Aufgaben und Aufgabenverteilung zeit spart, da man nicht bis zum nächten Teammeeting warten muss, bis es neue Aufgaben gibt, sondern man reagiert dirket auf das geschehen des Projektes. Dafür ist es wichtig, dass der Arbeitsflow klar dargestellt ist und dadurch alle wissen, waas wann zu tun ist. 
+Das Projektmanagemant muss nur noch die Aufgaben zur Implemention verteilen und dann nur noch verfolgen, ob der Arbeitsprozess eingehalten wird. Anhand der Bearbeitung dieses Use Cases (und UC01) lässt sich erkennen, dass dies der Fall im team ist.
+
+Die Implemention von UC03 verlief weniger erfolgreich. Yannik konnte das Use Cases nur teilweise alleine implementieren und brauchte starke Nacharbeit. Dies hat zu Mehraufwand im Team geführt. Letzendlich wurde das Use Cases jedoch fertiggestellt und von Paul getestet. Anmerkungen zum testing wurden bereits bearbeitet.
+
+Am 14.05. fand ein Meeting mit Ringel statt. Dort wurden die UC01-Uc03 vorgestellt und Hernn Ringel zum Testing übergeben. Aus dem Meeting sind zudem die Aufgaben und das Vorgehen für dioe folgenden Wochen entstanden.

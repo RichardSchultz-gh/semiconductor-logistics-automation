@@ -1,0 +1,33 @@
+= Eigenleistung Marlene
+
+
+== Notizen:
+    Ausgangssituation/Problemlage
+    Lösungsansatz
+    Erfolg/Misserfolg und Begründung für dieses Ergebnis 
+
+Umfang: 
+    1 bis max. 2 Seiten 
+
+Bewertungskriterien:
+    − Fachlich korrekte Beschreibung der Aufgabenstellung / Herausforderung → Nutzung der Begriffe, Konzepte, Methoden aus Vorlesung und Praktikum
+    − Referenzieren konkreter Code-Bestandteile, Modelle, Dokumente usw. aus dem Projekt
+
+Thema: Projektmanagement mit iterativem, agilem vorgesehenen
+
+Problemlage: Aufgaben- und Zeitmanagment in größeren Projekten von Teams über einen längeren zeitraum möglichst effektiv und effizient gestalten, 
+sodass die Wünsche des Auftragsgeber bestmöglich umgesetzt werden
+
+Lösungsansatz: agile und iterative Planung der Aufgaben, dadurch Risiken wie Missverständnisse und vor allem deren Auswirkungen verringern
+
+Mein Beitrag: Nutzung der Vorteile (hier würden dazu Beisppiele angeführt werden wo ich das in der Planung gemacht habe) der agilen, iterativen
+Planung bei Durchführung dieser. 
+- schnelles reagieren auf Anmerkungen vom Auftragsgeber (Beispiel)
+- ...
+
+Erfolge und Misserfolge aus Iterationsplänen suchen/analysieren.
+
+***
+
+
+
