@@ -168,7 +168,7 @@ th, td {
     font-size: 20px; /* Schriftgröße für Labels */
 }
 
-.form-abfragetabelle input[type="text"] {
+.form-abfragetabelle input[type="text"], #Lsort, #Tsort {
     width: 100%; /* Volle Breite der Textfelder */
     padding: 8px; /* Innenabstand für Textfelder */
     font-size: 16px; /* Schriftgröße für Textfelder */

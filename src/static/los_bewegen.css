@@ -115,7 +115,7 @@ th, td {
     font-size: 20px;
 }
 
-.form-abfragetabelle input[type="text"] {
+.form-abfragetabelle input[type="text"], #sort {
     width: 100%;
     padding: 8px;
     font-size: 16px;

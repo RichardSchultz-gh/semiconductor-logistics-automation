@@ -72,24 +72,18 @@
                     <td><button type="submit">Filtern</button></td>
                 </tr>
                 <tr>
-                    <td>Alphabetic<br>
-                        Sort:</td>
-                    <td><input type="radio" id="lasc" name="sort" value="lasc">
-                    <label for="lasc" id="lascl">LotID aufsteigend</label></td>
-                    <td></td>
-                    <td></td>
-                    <td><input type="radio" id="zasc" name="sort" value="zasc">
-                        <label for="zasc" id="zascl">Zustand aufsteigend</label></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td><input type="radio" id="ldesc" name="sort" value="ldesc">
-                        <label for="ldesc" id="ldescl">LotID absteigend</label></td>
-                    <td></td>
-                    <td></td>
-                    <td><input type="radio" id="zdesc" name="sort" value="zdesc">
-                        <label for="zdesc" id="zdescl">Zustand absteigend</label></td>
-                </tr>
+                    <td>
+                        <label for="sort" id="sortl">Alphanumeric <br> Sort:</label>
+                    </td>
+                    <td>
+                        <select id="sort" name="sort">
+                            <!--Optionen Filteroptionen-->
+                            <option value="lasc"> LotID aufsteigend</option>
+                            <option value="ldesc"> LotID absteigend</option>
+                            <option value="zasc"> Zustand aufsteigend</option>
+                            <option value="zdesc"> Zustand absteigend</option>
+                        </select>
+                    </td>
             </table>
         </form> 
     </div>

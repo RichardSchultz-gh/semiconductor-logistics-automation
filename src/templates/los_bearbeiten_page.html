@@ -109,24 +109,18 @@
                             <td><button type="submit" class="btn">Filtern</button></td>
                         </tr>
                         <tr>
-                            <td>Alphabetic<br>
-                                Sort:</td>
-                            <td><input type="radio" id="lasc" name="Lsort" value="lasc">
-                            <label for="lasc" id="lascl">LotID aufsteigend</label></td>
-                            <td></td>
-                            <td></td>
-                            <td><input type="radio" id="zasc" name="Lsort" value="zasc">
-                                <label for="zasc" id="zascl">Zustand aufsteigend</label></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td><input type="radio" id="ldesc" name="Lsort" value="ldesc">
-                                <label for="ldesc" id="ldescl">LotID absteigend</label></td>
-                            <td></td>
-                            <td></td>
-                            <td><input type="radio" id="zdesc" name="Lsort" value="zdesc">
-                                <label for="zdesc" id="zdescl">Zustand absteigend</label></td>
-                        </tr>
+                            <td>
+                                <label for="Lsort" id="sortl">Alphanumeric <br> Sort:</label>
+                            </td>
+                            <td>
+                                <select id="Lsort" name="Lsort">
+                                    <!--Optionen Filteroptionen-->
+                                    <option value="lasc"> LotID aufsteigend</option>
+                                    <option value="ldesc"> LotID absteigend</option>
+                                    <option value="zasc"> Zustand aufsteigend</option>
+                                    <option value="zdesc"> Zustand absteigend</option>
+                                </select>
+                            </td>
                     </table>
                 </form> 
             </div>
@@ -179,24 +173,18 @@
                             <td><button type="submit" class="btn">Filtern</button></td>
                         </tr>
                         <tr>
-                            <td>Alphabetic<br>
-                                Sort:</td>
-                            <td><input type="radio" id="tasc" name="Tsort" value="tasc">
-                            <label for="tasc" id="tascl">Tool aufsteigend</label></td>
-                            <td></td>
-                            <td></td>
-                            <td><input type="radio" id="sasc" name="Tsort" value="sasc">
-                                <label for="sasc" id="sascl">Zustand aufsteigend</label></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td><input type="radio" id="tdesc" name="Tsort" value="tdesc">
-                                <label for="tdesc" id="tdescl">Tool absteigend</label></td>
-                            <td></td>
-                            <td></td>
-                            <td><input type="radio" id="sdesc" name="Tsort" value="sdesc">
-                                <label for="sdesc" id="sdescl">Zustand absteigend</label></td>
-                        </tr>
+                            <td>
+                                <label for="Tsort" id="sortl">Alphanumeric <br> Sort:</label>
+                            </td>
+                            <td>
+                                <select id="Tsort" name="Tsort">
+                                    <!--Optionen Filteroptionen-->
+                                    <option value="tasc"> Tool aufsteigend</option>
+                                    <option value="tdesc"> Tool absteigend</option>
+                                    <option value="sasc"> Zustand aufsteigend</option>
+                                    <option value="sdesc"> Zustand absteigend</option>
+                                </select>
+                            </td>
                     </table>
                 </form> 
             </div>
