@@ -1,12 +1,12 @@
 # main.py
-from flask import Blueprint, render_template, request, redirect, url_for,session
+import datetime
+from flask import Blueprint, render_template, request, redirect, url_for, session
 from sqlalchemy import create_engine, Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 from mapper import Tool, Lot
 from database_connection import get_database_url
 from config import config
-
 main_bp = Blueprint('main', __name__)
 
 @main_bp.route('/main', methods=['GET'])
@@ -44,9 +44,10 @@ def main():
             c_fin += lot.pieces
         session_d.close()
 
-        #TODO: Moves Per Our
+        #Moves Per Hour aktualiisieren
+        mvsphr=get_moves_per_hour()
 
-        return render_template("main.html", username=session['username'], toolsanzahl=toolsanzahl, toolsidle=toolsidle, toolsprod=toolsprod, toolsmaint=toolsmaint, toolsdown=toolsdown, WIPA=wipa, lotsfin=c_fin, lotsopcomp=c_opcomp, lotshold=c_hold, appname = config.APP_NAME)
+        return render_template("main.html", username=session['username'], toolsanzahl=toolsanzahl, toolsidle=toolsidle, toolsprod=toolsprod, toolsmaint=toolsmaint, toolsdown=toolsdown, WIPA=wipa, lotsfin=c_fin, lotsopcomp=c_opcomp, lotshold=c_hold, appname = config.APP_NAME, mvsphr_c=mvsphr)
     else:
         return "Unauthorized", 401  # Zeigen Sie eine Fehlermeldung oder eine Umleitung an
 
@@ -86,6 +87,23 @@ def main2():
             c_fin += lot.pieces
         session_d.close()
 
-        return render_template("main.html", username=session['username'], toolsanzahl=toolsanzahl, toolsidle=toolsidle, toolsprod=toolsprod, toolsmaint=toolsmaint, toolsdown=toolsdown, WIPA=wipa, lotsfin=c_fin, lotsopcomp=c_opcomp, lotshold=c_hold, appname = config.APP_NAME)
+        #Moves Per Hour aktualisieren
+        mvsphr=get_moves_per_hour()
+
+        return render_template("main.html", username=session['username'], toolsanzahl=toolsanzahl, toolsidle=toolsidle, toolsprod=toolsprod, toolsmaint=toolsmaint, toolsdown=toolsdown, WIPA=wipa, lotsfin=c_fin, lotsopcomp=c_opcomp, lotshold=c_hold, appname = config.APP_NAME, mvsphr_c=mvsphr)
     else:
         return "Unauthorized", 401  # Zeigen Sie eine Fehlermeldung oder eine Umleitung an
+
+def get_moves_per_hour():
+    DATABASE_URL = get_database_url()
+    engine = create_engine(DATABASE_URL)
+    Base = declarative_base()
+    Session = sessionmaker(bind=engine)
+    session_d = Session()
+    # Zeitstempel vor einer Stunde
+    timeminus1 = datetime.datetime.now() - datetime.timedelta(minutes=60)
+
+    # alle Lots,deren enteroper in den letzten 60 Minuten war
+    mvsphr = session_d.query(Lot).filter(Lot.enteroper >= timeminus1).count()
+    session_d.close()
+    return mvsphr
