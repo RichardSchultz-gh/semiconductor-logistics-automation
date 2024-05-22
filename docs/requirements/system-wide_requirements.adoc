@@ -33,6 +33,10 @@ zuzugreifen. Dafür ist eine Zuordnung aller Anwender zu Rollen und einem Login 
 
 ** Zu Überprüfungszwecken werden Daten durch das Ausführen von Funktionen eingefügt. Nach Neustart sind die Daten weiterhin erhalten.
 
+* SWFA-4: Das System muss eine Config-Datei bereitstellen, in der systemweite Informationen eingestellt werden können (z.B. Nutzerlogins).
+
+** Es wird geprüft, ob die Datenbankverbindung korrekt über die config-Datei eingestellt werden kann. Analog dazu wird geprüft, ob die Passwörter der jeweiligen Nutzerlogins über die config-Datei verändert werden können.
+
 
 == Qualitätsanforderungen für das Gesamtsystem
 //Qualitätsanforderungen repräsentieren das "URPS" im FURPS+ zu Klassifikation von Anforderungen
@@ -47,6 +51,8 @@ zuzugreifen. Dafür ist eine Zuordnung aller Anwender zu Rollen und einem Login 
 * QAGU-2: Die Gesamtheit der Interaktionselemente soll minimiert werden.
 
 ** Zur Überprüfung wird kontrolliert, dass keine Doppelbelegungen vorkommen, die den Nutzer verunsichern könnten. Jede Funktionalität von Buttons, Filtern oder Tabellen darf nur einmalig vorhanden sein.
+
+////
 
 * QAGU-3: Die Auswahl von Optionen oder die Filterung von Daten muss ohne Vorkenntnisse erfolgen können.
 
@@ -63,22 +69,26 @@ zuzugreifen. Dafür ist eine Zuordnung aller Anwender zu Rollen und einem Login 
 * QAGU-6: Das System muss verständliche Fehlermeldungen gewährleisten
 
 ** Zur Überprüfung werden beim manuellen Bearbeiten eines Loses falsche Eingaben getätigt. Die resultierenden Fehlermeldungen müssen es einem Testnutzer ermöglichen die Eingaben zu korrigieren.
+////
 
 
 === Zuverlässigkeit (Reliability)
 // Zuverlässigkeit beinhaltet die Fähigkeit des Produkts und/oder des Systems unter Stress und ungünstigen Bedingungen am laufen zu bleiben. Spezifizieren Sie Anforderungen für zuverlässige Akzeptanzstufen, und wie diese gemessen und evaluiert werden. Vorgeschlagene Themen sind Verfügbarkeit, Häufigkeit und Schwere von Fehlern und Wiederherstellbarkeit.
 
-* QAGZ-1: Das System darf durch einen Netzwerkausfall nicht beschädigt werden.
+* QAGZ-1: Das System muss bei einem Netzwerkausfall die Konsitenz der Daten gewährleisten und 
 
-** Zur Überprüfung wird ein Verbindungsabbruch beim Bewegen eines Loses erzwungen.
+** Zur Überprüfung wird ein Verbindungsabbruch erzwungen. 5 Minuten später wird die Verbindung wieder hergestellt. Ausgewählte Lose und Maschinen werden auf die Korrektheit ihrer Attribute und auf Vollständigkeit geprüft.  
 
+////
 * QAGZ-2: Es dürfen keine falschen Nutzernamen oder Passwörter eingegeben werden.
 
 ** Zur Überprüfung wird getestet, ob der Anwender in diesen Fällen mit einer entsprechenden Fehlermeldung zur Korrektur der Eingabe aufgefordert wird.
+////
 
-
+////
 === Effizienz (Performance)
 // Die Performanz Charakteristiken des Systems sollten in diesem Bereich ausgeführt werden. Beispiele sind Antwortzeit, Durchsatz, Kapazität und Zeiten zum Starten oder Beenden.
+
 
 * QAGE-1: Das System soll eine stabile Nutzung bei mehreren gleichzeitigen Nutzern gewährleisten.
 
@@ -89,6 +99,7 @@ zuzugreifen. Dafür ist eine Zuordnung aller Anwender zu Rollen und einem Login 
 ** Zur Überprüfung simuliert ein Testnutzer die Verwendung der Software. Gleichzeitig werden die Antwortzeiten bei gedrückten Buttons oder bei Abfragen aus Tabellen dokumentiert.
 
 //QAGE-3: Das System muss riesige Mengen (>10000) an Datensätzen abrufen, bearbeiten, importieren, exportieren und speichern können.
+////
 
 === Wartbarkeit (Supportability)
 // Dieser Bereich beschreibt sämtliche Anforderungen welche die Supportfähigkeit oder Wartbarkeit des zu entwickelnden Systems verbessern, einschließlich Anpassungsfähigkeit und Erweiterbarkeit, Kompatibilität, Skalierbarkeit und Anforderungen bezüglich der System Installation sowie Maß an Support und Wartbarkeit.
@@ -97,10 +108,11 @@ zuzugreifen. Dafür ist eine Zuordnung aller Anwender zu Rollen und einem Login 
 
 ** Zur Überprüfung wird die vorhandene Dokumentation auf Vollständigkeit und Verständlichkeit kontrolliert.
 
+////
 * QAGW-2: Das System muss kompatibel zu Chrome, Firefox, Edge und Safari sein.
 
 ** Zur Überprüfung wird die Web-Anwendung mit allen genannten Browsern aufgerufen und getestet.
-
+////
 
 == Zusätzliche Anforderungen
 
