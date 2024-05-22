@@ -44,11 +44,13 @@ zuzugreifen. Dafür ist eine Zuordnung aller Anwender zu Rollen und einem Login 
 === Benutzbarkeit (Usability)
 //Beschreiben Sie Anforderungen für Eigenschaften wie einfache Bedienung, einfaches Erlernen, Standards für die Benutzerfreundlichkeit, Lokalisierung (landesspezifische Anpassungen von Sprache, Datumsformaten, Währungen usw.)
 
+////
 * QAGU-1: Deskriptive Buttons sollen einfache Nutzerinteraktionen ermöglichen.
 
 ** Zur Überprüfung wird kontrolliert, ob aus der Beschreibung eines jeden Buttons eindeutig die jeweilige Funktionalität hervorgeht. 
+////
 
-* QAGU-2: Die Gesamtheit der Interaktionselemente soll minimiert werden.
+* QAGU-1: Die Gesamtheit der Interaktionselemente soll minimiert werden.
 
 ** Zur Überprüfung wird kontrolliert, dass keine Doppelbelegungen vorkommen, die den Nutzer verunsichern könnten. Jede Funktionalität von Buttons, Filtern oder Tabellen darf nur einmalig vorhanden sein.
 
