@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daten exportieren</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='port_data.css') }}">
+</head>
+<body>
+    <h1>Daten exportieren</h1>
+    <button onclick="goBack()" class="back-btn">Back</button>
+    <a id="backtoMainPage" class="main-btn"><button>Back to Main Page</button></a>
+    <br>
+    <hr>
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+
+        var username = "{{ username }}"; //aus Jinja2 Template
+        
+        var mainPageBtn = document.getElementById('backtoMainPage');
+        mainPageBtn.addEventListener('click', function() {
+            if (username === 'user1') {
+                //zurück zu main-Page
+                window.location.href = "{{ url_for('main.main') }}";
+            } else if (username === 'user2') {
+                //zurück zu main2
+                window.location.href = "{{ url_for('main.main2') }}";
+            }
+        });
+        function selectAll() {
+        var checkboxes = document.getElementsByName('lot_ids');
+        for (var i = 0; i < checkboxes.length; i++) {
+            checkboxes[i].checked = true;
+        }
+    }
+    </script>
+
+    
+    <div>
+        <form class="form-abfragetabelle" method="GET" action="{{ url_for('export_data.export_data_page') }}">
+            <table>
+                <tr>
+                    <td><label for="lot_id_f">Lot ID:</label></td>
+                    <td><input type="text" name="lot_id_f" id="lot_id_f" list="lot_ids"></td>
+                    <td><datalist id="lot_ids">
+                        {% for lotid in lotids %}
+                            <option value="{{ lotid }}">
+                        {% endfor %}
+                    </datalist></td>
+                    <td><label for="lot_state_f">Zustand:</label></td>
+                    <td><input type="text" id="lot_state_f" name="lot_state_f" list="lot_statess"></td>
+                    <td><datalist id="lot_statess">
+                        <option value="INIT"></option>
+                        <option value="PROC"></option>
+                        <option value="HOLD"></option>
+                        <option value="OP_COMP"></option>
+                        <option value="FIN"></option>
+                        <option value="WAIT"></option>
+                        <option value="SCRAP"></option>
+                    </datalist></td>
+                    
+                    <td>
+                        <label for="sort" id="sortl">Alphanumeric <br> Sort:</label>
+                    </td>
+                    <td>
+                        <select id="sort" name="sort">
+                            <!--Optionen Filteroptionen-->
+                            <option value="lasc"> LotID aufsteigend</option>
+                            <option value="ldesc"> LotID absteigend</option>
+                            <option value="zasc"> Zustand aufsteigend</option>
+                            <option value="zdesc"> Zustand absteigend</option>
+                        </select>
+                    </td>
+                    <td><button type="submit">Filtern</button></td>
+            </table>
+        </form>
+
+        <form class="table-container" method="POST" action="{{ url_for('export_data.export_to_csv') }}">
+            <table class="table">
+                <tr>                
+                    <button class="export-btn" type="submit">Export to CSV</button>
+                    <button class="select-btn" type="button" onclick="selectAll()">Select All</button>
+                </tr>
+                <thead>
+
+                    <tr>
+                        <th>Select</th>
+                        <th>Lot ID</th>
+                        <th>Priority</th>
+                        <th>Pieces</th>
+                        <th>State</th>
+                        <th>Product</th>
+                        <th>Route</th>
+                        <th>Oper</th>
+                        <th>Customer</th>
+                        <th>Order</th>
+                        <th>Due Date</th>
+                        <th>Start Date</th>
+                        <th>Enter Oper</th>
+                        <th>Proc Start</th>
+                        <th>Disp Tool</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for lot in lots %}
+                    <tr>
+                        <td><input type="checkbox" name="lot_ids" value="{{ lot.lotid }}"></td>
+                        <td>{{ lot.lotid }}</td>
+                        <td>{{ lot.priority }}</td>
+                        <td>{{ lot.pieces }}</td>
+                        <td>{{ lot.state }}</td>
+                        <td>{{ lot.product }}</td>
+                        <td>{{ lot.route }}</td>
+                        <td>{{ lot.oper }}</td>
+                        <td>{{ lot.customer }}</td>
+                        <td>{{ lot.order }}</td>
+                        <td>{{ lot.duedate }}</td>
+                        <td>{{ lot.startdate }}</td>
+                        <td>{{ lot.enteroper }}</td>
+                        <td>{{ lot.procstart }}</td>
+                        <td>{{ lot.disptool }}</td>
+                    </tr>
+                    {% endfor %}
+
+                </tbody>
+            </table>
+            
+        </form>
+    </div>
+</body>
+</html>

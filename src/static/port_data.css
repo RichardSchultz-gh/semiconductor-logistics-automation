@@ -1,0 +1,164 @@
+/* Allgemeine Stile */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 24px;
+}
+
+main {
+    display: flex;
+    justify-content: space-between;
+    margin: 40px;
+}
+
+#aktualisierenBtn {
+    margin-top: 20px;
+}
+
+.table-container{
+    display: inline-block;
+    height: 30em;
+    overflow-y: scroll;
+    }
+
+.table thead th {
+    position: sticky;
+    top: 0;
+    background-color: #333; /* Hintergrundfarbe für Tabellenüberschriften */
+    color: white; /* Textfarbe für Tabellenüberschriften */
+    z-index: 1;
+    width: 20%;
+}
+
+
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 0.1px solid #ffffff;
+    border-left: 0.1px solid #ffffff;
+    font-size: 20px;
+}
+    
+.back-btn, .select-btn, .export-btn, .main-btn button  {
+    background-color: #333;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: right;
+}
+
+.back-btn:hover, .select-btn:hover, .export-btn:hover, .main-btn button:hover {
+    background-color: #6f6f6f;
+}
+
+.main-btn {
+    display: block;
+    margin-bottom: 10px;
+    text-align: left;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.back-btn {
+    position: absolute;
+    top: 10px;
+    right: 180px;
+}
+
+.div3 table {
+    border: 1px solid black;
+    border-collapse: collapse;
+
+}
+
+.div3 th, .div3 td {
+    border: 1px solid black;
+    padding: 8px;
+
+}
+
+.div3 th {
+    background-color: #333;
+    color: white;
+}
+
+.form-abfragetabelle table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 2em;
+    margin-top: 5em;
+}
+
+.form-abfragetabelle td {
+    padding: 8px;
+    border: none;
+}
+
+.form-abfragetabelle label {
+    display: block;
+    font-size: 20px;
+}
+
+.form-abfragetabelle input[type="text"], #sort {
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.form-abfragetabelle button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.form-abfragetabelle button:hover {
+    background-color: #555;
+}
+
+.div3 {
+    flex: 1;
+    padding: 10px;
+    margin: 10px 10px 10px 20px;
+    text-align: right;
+}
+
+#borderless td{
+    border: none;
+}
+
+.container {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    text-align: center;
+    margin-top: 2em;
+
+}
+
+#lascl, #ldescl, #zascl, #zdescl{
+    display: inline-block;
+}
+
