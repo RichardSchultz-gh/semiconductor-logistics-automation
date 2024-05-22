@@ -23,7 +23,7 @@ def export_data_page():
         lotids = get_all_lot_ids()  # alle LotIDs aus Lot abrufen
         lot_id_filter = request.args.get('lot_id_f')
         lot_state_filter = request.args.get('lot_state_f')
-        sort_type_Lots = request.args.get('Lsort')
+        sort_type_Lots = request.args.get('sort')
 
         session_d = database_connection()
 
@@ -44,13 +44,13 @@ def export_data_page():
 
 
 def get_sort_order(model, sort_type):
-    if sort_type == 'id_asc':
+    if sort_type == 'lasc':
         return model.lotid.asc()
-    elif sort_type == 'id_desc':
+    elif sort_type == 'ldesc':
         return model.lotid.desc()
-    elif sort_type == 'state_asc':
+    elif sort_type == 'zasc':
         return model.state.asc()
-    elif sort_type == 'state_desc':
+    elif sort_type == 'zdesc':
         return model.state.desc()
     else:
         return model.lotid.asc()
