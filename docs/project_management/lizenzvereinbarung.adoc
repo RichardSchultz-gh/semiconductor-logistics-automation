@@ -24,7 +24,7 @@ und
 
 * Robert Ringel
 
-von der Hochschule für Technik und Wirtschaft Dresden (nachfolgend „Auftragsgeber“)
+von der Hochschule für Technik und Wirtschaft Dresden (nachfolgend „Auftragsgeber“ genannt)
 
 wird für das Softwaresystem
 
