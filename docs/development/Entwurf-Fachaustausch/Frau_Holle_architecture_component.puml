@@ -1,0 +1,36 @@
+@startuml component_diagram
+
+component(Middleware, "Middleware") {
+  component(Los_starten, "Los_starten.py")
+  component(Los_bewegen, "Los_bewegen.py")
+  component(Los_bearbeiten, "Los_bearbeiten.py")
+  component(Export_data, "Export_data.py")
+  component(Database_Connection, "database_connection.py")
+  component(Mapper, "mapper.py")
+}
+
+interface(Jinja2, "Jinja2")
+interface(HTTPS, "HTTPS")
+interface(SQLAlchemy, "SQLAlchemy")
+
+Component_Los_starten --> Interface_Jinja2 : Templates
+Component_Los_starten --> Interface_HTTPS : Webserver
+Component_Los_starten --> Interface_SQLAlchemy : Datenbank
+
+Component_Los_bewegen --> Interface_Jinja2 : Templates
+Component_Los_bewegen --> Interface_HTTPS : Webserver
+Component_Los_bewegen --> Interface_SQLAlchemy : Datenbank
+
+Component_Los_bearbeiten --> Interface_Jinja2 : Templates
+Component_Los_bearbeiten --> Interface_HTTPS : Webserver
+Component_Los_bearbeiten --> Interface_SQLAlchemy : Datenbank
+
+Component_Export_data --> Interface_Jinja2 : Templates
+Component_Export_data --> Interface_HTTPS : Webserver
+Component_Export_data --> Interface_SQLAlchemy : Datenbank
+
+Component_Database_Connection --> Interface_SQLAlchemy : Datenbank
+
+Component_Mapper --> Interface_SQLAlchemy : Datenbank
+
+@enduml
