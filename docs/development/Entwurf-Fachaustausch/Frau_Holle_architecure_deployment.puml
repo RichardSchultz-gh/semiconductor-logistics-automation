@@ -7,7 +7,7 @@ node "Client" {
 
 node "Web Server" {
     component "Web Application" {
-        [Web Application] -down-> [Jinja2]
+        [Web Application] -down-> [Jinja-2]
     }
     [Web Application] --> [Browser] : HTTPS
 }
@@ -23,7 +23,7 @@ node "Database Server" {
 }
 
 [Browser] --> [Web Application] : HTTPS
-[Web Application] --> [Middleware] : HTTPS
+[Web Application] <--> [Middleware] : Rest-API
 [Middleware] --> [Database] : SQLAlchemy
 
 
