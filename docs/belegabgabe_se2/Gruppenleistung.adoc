@@ -35,10 +35,20 @@ Dadurch ging Zeit und Aufwand verloren + irgendwie auch wissensverlust, da sich 
 
 == TOP 3 Erfolgen
 
-=== Erfolg 1
+=== Erfolg 1 -  Workflow
+
+Mit dem zweiten Projektteil im Sommersemester find die Implementierung der Use Cases an. Da man Code nicht einfach runterschreibt und ist dann abgabebereit, haben wir uns überlegt wie man den Workflow angehen kann. Dabei waren wir uns einig, dass durch Pull-Requests der Code überprüft werden muss, bevor er ins Repository aufgenommen wird. So kann man zum einen die Funktionalitäten checken und Fehler schon mal beheben, sodass der neue Code nicht den bisherigen außer Kraft setzt. (<- das muss anders formuliert sein.) Danach muss der Code getestet werden und die Anmerkungen, die aus dem Testing entstehen, müssen bearbeitet werden und dann wieder zum Testing gehen. Als Letztes wird die Implemention des Use Case dem Auftragsgeber vorgelegt. Anmerkungen daraus werden wieder nach dem Workflow behandelt. 
+
+Das Konzept eines Workflows, wie oben beschrieben, und eine erfolgreiche Umsetzung sind jedoch zwei unterschiedliche Dinge. 
+
+Als einen Erfolg im Projekt kann die Umsetzung des Workflows genannt werden. Die Teammitglieder haben sich an diesen Workflow gehalten und dynamisch Schritte wiederholt, wenn nötig. Es war den Mitgliedern klar, wer wann was tun muss. So wurden die Funktionen nach der Programmierung per Pull-Request hochgeladen, woraufhin diese von der zuständigen Person überprüft und übernommen (oder nicht übernommen) wurden. Wenn ein Use Case fertig war, wurde dies dem Team mitgeteilt und vorgestellt. Daraufhin hat sich das Testing von alleine angesprochen gefühlt und hat mit dem Testin gestartet. Dabei hätte die Projektleitung nicht einmal die Aufgabe "offiziell" in dem Moment ans Testing verteilen müssen, das entsprechende Mitglied hat sich bei der Fertigstellung der Use Cases direkt angesprochen gefühlt. 
+
+Dass das Team einen guten Workflow hat, wurde vor allem deutlich, als die Projektleitung für 1-2 Wochen krankheitsbedingt ausgefallen ist und nur sporadisch Dinge erledigen konnte. Während dieser Zeit waren die aktuellen Use Cases abgesprochen und die Teammitglieder haben fast komplett eigenständig die Use Cases fertiggestellt, also gecodet, geprüft und getestet, ohne dass die Projektleitung diese Einzelschritte jedes Mal neu zu weisen musste. Die Teammitglieder haben sich gegenseitig überprüft und vor allem geholfen.  
+
+Natürlich gab es ab und zu mal kleinere Probleme wo der Workflow nicht komplett umgesetzt wurde, aber im großen Ganzen hat das Team einen guten und effektiven Workflow entwickelt und umgesetzt. 
 
 
-=== Erfolg 2
+=== Erfolg 2 - Wissensaneignung
 
 
 === Erfolg 3
