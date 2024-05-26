@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, request, redirect, url_for, session
 from mapper import Lot, Tool, PTime, Workflow, ProdFlow
-from database_connection import get_database_url
+from database_connection import get_database_url, database_connection
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
@@ -194,13 +194,6 @@ def get_all_products():
     products = [product[0] for product in products]
     session.close()
     return products
-
-def database_connection():
-    DATABASE_URL = get_database_url()
-    engine = create_engine(DATABASE_URL)
-    Session = sessionmaker(bind=engine)
-    session_d = Session()
-    return session_d
 
 if __name__ == '__main__':
     los_bewegen_bp.run(debug=True)

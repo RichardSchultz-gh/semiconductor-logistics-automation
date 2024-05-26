@@ -1,0 +1,54 @@
+= Softwaredokumentation
+ifndef::docs-development[:docs-development: ../../docs/development]
+:imagesdir: {docs-development}/images
+
+== Allgemeine Informationen
+Die Softwaredokumentation beinhaltet die Beschreibung aller Klassen bzw. aller Dokumente und die darin enthaltenen Funktionen. Zusätzlich dazu, sind in jedem Python-Dokument die entsprechenden Funktionen und Methoden kommentiert.
+
+== Frontend
+Das Frontend ist in HTML, CSS und ein wenig in, in den HTML-Dateien eingebauten, JavaScript geschrieben. Es beinhaltet die Darstellung der Webseite und die Interaktion mit dem Benutzer. Betrieben wird das Frontend mit einem von Flask bereitgestellten Webserver, der die Anfragen an das Backend über die REST-API weiterleitet. Dynamische Inhalte in den HTML-Dateien werden mit Jinja2 gerendert.
+
+=== Struktur/ Benutzungsablauf
+Mittels folgender schematischer Darstellung wird die Struktur des Frontends dargestellt. Die einzelnen HTML-Dateien, die meist jeweils 1 Wireframe umsetzen, sind in der Reihenfolge ihrer möglichen Verwendung vom Benutzer aufgezeigt. Die Webapplikation startet immer im Login-Bereich und führt über die Registrierung dann zum Menübereich (Cockpit) des entsprechenden Nutzers. Von dort aus kann der Nutzer dann die verschiedenen Funktionen der Webapplikation nutzen.
+
+.Zusammenhänge zwischen HTML-Seiten
+image::Frontend_Struktur.png[Übersicht HTML-Seiten, width=70%, align="center"]
+
+=== Dynamische Inhalte mit Jinja2 eingebettet
+Jinja2 ist ein Template-Engine für Python, die es ermöglicht, dynamische Inhalte in HTML-Dateien zu rendern. In den HTML-Dateien sind die Jinja2-Tags in doppelten geschweiften Klammern `{{ }}` eingebettet. Diese Tags können Variablen enthalten, die in der Python-Datei, die das HTML-Template rendert, definiert sind. Dies wird beispielsweise für das filter- und sortierungsabhängige Füllen von Tabellen mit Daten aus der Datenbank, wie im folgenden Code-Beispiel aus der Datei `los_starten_page.html` aufgeführt, verwendet. 
+
+.Beispiel: Jinja2-Tags in der HTML-Datei los_starten_page.html
+include::../../src/templates/los_starten_page.html[lines=167..176] 
+
+=== Funktionalitäten der HTML-Dateien
+Die HTML-Dateien enthalten die Darstellung der Webseite und die Interaktion mit dem Benutzer. Zur Gewährleistung der Benutzerinteraktion wird die REST-API verwendet, um die Anfragen an das Backend zu senden. Die Funktionalitäten der HTML-Dateien sind in der folgenden Tabelle aufgeführt.
+
+.login_page.html
+|===
+| *Funktionalität* | *Button-Value* | *bearbeitende Python-Datei* | *Beschreibung*
+| Login | Login | login.py | Der Benutzer kann sich mittels Benutzername und Passwort einloggen.
+|===
+
+== Backend
+=== Benutzerinteraktion mittels REST-API
+=== Timer
+=== Datenbankzugriff
+Der Zugriff auf die Datenbank erfolgt über die ORM-Bibliothek SQLAlchemy. Diese ermöglicht es, die Datenbank als Objekte zu repräsentieren und somit die Datenbankabfragen in Python-Code zu schreiben. Das Mapping der Datenbanktabellen auf Python-Klassen erfolgt mittels der Datei `mapper.py`. Hierbei werden entsprechend des Klassendiagramms die Tabellen der Datenbank auf Python-Klassen abgebildet. 
+
+.Klassendiagramm
+image::Klassendiagramm.png[Klassendiagramm, width=70%, align="center"]
+
+Um auf die Datenbank zuzugreifen, wird in den Python-Dateien die Datenbank-Session `session` benötigt. Diese kann mittels der Funktionen in der Datei `database_connection.py` initialisiert und geschlossen werden. 
+
+.Funktionen in database_connection.py
+|===
+| *Funktion* | *Beschreibung*
+| get_database_url() | Gibt die URL für den Datenbankzugriff zurück.
+| database_connection() | Initialisiert die Datenbank-Session.
+| database_disconnection() | Schließt die Datenbank-Session.
+|===
+
+Mittels Import der jeweiligen Klassen und Funktionen aus den Dateien `mapper.py` und `database_connection.py` kann in jeder Python-Datei der Zugriff auf die Datenbank gewährleistet werden.
+
+=== Config-Datei
+Die Konfigurationsdatei `config.py` beinhaltet alle Konfigurationen, die für die Webapplikation benötigt werden. Hierzu zählen beispielsweise die Informationen für den Datenbankzugriff, die URL für den Webserver oder der Applikationsname. Die Konfigurationsdatei wird in den Python-Dateien mittels `from config import Config` importiert und die Konfigurationen können dann über die Klasse `Config` abgerufen werden.

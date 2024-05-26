@@ -1,7 +1,7 @@
 from mapper import Tool, Lot, PTime, Workflow, ProdFlow
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from database_connection import get_database_url
+from database_connection import get_database_url, database_connection, database_disconnection
 import datetime
 import random
 
@@ -40,18 +40,6 @@ def test_if_tool_is_done(tool):
             return False
     database_disconnection(session_d)
     return False
-
-# Datenbankverbindung herstellen
-def database_connection():
-    DATABASE_URL = get_database_url()
-    engine = create_engine(DATABASE_URL)
-    Session = sessionmaker(bind=engine)
-    session_d = Session()
-    return session_d
-
-# Datenbankverbindung schließen
-def database_disconnection(session_d):
-    session_d.close()
 
 '''Schauen, ob das Lot, welches eine Maschine bearbeitet, fertig ist'''
 def lotop_finished(session_d):

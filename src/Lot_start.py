@@ -1,13 +1,10 @@
 from mapper import Tool, Lot, PTime, Workflow, ProdFlow
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from database_connection import get_database_url
+from database_connection import get_database_url, database_connection
 import datetime
 
-DATABASE_URL = get_database_url()
-engine = create_engine(DATABASE_URL)
-Session = sessionmaker(bind=engine)
-session = Session()
+session = database_connection()
 
 def start_lot():
     print(f"\n### Starting Lots ({datetime.datetime.now()}) ###")

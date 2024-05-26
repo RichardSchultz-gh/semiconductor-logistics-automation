@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, request, redirect, url_for, session, send_file
 from mapper import Lot
-from database_connection import get_database_url
+from database_connection import get_database_url, database_connection, database_disconnection
 from sqlalchemy import create_engine
 from los_starten import get_all_lot_ids
 from sqlalchemy.orm import sessionmaker
@@ -12,10 +12,6 @@ export_data_bp = Blueprint('export_data', __name__)
 
 def check_user_session():
     return 'username' in session and session['username'] == config.USER1
-
-
-def database_disconnection(session_d):
-    session_d.close()
 
 @export_data_bp.route("/main/export_data", methods=["GET"])
 def export_data_page():
@@ -147,13 +143,6 @@ def get_all_lots(sorttype):
         lots = session.query(Lot).order_by(attribute.desc()).all()
     session.close()
     return lots
-
-def database_connection():
-    DATABASE_URL = get_database_url()
-    engine = create_engine(DATABASE_URL)
-    Session = sessionmaker(bind=engine)
-    session_d = Session()
-    return session_d
 
 def getDirection(sorttype):
     # aus String sorttype 1. Buchstaben entfernen
