@@ -101,37 +101,10 @@ Abnahmeumgebung:
 |NFA4 QAGU-1
 | ja/nein
 |
-|NFA5 QAGU-2
-| ja/nein
-|
-|NFA6 QAGU-3
-| ja/nein
-|
-|NFA7 QAGU-4
-| ja/nein
-|
-|NFA8 QAGU-5
-| ja/nein
-|
-|NFA9 QAGU-6
-| ja/nein
-|
 |NFA10 QAGZ-1
 | ja/nein
 |
-|NFA11 QAGZ-2
-| ja/nein
-|
-|NFA12 QAGE-1
-| ja/nein
-|
-|NFA13 QAGE-2
-| ja/nein
-|
 |NFA14 QAGW-1
-| ja/nein
-|
-|NFA15 QAGW-2
 | ja/nein
 |
 
