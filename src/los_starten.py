@@ -1,7 +1,7 @@
 # los_starten.py
 from flask import Blueprint, render_template, request, redirect, url_for,session
 from mapper import Lot, ProdFlow, Tool, Workflow
-from database_connection import get_database_url
+from database_connection import get_database_url, database_connection
 from sqlalchemy import create_engine, Table, Column, Integer, String, MetaData
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
@@ -252,10 +252,3 @@ def get_all_tools():
     session.close()
     return tools
 
-# Datenbankverbindung herstellen
-def database_connection():
-    DATABASE_URL = get_database_url()
-    engine = create_engine(DATABASE_URL)
-    Session = sessionmaker(bind=engine)
-    session_d = Session()
-    return session_d

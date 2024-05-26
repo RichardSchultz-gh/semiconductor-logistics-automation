@@ -1,7 +1,7 @@
 # los_bearbeiten.py
 from flask import Blueprint, render_template, request, redirect, url_for, session
 from mapper import Lot, Tool, PTime
-from database_connection import get_database_url
+from database_connection import get_database_url, database_connection, database_disconnection
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
@@ -112,15 +112,6 @@ def moveLot():
     database_disconnection(session_d)
     return render_template("los_bearbeiten_success.html", username=session['username'], success_message=f"Lot with ID {lot_id} is now in PROC state and is processed by tool {tool.tool}")
 
-def database_connection():
-    DATABASE_URL = get_database_url()
-    engine = create_engine(DATABASE_URL)
-    Session = sessionmaker(bind=engine)
-    session_d = Session()
-    return session_d
-
-def database_disconnection(session_d):
-    session_d.close()
 
 def get_all_lot_ids():
     # Hiermit rufen wir alle LotIDs aus der Datenbank ab und geben sie zurück
