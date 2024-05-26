@@ -1,37 +1,4 @@
-= Teil 1: Gruppenleistung
-
-
-== Notizen:
-
-Erfolge:
-
-1 arbeitsweise bei der implemention -> Prozess des fertigstellens eines usecases
--> bearbeitung (mit nachfragen) pullrequest pullrequest bearbeiten implementierung fertig testing starten tesing anmerkungen umsetzen finalisieren 
--> guter flow und ablauf im Team und gute zusammenarbeit 
-
-2 keiner hatte vorher erfahrungen mit den ganzen Techniken/Sprachen etc. und wir haben uns gut das wissen angeeignet
-bzw. der erfolg liegt im aneignungsprozess der techniken, dem beschäftigen mit neuen und dem verständnis der techniken
-die man nutzt und als neue kompetenz jetzt mit nimmt
-
-3 
-
-Misserfolge:
-
-1 Kommunikation zu beginn (Archtiektur/Development): keine kommunikation 
--> nicht zusammengearbeitet -> nicht zusammenpassende ergebnisse -> mehr arbeit
-
-2 verteilung des workload 
--> es hatten z.T. einige immer mehr gemacht als die anderen (bsp. nils al
-
-3 fehlender wissenstransfer zwischen den rollen 
--> beispiel: nils musste sich nochmal komplett in die usecases einlesen um die logik etc zu verstehen um die implementierung dann starten zu können, 
-oder Paul musste sich um das testing zu starten in den code rein arbeiten. da wäre ein "Abhol"Meeting gut gewesen, 
-wo der vorarbeiter den nacharbeiter erklärt was getan wurde und fragen beantwortet.( Oder eine noch bessere dauerhafte wissenstransfergewährleistung 
-wo alle immer überall wissen was abgeht, wobei das bei größeren projekten schwer ist. ) 
-Dadurch ging Zeit und Aufwand verloren + irgendwie auch wissensverlust, da sich Sachen mehrmals erschlossen werden mussten + mehr spielraum für fehler
-
-
-
+= Teil 1 Gruppenleistung
 
 == TOP 3 Erfolgen
 
@@ -50,6 +17,32 @@ Natürlich gab es ab und zu mal kleinere Probleme wo der Workflow nicht komplett
 
 === Erfolg 2 - Wissensaneignung
 
+2 keiner hatte vorher erfahrungen mit den ganzen Techniken/Sprachen etc. und wir haben uns gut das wissen angeeignet
+bzw. der erfolg liegt im aneignungsprozess der techniken, dem beschäftigen mit neuen und dem verständnis der techniken
+die man nutzt und als neue kompetenz jetzt mit nimmt
+
+
+
+Als wir das Projekt angefangen haben, hatten die einzelnen Teammitglieder kaum bis keine Erfahrungen von den Themen des Projekts oder wie man ein Projekt wie dieses angeht. Aus anderen Teams haben wir mitbekommen wie dort einzelne, aus früheren Berufen, Ausbildungen oder Praktika, bereits technische und organisatiorische Fähigkeiten hatten. Bei uns beruhten die Fähigkeiten aus dem bisherigen Studium und den dortigen deutlich kleineren Einzelprojekten und schulischen Projekten. 
+Zu Beginn war es eine Herausforderung für alle Bereiche ohne jegliches Wissen das Projekt zu starten. Und auch immer wieder zwischendurch wusste keiner so wirklich was zu tun war oder wie man es tun muss. 
+
+Es gibt dabei zwei Wissensaspekte: 
+
+Als erstes, das technische Wissen. Mit den uns vorgebenen Sprachen und Techniken - Python, SQL, HTML, RaspberryPi - hatten wir bisher nur sporadisch oder oft gar nicht gearbeitet. 
+
+
+punkt der ganzen Geschichte: wenn uns wissen fehlte haben wir uns es erarbeitet bis wir das nötig wissen hatten auch wenn es vielleicht nicht so tiefgründig ist wie bei anderen, so ist es ein großer Erfolg dass wir uns nicht untergriegen lassen haben und so viel neues wissen angesammelt haben, dass uns in zukunft weiter helfen wird 
+
+
+
+Zum Anderen das nötige Wissen der Projektdurchführung
+
+
+
+
+
+Wir nehmen also aus dem Projekt einen großen Wissens- und Fähigkeitszuwachs mit. 
+
 
 === Erfolg 3
 
@@ -57,11 +50,27 @@ Natürlich gab es ab und zu mal kleinere Probleme wo der Workflow nicht komplett
 == TOP 3 Misserfolge
 
 === Misserfolg 1
+1 Kommunikation zu beginn (Archtiektur/Development): keine kommunikation 
+-> nicht zusammengearbeitet -> nicht zusammenpassende ergebnisse -> mehr arbeit
+
+=== Misserfolg 2 - Verteilung
+
+Als zweiten Misserfolg im Projekt ist anzuführen, dass die Verteilung des Workload nicht immer geglückt ist. Einige Teammitglieder haben zu Zeiten deutlich mehr gemacht als andere. 
+
+Zu Beginn der Projektarbeit haben die Analysten deutlich mehr Arbeit geleistet als andere Mitglieder. Der zeitliche Aufwand war im ersten Semester durch die Menge an Analysten-Aufgaben deutlich größer als der der z.B. Entwickler oder des Testing. Gegen Ende des Projekts hat sich das von den Analysten zu den Entwicklern gewandelt. Dort hat vor allem der Head-Developer zeitweise einen deutlich größeren zeitlichen Aufwand gehabt als andere Mitglieder. 
+
+Zum einen liegt dies natürlich daran, dass die Aufgaben im Laufe des Projekts ungleich auf die Rollen verteilt ist. Daran kann man nicht viel ändern oder verbessern.
+Zum anderen kann es auch an fehlenden Erfahrungen in der Projektdurchführung liegen. Zu Beginn des Projekts wussten wir nicht was die Entwickler oder Tester machen müssen und was sie in dieser Zeit vielleicht schon vorbereiten hätten können. Zurückblickend können Architekten früher mit ihrer Arbeit anfangen, es braucht kein komplett analysiertes Projekt um mit der Architektur beginnen zu können und die Entwickler könnten früher anfangen Wireframes umzusetzen oder Funktionen, die schnell ersichtlich sind, umzusetzen. Dadurch könnte man z.B. den Prototypen schneller fertigstellen und dann weiterarbeiten.
+
+Bei langfristigeren und größeren Projekten als diesem hier ist eine ungleiche Arbeitsverteilung nicht nachhaltig. Uns ist deutlich geworden, dass bei künfigen Projekten von Anfang an mehr darauf geachtet werden muss, welchen Arbeitsaufwand jemand hat und bei ungleicher Verteilung muss man versuchen so gut es geht die Aufgaben besser zu verteilen.
 
 
-=== Misserfolg 2
 
+=== Misserfolg 3 - Wissenstransfer
 
-=== Misserfolg 3
-
-
+3 fehlender wissenstransfer zwischen den rollen 
+-> beispiel: nils musste sich nochmal komplett in die usecases einlesen um die logik etc zu verstehen um die implementierung dann starten zu können, 
+oder Paul musste sich um das testing zu starten in den code rein arbeiten. da wäre ein "Abhol"Meeting gut gewesen, 
+wo der vorarbeiter den nacharbeiter erklärt was getan wurde und fragen beantwortet.( Oder eine noch bessere dauerhafte wissenstransfergewährleistung 
+wo alle immer überall wissen was abgeht, wobei das bei größeren projekten schwer ist. ) 
+Dadurch ging Zeit und Aufwand verloren + irgendwie auch wissensverlust, da sich Sachen mehrmals erschlossen werden mussten + mehr spielraum für fehler
