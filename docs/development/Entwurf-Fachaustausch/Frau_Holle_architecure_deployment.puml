@@ -1,0 +1,30 @@
+@startuml deployment
+title Deployment Diagram for Web Application, Middleware, and Database
+
+node "Client" {
+    [Browser]
+}
+
+node "Web Server" {
+    component "Web Application" {
+        [Web Application] -down-> [Jinja-2]
+    }
+    [Web Application] --> [Browser] : HTTPS
+}
+
+node "Application" {
+    component "Middleware" {
+        [Middleware] -down-> [Flask]
+    }
+}
+
+node "Database Server" {
+    database "Database"
+}
+
+[Browser] --> [Web Application] : HTTPS
+[Web Application] <--> [Middleware] : Rest-API
+[Middleware] --> [Database] : SQLAlchemy
+
+
+@enduml

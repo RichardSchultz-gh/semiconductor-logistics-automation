@@ -1,6 +1,6 @@
 @startuml Frau_Holle_Container_C4
-
 !include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml
 
 title Container diagram for Frau Holle System
 
@@ -10,14 +10,12 @@ Person(manager, "Fertigungsleiter", "Verantwortlich für die Überwachung der Pr
 Boundary(frauHolleBoundary, "Frau Holle ") {
 
 Container(frauHolleApp, "Frau Holle Anwendung", "Webanwendung", "Ermöglicht Benutzern die Überwachung und Verwaltung der Fertigungsprozesse.")
-Container(db, "Datenbank", "PostgreSQL-DBMS", "Speichert Nutzerdaten und -parameter.")
+Container(db, "Datenbank", "PostgreSQL-DBMS", "Speichert Nutzer- und Fertigungsdaten.")
 Container(api, "Middleware", "Python", "Stellt eine Schnittstelle für den Datenzugriff und Managementfunktionen bereit.")
 
 Rel(worker, frauHolleApp, "Benutzt")
 Rel(manager, frauHolleApp, "Benutzt und überwacht")
 Rel(frauHolleApp, api, "nutzt")
-
-
 }
 
 System_Ext(manufacturing, "Fertigung", "Hier finden die Fertigungsprozesse statt und werden aufgezeichnet")
