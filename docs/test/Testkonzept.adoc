@@ -10,13 +10,13 @@ Die Testergebnisse wurden in seperate Test-Cases gruppiert und dokumentiert. Fü
 
 -  Datenbankverbindung: Eine fehlerhafte Konfiguration der Datenbankverbindung kann das gesamte System unbrauchbar machen. Die korrekte Einstellung der Datenbankverbindung über die Config-Datei ist daher von höchster Priorität
 
--  Benutzerverwaltung: Fehler in der Benutzerverwaltung, wie falsche Berechtigungen, können zu Sicherheitslücken führen oder den Zugriff auf die Datenbank beeinträchtigen
+-  Benutzerverwaltung: Fehler in der Benutzerverwaltung, wie falsche Berechtigungen, können zu Sicherheitslücken führen und den Zugriff auf an Nutzerollen geknüpfte Uses-Cases ermöglichen
 
 -  Config-Datei: Die korrekte Funktion der Config-Datei ist essenziell, um systemweite Informationen wie Nutzerlogins und Datenbankverbindungen zu verwalten
 
 *Fehler effizient aufdecken*
 
-- Fokussierte Tests auf die kritischen Systemkomponenten wie Datenbankverbindung und Benutzerrechte.
+- Fokussierte Tests auf die kritischen Systemkomponenten wie zum Beispiel auf die Datenbankverbindung und die Benutzerrechte
 
 - Einsatz von Unit-Tests für spezifische Funktionen wie generateLotID und alle timergesteuerten Funktionalitäten
 
@@ -32,8 +32,8 @@ Die Testergebnisse wurden in seperate Test-Cases gruppiert und dokumentiert. Fü
 
 *Werkzeuge:*
 
-- unittest für Unit-Tests in Python -> Import der Bilbiothekt "unittest" im jeweiligen Test-Case
--  Zur Ausführung der Coverage-Test muss coverage installiert werden, z.B. mit "pip install coverage".
+- unittest für Unit-Tests in Python -> Import der Bibliothek "unittest" im jeweiligen Test-Case
+-  Zur Ausführung der Coverage-Test muss coverage installiert werden, z.B. mit "pip install coverage"
 - Datenbankverwaltungs-Tools wie pgAdmin 
 - Asciidoc/Github zur Dokumentation
 
@@ -45,7 +45,7 @@ Jeder zuvor definierte Use-Case wurde in einem eigenen Test-Case aufgegriffen. D
 
 *Manuelles und automatisiertes Testing*
 
-Alle Funktionalitäten, die zeitgesteuert vom Timer aufgerufen worden sind und nicht vom Nutzer gesteuert werden, wurden mithilfe von JUnit-Tests getestet. Manuelle Benutzerinteraktionen wurden den Aufruf der Webseite im Browser und manuelle SQL-Befehle auf der zugrunde liegenden Datenbank getestet.
+Alle Funktionalitäten, die zeitgesteuert vom Timer aufgerufen worden sind und nicht vom Nutzer gesteuert werden, wurden mithilfe von JUnit-Tests getestet. Dies sind inbesondere die Use-Cases 1-3 zum Starten, Bewegen und Bearbeiten der Lose im Fertigungsprozess. Manuelle Benutzerinteraktionen, wie das Erstellen eines Datenexport, wurden über den Aufruf der Webseite im Browser getestet. Außerdem wurde alle Änderungen in der Datenbank mit manuellen SQL-Abfragen plausibilisiert.
 
 *Statischer Test und dynamischer Test*
 
@@ -53,7 +53,7 @@ Zu Beginn von SE II wurde durch den Tester ein manuelles Review des Codes durchg
 
 *Positivtest und Negativtest*
 
-Zunächst wurden immer Positv-Tests durchgeführt, um grundsätzlich korrektes Systemverhalten sicherzustellen. Im Anschluss daran wurde die verbleibende Zeit darauf verwendet die Software auf Robustheit zu testen und absichtlich Fehler mithilfe von Negativ-Tests zu provozieren. Grundsätzlich wurden Positivtest und Negativtest für alle Test-Cases kombiniert verwendet. 
+Zunächst wurden Positv-Tests durchgeführt, um grundsätzlich korrektes Systemverhalten sicherzustellen. Im Anschluss daran wurde die verbleibende Zeit darauf verwendet die Software auf Robustheit zu testen und absichtlich Fehler mithilfe von Negativ-Tests zu provozieren. Grundsätzlich wurden Positivtest und Negativtest für alle Test-Cases kombiniert verwendet. 
 
 *Modultest und Integrationstest*
 
