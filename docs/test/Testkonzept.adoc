@@ -1,1 +1,64 @@
+= Testkonzept 
 
+== Testdokumentation - und aufbau
+
+Die Testergebnisse wurden in einzelnen Test-Cases dokumentiert. Innerhalb jedes *Test-Cases* wird eine Test-ID definier mit deren Hilfe sich die einzelnen Tests eindeutig zuordnen lassen. Für jede Test-ID sind im Test-Case der Zweck, die Testart, die Testdurchführung, die Nachbedingungen, die Eingabedaten, das Ergebnis und eventuell nowendige To-dos sowie deren Korrekturstatus dokumentiert. Die Testergebnisse enthalten unter Umständen Terminalausgaben und Fehlermeldungen, die als Screenshots angehängt sind. Außerdem wurde für JUnit-Test die Testabdeckung der jeweiligen Test-ID dokumentiert. Alle notwendigen Anpassungen wurden, um Übersicht zu gewährleisten, außerdem im *Anpassungsbacklog* dokumentiert, wo die entsprechenden Test-IDs referenziert worden sind. Zur Ausführung der Tests werden bestimmte *Test-Datensätze* benötigt, welche in einer eigenen Datei dokumentiert sind.
+
+== Teststrategie
+
+*Risikien und wichtige Systembestandteile*
+
+-  Datenbankverbindung: Eine fehlerhafte Konfiguration der Datenbankverbindung kann das gesamte System unbrauchbar machen. Die korrekte Einstellung der Datenbankverbindung über die Config-Datei ist daher von höchster Priorität
+
+-  Benutzerverwaltung: Fehler in der Benutzerverwaltung, wie falsche Berechtigungen, können zu Sicherheitslücken führen oder den Zugriff auf die Datenbank beeinträchtigen
+
+-  Config-Datei: Die korrekte Funktion der Config-Datei ist essenziell, um systemweite Informationen wie Nutzerlogins und Datenbankverbindungen zu verwalten
+
+*Fehler effizient aufdecken*
+
+- Fokussierte Tests auf die kritischen Systemkomponenten wie Datenbankverbindung und Benutzerrechte.
+
+- Einsatz von Unit-Tests für spezifische Funktionen wie generateLotID und alle timergesteuerten Funktionalitäten
+
+- Integrationstests, um sicherzustellen, dass die verschiedenen Teile der Anwendung (Config-Datei, Datenbank, Benutzerverwaltung) nahtlos zusammenarbeiten
+
+
+== Testumgebung 
+
+*Erforderliche Testumgebung / -infrastruktur:*
+
+- Verwendung von PostgreSQL als Datenbankmanagementsystems
+- Enwicklungsumgebung wie Visual Studio Code oder PYCharme zur Entwicklung und Durchführung von Tests
+
+*Werkzeuge:*
+
+- unittest für Unit-Tests in Python -> Import der Bilbiothekt "unittest" im jeweiligen Test-Case
+-  Zur Ausführung der Coverage-Test muss coverage installiert werden, z.B. mit "pip install coverage".
+- Datenbankverwaltungs-Tools wie pgAdmin 
+- Asciidoc/Github zur Dokumentation
+
+== Testobjekte 
+
+Jeder zuvor definierte Use-Case wurde in einem eigenen Test-Case aufgegriffen. Die systemweite Anforderungen wurden in einem eigenem UseCases (konkreter Name muss noch eingefügt werden) getestet. Ebenso wurden einzelne Funktionialitäten, die keinem UseCase zugeordnet werden konnte, in einer eigenen Datei ausgelagert (konkreter Name muss noch eingefügt werden) . 
+
+== Testmethoden
+
+*Manuelles und automatisiertes Testing*
+
+Alle Funktionalitäten, die zeitgesteuert vom Timer aufgerufen worden sind und nicht vom Nutzer gesteuert werden, wurden mithilfe von JUnit-Tests getestet. Manuelle Benutzerinteraktionen wurden den Aufruf der Webseite im Browser und manuelle SQL-Befehle auf der zugrunde liegenden Datenbank getestet.
+
+*Statischer Test und dynamischer Test*
+
+Zu Beginn von SE II wurde durch den Tester ein manuelles Review des Codes durchgeführt. Dabei wurden alle Python-Dateien auf Syntaxehler, fehlende Funktionalitäten und den Code-Stil untersucht. Potenzielle Probleme wurden entsprechend kommentiert und dem Entwickler-Team kommunziert. Im fortlaufenden Semester fanden vorwiegend dynamische Tests statt, wo bereits laufähige Software-Bestandsteile im Betrieb untersucht worden sind. 
+
+*Positivtest und Negativtest*
+
+Zunächst wurden immer Positv-Tests durchgeführt, um grundsätzlich korrektes Systemverhalten sicherzustellen. Im Anschluss daran wurde die verbleibende Zeit darauf verwendet die Software auf Robustheit zu testen und absichtlich Fehler mithilfe von Negativ-Tests zu provozieren. Grundsätzlich wurden Positivtest und Negativtest für alle Test-Cases kombiniert verwendet. 
+
+*Modultest und Integrationstest*
+
+Wenn möglich, wurden einzelne Softwarkomponenten in Isolation getestet. Dadurch war es einfacher Fehler zu identifizieren, da der Testbereich nur auf ein einzelnes Modul beschränkt war. Dies funktionierte insbesondere deswegen gut, weil die Fertigung in der Halbleiterfabrik sowieso modular abläuft und die Software zum Teil ein Abbild dieses modularen Fertigungsprozesses ist. Gegen Ende des Semesters wurde aber auch das Zusammenspiel aller einzelnen Softwarekomponenten mithilfe von Integrationstests geprüft. Dies war unbedingt notwendig, um sicherzustellen, dass sich die Lose korrekt vom Auftragseingang bis zum Ende des Fertgigungsprozesses bewegen.
+
+== Testdurchführungsplanung - und organisation
+
+Die Durchführung der Software-Tests wurden durch eine Einzelperson sichergestellt. Aufgrund des Workloads kam der effizienten Selbstorganisation und der Priorisierung der einzelnen Testcase eine besondere Rolle zu. Das bedeutet, dass die Test Cases entsprechend Ihrer in den Anforderungen spezifierten Priorität erstellt und abgearbeitet worden sind. Für die einzelnen Testcases wurde im Vorfeld jeder Testcase-Durchführung eine interene Liste mit allen zu testenden Funktionalitäten erstellt, die priorisiert und dieser Reihenfolge getestet worden ist. Hierbei sollte sichergestellt werden, dass die wichtigsten Fuktionalitäten zuerst getestet worden sind und zeitnah Feedback an die Entwickler gegeben werden konnte. Alle notwendigen Anpassung wurden für alle Teammitglieder sichtbar in der Datei "Anpassungsbacklog" kommunziert. Die Zeitplanung orientierte sich stets an den Kundenterminen, zu denen die Anwesenheit von Software-Fehlern des Prototypen ausgeschlossen werden musste.
