@@ -31,28 +31,34 @@ def import_data():
                 return redirect(request.url)
             if file and allowed_file(file.filename):
                 csv_data = file.stream.read().decode("utf-8")
-                import_from_csv(csv_data, file.filename)
-                flash('File successfully imported')
+                ausgabe= import_from_csv(csv_data, file.filename)
+                if(ausgabe is not None):
+                    flash(ausgabe)
+                    flash('File successfully imported')
+                else:
+                    flash('File import failed')
                 return redirect(url_for('import_data.import_data'))
             
         usern = session['username']
-        return render_template('import_data.html', username=usern)
+        return render_template('import_data_page.html', username=usern)
     else:
         return "Unauthorized", 401
 
 def import_from_csv(csv_data, filename):
+    # filename in kleinbuchstaben umwandeln
+    filename = filename.lower()
     class_name = None
-    if filename.startswith('Tool'):
+    if filename.startswith('tool'):
         class_name = 'Tool'
-    elif filename.startswith('Lot'):
+    elif filename.startswith('lot'):
         class_name = 'Lot'
-    elif filename.startswith('ProdFlow'):
+    elif filename.startswith('prodflow'):
         class_name = 'ProdFlow'
-    elif filename.startswith('Entities'):
+    elif filename.startswith('entities'):
         class_name = 'Entities'
-    elif filename.startswith('PTime'):
+    elif filename.startswith('ptime'):
         class_name = 'PTime'
-    elif filename.startswith('Workflow'):
+    elif filename.startswith('workflow'):
         class_name = 'Workflow'
 
     if class_name is None:
@@ -77,18 +83,38 @@ def import_from_csv(csv_data, filename):
         return f'Class {class_name} not supported for import'
 
     csv_file = StringIO(csv_data)
+
+    # alle Attribute werden klein geschrieben
+    csv_file.seek(0)
+    csv_file = csv_file.read().lower()
+    csv_file = StringIO(csv_file)
+
+    if(class_name == 'Entities'):
+        # erste Zeile mit Attributen wird eingelesen und anstelle von class wird class_ verwendet
+        csv_file.readline()
+        csv_file.seek(0)
+        csv_file = csv_file.read().replace('class', 'class_')
+        csv_file = StringIO(csv_file)
+    elif(class_name == 'PTime'):
+        # erste Zeile mit Attributen wird eingelesen und anstelle von int wird int_ verwendet
+        csv_file.readline()
+        csv_file.seek(0)
+        csv_file = csv_file.read().replace('int', 'int_')
+        csv_file = StringIO(csv_file)
+
     reader = csv.DictReader(csv_file)
     added_count = 0
 
     for row in reader:
         try:
             for key in row:
-                if row[key] == '':
+                if row[key] == '' or row[key] == 'NULL':
                     row[key] = None
             instance = class_to_add(**row)
             session.add(instance)
             session.commit()
             added_count += 1
+            print(f'Added {class_name} instance: {row}')
         except IntegrityError as e:
             session.rollback()
             flash(f'IntegrityError: {str(e.orig)}')
@@ -101,7 +127,6 @@ def import_from_csv(csv_data, filename):
         except Exception as e:
             session.rollback()
             flash(f'Unexpected error: {str(e)}')
-
     session.close()
     return f'{added_count} entries were successfully added to the {class_name} table.'
 
@@ -131,37 +156,56 @@ def add_instance(model_class, data):
 
 @import_data_bp.route('/add_entity', methods=['POST'])
 def add_entity():
-    data = request.form.to_dict()
+    data = request.form.to_dict() # get data from form
+    # alle Leergelassenen Felder werden auf None gesetzt
+    for key in data:
+        if data[key] == '' or data[key] == 'NULL':
+            data[key] = None
     add_instance(Entities, data)
     return redirect(url_for('import_data.import_data'))
 
 @import_data_bp.route('/add_lot', methods=['POST'])
 def add_lot():
     data = request.form.to_dict()
+    for key in data:
+        if data[key] == '' or data[key] == 'NULL':
+            data[key] = None
     add_instance(Lot, data)
     return redirect(url_for('import_data.import_data'))
 
 @import_data_bp.route('/add_prodflow', methods=['POST'])
 def add_prodflow():
     data = request.form.to_dict()
+    for key in data:
+        if data[key] == '' or data[key] == 'NULL':
+            data[key] = None
     add_instance(ProdFlow, data)
     return redirect(url_for('import_data.import_data'))
 
 @import_data_bp.route('/add_ptime', methods=['POST'])
 def add_ptime():
     data = request.form.to_dict()
+    for key in data:
+        if data[key] == '' or data[key] == 'NULL':
+            data[key] = None
     add_instance(PTime, data)
     return redirect(url_for('import_data.import_data'))
 
 @import_data_bp.route('/add_tool', methods=['POST'])
 def add_tool():
     data = request.form.to_dict()
+    for key in data:
+        if data[key] == '' or data[key] == 'NULL':
+            data[key] = None
     add_instance(Tool, data)
     return redirect(url_for('import_data.import_data'))
 
 @import_data_bp.route('/add_workflow', methods=['POST'])
 def add_workflow():
     data = request.form.to_dict()
+    for key in data:
+        if data[key] == '' or data[key] == 'NULL':
+            data[key] = None
     add_instance(Workflow, data)
     return redirect(url_for('import_data.import_data'))
 
