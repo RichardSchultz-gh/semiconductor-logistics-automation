@@ -7,7 +7,7 @@ from entities import entities_bp
 from los_bearbeiten import los_bearbeiten_bp
 from los_bewegen import los_bewegen_bp
 from config import config
-#from import_data import import_data_bp
+from import_data import import_data_bp
 from export_data import export_data_bp
 
 
@@ -19,7 +19,7 @@ app.register_blueprint(los_starten_bp)
 app.register_blueprint(entities_bp)
 app.register_blueprint(los_bearbeiten_bp)
 app.register_blueprint(los_bewegen_bp)
-#app.register_blueprint(import_data_bp)
+app.register_blueprint(import_data_bp)
 app.register_blueprint(export_data_bp)
 
 if __name__ == "__main__":

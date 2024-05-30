@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daten importieren</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='port_data.css') }}">
+</head>
+<body>
+    <h1>Daten importieren</h1>
+    <button onclick="goBack()" class="back-btn">Back</button>
+    <a id="backtoMainPage" class="main-btn"><button>Back to Main Page</button></a>
+    <br>
+    <hr>
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+
+        var username = "{{ username }}"; //aus Jinja2 Template
+        
+        var mainPageBtn = document.getElementById('backtoMainPage');
+        mainPageBtn.addEventListener('click', function() {
+            if (username === 'user1') {
+                //zurück zu main-Page
+                window.location.href = "{{ url_for('main.main') }}";
+            } else if (username === 'user2') {
+                //zurück zu main2
+                window.location.href = "{{ url_for('main.main2') }}";
+            }
+        });
+    </script>
+
+    <h2>CSV-Datei importieren</h2>
+    <form action="{{ url_for('import_data.import_data_page') }}" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" required>
+        <p>Wichtige Hinweise zur CSV:</p>
+        <ul>
+            <li>Der Dateiname muss mit der entsprechenden Tabelle übereinstimmen und im Format 'Tabellenname_xxx' sein.</li>
+            <li>In der ersten Zeile der CSV müssen die Spaltennamen aufgeführt werden (alle klein geschrieben).</li>
+        </ul>
+        <input type="submit" value="Hinzufügen">
+    </form>
+
+    <hr>
+    <br>
+    <h2>Datenbank Meldung</h2><br>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <div class="flash-messages">
+                <ul>
+                    {% for message in messages %}
+                        <li>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+        </div>
+        {% endif %}
+    {% endwith %}
+    <br>
+    <h2>Daten manuell hinzufügen</h2>
+    <ul><li>Makierte Felder müssen ausgefüllt werden</li></ul>
+    <br>
+    <h3>Entities</h3>
+    <form action="{{ url_for('import_data.add_entity') }}" method="post">
+        <br>
+        <input type="text" name="entity" class="required" placeholder="entity - VARCHAR" required>
+        <input type="text" name="class_" placeholder="class - VARCHAR">
+        <input type="text" name="enabled" class="required" placeholder="enabled - INT (0 or 1)" required>
+        <input type="text" name="note" placeholder="note - VARCHAR">
+        <input type="text" name="state" placeholder="state - VARCHAR (REG or 0)">
+        <input type="submit" value="Hinzufügen">
+    </form>
+
+    <h3>Lot</h3>
+    <form action="{{ url_for('import_data.add_lot') }}" method="post">
+        <br>
+        <input type="text" name="lotid" class="required" placeholder="lotid - VARCHAR" required>
+        <input type="text" name="priority" class="required" placeholder="priority - INT">
+        <input type="text" name="pieces" class="required" placeholder="pieces - INT">
+        <input type="text" name="state"class="required"  placeholder="state - VARCHAR">
+        <input type="text" name="product" class="required" placeholder="product - VARCHAR">
+        <input type="text" name="route" class="required" placeholder="route - VARCHAR">
+        <input type="text" name="oper" class="required" placeholder="operation - VARCHAR">
+        <input type="text" name="customer" placeholder="customer - VARCHAR">
+        <input type="text" name="order" placeholder="order - VARCHAR">
+        <input type="text" name="duedate" class="required" placeholder="duedate (YYYY-MM-DD)">
+        <input type="text" name="startdate" class="required" placeholder="startdate (YYYY-MM-DD)">
+        <input type="text" name="enteroper" class="required" placeholder="enteroper (YYYY-MM-DD HH:MM:SS)">
+        <input type="text" name="procstart" class="required" placeholder="procstart (YYYY-MM-DD HH:MM:SS)">
+        <input type="text" name="disptool" class="required" placeholder="disptool - VARCHAR">
+        <input type="submit" value="Hinzufügen">
+    </form>
+
+    <h3>ProdFlow</h3>
+    <form action="{{ url_for('import_data.add_prodflow') }}" method="post">
+        <br>
+        <input type="text" name="product" class="required" placeholder="product - VARCHAR" required>
+        <input type="text" name="route" class="required" placeholder="route - VARCHAR" required>
+        <input type="text" name="seq" class="required" placeholder="sequence - INT" required>
+        <input type="submit" value="Hinzufügen">
+    </form>
+
+    <h3>PTime</h3>
+    <form action="{{ url_for('import_data.add_ptime') }}" method="post">
+        <br>
+        <input type="text" name="tool" class="required" placeholder="tool - VARCHAR" required>
+        <input type="text" name="product" class="required" placeholder="product - VARCHAR" required>
+        <input type="text" name="route" class="required" placeholder="route - VARCHAR" required>
+        <input type="text" name="oper" class="required" placeholder="operation - VARCHAR" required>
+        <input type="text" name="ptime" class="required"placeholder="ptime - INT">
+        <input type="text" name="int_" class="required" placeholder="interval - INT">
+        <input type="submit" value="Hinzufügen">
+    </form>
+
+    <h3>Tool</h3>
+    <form action="{{ url_for('import_data.add_tool') }}" method="post">
+        <br>
+        <input type="text" name="tool" class="required" placeholder="tool - VARCHAR" required>
+        <input type="text" name="toolfam" class="required" placeholder="toolfam - VARCHAR">
+        <input type="text" name="owner" placeholder="owner - VARCHAR">
+        <input type="text" name="tooltype"  placeholder="tooltype - VARCHAR">
+        <input type="text" name="mttr" class="required" placeholder="Mean Time To Repair - INT">
+        <input type="text" name="mttf" class="required" placeholder="Mean Time To Failure - INT">
+        <input type="text" name="state" class="required" placeholder="state - VARCHAR">
+        <input type="submit" value="Hinzufügen">
+    </form>
+
+    <h3>Workflow</h3>
+    <form action="{{ url_for('import_data.add_workflow') }}" method="post">
+        <br>
+        <input type="text" name="route" class="required" placeholder="route - VARCHAR" required>
+        <input type="text" name="oper" class="required" placeholder="operation - VARCHAR" required>
+        <input type="text" name="desc" placeholder="description - VARCHAR">
+        <input type="text" name="mandatory" class="required" placeholder="mandatory - INT 0 or 1">
+        <input type="text" name="stepperc" class="required" placeholder="steppercantage - DECIMAL">
+        <input type="submit" value="Hinzufügen">
+    </form>
+
+</body>
+</html>
