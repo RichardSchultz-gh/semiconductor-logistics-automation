@@ -206,13 +206,18 @@ input[type="submit"]:hover {
     background-color: #a8a8a8;
 }
 
-.flash-messages {
+.export-btn {
+    float: right;
+}
+
+.flash-messages .success {
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+}
+
+.flash-messages .error {
     background-color: #f8d7da;
-    color: #721c24;
     border: 1px solid #f5c6cb;
-    padding: 10px;
-    margin-bottom: 20px;
-    border-radius: 4px;
 }
 
 ul {
