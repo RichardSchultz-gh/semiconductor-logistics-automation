@@ -84,9 +84,9 @@ def import_from_csv(csv_data, filename):
 
     csv_file = StringIO(csv_data)
 
-    # alle Attribute werden klein geschrieben
-    csv_file.seek(0)
-    csv_file = csv_file.read().lower()
+    # Zeile mit Attributen kleinschreiben
+    csv_file = csv_file.readline().lower() + csv_file.read()
+
     csv_file = StringIO(csv_file)
 
     if(class_name == 'Entities'):
