@@ -46,15 +46,15 @@
     <br>
     <h2>Datenbank Meldung</h2><br>
     {% with messages = get_flashed_messages() %}
-        {% if messages %}
-        <div class="flash-messages">
-                <ul>
-                    {% for message in messages %}
-                        <li>{{ message }}</li>
-                    {% endfor %}
-                </ul>
-        </div>
-        {% endif %}
+    {% if messages %}
+    <div class="flash-messages">
+            <ul>
+                {% for message in messages %}
+                    <li class="{% if 'success' in message.lower() %}success{% else %}error{% endif %}">{{ message }}</li>
+                {% endfor %}
+            </ul>
+    </div>
+    {% endif %}
     {% endwith %}
     <br>
     <h2>Daten manuell hinzufügen</h2>
