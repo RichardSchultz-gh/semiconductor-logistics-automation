@@ -123,7 +123,7 @@ def get_timestamp_args_right(id):
     lot_attribute= request.args.get(id)
     if(lot_attribute=="None" or not lot_attribute):lot_attribute=None
     if(lot_attribute!=None):
-        dt= datetime.strptime(lot_attribute, "%Y-%m-%dT%H:%M")
+        dt= datetime.strptime(lot_attribute, "%Y-%m-%dT%H:%M.%f")
         new_timestamp = dt.strftime("%Y-%m-%d %H:%M:%S")
         return new_timestamp
     else:
