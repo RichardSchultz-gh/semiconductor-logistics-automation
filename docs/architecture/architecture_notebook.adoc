@@ -181,31 +181,35 @@ Die Architektur basiert auf einem mehrschichtigen Framework, das Folgendes umfas
 
 Diese Architektur fördert die langfristige Nutzbarkeit und Weiterentwicklung der Anwendung, selbst auf einem Raspberry Pi mit begrenzten Ressourcen.
 
+[#modelid]
 == Architektursichten (Views)
 //[Describe the architectural views that you will use to describe the software architecture. This illustrates the different perspectives that you will make available to review and to document architectural decisions.]
 
-Folgende Sichten werden empfohlen:
+Folgende Sichten stellen die grundlegende Architektur des Frau Holle Systems dar:
 
 === Logische Sicht
 //Beschreibt die Struktur und das Verhalten Systemteilen, die hohen Einfluss auf die Architektur haben. Dies kann die Paketstruktur, kritische Schnittstellen, wichtige Klassen und Subsysteme sowie die Beziehungen zwischen diesen Elementen enthalten. Zudem sollten die physische und logische Sicht persistenter Daten beschrieben werden, wenn es diesen Aspekt im System gibt. Dies ist ein hier dokumentierter Teilaspekt des Entwurfs.
 
 image::Logic_Holle.jpg[]
 
+Folgende Sichten werden entsprechend des *C4-Modells* für die Architekturbeschreibung verwendet:
+
+.System-Kontext-Diagramm:
+image::C1.png[]
+Das System-Kontext-Diagramm zeigt die Interaktion des Systems mit externen Systemen und Akteuren. Hier stellt es die Interaktion des Frau Holle Systems mit den Nutzern "Systemadministrator" und "Mitabeiter" dar. Außerdem wird die Interaktion mit einem externen Fertigungssystem dargestellt, in welchem die Fertigungsprozesse stattfinden.
+
+.Container-Diagramm:
+image::C2.png[]
+Das Container-Diagramm zeigt die Container, aus denen das System besteht und wie diese miteinander interagieren. Hier wird die Interaktion der Middleware mit der Benutzeroberfläche und der Datenbank dargestellt. Zusätzlich sind bereits die Schnittstellen zwischen den Containern dargestellt.
+
+.Component-Diagramm:
+image::C3.png[]
+Das Component-Diagramm stellt die Interaktion der einzelnen Komponenten der Middleware dar. Außerdem ist die Art und Weise definiert, wie die Komponenten miteinander interagieren.
+
 === Physische Sicht (Betriebssicht)
 //Beschreibt die physischen Knoten (Rechner) des Systems, der Prozesse, Threads und Komponenten, die in diesen Knoten ausgeführt werden. Diese Sicht wird nicht benötigt, wenn das System in einem einzelnen Prozess oder Thread ausgeführt wird.
 
-.C4-Modelldiagram mit PlantUML
-[plantuml, "{diagramsdir}/Frau_Holle_System_Context_C4", svg]
-....
-include::{plantumlsdir}/Frau_Holle_System_Context_C4.puml[]
-....
-
-
-.C4-Modelldiagram mit PlantUML
-[plantuml, "{diagramsdir}/Frau_Holle_Container_C4", svg]
-....
-include::{plantumlsdir}/Frau_Holle_Container_C4.puml[]
-....
+//tbd. aufzeigen, wie die Anwendung auf dem RaspberryPi läuft
 
 === Use cases
 //Eine Liste oder ein Diagramm der Use Cases, die architektur-relevante Anforderungne enthalten.
