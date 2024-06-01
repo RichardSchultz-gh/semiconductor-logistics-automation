@@ -1,0 +1,193 @@
+<!-- los_bearbeiten_page.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masterdata-PTime</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='Stammdaten_sites.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Masterdata-PTime</h1>
+        <button onclick="goBack()" class="back-btn">Back</button>
+        <a id="backtoMainPage" class="main-btn"><button>Back to Main Page</button></a>
+        <br>
+        <hr>
+    </header>
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    
+        var username = "{{ username }}"; // aus Jinja2 Template
+        
+        var mainPageBtn = document.getElementById('backtoMainPage');
+        mainPageBtn.addEventListener('click', function() {
+            if (username === 'user1') {
+                // zurück zu main-Page
+                window.location.href = "{{ url_for('main.main') }}";
+            } else if (username === 'user2') {
+                // zurück zu main2
+                window.location.href = "{{ url_for('main.main2') }}";
+            }
+        });
+    </script>
+    
+    <main> 
+        <div class="container">
+            <!-- DataAccess -->
+            <div>
+                <div class="filter">
+                    <form action="{{ url_for('Stammdaten.Stammdaten_PTime_page') }}" method="GET" class="form-abfragetabelle">
+                        <table>
+                            <tr>
+                                <td><label for="route_f">Route:</label></td>
+                                <td><input type="text" name="route_f" id="route_f" list="routes"></td>
+                                <td><datalist id="routes">
+                                    {% for route_id in route_ids %}
+                                        <option value="{{ route_id }}">
+                                    {% endfor %}
+                                </datalist></td>
+                                <td><label for="oper_f">Operation:</label></td>
+                                <td><input type="text" id="oper_f" name="oper_f" list="opers"></td>
+                                <td><datalist id="opers">
+                                    {% for oper_id in oper_ids %}
+                                        <option value="{{ oper_id }}">
+                                    {% endfor %}
+                                </datalist></td>
+                                <td><button type="submit" class="btn">filter</button></td>
+                            </tr>
+                            <tr>
+                                <td>Alphabetic<br>
+                                    Sort:</td>
+                                <td><input type="radio" id="lasc" name="WFsort" value="lasc">
+                                <label for="lasc" id="lascl">Routes ascending</label></td>
+                                <td></td>
+                                <td></td>
+                                <td><input type="radio" id="zasc" name="WFsort" value="zasc">
+                                    <label for="zasc" id="zascl">Operation ascending</label></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td><input type="radio" id="ldesc" name="WFsort" value="ldesc">
+                                    <label for="ldesc" id="ldescl">Routes descending</label></td>
+                                <td></td>
+                                <td></td>
+                                <td><input type="radio" id="zdesc" name="WFsort" value="zdesc">
+                                    <label for="zdesc" id="zdescl">Operation descending</label></td>
+                            </tr>
+                        </table>
+                    </form> 
+                </div>
+                <div class="table-container">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Tool</th>
+                                <th>Product</th>
+                                <th>Route</th>
+                                <th>Operation</th>
+                                <th>PTime</th>
+                                <th>int_</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for ptime in ptimes %}
+                            <tr>
+                                <td>{{ ptime.route }}</td>
+                                <td>{{ ptime.oper }}</td>
+                                <td>{{ ptime.desc }}</td>
+                                <td>{{ ptime.mandatory }}</td>
+                                <td>{{ ptime.stepperc }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- DataManipulation -->
+            <div>
+                <table class="borderless">
+                    <td>
+                    <!-- editLotselection -->
+                    <div>
+                        <form action="{{ url_for('Stammdaten.Stammdaten_PTime_page') }}" method="GET">
+                            <table class="borderless"> 
+                                <tr>
+                                    <td><label for="tool_s_i">Tool:</label></td>
+                                    <td><input type="text" name="tool_s_i" id="tool_s_i" list="tools" placeholder="select Tool"></td>
+                                </tr>
+                                <tr>
+                                    <td><label for="prod_s_i">Product:</label></td>
+                                    <td><input type="text" name="prod_s_i" id="prod_s_i" list="prods" placeholder="select Product"></td>
+                                </tr> 
+                                <tr> 
+                                    <td><label for="route_s_i">Route:</label></td>
+                                    <td><input type="text" name="route_s_i" id="route_s_i" list="routes" placeholder="select Route"></td>
+                                    <datalist id="routes">
+                                        {% for route in routes %}
+                                            <option value="{{ route }}">
+                                        {% endfor %}
+                                    </datalist>
+                                </tr>
+                                <tr>
+                                    <td><label for="oper_s_i">Operation:</label></td>
+                                    <td><input type="text" name="oper_s_i" id="oper_s_i" list="opers" placeholder="select Operation"></td>
+                                    <datalist id="opers">
+                                        {% for oper in opers %}
+                                            <option value="{{ oper }}">
+                                        {% endfor %}
+                                    </datalist>
+                                </tr>
+                                <tr>
+                                    <td colspan="3"><input type="submit" value="edit Product-Flow" class="edit-btn"></td>
+                                </tr>
+                            </table>
+                        </form>
+                    </div>
+                    </td>
+                    <td>
+                    <!-- editLotForm -->
+                    <div>
+                        <form action="{{ url_for('Stammdaten.Stammdaten_PTime_page') }}" method="GET">
+                            <table class="borderless">
+                                <tr>
+                                    <td><label for="tool_i">Tool:</label></td>
+                                    <td><input type="text" name="tool" id="tool_i" list="tools" value="{{ ptime_to_edit.tool }}"><br></td>
+                                </tr>
+                                <tr>
+                                    <td><label for="prod_i">Product:</label></td>
+                                    <td><input type="text" name="prod" id="prod_i" list="prods" value="{{ ptime_to_edit.prod }}"><br></td>
+                                </tr>
+                                <tr>
+                                    <td><label for="route_i">Route:</label></td>
+                                    <td><input type="text" name="route" id="route_i" list="routes" value="{{ ptime_to_edit.route }}"><br></td>
+                                </tr>
+                                <tr>
+                                    <td><label for="oper_i">Operation:</label></td>
+                                    <td><input type="text" name="oper" id="oper_i" list="opers" value="{{ ptime_to_edit.oper }}"><br></td>
+                                </tr>
+                                <tr>
+                                    <td><label for="ptime_i">PTime:</label></td>
+                                    <td><input type="text" name="ptime" id="ptime_i" list="ptimes" value="{{ ptime_to_edit.ptime }}"><br></td>
+                                </tr>
+                                <tr>
+                                    <td><label for="int__i">int_:</label></td>
+                                    <td><input type="text" name="int_" id="int__i" list="int_s" value="{{ ptime_to_edit.int_ }}"><br></td>
+                                </tr>
+                            </table>
+                        </form>
+                    </div>
+                    </td>
+                    <td>
+                        <button type="submit" class="edit-btn">Submit</button>
+                    </td>
+                </table>
+            </div>
+            
+        </div>
+    </main>
+</body>
+</html>

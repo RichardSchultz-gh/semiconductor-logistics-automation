@@ -1,0 +1,177 @@
+<!-- los_bearbeiten_page.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masterdata-Tool</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='Stammdaten_sites.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Masterdata-Tool</h1>
+        <button onclick="goBack()" class="back-btn">Back</button>
+        <a id="backtoMainPage" class="main-btn"><button>Back to Main Page</button></a>
+        <br>
+        <hr>
+    </header>
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    
+        var username = "{{ username }}"; // aus Jinja2 Template
+        
+        var mainPageBtn = document.getElementById('backtoMainPage');
+        mainPageBtn.addEventListener('click', function() {
+            if (username === 'user1') {
+                // zurück zu main-Page
+                window.location.href = "{{ url_for('main.main') }}";
+            } else if (username === 'user2') {
+                // zurück zu main2
+                window.location.href = "{{ url_for('main.main2') }}";
+            }
+        });
+    </script>
+    
+    <main> 
+        <div class="container">
+            <!-- DataAccess -->
+            <div>
+                <div class="filter">
+                    <form action="{{ url_for('Stammdaten.Stammdaten_Tool_page') }}" method="GET" class="form-abfragetabelle">
+                        <table>
+                            <tr>
+                                <td><label for="tool_f">Tool:</label></td>
+                                <td><input type="text" name="tool_f" id="tool_f" list="tools"></td>
+                                <td><datalist id="tools">
+                                    {% for tool_id in tool_ids %}
+                                        <option value="{{ tool_id }}">
+                                    {% endfor %}
+                                </datalist></td>
+                                <td><label for="tool_state_f">State:</label></td>
+                                <td><input type="text" id="tool_state_f" name="tool_state_f" list="tool_states"></td>
+                                <td><datalist id="tool_states">
+                                    <option value="INIT"></option>
+                                    <option value="PROC"></option>
+                                    <option value="HOLD"></option>
+                                    <option value="OP_COMP"></option>
+                                    <option value="FIN"></option>
+                                    <option value="WAIT"></option>
+                                    <option value="SCRAP"></option>
+                                </datalist></td>
+                                <td><button type="submit" class="btn">filter</button></td>
+                            </tr>
+                            <tr>
+                                <td>Alphabetic<br>
+                                    Sort:</td>
+                                <td><input type="radio" id="lasc" name="Tsort" value="lasc">
+                                <label for="lasc" id="lascl">Tools ascending</label></td>
+                                <td></td>
+                                <td></td>
+                                <td><input type="radio" id="zasc" name="Tsort" value="zasc">
+                                    <label for="zasc" id="zascl">State ascending</label></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td><input type="radio" id="ldesc" name="Tsort" value="ldesc">
+                                    <label for="ldesc" id="ldescl">Tools descending</label></td>
+                                <td></td>
+                                <td></td>
+                                <td><input type="radio" id="zdesc" name="Tsort" value="zdesc">
+                                    <label for="zdesc" id="zdescl">State descending</label></td>
+                            </tr>
+                        </table>
+                    </form> 
+                </div>
+                <div class="table-container">
+                    <table class="table"; margin-left:auto;margin-right:auto;>
+                        <thead>
+                            <tr>
+                                <th>Tool</th>
+                                <th>Tool family</th>
+                                <th>Owner</th>
+                                <th>Tool type</th>
+                                <th>mttr</th>
+                                <th>mttf</th>
+                                <th>State</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for tool in tools %}
+                            <tr>
+                                <td>{{ tool.tool }}</td>
+                                <td>{{ tool.toolfam }}</td>
+                                <td>{{ tool.owner }}</td>
+                                <td>{{ tool.tooltype }}</td>
+                                <td>{{ tool.mttr }}</td>
+                                <td>{{ tool.mttf }}</td>
+                                <td>{{ tool.state }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- DataManipulation -->
+            <div>
+                <table class="borderless">
+                    <td>
+                    <!-- editLotselection -->
+                    <div>
+                        <form action="{{ url_for('Stammdaten.Stammdaten_Tool_page') }}" method="GET">
+                            <table class="borderless"> 
+                                <tr>
+                                    <td><label for="tool_s_i">Tool:</label></td>
+                                    <td><input type="text" name="tool_s_i" id="tool_s_i" list="tools" placeholder="select Tool"></td>
+                                    <datalist id="tools">
+                                        {% for tool in tools %}
+                                            <option value="{{ tool }}">
+                                        {% endfor %}
+                                    </datalist>
+                                </tr>
+                                <tr>
+                                    <td colspan="3"><input type="submit" value="edit Tool" class="edit-btn"></td>
+                                </tr>
+                            </table>
+                        </form>
+                    </div>
+                    </td>
+                    <td>
+                    <!-- editLotForm -->
+                    <div>
+                        <form action="{{ url_for('Stammdaten.Stammdaten_Tool_page') }}" method="GET">
+                            <table class="borderless">
+                                <tr>
+                                    <td><label for="tool_i">Tool:</label></td>
+                                    <td><input type="text" name="tool" id="tool_i" list="tools" value="{{ tool_to_edit.tool }}"><br></td>
+                                    <td><label for="owner_i">Owner:</label></td>
+                                    <td><input type="text" name="owner" id="owner_i" list="owners" value="{{ tool_to_edit.owner }}"><br></td>
+                                    <td><label for="mttr_i">mttr:</label></td>
+                                    <td><input type="text" name="mttr" id="mttr_i" list="mttrs" value="{{ tool_to_edit.mttr }}"><br></td>
+                                    <td><label for="state_i">State:</label></td>
+                                    <td><input type="text" name="state" id="state_i" list="states" value="{{ tool_to_edit.state }}"><br></td>
+                                </tr>
+                                <tr>
+                                    <td><label for="toolfam_i">Tool family:</label></td>
+                                    <td><input type="text" name="toolfam" id="toolfam_i" list="toolfams" value="{{ tool_to_edit.toolfam }}"><br></td>
+                                    <td><label for="tooltype_i">Tool type:</label></td>
+                                    <td><input type="text" name="tooltype" id="tooltype_i" list="tooltypes" value="{{ tool_to_edit.tooltype }}"><br></td>
+                                    <td><label for="mttf_i">mttf:</label></td>
+                                    <td><input type="text" name="mttf" id="mttf_i" list="mttfs" value="{{ tool_to_edit.mttf }}"><br></td>
+                                </tr>
+                            </table>
+                        </form>
+                    </div>
+                    </td>
+                    <td>
+                        <button type="submit" class="edit-btn">Submit</button>
+                    </td>
+                </table>
+            </div>
+            
+        </div>
+    </main>
+</body>
+</html>

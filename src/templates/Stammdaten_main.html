@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cockpit</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='Stammdaten_main.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Stammdaten</h1>
+        <button onclick="goBack()" class="back-btn">Back</button>
+        <a id="backtoMainPage" class="main-btn"><button>Back to Main Page</button></a>
+        <br>
+        <hr>
+    </header>
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    
+        var username = "{{ username }}"; // aus Jinja2 Template
+        
+        var mainPageBtn = document.getElementById('backtoMainPage');
+        mainPageBtn.addEventListener('click', function() {
+            if (username === 'user1') {
+                // zurück zu main-Page
+                window.location.href = "{{ url_for('main.main') }}";
+            } else if (username === 'user2') {
+                // zurück zu main2
+                window.location.href = "{{ url_for('main.main2') }}";
+            }
+        });
+    </script>
+
+    <main>
+        <div class="container-buttons">
+            <div class="box-buttons">
+                <a href="{{ url_for('Stammdaten.Stammdaten_Los_page') }}"><button type="button">Lot</button><br></a>
+                <a href="{{ url_for('Stammdaten.Stammdaten_Tool_page') }}"><button type="button">Tool</button><br></a>
+                <a href="{{ url_for('Stammdaten.Stammdaten_ProdFlow_page') }}"><button type="button">Product-Flow</button><br></a>
+                <a href="{{ url_for('Stammdaten.Stammdaten_WorkFlow_page') }}"><button type="button">Work-Flow</button><br></a>
+                <a href="{{ url_for('Stammdaten.Stammdaten_PTime_page') }}"><button type="button">PTime</button></a>
+                <!-- nächste 2 Buttons werden nur angezeigt, wenn per Jinja2 übergebener username=user1-->
+            </div>
+        </div>
+        
+    </main> 
+
+
+</body>
+</html>
