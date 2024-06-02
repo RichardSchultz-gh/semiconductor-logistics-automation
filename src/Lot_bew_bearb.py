@@ -1,6 +1,4 @@
 from mapper import Tool, Lot, PTime, Workflow, ProdFlow
-from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
 from database_connection import get_database_url, database_connection, database_disconnection
 import datetime
 import random

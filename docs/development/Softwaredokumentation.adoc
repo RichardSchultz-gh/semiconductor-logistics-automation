@@ -29,11 +29,34 @@ Die HTML-Dateien enthalten die Darstellung der Webseite und die Interaktion mit 
 | Login | Login | login.py | Der Benutzer kann sich mittels Benutzername und Passwort einloggen.
 |===
 
+.main.html
+|===
+| *Funktionalität* | *Button-Value* | *bearbeitende Python-Datei* | *Beschreibung*
+| Logout | Logout | login.py | Der Benutzer kann sich ausloggen.
+|===
+
+=== CSS-Dateien und ihre Verwendung in den HTML-Dateien
+
 == Backend
 === Benutzerinteraktion mittels REST-API
 === Timer
-=== Datenbankzugriff
-Der Zugriff auf die Datenbank erfolgt über die ORM-Bibliothek SQLAlchemy. Diese ermöglicht es, die Datenbank als Objekte zu repräsentieren und somit die Datenbankabfragen in Python-Code zu schreiben. Das Mapping der Datenbanktabellen auf Python-Klassen erfolgt mittels der Datei `mapper.py`. Hierbei werden entsprechend des Klassendiagramms die Tabellen der Datenbank auf Python-Klassen abgebildet. 
+Für die Implementierung des Timers wurde ein Code-Diagramm für die bessere Visualisierung und Nachvollziehbarkeit des Codes erstellt. Das Diagramm zeigt die Struktur des Timers und die Interaktion mit den anderen Komponenten des Systems. 
+
+image::Code-Diagram-Timer_light.png[]
+
+Der Timer ist in Form zweier Cron-Jobs implementiert, welche in regelmäßigen Abständen die Fertigung der Lose überprüfen, diese in weitere Fertigungsschritte bewegen und bei Bedarf die Fertigung einzelner Lose startet. Der erste CronJob ist für das Überprüfen der Startdaten der Lose und das dementsprechende Starten dieser bei Erreichen des Startdatums zuständig. Der zweite CronJob überprüft die Fertigungsschritte der Lose und bewegt diese in den nächsten Fertigungsschritt, wenn der aktuelle Fertigungsschritt abgeschlossen ist. Außerdem prüft er für jede Maschine, ob diese noch in Betrieb ist und ordnet nach dem FIFO-Prinzip (First-In-First-Out) die wartende Lose entsprechend inaktiven Maschinen zu. Beide Cronjobs werden alle 5 Minuten vom Betriebssystem des Raspberry Pi ausgeführt.
+
+==== Timer: Lose starten
+
+
+
+=== weitere Komponenten des Systems inklusive ihrer Python-Dateien
+Die Bündelung der Geschäftslogik des Timers und die Benutzerinteraktion mittels REST-API erfolgt in den Python-Dateien. So wurden die Aktionen des Timers und weitere administrative Aktionen manuell für den Administrator und teils auch für den Mitarbeiter ausführbar gemacht. Die Python-Dateien sind, gebündelt nach der Zugehörigkeit zu den einzelnen Komponenten, die im <<modelid,C4-Modell>> dargestellt sind, in den folgenden Tabellen aufgeführt.
+
+==== Authentifizierung
+
+==== Datenbankzugriff
+Der Zugriff auf die Datenbank erfolgt über die ORM-Bibliothek SQLAlchemy. Diese ermöglicht es, die Datenbank als Objekte zu repräsentieren und somit die Datenbankabfragen in Python-Code zu schreiben. Das Mapping der Datenbanktabellen auf Python-Klassen erfolgt mittels der Datei `mapper.py`. Hierbei werden entsprechend des Klassendiagramms die Tabellen der Datenbank auf Python-Klassen abgebildet. Die Python-Klassen enthalten die Attribute, die dann den Spalten der Datenbanktabellen entsprechen.
 
 .Klassendiagramm
 image::Klassendiagramm.png[Klassendiagramm, width=70%, align="center"]
@@ -48,7 +71,15 @@ Um auf die Datenbank zuzugreifen, wird in den Python-Dateien die Datenbank-Sessi
 | database_disconnection() | Schließt die Datenbank-Session.
 |===
 
-Mittels Import der jeweiligen Klassen und Funktionen aus den Dateien `mapper.py` und `database_connection.py` kann in jeder Python-Datei der Zugriff auf die Datenbank gewährleistet werden.
+Mittels Import der jeweiligen Klassen und Funktionen aus den Dateien `mapper.py` und `database_connection.py` kann in jeder Python-Datei der Zugriff auf die Datenbank gewährleistet werden. Aufgrund der repetitiven Verwendung einiger einfacher Datenbankabfragen wurden diese in der Datei `database_accesses.py` zusammengefasst. Diese Funktionen können dann in den Python-Dateien importiert und verwendet werden. Beispielsweise wird in der Python-Datei `Stammdaten.py` die externe Funktion `get_all_lots()` verwendet, um alle Lose aus der Datenbank zu erhalten.
+
+==== Verwaltung von Los-Fertigung
+
+==== Verwaltung von Stammdaten
+
+==== Export/Import von Fertigungsdaten
 
 === Config-Datei
 Die Konfigurationsdatei `config.py` beinhaltet alle Konfigurationen, die für die Webapplikation benötigt werden. Hierzu zählen beispielsweise die Informationen für den Datenbankzugriff, die URL für den Webserver oder der Applikationsname. Die Konfigurationsdatei wird in den Python-Dateien mittels `from config import Config` importiert und die Konfigurationen können dann über die Klasse `Config` abgerufen werden.
+
+== Erweiterungs- und Anpassungsmöglichkeiten

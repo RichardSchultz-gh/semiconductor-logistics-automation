@@ -1,0 +1,174 @@
+<!-- los_bearbeiten_page.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masterdata-ProdFlow</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='Stammdaten_sites.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Masterdata-ProdFlow</h1>
+        <button onclick="goBack()" class="back-btn">Back</button>
+        <a id="backtoMainPage" class="main-btn"><button>Back to Main Page</button></a>
+        <br>
+        <hr>
+    </header>
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    
+        var username = "{{ username }}"; // aus Jinja2 Template
+        
+        var mainPageBtn = document.getElementById('backtoMainPage');
+        mainPageBtn.addEventListener('click', function() {
+            if (username === 'user1') {
+                // zurück zu main-Page
+                window.location.href = "{{ url_for('main.main') }}";
+            } else if (username === 'user2') {
+                // zurück zu main2
+                window.location.href = "{{ url_for('main.main2') }}";
+            }
+        });
+    </script>
+    
+    <main> 
+        <div class="container">
+            <!-- DataAccess -->
+            <div>
+                <div class="filter">
+                    <form action="{{ url_for('Stammdaten.Stammdaten_ProdFlow_page') }}" method="GET" class="form-abfragetabelle">
+                        <table>
+                            <tr>
+                                <td><label for="prod_f">Product:</label></td>
+                                <td><input type="text" name="prod_f" id="prod_f" list="prods"></td>
+                                <td><datalist id="prods">
+                                    {% for prod_id in prod_ids %}
+                                        <option value="{{ prod_id }}">
+                                    {% endfor %}
+                                </datalist></td>
+                                <td><label for="route_f">Route:</label></td>
+                                <td><input type="text" id="route_f" name="route_f" list="routes"></td>
+                                <td><datalist id="routes">
+                                    {% for route_id in route_ids %}
+                                        <option value="{{ route_id }}">
+                                    {% endfor %}
+                                </datalist></td>
+                                <td><button type="submit" class="btn">filter</button></td>
+                            </tr>
+                            <tr>
+                                <td>Alphabetic<br>
+                                    Sort:</td>
+                                <td><input type="radio" id="lasc" name="PFsort" value="lasc">
+                                <label for="lasc" id="lascl">Products ascending</label></td>
+                                <td></td>
+                                <td></td>
+                                <td><input type="radio" id="zasc" name="PFsort" value="zasc">
+                                    <label for="zasc" id="zascl">Routes ascending</label></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td><input type="radio" id="ldesc" name="PFsort" value="ldesc">
+                                    <label for="ldesc" id="ldescl">Products descending</label></td>
+                                <td></td>
+                                <td></td>
+                                <td><input type="radio" id="zdesc" name="PFsort" value="zdesc">
+                                    <label for="zdesc" id="zdescl">Routes descending</label></td>
+                            </tr>
+                        </table>
+                    </form> 
+                </div>
+                <div class="table-container">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Product</th>
+                                <th>Route</th>
+                                <th>seq</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for prodflow in prodflows %}
+                            <tr>
+                                <td>{{ prodflow.product }}</td>
+                                <td>{{ prodflow.route }}</td>
+                                <td>{{ prodflow.seq }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- DataManipulation -->
+            <div>
+                <table class="borderless">
+                    <td>
+                    <!-- editLotselection -->
+                    <div>
+                        <form action="{{ url_for('Stammdaten.Stammdaten_ProdFlow_page') }}" method="GET">
+                            <table class="borderless"> 
+                                <tr>
+                                    <td><label for="prod_s_i">Product:</label></td>
+                                    <td><input type="text" name="prod_s_i" id="prod_s_i" list="prods" placeholder="select Product"></td>
+                                    <datalist id="prods">
+                                        {% for prod in prods %}
+                                            <option value="{{ prod }}">
+                                        {% endfor %}
+                                    </datalist>
+                                </tr>
+                                <tr>
+                                    <td><label for="route_s_i">Route:</label></td>
+                                    <td><input type="text" name="route_s_i" id="route_s_i" list="routes" placeholder="select Route"></td>
+                                    <datalist id="routes">
+                                        {% for route in routes %}
+                                            <option value="{{ route }}">
+                                        {% endfor %}
+                                    </datalist>
+                                </tr>
+                                <tr>
+                                    <td><label for="seq_s_i">Sequence:</label></td>
+                                    <td><input type="text" name="seq_s_i" id="seq_s_i" list="seqs" placeholder="select Sequence"></td>
+                                    <datalist id="seq">
+                                    </datalist>
+                                </tr>
+                                <tr>
+                                    <td colspan="3"><input type="submit" value="edit Product-Flow" class="edit-btn"></td>
+                                </tr>
+                            </table>
+                        </form>
+                    </div>
+                    </td>
+                    <td>
+                    <!-- editLotForm -->
+                    <div>
+                        <form action="{{ url_for('Stammdaten.Stammdaten_ProdFlow_page') }}" method="GET">
+                            <table class="borderless">
+                                <tr>
+                                    <td><label for="prod_i">Product:</label></td>
+                                    <td><input type="text" name="prod" id="prod_i" list="prods" value="{{ prodflow_to_edit.product }}"><br></td>
+                                </tr>
+                                <tr>
+                                    <td><label for="route_i">Route:</label></td>
+                                    <td><input type="text" name="route" id="route_i" list="routes" value="{{ prodflow_to_edit.route }}"><br></td>
+                                </tr>
+                                <tr>
+                                    <td><label for="seq_i">Sequence:</label></td>
+                                    <td><input type="text" name="seq" id="seq_i" list="seqs" value="{{ prodflow_to_edit.seq }}"><br></td>
+                                </tr>
+                            </table>
+                        </form>
+                    </div>
+                    </td>
+                    <td>
+                        <button type="submit" class="edit-btn">Submit</button>
+                    </td>
+                </table>
+            </div>
+            
+        </div>
+    </main>
+</body>
+</html>

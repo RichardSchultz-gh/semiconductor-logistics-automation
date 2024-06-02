@@ -1,12 +1,8 @@
 from mapper import Tool, Lot, PTime, Workflow, ProdFlow
-from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
-from database_connection import get_database_url, database_connection
+from database_connection import database_connection, database_disconnection
 import datetime
 
-session = database_connection()
-
-def start_lot():
+def start_lot(session):
     print(f"\n### Starting Lots ({datetime.datetime.now()}) ###")
     # alle Lose in Zustand INIT prüfen
     lots = session.query(Lot).filter(Lot.state == "INIT").all()
@@ -33,4 +29,7 @@ def start_lot():
             print(f"Lot {lot.lotid} is now in WAIT state (started at {datetime.datetime.now()})")
     session.close()
 
-start_lot()
+session = database_connection()
+start_lot(session)
+database_disconnection(session)
+

@@ -162,3 +162,78 @@ th, td {
     display: inline-block;
 }
 
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+h1, h2, h3 {
+    color: #333;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"], input[type="file"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type="submit"] {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #6f6f6f;
+}
+
+.required {
+    background-color: #a8a8a8;
+}
+
+.export-btn {
+    float: right;
+}
+
+.flash-messages .success {
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+}
+
+.flash-messages .error {
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+}
+
+ul {
+    list-style-type: none;
+}
+
+
+li {
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+
+p {
+    margin-bottom: 10px;
+}
+
+input::placeholder {
+    color: #333; /* Farbe für den Placeholder-Text */
+}

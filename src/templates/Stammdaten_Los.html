@@ -1,0 +1,212 @@
+<!-- Stammdaten_page.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masterdata-Lot</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='Stammdaten_sites.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Masterdata-Lot</h1>
+        <button onclick="goBack()" class="back-btn">Back</button>
+        <a id="backtoMainPage" class="main-btn"><button>Back to Main Page</button></a>
+        <br>
+        <hr>
+    </header>
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    
+        var username = "{{ username }}"; // aus Jinja2 Template
+        
+        var mainPageBtn = document.getElementById('backtoMainPage');
+        mainPageBtn.addEventListener('click', function() {
+            if (username === 'user1') {
+                // zurück zu main-Page
+                window.location.href = "{{ url_for('main.main') }}";
+            } else if (username === 'user2') {
+                // zurück zu main2
+                window.location.href = "{{ url_for('main.main2') }}";
+            }
+        });
+    </script>
+    
+    <main> 
+        <div class="container">
+            <!-- DataAccess -->
+            <div>
+                <div class="filter">
+                    <form action="{{ url_for('Stammdaten.Stammdaten_Los_page') }}" method="GET" class="form-abfragetabelle">
+                        <table>
+                            <tr>
+                                <td><label for="lot_id_f">Lot ID:</label></td>
+                                <td><input type="text" name="lot_id_f" id="lot_id_f" list="lot_ids"></td>
+                                <td><datalist id="lot_ids">
+                                    {% for lotid in lotids %}
+                                        <option value="{{ lotid }}">
+                                    {% endfor %}
+                                </datalist></td>
+                                <td><label for="lot_state_f">State:</label></td>
+                                <td><input type="text" id="lot_state_f" name="lot_state_f" list="lot_states"></td>
+                                <td><datalist id="lot_states">
+                                    <option value="INIT"></option>
+                                    <option value="PROC"></option>
+                                    <option value="HOLD"></option>
+                                    <option value="OP_COMP"></option>
+                                    <option value="FIN"></option>
+                                    <option value="WAIT"></option>
+                                    <option value="SCRAP"></option>
+                                </datalist></td>
+                                <td><button type="submit" class="btn">Filter</button></td>
+                            </tr>
+                            <tr>
+                                <td>Alphabetic<br>
+                                    Sort:</td>
+                                <td><select id="Lsort" name="Lsort">
+                                    <!--Optionen Filteroptionen-->
+                                    <option value="lasc">LotID ascending</option>
+                                    <option value="ldesc">LotID descending</option>
+                                    <option value="zasc">State ascending</option>
+                                    <option value="zdesc">State descending</option>
+                                </select></td>
+                            </tr>
+                        </table>
+                    </form> 
+                </div>
+                <div class="table-container">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Lot ID</th>
+                                <th>Priority</th>
+                                <th>Pieces</th>
+                                <th>State</th>
+                                <th>Product</th>
+                                <th>Route</th>
+                                <th>Operation</th>
+                                <th>Customer</th>
+                                <th>Order</th>
+                                <th>Duedate</th>
+                                <th>Startedate</th>
+                                <th>EnterOperation</th>
+                                <th>ProcessStarted</th>
+                                <th>DisplayTool</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for lot in lots %}
+                            <tr>
+                                <td>{{ lot.lotid }}</td>
+                                <td>{{ lot.priority }}</td>
+                                <td>{{ lot.pieces }}</td>
+                                <td>{{ lot.state }}</td>
+                                <td>{{ lot.product }}</td>
+                                <td>{{ lot.route }}</td>
+                                <td>{{ lot.oper }}</td>
+                                <td>{{ lot.customer }}</td>
+                                <td>{{ lot.order }}</td>
+                                <td>{{ lot.duedate }}</td>
+                                <td>{{ lot.startdate }}</td>
+                                <td>{{ lot.enteroper }}</td>
+                                <td>{{ lot.procstart }}</td>
+                                <td>{{ lot.disptool }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- DataManipulation -->
+            <div>
+                <table class="borderless">
+                    <td>
+                    <!-- editLotSelection -->
+                    <div>
+                        <form action="{{ url_for('Stammdaten.Stammdaten_Los_page') }}" method="GET">
+                            <table class="borderless"> 
+                                <tr>
+                                    <td><label for="lot_id_s_i">Lot ID:</label></td>
+                                    <td><input type="text" name="lot_id_s_i" id="lot_id_s_i" list="lot_ids" placeholder="select Lot ID"></td>
+                                    <datalist id="lot_ids">
+                                        {% for lotid in lotids %}
+                                            <option value="{{ lotid }}">
+                                        {% endfor %}
+                                    </datalist>
+                                </tr>
+                                <tr>
+                                    <td colspan="3"><button type="submit" class="edit-btn" id="editLotBtn">Edit Lot</button></td>
+                                </tr>
+                            </table>
+                        </form>
+                    </div>
+                    </td>
+                    <td>
+                    <!-- editLotForm -->
+                    <div>
+                        <form action="{{ url_for('Stammdaten.Stammdaten_Los_page') }}" method="GET">
+                            <table class="borderless">
+                                <tr>
+                                    <td><label for="lot_id_i">ID:</label></td>
+                                    <td><input type="text" name="lot_id" id="lot_id_i" list="lot_ids" value="{{ lot_to_edit.lotid }}" readonly><br></td>
+                                    <td><label for="lot_route_i">Route:</label></td>
+                                    <td><input type="text" name="lot_route" id="lot_route_i" list="lot_routes" value="{{ lot_to_edit.route }}"></td>
+                                    <td><label for="lot_duedate_i">Duedate:</label></td>
+                                    <td><input type="date" name="lot_duedate" id="lot_duedate_i" list="lot_duedates" value="{{ lot_to_edit.duedate }}"></td>
+                                </tr>
+                                <tr>
+                                    <td><label for="lot_priority_i">Priority:</label></td>
+                                    <td><input type="number" min="0" name="lot_priority" id="lot_priority_i" list="lot_priorities" value="{{ lot_to_edit.priority }}"></td>
+                                        <datalist id="lot_states">
+                                            <option value="INIT"></option>
+                                            <option value="PROC"></option>
+                                            <option value="HOLD"></option>
+                                            <option value="OP_COMP"></option>
+                                            <option value="FIN"></option>
+                                            <option value="WAIT"></option>
+                                            <option value="SCRAP"></option>
+                                        </datalist>
+                                    <td><label for="lot_oper_i">Operation:</label></td>
+                                    <td><input type="text" name="lot_oper" id="lot_oper_i" list="lot_opers" value="{{ lot_to_edit.oper }}"></td>
+                                    <td><label for="lot_startdate_i">Startdate:</label></td>
+                                    <td><input type="date" name="lot_startdate" id="lot_startdate_i" list="lot_startdates" value="{{ lot_to_edit.startdate }}"></td>
+                                </tr>
+                                <tr>
+                                    <td><label for="lot_pieces_i">Pieces:</label></td>
+                                    <td><input type="number" name="lot_pieces" id="lot_pieces_i" list="lot_pieces" value="{{ lot_to_edit.pieces }}"></td>
+                                    <td><label for="lot_customer">Customer:</label></td>
+                                    <td><input type="text" name="lot_customer" id="lot_customer_i" list="lot_customers" value="{{ lot_to_edit.customer }}"></td>
+                                    <td><label for="lot_enteroper_i">Operation enterd:</label></td>
+                                    <td><input type="datetime-local" name="lot_enteroper" id="lot_enteroper_i" list="lot_enteropers" value="{{ lot_to_edit.enteroper }}"></td>
+                                </tr>
+                                <tr>
+                                    <td><label for="lot_state_i">State:</label></td>
+                                    <td><input type="text" name="lot_state" id="lot_state_i" list="lot_states" value="{{ lot_to_edit.state }}"></td>
+                                    <td><label for="lot_order_i">Order:</label></td>
+                                    <td><input type="text" name="lot_order" id="lot_order_i" list="lot_orders" value="{{ lot_to_edit.order }}"></td>
+                                    <td><label for="lot_procstart_i">Process started:</label></td>
+                                    <td><input type="datetime-local" name="lot_procstart" id="lot_procstart_i" list="lot_procstarts" value="{{ lot_to_edit.procstart }}"></td>
+                                </tr>
+                                <tr>
+                                    <td><label for="lot_prod_i">Product:</label></td>
+                                    <td><input type="text" name="lot_prod" id="lot_prod_i" list="lot_prods" value="{{ lot_to_edit.product }}"></td>
+                                    <td><label for="lot_disptool_i">Tool display:</label></td>
+                                    <td><input type="text" name="lot_disptool" id="lot_disptool_i" list="lot_disptools" value="{{ lot_to_edit.disptool }}"></td>
+                                </tr>
+                            </table>
+                            <td>
+                                <button type="submit">Submit</button>
+                            </td>
+                        </form>
+                    </div>
+                    </td>
+                </table>
+            </div>
+            
+        </div>
+    </main>
+</body>
+</html>
