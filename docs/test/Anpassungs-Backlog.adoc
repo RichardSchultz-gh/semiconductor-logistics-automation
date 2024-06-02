@@ -22,7 +22,7 @@
 
 *Test Case UC06- UC07 Daten importieren/eportieren*
 
-* *Header in der CSV sollte den Beispieldatensätzen von Ringel entsprechen, sonst ist ein Import von  eportierten Dateien aus unserem System nicht möglich. Das bedeutet: Exportdateien brauchen nach Möglichkeit Spaltenüberschriten in Großbuchstaben und keine Leerzeichen zwischen den Kommata im Header*
+* *Header in der CSV sollte nach Möglichkeit den Beispieldatensätzen von Ringel entsprechen, sonst ist ein Import von  eportierten Dateien aus unserem System nicht möglich. Das bedeutet: Exportdateien brauchen Spaltenüberschriten in Großbuchstaben und keine Leerzeichen zwischen den Kommata im Header*
 
 * *beim Datei-Export (manuell) sind Spalten markiert, die laut Beschreibung ausgefüllt werden müssen. Es ist aber möglich z.B. ein Lot nur mit seiner ID einzupflegen. Hier müssten wir uns entscheiden, ob wir die Validierung der Eingaben ev. lieber an die Folgegruppe abgeben (ich denke, das wäre aus Zeigründen sinnvoll). Hier müsste eine Menge geprüft werden:
 Zustände dürften nur den definierten Zuständen entsprechen. Ein Los im Zustand INIT hat kein ENTEROPER oder PROCSTART. Das Feld müsste also leer sein. Ein Los im Zustand PROC muss aber ein PROCSTART bestizten etc.*
