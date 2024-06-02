@@ -15,7 +15,7 @@
 
 *Test Case UC04 - UC05 Stammdaten anzeigen/bearbeiten*
 
-* Invaldid Data Format beim Eintragen von Process started und EnterOper
-* Customer lässt sich bei mir nicht editieren und lädt ohne Ergebnis
-* Vorschlag: Tabellenhöhe auf mehr als 3 Zeilen erweitern -> bessere Lesbarkeit
-* Auto-Refresh der Tabelle, wenn der Button Submit gedrückt wird -> bessere Usability 
+* *Invaldid Data Format beim Eintragen von Process started und EnterOper*
+* *Customer lässt sich bei mir nicht editieren und lädt ohne Ergebnis*
+* *Vorschlag: Tabellenhöhe auf mehr als 3 Zeilen erweitern -> bessere Lesbarkeit*
+* *Auto-Refresh der Tabelle, wenn der Button Submit gedrückt wird -> bessere Usability*
