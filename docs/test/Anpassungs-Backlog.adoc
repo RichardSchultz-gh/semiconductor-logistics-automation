@@ -1,4 +1,3 @@
-
 == Anpassungs-Backlog
 
 *Test Case UC01 - Lose starten*
@@ -11,5 +10,12 @@
 
 *Test Case UC03 - Lose bearbeiten*
 
-* Nach Möglichkeit die grafische Oberfläche anpassen: Tabellenbreite expandieren und Trennlinien wie bei "Los starten" einfügen
-* Datenbank mit inkosistenten Variablen: Lot-Tabelle mit Distool|varchar(10) und Tool-Tabelle mit Tool|varchar(15) -> kann dazu führen, dass korrekt eingepflegte Maschinen der Tool-Tabelle das "Los bearbeiten" zum Absturz bringen 
+* *Nach Möglichkeit die grafische Oberfläche anpassen: Tabellenbreite expandieren und Trennlinien wie bei "Los starten" einfügen*
+* Datenbank mit inkosistenten Variablen: Lot-Tabelle mit Distool|varchar(10) und Tool-Tabelle mit Tool|varchar(15) -> kann dazu führen, dass korrekt eingepflegte Maschinen der Tool-Tabelle das "Los bearbeiten" zum Absturz bringen &#x2713;
+
+*Test Case UC04 - UC05 Stammdaten anzeigen/bearbeiten*
+
+* Invaldid Data Format beim Eintragen von Process started und EnterOper
+* Customer lässt sich bei mir nicht editieren und lädt ohne Ergebnis
+* Vorschlag: Tabellenhöhe auf mehr als 3 Zeilen erweitern -> bessere Lesbarkeit
+* Auto-Refresh der Tabelle, wenn der Button Submit gedrückt wird -> bessere Usability 
