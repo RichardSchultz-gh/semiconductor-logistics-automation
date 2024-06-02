@@ -1,35 +1,36 @@
 = Teil 1 Gruppenleistung
 
-== TOP 3 Erfolgen
+== TOP 3 Erfolge
 
 === Erfolg 1 -  Workflow
 
-Mit dem zweiten Projektteil im Sommersemester find die Implementierung der Use Cases an. Da man Code nicht einfach runterschreibt und ist dann abgabebereit, haben wir uns überlegt wie man den Workflow angehen kann. Dabei waren wir uns einig, dass durch Pull-Requests der Code überprüft werden muss, bevor er ins Repository aufgenommen wird. So kann man zum einen die Funktionalitäten checken und Fehler schon mal beheben, sodass der neue Code nicht den bisherigen außer Kraft setzt. (<- das muss anders formuliert sein.) Danach muss der Code getestet werden und die Anmerkungen, die aus dem Testing entstehen, müssen bearbeitet werden und dann wieder zum Testing gehen. Als Letztes wird die Implemention des Use Case dem Auftragsgeber vorgelegt. Anmerkungen daraus werden wieder nach dem Workflow behandelt. 
+Mit dem zweiten Projektteil im Sommersemester begann die Implementierung der Use Cases. Da man Code nicht einfach runterschreibt und dann ist er abgabebereit, haben wir uns überlegt wie man den Workflow angehen kann.
+
+Dabei waren wir uns einig, dass durch Pull-Requests der Code überprüft werden muss, bevor er ins Repository aufgenommen wird. So kann man zum einen die Funktionalitäten überprüfen und Fehler frühzeitig beheben, sodass der neue Code nicht den bisherigen beeinträchtigt.  Danach muss der Code getestet werden und die Anmerkungen, die aus dem Testing entstehen, müssen bearbeitet werden und dann wieder zum Testing gehen. Als Letztes wird die Implementierung des Use Case dem Auftraggeber vorgelegt. Anmerkungen daraus werden wieder nach dem Workflow behandelt. 
 
 Das Konzept eines Workflows, wie oben beschrieben, und eine erfolgreiche Umsetzung sind jedoch zwei unterschiedliche Dinge. 
 
 Als einen Erfolg im Projekt kann die Umsetzung des Workflows genannt werden. Die Teammitglieder haben sich an diesen Workflow gehalten und dynamisch Schritte wiederholt, wenn nötig. Es war den Mitgliedern klar, wer wann was tun muss. So wurden die Funktionen nach der Programmierung per Pull-Request hochgeladen, woraufhin diese von der zuständigen Person überprüft und übernommen (oder nicht übernommen) wurden. Wenn ein Use Case fertig war, wurde dies dem Team mitgeteilt und vorgestellt. Daraufhin hat sich das Testing von alleine angesprochen gefühlt und hat mit dem Testin gestartet. Dabei hätte die Projektleitung nicht einmal die Aufgabe "offiziell" in dem Moment ans Testing verteilen müssen, das entsprechende Mitglied hat sich bei der Fertigstellung der Use Cases direkt angesprochen gefühlt. 
 
-Dass das Team einen guten Workflow hat, wurde vor allem deutlich, als die Projektleitung für 1-2 Wochen krankheitsbedingt ausgefallen ist und nur sporadisch Dinge erledigen konnte. Während dieser Zeit waren die aktuellen Use Cases abgesprochen und die Teammitglieder haben fast komplett eigenständig die Use Cases fertiggestellt, also gecodet, geprüft und getestet, ohne dass die Projektleitung diese Einzelschritte jedes Mal neu zu weisen musste. Die Teammitglieder haben sich gegenseitig überprüft und vor allem geholfen.  
+Dass das Team einen guten Workflow hat, wurde vor allem deutlich, als die Projektleitung für 1-2 Wochen krankheitsbedingt ausgefallen ist und nur sporadisch Dinge erledigen konnte. Während dieser Zeit waren die aktuellen Use Cases abgesprochen und die Teammitglieder haben fast komplett eigenständig die Use Cases fertiggestellt, also gecodet, geprüft und getestet, ohne dass die Projektleitung diese Einzelschritte jedes Mal neu zuweisen musste. Die Teammitglieder haben sich gegenseitig überprüft und vor allem geholfen.  
 
-Natürlich gab es ab und zu mal kleinere Probleme wo der Workflow nicht komplett umgesetzt wurde, aber im großen Ganzen hat das Team einen guten und effektiven Workflow entwickelt und umgesetzt. 
+Natürlich gab es ab und zu mal kleinere Probleme bei denen der Workflow nicht komplett umgesetzt wurde, aber im großen Ganzen und Ganzen hat das Team einen guten und effektiven Workflow entwickelt und umgesetzt. 
 
+=== Erfolg 2 - Wissensaneignung //not done
 
-=== Erfolg 2 - Wissensaneignung
-
-Als wir das Projekt angefangen haben, hatten die einzelnen Teammitglieder kaum bis keine Erfahrungen von den Themen des Projekts oder wie man ein Projekt wie dieses angeht. Aus anderen Teams haben wir mitbekommen wie dort einzelne, aus früheren Berufen, Ausbildungen oder Praktika, bereits technische und organisatiorische Fähigkeiten hatten. Bei uns beruhten die Fähigkeiten aus dem bisherigen Studium und den dortigen deutlich kleineren Einzelprojekten und schulischen Projekten. 
-Zu Beginn war es eine Herausforderung für alle Bereiche ohne jegliches Wissen das Projekt zu starten. Und auch immer wieder zwischendurch wusste keiner so wirklich was zu tun war oder wie man es tun muss. 
+Als wir das Projekt angefangen haben, hatten die einzelnen Teammitglieder kaum bis keine Erfahrungen mit den Themen des Projekts oder wie man ein Projekt wie dieses angeht. 
+Aus anderen Teams haben wir mitbekommen wie dort einzelne, aus früheren Berufen, Ausbildungen oder Praktika, bereits technische und organisatorische Fähigkeiten hatten. Bei uns beruhten die Fähigkeiten auf dem bisherigen Studium und den dortigen deutlich kleineren Einzelprojekten und schulischen Projekten. 
+Zu Beginn war es eine Herausforderung für alle Bereiche, ohne jegliches Wissen das Projekt zu starten. Und auch immer wieder zwischendurch wusste keiner wirklich, was zu tun war oder wie man es tun muss. 
 
 Es gibt dabei zwei Wissensaspekte: 
 
-Als erstes, das technische Wissen. Mit den uns vorgebenen Sprachen und Techniken - Python, SQL, HTML, RaspberryPi - hatten wir bisher nur sporadisch oder oft gar nicht gearbeitet. 
+Als erstes, das technische Wissen. Mit den uns vorgegebenen Sprachen und Techniken - Python, SQL, HTML, RaspberryPi - hatten wir bisher nur sporadisch oder gar nicht gearbeitet. Dies hat immer wieder eine Hürde dargestellt. 
 
+Davon haben wir uns jedoch nicht aufhalten lassen. Immer wenn uns Wissen fehlte, haben wir uns das benötige Wissen, entweder gesteuert durch das Projektmanagement oder aus Eigeninitiative, erarbeitet. 
+Dies ist unserer Meinung nach ein großer Erfolg des Projekts. Wir haben uns von fehlenden Wissen und neuen Hürden nicht entmutigen lassen. Stattdessen haben wir diese Hürden überwunden und dabei viel neues Wissen angesammelt, das uns in Zukunft weiterhelfen wird.
 
-punkt der ganzen Geschichte: wenn uns wissen fehlte haben wir uns es erarbeitet bis wir das nötig wissen hatten auch wenn es vielleicht nicht so tiefgründig ist wie bei anderen, so ist es ein großer Erfolg dass wir uns nicht untergriegen lassen haben und so viel neues wissen angesammelt haben, dass uns in zukunft weiter helfen wird 
-
-
-
-Zum Anderen das nötige Wissen der Projektdurchführung
+Zum Anderen das nötige Wissen der Projektdurchführung. 
+//erarbeitung während des tuns. herausfinden was funktioniert, anwender der lernstoffe des unterrichts
 
 
 
@@ -38,17 +39,24 @@ Zum Anderen das nötige Wissen der Projektdurchführung
 Wir nehmen also aus dem Projekt einen großen Wissens- und Fähigkeitszuwachs mit. 
 
 
-=== Erfolg 3
+=== Erfolg 3 - Agile Arbeitsweise //not done
 
 ?????????????
 
 == TOP 3 Misserfolge
 
-=== Misserfolg 1
-1 Kommunikation zu beginn (Archtiektur/Development): keine kommunikation 
--> nicht zusammengearbeitet -> nicht zusammenpassende ergebnisse -> mehr arbeit
+=== Misserfolg 1 - Kommunikation zwischen Architekten & Entwicklern //nearly done
 
-Als die Arbeit der Architekten und Entwickler angefangen hat, 
+Als ersten Misserfolg im Projekt lässt sich anführen, dass die Kommunikation zwischen Architekten und Entwicklern zu Beginn des Projekt eher schlecht war. 
+Als die Arbeit der Architekten und Entwickler gestartet ist, sollten diese sich für den Prototypen zusammensetzen und beraten. Da keines der Mitglieder vorher Erfahrung in der Entwicklung einer Architektur hatten, sollten sich alle vier zusammensetzen und beraten, was z.B. für die Implementierung am besten erscheint. 
+
+Jedoch kam trotz Bemühung Einzelner keine Kommunikation auf. Über die Weihnachtsfeiertage sollte ein Treffen dieser vier stattfinden. Durch kommunikative Probleme kam es jedoch nicht zu dem Treffen. 
+
+Auch die Kommunikation zwischen den Architekten untereinander war zu Beginn mangelhaft. Aufgaben wurden nicht untereinander besprochen und es herrschte kein Austausch.
+
+Mit Beginn des zweiten Projektteils haben sich die Rollen etwas verschoben. Die Kommunikation unter diesen vieren wurde deutlich besser und gegen Ende des Projekts herrschte im Allgemeinen eine gute Kommunikation.
+
+//hier könnte man noch schreiben, dass die Aufgabenverteilung an die Personen besser angepasst wurden und daher die Strukturen anders waren. Nico und Yannik konnten die Paararbeit nicht so gut, deshalb machen sie dann einzelarbeiten und berichten an Nils als Head Develper. 
 
 === Misserfolg 2 - Verteilung
 
@@ -56,13 +64,12 @@ Als zweiten Misserfolg im Projekt ist anzuführen, dass die Verteilung des Workl
 
 Zu Beginn der Projektarbeit haben die Analysten deutlich mehr Arbeit geleistet als andere Mitglieder. Der zeitliche Aufwand war im ersten Semester durch die Menge an Analysten-Aufgaben deutlich größer als der der z.B. Entwickler oder des Testing. Gegen Ende des Projekts hat sich das von den Analysten zu den Entwicklern gewandelt. Dort hat vor allem der Head-Developer zeitweise einen deutlich größeren zeitlichen Aufwand gehabt als andere Mitglieder. 
 
-Zum einen liegt dies natürlich daran, dass die Aufgaben im Laufe des Projekts ungleich auf die Rollen verteilt ist. Daran kann man nicht viel ändern oder verbessern.
-Zum anderen kann es auch an fehlenden Erfahrungen in der Projektdurchführung liegen. Zu Beginn des Projekts wussten wir nicht was die Entwickler oder Tester machen müssen und was sie in dieser Zeit vielleicht schon vorbereiten hätten können. Zurückblickend können Architekten früher mit ihrer Arbeit anfangen, es braucht kein komplett analysiertes Projekt um mit der Architektur beginnen zu können und die Entwickler könnten früher anfangen Wireframes umzusetzen oder Funktionen, die schnell ersichtlich sind, umzusetzen. Dadurch könnte man z.B. den Prototypen schneller fertigstellen und dann weiterarbeiten.
+Zum einen liegt dies natürlich daran, dass die Aufgaben im Laufe des Projekts ungleich auf die Rollen verteilt waren. Daran kann man nicht viel ändern oder verbessern.
+Zum anderen kann es auch an fehlenden Erfahrungen in der Projektdurchführung liegen. Zu Beginn des Projekts wussten wir nicht was die Entwickler oder Tester machen müssen und was sie in dieser Zeit vielleicht schon vorbereiten hätten können. Zurückblickend können Architekten früher mit ihrer Arbeit anfangen, es braucht kein komplett analysiertes Projekt, um mit der Architektur beginnen zu können und die Entwickler könnten früher anfangen Wireframes umzusetzen oder Funktionen, die schnell ersichtlich sind, umzusetzen. Dadurch könnte man z.B. den Prototypen schneller fertigstellen und dann weiterarbeiten.
 
-Bei langfristigeren und größeren Projekten als diesem hier ist eine ungleiche Arbeitsverteilung nicht nachhaltig. Uns ist deutlich geworden, dass bei künfigen Projekten von Anfang an mehr darauf geachtet werden muss, welchen Arbeitsaufwand jemand hat und bei ungleicher Verteilung muss man versuchen so gut es geht die Aufgaben besser zu verteilen.
+Bei langfristigeren und größeren Projekten als diesem hier ist eine ungleiche Arbeitsverteilung nicht nachhaltig. Uns ist deutlich geworden, dass bei künftigen Projekten von Anfang an mehr darauf geachtet werden muss, welchen Arbeitsaufwand jemand hat und bei ungleicher Verteilung muss man versuchen so gut es geht die Aufgaben besser zu verteilen.
 
-
-=== Misserfolg 3 - Wissenstransfer
+=== Misserfolg 3 - Wissenstransfer //not done
 
 3 fehlender wissenstransfer zwischen den rollen 
 -> beispiel: nils musste sich nochmal komplett in die usecases einlesen um die logik etc zu verstehen um die implementierung dann starten zu können, 
