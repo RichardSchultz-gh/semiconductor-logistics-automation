@@ -17,12 +17,6 @@ Natürlich gab es ab und zu mal kleinere Probleme wo der Workflow nicht komplett
 
 === Erfolg 2 - Wissensaneignung
 
-2 keiner hatte vorher erfahrungen mit den ganzen Techniken/Sprachen etc. und wir haben uns gut das wissen angeeignet
-bzw. der erfolg liegt im aneignungsprozess der techniken, dem beschäftigen mit neuen und dem verständnis der techniken
-die man nutzt und als neue kompetenz jetzt mit nimmt
-
-
-
 Als wir das Projekt angefangen haben, hatten die einzelnen Teammitglieder kaum bis keine Erfahrungen von den Themen des Projekts oder wie man ein Projekt wie dieses angeht. Aus anderen Teams haben wir mitbekommen wie dort einzelne, aus früheren Berufen, Ausbildungen oder Praktika, bereits technische und organisatiorische Fähigkeiten hatten. Bei uns beruhten die Fähigkeiten aus dem bisherigen Studium und den dortigen deutlich kleineren Einzelprojekten und schulischen Projekten. 
 Zu Beginn war es eine Herausforderung für alle Bereiche ohne jegliches Wissen das Projekt zu starten. Und auch immer wieder zwischendurch wusste keiner so wirklich was zu tun war oder wie man es tun muss. 
 
@@ -46,12 +40,15 @@ Wir nehmen also aus dem Projekt einen großen Wissens- und Fähigkeitszuwachs mi
 
 === Erfolg 3
 
+?????????????
 
 == TOP 3 Misserfolge
 
 === Misserfolg 1
 1 Kommunikation zu beginn (Archtiektur/Development): keine kommunikation 
 -> nicht zusammengearbeitet -> nicht zusammenpassende ergebnisse -> mehr arbeit
+
+Als die Arbeit der Architekten und Entwickler angefangen hat, 
 
 === Misserfolg 2 - Verteilung
 
@@ -65,7 +62,6 @@ Zum anderen kann es auch an fehlenden Erfahrungen in der Projektdurchführung li
 Bei langfristigeren und größeren Projekten als diesem hier ist eine ungleiche Arbeitsverteilung nicht nachhaltig. Uns ist deutlich geworden, dass bei künfigen Projekten von Anfang an mehr darauf geachtet werden muss, welchen Arbeitsaufwand jemand hat und bei ungleicher Verteilung muss man versuchen so gut es geht die Aufgaben besser zu verteilen.
 
 
-
 === Misserfolg 3 - Wissenstransfer
 
 3 fehlender wissenstransfer zwischen den rollen 
@@ -74,3 +70,16 @@ oder Paul musste sich um das testing zu starten in den code rein arbeiten. da w�
 wo der vorarbeiter den nacharbeiter erklärt was getan wurde und fragen beantwortet.( Oder eine noch bessere dauerhafte wissenstransfergewährleistung 
 wo alle immer überall wissen was abgeht, wobei das bei größeren projekten schwer ist. ) 
 Dadurch ging Zeit und Aufwand verloren + irgendwie auch wissensverlust, da sich Sachen mehrmals erschlossen werden mussten + mehr spielraum für fehler
+
+
+
+Bei dem Projekt arbeiten mehrere Personen in ihren Rollen an einem Sachverhalt auf verschiedenen Ebenen. Zuerst stellen die Analysten die Anforderungsanalyse auf, daraus wird die Architektur erstellt, woraus wiederum die Umsetzung in Code folgt. Mit dem entstandenen Code arbeitet dann das Testing. 
+Die einzelnen Schritte werden von verschiedenen Rollen und damit oft verschiedenen Personen übernommen. 
+
+Beim Rückblick auf das Projekt ist uns aufgefallen, dass ... 
+
+
+Dies hat zu einem größeren Zeitaufwand geführt, da 
+
+
+
