@@ -210,7 +210,7 @@ def test_if_lots_are_stuck(session_d):
         if ptime is None:
             #falls kein PTime-Eintrag gefunden wurde, ist das Lot in HOLD-Zustand (muss manuell bewegt werden)
             print("Lot " + lot.lotid + " is stuck")
-            lot.state = "DOWN"
+            lot.state = "HOLD"
             session_d.add(lot)
             session_d.commit()
 

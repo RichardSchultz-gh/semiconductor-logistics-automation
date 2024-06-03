@@ -36,24 +36,157 @@ Die HTML-Dateien enthalten die Darstellung der Webseite und die Interaktion mit 
 |===
 
 === CSS-Dateien und ihre Verwendung in den HTML-Dateien
+Folgende CSS-Dateien werden von den HTML-Dateien verwendet, um die Darstellung der Webseite zu gestalten. Dabei wird ein für alle HTML-Dateien standardisiertes Design verwendet, um eine konsistente Benutzererfahrung zu gewährleisten. Folgende CSS-Dateien werden verwendet:
+
+.CSS-Dateien und ihre Verwendung in den HTML-Dateien
+|===
+| *CSS-Datei* | *Verwendung* | *nutzende HTML-Dateien*
+| `login.css` | Gestaltung der Login-Seite. | `login_page.html`
+| `main.css` | Gestaltung der Hauptseite. | `main.html`
+| `los_starten.css` | Gestaltung der Seite zum Starten von Losen. | `los_starten_page.html`
+| `los_bewegen.css` | Gestaltung der Seite zum Bewegen von Losen. | `los_bewegen_page.html`
+| `los_bewegen_hold.css` | Gestaltung der Seite, welche sich um die individuelle Behandlung von angehaltenen Losen kümmert. | `los_bewegen_hold.html`
+| `los_bearbeiten.css` | Gestaltung der Seite zum Bearbeiten von Losen. | `los_bearbeiten_page.html`
+| `los_error_success.css` | Gestaltung der Seite, welche die Erfolgsmeldungen und Fehlermeldungen anzeigt. | `los_bearbeiten_error.html`, `los_bearbeiten_success.html`,`los_bewegen_error.html`, `los_bewegen_success.html`, `los_starten_error.html`, `los_starten_success.html`
+| `Stammdaten_main.css` | Gestaltung der Stammdaten-Main-Seite. | `Stammdaten_main.html`
+| `Stammdaten_sites.css` | Gestaltung aller spezifischen Stammdaten-Tabellen-Seiten.| `Stammdaten_Los.html`, `Stammdaten_Tool.html`, `Stammdaten_ProdFlow.html`, `Stammdaten_WorkFlow.html`, `Stammdaten_PTime.html`
+| `port_data.css` | Gestaltung der Import- und Export-Seite. | `export_data_page.html`, `import_data_page.html`
+|===
+
 
 == Backend
 === Benutzerinteraktion mittels REST-API
+Die Interaktion zwischen dem Frontend und dem Backend der Webapplikation wird durch eine REST-API ermöglicht. Diese API stellt verschiedene Endpunkte bereit, über die das Frontend Anfragen an das Backend senden kann. Die REST-API ist so gestaltet, dass sie die CRUD-Operationen (Create, Read, Update, Delete) für die verschiedenen Datenmodelle der Anwendung unterstützt. Die API verwendet das JSON-Format für den Datenaustausch und basiert auf dem HTTP-Protokoll.
+
+==== Endpunkte der REST-API
+Die REST-API umfasst mehrere Endpunkte, die jeweils spezifische Funktionen bereitstellen. Die folgenden Tabellen geben einen Überblick über die wichtigsten Endpunkte der REST-API, ihre Methoden und die entsprechenden Funktionen im Backend.
+
+.Authentifizierungs-Endpunkte
+|===
+| *Endpunkt* | *HTTP-Methode* | *Beschreibung* | *Backend-Funktion*
+| `/` | GET | Zeigt die Login-Seite an. | `login()`
+| `/api/login_check` | POST | Überprüft die Benutzerdaten und setzt die Sitzungsinformationen. | `login_check()`
+| `/api/logout` | GET | Löscht die Sitzungsinformationen und beendet die Sitzung. | `logout()`
+|===
+
+.Main-Endpunkte
+|===
+| *Endpunkt* | *HTTP-Methode* | *Beschreibung* | *Backend-Funktion*
+| `/main` | GET | Zeigt die Hauptseite für USER1 an, welche Daten über Maschinen und Lose anzeigt. | `main()`
+| `/main2` | GET | Zeigt die Hauptseite für USER2 an, welche Daten über Maschinen und Lose anzeigt. | `main2()`
+|===
+
+
+.Los-Starten-Endpunkte
+|===
+| *Endpunkt* | *HTTP-Methode* | *Beschreibung* | *Backend-Funktion*
+| `/main/los_starten` | GET | Zeigt die Seite zum Starten von Losen an und realisiert Filter- und Sortierungsoperationen. | `los_starten_page()`
+| `/main/los_starten` | POST | Erstellt neue Aufträge und Lose entsprechend der benutzerdefinierten Eingaben. | `los_starten()`
+| `/main/manuell_starten` | POST | Startet ein Los manuell durch den Benutzer. | `manuell_starten()`
+|===
+
+.Los-Bewegen-Endpunkte
+|===
+| *Endpunkt* | *HTTP-Methode* | *Beschreibung* | *Backend-Funktion*
+| `/main/los_bewegen` | GET | Zeigt die Seite zum Bewegen von Losen an und realisiert Filter- und Sortierungsoperationen. | `los_bewegen_page()`
+| `/main/los_bewegen` | POST | Bewegt ein Los mit benutzergegebener LotID zur nächsten Station und setzt entsprechend des Erfolges den neuen Zustand. | `los_bewegen()`
+|===
+
+.Los-Bearbeiten-Endpunkte
+|===
+| *Endpunkt* | *HTTP-Methode* | *Beschreibung* | *Backend-Funktion*
+| `/main/los_bearbeiten` | GET | Zeigt die Seite zum Bearbeiten von Losen an und realisiert Filter- und Sortierungsoperationen. | `los_bearbeiten_page()`
+| `/main/los_bearbeiten` | POST | Bearbeitet ein Los mit benutzergegebener LotID, indem es zur nächsten verfügbaren Maschine zugewiesen wird. | `moveLot()`
+|===
+
+.Stammdaten-Endpunkte
+|===
+| *Endpunkt*                          | *HTTP-Methode* | *Beschreibung*                                                                             | *Backend-Funktion*
+| `/main/Stammdaten`                  | GET            | Zeigt die Hauptseite der Stammdaten für USER1 an.                                          | `Stammdaten_page()`
+| `/main/Stammdaten/Los`              | GET            | Zeigt die Stammdaten-Seite für Lose an, ermöglicht das Abrufen und Bearbeiten von Los-Daten. | `Stammdaten_Los_page()`
+| `/main/Stammdaten/Tool`             | GET            | Zeigt die Stammdaten-Seite für Werkzeuge an, ermöglicht das Abrufen und Bearbeiten von Werkzeug-Daten. | `Stammdaten_Tool_page()`
+| `/main/Stammdaten/ProdFlow`         | GET            | Zeigt die Stammdaten-Seite für Produktionsfluss an, ermöglicht das Abrufen und Bearbeiten von Produktionsfluss-Daten. | `Stammdaten_ProdFlow_page()`
+| `/main/Stammdaten/WorkFlow`         | GET            | Zeigt die Stammdaten-Seite für Workflow an, ermöglicht das Abrufen und Bearbeiten von Workflow-Daten. | `Stammdaten_WorkFlow_page()`
+| `/main/Stammdaten/PTime`            | GET            | Zeigt die Stammdaten-Seite für Produktionszeit an, ermöglicht das Abrufen und Bearbeiten von Produktionszeit-Daten. | `Stammdaten_PTime_page()`
+|===
+
+.Daten-Import-Endpunkte
+|===
+| *Endpunkt*                          | *HTTP-Methode* | *Beschreibung*                                                                             | *Backend-Funktion*
+| `/import`                           | GET, POST      | Ermöglicht den Import von CSV-Dateien.                                                     | `import_data()`
+| `/add_entity`                       | POST           | Fügt eine neue Entität hinzu.                                                              | `add_entity()`
+| `/add_lot`                          | POST           | Fügt ein neues Lot hinzu.                                                                  | `add_lot()`
+| `/add_prodflow`                     | POST           | Fügt einen neuen Produktionsfluss hinzu.                                                   | `add_prodflow()`
+| `/add_ptime`                        | POST           | Fügt eine neue Produktionszeit hinzu.                                                      | `add_ptime()`
+| `/add_tool`                         | POST           | Fügt ein neues Werkzeug hinzu.                                                             | `add_tool()`
+| `/add_workflow`                     | POST           | Fügt einen neuen Workflow hinzu.                                                           | `add_workflow()`
+|===
+
+.Daten-Export-Endpunkte
+|===
+| *Endpunkt*                  | *HTTP-Methode* | *Beschreibung*                                                                              | *Backend-Funktion*
+| `/main/export_data`         | GET            | Zeigt die Exportseite an, auf der Benutzer auswählen können, welche Daten sie exportieren möchten. | `export_data_page()`
+| `/main/export_data`         | POST           | Exportiert die ausgewählten Daten in eine CSV-Datei und sendet sie als Anhang zurück.          | `export_to_csv()`
+|===
+
+
+==== Implementierung der REST-API
+Die REST-API ist in Flask implementiert, einem Mikro-Webframework für Python. Flask bietet einfache und flexible Möglichkeiten zur Erstellung von Webanwendungen und APIs. Die Endpunkte der API sind als Routen in den entsprechenden Python-Dateien definiert. Jeder Route ist einer spezifischen Funktion zugeordnet, die die spezifische Operation ausführt.
+
+.Beispiel: Definition eines API-Endpunkts in Flask in main.py
+```python
+include::../../src/main.py[lines=3..13] 
+```	
+
+==== Fehlermeldungen und Statuscodes
+Es kann ein 400 Bad Request-Code zurückgegeben werden, wenn die Eingabedaten ungültig sind, oder ein 404 Not Found-Code, wenn das angeforderte Los nicht existiert. Die Fehlermeldungen werden als JSON-Objekte zurückgegeben, die den Fehlercode und eine entsprechende Nachricht enthalten.
+
+Durch die Verwendung einer REST-API wird die Trennung von Frontend und Backend erleichtert, was eine klare Strukturierung und Wartbarkeit der Anwendung ermöglicht. Die REST-API stellt sicher, dass die verschiedenen Komponenten der Webapplikation effizient und zuverlässig miteinander kommunizieren können.
+
+
 === Timer
 Für die Implementierung des Timers wurde ein Code-Diagramm für die bessere Visualisierung und Nachvollziehbarkeit des Codes erstellt. Das Diagramm zeigt die Struktur des Timers und die Interaktion mit den anderen Komponenten des Systems. 
 
 image::Code-Diagram-Timer_light.png[]
 
-Der Timer ist in Form zweier Cron-Jobs implementiert, welche in regelmäßigen Abständen die Fertigung der Lose überprüfen, diese in weitere Fertigungsschritte bewegen und bei Bedarf die Fertigung einzelner Lose startet. Der erste CronJob ist für das Überprüfen der Startdaten der Lose und das dementsprechende Starten dieser bei Erreichen des Startdatums zuständig. Der zweite CronJob überprüft die Fertigungsschritte der Lose und bewegt diese in den nächsten Fertigungsschritt, wenn der aktuelle Fertigungsschritt abgeschlossen ist. Außerdem prüft er für jede Maschine, ob diese noch in Betrieb ist und ordnet nach dem FIFO-Prinzip (First-In-First-Out) die wartende Lose entsprechend inaktiven Maschinen zu. Beide Cronjobs werden alle 5 Minuten vom Betriebssystem des Raspberry Pi ausgeführt.
+Der Timer ist in Form zweier Cron-Jobs implementiert, welche in regelmäßigen Abständen die Fertigung der Lose überprüfen, diese in weitere Fertigungsschritte bewegen und bei Bedarf die Fertigung einzelner Lose startet. Der erste CronJob ist für das Überprüfen der Startdaten der Lose und das dementsprechende Starten dieser bei Erreichen des Startdatums zuständig. Der zweite CronJob überprüft die Fertigungsschritte der Lose und bewegt diese in den nächsten Fertigungsschritt, wenn der aktuelle Fertigungsschritt abgeschlossen ist. Außerdem prüft er für jede Maschine, ob diese noch in Betrieb ist und ordnet nach dem FIFO-Prinzip (First-In-First-Out) die wartende Lose entsprechend inaktiven Maschinen zu. Beide Cronjobs werden alle 5 Minuten vom Betriebssystem des Raspberry Pi ausgeführt. Entsprechend des Code-Diagramms, werden Logging-Informationen zu gestartete#n, bewegten und nun bearbeiteten Losen und die entsprechende Zeit in die Log-Datei `log.txt` geschrieben.
 
 ==== Timer: Lose starten
+Das Starten von Losen, deren Startdatum erreicht wurde, wird durch einen CronJob, welcher die Datei `Lot_start.py` ausführt, realisiert. Der CronJob wird alle 5 Minuten ausgeführt. Die Funktion `start_lot()` in der Datei `Lot_start.py` überprüft die Startdaten der Lose und startet diese, wenn das Startdatum erreicht wurde. Zusätzlich wird lediglich eine Datenbanksession initialisiert und geschlossen. 
 
+.Funktionen in Lot_start.py
+|===
+| *Funktion* | *Beschreibung*
+| start_lot() | Überprüft die Startdaten der Lose und startet diese, wenn das Startdatum erreicht wurde.
+|===
+
+==== Timer: Lose bewegen und bearbeiten
+Das Bewegen und Bearbeiten von Losen, die sich im Fertigungsprozess befinden, wird durch einen CronJob, welcher die Datei `Lot_bew_bearb.py` ausführt, realisiert. Der CronJob wird alle 5 Minuten ausgeführt. Die Funktionen dieser Datei überprüfen die Fertigungsschritte der Lose und bewegen diese in den nächsten Fertigungsschritt, wenn der aktuelle Fertigungsschritt abgeschlossen ist. Außerdem prüfen sie für jede Maschine, ob diese weiterhin noch in Betrieb ist und ordnen nach dem FIFO-Prinzip (First-In-First-Out) die wartenden Lose entsprechend inaktiven Maschinen zu. 
+
+.Funktionen in Lot_bew_bearb.py
+|===
+| *Funktion* | *Beschreibung* | *Parameter* | *Rückgabewert*
+| test_if_tool_is_done() | Überprüft, ob eine übergebende Maschine im bearbeitenden Zustand ihr zu prozessierendes Los fertig bearbeitet hat. | tool: Tool | boolean
+| lotop_finished() | Für alle Lose, deren Maschine diese fertig bearbeitet hat, werden die Attribute entsprechend eines OP_COMP-Zustandes verändert. | session_d: DB-Session | -
+| tool_searches_for_lots() | Maschinen, welche sich im betriebsbereiten Zustand "IDLE" befinden, werden nach zu bearbeitenden Losen, welche als nächste Operation ein von der Maschine unterstützte Operation hat, durchsucht. | session_d: DB-Session | -
+| test_if_lots_are_stuck() | Prüfen, ob es Lose gibt, die in WAIT-Zustand sind, aber keine Maschine für nächste Operation und Route haben. Falls ja, setzt es diese auf den Zustand "HOLD". | session_d: DB-Session | -
+| moveLot() | Schauen, ob ein Lot in OP-COMP-Zustand ist und versetzen des Lot auf nächsten Produktionsschritt. | session_d: DB-Session | -
+|===
 
 
 === weitere Komponenten des Systems
-Die Bündelung der Geschäftslogik des Timers und die Benutzerinteraktion mittels REST-API erfolgt in den Python-Dateien. So wurden die Aktionen des Timers und weitere administrative Aktionen manuell für den Administrator und teils auch für den Mitarbeiter ausführbar gemacht. Die Python-Dateien sind, gebündelt nach der Zugehörigkeit zu den einzelnen Komponenten, die im <<modelid,C4-Modell>> dargestellt sind, in den folgenden Tabellen aufgeführt.
+Die Bündelung der Geschäftslogik des Timers und die Benutzerinteraktion mittels REST-API erfolgt in den Python-Dateien. So wurden die Aktionen des Timers und weitere administrative Aktionen manuell für den Administrator und teils auch für den Mitarbeiter ausführbar gemacht. Die Python-Dateien sind, gebündelt nach der Zugehörigkeit zu den einzelnen Komponenten, die im <<modelid,C4-Modell>> dargestellt sind, mit ihren Funktionen in den folgenden Tabellen aufgeführt.
 
 ==== Authentifizierung
+Die Authentifizierung wird durch die Python-Datei `login.py` realisiert. Hierbei wird der Benutzername und das Passwort des Benutzers überprüft und bei erfolgreicher Authentifizierung wird als Sitzungsinformation der username gespeichert, welcher für die weitere Benutzerinteraktion benötigt wird. So wird in jeder weiteren Anfrage an das Backend der username überprüft, um den Benutzer zu authentifizieren. Damit wird sichergestellt, dass gewisse Funktionen nur vom autorisierten Fertigungsleiter ausgeführt werden können.
+
+.Funktionen in login.py
+|===
+| *Funktion* | *Beschreibung* | *Parameter* | *Rückgabewert*
+| login() | Zeigt die Login-Seite `login_page.html`. | - | HTML-Seite mit dem Login-Formular
+| login_check() | Überprüft die eingegebenen Benutzerdaten und setzt bei Korrektheit die Sitzungsinformationen. | - | JSON-Antwort mit Status und Nachricht des Validierungsergebnisses
+| logout() | Löscht die Sitzungsinformationen und leitet den Benutzer auf die Login-Seite zurück. | - | HTML-Seite mit dem dem Login-Formular
+|===
 
 ==== Datenbankzugriff
 Der Zugriff auf die Datenbank erfolgt über die ORM-Bibliothek SQLAlchemy. Diese ermöglicht es, die Datenbank als Objekte zu repräsentieren und somit die Datenbankabfragen in Python-Code zu schreiben. Das Mapping der Datenbanktabellen auf Python-Klassen erfolgt mittels der Datei `mapper.py`. Hierbei werden entsprechend des Klassendiagramms die Tabellen der Datenbank auf Python-Klassen abgebildet. Die Python-Klassen enthalten die Attribute, die dann den Spalten der Datenbanktabellen entsprechen.
@@ -65,10 +198,10 @@ Um auf die Datenbank zuzugreifen, wird in den Python-Dateien die Datenbank-Sessi
 
 .Funktionen in database_connection.py
 |===
-| *Funktion* | *Beschreibung*
-| get_database_url() | Gibt die URL für den Datenbankzugriff zurück.
-| database_connection() | Initialisiert die Datenbank-Session.
-| database_disconnection() | Schließt die Datenbank-Session.
+| *Funktion* | *Beschreibung* | *Parameter* | *Rückgabewert*
+| get_database_url() | Gibt die Datenbank URL mit Config-Informationen zurück | - | URL für den Datenbankzugriff
+| database_connection() | Initialisiert die Datenbank-Session. | - | Datenbank-Session
+| database_disconnection() | Schließt die Datenbank-Session. | session: DB-Session | -
 |===
 
 Mittels Import der jeweiligen Klassen und Funktionen aus den Dateien `mapper.py` und `database_connection.py` kann in jeder Python-Datei der Zugriff auf die Datenbank gewährleistet werden. Aufgrund der repetitiven Verwendung einiger einfacher Datenbankabfragen wurden diese in der Datei `database_accesses.py` zusammengefasst. Diese Funktionen können dann in den Python-Dateien importiert und verwendet werden. Beispielsweise wird in der Python-Datei `Stammdaten.py` die externe Funktion `get_all_lots()` verwendet, um alle Lose aus der Datenbank zu erhalten.
