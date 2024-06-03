@@ -46,7 +46,7 @@ input, select{
 
 .table-container {
     display: inline-block;
-    height: 12em;
+    height: 20em;
     overflow-y: scroll;
     margin-right:auto;
     margin-left:auto;
