@@ -50,7 +50,7 @@ Der Timer ist in Form zweier Cron-Jobs implementiert, welche in regelmäßigen A
 
 
 
-=== weitere Komponenten des Systems inklusive ihrer Python-Dateien
+=== weitere Komponenten des Systems
 Die Bündelung der Geschäftslogik des Timers und die Benutzerinteraktion mittels REST-API erfolgt in den Python-Dateien. So wurden die Aktionen des Timers und weitere administrative Aktionen manuell für den Administrator und teils auch für den Mitarbeiter ausführbar gemacht. Die Python-Dateien sind, gebündelt nach der Zugehörigkeit zu den einzelnen Komponenten, die im <<modelid,C4-Modell>> dargestellt sind, in den folgenden Tabellen aufgeführt.
 
 ==== Authentifizierung
