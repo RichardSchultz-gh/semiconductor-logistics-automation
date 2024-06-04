@@ -32,6 +32,8 @@
                 window.location.href = "{{ url_for('main.main2') }}";
             }
         });
+        
+
     </script>
     
     <main> 
@@ -40,7 +42,7 @@
             <div>
                 <div class="filter">
                     <form action="{{ url_for('Stammdaten.Stammdaten_Los_page') }}" method="GET" class="form-abfragetabelle">
-                        <table>
+                        <table class="borderless">
                             <tr>
                                 <td><label for="lot_id_f">Lot ID:</label></td>
                                 <td><input type="text" name="lot_id_f" id="lot_id_f" list="lot_ids"></td>
@@ -121,7 +123,7 @@
             </div>
 
             <!-- DataManipulation -->
-            <div>
+            <div class="DataManipulation">
                 <table class="borderless">
                     <td>
                     <!-- editLotSelection -->
@@ -207,6 +209,10 @@
             </div>
             
         </div>
+        <script>
+            DataMainpulation = document.querySelector('.DataManipulation');
+            DataMainpulation.style.display = "block";
+        </script>    
     </main>
 </body>
 </html>

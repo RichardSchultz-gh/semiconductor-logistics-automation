@@ -91,6 +91,10 @@ th, td {
 }
 
 
+.DataManipulation {
+    display: none;
+}
+
 
 /*Filter*/
 
@@ -103,23 +107,12 @@ th, td {
 
 .filter table {
     width: 100%;
-    border: 1px solid black;
+    border: none;
     border-collapse: collapse;
     margin-top: 20px;
-}
-
-.filter th, .filter td {
-    border: 1px solid black;
     padding: 8px;
     text-align: left;
 }
-
-.filter th {
-    background-color: #333;
-    color: white;
-}
-
-
 
 /*Tabelle*/
 .form-abfragetabelle table {
