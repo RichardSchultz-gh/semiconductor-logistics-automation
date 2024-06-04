@@ -15,9 +15,11 @@ class Config:
     DEBUG = True
     SECRET_KEY = "Holle"
 
-    # Login-Informationen für user1 und user2
+    # Login-Informationen:
+    #user1: Fertigungsleiter
     USER1 = "user1"
     PASSWORD_USER1 = "pass1"
+    #user2: Mitarbeiter
     USER2 = "user2"
     PASSWORD_USER2 = "pass2"
 
