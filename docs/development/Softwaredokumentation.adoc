@@ -215,4 +215,5 @@ Mittels Import der jeweiligen Klassen und Funktionen aus den Dateien `mapper.py`
 === Config-Datei
 Die Konfigurationsdatei `config.py` beinhaltet alle Konfigurationen, die für die Webapplikation benötigt werden. Hierzu zählen beispielsweise die Informationen für den Datenbankzugriff, die URL für den Webserver oder der Applikationsname. Die Konfigurationsdatei wird in den Python-Dateien mittels `from config import Config` importiert und die Konfigurationen können dann über die Klasse `Config` abgerufen werden.
 
-== Erweiterungs- und Anpassungsmöglichkeiten
+=== Datenbank
+==== Entity-Relationship-Modell
