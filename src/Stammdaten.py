@@ -13,6 +13,9 @@ from datetime import datetime
 Stammdaten_bp = Blueprint('Stammdaten', __name__)
 
 def check_user_session():
+    return 'username' in session and session['username'] in [config.USER1, config.USER2]
+
+def check_user_session_user1():
     return 'username' in session and session['username'] == config.USER1
 
 @Stammdaten_bp.route("/main/Stammdaten", methods=["GET"])
@@ -30,11 +33,14 @@ def Stammdaten_Los_page():
 
         
         
-        lot_to_edit_id = request.args.get('lot_id_s_i')
-        lot_to_edit= get_lot_by_id(lot_to_edit_id)
+        if(check_user_session_user1()):
+            lot_to_edit_id = request.args.get('lot_id_s_i')
+            lot_to_edit= get_lot_by_id(lot_to_edit_id)
+        else:
+            lot_to_edit=None
 
 
-        if(get_args_right('lot_id') != None):
+        if(get_args_right('lot_id') != None and check_user_session_user1()):
             dbsession=database_connection()
             edit_Lot=get_lot_by_id(get_args_right('lot_id'))
 
