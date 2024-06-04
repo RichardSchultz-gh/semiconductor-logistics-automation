@@ -32,6 +32,8 @@
                 window.location.href = "{{ url_for('main.main2') }}";
             }
         });
+        
+
     </script>
     
     <main> 
@@ -40,7 +42,7 @@
             <div>
                 <div class="filter">
                     <form action="{{ url_for('Stammdaten.Stammdaten_Los_page') }}" method="GET" class="form-abfragetabelle">
-                        <table>
+                        <table class="borderless">
                             <tr>
                                 <td><label for="lot_id_f">Lot ID:</label></td>
                                 <td><input type="text" name="lot_id_f" id="lot_id_f" list="lot_ids"></td>
@@ -121,7 +123,7 @@
             </div>
 
             <!-- DataManipulation -->
-            <div>
+            <div class="DataManipulation">
                 <table class="borderless">
                     <td>
                     <!-- editLotSelection -->
@@ -160,15 +162,6 @@
                                 <tr>
                                     <td><label for="lot_priority_i">Priority:</label></td>
                                     <td><input type="number" min="0" name="lot_priority" id="lot_priority_i" list="lot_priorities" value="{{ lot_to_edit.priority }}"></td>
-                                        <datalist id="lot_states">
-                                            <option value="INIT"></option>
-                                            <option value="PROC"></option>
-                                            <option value="HOLD"></option>
-                                            <option value="OP_COMP"></option>
-                                            <option value="FIN"></option>
-                                            <option value="WAIT"></option>
-                                            <option value="SCRAP"></option>
-                                        </datalist>
                                     <td><label for="lot_oper_i">Operation:</label></td>
                                     <td><input type="text" name="lot_oper" id="lot_oper_i" list="lot_opers" value="{{ lot_to_edit.oper }}"></td>
                                     <td><label for="lot_startdate_i">Startdate:</label></td>
@@ -185,14 +178,23 @@
                                 <tr>
                                     <td><label for="lot_state_i">State:</label></td>
                                     <td><input type="text" name="lot_state" id="lot_state_i" list="lot_states" value="{{ lot_to_edit.state }}"></td>
+                                    <datalist id="lot_states">
+                                        <option value="INIT"></option>
+                                        <option value="PROC"></option>
+                                        <option value="HOLD"></option>
+                                        <option value="OP_COMP"></option>
+                                        <option value="FIN"></option>
+                                        <option value="WAIT"></option>
+                                        <option value="SCRAP"></option>
+                                    </datalist>
                                     <td><label for="lot_order_i">Order:</label></td>
                                     <td><input type="text" name="lot_order" id="lot_order_i" list="lot_orders" value="{{ lot_to_edit.order }}"></td>
                                     <td><label for="lot_procstart_i">Process started:</label></td>
                                     <td><input type="datetime-local" name="lot_procstart" id="lot_procstart_i" list="lot_procstarts" value="{{ lot_to_edit.procstart }}"></td>
                                 </tr>
                                 <tr>
-                                    <td><label for="lot_prod_i">Product:</label></td>
-                                    <td><input type="text" name="lot_prod" id="lot_prod_i" list="lot_prods" value="{{ lot_to_edit.product }}"></td>
+                                    <td><label for="lot_product_i">Product:</label></td>
+                                    <td><input type="text" name="lot_product" id="lot_product_i" list="lot_products" value="{{ lot_to_edit.product }}"></td>
                                     <td><label for="lot_disptool_i">Tool display:</label></td>
                                     <td><input type="text" name="lot_disptool" id="lot_disptool_i" list="lot_disptools" value="{{ lot_to_edit.disptool }}"></td>
                                 </tr>
@@ -207,6 +209,10 @@
             </div>
             
         </div>
+        <script>
+            DataMainpulation = document.querySelector('.DataManipulation');
+            DataMainpulation.style.display = "block";
+        </script>    
     </main>
 </body>
 </html>
