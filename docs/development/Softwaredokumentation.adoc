@@ -188,6 +188,7 @@ Die Authentifizierung wird durch die Python-Datei `login.py` realisiert. Hierbei
 | logout() | Löscht die Sitzungsinformationen und leitet den Benutzer auf die Login-Seite zurück. | - | HTML-Seite mit dem dem Login-Formular
 |===
 
+[#sqlalchemy]
 ==== Datenbankzugriff
 Der Zugriff auf die Datenbank erfolgt über die ORM-Bibliothek SQLAlchemy. Diese ermöglicht es, die Datenbank als Objekte zu repräsentieren und somit die Datenbankabfragen in Python-Code zu schreiben. Das Mapping der Datenbanktabellen auf Python-Klassen erfolgt mittels der Datei `mapper.py`. Hierbei werden entsprechend des Klassendiagramms die Tabellen der Datenbank auf Python-Klassen abgebildet. Die Python-Klassen enthalten die Attribute, die dann den Spalten der Datenbanktabellen entsprechen.
 
@@ -215,5 +216,7 @@ Mittels Import der jeweiligen Klassen und Funktionen aus den Dateien `mapper.py`
 === Config-Datei
 Die Konfigurationsdatei `config.py` beinhaltet alle Konfigurationen, die für die Webapplikation benötigt werden. Hierzu zählen beispielsweise die Informationen für den Datenbankzugriff, die URL für den Webserver oder der Applikationsname. Die Konfigurationsdatei wird in den Python-Dateien mittels `from config import Config` importiert und die Konfigurationen können dann über die Klasse `Config` abgerufen werden.
 
-=== Datenbank
-==== Entity-Relationship-Modell
+== Datenbank
+Die Datenbank ist in PostgreSQL implementiert und enthält die Tabellen für die Maschinen, Lose und andere Informationen für die Fertigung der Lose. Die Tabellen sind entsprechend des folgend aufgeführten Entity-Relationship-Modells aufgebaut und enthalten die notwendigen Attribute für die Speicherung der Daten. Die Datenbank wird mittels der ORM-Bibliothek <<sqlalchemy,SQL-Alchemy>> in Python repräsentiert, wodurch die Datenbankabfragen in Python-Code geschrieben werden.
+
+=== Entity-Relationship-Modell
