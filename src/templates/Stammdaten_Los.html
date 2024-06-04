@@ -79,7 +79,7 @@
                     </form> 
                 </div>
                 <div class="table-container">
-                    <table class="table">
+                    <table id="sortedtable" class="table">
                         <thead>
                             <tr>
                                 <th>Lot ID</th>
@@ -123,7 +123,7 @@
             </div>
 
             <!-- DataManipulation -->
-            <div class="DataManipulation">
+            <div id="DataManipulation">
                 <table class="borderless">
                     <td>
                     <!-- editLotSelection -->
@@ -210,7 +210,8 @@
             
         </div>
         <script>
-            DataMainpulation = document.querySelector('.DataManipulation');
+            if(username === 'user1')
+            DataMainpulation = document.getElementById('DataManipulation');
             DataMainpulation.style.display = "block";
         </script>    
     </main>
