@@ -85,8 +85,8 @@
 
         <div class="functionbuttons">
             <label>Anpassung</label><br>
-            {% if username == 'user1' %}
             <a href="{{ url_for('Stammdaten.Stammdaten_page') }}"><button type="button">Stammdaten</button></a><br>
+            {% if username == 'user1' %}
             <button type="button">Testsystem</button><br>
             {% endif %}
             <a href="{{ url_for('entities.entities_index') }}"><button type="button">Prototyp</button></a>
