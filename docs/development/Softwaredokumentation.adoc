@@ -220,3 +220,6 @@ Die Konfigurationsdatei `config.py` beinhaltet alle Konfigurationen, die für di
 Die Datenbank ist in PostgreSQL implementiert und enthält die Tabellen für die Maschinen, Lose und andere Informationen für die Fertigung der Lose. Die Tabellen sind entsprechend des folgend aufgeführten Entity-Relationship-Modells aufgebaut und enthalten die notwendigen Attribute für die Speicherung der Daten. Die Datenbank wird mittels der ORM-Bibliothek <<sqlalchemy,SQL-Alchemy>> in Python repräsentiert, wodurch die Datenbankabfragen in Python-Code geschrieben werden.
 
 === Entity-Relationship-Modell
+Das Entity-Relationship-Modell zeigt die Beziehungen zwischen den verschiedenen Entitäten der auf dem Raspberry Pi liegenden Datenbank, welche die Maschinen, Lose, Maschinen, Produktionsflüsse, Workflows und Produktionszeiten beschreiben. 
+
+image::ER-Modell.png[ER-Modell, width=70%, align="center"]
