@@ -48,8 +48,11 @@ input, select{
     display: inline-block;
     height: 20em;
     overflow-y: scroll;
-    margin-right:auto;
-    margin-left:auto;
+    overflow-x: scroll;
+}
+
+.table {
+    width: 100%;
 }
 
 .table thead th {
@@ -58,8 +61,6 @@ input, select{
     background-color: #333;
     color: white;
     z-index: 1;
-    margin-right:auto;
-    margin-left:auto;
     cursor:pointer;
 }
 
@@ -72,15 +73,15 @@ th, td {
 }
 
 .desc:after {
-    content: ' ▼';
+    content: '▼';
 }
 
 .asc:after {
-    content: ' ▲';
+    content: '▲';
 }
 
 .inactive:after {
-    content: ' ▲';
+    content: '▲';
     color: gray;
     opacity: 0.5;
 }
@@ -149,40 +150,3 @@ th, td {
 .borderless td {
     border: none;
 }
-
-/* 
-body{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  }
-  table {
-    border-collapse: collapse;
-    width: 50%;
-    margin: 50px auto 0px auto;
-  }
-
-  th, td {
-    border: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px;
-  }
-
-  th {
-    cursor: pointer;
-    background-color: rgb(207, 207, 207);
-  }
-
-  .desc:after {
-    content: ' ▼';
-  }
-
-  .asc:after {
-    content: ' ▲';
-  }
-  .inactive:after {
-    content: ' ▲';
-    color: gray;
-    opacity: 0.5;
-  }
-  h1 {
-    text-align: center;
-  } */
