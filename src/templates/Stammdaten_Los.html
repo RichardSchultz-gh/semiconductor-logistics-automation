@@ -64,39 +64,28 @@
                                 </datalist></td>
                                 <td><button type="submit" class="btn">Filter</button></td>
                             </tr>
-                            <tr>
-                                <td>Alphabetic<br>
-                                    Sort:</td>
-                                <td><select id="Lsort" name="Lsort">
-                                    <!--Optionen Filteroptionen-->
-                                    <option value="lasc">LotID ascending</option>
-                                    <option value="ldesc">LotID descending</option>
-                                    <option value="zasc">State ascending</option>
-                                    <option value="zdesc">State descending</option>
-                                </select></td>
-                            </tr>
                         </table>
                     </form> 
                 </div>
                 <div class="table-container">
-                    <table id="sortedtable" class="table">
+                    <table id="sortableTable" class="table">
                         <thead>
-                            <tr>
-                                <th>Lot ID</th>
-                                <th>Priority</th>
-                                <th>Pieces</th>
-                                <th>State</th>
-                                <th>Product</th>
-                                <th>Route</th>
-                                <th>Operation</th>
-                                <th>Customer</th>
-                                <th>Order</th>
-                                <th>Duedate</th>
-                                <th>Startedate</th>
-                                <th>EnterOperation</th>
-                                <th>ProcessStarted</th>
-                                <th>DisplayTool</th>
-                            </tr>
+                          <tr>
+                            <th onclick="sortTable(0)">LotID<span id="arrow0" class="inactive"></span></th>
+                            <th onclick="sortTable(1)">Priority<span id="arrow1" class="inactive"></span></th>
+                            <th onclick="sortTable(2)">Pieces<span id="arrow2" class="inactive"></span></th>
+                            <th onclick="sortTable(3)">State<span id="arrow3" class="inactive"></span></th>
+                            <th onclick="sortTable(4)">Product<span id="arrow4" class="inactive"></span></th>
+                            <th onclick="sortTable(5)">Route<span id="arrow5" class="inactive"></span></th>
+                            <th onclick="sortTable(6)">Operation<span id="arrow6" class="inactive"></span></th>
+                            <th onclick="sortTable(7)">Customer<span id="arrow7" class="inactive"></span></th>
+                            <th onclick="sortTable(8)">Order<span id="arrow8" class="inactive"></span></th>
+                            <th onclick="sortTable(9)">DisplayTool<span id="arrow9" class="inactive"></span></th>
+                            <th onclick="sortTable(10)">DueDate<span id="arrow10" class="inactive"></span></th>
+                            <th onclick="sortTable(11)">StartDate<span id="arrow11" class="inactive"></span></th>
+                            <th onclick="sortTable(12)">enterdOperation<span id="arrow12" class="inactive"></span></th>
+                            <th onclick="sortTable(13)">startedProcess<span id="arrow13" class="inactive"></span></th>
+                          </tr>
                         </thead>
                         <tbody>
                             {% for lot in lots %}
@@ -110,17 +99,55 @@
                                 <td>{{ lot.oper }}</td>
                                 <td>{{ lot.customer }}</td>
                                 <td>{{ lot.order }}</td>
+                                <td>{{ lot.disptool }}</td>
                                 <td>{{ lot.duedate }}</td>
                                 <td>{{ lot.startdate }}</td>
                                 <td>{{ lot.enteroper }}</td>
                                 <td>{{ lot.procstart }}</td>
-                                <td>{{ lot.disptool }}</td>
                             </tr>
                             {% endfor %}
                         </tbody>
-                    </table>
+                      </table>
+                      <script>
+                        let sortOrder = [];
+                    
+                        function sortTable(columnIndex) {
+                          const table = document.getElementById('sortableTable');
+                          const tbody = table.querySelector('tbody');
+                          const rows = Array.from(tbody.querySelectorAll('tr'));
+                    
+                          // TOGGLE BETWEEN ASCENDING AND DESCENDING ORDER
+                          sortOrder[columnIndex] = (sortOrder[columnIndex] === 'asc') ? 'desc' : 'asc';
+                    
+                          // UPDATE ARROW INDICATORS IN THE HEADER
+                          for (let i = 0; i < table.rows[0].cells.length; i++) {
+                            const arrow = document.getElementById('arrow' + i);
+                            arrow.className = (i === columnIndex) ? sortOrder[columnIndex] : 'inactive';
+                          }
+                    
+                          // SORT THE ROWS BASED ON THE CONTENT OF THE SELECTED COLUMN
+                          rows.sort((a,b) => {
+                            const aValue = a.children[columnIndex].textContent.trim();
+                            const bValue = b.children[columnIndex].textContent.trim();
+                            return sortOrder[columnIndex] === 'asc'
+                            ? aValue.localeCompare(bValue, undefined, {numeric: true, sensitivity: 'base'})
+                            : bValue.localeCompare(aValue, undefined, {numeric: true, sensitivity: 'base'});
+                          });
+                    
+                          // CLEAR THE EXISITING TABLE BODY
+                          tbody.innerHTML = '';
+                    
+                          // APPEND THE SORTED ROWS TO THE TABLE BODY
+                          rows.forEach(row => tbody.appendChild(row));
+                        }
+                      </script>
                 </div>
             </div>
+            
+
+
+
+
 
             <!-- DataManipulation -->
             <div id="DataManipulation">
@@ -210,9 +237,10 @@
             
         </div>
         <script>
-            if(username === 'user1')
-            DataMainpulation = document.getElementById('DataManipulation');
-            DataMainpulation.style.display = "block";
+            if(username === 'user2'){
+                DataMainpulation = document.getElementById('DataManipulation');
+                DataMainpulation.style.display = "none";
+            }
         </script>    
     </main>
 </body>

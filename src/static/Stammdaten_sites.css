@@ -60,6 +60,7 @@ input, select{
     z-index: 1;
     margin-right:auto;
     margin-left:auto;
+    cursor:pointer;
 }
 
 th, td {
@@ -68,6 +69,20 @@ th, td {
     border-bottom: 0.1px solid #ffffff;
     border-left: 0.1px solid #ffffff;
     font-size: 20px;
+}
+
+.desc:after {
+    content: ' ▼';
+}
+
+.asc:after {
+    content: ' ▲';
+}
+
+.inactive:after {
+    content: ' ▲';
+    color: gray;
+    opacity: 0.5;
 }
 
 /*Buttons*/
@@ -134,3 +149,40 @@ th, td {
 .borderless td {
     border: none;
 }
+
+/* 
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  table {
+    border-collapse: collapse;
+    width: 50%;
+    margin: 50px auto 0px auto;
+  }
+
+  th, td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+
+  th {
+    cursor: pointer;
+    background-color: rgb(207, 207, 207);
+  }
+
+  .desc:after {
+    content: ' ▼';
+  }
+
+  .asc:after {
+    content: ' ▲';
+  }
+  .inactive:after {
+    content: ' ▲';
+    color: gray;
+    opacity: 0.5;
+  }
+  h1 {
+    text-align: center;
+  } */
