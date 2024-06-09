@@ -208,14 +208,23 @@ Da sich die Aufgabenverteilung im Sommersemester verschieben, wird die Rollenver
 
 | I11
 |
-* 
+* Abnahme UC01-UC03
+* Fertigstellung UC04/UC05
+* Fertigstellung UC06/UC07
+* Fertigstellung UC08
+* Erstellung Config Datei
+* Findung Themen Gruppenreflextion
 | 20.05.-31.05.
 | 
 |
 
 | I12
 |
-* 
+* Fertigstellung UC08
+* Entwicklerdoku
+* Betriebsdoku
+* Anwenderdoku
+* Testdoku
 | 03.06.-14.06.
 | 
 |

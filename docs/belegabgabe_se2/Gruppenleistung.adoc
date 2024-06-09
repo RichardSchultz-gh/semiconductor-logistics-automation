@@ -40,7 +40,7 @@ Wir nehmen also aus dem Projekt einen großen Wissens- und Fähigkeitszuwachs mi
 
 
 === Erfolg 3 - Agile Arbeitsweise //not done
-
+//Agiles Manifest (Februar 2001) „Wir erschließen bessere Wege, Software zu entwickeln, indem wir es selbst tun und anderen dabei helfen. Durch diese Tätigkeit haben wir diese Werte zu schätzen gelernt: Individuen und Interaktionen > Prozesse und Werkzeuge    Funktionierende Software > umfassende Dokumentation     Zusammenarbeit mit dem Kunden > Vertragsverhandlung     Reagieren auf Veränderung > das Befolgen eines Plans        Das heißt, obwohl wir die Werte auf der rechten Seite wichtig finden, schätzen wir die Werte auf der linken Seite höher ein.“
 ?????????????
 
 == TOP 3 Misserfolge
