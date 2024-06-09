@@ -13,6 +13,9 @@ from datetime import datetime
 Stammdaten_bp = Blueprint('Stammdaten', __name__)
 
 def check_user_session():
+    return 'username' in session and session['username'] in [config.USER1, config.USER2]
+
+def check_user_session_user1():
     return 'username' in session and session['username'] == config.USER1
 
 @Stammdaten_bp.route("/main/Stammdaten", methods=["GET"])
@@ -27,35 +30,17 @@ def Stammdaten_page():
 def Stammdaten_Los_page():
     if check_user_session():  # Überprüfen, ob der Benutzer angemeldet ist
         usern = session['username']
-        
-        lotids = get_all_lot_ids()  # alle LotIDs aus Lot abrufen
-        
-         # Lot-ID- und Zustandsfilterung
-        lot_id_filter = request.args.get('lot_id_f')
-        print("Lot ID Filter: " + str(lot_id_filter))
-        lot_state_filter = request.args.get('lot_state_f')
 
-
-        # Filterung von Losen und Werkzeugen
-        sort_type_Lots = request.args.get('Lsort')
         
-
-        if lot_id_filter and not lot_state_filter:
-            lots = filter_lots_by_id(lot_id_filter, sort_type_Lots)
-        elif lot_state_filter and not lot_id_filter:
-            lots = filter_lots_by_state(lot_state_filter, sort_type_Lots)
-        elif lot_id_filter and lot_state_filter:
-            lots = filter_lots_by_id_and_state(lot_id_filter, lot_state_filter, sort_type_Lots)
+        
+        if(check_user_session_user1()):
+            lot_to_edit_id = request.args.get('lot_id_s_i')
+            lot_to_edit= get_lot_by_id(lot_to_edit_id)
         else:
-            lots = get_all_lots(sort_type_Lots) # Hier implementieren Sie Ihre Logik zum Abrufen von Lots für die angeforderte Seite
-
-        
-        
-        lot_to_edit_id = request.args.get('lot_id_s_i')
-        lot_to_edit= get_lot_by_id(lot_to_edit_id)
+            lot_to_edit=None
 
 
-        if(get_args_right('lot_id') != None):
+        if(get_args_right('lot_id') != None and check_user_session_user1()):
             dbsession=database_connection()
             edit_Lot=get_lot_by_id(get_args_right('lot_id'))
 
@@ -63,11 +48,8 @@ def Stammdaten_Los_page():
             try:
                 if(edit_Lot.priority!=get_args_right('lot_priority')):
                     dbsession.query(Lot).filter(Lot.lotid==get_args_right('lot_id')).update({'priority':get_args_right('lot_priority')})
-                
-
-                print("pieces:"+get_args_right('lot_pieces'))
+            
                 if(edit_Lot.pieces!=get_args_right('lot_pieces')):
-                    print("bin in pieces")
                     dbsession.query(Lot).filter(Lot.lotid==get_args_right('lot_id')).update({'pieces':get_args_right('lot_pieces')})
 
                 if(edit_Lot.state!=get_args_right('lot_state')):
@@ -108,6 +90,30 @@ def Stammdaten_Los_page():
             except SQLAlchemyError as e:
                 print("Error: "+ e)
                 return render_template("Stammdaten_error.html", error=e)
+        
+        lotids = get_all_lot_ids()  # alle LotIDs aus Lot abrufen
+        
+         # Lot-ID- und Zustandsfilterung
+        lot_id_filter = request.args.get('lot_id_f')
+        print("Lot ID Filter: " + str(lot_id_filter))
+        lot_state_filter = request.args.get('lot_state_f')
+
+
+        # Filterung von Losen und Werkzeugen
+        sort_type_Lots = request.args.get('Lsort')
+        
+
+        if lot_id_filter and not lot_state_filter:
+            lots = filter_lots_by_id(lot_id_filter, sort_type_Lots)
+        elif lot_state_filter and not lot_id_filter:
+            lots = filter_lots_by_state(lot_state_filter, sort_type_Lots)
+        elif lot_id_filter and lot_state_filter:
+            lots = filter_lots_by_id_and_state(lot_id_filter, lot_state_filter, sort_type_Lots)
+        else:
+            lots = get_all_lots(sort_type_Lots) # Hier implementieren Sie Ihre Logik zum Abrufen von Lots für die angeforderte Seite
+
+
+
 
         return render_template("Stammdaten_Los.html", lotids=lotids, lots=lots, username=usern, lot_to_edit=lot_to_edit)
         
@@ -123,8 +129,8 @@ def get_timestamp_args_right(id):
     lot_attribute= request.args.get(id)
     if(lot_attribute=="None" or not lot_attribute):lot_attribute=None
     if(lot_attribute!=None):
-        dt= datetime.strptime(lot_attribute, "%Y-%m-%dT%H:%M.%f")
-        new_timestamp = dt.strftime("%Y-%m-%d %H:%M:%S")
+        dt= datetime.strptime(lot_attribute, "%Y-%m-%dT%H:%M")
+        new_timestamp = dt.strftime("%Y-%m-%d %H:%M:%S.%f")
         return new_timestamp
     else:
         return None

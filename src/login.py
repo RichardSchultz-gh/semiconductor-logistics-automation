@@ -14,10 +14,18 @@ users = {
 
 @login_bp.route("/", methods=["GET"])
 def login():
+    """
+    Zeigt die Login-Seite an
+    :return: HTML-Seite mit dem Login-Formular
+    """
     return render_template("login_page.html")
 
 @login_bp.route('/login_check', methods=['POST'])
 def login_check():
+    """
+    Überprüft die Benutzerdaten und setzt die Sitzungsinformationen
+    :return: JSON-Antwort mit Status und Nachricht
+    """
     data = request.json
     #print(data)  # Debugging-Anweisung
     if not data:
@@ -41,6 +49,10 @@ def login_check():
 
 @login_bp.route('/logout', methods=['GET'])
 def logout():
+    """
+    Löscht die Sitzungsinformationen und leitet den Benutzer zur Login-Seite weiter
+    :return: Weiterleitung zur Login-Seite
+    """
     # Session löschen, um den Benutzer auszuloggen
     session.pop('username', None)
     # Weiterleitung zur Login-Seite

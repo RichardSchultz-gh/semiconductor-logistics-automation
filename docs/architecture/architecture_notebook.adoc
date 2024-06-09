@@ -47,22 +47,22 @@ Da die Anwendung auf einem RaspberryPi betrieben wird, ist die Architektur darau
 
 *Funktional*
 
-* *SWFA-1:* Das System muss Zugriffsbeschränkungen gewährleisten, da nicht jeder Anwender jeden Use Case ausführen darf.
+* *SWFA-1:* Das System muss Zugriffsbeschränkungen gewährleisten, da nicht jeder Anwender jeden Use Case ausführen darf. Diese Zugriffsbeschränkungen erlauben es dem Anwender nur für ihn vorgesehene Funktionen auszuführen und nur auf für ihn zugängliche Daten zuzugreifen.
 * *SWFA-2:* Das System muss zeitgesteuerte Aktivitäten in Form eines Timers ermöglichen, da Statusabfragen der Lose und Maschinen ausgewertet werden müssen.
 * *SWFA-3:* Das System muss Eingaben des Anwenders und Statusupdates persistent speichern können.
+* *SWFA-4:* Das System muss eine Config-Datei bereitstellen, in der systemweite Informationen eingestellt werden können.
+
+*Benutzbarkeit (Usability)*
+
+* *QAGU-1:* Die Gesamtheit der Interaktionselemente soll minimiert werden.
 
 *Zuverlässigkeit*
 
-* *QAGZ-1:* Das System darf durch einen Netzwerkausfall nicht beschädigt werden.
-
-*Effizienz (Performance)*
-
-* *QAGE-1:* Das System soll eine stabile Nutzung bei mehreren gleichzeitigen Nutzern gewährleisten.
-* *QAGE-2:* Das System soll eine maximale Antwortzeit von unter 10 Sekunden aufweisen.
+* *QAGZ-1:* Das System muss bei einem Netzwerkausfall die Konsitenz der Daten gewährleisten
 
 *Wartbarkeit (Supportability)*
 
-* *QAGW-2:* Das System muss kompatibel zu Chrome, Firefox, Edge und Safari sein.
+* *QAGW-1:* Zur besseren Wartbarkeit und zum besseren Verständnis bei auftretenden Fehlern, muss das Entwicklerteam eine umfangreiche Entwicklerdokumentation bereitstellen.
 
 *Zusätzliche Anforderungen*
 
@@ -107,13 +107,13 @@ https://www2.htw-dresden.de/~anke/openup/core.tech.common.extend_supp/guidances/
 - **Zweck:** Handhabung von ACID-Transaktionen.
 - **Eigenschaften:** Unterstützt die Integrität und Zuverlässigkeit von Datenbankoperationen.
 - **Funktion:** PostgreSQL bietet native Unterstützung für Transaktionsmanagement, um Konsistenz und Zuverlässigkeit der Daten zu gewährleisten.
-- **Ausschnit Zugehöriger SWFA:** SWFA-3, QAGE-1, QAGZ-1
+- **Ausschnit Zugehöriger SWFA:** SWFA-3, QAGZ-1
 
 ### Mega-Daten (Mega-data)
 - **Zweck:** Unterstützung für die Verarbeitung sehr großer Datenmengen.
 - **Eigenschaften:** Skalierbare Datenverarbeitung und -speicherung.
 - **Funktion:** PostgreSQL und Python-Middleware für effiziente Handhabung und Verarbeitung großer Datensätze.
-- **Ausschnit Zugehöriger SWFA:** QAGE-2, Ressourceneinschränkungen
+- **Ausschnit Zugehöriger SWFA:** Ressourceneinschränkungen
 
 ### Terminierung (Scheduling)
 - **Zweck:** Ermöglicht die Planung und Ausführung von Aufgaben zu bestimmten Zeiten oder unter bestimmten Bedingungen.
@@ -131,13 +131,7 @@ https://www2.htw-dresden.de/~anke/openup/core.tech.common.extend_supp/guidances/
 - **Zweck:** Erkennung, Weiterleitung und Berichterstattung von Fehlern.
 - **Eigenschaften:** Robuste Fehlerbehandlung und klare Benachrichtigungssysteme.
 - **Funktion:** Implementierung eines Systems, das Fehler effektiv erkennt und dem Benutzer verständliche Meldungen liefert.
-- **Ausschnit Zugehöriger SWFA:** QAGZ-1, QAGU-6
-
-### Lokalisierung / Internationalisierung (Localization / Internationalization)
-- **Zweck:** Unterstützung mehrerer menschlicher Sprachen und Darstellung der vom Benutzer bevorzugten Sprache.
-- **Eigenschaften:** Flexibilität in der Sprachwahl, einfache Anpassung an verschiedene Sprachen.
-- **Funktion:** Implementierung eines Systems, das Benutzeroberflächen und Meldungen in verschiedenen Sprachen unterstützt.
-- **Ausschnit Zugehöriger SWFA:** QAGU-4, QAGW-2
+- **Ausschnit Zugehöriger SWFA:** QAGZ-1
 
 Diese Architekturmechanismen sind essentiell für die Entwicklung einer robusten, sicheren und skalierbaren Datenbankanwendung, die auf einem RaspberryPi mit Raspbian Betriebssystem betrieben wird.
 

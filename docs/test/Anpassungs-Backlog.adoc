@@ -15,10 +15,10 @@
 
 *Test Case UC04 - UC05 Stammdaten anzeigen/bearbeiten*
 
-* *Invaldid Data Format beim Eintragen von Process started und EnterOper*
-* *Customer lässt sich bei mir nicht editieren und lädt ohne Ergebnis*
-* *NiceToHave: Tabellenhöhe auf mehr als 3 Zeilen erweitern -> bessere Lesbarkeit*
-* *NiceToHave: Auto-Refresh der Tabelle, wenn der Button Submit gedrückt wird -> bessere Usability*
+* Invalid Data Format beim Eintragen von Process started und EnterOper &#x2713;
+* Customer lässt sich bei mir nicht editieren und lädt ohne Ergebnis &#x2713;
+* NiceToHave: Tabellenhöhe auf mehr als 3 Zeilen erweitern -> bessere Lesbarkeit &#x2713;
+* NiceToHave: Auto-Refresh der Tabelle, wenn der Button Submit gedrückt wird -> bessere Usability &#x2713;
 
 *Test Case UC06- UC07 Daten importieren/eportieren*
 

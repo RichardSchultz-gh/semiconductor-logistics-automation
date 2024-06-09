@@ -1,0 +1,88 @@
+@startuml
+
+package "srcLot_bew_bearb.py" {
+    class LotBearbeitung {
+        +tool_searches_for_lot(session_d)
+        +test_if_lots_are_stuck(session_d)
+        +moveout(session_d)
+        +lotop_finished(session_d)
+        +test_if_tool_is_done(tool)
+    }
+}
+
+package "srcLot_start.py" {
+    class LotStart {
+        +start_lot(session)
+    }
+}
+
+package "src/database_connection.py" {
+    class Datenbankverbindung {
+        +database_connection()
+        +database_disconnection(session_d)
+        +get_database_uri()
+    }
+}
+
+package "src/config.py" {
+    class Konfiguration {
+        +DATABASE_URI
+    }
+}
+
+package "src/mappings.py" {
+    class Lot {
+        +__tablename__ = "lot"
+    }
+
+    class Tool {
+        +__tablename__ = "tools"
+    }
+
+    class PdmFlow {
+        +__tablename__ = "pdmflow"
+    }
+
+    class ProdFlow {
+        +__tablename__ = "prodflow"
+    }
+
+    class WorkFlow {
+        +__tablename__ = "workflow"
+    }
+}
+
+package "CronJobs" {
+    class CronJob1 {
+        +*/5 * * * * /usr/bin/python3 iot_start.py >> log.txt 2>&1
+    }
+
+    class CronJob2 {
+        +*/5 * * * * /usr/bin/python3 lot_bew_bearb.py >> log.txt 2>&1
+    }
+}
+
+package "Log" {
+    class Log {
+        +log.txt
+    }
+}
+
+LotBearbeitung --> LotStart : aufruf
+LotStart --> Datenbankverbindung : aufruf
+Datenbankverbindung --> Konfiguration : zugriff
+Datenbankverbindung --> Datenbankverbindung : schreibzugriff
+LotBearbeitung --> Datenbankverbindung : aufruf
+LotBearbeitung --> Konfiguration : zugriff
+CronJob1 --> Log : Schreibzugriff
+CronJob2 --> Log : Schreibzugriff
+CronJob1 --> LotStart : aufruf
+CronJob2 --> LotBearbeitung : aufruf
+LotBearbeitung --> Lot : nutzung
+LotBearbeitung --> Tool : nutzung
+LotBearbeitung --> ProdFlow : nutzung
+LotBearbeitung --> WorkFlow : nutzung
+LotStart --> Lot : nutzung
+LotStart --> WorkFlow : nutzung
+
+@enduml

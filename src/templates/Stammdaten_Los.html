@@ -32,6 +32,8 @@
                 window.location.href = "{{ url_for('main.main2') }}";
             }
         });
+        
+
     </script>
     
     <main> 
@@ -40,7 +42,7 @@
             <div>
                 <div class="filter">
                     <form action="{{ url_for('Stammdaten.Stammdaten_Los_page') }}" method="GET" class="form-abfragetabelle">
-                        <table>
+                        <table class="borderless">
                             <tr>
                                 <td><label for="lot_id_f">Lot ID:</label></td>
                                 <td><input type="text" name="lot_id_f" id="lot_id_f" list="lot_ids"></td>
@@ -62,39 +64,28 @@
                                 </datalist></td>
                                 <td><button type="submit" class="btn">Filter</button></td>
                             </tr>
-                            <tr>
-                                <td>Alphabetic<br>
-                                    Sort:</td>
-                                <td><select id="Lsort" name="Lsort">
-                                    <!--Optionen Filteroptionen-->
-                                    <option value="lasc">LotID ascending</option>
-                                    <option value="ldesc">LotID descending</option>
-                                    <option value="zasc">State ascending</option>
-                                    <option value="zdesc">State descending</option>
-                                </select></td>
-                            </tr>
                         </table>
                     </form> 
                 </div>
                 <div class="table-container">
-                    <table class="table">
+                    <table id="sortableTable" class="table">
                         <thead>
-                            <tr>
-                                <th>Lot ID</th>
-                                <th>Priority</th>
-                                <th>Pieces</th>
-                                <th>State</th>
-                                <th>Product</th>
-                                <th>Route</th>
-                                <th>Operation</th>
-                                <th>Customer</th>
-                                <th>Order</th>
-                                <th>Duedate</th>
-                                <th>Startedate</th>
-                                <th>EnterOperation</th>
-                                <th>ProcessStarted</th>
-                                <th>DisplayTool</th>
-                            </tr>
+                          <tr>
+                            <th onclick="sortTable(0)">LotID<span id="arrow0" class="inactive"></span></th>
+                            <th onclick="sortTable(1)">Priority<span id="arrow1" class="inactive"></span></th>
+                            <th onclick="sortTable(2)">Pieces<span id="arrow2" class="inactive"></span></th>
+                            <th onclick="sortTable(3)">State<span id="arrow3" class="inactive"></span></th>
+                            <th onclick="sortTable(4)">Product<span id="arrow4" class="inactive"></span></th>
+                            <th onclick="sortTable(5)">Route<span id="arrow5" class="inactive"></span></th>
+                            <th onclick="sortTable(6)">Oper<span id="arrow6" class="inactive"></span></th>
+                            <th onclick="sortTable(7)">Customer<span id="arrow7" class="inactive"></span></th>
+                            <th onclick="sortTable(8)">Order<span id="arrow8" class="inactive"></span></th>
+                            <th onclick="sortTable(9)">DispTool<span id="arrow9" class="inactive"></span></th>
+                            <th onclick="sortTable(10)">DueDate<span id="arrow10" class="inactive"></span></th>
+                            <th onclick="sortTable(11)">StartDate<span id="arrow11" class="inactive"></span></th>
+                            <th onclick="sortTable(12)">enterOper<span id="arrow12" class="inactive"></span></th>
+                            <th onclick="sortTable(13)">startProc<span id="arrow13" class="inactive"></span></th>
+                          </tr>
                         </thead>
                         <tbody>
                             {% for lot in lots %}
@@ -108,20 +99,58 @@
                                 <td>{{ lot.oper }}</td>
                                 <td>{{ lot.customer }}</td>
                                 <td>{{ lot.order }}</td>
+                                <td>{{ lot.disptool }}</td>
                                 <td>{{ lot.duedate }}</td>
                                 <td>{{ lot.startdate }}</td>
                                 <td>{{ lot.enteroper }}</td>
                                 <td>{{ lot.procstart }}</td>
-                                <td>{{ lot.disptool }}</td>
                             </tr>
                             {% endfor %}
                         </tbody>
-                    </table>
+                      </table>
+                      <script>
+                        let sortOrder = [];
+                    
+                        function sortTable(columnIndex) {
+                          const table = document.getElementById('sortableTable');
+                          const tbody = table.querySelector('tbody');
+                          const rows = Array.from(tbody.querySelectorAll('tr'));
+                    
+                          // TOGGLE BETWEEN ASCENDING AND DESCENDING ORDER
+                          sortOrder[columnIndex] = (sortOrder[columnIndex] === 'asc') ? 'desc' : 'asc';
+                    
+                          // UPDATE ARROW INDICATORS IN THE HEADER
+                          for (let i = 0; i < table.rows[0].cells.length; i++) {
+                            const arrow = document.getElementById('arrow' + i);
+                            arrow.className = (i === columnIndex) ? sortOrder[columnIndex] : 'inactive';
+                          }
+                    
+                          // SORT THE ROWS BASED ON THE CONTENT OF THE SELECTED COLUMN
+                          rows.sort((a,b) => {
+                            const aValue = a.children[columnIndex].textContent.trim();
+                            const bValue = b.children[columnIndex].textContent.trim();
+                            return sortOrder[columnIndex] === 'asc'
+                            ? aValue.localeCompare(bValue, undefined, {numeric: true, sensitivity: 'base'})
+                            : bValue.localeCompare(aValue, undefined, {numeric: true, sensitivity: 'base'});
+                          });
+                    
+                          // CLEAR THE EXISITING TABLE BODY
+                          tbody.innerHTML = '';
+                    
+                          // APPEND THE SORTED ROWS TO THE TABLE BODY
+                          rows.forEach(row => tbody.appendChild(row));
+                        }
+                      </script>
                 </div>
             </div>
+            
+
+
+
+
 
             <!-- DataManipulation -->
-            <div>
+            <div id="DataManipulation">
                 <table class="borderless">
                     <td>
                     <!-- editLotSelection -->
@@ -160,15 +189,6 @@
                                 <tr>
                                     <td><label for="lot_priority_i">Priority:</label></td>
                                     <td><input type="number" min="0" name="lot_priority" id="lot_priority_i" list="lot_priorities" value="{{ lot_to_edit.priority }}"></td>
-                                        <datalist id="lot_states">
-                                            <option value="INIT"></option>
-                                            <option value="PROC"></option>
-                                            <option value="HOLD"></option>
-                                            <option value="OP_COMP"></option>
-                                            <option value="FIN"></option>
-                                            <option value="WAIT"></option>
-                                            <option value="SCRAP"></option>
-                                        </datalist>
                                     <td><label for="lot_oper_i">Operation:</label></td>
                                     <td><input type="text" name="lot_oper" id="lot_oper_i" list="lot_opers" value="{{ lot_to_edit.oper }}"></td>
                                     <td><label for="lot_startdate_i">Startdate:</label></td>
@@ -185,14 +205,23 @@
                                 <tr>
                                     <td><label for="lot_state_i">State:</label></td>
                                     <td><input type="text" name="lot_state" id="lot_state_i" list="lot_states" value="{{ lot_to_edit.state }}"></td>
+                                    <datalist id="lot_states">
+                                        <option value="INIT"></option>
+                                        <option value="PROC"></option>
+                                        <option value="HOLD"></option>
+                                        <option value="OP_COMP"></option>
+                                        <option value="FIN"></option>
+                                        <option value="WAIT"></option>
+                                        <option value="SCRAP"></option>
+                                    </datalist>
                                     <td><label for="lot_order_i">Order:</label></td>
                                     <td><input type="text" name="lot_order" id="lot_order_i" list="lot_orders" value="{{ lot_to_edit.order }}"></td>
                                     <td><label for="lot_procstart_i">Process started:</label></td>
                                     <td><input type="datetime-local" name="lot_procstart" id="lot_procstart_i" list="lot_procstarts" value="{{ lot_to_edit.procstart }}"></td>
                                 </tr>
                                 <tr>
-                                    <td><label for="lot_prod_i">Product:</label></td>
-                                    <td><input type="text" name="lot_prod" id="lot_prod_i" list="lot_prods" value="{{ lot_to_edit.product }}"></td>
+                                    <td><label for="lot_product_i">Product:</label></td>
+                                    <td><input type="text" name="lot_product" id="lot_product_i" list="lot_products" value="{{ lot_to_edit.product }}"></td>
                                     <td><label for="lot_disptool_i">Tool display:</label></td>
                                     <td><input type="text" name="lot_disptool" id="lot_disptool_i" list="lot_disptools" value="{{ lot_to_edit.disptool }}"></td>
                                 </tr>
@@ -207,6 +236,12 @@
             </div>
             
         </div>
+        <script>
+            if(username === 'user2'){
+                DataMainpulation = document.getElementById('DataManipulation');
+                DataMainpulation.style.display = "none";
+            }
+        </script>    
     </main>
 </body>
 </html>

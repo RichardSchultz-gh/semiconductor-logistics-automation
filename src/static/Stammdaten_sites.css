@@ -46,10 +46,13 @@ input, select{
 
 .table-container {
     display: inline-block;
-    height: 12em;
+    height: 20em;
     overflow-y: scroll;
-    margin-right:auto;
-    margin-left:auto;
+    overflow-x: scroll;
+}
+
+.table {
+    width: 100%;
 }
 
 .table thead th {
@@ -58,8 +61,7 @@ input, select{
     background-color: #333;
     color: white;
     z-index: 1;
-    margin-right:auto;
-    margin-left:auto;
+    cursor:pointer;
 }
 
 th, td {
@@ -68,6 +70,20 @@ th, td {
     border-bottom: 0.1px solid #ffffff;
     border-left: 0.1px solid #ffffff;
     font-size: 20px;
+}
+
+.desc:after {
+    content: '▼';
+}
+
+.asc:after {
+    content: '▲';
+}
+
+.inactive:after {
+    content: '▲';
+    color: gray;
+    opacity: 0.5;
 }
 
 /*Buttons*/
@@ -91,6 +107,10 @@ th, td {
 }
 
 
+.DataManipulation {
+    display: none;
+}
+
 
 /*Filter*/
 
@@ -103,23 +123,12 @@ th, td {
 
 .filter table {
     width: 100%;
-    border: 1px solid black;
+    border: none;
     border-collapse: collapse;
     margin-top: 20px;
-}
-
-.filter th, .filter td {
-    border: 1px solid black;
     padding: 8px;
     text-align: left;
 }
-
-.filter th {
-    background-color: #333;
-    color: white;
-}
-
-
 
 /*Tabelle*/
 .form-abfragetabelle table {
