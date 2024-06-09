@@ -1,3 +1,7 @@
+# SE Projekt Frau Holle
+# Team I04 - Nils Generlich, Yannik-Joel Herrchen, Nico Kroll, Paul Marx, Richard Schulze, Marlene Winter
+# MIT Lizenz 2024 
+# import_data.py
 from flask import Blueprint, render_template, request, redirect, url_for, flash, session
 from mapper import Tool, Lot, PTime, Workflow, ProdFlow, Entities
 from sqlalchemy.exc import IntegrityError, DataError, OperationalError

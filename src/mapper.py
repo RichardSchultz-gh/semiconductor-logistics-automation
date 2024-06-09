@@ -1,3 +1,7 @@
+# SE Projekt Frau Holle
+# Team I04 - Nils Generlich, Yannik-Joel Herrchen, Nico Kroll, Paul Marx, Richard Schulze, Marlene Winter
+# MIT Lizenz 2024 
+# mapper.py
 from sqlalchemy import create_engine, Column, Integer, String, Date, TIMESTAMP, DECIMAL
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship, sessionmaker

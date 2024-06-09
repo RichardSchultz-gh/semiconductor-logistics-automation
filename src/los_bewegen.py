@@ -1,3 +1,7 @@
+# SE Projekt Frau Holle
+# Team I04 - Nils Generlich, Yannik-Joel Herrchen, Nico Kroll, Paul Marx, Richard Schulze, Marlene Winter
+# MIT Lizenz 2024 
+# los_bewegen.py
 from flask import Blueprint, render_template, request, redirect, url_for, session
 from mapper import Lot, Tool, PTime, Workflow, ProdFlow
 from database_connection import get_database_url, database_connection

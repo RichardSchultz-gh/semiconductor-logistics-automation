@@ -1,3 +1,6 @@
+# SE Projekt Frau Holle
+# Team I04 - Nils Generlich, Yannik-Joel Herrchen, Nico Kroll, Paul Marx, Richard Schulze, Marlene Winter
+# MIT Lizenz 2024 
 # main.py
 import datetime
 from flask import Blueprint, render_template, request, redirect, url_for, session

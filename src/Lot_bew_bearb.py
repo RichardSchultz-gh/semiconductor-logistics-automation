@@ -1,3 +1,7 @@
+# SE Projekt Frau Holle
+# Team I04 - Nils Generlich, Yannik-Joel Herrchen, Nico Kroll, Paul Marx, Richard Schulze, Marlene Winter
+# MIT Lizenz 2024 
+# Lot_bew_bearb.py
 from mapper import Tool, Lot, PTime, Workflow, ProdFlow
 from database_connection import get_database_url, database_connection, database_disconnection
 import datetime

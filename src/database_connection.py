@@ -1,3 +1,7 @@
+# SE Projekt Frau Holle
+# Team I04 - Nils Generlich, Yannik-Joel Herrchen, Nico Kroll, Paul Marx, Richard Schulze, Marlene Winter
+# MIT Lizenz 2024 
+# database_connection.py
 from config import config
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker

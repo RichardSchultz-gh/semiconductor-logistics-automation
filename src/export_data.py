@@ -1,3 +1,7 @@
+# SE Projekt Frau Holle
+# Team I04 - Nils Generlich, Yannik-Joel Herrchen, Nico Kroll, Paul Marx, Richard Schulze, Marlene Winter
+# MIT Lizenz 2024 
+#export_data.py
 from flask import Blueprint, render_template, request, redirect, url_for, session, send_file
 from mapper import Lot
 from database_connection import get_database_url, database_connection, database_disconnection

@@ -1,3 +1,6 @@
+# SE Projekt Frau Holle
+# Team I04 - Nils Generlich, Yannik-Joel Herrchen, Nico Kroll, Paul Marx, Richard Schulze, Marlene Winter
+# MIT Lizenz 2024 
 # Nutzung der Applikation
 
 * Erstellen der Datenbank inkl. aller Tabellen und CSV-Dateien (siehe SQL-Datei docs/development/DB_Tabellen_erstellen im Repository)

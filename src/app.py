@@ -1,3 +1,6 @@
+# SE Projekt Frau Holle
+# Team I04 - Nils Generlich, Yannik-Joel Herrchen, Nico Kroll, Paul Marx, Richard Schulze, Marlene Winter
+# MIT Lizenz 2024 
 # app.py (Hauptprogramm)
 from flask import Flask
 from login import login_bp
