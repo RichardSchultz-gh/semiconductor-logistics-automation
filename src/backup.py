@@ -7,7 +7,18 @@ import os
 import logging
 from datetime import datetime
 from sqlalchemy import create_engine, text
-aaa
+from database_connection import database_connection, database_disconnection
+from flask import Blueprint, render_template, jsonify
+
+backup_bp = Blueprint('backup', __name__)
+
+@backup_bp.route('/main/backup', methods=['GET'])
+def backup_page():
+    last_backup_info = get_last_backup_info()
+    return render_template('backup.html', last_backup_info=last_backup_info)
+
+@backup_bp.route('/main/backup', methods=['POST'])
+def initiate_backup():
     try:
         session = database_connection()
         result = session.execute(text("SELECT 1"))
@@ -22,7 +33,7 @@ aaa
         if not os.path.exists(shell_script_path):
             raise FileNotFoundError(f"Das Shell-Skript '{shell_script_path}' wurde nicht gefunden.")
         
-        # Absoluter Pfad zu Git Bash
+        # Absoluter Pfad zu Git Bash 
         git_bash_path = r'C:\Program Files\Git\bin\bash.exe'
 
         # Überprüfen, ob Git Bash existiert
