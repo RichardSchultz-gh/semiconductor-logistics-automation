@@ -1,0 +1,33 @@
+# Use Case: Backup
+
+## Standardablauf (Automatisiert durch Timer):
+
+- **Backup-Job startet automatisch** basierend auf dem festgelegten Zeitplan (Timer).
+
+- **Initiierung**: Das Python-Skript wird durch einen Cronjob auf dem Raspberry Pi ausgelöst.
+- **Aufruf der Backup-Methode**: Ausführung von pg_dump über das Python-Skript, um die gesamte Datenbank zu sichern.
+- **Speichern**: Die generierte SQL-Datei wird im vorgegebenen Backup-Verzeichnis auf einem externen Speichermedium oder einer festgelegten Partition gespeichert.
+- **Überprüfung des Backup-Status**:
+  - **Erfolgreich**: Bestätigungsnachricht wird ausgegeben und im Log gespeichert.
+  - **Fehler**: Fehlermeldungen werden erfasst und im Log gespeichert. Bei kritischen Fehlern erfolgt eine Benachrichtigung.
+
+## Hintergrundwissen:
+
+- **Cronjob auf Raspberry Pi**: Dieser ermöglicht die Automatisierung der Backups, sodass sie ohne manuelles Eingreifen zu vordefinierten Zeiten ausgeführt werden.
+- **Backup-Integrität**: Regelmäßige Überprüfungen der Backup-Dateien sind notwendig, um sicherzustellen, dass die Daten korrekt und vollständig gesichert wurden.
+
+## Alternative Abläufe (Manuell):
+
+- **Manueller Start des Backup-Prozesses**:
+  - **Auslösung**: Ein Administrator oder Benutzer initiiert das Backup manuell durch Ausführung des Python-Skripts oder über ein spezielles Interface.
+  - **Verarbeitung**: Analog zum automatisierten Prozess wird pg_dump aufgerufen, um die Datenbank zu sichern.
+  - **Manuelle Überprüfung des Backup-Status**:
+    - **Feedback**: Nach Abschluss des Backups prüft der Benutzer die Logs oder die Backup-Datei selbst, um den Erfolg des Vorgangs zu verifizieren.
+
+## Überlegungen zur Implementierung:
+
+- **Speicherplatzmanagement**: Auf dem Raspberry Pi und den verbundenen Speichermedien sollte regelmäßig der verfügbare Speicherplatz geprüft werden, um sicherzustellen, dass ausreichend Platz für die Backups vorhanden ist.
+- **Sicherheit und Datenschutz**: Die Backup-Daten sollten sicher aufbewahrt werden, vorzugsweise verschlüsselt, um unbefugten Zugriff zu verhindern.
+
+- **Letzten und vorletzten Stand speichern, sonst überschreiben**.
+- **Nutzen**: Use Case Daten importieren zum Wiederherstellen am besten über CSV-Datei.
