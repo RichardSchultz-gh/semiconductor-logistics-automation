@@ -27,7 +27,7 @@ def initiate_backup():
         database_disconnection(session)
     
         # Absoluter Pfad zum Shell-Skript, Daten ändern
-        shell_script_path = r'C:\xxxi04-projekt-frau-holle-main\src\backup.sh'
+        shell_script_path = r'C:\xxx\i04-projekt-frau-holle-main\src\backup.sh'
         
         # Überprüfen, ob das Shell-Skript existiert
         if not os.path.exists(shell_script_path):
