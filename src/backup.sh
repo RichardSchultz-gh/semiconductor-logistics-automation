@@ -5,7 +5,7 @@
 #!/bin/bash
 
 # Zielverzeichnis für das Backup
-BACKUP_DIR="C:/Users/xxx/Projekt_test/projekt/i04-projekt-frau-holle-main/src/backup"
+BACKUP_DIR="C:/Users/xxx/i04-projekt-frau-holle-main/src/backup"
 
 # Datenbank-Parameter
 DB_NAME="postgres"
