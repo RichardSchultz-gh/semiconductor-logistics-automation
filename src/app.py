@@ -12,6 +12,7 @@ from los_bewegen import los_bewegen_bp
 from Stammdaten import Stammdaten_bp
 from import_data import import_data_bp
 from export_data import export_data_bp
+from backup import backup_bp
 from config import config
 
 app = Flask(__name__)
@@ -25,6 +26,7 @@ app.register_blueprint(los_bewegen_bp)
 app.register_blueprint(Stammdaten_bp)
 app.register_blueprint(import_data_bp)
 app.register_blueprint(export_data_bp)
+app.register_blueprint(backup_bp)
 
 if __name__ == "__main__":
     # Startet die Anwendung (je nach Konfiguration im Debug-Modus oder nicht)
