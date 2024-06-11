@@ -1,0 +1,77 @@
+<!-- SE Projekt Frau Holle
+        Team I04 - Nils Generlich, Yannik-Joel Herrchen, Nico Kroll, Paul Marx, Richard Schulze, Marlene Winter
+        MIT Lizenz 2024 -->
+<!-- backup.html -->
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backup</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='backup.css') }}">
+</head>
+<body>
+    <h1>Backup</h1>
+    <button onclick="goBack()" class="back-btn">Zurück</button>
+    <a id="backtoMainPage" class="main-btn" href="{{ url_for('main.main') }}"><button>Zur Hauptseite</button></a>
+    <br>
+    <hr>
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+
+        var username = "{{ username }}";
+        
+        var mainPageBtn = document.getElementById('backtoMainPage');
+        mainPageBtn.addEventListener('click', function() {
+            if (username === 'user1') {
+                // zurück zu main-Page
+                window.location.href = "{{ url_for('main.main') }}";
+            } else if (username === 'user2') {
+                // zurück zu main2
+                window.location.href = "{{ url_for('main.main2') }}";
+            }
+        });
+    </script>
+
+    <div class="container">
+        <div class="div2">
+            <h2>Backup</h2>
+            <p>Das Backup wird manuell ausgelöst und die gesamte Datenbank gesichert</p>
+            <br>
+            <form id="backupForm">
+                <button id="backupButton" class="btn">Backup erstellen</button>
+            </form>
+            <p id="message"></p>
+            <div id="backupInfo">
+                <p>Letztes Backup: <span id="lastBackup">{{ last_backup_info.timestamp or "Nie" }}</span></p>
+                <p>Backup-Pfad: <span id="backupPath">{{ last_backup_info.path or "" }}</span></p>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+</body>
+
+<script>
+    document.getElementById('backupButton').addEventListener('click', (event) => {
+        event.preventDefault();
+        fetch('/main/backup', {
+            method: 'POST'
+        })
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById('message').textContent = data.message;
+            if (data.path) {
+                document.getElementById('backupPath').textContent = data.path;
+                document.getElementById('lastBackup').textContent = new Date().toLocaleString();
+            }
+        })
+        .catch(error => {
+            document.getElementById('message').textContent = 'Fehler beim Backup: ' + error;
+        });
+    });
+</script>
+</html>
