@@ -55,7 +55,7 @@ Process started: 08.05.2024-09,05.2024
 | *Ergebnis* | FAIL
 | *To-dos* | 
 - Invalid Data Format beim Eintragen von Process started und EnterOper. Der Zeitstempel enthält zusätzlich Stunden und Minuten und muss entsprechend angepasst werden.
-+
+  +
 - Product-Änderung lädt ohne Ergebnis
 | *Korrekturstatus* | DONE
 |===
