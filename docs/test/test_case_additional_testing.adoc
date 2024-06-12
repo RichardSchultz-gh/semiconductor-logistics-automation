@@ -1,1 +1,29 @@
 
+== Test Case: Addional Testing
+
+*Tests mit Fokus auf folgende Funktionalitäten:*
+
+* zusätzliche Softwarebestandteile, die keine systemweiten Anforderungen und keinem UseCase zugehörig sind 
+
+'''
+|===
+| *Test-ID* | 1 
+| *Zweck* | Verifikation diverser Filter- und Sortieroptionen
+| *Testart* | Manuell, Positiv-Test
+| *Vorbedingungen* | 
+  Fertigungsleiter ist in der Web-Anwendung angemeldet
+| *Testdurchführung* | 
+ 1. Auswahl divereser Filter- und Sortieroptionen
+  +
+2. Prüfung, ob die zugehörigen Ausgabetabellen die gesetzte Auswahl korrekt umsetzt
+  +
+| *Nachbedingungen* | 
+Bei erfolgreicher Testausführung wurde die zugehörige Ausgabetabelle nach bestimmten Merkmalen sortiert/gefiltert
+| *Eingabedaten* | 
+z.B. absteigende LosID und Zustand WAIT im UseCase "Lost bearbeiten"
+| *Ergebnis* | PASS
+| *To-dos* | /
+| *Korrekturstatus* | /
+|===
+
+'''
