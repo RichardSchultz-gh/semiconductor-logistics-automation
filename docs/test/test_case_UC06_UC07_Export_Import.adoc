@@ -1,1 +1,73 @@
+== Test Case UC05/UC06 - Daten exportieren/importieren
+
+*Tests mit Fokus auf folgende Funktionalitäten:*
+
+* Datenexport
+* Datenimport
+
+
+'''
+|===
+| *Test-ID* | 1 
+| *Zweck* | Verifikation Daten exportieren
+| *Testart* | Manuell, Positiv-Test
+| *Vorbedingungen* | 
+  - Fertigungsleiter ist in der Web-Anwendung angemeldet
+  +
+  - der Button "Daten exportieren" wurde angeklickt
+| *Testdurchführung* | 
+ 1. Auswahl diverser LotID über Radiobutton
+  +
+2. Datensätze exportieren
+  +
+3. Kontrolle der erstellten Datei auf Korrektheit und Vollständigkeit der Daten sowie korrektes Dateiformat
+  +
+| *Nachbedingungen* | 
+Bei erfolgreicher Testausführung wurde eine CSV-Datei mit Header erstellt und alle Daten, die zuvor ausgewählt worden sind, in diese Datei geschrieben
+| *Eingabedaten* | 
+Auswahl von 3-5 Losen
+
+| *Ergebnis* | PASS
+| *To-dos* | /
+| *Korrekturstatus* | /
+|===
+
+'''
+|===
+| *Test-ID* | 2 
+| *Zweck* | Verifikation Daten importieren
+| *Testart* | Manuell, Negativ-Test
+| *Vorbedingungen* | 
+  - Fertigungsleiter ist in der Web-Anwendung angemeldet
+  +
+  - der Button "Daten importieren" wurde angeklickt
+  +
+  - pgAdmin wird ausgeführt
+| *Testdurchführung* | 
+ 1. Auswahl von verschiedenen CSV-Dateien
+  +
+2. Klicken des Buttons "Hinzufügen"
+  +
+3. SELECT-Befehl auf Los-Tabelle in pgAdmin zur Kontrolle, ob die Daten erfolgreich importiert worden sind
+  +
+| *Nachbedingungen* | 
+Bei erfolgreicher Testausführung wurden die Daten der CSV-Datei erfolgreich in die Datenbank übertragen
+| *Eingabedaten* | 
+- Exportierte Lostabelle aus unserem System
+  +
+- Lostabelle mit den Beispieldatensätzen von Herr Ringel
+| *Ergebnis* | FAIL
+| *To-dos* | 
+- Bei der *exportieren Lostabelle aus unserem System* kein Import möglich: Header beim Export sollte nach Möglichkeit den Beispieldatensätzen von Ringel entsprechen -> sonst kein Import. Das bedeutet: Exportdateien brauchen Spaltenüberschriten in Großbuchstaben und keine Leerzeichen zwischen den Kommata im Header
+  +
+- Fehlermeldungen überschneiden sich teilweise. Zum Beispiel, wenn ein Import mit einem falschen Header stattfindet (z.B. Export aus unserem System), dann gibt es eine Fehlermeldung und der Vorgang wird abgebrochen. Gleichzeitig wird die Ausgabe "File successfully imported" angezeigt.
+| *Korrekturstatus* | IN PROGRESS
+|===
+
+
+
+.TID 2: Fehldermeldung beim Import von einem Export aus unserem System inkl. sich überschneidender Fehlermeldungen
+image::images/TC_UC6_TID1_import mit falschem header.png[]
+
+'''
 
