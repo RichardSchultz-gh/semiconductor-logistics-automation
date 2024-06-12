@@ -23,13 +23,11 @@
   +
 4. Prüfung der Daten innerhalb der Backup-Dateien auf Korrektheit und Vollständigkeit
 | *Nachbedingungen* | 
-- Bei erfolgreicher Testausführung befinden sich alle Backupdateien im Backup-Verzeichnis
+Bei erfolgreicher Testausführung befinden sich alle Backupdateien im Backup-Verzeichnis und die Anzahl der Datensätze entspricht den zuvor festgestellten Datensätzen.
   +
 | *Eingabedaten* | 
 
  Zählen der Beispieldatensätze: z.B.: SELECT COUNT(*) FROM lot;
-  +
-Löschen der Datensätze: z.B.: DELETE FROM lot;
 
 | *Ergebnis* | PASS
 | *To-dos* | /
