@@ -1,1 +1,37 @@
 
+== Test Case UC08 - Backup erstellen
+
+*Tests mit Fokus auf folgende Funktionalitäten:*
+
+* Backup erstellen 
+
+'''
+|===
+| *Test-ID* | 1 
+| *Zweck* | Verifikation Backup erstellen 
+| *Testart* | Manuell, Positiv-Test
+| *Vorbedingungen* | 
+  - Fertigungsleiter oder Mitarbeiter ist in der Web-Anwendung angemeldet
+  +
+  - pgAdmin wird ausgeführt
+| *Testdurchführung* | 
+ 1. Starten des Backups durch Klicken des Buttons "Backup erstellen"
+  +
+2. Kontrolle der Anzahl von Datensätzen in allen Tabellen über SQL-Befehl in pgAdmin
+  +
+3. Prüfung, ob das Backup korrekt im vorgesehenen Verzeichnis hinterlegt worden ist
+  +
+4. Prüfung der Daten innerhalb der Backup-Dateien auf Korrektheit und Vollständigkeit
+| *Nachbedingungen* | 
+- Bei erfolgreicher Testausführung befinden sich alle Backupdateien im Backup-Verzeichnis
+  +
+| *Eingabedaten* | 
+
+ Zählen der Beispieldatensätze: z.B.: SELECT COUNT(*) FROM lot;
+  +
+Löschen der Datensätze: z.B.: DELETE FROM lot;
+
+| *Ergebnis* | PASS
+| *To-dos* | /
+| *Korrekturstatus* | /
+|===
