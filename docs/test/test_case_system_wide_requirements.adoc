@@ -1,1 +1,170 @@
 
+== Test Case System-Wide Requirements
+
+*Tests mit Fokus auf folgende Funktionalitäten:*
+
+* funktionale Anforderungen
+* nicht-funktionale Anforderungen
+
+'''
+|===
+| *Test-ID* | 1 
+| *Zweck* | Verifikation SWFA-1
+| *Testart* | Manuell, Negativ-Test
+| *Vorbedingungen* | 
+  - Login-Fenster der Anwendung ist aufgerufen
+| *Testdurchführung* | 
+ 1. Eingabe von Nutzerdaten für den Nutzer/Mitarbeiter
+  +
+2. Versuch, Use-Cases auszuführen, die nicht der Nutzerrolle entsprechen. Zum Beispiel das Importieren von Daten.
+  +
+| *Nachbedingungen* | 
+- Bei erfolgreicher Testausführung konnte keine UseCases ausgeführt werden, der nicht der Nutzerrolle entspricht
+| *Eingabedaten* | 
+
+user:     user2
+  +
+Passwort: pass2
+  +
+
+| *Ergebnis* | PASS
+| *To-dos* | /
+| *Korrekturstatus* | /
+|===
+
+'''
+|===
+| *Test-ID* | 2 
+| *Zweck* | Verifikation SWFA-2
+| *Testart* | Manuell, Positiv-Test
+| *Vorbedingungen* | 
+  - Fertigungsleiter oder Mitarbeiter ist in der Web-Anwendung angemeldet
+  +
+  - der Button "Los starten" wurde angeklickt, sodass die Eingabemaske erscheint
+| *Testdurchführung* | 
+ 1. Dokumentation der Kennzahlen des Cockpits
+  +
+2. Nach 30 Minuten erneute Dokumentation der Kennzahlen des Cockpits und Abgleich mit dem vorherigen Stand
+  +
+| *Nachbedingungen* | 
+Bei erfolgreicher Testausführung hat der Timer erfolgreich die Produktionsprozesse angestoßen und die Los- und Maschinenzustände haben sich geändert
+| *Eingabedaten* | /
+
+| *Ergebnis* | PASS
+| *To-dos* | /
+| *Korrekturstatus* | /
+|===
+
+'''
+|===
+| *Test-ID* | 3 
+| *Zweck* | Verifikation SWFA-3
+| *Testart* | Manuell, Positiv-Test
+| *Vorbedingungen* | 
+ - Aufruf des Projektes in der Entwicklungsumgebung und Start der Applikation mit python app.py
+  +
+  - Aufruf von pgAdmin zur Administration der Datenbank
+| *Testdurchführung* | 
+ 1. Einfügen eines Test-Loses mittels SQL
+  +
+2. Neustart des Systems
+  +
+3. Anzeigen des Test-Loses mittels SELECT-Befehl in pgAdmin
+| *Nachbedingungen* | 
+Bei erfolgreicher Testausführung wurde das Test-Los persistens in der Datenbank gespeichert
+| *Eingabedaten* | INSERT INTO LOT VALUES
+('TestLot', 44, 10, 'WAIT', 'TestProductA', 'RouteA', '0100', 'TestCustomer', '2024-07-06', '2024-02-02', NULL, NULL, NULL, NULL);
+
+| *Ergebnis* | PASS
+| *To-dos* | /
+| *Korrekturstatus* | /
+|===
+
+'''
+|===
+| *Test-ID* | 4 
+| *Zweck* | Verifikation SWFA-4
+| *Testart* | Manuell, Positiv-Test
+| *Vorbedingungen* | 
+ - Aufruf des Projektes in der Entwicklungsumgebung 
+  +
+  - Aufruf der Datei config.py
+| *Testdurchführung* | 
+ 1. Änderung der Variable PASSWORD_USER1 für user1
+  +
+2. Start der Anwendung durch python app.py
+  +
+3. Login in der Webanwendung durch Verwendung des neuen Passworts, welches in der Config-Datei eingestellt worden ist
+| *Nachbedingungen* | 
+Bei erfolgreicher Testausführung kann sich user1 erfolgreich anmelden
+| *Eingabedaten* | PASSWORD_USER1=root
+| *Ergebnis* | PASS
+| *To-dos* | /
+| *Korrekturstatus* | /
+|===
+
+'''
+|===
+| *Test-ID* | 5 
+| *Zweck* | Verifikation QAGU-1
+| *Testart* | Manuell, Positiv-Test
+| *Vorbedingungen* | 
+  - Fertigungsleiter oder Mitarbeiter ist in der Web-Anwendung angemeldet
+  +
+  - der Button "Los starten" wurde angeklickt, sodass die Eingabemaske erscheint
+| *Testdurchführung* | 
+ 1. Prüfung aller Buttons, ob Doppelbelegung vorkommen
+  +
+2. Prüfung, ob Spaltennamen der Tabellen eindeutig
+  +
+3. Prüfung, ob Filter deskriptiv benannt sind
+| *Nachbedingungen* | 
+Bei erfolgreicher Testausführung ist die Usability des Systems gegeben und die Gesamtheit der Interaktionselemente ist minimiert
+| *Eingabedaten* | /
+| *Ergebnis* | PASS
+| *To-dos* | /
+| *Korrekturstatus* | /
+|===
+
+'''
+|===
+| *Test-ID* | 6 
+| *Zweck* | Verifikation QAGZ-1
+| *Testart* | Manuell, Positiv-Test
+| *Vorbedingungen* | 
+ - Aufruf des Projektes in der Entwicklungsumgebung und Start der Applikation mit python app.py
+| *Testdurchführung* | 
+ 1. Dokumentation ausgewählter Maschinen- und Loszustände
+  +
+2. Erzwingen eines Verbindungsabbruches 
+  +
+3. 5 Minuten später erfolgt das Wiederherstellen der Verbindung 
+  +
+4. Kontrolle, der dokumentierten Maschinen- und Loszustände
+| *Nachbedingungen* | 
+Bei erfolgreicher Testausführung stimmen die Daten überein und das System konnte die Konsistenz der Daten gewährleisten
+| *Eingabedaten* | /
+| *Ergebnis* | PASS
+| *To-dos* | /
+| *Korrekturstatus* | /
+|===
+
+'''
+|===
+| *Test-ID* | 7 
+| *Zweck* | Verifikation QAGW-1:
+| *Testart* | Manuell, Positiv-Test
+| *Vorbedingungen* | 
+ - Aufruf github Repository
+| *Testdurchführung* | 
+ 1. Prüfung der Entwickler - und Betriebsdokumentation
+  +
+2. Kontrolle auf Vollständigkeit, Korrektheit und Verständlichkeit
+  +
+| *Nachbedingungen* | 
+Bei erfolgreicher Testausführung ist durch die umfangreiche Dokumenation eine gute Wartbarkeitd der Anwendung und ein gutes Verständnis bei auftretenden Fehlern gewährleistet 
+| *Eingabedaten* | /
+| *Ergebnis* | PASS
+| *To-dos* | /
+| *Korrekturstatus* | /
+|===

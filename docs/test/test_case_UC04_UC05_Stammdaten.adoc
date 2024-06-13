@@ -1,1 +1,66 @@
 
+== Test Case UC04/UC05 - Stammdaten anzeigen/bearbeiten
+
+*Tests mit Fokus auf folgende Funktionalitäten:*
+
+* Anzeige von Stammdaten
+* Bearbeitung von Stammdaten
+
+
+'''
+|===
+| *Test-ID* | 1 
+| *Zweck* | Verifikation Stammdaten bearbeiten/anzeigen
+| *Testart* | Manuell, Positiv-Test
+| *Vorbedingungen* | 
+  - Fertigungsleiter ist in der Web-Anwendung angemeldet
+  +
+  - der Button "Stammdaten" wurde angeklickt, sodass die Eingabemaske erscheint
+| *Testdurchführung* | 
+ 1. Auswahl einer Lot ID und Bestätigung über EditLot
+  +
+2. Prüfung, ob die Wertfelder korrekt befüllt werden
+  +
+3. Veränderung aller Wert-Felder (ID, Priority, Pieces, State, Product, Route, Operation, Customer, Order, Tool display, Duedate, Startdate, Operion entered, Process started)
+  +
+4. Kontrolle der veränderten Datensätze in der Anzeige-Tabelle und über SELECT-Befehl in pgAdmin
+| *Nachbedingungen* | 
+Bei erfolgreicher Testausführung konnten alle Attribute des Loses erfolgreich geändert und im Anschluss über die Tabelle ausgegeben werden. Außerdem wurden die Wertfelder zu Beginn der Bearbeitung korrekt befüllt und stimmen mit den Datensätzen aus der Los-Tabelle überein.
+| *Eingabedaten* | 
+
+ID:     Test394
+  +
+Priority: 1
+  +
+Pieces: 59
+  +
+State: WAIT
+  + 
+Product : TestProductA
+  + 
+Order: Testorder4
+  +
+Route: TestRoute409
+  +
+Customer: Paul
+  +
+Due date: 09.06.2024
+  +
+Start date: 09.06.2024
+  +
+Operation enterd: 08.05.2024-09,05.2024
+  +
+Process started: 08.05.2024-09,05.2024
+
+| *Ergebnis* | FAIL
+| *To-dos* | 
+- Invalid Data Format beim Eintragen von Process started und EnterOper. Der Zeitstempel enthält zusätzlich Stunden und Minuten und muss entsprechend angepasst werden.
+  +
+- Product-Änderung lädt ohne Ergebnis
+| *Korrekturstatus* | DONE
+|===
+
+.TID 1: Fehlermeldung TimeStamp
+image::images/TC_UC5_TID1_Value_Error.png[]
+
+'''
