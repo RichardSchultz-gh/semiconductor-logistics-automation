@@ -19,6 +19,14 @@ def check_user_session():
 
 @los_bearbeiten_bp.route("/main/los_bearbeiten", methods=["GET"])
 def los_bearbeiten_page():
+    '''
+    Diese Funktion wird aufgerufen, wenn der Benutzer die Seite "Los bearbeiten" aufruft.
+    Es wird überprüft, ob der Benutzer angemeldet ist und ob er die Berechtigung hat, die Seite zu sehen.
+    Sie kümmert sich zudem um die Sortierung und Filterung der Losen und Tools.
+
+    :return: Die Seite "Los bearbeiten" wird angezeigt, wenn der Benutzer angemeldet ist, ansonsten wird eine Fehlermeldung angezeigt.
+
+    '''
     if check_user_session():  # Überprüfen, ob der Benutzer angemeldet ist
         lotids = get_all_lot_ids()  # alle LotIDs aus Lot abrufen
         toolids = get_all_tool_ids()  # alle ToolIDs aus Tool abrufen
@@ -63,6 +71,12 @@ def los_bearbeiten_page():
 
 @los_bearbeiten_bp.route("/main/los_bearbeiten", methods=["POST","GET"])
 def moveLot():
+    '''
+    Ordnet einem Los mit per REST-API übergebener Los-ID, falls es im WAIT-Zustand ist, 
+    eine verfügbare Maschine zu und setzt es auf den Zustand "PROC".
+
+    :return: Die Seite "Los bearbeiten" wird angezeigt, wenn der Benutzer angemeldet ist, ansonsten wird eine Fehlermeldung angezeigt.
+    '''
     session_d = database_connection()
     # übergebenes Los aus der Formularabfrage
     lot_id = request.form.get('lot_id')

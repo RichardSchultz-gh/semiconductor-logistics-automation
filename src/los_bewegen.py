@@ -20,6 +20,11 @@ def check_user_session():
 
 @los_bewegen_bp.route("/main/los_bewegen", methods=["GET"])
 def los_bewegen_page():
+    '''
+    Diese Funktion zeigt die Seite zum Bewegen von Losen an. Es werden alle Losen angezeigt, die sich im Zustand OP_COMP befinden.
+
+    Returns: HTML-Seite für das Bewegen von Losen
+    '''
     if check_user_session():  # Überprüfen, ob der Benutzer angemeldet ist
         products = get_all_products()  # alle Produkte aus ProdFlow abrufen
         lotids = get_all_lot_ids()  # alle LotIDs aus Lot abrufen
@@ -54,6 +59,11 @@ def los_bewegen_page():
 
 @los_bewegen_bp.route("/main/los_bewegen", methods=["POST"])
 def los_bewegen():
+    '''
+    Diese Funktion bewegt ein Los zur nächsten Station/Operation oder setzt das Los auf SCRAP oder OP_COMP.
+
+    Returns: HTML-Seite mit Erfolgsmeldung oder Fehlermeldung
+    '''
     if check_user_session():
         # wenn request von name state Daten bringt, dann ist das ein POST-Request von den Buttons "SCRAP" oder "OP_COMP" (siehe los_bewegen_hold.html)
         if request.form.get("state"):
@@ -114,6 +124,20 @@ def los_bewegen():
 
 # Funktion zum Bewegen des Loses zur nächsten Station/Operation
 def move_lot_to_next_station(lot, db_session):
+    '''
+    Diese Funktion bewegt ein Los zur nächsten Station/Operation.
+    
+    Parameter:
+    lot : Lot-Objekt
+        Das Los, das bewegt werden soll
+    db_session : sqlalchemy.orm.session.Session
+        Die Datenbankverbindung
+        
+    Returns: int
+        0 : Los wurde erfolgreich bewegt
+        1 : Los hat den Produktionsfluss abgeschlossen
+        2: Los konnte nicht bewegt werden
+    '''
     route = lot.route
     oper_int = int(lot.oper)
     #Oper = '0100' wird zu '0200' usw...

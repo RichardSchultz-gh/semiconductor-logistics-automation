@@ -21,19 +21,119 @@ Jinja2 ist ein Template-Engine für Python, die es ermöglicht, dynamische Inhal
 include::../../src/templates/los_starten_page.html[lines=167..176] 
 
 === Funktionalitäten der HTML-Dateien
-Die HTML-Dateien enthalten die Darstellung der Webseite und die Interaktion mit dem Benutzer. Zur Gewährleistung der Benutzerinteraktion wird die REST-API verwendet, um die Anfragen an das Backend zu senden. Die Funktionalitäten der HTML-Dateien sind in der folgenden Tabelle aufgeführt.
+Die HTML-Dateien enthalten die Darstellung der Webseite und die Interaktion mit dem Benutzer. Zur Gewährleistung der Benutzerinteraktion wird die REST-API verwendet, um die Anfragen an das Backend zu senden. Die Funktionalitäten der wichtigsten HTML-Dateien sind in der folgenden Tabelle aufgeführt.
 
 .login_page.html
 |===
-| *Funktionalität* | *Button-Value* | *bearbeitende Python-Datei* | *Beschreibung*
+| *Funktionalität* | *Button-Name* | *bearb. Python-Datei* | *Beschreibung*
 | Login | Login | login.py | Der Benutzer kann sich mittels Benutzername und Passwort einloggen.
 |===
 
 .main.html
 |===
-| *Funktionalität* | *Button-Value* | *bearbeitende Python-Datei* | *Beschreibung*
-| Logout | Logout | login.py | Der Benutzer kann sich ausloggen.
+| *Funktionalität* | *Button-Name* | *bearb. Python-Datei* | *Beschreibung*
+
+| Log out | Log out | login.py | Der Benutzer kann sich ausloggen.
+| Wafer Informationen | - | - | Anzeige von verschiedenen Informationen über Wafer (WIP, HOLD, MVS/hr, COMP, FIN).
+| Tools Informationen | - | - | Anzeige von verschiedenen Informationen über Tools (Anzahl, IDLE, PROD, MAINT, DOWN).
+| Los starten | starten | los_starten.py | Starten eines neuen Loses.
+| Los bearbeiten | bearbeiten | los_bearbeiten.py | Bearbeiten eines bestehenden Loses (nur für Fertigungsleiter sichtbar).
+| Los bewegen | bewegen | los_bewegen.py | Bewegen eines Loses (nur für Fertigungsleiter sichtbar).
+| Stammdaten | Stammdaten | Stammdaten.py | Einsicht und Anpassung der Stammdaten.
+| Backup erstellen | Backup erstellen | backup.py | Erstellung eines Backups (nur für Fertigungsleiter sichtbar).
+| Daten exportieren | Daten exportieren | export_data.py | Export von Daten (nur für Fertigungsleiter sichtbar).
+| Daten importieren | Daten importieren | import_data.py | Import von Daten (nur für Fertigungsleiter sichtbar).
 |===
+
+.los_starten_page.html
+|===
+| *Funktionalität* | *Button-Name* | *bearb. Python-Datei* | *Beschreibung*
+| Zurückgehen | Back | - (per JavaScript) | Rückgängig machen der letzten Aktion.
+| Back to Main Page | Back to Main Page | - | Zurück zur Hauptseite, abhängig vom Benutzernamen.
+| Auftrag anlegen | Register Order | los_starten.py | Formular zur Erstellung eines neuen Auftrags abschicken.
+| Los manuell starten | Start Lot | los_starten.py | Formular zum manuellen Starten eines Loses abschicken.
+| Filtern von Losen | Filtern | los_starten.py | Möglichkeit, Los-Daten basierend auf verschiedenen Kriterien zu filtern.
+| Sortieren von Anzeige der Lose | - | los_starten.py | Möglichkeit, die Anzeige der Lose basierend auf verschiedenen Kriterien zu sortieren.
+| Alle Lose anzeigen | - | los_starten.py | Anzeige aller Los-Daten in einer Tabelle.
+|===
+
+.los_bearbeiten_page.html
+|===
+| *Funktionalität* | *Button-Name* | *bearb. Python-Datei* | *Beschreibung*
+| Zurückgehen | Back | - (per JavaScript) | Rückgängig machen der letzten Aktion.
+| Back to Main Page | Back to Main Page | - | Zurück zur Hauptseite, abhängig vom Benutzernamen.
+| Los bearbeiten | Los bearbeiten | los_bearbeiten.py | Formular mit Angabe eines bestehenden Loses zur Bearbeitung abschicken.
+| Filtern von Losen | Filtern | los_bearbeiten.py | Möglichkeit, Los-Daten basierend auf verschiedenen Kriterien zu filtern.
+| Alle Lose anzeigen | - | los_bearbeiten.py | Anzeige aller Los-Daten in einer Tabelle.
+| Filtern von Tools | Filtern | los_bearbeiten.py | Möglichkeit, Tool-Daten basierend auf verschiedenen Kriterien zu filtern.
+| Alle Tools anzeigen | - | los_bearbeiten.py | Anzeige aller Tool-Daten in einer Tabelle.
+| Sortieren von Anzeige | - | los_bearbeiten.py | Möglichkeit, die Anzeige der Lose oder Tools basierend auf verschiedenen Kriterien zu sortieren.
+|===
+
+.los_bewegen_page.html
+|===
+| *Funktionalität* | *Button-Name* | *bearb. Python-Datei* | *Beschreibung*
+| Zurückgehen | Back | - (per JavaScript) | Rückgängig machen der letzten Aktion.
+| Back to Main Page | Back to Main Page | - | Zurück zur Hauptseite, abhängig vom Benutzernamen.
+| Los bewegen | Move Lot | los_bewegen.py | Formular mit Angabe eines bestehenden Loses zum Bewegen abschicken.
+| Filtern von Losen | Filtern | los_bewegen.py | Möglichkeit, Los-Daten basierend auf verschiedenen Kriterien zu filtern.
+| Alle Lose anzeigen | - | los_bewegen.py | Anzeige aller Los-Daten in einer Tabelle.
+| Sortieren von Anzeige der Lose | - | los_bewegen.py | Möglichkeit, die Anzeige der Lose basierend auf verschiedenen Kriterien zu sortieren.
+|===
+
+.Stammdaten_main.html
+|===
+| *Funktionalität* | *Button-Name* | *bearb. Python-Datei* | *Beschreibung*
+| Zurückgehen | Back | - (per JavaScript) | Rückgängig machen der letzten Aktion.
+| Back to Main Page | Back to Main Page | - | Zurück zur Hauptseite, abhängig vom Benutzernamen.
+| Lot anzeigen | Lot | Stammdaten.py | Weiterleitung zur Seite für Los-Stammdaten.
+| Tool anzeigen | Tool | Stammdaten.py | Weiterleitung zur Seite für Tool-Stammdaten.
+| Product-Flow anzeigen | Product-Flow | Stammdaten.py | Weiterleitung zur Seite für Product-Flow-Stammdaten.
+| Work-Flow anzeigen | Work-Flow | Stammdaten.py | Weiterleitung zur Seite für Work-Flow-Stammdaten.
+| PTime anzeigen | PTime | Stammdaten.py | Weiterleitung zur Seite für PTime-Stammdaten.
+|===
+
+.Stammdaten_Los.html
+|===
+| *Funktionalität* | *Button-Name* | *bearb. Python-Datei* | *Beschreibung*
+| Zurückgehen | Back | - (per JavaScript) | Rückgängig machen der letzten Aktion.
+| Back to Main Page | Back to Main Page | - | Zurück zur Hauptseite, abhängig vom Benutzernamen.
+| Lot ID eingeben | select Lot ID | Stammdaten.py | Ermöglicht die Auswahl eines Lots zur Bearbeitung.
+| Lot-Daten bearbeiten | Edit Lot | Stammdaten.py | Ermöglicht die tatsächliche Bearbeitung der dann angezeigten Lot-Daten auf Basis der eingegebenen Lot-ID.
+| Lot-Bearbeitung abschließen | Submit| Stammdaten.py | Abschließen der Bearbeitung der Lot-Daten durch konsistentes Speichern der Änderungen.
+| Filtern nach Lot ID und Zustand | Filter | Stammdaten.py | Filtert die Tabelle basierend auf Lot ID und Zustand.
+| Sortieren der Tabelle | - | Stammdaten.py | Erlaubt das Sortieren der Tabelle nach verschiedenen Spalten.
+| Alle Lose anzeigen | - | Stammdaten.py | Anzeige aller Los-Daten in einer Tabelle.
+|===
+
+Die Dateien der anderen HTML-Seiten sind potenziell analog zu den oben aufgeführten Dateien aufzubauen oder bereits aufgebaut.
+
+.import_data_page.html
+|===
+| *Funktionalität* | *Button-Name* | *bearb. Python-Datei* | *Beschreibung*
+| Zurückgehen | Back | - (per JavaScript) | Rückgängig machen der letzten Aktion.
+| Back to Main Page | Back to Main Page | - | Zurück zur Hauptseite, abhängig vom Benutzernamen.
+| CSV-Datei importieren | Hinzufügen | import_data.py | Ermöglicht das Hochladen und Importieren einer CSV-Datei mit spezifischen Anforderungen.
+| Anzeige der Datenbankmeldungen | flash-messages-div-Element | - | Anzeige von Erfolgsmeldungen und Fehlermeldungen nach Importanforderung von Daten.
+| Entities hinzufügen | Hinzufügen | import_data.py | Fügt eine neue Entität zur Datenbank hinzu.
+| Lot hinzufügen | Hinzufügen | import_data.py | Fügt ein neues Lot zur Datenbank hinzu.
+| ProdFlow hinzufügen | Hinzufügen | import_data.py | Fügt einen neuen Produktionsfluss zur Datenbank hinzu.
+| PTime hinzufügen | Hinzufügen | import_data.py | Fügt eine neue Produktionszeit zur Datenbank hinzu.
+| Tool hinzufügen | Hinzufügen | import_data.py | Fügt ein neues Werkzeug zur Datenbank hinzu.
+| Workflow hinzufügen | Hinzufügen | import_data.py | Fügt einen neuen Arbeitsablauf zur Datenbank hinzu.
+|===
+
+
+.export_data_page.html
+|===
+| *Funktionalität* | *Button-Name* | *bearb. Python-Datei* | *Beschreibung*
+| Zurückgehen | Back | - (per JavaScript) | Rückgängig machen der letzten Aktion.
+| Back to Main Page | Back to Main Page | - | Zurück zur Hauptseite, abhängig vom Benutzernamen.
+| Filtern | Filtern | export_data.py | Ermöglicht das Filtern von Lots basierend auf Lot ID, Zustand und Sortierreihenfolge.
+| Select All | Select All | - | Markiert alle verfügbaren Lots für den Export.
+| Export Lots to CSV | Export to CSV | export_data.py | Exportiert ausgewählte Lots in eine CSV-Datei.
+|===
+
 
 === CSS-Dateien und ihre Verwendung in den HTML-Dateien
 Folgende CSS-Dateien werden von den HTML-Dateien verwendet, um die Darstellung der Webseite zu gestalten. Dabei wird ein für alle HTML-Dateien standardisiertes Design verwendet, um eine konsistente Benutzererfahrung zu gewährleisten. Folgende CSS-Dateien werden verwendet:
@@ -58,6 +158,7 @@ Folgende CSS-Dateien werden von den HTML-Dateien verwendet, um die Darstellung d
 === Benutzerinteraktion mittels REST-API
 Die Interaktion zwischen dem Frontend und dem Backend der Webapplikation wird durch eine REST-API ermöglicht. Diese API stellt verschiedene Endpunkte bereit, über die das Frontend Anfragen an das Backend senden kann. Die REST-API ist so gestaltet, dass sie die CRUD-Operationen (Create, Read, Update, Delete) für die verschiedenen Datenmodelle der Anwendung unterstützt. Die API verwendet das JSON-Format für den Datenaustausch und basiert auf dem HTTP-Protokoll.
 
+[#rest-api]
 ==== Endpunkte der REST-API
 Die REST-API umfasst mehrere Endpunkte, die jeweils spezifische Funktionen bereitstellen. Die folgenden Tabellen geben einen Überblick über die wichtigsten Endpunkte der REST-API, ihre Methoden und die entsprechenden Funktionen im Backend.
 
@@ -134,9 +235,12 @@ Die REST-API umfasst mehrere Endpunkte, die jeweils spezifische Funktionen berei
 Die REST-API ist in Flask implementiert, einem Mikro-Webframework für Python. Flask bietet einfache und flexible Möglichkeiten zur Erstellung von Webanwendungen und APIs. Die Endpunkte der API sind als Routen in den entsprechenden Python-Dateien definiert. Jeder Route ist einer spezifischen Funktion zugeordnet, die die spezifische Operation ausführt.
 
 .Beispiel: Definition eines API-Endpunkts in Flask in main.py
-```python
-include::../../src/main.py[lines=3..13] 
-```	
+[source,python]
+----
+include::../../src/main.py[lines=6..16]
+----
+
+
 
 ==== Fehlermeldungen und Statuscodes
 Es kann ein 400 Bad Request-Code zurückgegeben werden, wenn die Eingabedaten ungültig sind, oder ein 404 Not Found-Code, wenn das angeforderte Los nicht existiert. Die Fehlermeldungen werden als JSON-Objekte zurückgegeben, die den Fehlercode und eine entsprechende Nachricht enthalten.
@@ -208,6 +312,44 @@ Um auf die Datenbank zuzugreifen, wird in den Python-Dateien die Datenbank-Sessi
 Mittels Import der jeweiligen Klassen und Funktionen aus den Dateien `mapper.py` und `database_connection.py` kann in jeder Python-Datei der Zugriff auf die Datenbank gewährleistet werden. Aufgrund der repetitiven Verwendung einiger einfacher Datenbankabfragen wurden diese in der Datei `database_accesses.py` zusammengefasst. Diese Funktionen können dann in den Python-Dateien importiert und verwendet werden. Beispielsweise wird in der Python-Datei `Stammdaten.py` die externe Funktion `get_all_lots()` verwendet, um alle Lose aus der Datenbank zu erhalten.
 
 ==== Verwaltung von Los-Fertigung
+Die manuelle Verwaltung der Los-Fertigung durch den Benutzer wird durch die Python-Dateien `Los_starten.py`, `Los_bewegen.py` und `Los_bearbeiten.py` realisiert. Diese Dateien setzen die Funktionen des Timers als manuelle Aktionen um. So kann der Benutzer neue Lose starten, bestehende Lose bearbeiten und bewegen. Die Funktionen in diesen Dateien sind so implementiert, dass sie die entsprechenden Aktionen, analog zu den Timer-Aktionen, auf die Lose oder Maschinen in der Datenbank ausführen. Um die entsprechenden Aktionen anzuregen, werden die Funktionen in den Python-Dateien mittels der REST-API aufgerufen (siehe <<rest-api,Endpunkte REST-API>> ). Außerdem sind weitere Funktionalitäten implementiert, welche das Sortieren und das Filtern der angezeigten Lose und teilweise auch Tools ermöglichen. Dies ist insbesondere relevant, um die Übersicht über die Fertigung zu behalten.
+
+Die Python-Datei `Los_starten.py` implementiert sowohl die Erstellung neuer Lose und das manuelle Starten bereits vorhandener Lose, welche nicht bereits schon zuvor (z.B. durch den Timer) gestartet wurden. Die wichtigsten Funktionen sind folgend aufgeführt.
+
+.Funktionen in Los_starten.py
+|===
+| *Funktion* | *Beschreibung* | *Parameter* | *Rückgabewert*
+| check_user_session() | Überprüft die Sitzungsinformationen und damit die Berechtigung des Benutzers. | - | boolean
+| los_starten_page() | Zeigt die Seite zum Starten von Losen an und kümmert sich ggf. um Sortierung und Filterung der angezeigten Lose. | - | HTML-Seite mit dem Formular zum Starten von Losen
+| los_starten() | Erstellt neue Aufträge und Lose entsprechend der benutzerdefinierten Eingaben. | - | HTML-Seite, welche die Erfolgsmeldung oder Fehlermeldung anzeigt
+| manuell_starten() | Startet ein Los manuell durch den Benutzer. | - | HTML-Seite, welche die Erfolgsmeldung oder Fehlermeldung anzeigt
+| generateLotID() | Generiert eine eindeutige Lot-ID für ein neues Los. | *create_lot_ids:* Liste an in dieser Session bereits generierten LotIDs,
+ *customer:* String von Auftraggeber, 
+ *order:* String von Bestellungsname | string (mit der generierten Lot-ID)
+| get_sort_order() | Gibt die Sortierreihenfolge und -attribute für die Lose zurück. | *model:* Mappingklasse aus mapper.py , *sort_type:* String von Namen des gewählten Elements aus der sort-Auswahlliste| sqlalchemy.sql.elements.ColumnElement als Sortierattribut
+|===
+
+Die Python-Datei `Los_bewegen.py` implementiert die Funktionen, um fertig bearbeitete Lose in ihren nächsten Produktionsschritt zu bewegen. Die wichtigsten Funktionen sind folgend aufgeführt.
+
+.Funktionen in Los_bewegen.py
+|===
+| *Funktion* | *Beschreibung* | *Parameter* | *Rückgabewert*
+| check_user_session() | Überprüft die Sitzungsinformationen und damit die Berechtigung des Benutzers. | - | boolean
+| los_bewegen_page() | Zeigt die Seite zum Bewegen von Losen an und kümmert sich ggf. um Sortierung und Filterung der angezeigten Lose. | - | HTML-Seite mit dem Formular zum Bewegen von Losen
+| los_bewegen() | Bewegt ein Los mit benutzergegebener LotID zur nächsten Station und setzt entsprechend des Erfolges den neuen Zustand. Außerdem implementiert es die Reaktion auf die manuelle Zustandszuordnung von SCRAP oder OP_COMP zu einem Los, welches sich im Zustand HOLD befindet. | - | HTML-Seite, welche die Erfolgsmeldung oder Fehlermeldung anzeigt
+| move_lot_to_next_station() | Bewegt ein Los mit benutzergegebenem Lot zur nächsten Operation und setzt entsprechend des Erfolges den neuen Zustand. | *lot:* Lot-Objekt, für das Lot, das beweget werden soll, *db_session:* sqlalchemy.orm.session.Session als Datenbankverbindung | integer (0 = Erfolgreich bewegt, 1 = Erfolgreich Produktionsfluss abgeschlossen, sonst = Fehler)
+| get_sort_order() | Gibt die Sortierreihenfolge und -attribute für die Lose zurück. | *model:* Mappingklasse aus mapper.py , *sort_type:* String von Namen des gewählten Elements aus der sort-Auswahlliste| sqlalchemy.sql.elements.ColumnElement als Sortierattribut
+|===
+
+Die Python-Datei `Los_bearbeiten.py` implementiert die Funktionen, um Lose, welche sich im Fertigungsprozess gerade im (auf eine Maschine) wartenden Zustand befinden, auf eine eventuell verfügbare Maschine zu setzen und somit ihre nächste Operation im Fertigungsprozess zu starten. Die wichtigsten Funktionen sind folgend aufgeführt.
+
+.Funktionen in Los_bearbeiten.py
+|===
+| *Funktion* | *Beschreibung* | *Parameter* | *Rückgabewert*
+| los_bearbeiten_page() | Zeigt die Seite zum Bearbeiten von Losen an und kümmert sich ggf. um Sortierung und Filterung der angezeigten Lose. | - | HTML-Seite mit dem Formular zum Bearbeiten von Losen
+| moveLot() | Ordnet einem Los mit per REST-API übergebener Los-ID, falls es im WAIT-Zustand ist, eine verfügbare Maschine zu und setzt es auf den Zustand "PROC". | - | HTML-Seite, welche die Erfolgsmeldung oder Fehlermeldung anzeigt
+| get_sort_order() | Gibt die Sortierreihenfolge und -attribute für die Lose und Tools zurück. | *model:* Mappingklasse aus mapper.py , *sort_type:* String von Namen des gewählten Elements aus der sort-Auswahlliste| sqlalchemy.sql.elements.ColumnElement als Sortierattribut
+|===
 
 ==== Verwaltung von Stammdaten
 
