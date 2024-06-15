@@ -26,6 +26,7 @@ Die HTML-Dateien enthalten die Darstellung der Webseite und die Interaktion mit 
 .login_page.html
 |===
 | *Funktionalität* | *Button-Name* | *bearb. Python-Datei* | *Beschreibung*
+
 | Login | Login | login.py | Der Benutzer kann sich mittels Benutzername und Passwort einloggen.
 |===
 
@@ -48,6 +49,7 @@ Die HTML-Dateien enthalten die Darstellung der Webseite und die Interaktion mit 
 .los_starten_page.html
 |===
 | *Funktionalität* | *Button-Name* | *bearb. Python-Datei* | *Beschreibung*
+
 | Zurückgehen | Back | - (per JavaScript) | Rückgängig machen der letzten Aktion.
 | Back to Main Page | Back to Main Page | - | Zurück zur Hauptseite, abhängig vom Benutzernamen.
 | Auftrag anlegen | Register Order | los_starten.py | Formular zur Erstellung eines neuen Auftrags abschicken.
@@ -60,6 +62,7 @@ Die HTML-Dateien enthalten die Darstellung der Webseite und die Interaktion mit 
 .los_bearbeiten_page.html
 |===
 | *Funktionalität* | *Button-Name* | *bearb. Python-Datei* | *Beschreibung*
+
 | Zurückgehen | Back | - (per JavaScript) | Rückgängig machen der letzten Aktion.
 | Back to Main Page | Back to Main Page | - | Zurück zur Hauptseite, abhängig vom Benutzernamen.
 | Los bearbeiten | Los bearbeiten | los_bearbeiten.py | Formular mit Angabe eines bestehenden Loses zur Bearbeitung abschicken.
@@ -73,6 +76,7 @@ Die HTML-Dateien enthalten die Darstellung der Webseite und die Interaktion mit 
 .los_bewegen_page.html
 |===
 | *Funktionalität* | *Button-Name* | *bearb. Python-Datei* | *Beschreibung*
+
 | Zurückgehen | Back | - (per JavaScript) | Rückgängig machen der letzten Aktion.
 | Back to Main Page | Back to Main Page | - | Zurück zur Hauptseite, abhängig vom Benutzernamen.
 | Los bewegen | Move Lot | los_bewegen.py | Formular mit Angabe eines bestehenden Loses zum Bewegen abschicken.
@@ -84,6 +88,7 @@ Die HTML-Dateien enthalten die Darstellung der Webseite und die Interaktion mit 
 .Stammdaten_main.html
 |===
 | *Funktionalität* | *Button-Name* | *bearb. Python-Datei* | *Beschreibung*
+
 | Zurückgehen | Back | - (per JavaScript) | Rückgängig machen der letzten Aktion.
 | Back to Main Page | Back to Main Page | - | Zurück zur Hauptseite, abhängig vom Benutzernamen.
 | Lot anzeigen | Lot | Stammdaten.py | Weiterleitung zur Seite für Los-Stammdaten.
@@ -96,6 +101,7 @@ Die HTML-Dateien enthalten die Darstellung der Webseite und die Interaktion mit 
 .Stammdaten_Los.html
 |===
 | *Funktionalität* | *Button-Name* | *bearb. Python-Datei* | *Beschreibung*
+
 | Zurückgehen | Back | - (per JavaScript) | Rückgängig machen der letzten Aktion.
 | Back to Main Page | Back to Main Page | - | Zurück zur Hauptseite, abhängig vom Benutzernamen.
 | Lot ID eingeben | select Lot ID | Stammdaten.py | Ermöglicht die Auswahl eines Lots zur Bearbeitung.
@@ -111,6 +117,7 @@ Die Dateien der anderen HTML-Seiten sind potenziell analog zu den oben aufgefüh
 .import_data_page.html
 |===
 | *Funktionalität* | *Button-Name* | *bearb. Python-Datei* | *Beschreibung*
+
 | Zurückgehen | Back | - (per JavaScript) | Rückgängig machen der letzten Aktion.
 | Back to Main Page | Back to Main Page | - | Zurück zur Hauptseite, abhängig vom Benutzernamen.
 | CSV-Datei importieren | Hinzufügen | import_data.py | Ermöglicht das Hochladen und Importieren einer CSV-Datei mit spezifischen Anforderungen.
@@ -127,6 +134,7 @@ Die Dateien der anderen HTML-Seiten sind potenziell analog zu den oben aufgefüh
 .export_data_page.html
 |===
 | *Funktionalität* | *Button-Name* | *bearb. Python-Datei* | *Beschreibung*
+
 | Zurückgehen | Back | - (per JavaScript) | Rückgängig machen der letzten Aktion.
 | Back to Main Page | Back to Main Page | - | Zurück zur Hauptseite, abhängig vom Benutzernamen.
 | Filtern | Filtern | export_data.py | Ermöglicht das Filtern von Lots basierend auf Lot ID, Zustand und Sortierreihenfolge.
@@ -141,6 +149,7 @@ Folgende CSS-Dateien werden von den HTML-Dateien verwendet, um die Darstellung d
 .CSS-Dateien und ihre Verwendung in den HTML-Dateien
 |===
 | *CSS-Datei* | *Verwendung* | *nutzende HTML-Dateien*
+
 | `login.css` | Gestaltung der Login-Seite. | `login_page.html`
 | `main.css` | Gestaltung der Hauptseite. | `main.html`
 | `los_starten.css` | Gestaltung der Seite zum Starten von Losen. | `los_starten_page.html`
@@ -165,6 +174,7 @@ Die REST-API umfasst mehrere Endpunkte, die jeweils spezifische Funktionen berei
 .Authentifizierungs-Endpunkte
 |===
 | *Endpunkt* | *HTTP-Methode* | *Beschreibung* | *Backend-Funktion*
+
 | `/` | GET | Zeigt die Login-Seite an. | `login()`
 | `/api/login_check` | POST | Überprüft die Benutzerdaten und setzt die Sitzungsinformationen. | `login_check()`
 | `/api/logout` | GET | Löscht die Sitzungsinformationen und beendet die Sitzung. | `logout()`
@@ -173,6 +183,7 @@ Die REST-API umfasst mehrere Endpunkte, die jeweils spezifische Funktionen berei
 .Main-Endpunkte
 |===
 | *Endpunkt* | *HTTP-Methode* | *Beschreibung* | *Backend-Funktion*
+
 | `/main` | GET | Zeigt die Hauptseite für USER1 an, welche Daten über Maschinen und Lose anzeigt. | `main()`
 | `/main2` | GET | Zeigt die Hauptseite für USER2 an, welche Daten über Maschinen und Lose anzeigt. | `main2()`
 |===
@@ -181,6 +192,7 @@ Die REST-API umfasst mehrere Endpunkte, die jeweils spezifische Funktionen berei
 .Los-Starten-Endpunkte
 |===
 | *Endpunkt* | *HTTP-Methode* | *Beschreibung* | *Backend-Funktion*
+
 | `/main/los_starten` | GET | Zeigt die Seite zum Starten von Losen an und realisiert Filter- und Sortierungsoperationen. | `los_starten_page()`
 | `/main/los_starten` | POST | Erstellt neue Aufträge und Lose entsprechend der benutzerdefinierten Eingaben. | `los_starten()`
 | `/main/manuell_starten` | POST | Startet ein Los manuell durch den Benutzer. | `manuell_starten()`
@@ -189,6 +201,7 @@ Die REST-API umfasst mehrere Endpunkte, die jeweils spezifische Funktionen berei
 .Los-Bewegen-Endpunkte
 |===
 | *Endpunkt* | *HTTP-Methode* | *Beschreibung* | *Backend-Funktion*
+
 | `/main/los_bewegen` | GET | Zeigt die Seite zum Bewegen von Losen an und realisiert Filter- und Sortierungsoperationen. | `los_bewegen_page()`
 | `/main/los_bewegen` | POST | Bewegt ein Los mit benutzergegebener LotID zur nächsten Station und setzt entsprechend des Erfolges den neuen Zustand. | `los_bewegen()`
 |===
@@ -196,6 +209,7 @@ Die REST-API umfasst mehrere Endpunkte, die jeweils spezifische Funktionen berei
 .Los-Bearbeiten-Endpunkte
 |===
 | *Endpunkt* | *HTTP-Methode* | *Beschreibung* | *Backend-Funktion*
+
 | `/main/los_bearbeiten` | GET | Zeigt die Seite zum Bearbeiten von Losen an und realisiert Filter- und Sortierungsoperationen. | `los_bearbeiten_page()`
 | `/main/los_bearbeiten` | POST | Bearbeitet ein Los mit benutzergegebener LotID, indem es zur nächsten verfügbaren Maschine zugewiesen wird. | `moveLot()`
 |===
@@ -203,6 +217,7 @@ Die REST-API umfasst mehrere Endpunkte, die jeweils spezifische Funktionen berei
 .Stammdaten-Endpunkte
 |===
 | *Endpunkt*                          | *HTTP-Methode* | *Beschreibung*                                                                             | *Backend-Funktion*
+
 | `/main/Stammdaten`                  | GET            | Zeigt die Hauptseite der Stammdaten für USER1 an.                                          | `Stammdaten_page()`
 | `/main/Stammdaten/Los`              | GET            | Zeigt die Stammdaten-Seite für Lose an, ermöglicht das Abrufen und Bearbeiten von Los-Daten. | `Stammdaten_Los_page()`
 | `/main/Stammdaten/Tool`             | GET            | Zeigt die Stammdaten-Seite für Werkzeuge an, ermöglicht das Abrufen und Bearbeiten von Werkzeug-Daten. | `Stammdaten_Tool_page()`
@@ -214,6 +229,7 @@ Die REST-API umfasst mehrere Endpunkte, die jeweils spezifische Funktionen berei
 .Daten-Import-Endpunkte
 |===
 | *Endpunkt*                          | *HTTP-Methode* | *Beschreibung*                                                                             | *Backend-Funktion*
+
 | `/import`                           | GET, POST      | Ermöglicht den Import von CSV-Dateien.                                                     | `import_data()`
 | `/add_entity`                       | POST           | Fügt eine neue Entität hinzu.                                                              | `add_entity()`
 | `/add_lot`                          | POST           | Fügt ein neues Lot hinzu.                                                                  | `add_lot()`
@@ -226,6 +242,7 @@ Die REST-API umfasst mehrere Endpunkte, die jeweils spezifische Funktionen berei
 .Daten-Export-Endpunkte
 |===
 | *Endpunkt*                  | *HTTP-Methode* | *Beschreibung*                                                                              | *Backend-Funktion*
+
 | `/main/export_data`         | GET            | Zeigt die Exportseite an, auf der Benutzer auswählen können, welche Daten sie exportieren möchten. | `export_data_page()`
 | `/main/export_data`         | POST           | Exportiert die ausgewählten Daten in eine CSV-Datei und sendet sie als Anhang zurück.          | `export_to_csv()`
 |===
@@ -240,13 +257,28 @@ Die REST-API ist in Flask implementiert, einem Mikro-Webframework für Python. F
 include::../../src/main.py[lines=6..16]
 ----
 
-
-
 ==== Fehlermeldungen und Statuscodes
 Es kann ein 400 Bad Request-Code zurückgegeben werden, wenn die Eingabedaten ungültig sind, oder ein 404 Not Found-Code, wenn das angeforderte Los nicht existiert. Die Fehlermeldungen werden als JSON-Objekte zurückgegeben, die den Fehlercode und eine entsprechende Nachricht enthalten.
 
 Durch die Verwendung einer REST-API wird die Trennung von Frontend und Backend erleichtert, was eine klare Strukturierung und Wartbarkeit der Anwendung ermöglicht. Die REST-API stellt sicher, dass die verschiedenen Komponenten der Webapplikation effizient und zuverlässig miteinander kommunizieren können.
 
+=== app.py und Blueprints
+Die Datei `app.py` ist die Hauptdatei der Webapplikation und enthält die Konfiguration und Initialisierung der Flask-App. Hier werden die Blueprints für die verschiedenen Komponenten der Webapplikation registriert und die REST-API-Endpunkte definiert. Die Blueprints ermöglichen es, die verschiedenen Komponenten der Webapplikation zu strukturieren. Jedes Blueprint enthält die Routen und Funktionen für eine spezifische Komponente der Webapplikation. Die Blueprints werden in den Python-Dateien für die jeweiligen Komponenten definiert und in der Datei `app.py` registriert. Zum Start der Applikation wird auch diese Datei mittels `python app.py` ausgeführt.
+
+//Auflistung der Blueprints und ihrer zugehörigen Python-Dateien in Liste
+.Blueprints und ihre zugehörigen Python-Dateien
+|===
+| *Blueprint* | *Python-Datei*
+
+| login_bp | login.py
+| main_bp | main.py
+| los_starten_bp | los_starten.py
+| los_bearbeiten_bp | los_bearbeiten.py
+| los_bewegen_bp | los_bewegen.py
+| Stammdaten_bp | Stammdaten.py
+| import_data_bp | import_data.py
+| export_data_bp | export_data.py
+|===
 
 === Timer
 Für die Implementierung des Timers wurde ein Code-Diagramm für die bessere Visualisierung und Nachvollziehbarkeit des Codes erstellt. Das Diagramm zeigt die Struktur des Timers und die Interaktion mit den anderen Komponenten des Systems. 
@@ -261,6 +293,7 @@ Das Starten von Losen, deren Startdatum erreicht wurde, wird durch einen CronJob
 .Funktionen in Lot_start.py
 |===
 | *Funktion* | *Beschreibung*
+
 | start_lot() | Überprüft die Startdaten der Lose und startet diese, wenn das Startdatum erreicht wurde.
 |===
 
@@ -270,6 +303,7 @@ Das Bewegen und Bearbeiten von Losen, die sich im Fertigungsprozess befinden, wi
 .Funktionen in Lot_bew_bearb.py
 |===
 | *Funktion* | *Beschreibung* | *Parameter* | *Rückgabewert*
+
 | test_if_tool_is_done() | Überprüft, ob eine übergebende Maschine im bearbeitenden Zustand ihr zu prozessierendes Los fertig bearbeitet hat. | tool: Tool | boolean
 | lotop_finished() | Für alle Lose, deren Maschine diese fertig bearbeitet hat, werden die Attribute entsprechend eines OP_COMP-Zustandes verändert. | session_d: DB-Session | -
 | tool_searches_for_lots() | Maschinen, welche sich im betriebsbereiten Zustand "IDLE" befinden, werden nach zu bearbeitenden Losen, welche als nächste Operation ein von der Maschine unterstützte Operation hat, durchsucht. | session_d: DB-Session | -
@@ -287,6 +321,7 @@ Die Authentifizierung wird durch die Python-Datei `login.py` realisiert. Hierbei
 .Funktionen in login.py
 |===
 | *Funktion* | *Beschreibung* | *Parameter* | *Rückgabewert*
+
 | login() | Zeigt die Login-Seite `login_page.html`. | - | HTML-Seite mit dem Login-Formular
 | login_check() | Überprüft die eingegebenen Benutzerdaten und setzt bei Korrektheit die Sitzungsinformationen. | - | JSON-Antwort mit Status und Nachricht des Validierungsergebnisses
 | logout() | Löscht die Sitzungsinformationen und leitet den Benutzer auf die Login-Seite zurück. | - | HTML-Seite mit dem dem Login-Formular
@@ -304,6 +339,7 @@ Um auf die Datenbank zuzugreifen, wird in den Python-Dateien die Datenbank-Sessi
 .Funktionen in database_connection.py
 |===
 | *Funktion* | *Beschreibung* | *Parameter* | *Rückgabewert*
+
 | get_database_url() | Gibt die Datenbank URL mit Config-Informationen zurück | - | URL für den Datenbankzugriff
 | database_connection() | Initialisiert die Datenbank-Session. | - | Datenbank-Session
 | database_disconnection() | Schließt die Datenbank-Session. | session: DB-Session | -
@@ -319,14 +355,15 @@ Die Python-Datei `Los_starten.py` implementiert sowohl die Erstellung neuer Lose
 .Funktionen in Los_starten.py
 |===
 | *Funktion* | *Beschreibung* | *Parameter* | *Rückgabewert*
+
 | check_user_session() | Überprüft die Sitzungsinformationen und damit die Berechtigung des Benutzers. | - | boolean
-| los_starten_page() | Zeigt die Seite zum Starten von Losen an und kümmert sich ggf. um Sortierung und Filterung der angezeigten Lose. | - | HTML-Seite mit dem Formular zum Starten von Losen
-| los_starten() | Erstellt neue Aufträge und Lose entsprechend der benutzerdefinierten Eingaben. | - | HTML-Seite, welche die Erfolgsmeldung oder Fehlermeldung anzeigt
-| manuell_starten() | Startet ein Los manuell durch den Benutzer. | - | HTML-Seite, welche die Erfolgsmeldung oder Fehlermeldung anzeigt
-| generateLotID() | Generiert eine eindeutige Lot-ID für ein neues Los. | *create_lot_ids:* Liste an in dieser Session bereits generierten LotIDs,
- *customer:* String von Auftraggeber, 
- *order:* String von Bestellungsname | string (mit der generierten Lot-ID)
-| get_sort_order() | Gibt die Sortierreihenfolge und -attribute für die Lose zurück. | *model:* Mappingklasse aus mapper.py , *sort_type:* String von Namen des gewählten Elements aus der sort-Auswahlliste| sqlalchemy.sql.elements.ColumnElement als Sortierattribut
+| los_starten_page() | Zeigt die Seite zum Starten von Losen an und kümmert sich ggf. um Sortierung und Filterung der angezeigten Lose. | - | Template oder "Unauthorized", 401
+| los_starten() | Erstellt neue Aufträge und Lose entsprechend der benutzerdefinierten Eingaben. | - | Template oder "Unauthorized", 401
+| manuell_starten() | Startet ein Los manuell durch den Benutzer. | - | Template oder "Unauthorized", 401
+| generateLotID() | Generiert eine eindeutige Lot-ID für ein neues Los. | `create_lot_ids:` Liste an in dieser Session bereits generierten LotIDs,
+ `customer:` String von Auftraggeber, 
+ `order:` String von Bestellungsname | string (mit der generierten Lot-ID)
+| get_sort_order() | Gibt die Sortierreihenfolge und -attribute für die Lose zurück. | `model:` Mappingklasse aus mapper.py , `sort_type:` String von Namen des gewählten Elements aus der sort-Auswahlliste| sqlalchemy.sql.elements.ColumnElement als Sortierattribut
 |===
 
 Die Python-Datei `Los_bewegen.py` implementiert die Funktionen, um fertig bearbeitete Lose in ihren nächsten Produktionsschritt zu bewegen. Die wichtigsten Funktionen sind folgend aufgeführt.
@@ -334,11 +371,12 @@ Die Python-Datei `Los_bewegen.py` implementiert die Funktionen, um fertig bearbe
 .Funktionen in Los_bewegen.py
 |===
 | *Funktion* | *Beschreibung* | *Parameter* | *Rückgabewert*
+
 | check_user_session() | Überprüft die Sitzungsinformationen und damit die Berechtigung des Benutzers. | - | boolean
-| los_bewegen_page() | Zeigt die Seite zum Bewegen von Losen an und kümmert sich ggf. um Sortierung und Filterung der angezeigten Lose. | - | HTML-Seite mit dem Formular zum Bewegen von Losen
-| los_bewegen() | Bewegt ein Los mit benutzergegebener LotID zur nächsten Station und setzt entsprechend des Erfolges den neuen Zustand. Außerdem implementiert es die Reaktion auf die manuelle Zustandszuordnung von SCRAP oder OP_COMP zu einem Los, welches sich im Zustand HOLD befindet. | - | HTML-Seite, welche die Erfolgsmeldung oder Fehlermeldung anzeigt
-| move_lot_to_next_station() | Bewegt ein Los mit benutzergegebenem Lot zur nächsten Operation und setzt entsprechend des Erfolges den neuen Zustand. | *lot:* Lot-Objekt, für das Lot, das beweget werden soll, *db_session:* sqlalchemy.orm.session.Session als Datenbankverbindung | integer (0 = Erfolgreich bewegt, 1 = Erfolgreich Produktionsfluss abgeschlossen, sonst = Fehler)
-| get_sort_order() | Gibt die Sortierreihenfolge und -attribute für die Lose zurück. | *model:* Mappingklasse aus mapper.py , *sort_type:* String von Namen des gewählten Elements aus der sort-Auswahlliste| sqlalchemy.sql.elements.ColumnElement als Sortierattribut
+| los_bewegen_page() | Zeigt die Seite zum Bewegen von Losen an und kümmert sich ggf. um Sortierung und Filterung der angezeigten Lose. | - | Template oder "Unauthorized", 401
+| los_bewegen() | Bewegt ein Los mit benutzergegebener LotID zur nächsten Station und setzt entsprechend des Erfolges den neuen Zustand. Außerdem implementiert es die Reaktion auf die manuelle Zustandszuordnung von SCRAP oder OP_COMP zu einem Los, welches sich im Zustand HOLD befindet. | - | Template oder "Unauthorized", 401
+| move_lot_to_next_station() | Bewegt ein Los mit benutzergegebenem Lot zur nächsten Operation und setzt entsprechend des Erfolges den neuen Zustand. | `lot:` Lot-Objekt, für das Lot, das beweget werden soll, `db_session:` sqlalchemy.orm.session.Session als Datenbankverbindung | integer (0 = Erfolgreich bewegt, 1 = Erfolgreich Produktionsfluss abgeschlossen, sonst = Fehler)
+| get_sort_order() | Gibt die Sortierreihenfolge und -attribute für die Lose zurück. | `model:` Mappingklasse aus mapper.py , `sort_type:` String von Namen des gewählten Elements aus der sort-Auswahlliste| sqlalchemy.sql.elements.ColumnElement als Sortierattribut
 |===
 
 Die Python-Datei `Los_bearbeiten.py` implementiert die Funktionen, um Lose, welche sich im Fertigungsprozess gerade im (auf eine Maschine) wartenden Zustand befinden, auf eine eventuell verfügbare Maschine zu setzen und somit ihre nächste Operation im Fertigungsprozess zu starten. Die wichtigsten Funktionen sind folgend aufgeführt.
@@ -346,20 +384,61 @@ Die Python-Datei `Los_bearbeiten.py` implementiert die Funktionen, um Lose, welc
 .Funktionen in Los_bearbeiten.py
 |===
 | *Funktion* | *Beschreibung* | *Parameter* | *Rückgabewert*
-| los_bearbeiten_page() | Zeigt die Seite zum Bearbeiten von Losen an und kümmert sich ggf. um Sortierung und Filterung der angezeigten Lose. | - | HTML-Seite mit dem Formular zum Bearbeiten von Losen
-| moveLot() | Ordnet einem Los mit per REST-API übergebener Los-ID, falls es im WAIT-Zustand ist, eine verfügbare Maschine zu und setzt es auf den Zustand "PROC". | - | HTML-Seite, welche die Erfolgsmeldung oder Fehlermeldung anzeigt
-| get_sort_order() | Gibt die Sortierreihenfolge und -attribute für die Lose und Tools zurück. | *model:* Mappingklasse aus mapper.py , *sort_type:* String von Namen des gewählten Elements aus der sort-Auswahlliste| sqlalchemy.sql.elements.ColumnElement als Sortierattribut
+
+| los_bearbeiten_page() | Zeigt die Seite zum Bearbeiten von Losen an und kümmert sich ggf. um Sortierung und Filterung der angezeigten Lose. | - | Template oder "Unauthorized", 401
+| moveLot() | Ordnet einem Los mit per REST-API übergebener Los-ID, falls es im WAIT-Zustand ist, eine verfügbare Maschine zu und setzt es auf den Zustand "PROC". | - | Template oder "Unauthorized", 401
+| get_sort_order() | Gibt die Sortierreihenfolge und -attribute für die Lose und Tools zurück. | `model:` Mappingklasse aus mapper.py , `sort_type:` String von Namen des gewählten Elements aus der sort-Auswahlliste| sqlalchemy.sql.elements.ColumnElement als Sortierattribut
 |===
 
 ==== Verwaltung von Stammdaten
+Die Verwaltung der Stammdaten, wie Lose, Tools, ProductionFlows, Workflows und Produktionszeiten, wird durch die Python-Datei `Stammdaten.py` realisiert. Diese Datei ermöglicht es  mit den spezifisch dazugehörenden HTML- und CSS-Dateien, dass der Benutzer die Stammdaten verwalten kann. Dazu gehört, dass er die Daten in einer Tabelle angezeigt bekommt und die Möglichkeit hat, die Daten zu einer spezifischen ID zu bearbeiten. Die wichtigsten Funktionen aus dieser Datei sind folgend aufgeführt.
+
+.Funktionen in Stammdaten.py
+|===
+| *Funktion* | *Beschreibung* | *Parameter* | *Rückgabewert*
+
+| check_user_session() | Überprüft die Berechtigung des Benutzers für das Anzeigen der Daten. | - | boolean: True wenn angemeldet, sonst False
+| check_user_session_user1() | Überprüft die Berechtigung des Benutzers für das Bearbeiten der Daten (nur user1). | - | boolean: True wenn USER1 angemeldet, sonst False
+| Stammdate_page() | Rendert die Hauptseite der Stammdaten, wenn der Benutzer angemeldet ist. | - | Template oder "Unauthorized", 401
+| Stammdaten_Los_page() | Zeigt die Stammdaten-Seite für Lose an, ermöglicht das Abrufen, Filtern und Bearbeiten von Losen. | - | Template oder "Unauthorized", 401
+| get_args_right() | Holt und validiert einen Request-Parameter. | id (String): Parametername | Parameterwert oder None
+| get_timestamp_args_right() | Holt und validiert einen Timestamp-Parameter und formatiert ihn. | id (String): Parametername |Formatierter Timestamp oder None
+|===
+
+Alle weiteren Funktionen Stammdaten_X_page() für X={Tool,ProdFlow,WorkFlow,PTime} sind noch nicht final umgesetzt, werden aber vor Allem mit ihrer Funktionalität und ihrem Rückgabewert analog zur Stammdaten_Los_page() implementiert.
 
 ==== Export/Import von Fertigungsdaten
+Die Export- und Importfunktionen für die Fertigungsdaten werden durch die Python-Dateien `export_data.py` und `import_data.py`  realisiert. Diese Dateien ermöglichen es, dass der Benutzer die Fertigungsdaten in eine CSV-Datei exportieren und aus einer CSV-Datei importieren kann. Die wichtigsten Funktionen und Funktionalitäten aus beiden Datei sind folgend aufgeführt.
+
+.Funktionen in export_data.py
+|===
+| *Funktion* | *Beschreibung* | *Parameter* | *Rückgabewert*
+
+| check_user_session() | Überprüft, ob der Benutzer als `USER1` angemeldet ist. | - | boolean: `True` wenn `USER1` angemeldet, sonst `False`               
+| export_data_page()| Rendert die Export-Daten-Seite und filtert die Lose basierend auf den angegebenen Parametern | - | Template oder "Unauthorized", 401                             
+| get_sort_order() | Gibt die Sortierreihenfolge und -attribute für die Lose und Tools zurück. | `model:` Mappingklasse aus mapper.py , `sort_type:` String von Namen des gewählten Elements aus der sort-Auswahlliste| sqlalchemy.sql.elements.ColumnElement als Sortierattribut
+| export_to_csv() | Exportiert die ausgewählten Lose in eine CSV-Datei und sendet diese als Anhang.| - | CSV-Datei als Anhang
+|===
+
+.Funktionen in import_data.py
+|===
+| *Funktion* | *Beschreibung* | *Parameter* | *Rückgabewert*
+
+| check_user_session() | Überprüft, ob der Benutzer als `USER1` angemeldet ist. | - | Boolean: `True` wenn `USER1` angemeldet, sonst `False`
+| allowed_file() | Überprüft, ob die Datei eine erlaubte CSV-Datei ist. | `filename:` Name der Datei | Boolean: `True` wenn die Datei erlaubt ist, sonst `False`
+| import_data() | Handhabt das Hochladen und Importieren von CSV-Dateien, rendert die Import-Daten-Seite. | - | Template oder "Unauthorized", 401
+| import_from_csv() | Importiert Daten aus einer CSV-Datei in die entsprechende Datenbanktabelle. | `csv_data:` CSV-Daten als String, `filename:` Name der Datei | String: Anzahl der erfolgreich hinzugefügten Einträge oder Fehlermeldung
+| add_instance() | Fügt eine Instanz der angegebenen Modellklasse mit den angegebenen Daten zur Datenbank hinzu. | `model_class:` Modellklasse, die hinzugefügt werden soll, `data:` Daten als Dictionary | None
+| add_entity() | Fügt eine `Entities`-Instanz zur Datenbank hinzu. | - | Redirect zur Import-Daten-Seite
+|===
+
+Alle anderen `add_X`-Funktionen für X={Lot,ProdFlow,PTime,Tool,WorkFlow} sind final umgesetzt und analog zur `add_entity`-Funktion implementiert.
 
 === Config-Datei
 Die Konfigurationsdatei `config.py` beinhaltet alle Konfigurationen, die für die Webapplikation benötigt werden. Hierzu zählen beispielsweise die Informationen für den Datenbankzugriff, die URL für den Webserver oder der Applikationsname. Die Konfigurationsdatei wird in den Python-Dateien mittels `from config import Config` importiert und die Konfigurationen können dann über die Klasse `Config` abgerufen werden.
 
 == Datenbank
-Die Datenbank ist in PostgreSQL implementiert und enthält die Tabellen für die Maschinen, Lose und andere Informationen für die Fertigung der Lose. Die Tabellen sind entsprechend des folgend aufgeführten Entity-Relationship-Modells aufgebaut und enthalten die notwendigen Attribute für die Speicherung der Daten. Die Datenbank wird mittels der ORM-Bibliothek <<sqlalchemy,SQL-Alchemy>> in Python repräsentiert, wodurch die Datenbankabfragen in Python-Code geschrieben werden.
+Die Datenbank ist in PostgreSQL implementiert und enthält die Tabellen für die Maschinen, Lose und andere Informationen für die Fertigung der Lose. Die Tabellen sind entsprechend des folgend aufgeführten Entity-Relationship-Modells aufgebaut und enthalten die notwendigen Attribute für die Speicherung der Daten. Die Datenbank mit ihren Relationen wird mittels der ORM-Bibliothek <<sqlalchemy,SQL-Alchemy>> in Python repräsentiert, wodurch die Datenbankabfragen in Python-Code geschrieben werden.
 
 === Entity-Relationship-Modell
 Das Entity-Relationship-Modell zeigt die Beziehungen zwischen den verschiedenen Entitäten der auf dem Raspberry Pi liegenden Datenbank, welche die Maschinen, Lose, Maschinen, Produktionsflüsse, Workflows und Produktionszeiten beschreiben. 
