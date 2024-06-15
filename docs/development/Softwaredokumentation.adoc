@@ -263,7 +263,7 @@ Es kann ein 400 Bad Request-Code zurückgegeben werden, wenn die Eingabedaten un
 Durch die Verwendung einer REST-API wird die Trennung von Frontend und Backend erleichtert, was eine klare Strukturierung und Wartbarkeit der Anwendung ermöglicht. Die REST-API stellt sicher, dass die verschiedenen Komponenten der Webapplikation effizient und zuverlässig miteinander kommunizieren können.
 
 === app.py und Blueprints
-Die Datei `app.py` ist die Hauptdatei der Webapplikation und enthält die Konfiguration und Initialisierung der Flask-App. Hier werden die Blueprints für die verschiedenen Komponenten der Webapplikation registriert und die REST-API-Endpunkte definiert. Die Blueprints ermöglichen es, die verschiedenen Komponenten der Webapplikation zu strukturieren. Jedes Blueprint enthält die Routen und Funktionen für eine spezifische Komponente der Webapplikation. Die Blueprints werden in den Python-Dateien für die jeweiligen Komponenten definiert und in der Datei `app.py` registriert. Zum Start der Applikation wird auch diese Datei mittels `python app.py` ausgeführt.
+Die Datei `app.py` ist die Hauptdatei der Webapplikation und initialisiert die Flask-App. Hier werden die Blueprints für die verschiedenen Komponenten der Webapplikation registriert und die grundlegenden REST-API-Endpunkte definiert. Die Blueprints ermöglichen es, die verschiedenen Komponenten der Webapplikation zu strukturieren. Jedes Blueprint enthält die Routen und Funktionen für eine spezifische Komponente der Webapplikation. Die Blueprints werden in den Python-Dateien für die jeweiligen Komponenten definiert und in der Datei `app.py` registriert. Zum Start der Applikation wird auch diese Datei mittels `python app.py` ausgeführt.
 
 //Auflistung der Blueprints und ihrer zugehörigen Python-Dateien in Liste
 .Blueprints und ihre zugehörigen Python-Dateien
@@ -433,6 +433,9 @@ Die Export- und Importfunktionen für die Fertigungsdaten werden durch die Pytho
 |===
 
 Alle anderen `add_X`-Funktionen für X={Lot,ProdFlow,PTime,Tool,WorkFlow} sind final umgesetzt und analog zur `add_entity`-Funktion implementiert.
+
+==== Entities-Verwaltung (Prototyp)
+Die Datei `entities.py`, sowie die dazugehörige HTML-Datei `entities_page.html` sind lediglich ein Prototyp für die Benutzung der Schnittstellen dieses Systems. Hierbei wird die Möglichkeit gegeben, neue Entitäten zu erstellen, zu bearbeiten und zu löschen. Diese Funktionalität ist nicht im finalen System implementiert, sondern dient lediglich als Beispiel für die Benutzung der Schnittstellen.
 
 === Config-Datei
 Die Konfigurationsdatei `config.py` beinhaltet alle Konfigurationen, die für die Webapplikation benötigt werden. Hierzu zählen beispielsweise die Informationen für den Datenbankzugriff, die URL für den Webserver oder der Applikationsname. Die Konfigurationsdatei wird in den Python-Dateien mittels `from config import Config` importiert und die Konfigurationen können dann über die Klasse `Config` abgerufen werden.

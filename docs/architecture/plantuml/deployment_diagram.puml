@@ -1,0 +1,51 @@
+@startuml
+skinparam backgroundColor #F9F9F9
+skinparam node {
+    BackgroundColor #D3D3D3
+    BorderColor #A9A9A9
+    FontColor black
+}
+skinparam cloud {
+    BackgroundColor #C0C0C0
+    BorderColor #A9A9A9
+    FontColor black
+}
+skinparam artifact {
+    BackgroundColor #E0E0E0
+    BorderColor #A9A9A9
+    FontColor black
+}
+
+node "Raspberry Pi" {
+    [Flask Webanwendung]
+    [Datenbank]
+    artifact "HTML-Dateien" {
+        [main.html]
+        [login.html]
+        [other_html_files]
+    }
+    artifact "Python Backend" {
+        [app.py]
+        [login.py]
+        [main.py]
+        [other_python_files]
+        [Lot_bew_bearb.py]
+        [Lot_start.py]
+    }
+    [Timer (CronJob)]
+}
+
+cloud "Externes Fertigungssystem" {
+    [Fertigungssystem]
+}
+
+' Verbindungen
+[Flask Webanwendung] <-- [app.py]
+[Flask Webanwendung] <-- [login.py]
+[Flask Webanwendung] --> [HTML-Dateien]
+[Python Backend] --> [Datenbank]
+[Timer (CronJob)] --> [Lot_start.py]
+[Timer (CronJob)] --> [Lot_bew_bearb.py]
+[Fertigungssystem] --> [Datenbank]
+
+@enduml
