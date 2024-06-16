@@ -1,6 +1,9 @@
 = Anwenderdokumentation
 Projekt Frau Holle
 
+:toc:
+:toc-title: Inhaltsverzeichnis
+
 == Einführung
 
 Beim Start der Software gelangt der Nutzer zu einem Login-Bildschirm. Aktuell existieren zwei Logins, welche dem Nutzer unterschiedliche Rechte gewähren. Nach dem Prinzip „Jeder bekommt nur so viele Rechte, wie er für die Ausführung seiner Arbeit benötigt“, gibt es folgende Nutzerrollen:
