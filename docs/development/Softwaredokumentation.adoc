@@ -311,6 +311,17 @@ Das Bewegen und Bearbeiten von Losen, die sich im Fertigungsprozess befinden, wi
 | moveLot() | Schauen, ob ein Lot in OP-COMP-Zustand ist und versetzen des Lot auf nächsten Produktionsschritt. | session_d: DB-Session | -
 |===
 
+==== CronJobs
+Beide Cronjobs wurden auf dem Raspberry Pi eingerichtet. Beide CronJobs, welche die Dateien `Lot_start.py` und `Lot_bew_bearb.py` ausführen, werden alle 5 Minuten ausgeführt. Die CronJobs wurden mittels des Befehls `crontab -e` eingerichtet und die Ausführung der Dateien in den entsprechenden Intervallen festgelegt.
+
+.Beispiel: Einrichtung der CronJobs
+[source,bash]
+----
+*/5 * * * * /usr/bin/python ~/Desktop/i04-projekt-frau-holle/Lot_start.py >> ~/Desktop/i04-projekt-frau-holle/timer_log/log.txt 2>&1
+*/5 * * * * /usr/bin/python ~/Desktop/i04-projekt-frau-holle/Lot_bew_bearb.py >> ~/Desktop/i04-projekt-frau-holle/timer_log/log.txt 2>&1
+----
+
+Angezeigt können die CronJobs mittels des Befehls `crontab -l` werden. Die Ausgaben der CronJobs werden in der Log-Datei `log.txt` gespeichert.
 
 === weitere Komponenten des Systems
 Die Bündelung der Geschäftslogik des Timers und die Benutzerinteraktion mittels REST-API erfolgt in den Python-Dateien. So wurden die Aktionen des Timers und weitere administrative Aktionen manuell für den Administrator und teils auch für den Mitarbeiter ausführbar gemacht. Die Python-Dateien sind, gebündelt nach der Zugehörigkeit zu den einzelnen Komponenten, die im <<modelid,C4-Modell>> dargestellt sind, mit ihren Funktionen in den folgenden Tabellen aufgeführt.
