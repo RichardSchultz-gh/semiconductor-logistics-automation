@@ -14,20 +14,27 @@ Im Folgenden werde ich diese Rollen und die Funktionen des Programms entsprechen
 
 === Login
 
+:imagesdir: images
+image::Login.png[width=30%, align="center"]
 Hier werden der Benutzername und das Passwort abgefragt. Zum jetzigen Zeitpunkt existieren zwei unterschiedliche Logins, die dem Nutzer verschiedene Funktionen gewähren.
 
 === Allgemeine Infos
 
+image::Button_Logout.png[width=20%, align="center"]
+image::Button_back_and_mainpage.png[width=20%, align="center"]
 Oben rechts im Hauptmenü findet man die Logout-Taste und auf jeder Unterseite befindet sich rechts oben ein Knopf zum Startbildschirm und ein allgemeiner Zurückknopf, welcher zu der zuletzt getätigten Aktion zurückspringt.
 
 == Teil A: Bedienungsanleitung für Arbeiter
+image::User2Menu.png[width=100%, align="center"]
 
 === 1. Aufträge anlegen & Lose starten
 
+image::Lose_starten.png[width=100%, align="center"]
 Hier ist es dem Nutzer möglich, neue Aufträge ins System einzupflegen. Damit das reibungslos funktioniert, wird der Nutzer nach Betätigen des Buttons ‚Register Order‘ entweder zu einer Erfolgsseite weitergeleitet, wenn alles gut verlief, oder zu einer Fehlerseite, auf der dem Nutzer genau angezeigt wird, was falsch lief. Rechts besteht die Möglichkeit, neue Lose manuell zu starten. Unten befindet sich eine Tabelle aller Lose, welche auf Wunsch sortierbar ist.
 
 === 2. Stammdaten anzeigen
 
+image::Stammdaten_1.png[width=50%, align="center"]
 Hier kann sich der Nutzer Daten im System anschauen, das beinhaltet:
 
 * Lose
@@ -36,27 +43,34 @@ Hier kann sich der Nutzer Daten im System anschauen, das beinhaltet:
 * Prodflow
 * Ptime
 
+image::Stammdaten_2.png[width=100%, align="center"]
 Beim Drücken des Knopfes gelangt der Nutzer in ein Menü, in dem ihm zu jeder Variablen ein Reiter angezeigt wird. Beim Klicken auf den gewünschten Reiter gelangt der Nutzer in einen weiteren Bildschirm, auf dem er sich die ganzen Daten anzeigen lassen kann. Hier als Beispiel für Lose.
 
 == Teil B: Bedienungsanleitung für Admin
+image::User1Menu.png[width=100%, align="center"]
 
 === 1. Aufträge anlegen & Lose starten
+image::Lose_starten.png[width=100%, align="center"]
 
 Hier ist es dem Nutzer möglich, neue Aufträge ins System einzupflegen, im Schema |Kunde| Auftragsnummer| Produkttyp| Wafer Anzahl| Termin wann es fertig sein soll| Zeitintervall, in dem die Lose gestartet werden (zw. Jetzt und dem Fertigstellungsdatum) |. Damit das reibungslos funktioniert, wird der Nutzer nach Betätigen des Buttons ‚Register Order‘ entweder zu einer Erfolgsseite weitergeleitet, wenn alles gut verlief, oder zu einer Fehlerseite, auf der dem Nutzer genau angezeigt wird, was falsch lief. Rechts besteht die Möglichkeit, neue Lose manuell zu starten, durch Auswahl der Los-ID. Unten befindet sich eine Tabelle aller Lose, welche auf Wunsch sortierbar ist.
 
 === 2. Lose bearbeiten
+image::Lose_bearbeiten.png[width=100%, align="center"]
 
 Hier wird es dem Nutzer ermöglicht, Lose, die sich im Zustand „wait“ befinden, in den Zustand „proc“ zu setzen durch Eingabe der Los-ID im gegebenen Feld im Format. Zudem hat der Nutzer die Möglichkeit, durch Sortieren der Tabellen den Auftritt von Fehlern zu minimieren, indem er direkt nach Losen im „wait“-Zustand filtert oder ähnliches. Damit das reibungslos funktioniert, wird der Nutzer nach Betätigen des Buttons ‚Los bearbeiten‘ entweder zu einer Erfolgsseite weitergeleitet, wenn alles gut verlief, oder zu einer Fehlerseite, auf der dem Nutzer genau angezeigt wird, was falsch lief.
 
 === 3. Lose bewegen
+image::Lose_bewegen.png[width=100%, align="center"]
 
 Hier wird durch Eingabe der Los-ID das manuelle Bewegen von Losen ermöglicht. Lose werden so von „opcomp“ entweder auf „wait“ oder, sollte das Ende des Prodflows für das angegebene Los erreicht sein, auf „fin“ gesetzt. Damit das reibungslos funktioniert, wird der Nutzer nach Betätigen des Buttons ‚Move Lot‘ entweder zu einer Erfolgsseite weitergeleitet, wenn alles gut verlief, oder zu einer Fehlerseite, auf der dem Nutzer genau angezeigt wird, was falsch lief.
 
 === 4. Backups anlegen & laden
+## hab noch kein Bild
 
 In diesen beiden Bildschirmen wird es dem Nutzer ermöglicht, Backups des aktuellen DB-Standes anzulegen und diese zu verwalten, ganz einfach über Knopfdruck.
 
 === 5. Stammdaten anzeigen und bearbeiten
+image::Stammdaten_1.png[width=50%, align="center"]
 
 Hier kann sich der Nutzer Datenvariablen im System anschauen und verändern, das beinhaltet:
 
@@ -66,13 +80,16 @@ Hier kann sich der Nutzer Datenvariablen im System anschauen und verändern, das
 * Prodflow
 * Ptime
 
+image::Stammdaten_2.png[width=100%, align="center"]
 Beim Drücken des Knopfes gelangt der Nutzer in ein Menü, in dem ihm zu jeder Variablen ein Reiter angezeigt wird. Beim Klicken auf den gewünschten Reiter gelangt der Nutzer in einen weiteren Bildschirm, auf dem er sich die ganzen Daten anzeigen lassen und bei Bedarf anpassen kann. Hier als Beispiel für Lose.
 
 === 6. Daten exportieren
+image::Daten_expo.png[width=100%, align="center"]
 
 Hier werden dem Nutzer die Los-Tabelle mit Filteroptionen angezeigt. Der Nutzer kann dann seine Wunschmenge durch Setzen eines Häkchens in der linken Tabellenspalte neben den einzelnen Losen selektieren oder bei Bedarf über einen Knopfdruck alle auswählen. Nachdem dies erledigt ist, kann der Nutzer diese ausgewählten Daten per Knopfdruck exportieren. Dies generiert eine CSV-Datei, welche im CSV-Ordner des Projektes gespeichert wird.
 
 === 7. Daten importieren
+image::Daten_impo.png[width=100%, align="center"]
 
 Zum Importieren werden dem Nutzer zwei Optionen zur Verfügung gestellt:
 
