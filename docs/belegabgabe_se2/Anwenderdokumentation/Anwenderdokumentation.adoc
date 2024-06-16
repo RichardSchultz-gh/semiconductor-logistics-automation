@@ -1,1 +1,89 @@
+= Anwenderdokumentation
+Projekt Frau Holle
+
+:toc: 
+:toclevels: 2
+
+== Einführung
+
+Beim Start der Software gelangt der Nutzer zu einem Login-Bildschirm. Aktuell existieren zwei Logins, welche dem Nutzer unterschiedliche Rechte gewähren. Nach dem Prinzip „Jeder bekommt nur so viele Rechte, wie er für die Ausführung seiner Arbeit benötigt“, gibt es folgende Nutzerrollen:
+
+1. Arbeiter: Hat nur Zugriff auf Funktionen, die ihm erlauben, den Prozess zu überwachen und neue Aufträge anzulegen.
+2. Admin: Kann die volle Bandbreite der Funktionen des Programms nutzen. Dies beinhaltet die Rechte des Arbeiters sowie das Bearbeiten und Bewegen der einzelnen Lose, das Anlegen und Laden von Backups, den Zugriff auf die Übersicht aller vorhandenen Einheiten (Lose, Tools, Workflow, etc.), sowie das Importieren über CSV-Dateien für alle Einheiten und die Möglichkeit, Losdaten im CSV-Format zu exportieren.
+
+Im Folgenden werde ich diese Rollen und die Funktionen des Programms entsprechend aufschlüsseln.
+
+== Teil 0: Login und Allgemeine Infos
+
+=== Login
+
+Hier werden der Benutzername und das Passwort abgefragt. Zum jetzigen Zeitpunkt existieren zwei unterschiedliche Logins, die dem Nutzer verschiedene Funktionen gewähren.
+
+=== Allgemeine Infos
+
+Oben rechts im Hauptmenü findet man die Logout-Taste und auf jeder Unterseite befindet sich rechts oben ein Knopf zum Startbildschirm und ein allgemeiner Zurückknopf, welcher zu der zuletzt getätigten Aktion zurückspringt.
+
+== Teil A: Bedienungsanleitung für Arbeiter
+
+=== 1. Aufträge anlegen & Lose starten
+
+Hier ist es dem Nutzer möglich, neue Aufträge ins System einzupflegen. Damit das reibungslos funktioniert, wird der Nutzer nach Betätigen des Buttons ‚Register Order‘ entweder zu einer Erfolgsseite weitergeleitet, wenn alles gut verlief, oder zu einer Fehlerseite, auf der dem Nutzer genau angezeigt wird, was falsch lief. Rechts besteht die Möglichkeit, neue Lose manuell zu starten. Unten befindet sich eine Tabelle aller Lose, welche auf Wunsch sortierbar ist.
+
+=== 2. Stammdaten anzeigen
+
+Hier kann sich der Nutzer Daten im System anschauen, das beinhaltet:
+
+* Lose
+* Tools
+* Workflow
+* Prodflow
+* Ptime
+
+Beim Drücken des Knopfes gelangt der Nutzer in ein Menü, in dem ihm zu jeder Variablen ein Reiter angezeigt wird. Beim Klicken auf den gewünschten Reiter gelangt der Nutzer in einen weiteren Bildschirm, auf dem er sich die ganzen Daten anzeigen lassen kann. Hier als Beispiel für Lose.
+
+== Teil B: Bedienungsanleitung für Admin
+
+=== 1. Aufträge anlegen & Lose starten
+
+Hier ist es dem Nutzer möglich, neue Aufträge ins System einzupflegen, im Schema |Kunde| Auftragsnummer| Produkttyp| Wafer Anzahl| Termin wann es fertig sein soll| Zeitintervall, in dem die Lose gestartet werden (zw. Jetzt und dem Fertigstellungsdatum) |. Damit das reibungslos funktioniert, wird der Nutzer nach Betätigen des Buttons ‚Register Order‘ entweder zu einer Erfolgsseite weitergeleitet, wenn alles gut verlief, oder zu einer Fehlerseite, auf der dem Nutzer genau angezeigt wird, was falsch lief. Rechts besteht die Möglichkeit, neue Lose manuell zu starten, durch Auswahl der Los-ID. Unten befindet sich eine Tabelle aller Lose, welche auf Wunsch sortierbar ist.
+
+=== 2. Lose bearbeiten
+
+Hier wird es dem Nutzer ermöglicht, Lose, die sich im Zustand „wait“ befinden, in den Zustand „proc“ zu setzen durch Eingabe der Los-ID im gegebenen Feld im Format. Zudem hat der Nutzer die Möglichkeit, durch Sortieren der Tabellen den Auftritt von Fehlern zu minimieren, indem er direkt nach Losen im „wait“-Zustand filtert oder ähnliches. Damit das reibungslos funktioniert, wird der Nutzer nach Betätigen des Buttons ‚Los bearbeiten‘ entweder zu einer Erfolgsseite weitergeleitet, wenn alles gut verlief, oder zu einer Fehlerseite, auf der dem Nutzer genau angezeigt wird, was falsch lief.
+
+=== 3. Lose bewegen
+
+Hier wird durch Eingabe der Los-ID das manuelle Bewegen von Losen ermöglicht. Lose werden so von „opcomp“ entweder auf „wait“ oder, sollte das Ende des Prodflows für das angegebene Los erreicht sein, auf „fin“ gesetzt. Damit das reibungslos funktioniert, wird der Nutzer nach Betätigen des Buttons ‚Move Lot‘ entweder zu einer Erfolgsseite weitergeleitet, wenn alles gut verlief, oder zu einer Fehlerseite, auf der dem Nutzer genau angezeigt wird, was falsch lief.
+
+=== 4. Backups anlegen & laden
+
+In diesen beiden Bildschirmen wird es dem Nutzer ermöglicht, Backups des aktuellen DB-Standes anzulegen und diese zu verwalten, ganz einfach über Knopfdruck.
+
+=== 5. Stammdaten anzeigen und bearbeiten
+
+Hier kann sich der Nutzer Datenvariablen im System anschauen und verändern, das beinhaltet:
+
+* Lose
+* Tools
+* Workflow
+* Prodflow
+* Ptime
+
+Beim Drücken des Knopfes gelangt der Nutzer in ein Menü, in dem ihm zu jeder Variablen ein Reiter angezeigt wird. Beim Klicken auf den gewünschten Reiter gelangt der Nutzer in einen weiteren Bildschirm, auf dem er sich die ganzen Daten anzeigen lassen und bei Bedarf anpassen kann. Hier als Beispiel für Lose.
+
+=== 6. Daten exportieren
+
+Hier werden dem Nutzer die Los-Tabelle mit Filteroptionen angezeigt. Der Nutzer kann dann seine Wunschmenge durch Setzen eines Häkchens in der linken Tabellenspalte neben den einzelnen Losen selektieren oder bei Bedarf über einen Knopfdruck alle auswählen. Nachdem dies erledigt ist, kann der Nutzer diese ausgewählten Daten per Knopfdruck exportieren. Dies generiert eine CSV-Datei, welche im CSV-Ordner des Projektes gespeichert wird.
+
+=== 7. Daten importieren
+
+Zum Importieren werden dem Nutzer zwei Optionen zur Verfügung gestellt:
+
+* Per CSV-Datei: Zu beachten ist hierbei:
+** Es handelt sich um eine CSV-Datei.
+** Der gewünschte Datentypname steht am Anfang des Dateinamens, z.B. Toolxy.csv.
+** Die Attribute stehen klein und zusammengeschrieben, nur durch Kommas getrennt, in der ersten Zeile, z.B. tool, toolfam, owner, tooltype, mttr, mttf, state.
+** In den nächsten Zeilen werden die Inhalte in einem ähnlichen Schema eingetragen. Sollte ein Attribut leer bleiben, ist wie folgt vorzugehen, z.B. Amar12, Saw, , CNC.
+
+* Per Eingabe in die Felder weiter unten: Dunkel hervorgehobene Felder müssen ausgefüllt werden, da bei leer gelassenen Feldern Fehler auftreten können und die Eingabe nicht übernommen wird. In jedem Feld steht auch eine Hilfestellung gegeben, welche Werte man erwartet werden, z.B. Int / Zahlenwerte usw. Nach Drücken des Import-Knopfs erhält der Nutzer eine Rückmeldung der Datenbank, inwieweit die eingegebenen Daten übernommen wurden oder welche Fehlermeldung aufgetreten ist.
 
