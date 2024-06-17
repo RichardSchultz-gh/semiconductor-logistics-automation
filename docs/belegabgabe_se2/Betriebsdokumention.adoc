@@ -45,6 +45,8 @@ Führe die Datei in PostgreSQL aus: +
 $ psql -U se-project -d se-project -f DBanlegen.sql
 ----
 
+Alle Informationen sind in der config.py Datei implemeniert.
+
 === {counter:head1}.  Einrichtung des Frontends/Middleware
 
 {counter:count2}. Installation der Python-Librarys:
