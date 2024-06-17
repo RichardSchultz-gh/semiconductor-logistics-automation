@@ -1,1 +1,163 @@
 = Betriebsdokumentation
+
+== Allgemeine Informationen
+
+Die Betriebsdokumentation enthält Anleitungen und Hilfestellungen zum Einrichten, Konfigurieren und Betreuen des Systems. Dieses Dokument ist für Administratoren vorgesehen.
+
+== Systemvoraussetzungen
+
+=== Hardwareanforderungen
+
+*Raspberry Pi:*
+
+* Modell: 4B
+* RAM: 8GB
+* Speicherbedarf (SD-Karte): 32GB
+* Internetverbindung: nicht notwendig (später Verbindung zum Fabrikbetrieb nötig)
+
+=== Softwareanforderungen
+
+* Betriebssystem: Raspberry Pi OS (rel.: 15.04.2024)
+* genutzter Browser: Google Chrome(Ver.: 126.0)
+
+== Systemeinrichtung
+
+
+=== {counter:head1}.  Einrichtung des Backends
+
+. Installation des Datenbankmanagementsystems PostgreSQL nach: +
+link:https://pimylifeup.com/raspberry-pi-postgresql/[Externem PostgreSQL-Tutorial] +
+ + 
+Zu Beachten während der Installationsanleitung: +
+ +
+zu erstellender User: +
+_username:_ se-project +
+_password:_ se-project +
+_superuser:_ y +
+ +
+_Name der DB:_ se-project + 
+ +
+Die Informationen zur Datenbank-Konfiguration sind in der config.py Datei festgehalten.
+
+. Downloaden der SQL-Datei aus dem GitHub-Repo: `DBanlegen_CSVeinfuegen.sql` +
+
+. Ausführen der Datei in PostgreSQL: +
+[code,bash]
+----
+$ psql -U se-project -d se-project -f DBanlegen.sql
+----
+
+=== {counter:head1}.  Einrichtung des Frontends/Middleware
+
+{counter:count2}. Installation der Python-Librarys:
+[code,bash]
+----
+$ pip install -U Flask
+$ pip install -U sqlalchemy
+----
+
+{counter:count2}. Einrichtung der Timers:
+[code,bash]
+----
+$ echo "*/5 * * * * /usr/bin/phython ~/Desktop/i04-projekt-frau-holle/Lot_start.py >> ~/Desktop/i04-projekt-frau-holle/timer_log/log.txt 2>&1\n*/5 * * * * /usr/bin/phython ~/Desktop/i04-projekt-frau-holle/Lot_bew_bearb.py >> ~/Desktop/i04-projekt-frau-holle/timer_log/log.txt 2>&1" >> /etc/crontab
+----
+
+{counter:count2}. Herunterladen der Programmdatein:
+[code,bash]
+----
+$ cd ~/Desktop/i04-projekt-frau-holle
+$ git clone "https://github.com/leni04/i04-projekt-frau-holle"
+----
+
+== Systembetreuung
+
+=== {counter:head2}. Systembestandteile
+Das folgende Diagramm soll eine Übersicht über die Verbindung der Systembestandteile bzw. -artefakte geben.
+
+.Systembestandteile
+
+.Systembestandteile
+image::../architecture/images/deployment_diagram.png[]
+
+=== {counter:head2}. Speicherpfade
+[%header, cols=2*]
+|===
+|Systembestandteil
+|Speicherpfad
+
+|Frontend (HTML)
+|~/Desktop/i04-projekt-frau-holle/templates
+
+|Frontend (CSS)
+|~/Desktop/i04-projekt-frau-holle/static
+
+|Middleware (.py Datein)
+|~/Desktop/i04-projekt-frau-holle/
+
+|Start-Skript (standardmäßig)
+|~/Desktop/i04-projekt-frau-holle/app.py
+
+|Timer-Log-Datei (.txt)
+|~/Desktop/i04-projekt-frau-holle/timer_log/log.txt
+
+|===
+
+
+=== {counter:head2}. Manuelles Starten/Stoppen
+
+*Starten:*
+
+[code,bash]
+----
+$ python app.py
+----
+Bei der Ausführung der Datei wird die IP-Adresse für die Oberfläche ausgegeben. +
+ +
+*Stoppen:* +
+Tastenkombination: CTRL + C +
+
+=== {counter:head2}. Füllen der Tabellen mit Beispieldatensätze
+
+Wenn die Funktion der Datenbank getestet werden soll, können Bespieldatensätze, im CSV-Format, über die Import-Funktion der Oberfläche in die Datenbank eingefügt werden.
+Einige Bespieldatensätze findet man im GitHub-Repository unter link:https://github.com/leni04/i04-projekt-frau-holle/tree/main/docs/development/DB_Tabellen_erstellen/CSV-Data[/docs/development/DB_Tabellen_erstellen/CSV-Data].
+
+=== {counter:head2}. Backups
+
+Erstellen Sie regelmäßig Backups der Datenbank und wichtiger Dateien:
+
+Backup der PostgreSQL-Datenbank:
+
+[code,bash]
+----
+$ pg_dump -U se-project -d se-project -f backup.sql
+----
+
+Wiederherstellen eines Backups:
+
+[code,bash]
+----
+$ psql -U se-project -d se-project -f backup.sql
+----
+
+=== {counter:head2}. Updates und Wartung
+
+Für Updates und Wartung sollten Sie regelmäßig die folgenden Schritte ausführen:
+
+Aktualisieren Sie das Betriebssystem und installierte Pakete.
+
+[code,bash]
+----
+$ sudo apt update && sudo apt upgrade
+----
+
+Aktualisieren Sie das GitHub-Repository auf die neueste Version.
+
+[code,bash]
+----
+$ git pull
+----
+
+=== {counter:head2}. Sicherheitsaspekte
+
+Stellen Sie sicher, dass alle Sicherheitsupdates installiert sind und verwenden Sie starke Passwörter. Ändern Sie regelmäßig Passwörter und überprüfen Sie die Zugriffsrechte.
+

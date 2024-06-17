@@ -67,7 +67,7 @@ def import_from_csv(csv_data, filename):
 
     if class_name is None:
         flash(f'Class not supported for import from filename: {filename}')
-        return
+        return None
 
     engine = create_engine(get_database_url())
     Session = sessionmaker(bind=engine)
@@ -84,7 +84,8 @@ def import_from_csv(csv_data, filename):
 
     class_to_add = class_mapping.get(class_name)
     if class_to_add is None:
-        return f'Class {class_name} not supported for import'
+        flash(f'Class {class_name} not supported for import')
+        return None
 
     csv_file = StringIO(csv_data)
 
@@ -122,15 +123,19 @@ def import_from_csv(csv_data, filename):
         except IntegrityError as e:
             session.rollback()
             flash(f'IntegrityError: {str(e.orig)}')
+            return None
         except DataError as e:
             session.rollback()
             flash(f'DataError: {str(e.orig)}')
+            return None
         except OperationalError as e:
             session.rollback()
             flash(f'OperationalError: {str(e.orig)}')
+            return None
         except Exception as e:
             session.rollback()
             flash(f'Unexpected error: {str(e)}')
+            return None
     session.close()
     return f'{added_count} entries were successfully added to the {class_name} table.'
 

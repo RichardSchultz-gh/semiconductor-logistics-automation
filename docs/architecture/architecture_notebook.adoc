@@ -204,6 +204,9 @@ Das Component-Diagramm stellt die Interaktion der einzelnen Komponenten der Midd
 //Beschreibt die physischen Knoten (Rechner) des Systems, der Prozesse, Threads und Komponenten, die in diesen Knoten ausgeführt werden. Diese Sicht wird nicht benötigt, wenn das System in einem einzelnen Prozess oder Thread ausgeführt wird.
 
 //tbd. aufzeigen, wie die Anwendung auf dem RaspberryPi läuft
+image::deployment_diagram.png[]
+Dieses Deployment-Diagramm zeigt die physische Verteilung der Softwarekomponenten auf den Hardwareknoten. Für das Frau Holle System wird damit dargestellt, wie die Flask-Anwendung einschließlich der Datenbank auf einem Raspberry Pi läuft. 
+Die Flask-Anwendung interagiert mit HTML-Dateien und dem Python-Backend. Ein CronJob-Timer steuert die Ausführung von Python-Dateien für die automatische Fertigungssimulation. Das Konzept eines externen Fertigungssystems sollte direkt auf die zentrale Datenbank zugreifen.
 
 === Use cases
 //Eine Liste oder ein Diagramm der Use Cases, die architektur-relevante Anforderungne enthalten.

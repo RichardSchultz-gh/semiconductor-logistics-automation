@@ -55,32 +55,3 @@ CREATE TABLE WORKFLOW (
     MANDATORY INT,
     STEPPERC DECIMAL(10, 2)
 );
-
-
--- jetzt .csv-Dateien einfügen (zum Daten reinfügen)
--- !! Ersetzen von dem Dateipfad mit Eurem .csv-Dateipfad
-
-COPY ENTITIES FROM 'C:\SoSe24\ENTITIES.csv' DELIMITER ',' CSV HEADER;
---Test:
-SELECT * FROM ENTITIES;
-
-COPY PRODFLOW FROM 'C:\SoSe24\PRODFLOW.csv' DELIMITER ',' CSV HEADER;
---Test:
-SELECT * FROM PRODFLOW;
-
-COPY PTIME FROM 'C:\SoSe24\PTIME.csv' DELIMITER ',' CSV HEADER;
---Test:
-SELECT * FROM PTIME;
-
-COPY TOOL FROM 'C:\SoSe24\TOOL.csv' DELIMITER ',' CSV HEADER;
---Test:
-SELECT * FROM TOOL;
-
---mit LOT und WORKFLOW gibt es wegen der "NULL"-Einträge Probleme, das ist behebbar durch von mir bearbeitete .csv-Dateien:
-COPY WORKFLOW FROM 'C:\SoSe24\WORKFLOW_1.csv' DELIMITER ',' CSV HEADER;
---Test:
-SELECT * FROM WORKFLOW;
-
-COPY LOT FROM 'C:\SoSe24\LOT_1.csv' DELIMITER ',' CSV HEADER;
---Test:
-SELECT * FROM LOT;
