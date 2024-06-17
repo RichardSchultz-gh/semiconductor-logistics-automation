@@ -252,7 +252,7 @@ Die REST-API umfasst mehrere Endpunkte, die jeweils spezifische Funktionen berei
 Die REST-API ist in Flask implementiert, einem Mikro-Webframework für Python. Flask bietet einfache und flexible Möglichkeiten zur Erstellung von Webanwendungen und APIs. Die Endpunkte der API sind als Routen in den entsprechenden Python-Dateien definiert. Jeder Route ist einer spezifischen Funktion zugeordnet, die die spezifische Operation ausführt.
 
 .Beispiel: Definition eines API-Endpunkts in Flask in main.py
-[source,python]
+[code,python]
 ----
 include::../../src/main.py[lines=6..16]
 ----
@@ -315,7 +315,7 @@ Das Bewegen und Bearbeiten von Losen, die sich im Fertigungsprozess befinden, wi
 Beide Cronjobs wurden auf dem Raspberry Pi eingerichtet. Beide CronJobs, welche die Dateien `Lot_start.py` und `Lot_bew_bearb.py` ausführen, werden alle 5 Minuten ausgeführt. Die CronJobs wurden mittels des Befehls `crontab -e` eingerichtet und die Ausführung der Dateien in den entsprechenden Intervallen festgelegt.
 
 .Beispiel: Einrichtung der CronJobs
-[source,bash]
+[code,bash]
 ----
 */5 * * * * /usr/bin/python ~/Desktop/i04-projekt-frau-holle/Lot_start.py >> ~/Desktop/i04-projekt-frau-holle/timer_log/log.txt 2>&1
 */5 * * * * /usr/bin/python ~/Desktop/i04-projekt-frau-holle/Lot_bew_bearb.py >> ~/Desktop/i04-projekt-frau-holle/timer_log/log.txt 2>&1
