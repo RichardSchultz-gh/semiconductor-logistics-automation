@@ -13,7 +13,7 @@ Raspberry Pi:
 * Modell: 4B
 * RAM: 8GB
 * Speicherbedarf (SD-Karte): 32GB
-* Internetverbindung: notwendig
+* Internetverbindung: nicht notwendig(später nur Verbindung zum Fabrikbetrieb nötig)
 
 === Softwareanforderungen
 
@@ -28,7 +28,7 @@ Raspberry Pi:
 . Installation des Datenbankmanagementsystems PostgreSQL nach: +
 https://pimylifeup.com/raspberry-pi-postgresql/ +
  + 
-Beachte während der Installations-Anleitung: +
+Beachte während der Installationsanleitung: +
  +
 zu erstellender User: +
 username: se-project +
@@ -42,7 +42,7 @@ Name der DB: se-project +
 Führe die Datei in PostgreSQL aus: +
 [code,bash]
 ----
-$ psql -U se-project -d se-project -f DBanlegen_CSVeinfuegen.sql
+$ psql -U se-project -d se-project -f DBanlegen.sql
 ----
 
 === {counter:head1}.  Einrichtung des Frontends/Middleware
@@ -63,6 +63,7 @@ $ echo "*/5 * * * * /usr/bin/phython ~/Desktop/i04-projekt-frau-holle/Lot_start.
 {counter:count2}. Herrunterladen der Programmdatein:
 [code,bash]
 ----
+$ cd ~/Desktop/i04-projekt-frau-holle
 $ git clone "https://github.com/leni04/i04-projekt-frau-holle"
 ----
 
@@ -74,7 +75,7 @@ Das folgende Diagramm soll eine Übersicht über die Verbindung der Systembestan
 .Systembestandteile
 
 .Systembestandteile
-image::../architecture/c4-modell-ueberarbeitet/C3.png[]
+image::../architecture/images/deployment_diagram.png[]
 
 === {counter:head2}. Speicherpfade
 [%header, cols=2*]
@@ -83,16 +84,16 @@ image::../architecture/c4-modell-ueberarbeitet/C3.png[]
 |Speicherpfad
 
 |Frontend (HTML)
-|/src/templates
+|~/Desktop/i04-projekt-frau-holle/src/templates
 
 |Frontend (CSS)
-|/src/static
+|~/Desktop/i04-projekt-frau-holle/src/static
 
 |Middleware (.py Datein)
-|/src
+|~/Desktop/i04-projekt-frau-holle/src
 
 |Start-Skript (standardmäßig)
-|/src/app.py
+|~/Desktop/i04-projekt-frau-holle/src/app.py
 
 |===
 
@@ -109,6 +110,11 @@ Bei der Ausführung der Datei wird die IP-Adresse für die Oberfläche ausgegebe
  +
 Stoppen: +
 Tastenkombination: CTRL + C +
+
+=== {counter:head2}. Füllen der Tabellen mit Beispieldatensätze
+
+Wenn die Funktion der Datenbank getestet werden soll, können Bespieldatensätze, im CSV-Format, über die Import-Funktion der Oberfläche in die Datenbank eingefügt werden.
+Einige Bespieldatensätze findet man im GitHub-Repository unter /docs/development/DB_Tabellen_erstellen/CSV-Data.
 
 === {counter:head2}. Backups
 
@@ -139,7 +145,7 @@ Aktualisieren Sie das Betriebssystem und installierte Pakete.
 $ sudo apt update && sudo apt upgrade
 ----
 
-Aktualisieren Sie das Git-Repository auf die neueste Version.
+Aktualisieren Sie das GitHub-Repository auf die neueste Version.
 
 [code,bash]
 ----
