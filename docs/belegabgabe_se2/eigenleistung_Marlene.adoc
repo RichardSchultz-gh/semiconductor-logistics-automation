@@ -13,7 +13,7 @@ Bewertungskriterien:
     − Fachlich korrekte Beschreibung der Aufgabenstellung / Herausforderung → Nutzung der Begriffe, Konzepte, Methoden aus Vorlesung und Praktikum
     − Referenzieren konkreter Code-Bestandteile, Modelle, Dokumente usw. aus dem Projekt
 
-Thema: Projektmanagement mit iterativem, agilem vorgesehenen
+Thema: Projektmanagement mit iterativem, agilem Vorgehen
 
 Problemlage: Aufgaben- und Zeitmanagment in größeren Projekten von Teams über einen längeren zeitraum möglichst effektiv und effizient gestalten, 
 sodass die Wünsche des Auftragsgeber bestmöglich umgesetzt werden
@@ -29,5 +29,5 @@ Erfolge und Misserfolge aus Iterationsplänen suchen/analysieren.
 
 ***
 
-
+Thema: Projektmanagement mit iterativem, agilem Vorgehen
 

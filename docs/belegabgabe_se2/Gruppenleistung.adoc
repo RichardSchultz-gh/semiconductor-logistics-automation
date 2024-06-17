@@ -16,36 +16,31 @@ Dass das Team einen guten Workflow hat, wurde vor allem deutlich, als die Projek
 
 Natürlich gab es ab und zu mal kleinere Probleme bei denen der Workflow nicht komplett umgesetzt wurde, aber im großen Ganzen und Ganzen hat das Team einen guten und effektiven Workflow entwickelt und umgesetzt. 
 
-=== Erfolg 2 - Wissensaneignung //not done
+=== Erfolg 2 - Wissensaneignung
 
 Als wir das Projekt angefangen haben, hatten die einzelnen Teammitglieder kaum bis keine Erfahrungen mit den Themen des Projekts oder wie man ein Projekt wie dieses angeht. 
 Aus anderen Teams haben wir mitbekommen wie dort einzelne, aus früheren Berufen, Ausbildungen oder Praktika, bereits technische und organisatorische Fähigkeiten hatten. Bei uns beruhten die Fähigkeiten auf dem bisherigen Studium und den dortigen deutlich kleineren Einzelprojekten und schulischen Projekten. 
 Zu Beginn war es eine Herausforderung für alle Bereiche, ohne jegliches Wissen das Projekt zu starten. Und auch immer wieder zwischendurch wusste keiner wirklich, was zu tun war oder wie man es tun muss. 
 
-Es gibt dabei zwei Wissensaspekte: 
+Neben den Kompetenzen zur Projektdurchführung, war vor allem das Aneignen des technischen Wissen ein großer Erfolg des Projekts.
 
-Als erstes, das technische Wissen. Mit den uns vorgegebenen Sprachen und Techniken - Python, SQL, HTML, RaspberryPi - hatten wir bisher nur sporadisch oder gar nicht gearbeitet. Dies hat immer wieder eine Hürde dargestellt. 
+Mit den uns vorgegebenen Sprachen und Techniken - Python, SQL, HTML, RaspberryPi - hatten wir bisher nur sporadisch oder gar nicht gearbeitet. Dies hat immer wieder eine Hürde dargestellt. 
 
 Davon haben wir uns jedoch nicht aufhalten lassen. Immer wenn uns Wissen fehlte, haben wir uns das benötige Wissen, entweder gesteuert durch das Projektmanagement oder aus Eigeninitiative, erarbeitet. 
 Dies ist unserer Meinung nach ein großer Erfolg des Projekts. Wir haben uns von fehlenden Wissen und neuen Hürden nicht entmutigen lassen. Stattdessen haben wir diese Hürden überwunden und dabei viel neues Wissen angesammelt, das uns in Zukunft weiterhelfen wird.
 
-Zum Anderen das nötige Wissen der Projektdurchführung. 
-//erarbeitung während des tuns. herausfinden was funktioniert, anwender der lernstoffe des unterrichts
-
-
-
-
-
-Wir nehmen also aus dem Projekt einen großen Wissens- und Fähigkeitszuwachs mit. 
-
-
-=== Erfolg 3 - Agile Arbeitsweise //not done
+=== Erfolg 3 -  //not done
 //Agiles Manifest (Februar 2001) „Wir erschließen bessere Wege, Software zu entwickeln, indem wir es selbst tun und anderen dabei helfen. Durch diese Tätigkeit haben wir diese Werte zu schätzen gelernt: Individuen und Interaktionen > Prozesse und Werkzeuge    Funktionierende Software > umfassende Dokumentation     Zusammenarbeit mit dem Kunden > Vertragsverhandlung     Reagieren auf Veränderung > das Befolgen eines Plans        Das heißt, obwohl wir die Werte auf der rechten Seite wichtig finden, schätzen wir die Werte auf der linken Seite höher ein.“
-?????????????
+
+Im agilen Software Engineering ist Anpassbarkeit ein wichtiger Aspekt. Man reagiert schnell auf sich verändernde Umstände durch Erkenntnisse oder sich ändernde Anforderungen. 
+
+In unserem Projekt haben wir erfolgreich versucht dies umzusetzen. 
+
+
 
 == TOP 3 Misserfolge
 
-=== Misserfolg 1 - Kommunikation zwischen Architekten & Entwicklern //nearly done
+=== Misserfolg 1 - Kommunikation zwischen Architekten & Entwicklern
 
 Als ersten Misserfolg im Projekt lässt sich anführen, dass die Kommunikation zwischen Architekten und Entwicklern zu Beginn des Projekt eher schlecht war. 
 Als die Arbeit der Architekten und Entwickler gestartet ist, sollten diese sich für den Prototypen zusammensetzen und beraten. Da keines der Mitglieder vorher Erfahrung in der Entwicklung einer Architektur hatten, sollten sich alle vier zusammensetzen und beraten, was z.B. für die Implementierung am besten erscheint. 
@@ -69,24 +64,12 @@ Zum anderen kann es auch an fehlenden Erfahrungen in der Projektdurchführung li
 
 Bei langfristigeren und größeren Projekten als diesem hier ist eine ungleiche Arbeitsverteilung nicht nachhaltig. Uns ist deutlich geworden, dass bei künftigen Projekten von Anfang an mehr darauf geachtet werden muss, welchen Arbeitsaufwand jemand hat und bei ungleicher Verteilung muss man versuchen so gut es geht die Aufgaben besser zu verteilen.
 
-=== Misserfolg 3 - Wissenstransfer //not done
-
-3 fehlender wissenstransfer zwischen den rollen 
--> beispiel: nils musste sich nochmal komplett in die usecases einlesen um die logik etc zu verstehen um die implementierung dann starten zu können, 
-oder Paul musste sich um das testing zu starten in den code rein arbeiten. da wäre ein "Abhol"Meeting gut gewesen, 
-wo der vorarbeiter den nacharbeiter erklärt was getan wurde und fragen beantwortet.( Oder eine noch bessere dauerhafte wissenstransfergewährleistung 
-wo alle immer überall wissen was abgeht, wobei das bei größeren projekten schwer ist. ) 
-Dadurch ging Zeit und Aufwand verloren + irgendwie auch wissensverlust, da sich Sachen mehrmals erschlossen werden mussten + mehr spielraum für fehler
-
-
+=== Misserfolg 3 - Wissenstransfer //done but not really happy with it
 
 Bei dem Projekt arbeiten mehrere Personen in ihren Rollen an einem Sachverhalt auf verschiedenen Ebenen. Zuerst stellen die Analysten die Anforderungsanalyse auf, daraus wird die Architektur erstellt, woraus wiederum die Umsetzung in Code folgt. Mit dem entstandenen Code arbeitet dann das Testing. 
-Die einzelnen Schritte werden von verschiedenen Rollen und damit oft verschiedenen Personen übernommen. 
+Die einzelnen Schritte werden von verschiedenen Rollen und damit oft verschiedenen Personen übernommen. Dabei ist ein flüssiger Übergang zwischen den Schritten und Rollen wichtig, damit das Projekt möglichst effizient abläuft. 
 
-Beim Rückblick auf das Projekt ist uns aufgefallen, dass ... 
+Beim Rückblick auf das Projekt ist uns aufgefallen, dass es zu wengi Wissenstransfer zwischen den Rollen unterschiedlicher Schritte gegeben hat. Dies hat den flüssigen Übergang zwischen den Schritten gestört.
+So musste sich der Tester z.B. aufwendig in den Code der Entwickler einlesen, um diesen zu verstehen und nur so auch testen zu können. Dadurch ist zeitlicher Mehraufwand entstanden und hat den Beginn des Testings verzögert. Zudem bietet dies Spielraum für Fehler. Wenn sich Sachverhalte der z.B. Analyse neu erschlossen werden müssen, können Fehlinterpretationen entstehen. 
 
-
-Dies hat zu einem größeren Zeitaufwand geführt, da 
-
-
-
+Um diese Probleme zu umgehen, könnte man einem Extrameeting zwischen "Vorarbeiter" und "Nacharbeiter" das Erarbeitete des "Vorarbeiters" im tieferen Detail besprechen. So können sich beide verständigen und so Missverständnisse vermeiden. Zwar könnte man auch das Teammeeting dafür nutzen, jedoch sind wir der Meinung, dass man dadurch Ressourcen verschwendet. Dies müsste man in einem folgenden Projekt ausprobieren und sehen, ob das Extrameeting sinnvoll ist und zur effizienz des Teams beiträgt. 
