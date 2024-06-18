@@ -6,13 +6,15 @@
 
 Mit dem zweiten Projektteil im Sommersemester begann die Implementierung der Use Cases. Da man Code nicht einfach runterschreibt und dann ist er abgabebereit, haben wir uns überlegt wie man den Workflow angehen kann.
 
-Dabei waren wir uns einig, dass durch Pull-Requests der Code überprüft werden muss, bevor er ins Repository aufgenommen wird. So kann man zum einen die Funktionalitäten überprüfen und Fehler frühzeitig beheben, sodass der neue Code nicht den bisherigen beeinträchtigt.  Danach muss der Code getestet werden und die Anmerkungen, die aus dem Testing entstehen, müssen bearbeitet werden und dann wieder zum Testing gehen. Als Letztes wird die Implementierung des Use Case dem Auftraggeber vorgelegt. Anmerkungen daraus werden wieder nach dem Workflow behandelt. 
+Dabei waren wir uns einig, dass durch Pull-Requests der Code überprüft werden muss, bevor er ins Repository aufgenommen wird. So kann man zum einen die Funktionalitäten überprüfen und Fehler frühzeitig beheben, sodass der neue Code nicht den bisherigen beeinträchtigt. Entwickelt wird der Code bassierend auf der Anforderungsanalyse und Architekur. Sollte es notwendig sein, wird beides vorm coden erneut über- oder erarbeitet.
+Danach muss der Code getestet werden und die Anmerkungen, die aus dem Testing entstehen, müssen bearbeitet werden und dann wieder zum Testing gehen. Als Letztes wird die Implementierung des Use Case dem Auftraggeber vorgelegt. Anmerkungen daraus werden wieder nach dem Workflow behandelt. 
 
 Das Konzept eines Workflows, wie oben beschrieben, und eine erfolgreiche Umsetzung sind jedoch zwei unterschiedliche Dinge. 
 
-Als einen Erfolg im Projekt kann die Umsetzung des Workflows genannt werden. Die Teammitglieder haben sich an diesen Workflow gehalten und dynamisch Schritte wiederholt, wenn nötig. Es war den Mitgliedern klar, wer wann was tun muss. So wurden die Funktionen nach der Programmierung per Pull-Request hochgeladen, woraufhin diese von der zuständigen Person überprüft und übernommen (oder nicht übernommen) wurden. Wenn ein Use Case fertig war, wurde dies dem Team mitgeteilt und vorgestellt. Daraufhin hat sich das Testing von alleine angesprochen gefühlt und hat mit dem Testin gestartet. Dabei hätte die Projektleitung nicht einmal die Aufgabe "offiziell" in dem Moment ans Testing verteilen müssen, das entsprechende Mitglied hat sich bei der Fertigstellung der Use Cases direkt angesprochen gefühlt. 
+Als einen Erfolg im Projekt kann die Umsetzung des Workflows genannt werden. Die Teammitglieder haben sich an diesen Workflow gehalten und dynamisch Schritte wiederholt, wenn nötig. Es war den Mitgliedern klar, wer wann was tun muss. So wurden die Funktionen nach der Programmierung per Pull-Request hochgeladen, woraufhin diese von der zuständigen Person überprüft und übernommen (oder nicht übernommen) wurden. Bei Anmerkungen wurde die Aufgabe zurückgegeben und die Anmerkungen bearbeitet.
+Wenn ein Use Case fertig war, wurde dies dem Team mitgeteilt und vorgestellt. Daraufhin hat sich das Testing von alleine angesprochen gefühlt und hat mit dem Testing gestartet. Dabei hätte die Projektleitung nicht einmal die Aufgabe "offiziell" in dem Moment ans Testing verteilen müssen, das entsprechende Mitglied hat sich bei der Fertigstellung der Use Cases direkt angesprochen gefühlt. 
 
-Dass das Team einen guten Workflow hat, wurde vor allem deutlich, als die Projektleitung für 1-2 Wochen krankheitsbedingt ausgefallen ist und nur sporadisch Dinge erledigen konnte. Während dieser Zeit waren die aktuellen Use Cases abgesprochen und die Teammitglieder haben fast komplett eigenständig die Use Cases fertiggestellt, also gecodet, geprüft und getestet, ohne dass die Projektleitung diese Einzelschritte jedes Mal neu zuweisen musste. Die Teammitglieder haben sich gegenseitig überprüft und vor allem geholfen.  
+Dass das Team einen guten Workflow hat, wurde vor allem deutlich, als die Projektleitung für 1-2 Wochen während der "Construction Phase" krankheitsbedingt ausgefallen ist und nur sporadisch Dinge erledigen konnte, so z.B. die großen Aufgaben verteilen, jedoch keine kleinen zwischen Aufgaben. Während dieser Zeit waren die aktuellen Use Cases abgesprochen und die Teammitglieder haben fast komplett eigenständig die Use Cases fertiggestellt, also gecodet, geprüft und getestet, ohne dass die Projektleitung diese Einzelschritte jedes Mal neu zuweisen musste. Die Teammitglieder haben sich gegenseitig überprüft und vor allem geholfen. In dieser Zeit wurde klar, dass das Team im Essenz Alpha "Team" die XXX "Performing" umsetzt.
 
 Natürlich gab es ab und zu mal kleinere Probleme bei denen der Workflow nicht komplett umgesetzt wurde, aber im großen Ganzen und Ganzen hat das Team einen guten und effektiven Workflow entwickelt und umgesetzt. 
 
@@ -29,14 +31,11 @@ Mit den uns vorgegebenen Sprachen und Techniken - Python, SQL, HTML, RaspberryPi
 Davon haben wir uns jedoch nicht aufhalten lassen. Immer wenn uns Wissen fehlte, haben wir uns das benötige Wissen, entweder gesteuert durch das Projektmanagement oder aus Eigeninitiative, erarbeitet. 
 Dies ist unserer Meinung nach ein großer Erfolg des Projekts. Wir haben uns von fehlenden Wissen und neuen Hürden nicht entmutigen lassen. Stattdessen haben wir diese Hürden überwunden und dabei viel neues Wissen angesammelt, das uns in Zukunft weiterhelfen wird.
 
-=== Erfolg 3 -  //not done
-//Agiles Manifest (Februar 2001) „Wir erschließen bessere Wege, Software zu entwickeln, indem wir es selbst tun und anderen dabei helfen. Durch diese Tätigkeit haben wir diese Werte zu schätzen gelernt: Individuen und Interaktionen > Prozesse und Werkzeuge    Funktionierende Software > umfassende Dokumentation     Zusammenarbeit mit dem Kunden > Vertragsverhandlung     Reagieren auf Veränderung > das Befolgen eines Plans        Das heißt, obwohl wir die Werte auf der rechten Seite wichtig finden, schätzen wir die Werte auf der linken Seite höher ein.“
+=== Erfolg 3 - Zusammenarbeit Team & Auftragsgeber
 
-Im agilen Software Engineering ist Anpassbarkeit ein wichtiger Aspekt. Man reagiert schnell auf sich verändernde Umstände durch Erkenntnisse oder sich ändernde Anforderungen. 
+Die Herausforderung dieses Projektes war, im Vergleich zu anderen Projekten im Studium, dass man keine feste Aufgabenstellung hatte, die einem zu Beginn des Projekts gegeben wurde. Stattdessen gibt es einen Auftragsgeber. In Gesprächen mit dem Auftragsgeber erschließt man sich als Team nach und nach das Ziel des Projekts. 
 
-In unserem Projekt haben wir erfolgreich versucht dies umzusetzen. 
-
-
+...
 
 == TOP 3 Misserfolge
 

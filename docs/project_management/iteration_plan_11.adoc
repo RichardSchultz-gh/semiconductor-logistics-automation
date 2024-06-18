@@ -42,6 +42,7 @@ image::Iteration11_issues.png[]
 *Meeting mit Auftragsgeber:*
 
 Herr Ringel hat sich die Implementierung der Use Cases 1-3 angeschaut und keine weiteren Anmerkungen angebracht. Beim nächsten Meeting werden diese 3 Use Cases abgenommen.
+-> wurden abgenommen
 
 Use Cases 04-05 in so weit fertig und werden getestet.
 
@@ -53,3 +54,4 @@ Config Datei wurde erstellt.
 
 Themen der Gruppenleistung wurden vorläufig gefunden.
 
+Konzept der Entwicklerdoku wurde vorgestellt und als gut befunden
