@@ -1,7 +1,7 @@
 = Teil 2: Eigenleistungen
 
 <<<
-include:eigenleistung_Nils.adoc[]
+include::eigenleistung_Nils.adoc[]
 
 
 <<<
@@ -9,7 +9,7 @@ include::eigenleistung_Richard.adoc[]
 
 
 <<<
-include:eigenleistung_Yannik.adoc[]
+include::eigenleistung_Yannik.adoc[]
 
 
 <<<
@@ -17,7 +17,7 @@ include::eigenleistung_Nico.adoc[]
 
 
 <<<
-include:eigenleistung_Paul.adoc[]
+include::eigenleistung_Paul.adoc[]
 
 
 <<<

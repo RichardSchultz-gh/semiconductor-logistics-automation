@@ -30,23 +30,24 @@ Mit den uns vorgegebenen Sprachen und Techniken - Python, SQL, HTML, RaspberryPi
 
 Davon haben wir uns jedoch nicht aufhalten lassen. Immer wenn uns Wissen fehlte, haben wir uns das benötigte Wissen, entweder gesteuert durch das Projektmanagement oder aus Eigeninitiative, erarbeitet. 
 
-Das Einrichten des RaspberryPi lässt sich hier als Beispiel anbringen. 
-//bsp ausführen
+Das Einrichten des RaspberryPi lässt sich hier als Beispiel anbringen. Der Entwickler, der die Aufgabe zur Einrichtung des RaspberryPi hatte, kannte sich - wie der Rest des Teams - nicht mit RaspberryPis aus. Der Entwickler musste sich durch Recherche und Tutorials im Internet die Thematik soweit erschließen, dass er den RaspberryPi einrichten konnte und die PostgreSQL-Datenbank installieren konnte. Damit das Wissen der Einrichtung nicht verloren geht, wurde alles dokumentiert. (https://github.com/leni04/i04-projekt-frau-holle/blob/main/docs/belegabgabe_se2/Betriebsdokumention.adoc)
 
 Dies ist unserer Meinung nach ein großer Erfolg des Projekts. Wir haben uns von fehlendem Wissen und neuen Hürden nicht entmutigen lassen. Stattdessen haben wir diese Hürden überwunden und dabei viel neues Wissen angesammelt, das uns in Zukunft weiterhelfen wird.
 
-=== Erfolg 3 - Zusammenarbeit Team & Auftragsgeber
+=== Erfolg 3 - Zusammenarbeit Team & Auftragsgeber //not done
 
 Die Herausforderung dieses Projektes war, im Vergleich zu anderen Projekten im Studium, dass man keine feste Aufgabenstellung hatte, die einem zu Beginn des Projekts gegeben wurde. Stattdessen gibt es einen Auftragsgeber. In Gesprächen mit dem Auftragsgeber erschließt man sich als Team nach und nach das Ziel des Projekts. 
 
 ...
 
+In der iterative Vorgehensweise wird ein regelmäßiges Meeting mit dem Auftragsgeber vorgesehen. Wir haben gemerkt, dass der "Zwang" dieses Meetings dazu führt, dass man produktiver arbeitet, da man dem Auftragsgeber etwas vorstellen möchte. Dadurch profitiert die Arbeit. 
+
+Gab es fragen, haben wir aber auch zwischendurch spontane Meetings gemacht, um Fragen zu klären, ohne die man nicht weiter arbeiten hätte können. (https://github.com/leni04/i04-projekt-frau-holle/blob/main/docs/project_management/iteration_plan_03.adoc#assessment)
+Diese enge Zusammenabreit mit dem Auftragsgeber hat dafür gesorgt, dass wir es viel überprüfen gab, ob das was wir machen im Sinne des Auftragsgeber ist. So haben wir verhindret in die falsche Richtigung zu arbeiten.
 
 
 
-
-
-
+...
 
 
 
