@@ -2,40 +2,60 @@
 
 == TOP 3 Erfolge
 
-=== Erfolg 1 -  Workflow
+=== Erfolg 1 - Workflow //Schluss fehlt noch
 
-Mit dem zweiten Projektteil im Sommersemester begann die Implementierung der Use Cases. Da man Code nicht einfach runterschreibt und dann ist er abgabebereit, haben wir uns überlegt wie man den Workflow angehen kann.
+Mit dem zweiten Projektteil im Sommersemester begann die Implementierung der Use Cases. Da man Code nicht einfach runterschreibt und dann ist er abgabebereit, haben wir uns überlegt, wie man den Workflow angehen kann.
 
-Dabei waren wir uns einig, dass durch Pull-Requests der Code überprüft werden muss, bevor er ins Repository aufgenommen wird. So kann man zum einen die Funktionalitäten überprüfen und Fehler frühzeitig beheben, sodass der neue Code nicht den bisherigen beeinträchtigt. Entwickelt wird der Code bassierend auf der Anforderungsanalyse und Architekur. Sollte es notwendig sein, wird beides vorm coden erneut über- oder erarbeitet.
-Danach muss der Code getestet werden und die Anmerkungen, die aus dem Testing entstehen, müssen bearbeitet werden und dann wieder zum Testing gehen. Als Letztes wird die Implementierung des Use Case dem Auftraggeber vorgelegt. Anmerkungen daraus werden wieder nach dem Workflow behandelt. 
+Dabei waren wir uns einig, dass durch Pull-Requests der Code überprüft werden muss, bevor er ins Repository aufgenommen wird. So kann man zum einen die Funktionalitäten überprüfen und Fehler frühzeitig beheben, sodass der neue Code nicht den bisherigen Code beeinträchtigt. Entwickelt wird der Code, basierend auf der Anforderungsanalyse und Architekur. Sollte es notwendig sein, wird beides vorm Coden erneut über- oder erarbeitet.
+Danach muss der Code getestet werden und die Anmerkungen, die aus dem Testing entstehen, müssen bearbeitet werden und dann wieder zum Testing gehen. Als Letztes wird die Implementierung des Use Cases dem Auftraggeber vorgelegt. Anmerkungen daraus werden wieder nach dem Workflow behandelt. 
 
 Das Konzept eines Workflows, wie oben beschrieben, und eine erfolgreiche Umsetzung sind jedoch zwei unterschiedliche Dinge. 
 
-Als einen Erfolg im Projekt kann die Umsetzung des Workflows genannt werden. Die Teammitglieder haben sich an diesen Workflow gehalten und dynamisch Schritte wiederholt, wenn nötig. Es war den Mitgliedern klar, wer wann was tun muss. So wurden die Funktionen nach der Programmierung per Pull-Request hochgeladen, woraufhin diese von der zuständigen Person überprüft und übernommen (oder nicht übernommen) wurden. Bei Anmerkungen wurde die Aufgabe zurückgegeben und die Anmerkungen bearbeitet.
-Wenn ein Use Case fertig war, wurde dies dem Team mitgeteilt und vorgestellt. Daraufhin hat sich das Testing von alleine angesprochen gefühlt und hat mit dem Testing gestartet. Dabei hätte die Projektleitung nicht einmal die Aufgabe "offiziell" in dem Moment ans Testing verteilen müssen, das entsprechende Mitglied hat sich bei der Fertigstellung der Use Cases direkt angesprochen gefühlt. 
+Als ein Erfolg im Projekt kann die Umsetzung des Workflows genannt werden. Die Teammitglieder haben sich an diesen Workflow gehalten und dynamisch Schritte wiederholt, wenn nötig. Es war den Mitgliedern klar, wer wann was tun muss. So wurden die Funktionen nach der Programmierung per Pull-Request hochgeladen, woraufhin diese von der zuständigen Person überprüft und übernommen (oder nicht übernommen) wurden. Bei Anmerkungen wurde die Aufgabe zurückgegeben und die Anmerkungen bearbeitet.
+Wenn ein Use Case fertig war, wurde dies dem Team mitgeteilt und vorgestellt. Daraufhin hat sich das Testing von alleine angesprochen gefühlt und hat mit dem Testing gestartet. Dabei hätte die Projektleitung nicht einmal die Aufgabe "offiziell" in dem Moment ans Testing verteilen müssen: Das entsprechende Mitglied hat sich bei der Fertigstellung der Use Cases direkt angesprochen gefühlt. 
 
 Dass das Team einen guten Workflow hat, wurde vor allem deutlich, als die Projektleitung für 1-2 Wochen während der "Construction Phase" krankheitsbedingt ausgefallen ist und nur sporadisch Dinge erledigen konnte, so z.B. die großen Aufgaben verteilen, jedoch keine kleinen zwischen Aufgaben. Während dieser Zeit waren die aktuellen Use Cases abgesprochen und die Teammitglieder haben fast komplett eigenständig die Use Cases fertiggestellt, also gecodet, geprüft und getestet, ohne dass die Projektleitung diese Einzelschritte jedes Mal neu zuweisen musste. Die Teammitglieder haben sich gegenseitig überprüft und vor allem geholfen. In dieser Zeit wurde klar, dass das Team im Essenz Alpha "Team" die XXX "Performing" umsetzt.
 
-Natürlich gab es ab und zu mal kleinere Probleme bei denen der Workflow nicht komplett umgesetzt wurde, aber im großen Ganzen und Ganzen hat das Team einen guten und effektiven Workflow entwickelt und umgesetzt. 
+//Natürlich gab es ab und zu mal kleinere Probleme, bei denen der Workflow nicht komplett umgesetzt wurde, aber im Großen und Ganzen hat das Team einen guten und effektiven Workflow entwickelt und umgesetzt. 
 
 === Erfolg 2 - Wissensaneignung
 
 Als wir das Projekt angefangen haben, hatten die einzelnen Teammitglieder kaum bis keine Erfahrungen mit den Themen des Projekts oder wie man ein Projekt wie dieses angeht. 
-Aus anderen Teams haben wir mitbekommen wie dort einzelne, aus früheren Berufen, Ausbildungen oder Praktika, bereits technische und organisatorische Fähigkeiten hatten. Bei uns beruhten die Fähigkeiten auf dem bisherigen Studium und den dortigen deutlich kleineren Einzelprojekten und schulischen Projekten. 
-Zu Beginn war es eine Herausforderung für alle Bereiche, ohne jegliches Wissen das Projekt zu starten. Und auch immer wieder zwischendurch wusste keiner wirklich, was zu tun war oder wie man es tun muss. 
+Aus anderen Teams haben wir mitbekommen, dass dort Einzelne, aus früheren Berufen, Ausbildungen oder Praktika bereits technische und organisatorische Fähigkeiten hatten. Bei uns beruhten die Fähigkeiten auf dem bisherigen Studium und den dortigen deutlich kleineren Einzelprojekten und schulischen Projekten. 
+Zu Beginn war es eine Herausforderung für alle Bereiche, ohne jegliches Wissen, das Projekt zu starten. Und auch immer wieder zwischendurch wusste keiner wirklich, was zu tun war oder wie man es tun muss. 
 
-Neben den Kompetenzen zur Projektdurchführung, war vor allem das Aneignen des technischen Wissen ein großer Erfolg des Projekts.
+Neben den Kompetenzen zur Projektdurchführung, war vor allem das Aneignen des technischen Wissens ein großer Erfolg des Projekts.
 
-Mit den uns vorgegebenen Sprachen und Techniken - Python, SQL, HTML, RaspberryPi - hatten wir bisher nur sporadisch oder gar nicht gearbeitet. Dies hat immer wieder eine Hürde dargestellt. 
+Mit den uns vorgegebenen Sprachen und Techniken - Python, SQL, HTML, RaspberryPi - hatten wir bisher nur sporadisch oder gar nicht gearbeitet. Dies hat immer wieder eine Hürde dargestellt. In den Vorlesungen des Moduls lernten wir das benötigte Wissen zum Projektmanagement, der Analyse und der Architektur, die wichtig zum Vorgehen waren, jedoch wurden keine Techniken besprochen. (Techniken im Sinne von Sprachen etc.)
 
-Davon haben wir uns jedoch nicht aufhalten lassen. Immer wenn uns Wissen fehlte, haben wir uns das benötige Wissen, entweder gesteuert durch das Projektmanagement oder aus Eigeninitiative, erarbeitet. 
-Dies ist unserer Meinung nach ein großer Erfolg des Projekts. Wir haben uns von fehlenden Wissen und neuen Hürden nicht entmutigen lassen. Stattdessen haben wir diese Hürden überwunden und dabei viel neues Wissen angesammelt, das uns in Zukunft weiterhelfen wird.
+Davon haben wir uns jedoch nicht aufhalten lassen. Immer wenn uns Wissen fehlte, haben wir uns das benötigte Wissen, entweder gesteuert durch das Projektmanagement oder aus Eigeninitiative, erarbeitet. 
+
+Das Einrichten des RaspberryPi lässt sich hier als Beispiel anbringen. 
+//bsp ausführen
+
+Dies ist unserer Meinung nach ein großer Erfolg des Projekts. Wir haben uns von fehlendem Wissen und neuen Hürden nicht entmutigen lassen. Stattdessen haben wir diese Hürden überwunden und dabei viel neues Wissen angesammelt, das uns in Zukunft weiterhelfen wird.
 
 === Erfolg 3 - Zusammenarbeit Team & Auftragsgeber
 
 Die Herausforderung dieses Projektes war, im Vergleich zu anderen Projekten im Studium, dass man keine feste Aufgabenstellung hatte, die einem zu Beginn des Projekts gegeben wurde. Stattdessen gibt es einen Auftragsgeber. In Gesprächen mit dem Auftragsgeber erschließt man sich als Team nach und nach das Ziel des Projekts. 
 
 ...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 == TOP 3 Misserfolge
 
