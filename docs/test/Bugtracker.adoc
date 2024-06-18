@@ -1,4 +1,6 @@
-== Anpassungs-Backlog
+== Bugtracker - Fehlerliste
+
+Der Bugtracker dient der schnellen Erfassung aller aufgetretenen Fehler und hält den jeweiligen Bearbeitungsstatus fest. Anhand der weiteren Testdokumentation kann bei Bedarf mithilfe der Test-ID der konkrete Test inkl. Eingabedaten u.v.m. eingesehen werden. 
 
 *Test Case UC01 - Lose starten*
 
@@ -6,7 +8,7 @@
 
 *Test Case UC02 - Lose bewegen*
 
-* Fehlende Funktionalität: Lose, die nach der Produktion auf HOLD gesetzt worden sind, müssen manuell geprüft werden. Der Use-Case muss es ermöglichen, dass der Folgezustand dieser Lose manuell auf SCRAP oder OP_COMP gesetzt werden kann (siehe im unteren Bereich von docs/test/docs/requirements/use_case_02_Hinweise_Implementierung.adoc.). Wir haben die UseCases etwas abweichend (aber gut!) von den Wireframes implementiert. Ursprünglich war ein LineEdit gedacht. Einfacher ist eventuell eine Lösung mit einem Dropdown mit allen Losen im Zustand HOLD. Wahlweise dann mit einem weiteren Dropdown der Zustände Hold/Scrap und einem Button zum Absenden oder kein Dropdown mit zwei unterschiedliche Button zum Setzen des Zustandes SCRAP oder OP_COMP. &#x2713;
+* Fehlende Funktionalität: Lose, die nach der Produktion auf HOLD gesetzt worden sind, müssen manuell geprüft werden. Der Use-Case muss es ermöglichen, dass der Folgezustand dieser Lose manuell auf SCRAP oder OP_COMP gesetzt werden kann (siehe im unteren Bereich von docs/test/docs/requirements/use_case_02_Hinweise_Implementierung.adoc.). Wir haben die UseCases etwas abweichend (aber gut!) von den Wireframes implementiert. Ursprünglich war ein LineEdit gedacht. Einfacher ist eventuell eine Lösung mit einem Dropdown mit allen Losen im Zustand HOLD. Wahlweise dann mit einem weiteren Dropdown der Zustände HOLD/SCRAP und einem Button zum Absenden oder kein Dropdown mit zwei unterschiedliche Button zum Setzen des Zustandes SCRAP oder OP_COMP. &#x2713;
 
 *Test Case UC03 - Lose bearbeiten*
 
@@ -20,7 +22,7 @@
 * NiceToHave: Tabellenhöhe auf mehr als 3 Zeilen erweitern -> bessere Lesbarkeit &#x2713;
 * NiceToHave: Auto-Refresh der Tabelle, wenn der Button Submit gedrückt wird -> bessere Usability &#x2713;
 
-*Test Case UC06- UC07 Daten importieren/eportieren*
+*Test Case UC06-UC07 Daten importieren/eportieren*
 
 * *TID2: Header beim Export sollte nach Möglichkeit den Beispieldatensätzen von Ringel entsprechen, sonst ist ein Import von exportierten Dateien aus unserem System nicht möglich. Das bedeutet: Exportdateien brauchen Spaltenüberschriten in Großbuchstaben und keine Leerzeichen zwischen den Kommata im Header*
 
