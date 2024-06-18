@@ -2,7 +2,7 @@
 
 == Testdokumentation - und aufbau
 
-Die Testergebnisse wurden in separate Test-Cases gruppiert und dokumentiert. Für jeden *Test-Case* wurden Test-IDs definiert, mit deren Hilfe sich die einzelnen Tests eindeutig zuordnen lassen. Für jede Test-ID sind im Test-Case der Zweck, die Testart, die Testdurchführung, die Nachbedingungen, die Eingabedaten, das Ergebnis und eventuell nowendige To-dos sowie deren Korrekturstatus dokumentiert. Die Testergebnisse enthalten unter Umständen Terminalausgaben und Fehlermeldungen, die als Screenshots angehängt sind. Außerdem wurde für JUnit-Test die zugehörige Testabdeckung dokumentiert. Alle notwendigen Anpassungen wurden, um Übersichtlichkeit zu gewährleisten, parallel im *Anpassungsbacklog* dokumentiert. Hier werden auch die entsprechenden Test-IDs referenziert. Die verwendeten Testdatensätze der Datenbank wurden in der Datei *Test-Datensätze* festgehalten.
+Die Testergebnisse wurden in separate Test-Cases gruppiert und dokumentiert. Für jeden *Test-Case* wurden Test-IDs definiert, mit deren Hilfe sich die einzelnen Tests eindeutig zuordnen lassen. Für jede Test-ID sind im Test-Case der Zweck, die Testart, die Testdurchführung, die Nachbedingungen, die Eingabedaten, das Ergebnis und eventuell nowendige To-dos sowie deren Korrekturstatus dokumentiert. Die Testergebnisse enthalten unter Umständen Terminalausgaben und Fehlermeldungen, die als Screenshots angehängt sind. Außerdem wurde für JUnit-Test die zugehörige Testabdeckung dokumentiert. Alle notwendigen Anpassungen wurden, um Übersichtlichkeit zu gewährleisten, parallel im *Bugtracker* dokumentiert. Hier werden auch die entsprechenden Test-IDs referenziert. Die verwendeten Testdatensätze der Datenbank wurden in der Datei *Test-Datensätze* festgehalten.
 
 == Teststrategie
 
@@ -27,7 +27,7 @@ Die Testergebnisse wurden in separate Test-Cases gruppiert und dokumentiert. Fü
 
 *Erforderliche Testumgebung und -infrastruktur:*
 
-- Verwendung von PostgreSQL als Datenbankmanagementsystems
+- Verwendung von PostgreSQL als Datenbankmanagementsystem
 - Enwicklungsumgebung wie Visual Studio Code oder PYCharme zur Entwicklung und Durchführung von Tests
 
 *Werkzeuge:*
@@ -39,26 +39,28 @@ Die Testergebnisse wurden in separate Test-Cases gruppiert und dokumentiert. Fü
 
 == Testobjekte 
 
-Jeder zuvor definierte Use-Case wurde in einem eigenen Test-Case aufgegriffen. Die systemweite Anforderungen wurden in einem eigenem UseCases (konkreter Name muss noch eingefügt werden) getestet. Ebenso wurden einzelne Funktionialitäten, die keinem UseCase zugeordnet werden konnte, in einer eigenen Datei ausgelagert (konkreter Name muss noch eingefügt werden) . 
+Jeder zuvor definierte Use-Case wurde in einem eigenen Test-Case aufgegriffen. Die systemweite Anforderungen wurden in einem eigenen Dokument (test_case_system_wide_requirements.adoc) getestet. Ebenso wurden einzelne Funktionialitäten, die keinem UseCase zugeordnet werden konnten, getestet (test_case_additional_testing.adoc). 
 
-== Testmethoden
+== Testmethoden und -arten:
 
-*Manuelles und automatisiertes Testing*
+*Manuelle und automatisierte Tests*
 
-Alle Funktionalitäten, die zeitgesteuert vom Timer aufgerufen worden sind und nicht vom Nutzer gesteuert werden, wurden mithilfe von JUnit-Tests getestet. Dies sind inbesondere die Use-Cases 1-3 zum Starten, Bewegen und Bearbeiten der Lose im Fertigungsprozess. Manuelle Benutzerinteraktionen, wie das Erstellen eines Datenexport, wurden über den Aufruf der Webseite im Browser getestet. Außerdem wurde alle Änderungen in der Datenbank mit manuellen SQL-Abfragen plausibilisiert.
-
-*Statischer Test und dynamischer Test*
-
-Zu Beginn von SE II wurde durch den Tester ein manuelles Review des Codes durchgeführt. Dabei wurden alle Python-Dateien auf Syntaxehler, fehlende Funktionalitäten und den Code-Stil untersucht. Potenzielle Probleme wurden entsprechend kommentiert und dem Entwickler-Team kommunziert. Im fortlaufenden Semester fanden vorwiegend dynamische Tests statt, wo bereits laufähige Software-Bestandsteile im Betrieb untersucht worden sind. 
+Alle Funktionalitäten, die zeitgesteuert vom Timer aufgerufen worden sind und nicht vom Nutzer gesteuert werden, wurden mithilfe von JUnit-Tests getestet. Dies sind inbesondere die Use-Cases 1-3 zum Starten, Bewegen und Bearbeiten der Lose im Fertigungsprozess. Manuelle Benutzerinteraktionen, wie das Erstellen eines Datenexports, wurden über den Aufruf der Webseite im Browser getestet. Außerdem wurde alle Änderungen in der Datenbank mit manuellen SQL-Abfragen mithilfe von pgAdmin plausibilisiert.
 
 *Positivtest und Negativtest*
 
 Zunächst wurden Positv-Tests durchgeführt, um grundsätzlich korrektes Systemverhalten sicherzustellen. Im Anschluss daran wurde die verbleibende Zeit darauf verwendet die Software auf Robustheit zu testen und absichtlich Fehler mithilfe von Negativ-Tests zu provozieren. Grundsätzlich wurden Positivtest und Negativtest für alle Test-Cases kombiniert verwendet. 
 
+*Statischer Test und dynamischer Test*
+
+Zu Beginn von SE II wurde durch den Tester ein manuelles Review des Codes durchgeführt. Dabei wurden alle Python-Dateien auf Syntaxehler, fehlende Funktionalitäten und den Code-Stil untersucht. Potenzielle Probleme wurden entsprechend kommentiert und dem Entwickler-Team kommunziert. Im fortlaufenden Semester fanden vorwiegend dynamische Tests statt, wo bereits laufähige Software-Bestandsteile im Betrieb untersucht worden sind. 
+
+== Teststufen 
+
 *Modultest und Integrationstest*
 
-Wenn möglich, wurden einzelne Softwarkomponenten in Isolation getestet. Dadurch war es einfacher Fehler zu identifizieren, da der Testbereich nur auf ein einzelnes Modul beschränkt war. Dies funktionierte insbesondere deswegen gut, weil die Fertigung in der Halbleiterfabrik sowieso modular abläuft und die Software zum Teil ein Abbild dieses modularen Fertigungsprozesses ist. Gegen Ende des Semesters wurde aber auch das Zusammenspiel aller einzelnen Softwarekomponenten mithilfe von Integrationstests geprüft. Dies war unbedingt notwendig, um sicherzustellen, dass sich die Lose korrekt vom Auftragseingang bis zum Ende des Fertgigungsprozesses bewegen.
+Wenn möglich, wurden einzelne Softwarkomponenten in Isolation getestet. Dadurch war es einfacher Fehler zu identifizieren, da der Testbereich nur auf ein einzelnes Modul beschränkt war. Dies funktionierte insbesondere deswegen gut, weil die Fertigung in der Halbleiterfabrik sowieso modular abläuft und die Software zum Teil ein Abbild dieses modularen Fertigungsprozesses ist. Gegen Ende des Semesters wurde aber auch das Zusammenspiel aller einzelnen Softwarekomponenten mithilfe von Integrationstests geprüft. Dies war unbedingt notwendig, um sicherzustellen, dass sich die Lose korrekt vom Auftragseingang bis zum Ende des Fertgigungsprozesses bewegen. Am Ende des Semesters erfolgte ein Systemtest und Abnahmetest. 
 
 == Testorganisation und -durchführungsplanung
 
-Die Durchführung der Software-Tests wurden durch eine Einzelperson sichergestellt. Aufgrund des Workloads kam der effizienten Selbstorganisation und der Priorisierung der einzelnen Testcase eine besondere Rolle zu. Das bedeutet, dass die Test Cases entsprechend Ihrer in den Anforderungen spezifierten Priorität erstellt und abgearbeitet worden sind. Für die einzelnen Testcases wurde im Vorfeld jeder Testcase-Durchführung eine interene Liste mit allen zu testenden Funktionalitäten erstellt, die priorisiert und dieser Reihenfolge getestet worden ist. Hierbei sollte sichergestellt werden, dass die wichtigsten Fuktionalitäten zuerst getestet worden sind und zeitnah Feedback an die Entwickler gegeben werden konnte. Alle notwendigen Anpassung wurden für alle Teammitglieder sichtbar in der Datei "Anpassungsbacklog" kommunziert. Die Zeitplanung orientierte sich stets an den Kundenterminen, zu denen die Anwesenheit von Software-Fehlern des Prototypen ausgeschlossen werden musste.
+Die Durchführung der Software-Tests wurden durch eine Einzelperson sichergestellt. Aufgrund des Workloads kam der effizienten Selbstorganisation und der Priorisierung der einzelnen Testcase eine besondere Rolle zu. Das bedeutet, dass die Test Cases entsprechend Ihrer in den Anforderungen spezifierten Priorität erstellt und abgearbeitet worden sind. Für die einzelnen Testcases wurde im Vorfeld jeder Testcase-Durchführung eine interene Liste mit allen zu testenden Funktionalitäten erstellt, die priorisiert und dieser Reihenfolge getestet worden ist. Hierbei sollte sichergestellt werden, dass die wichtigsten Fuktionalitäten zuerst getestet worden sind und zeitnah Feedback an die Entwickler gegeben werden konnte. Alle notwendigen Anpassung wurden für alle Teammitglieder sichtbar in der Datei "Bugtracker" kommunziert. Die Zeitplanung orientierte sich stets an den Kundenterminen, zu denen die Anwesenheit von Software-Fehlern des Prototypen ausgeschlossen werden musste. Grundsätzlich wurden die Tests unterteilt nach: UseCases (bspw. test_case_UC01_Los_starten.adoc), systemweiten Anforderungen (test_case_system_wide_requirements.adoc) und sonstigen Anforderungen (test_case_additional_testing.adoc).
