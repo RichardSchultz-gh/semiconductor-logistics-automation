@@ -1,7 +1,8 @@
-== Bugtracker - Fehlerliste {project-name}
+= Bugtracker - Fehlerliste: {project-name}
 Vorname Nachname <email@domain.org>; Vorname2 Nachname2 <email2@domain.org>; Vorname3 Nachname3 <email3@domain.org>
 {localdatetime}
 include::../_includes/default-attributes.inc.adoc[]
+// Platzhalter für weitere Dokumenten-Attribute
 
 Der Bugtracker dient der schnellen Erfassung aller aufgetretenen Fehler und hält den jeweiligen Bearbeitungsstatus fest. Anhand der weiteren Testdokumentation kann bei Bedarf mithilfe der Test-ID der konkrete Test inkl. Eingabedaten u.v.m. eingesehen werden. 
 
