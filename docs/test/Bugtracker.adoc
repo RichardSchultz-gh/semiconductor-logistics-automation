@@ -1,4 +1,7 @@
-== Bugtracker - Fehlerliste
+== Bugtracker - Fehlerliste {project-name}
+Vorname Nachname <email@domain.org>; Vorname2 Nachname2 <email2@domain.org>; Vorname3 Nachname3 <email3@domain.org>
+{localdatetime}
+include::../_includes/default-attributes.inc.adoc[]
 
 Der Bugtracker dient der schnellen Erfassung aller aufgetretenen Fehler und hält den jeweiligen Bearbeitungsstatus fest. Anhand der weiteren Testdokumentation kann bei Bedarf mithilfe der Test-ID der konkrete Test inkl. Eingabedaten u.v.m. eingesehen werden. 
 
@@ -31,7 +34,9 @@ Zustände dürften nur den definierten Zuständen entsprechen. Ein Los im Zustan
 
 * *Fehlermeldungen überschneiden sich teilweise. Zum Beispiel, wenn ein Import mit einem falschen Header stattfindet (z.B. Export aus unserem System), dann gibt es eine Fehlermeldung und der Vorgang wird abgebrochen. Gleichzeitig wird die Ausgabe "File successfully imported" angezeigt.*
 
-image::images/TC_UC6_TID1_import mit falschem header.png[]
+image::TC_UC6_TID1_import mit falschem header.png[]
+
+//image::images/TC_UC6_TID1_import mit falschem header.png[]
 
 * *NiceToHave: Zusätzlich Ausgabe der Zeilennummer bei Fehlermeldungen -> gerade bei großen Exports sind Fehler einfacher zu finden und zu korrigieren*
 * *NiceToHave: Genauere Spezifikation, wie Header aufgebaut sein muss beim Datei-Import (z.B. Spaltenüberschriften in Großbuchstaben und durch Kommata getrennt; keine Leerzeichen erlaubt)*
