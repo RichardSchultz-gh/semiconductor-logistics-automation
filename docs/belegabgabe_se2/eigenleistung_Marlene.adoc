@@ -13,7 +13,7 @@ Bewertungskriterien:
     − Fachlich korrekte Beschreibung der Aufgabenstellung / Herausforderung → Nutzung der Begriffe, Konzepte, Methoden aus Vorlesung und Praktikum
     − Referenzieren konkreter Code-Bestandteile, Modelle, Dokumente usw. aus dem Projekt
 
-Thema: Projektmanagement mit iterativem, agilem vorgesehenen
+Thema: Projektmanagement mit iterativem, agilem Vorgehen
 
 Problemlage: Aufgaben- und Zeitmanagment in größeren Projekten von Teams über einen längeren zeitraum möglichst effektiv und effizient gestalten, 
 sodass die Wünsche des Auftragsgeber bestmöglich umgesetzt werden
@@ -29,5 +29,11 @@ Erfolge und Misserfolge aus Iterationsplänen suchen/analysieren.
 
 ***
 
+Thema: Projektmanagement mit iterativem, agilem Vorgehen
 
+Im SE-Projekt habe ich die Rolle der Projektleitung übernommen. Dabei war eine zentrale Aufgabe das Aufgaben- und Zeitmanagement, also die Planung und Verteilung der Aufgaben, sodass der Projekt möglichst effizent und effektiv abläuft.
 
+In größeren Projekten, welche in einem Team und einem größeren Zeitraum bearbeitet werden, ist das Aufgabenmanagement eine Herausforderung. Dabei muss vor allem immer Augenmerk auf die Wünsche des Auftragsgeber gelegt werden, wodurch neue Anforderungen antstehen können und sich darauffolgend sich Aufgaben verändern oder neu bilden.
+Die Herausforderung im Aufgabenmanagement liegt also zum einen an den sich ändernden Voraussetzungen, sowie der Koordination der Teammitglieder und derer Zusammenarbeit. Da ein Projekt immer zeitlich begrenzt ist, muss das Aufgabenmanagement immer ein Auge auf das Zeitmanagement haben und abhängig davon Aufgaben anpassen.
+
+In diesem Projekt habe ich das Projektmanagement nach agilen, iterativen Methoden durchgeführt. Das nutzen agiler Methoden des Software Engineering war im Projekt vorgegeben und die entsprechenden Methoden wurden in der Vorlesung behandelt. 
