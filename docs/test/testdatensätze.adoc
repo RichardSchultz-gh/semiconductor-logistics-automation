@@ -1,5 +1,7 @@
 == Vereinfachte Testdatensätze
 
+Die vereinfachten Testdatensätze werden benötigt, um die JUnit-Tests auszuführen. Außerdem dienen sie dazu, den Fertigungsablauf transparent zu gestalten, da die verwendeten Routes und Operations auf ein Minimum reduziert sind. Weiterhin stellen die Testdatensätze definitiv einen reibungslosen Fertigungsprozess sicher und enthalten keine fehlerhaften Daten. 
+
 ----
 INSERT INTO PRODFLOW VALUES 
 
