@@ -1,14 +1,14 @@
-// ---------------------------------------------
-:docs: ../docs
-include::{docs}/_includes/default-attributes.inc.adoc[]
-// ---
+// Set the base directory for the includes
+:docs: ../../i04-projekt-frau-holle/docs
+:docs-test: {docs}/test
+
+= Testdokumentation
 :doctype: book
 :toc:
 :toclevels: 2
 :toc-title: Inhaltsverzeichnis
 :sectnums:
 :icons: font
-//:source-highlighter: highlightjs
 :source-highlighter: rouge
 :rouge-style: github
 :xrefstyle: full
@@ -19,18 +19,8 @@ include::{docs}/_includes/default-attributes.inc.adoc[]
 :listing-caption: Listing
 :!example-caption:
 :experimental:
-// Folders
-:imagesdir-reset: {imagesdir}
-:docs-test2: {docs}/test2
-:docs-requirements: {docs}/requirements
-:docs-project-management: {docs}/project_management
-:docs-architecture: {docs}/architecture
-:docs-test: {docs}/test
-:docs-development: {docs}/development
 
 <<<
-
-= Testdokumentation
 
 // Testkonzept
 include::{docs-test}/Testkonzept.adoc[lines=1..1;4..-1,leveloffset=+1]
@@ -61,10 +51,10 @@ include::{docs-test}/test_case_additional_testing.adoc[lines=1..1;4..-1,leveloff
 include::{docs-test}/test_case_system_wide_requirements.adoc[lines=1..1;4..-1,leveloffset=+1]
 <<<
 
-//Bugtracker 
-include::{docs-test}/Bugtracker.adoc.adoc[lines=1..1;4..-1,leveloffset=+1]
+// Bugtracker 
+include::{docs-test}/Bugtracker.adoc[lines=1..1;4..-1,leveloffset=+1]
 <<<
 
-//Testdatensätze
+// Testdatensätze
 include::{docs-test}/testdatensätze.adoc[lines=1..1;4..-1,leveloffset=+1]
 <<<
