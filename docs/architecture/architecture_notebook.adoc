@@ -74,13 +74,12 @@ Da die Anwendung auf einem RaspberryPi betrieben wird, ist die Architektur darau
 
 . Wir nutzen eine relationale Datenbank mit dem Datenbankmanagementsystem *PostgreSQL*, da die Nutzung von PostgreSQL uns vorgegeben wurde und dieses bekannt für seine Zuverlässigkeit und Skalierbarkeit ist.
 . Wir implementieren die Anwendung auf einem *Raspberry Pi*, da uns dieser vorgegeben wurde.
-. Als Betriebssystem nutzen wir *Raspbian*, da dieses Betriebssystem für den Raspberry Pi optimal ist und eine einfache Bedienung ermöglicht.
+. Als Betriebssystem nutzen wir *Raspberry Pi OS*, da dieses Betriebssystem für den Raspberry Pi optimal angepasst ist und eine einfache Bedienung ermöglicht.
 . Wir nutzen *Python* als Programmiersprache für die Middleware, da uns diese vorgegeben wurde und diese eine einfache und schnelle Entwicklung ermöglicht.
-. Wir benutzen *Psycopg2* als Python-Bibliothek, da diese eine unkomplizierte Interaktion mit PostgreSQL ermöglicht und so eine gute Schnittstelle zur Nutzung der Datenbank herstellt.
+. Wir benutzen *SQL-Alchemy* als Framework, da diese Bibliothek eine intuitive und effiziente Interaktion mit der PostgreSQL-Datenbank ermöglicht und vorraussichtlich auch in Zukunft weiterentwickelt wird.
 . Wir nutzen *Flask* als Web-Framework, da dieses ein recht leichtgewichtiges Framework ist, welches wenige Resourcen benötigt. Außerdem ist Flask einfach zu erlernen, da es aufgrund seiner aktiven Entwickler-Community viele Tutorials und Hilfestellungen gibt.
 . Wir nutzen *HTML und CSS* für die Benutzeroberfläche, da diese Technologien sehr gut mit Flask integrierbar sind. Diese Technologien ermöglichen die Entwicklung einer ansprechenden und interaktiven Benutzeroberfläche für die Anwendung. Zur Verbesserung der Interaktivität kann auch JavaScript genutzt werden.
 . Für die Generierung von dynamischen Inhalten in der Webanwendung benutzen wir die Template-Engine *Jinja2*. Diese ist weit verbreitet und ist direkt in Flask integriert.
-//evt. Bootstrap??
 
 == Architekturmechanismen
 https://www2.htw-dresden.de/~anke/openup/core.tech.common.extend_supp/guidances/concepts/arch_mechanism_2932DFB6.html[Doku "Concept: Architectural Mechanism"]
@@ -160,7 +159,7 @@ Die Architektur basiert auf einem mehrschichtigen Framework, das Folgendes umfas
 
 ### Middleware-Ebene (Python)
 - **Python-Anwendung:** Dient als zentrale Vermittlungsstelle zwischen Datenbank und Benutzeroberfläche.
-- **Datenbankzugriffsschicht:** Nutzt die Psycopg2-Bibliothek zur Interaktion mit PostgreSQL.
+- **Datenbankzugriffsschicht:** Nutzt die SQLAlchemy-Bibliothek für den Zugriff auf die PostgreSQL-Datenbank.
 - **Logikschicht:** Beinhaltet die Geschäftslogik, Datenvalidierung und -aufbereitung.
 
 ### Benutzeroberflächenebene (Flask-GUI)
@@ -168,7 +167,7 @@ Die Architektur basiert auf einem mehrschichtigen Framework, das Folgendes umfas
 - **User Interface:** UI mittels HTML-Templates, CSS-Stylesheets und gegebenenfalls JavaScript-Code für die Interaktion mit dem Endbenutzer.
 
 ### Schnittstellen
-- **Datenbank-Middleware-Schnittstelle:** Sicherer Datenaustausch über Psycopg2.
+- **Datenbank-Middleware-Schnittstelle:** Sicherer Datenaustausch über die ORM-Schicht (Object-Relational Mapping) von SQLAlchemy.
 - **Middleware-GUI-Schnittstelle:** 
 ** RESTful API-Endpunkte, die mit einer bestimmten HTTP-Methoden verbunden sind um entsprechende Middleware-Aktionen aufzurufen
 ** Jinja2 als Template-Engine, mit welcher dynamische Inhalte auf HTML-Webseite abgebildet werden können 
