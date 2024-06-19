@@ -1,8 +1,28 @@
 = Anwenderdokumentation
-Projekt Frau Holle
-
+// --- 2. Teammitglieder -----------------------
+Nils Generlich <s85449@htw-dresden.de>; Yannik-Joel Herrchen <s85585@htw-dresden.de>; Enrico Kersten <s84267@htw-dresden.de>; Nico Kroll <s85210@htw-dresden.de>; Paul Marx <s83718@htw-dresden.de>; Hoang Nguyen Sy <s84222@htw-dresden.de>; Richard Schultz <s85507@htw-dresden.de>; Marlene Winter <s85444@htw-dresden.de>
+// --- 3. Abgabedatum --------------------------
+28. Juni 2024
+// ---------------------------------------------
+:docs: ../..
+include::{docs}/_includes/default-attributes.inc.adoc[]
+:doctype: book
 :toc:
+:toclevels: 2
 :toc-title: Inhaltsverzeichnis
+:sectnums:
+:icons: font
+//:source-highlighter: highlightjs
+:source-highlighter: rouge
+:rouge-style: github
+:xrefstyle: full
+:experimental:
+:chapter-signifier:
+:figure-caption: Abbildung
+:table-caption: Tabelle
+:listing-caption: Listing
+:!example-caption:
+:experimental:
 
 == Einführung
 
@@ -11,7 +31,7 @@ Beim Start der Software gelangt der Nutzer zu einem Login-Bildschirm. Aktuell ex
 1. Arbeiter: Hat nur Zugriff auf Funktionen, die ihm erlauben, den Prozess zu überwachen und neue Aufträge anzulegen.
 2. Admin: Kann die volle Bandbreite der Funktionen des Programms nutzen. Dies beinhaltet die Rechte des Arbeiters sowie das Bearbeiten und Bewegen der einzelnen Lose, das Anlegen und Laden von Backups, den Zugriff auf die Übersicht aller vorhandenen Einheiten (Lose, Tools, Workflow, etc.), sowie das Importieren über CSV-Dateien für alle Einheiten und die Möglichkeit, Losdaten im CSV-Format zu exportieren.
 
-Im Folgenden werde ich diese Rollen und die Funktionen des Programms entsprechend aufschlüsseln.
+Im Folgenden werden diese Rollen und die Funktionen des Programms entsprechend aufgeschlüsselt.
 
 == Teil 0: Login und Allgemeine Infos
 
@@ -67,11 +87,7 @@ image::Lose_bewegen.png[width=100%, align="center"]
 
 Hier wird durch Eingabe der Los-ID das manuelle Bewegen von Losen ermöglicht. Lose werden so von „opcomp“ entweder auf „wait“ oder, sollte das Ende des Prodflows für das angegebene Los erreicht sein, auf „fin“ gesetzt. Damit das reibungslos funktioniert, wird der Nutzer nach Betätigen des Buttons ‚Move Lot‘ entweder zu einer Erfolgsseite weitergeleitet, wenn alles gut verlief, oder zu einer Fehlerseite, auf der dem Nutzer genau angezeigt wird, was falsch lief.
 
-=== 4. Backups anlegen & laden
-
-In diesen beiden Bildschirmen wird es dem Nutzer ermöglicht, Backups des aktuellen DB-Standes anzulegen und diese zu verwalten, ganz einfach über Knopfdruck.
-
-=== 5. Stammdaten anzeigen und bearbeiten
+=== 4. Stammdaten anzeigen und bearbeiten
 image::Stammdaten_1.png[width=50%, align="center"]
 
 Hier kann sich der Nutzer Datenvariablen im System anschauen und verändern, das beinhaltet:
@@ -85,12 +101,12 @@ Hier kann sich der Nutzer Datenvariablen im System anschauen und verändern, das
 image::Stammdaten_2.png[width=100%, align="center"]
 Beim Drücken des Knopfes gelangt der Nutzer in ein Menü, in dem ihm zu jeder Variablen ein Reiter angezeigt wird. Beim Klicken auf den gewünschten Reiter gelangt der Nutzer in einen weiteren Bildschirm, auf dem er sich die ganzen Daten anzeigen lassen und bei Bedarf anpassen kann. Hier als Beispiel für Lose.
 
-=== 6. Daten exportieren
+=== 5. Daten exportieren
 image::Daten_expo.png[width=100%, align="center"]
 
 Hier werden dem Nutzer die Los-Tabelle mit Filteroptionen angezeigt. Der Nutzer kann dann seine Wunschmenge durch Setzen eines Häkchens in der linken Tabellenspalte neben den einzelnen Losen selektieren oder bei Bedarf über einen Knopfdruck alle auswählen. Nachdem dies erledigt ist, kann der Nutzer diese ausgewählten Daten per Knopfdruck exportieren. Dies generiert eine CSV-Datei, welche im CSV-Ordner des Projektes gespeichert wird.
 
-=== 7. Daten importieren
+=== 6. Daten importieren
 image::Daten_impo.png[width=100%, align="center"]
 
 Zum Importieren werden dem Nutzer zwei Optionen zur Verfügung gestellt:

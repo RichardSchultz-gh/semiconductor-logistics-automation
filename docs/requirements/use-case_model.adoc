@@ -51,9 +51,6 @@ include::../_includes/default-attributes.inc.adoc[]
 // Liste aller identifizierten Use Cases (priorisiert-> wir später gemacht)
 //erste Ideen von Marlene vor dem 2. Meeting mit Ringel
 
-*Information:*
-Detailreich wurden lediglich UC01 bis UC03 ausgearbeitet. Alle anderen Use Cases erfahren weitere Vertiefungen in SE2
-
 
 * *UC01*: Los starten
 * *UC02*: Los bewegen
@@ -127,6 +124,15 @@ image::usecase_second_version_pmx.png[]
 |Daten visualisieren
 |3
 |=== 
+
+
+== Umsetzung der Use Cases
+
+Bisher wurden die Use Cases UC01 - UC07 implementiert und getestet. Diese Use Cases bzw. deren Implementationen wurden vom Auftragsgeber abgenommen. 
+
+Für den Use Cases UC08 wurde aus zeitlichen Gründen jeglich ein Konzept zur Implementierung erstellt. (siehe Entwicklerdokumentation).
+
+Die Use Cases UC09 - UC11 wurden im Sinne der Anforderungsanalyse erarbeitet, jedoch nicht implementiert.
 
 // Notizen dazu:
 //auf welche UseCases soll der Mitarbeiter zugriff haben: 
