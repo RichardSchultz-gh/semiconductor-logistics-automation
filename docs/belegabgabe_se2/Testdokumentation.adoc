@@ -2,7 +2,7 @@
 // --- 2. Teammitglieder -----------------------
 Nils Generlich <s85449@htw-dresden.de>; Yannik-Joel Herrchen <s85585@htw-dresden.de>; Enrico Kersten <s84267@htw-dresden.de>; Nico Kroll <s85210@htw-dresden.de>; Paul Marx <s83718@htw-dresden.de>; Hoang Nguyen Sy <s84222@htw-dresden.de>; Richard Schultz <s85507@htw-dresden.de>; Marlene Winter <s85444@htw-dresden.de>
 // --- 3. Abgabedatum --------------------------
-26. Januar 2024
+28. Juni 2024
 // ---------------------------------------------
 :docs: ..
 include::{docs}/_includes/default-attributes.inc.adoc[]

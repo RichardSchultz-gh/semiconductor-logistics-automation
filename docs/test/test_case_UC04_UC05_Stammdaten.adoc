@@ -1,5 +1,8 @@
-
-== Test Case UC04/UC05 - Stammdaten anzeigen/bearbeiten
+= Test Case UC04/UC05 - Stammdaten anzeigen/bearbeiten: {project-name}
+Vorname Nachname <email@domain.org>; Vorname2 Nachname2 <email2@domain.org>; Vorname3 Nachname3 <email3@domain.org>
+{localdatetime}
+include::../_includes/default-attributes.inc.adoc[]
+// Platzhalter für weitere Dokumenten-Attribute
 
 *Tests mit Fokus auf folgende Funktionalitäten:*
 
@@ -61,6 +64,6 @@ Process started: 08.05.2024-09,05.2024
 |===
 
 .TID 1: Fehlermeldung TimeStamp
-image::images/TC_UC5_TID1_Value_Error.png[]
+image::TC_UC5_TID1_Value_Error.png[]
 
 '''

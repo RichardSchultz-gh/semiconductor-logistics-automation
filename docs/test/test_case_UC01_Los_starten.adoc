@@ -1,5 +1,8 @@
-
-== Test Case UC01 - Lose starten
+= Test Case UC01 - Lose starten: {project-name}
+Vorname Nachname <email@domain.org>; Vorname2 Nachname2 <email2@domain.org>; Vorname3 Nachname3 <email3@domain.org>
+{localdatetime}
+include::../_includes/default-attributes.inc.adoc[]
+// Platzhalter für weitere Dokumenten-Attribute
 
 *Tests mit Fokus auf folgende Funktionalitäten:*
 
@@ -166,7 +169,7 @@ Das Filtern der Lose funktioniert nach dem Prinzip, dass alle Lose angezeigt wer
 |===
 
 .TID 5: Fehlerhafter Filter
-image::images/UC01_TID5_Filter.png[]
+image::UC01_TID5_Filter.png[]
 
 '''
 
