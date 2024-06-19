@@ -1,0 +1,850 @@
+= Test Cases: {project-name}
+Vorname Nachname <email@domain.org>; Vorname2 Nachname2 <email2@domain.org>; Vorname3 Nachname3 <email3@domain.org>
+{localdatetime}
+include::../_includes/default-attributes.inc.adoc[]
+// Platzhalter für weitere Dokumenten-Attribute
+
+== Test Case UC01 - Lose starten:
+
+*Tests mit Fokus auf folgende Funktionalitäten:*
+
+* Auftragsanlage
+* Los starten (manuell + Timer)
+* Datenvisualisierung über Los-Tabelle
+
+'''
+|===
+| *Test-ID* | 1 
+| *Zweck* | Verifikation Auftragsanlage
+| *Testart* | Manuell, Positiv-Test
+| *Vorbedingungen* | 
+  - Fertigungsleiter oder Mitarbeiter ist in der Web-Anwendung angemeldet
+  +
+  - der Button "Los starten" wurde angeklickt, sodass die Eingabemaske erscheint
+| *Testdurchführung* | 
+ 1. Eingabe: Customer, Order, Product, Amount of wafer, Due date, Time interval
+  +
+2. Auftragsanlage über Button "Register Order" abschließen
+  +
+3. Prüfung, ob das Los im Zustand INIT in die Datenbank übertragen worden ist und alle Eingaben korrekt übertragen worden (SELECT * FROM LOT)
+| *Nachbedingungen* | 
+- Bei erfolgreicher Testausführung befinden sich die zugehörigen Lose im Zustand INIT in der Datenbank
+  +
+- alle Wertefelder müssen korrekt in der Datenbank in der Tabelle "Lot" übertragen worden sein
+  +
+| *Eingabedaten* | 
+
+Customer:     Paul
+  +
+Order: Bestellung_2
+  +
+Product: TestProductA
+  +
+Due date: 09,06.2024
+  +
+Time interval: 08.05.2024-09,05.2024
+  +
+
+
+
+| *Ergebnis* | PASS
+| *To-dos* | /
+| *Korrekturstatus* | /
+|===
+
+'''
+
+|===
+| *Test-ID* | 2 
+| *Zweck* | Verifikation Auftragsanlage
+| *Testart* | Manuell, Negativ-Test
+| *Vorbedingungen* | 
+  - Fertigungsleiter oder Mitarbeiter ist in der Web-Anwendung angemeldet
+  +
+  - der Button "Los starten" wurde angeklickt, sodass die Eingabemaske erscheint
+| *Testdurchführung* | 
+ 1. Eingabe: Customer, Order, Product, Amount of wafer, Due date, Time interval
+  +
+2. Auftragsanlage über Button "Register Order" abschließen
+  +
+3. Prüfung, ob das System fehlende Eingaben erkennt
+  +
+4. Prüfung, ob invalide Datumskombinationen erkannt werden (due date < start date, end date < start date, start date/current date/end date < current date)
+  +
+| *Nachbedingungen* | 
+- Bei erfolgreicher Testausführung erscheinen deskriptive Fehlermeldungen. 
+  +
+- das Los darf nicht auf der Datenbank eingeplant werden
+  +
+| *Eingabedaten* | 
+
+ Analog zu TID1
+
+| *Ergebnis* | PASS
+| *To-dos* | /
+| *Korrekturstatus* | /
+|===
+
+'''
+
+|===
+| *Test-ID* | 3 
+| *Zweck* | Verifikation Los manuell starten
+| *Testart* | Manuell, Positiv-Test
+| *Vorbedingungen* | 
+  - Fertigungsleiter oder Mitarbeiter ist in der Web-Anwendung angemeldet
+  +
+  - der Button "Los starten" wurde angeklickt
+| *Testdurchführung* | 
+ 1. Eingabe bzw. Auswahl eines Loses, welches gestartet werden soll und sich im Zustand INIT befindet
+  +
+2. Los über den Button "Start Lot" starten
+  +
+3. Prüfung, ob die zugehörige Los-Tabelle aktualisiert wird
+  +
+4. Prüfung, ob Los-Zustand von INIT auf WAIT wechselt; Prüfung, ob Operation und Route gesetzt werden
+  +
+| *Nachbedingungen* | 
+Bei erfolgreicher Testausführung wird das Los korrekt in den Fertigungsprozess eingebunden 
+| *Eingabedaten* | 
+
+Auswahl eines beliebigen Loses mit dem Zustand INIT
+
+| *Ergebnis* | PASS
+| *To-dos* | /
+| *Korrekturstatus* | /
+|===
+
+'''
+
+|===
+| *Test-ID* | 4 
+| *Zweck* | Verifikation Los manuell starten
+| *Testart* | Manuell, Negativ-Test
+| *Vorbedingungen* | 
+  - Fertigungsleiter oder Mitarbeiter ist in der Web-Anwendung angemeldet
+  +
+  - der Button "Los starten" wurde angeklickt
+| *Testdurchführung* | 
+ 1. Fehlerhafte Eingaben: Los nicht im Zustand INIT; Falsche LosID
+  +
+2. Los über den Button "Start Lot" starten
+  +
+3. Prüfung, ob deskriptive Fehlermeldungen ausgegeben werden
+  +
+| *Nachbedingungen* | 
+Bei erfolgreicher Testausführung wurde kein fehlerhaftes Los gestartet
+| *Eingabedaten* | 
+
+Auswahl eines beliebigen Loses mit dem Zustand !=INIT und Eingabe einer fehlerhaften Los ID (z.B. xy34950)
+
+| *Ergebnis* | PASS
+| *To-dos* | /
+| *Korrekturstatus* | /
+|===
+
+'''
+
+|===
+| *Test-ID* | 5 
+| *Zweck* | Verifikation Filteroptionen der Los-Tabelle
+| *Testart* | Manuell, Positiv-Test
+| *Vorbedingungen* | 
+  - Fertigungsleiter oder Mitarbeiter ist in der Web-Anwendung angemeldet
+  +
+  - der Button "Los starten" wurde angeklickt
+| *Testdurchführung* | 
+ 1. Diverse Filterkombinationen im Drop-Down-Menü auswählen
+  +
+2. Kontrolle, ob die Datensätze korrekt gefiltert werden und sich die Los-Tabelle automatisch aktualisiert
+  +
+| *Nachbedingungen* | 
+Bei erfolgreicher Testausführung befindet sich alle Lose, die den Filterkriterien entsprechen, in der Los-Tabelle
+| *Eingabedaten* | 
+
+Auswahl aller Zustände in Kombinationen mit stichprobenartig ausgewählten Maschinen und Losen
+
+| *Ergebnis* | FAIL
+| *To-dos* | 
+Das Filtern der Lose funktioniert nach dem Prinzip, dass alle Lose angezeigt werden, bei denen mindestens 1 Suchkriterium wahr ist. Es muss sichergestellt sein, dass alle Suchkriterien gleichzeitig zutreffen (siehe Screenshot).
+| *Korrekturstatus* | DONE
+|===
+
+.TID 5: Fehlerhafter Filter
+image::UC01_TID5_Filter.png[]
+
+'''
+
+|===
+| *Test-ID* | 6 
+| *Zweck* | Verifikation Timer-Funktion Los starten
+| *Testart* | Unit-Test, Positiv-Test
+| *Vorbedingungen* | 
+  Aufruf des Projektes in der Entwicklungsumgebung und Start der Applikation
+| *Testdurchführung* | 
+ 1. Ausführung des Moduls TC_UC1_TID6.py, welches die Timer-Funktion lot_start aufruft.
+  +
+2. Lose im Zustand INIT einpflegen und Variable für das Startdatum in den gültigen Bereich setzen
+  +
+3. Kontrolle, ob der Test erfolgreich durchläuft und die richtige Lose im Zustand INIT und WAIT ausgegeben werden
+  +
+| *Nachbedingungen* | 
+Bei erfolgreicher Testausführung wechseln für das gewählte Startdatum alle Lose vom Zustand INIT in den Zustand WAIT
+| *Eingabedaten* | 
+
+Anlegen eines Loses und Setzen eines Startdatums<currenttime
+
+| *Ergebnis* | PASS
+| *To-dos* | /
+| *Korrekturstatus* | /
+|===
+
+== Test Case UC02 - Lose bewegen:
+
+*Tests mit Fokus auf folgende Funktionalitäten:*
+
+* Los bewegen (manuell + Timer) und sauberes Setzen der Zustände WAIT und FIN
+* Test auf das Bewegen auf optionale Operations
+
+'''
+|===
+| *Test-ID* | 1 
+| *Zweck* | Verifikation Los bewegen (Timer)
+| *Testart* | Unit-Test, Positiv-Test
+| *Vorbedingungen* | 
+  Aufruf des Projektes in der Entwicklungsumgebung und Start der Applikation
+| *Testdurchführung* | 
+ 1. Ausführung des Moduls TC_UC2_TID1.py
+  +
+2. Der Textcase generiert ein Test-Los zu Beginn des Fertigungsprozesses im Zustand OP_COMP
+  +
+3. Nun wird das Test-Los automatisiert durch den Fertigungsprozess bewegt. Hierfür wird das Bewegen des Loses modular getestet und das Bearbeiten des Loses wird übersprungen. D.h. der Zustand des Loses wird von WAIT direkt auf OP_COMP gesetzt.
+  +
+4. Das Los wird Schritt für Schritt bis ans Ende des Fertigungsprozesses bewegt. Dabei erfolgt eine Ausgabe, die den Weg des Loses durch den Fertigungsprozess visualisiert. 
+  +
+| *Nachbedingungen* | 
+Bei erfolgreicher Testausführung befindet sich das Los am Ende im Zustand FIN und wurde fehlerfrei durch die Fertigung bewegt.
+  +
+| *Eingabedaten* | TestProductA aus den Testdatensätzen im Zustand OP_COMP auf RouteA und Operation 0100.
+| *Ergebnis* | PASS
+| *To-dos* | /
+| *Korrekturstatus* | /
+|===
+
+.UC2 TID1: Pass
+image::TC_UC2_TID1.png[]
+
+
+.UC2 TID1: Coverage Report
+image::coverage_uc2_tid1.png[]
+
+'''
+
+|===
+| *Test-ID* | 2 
+| *Zweck* | Verifikation Los bewegen; Ausführung von optionalen Operations
+| *Testart* | Unit-Test, Postiv-Test
+| *Vorbedingungen* | 
+  Aufruf des Projektes in der Entwicklungsumgebung und Start der Applikation
+| *Testdurchführung* | 
+ 1. Der Textcase erhält die Los-ID eines zuvor in die Datenbank eingepflegten Test-Loses
+  +
+2. Eingabe der optionalen Operation und der Ausführungswahrscheinlichkeit in die jeweiligen Variablen
+  +
+3. Ausführung des Moduls TC_UC2_TID2.py 
+  +
+4. Nun durchläuft das Test-Los 100 Mal das Bewegen vor einer optionalen Operation. Die jeweiligen Operations werden ausgegeben.
+  +
+| *Nachbedingungen* | 
+Bei erfolgreicher Testausführung wird das Los mit einer bestimmten Wahrscheinlichkeit auf die optionale Operation bewegt. Der Test gilt als bestanden, wenn die theoretische Ausführungswahrscheinlichkeit und die tatsächliche Ausführungswahrscheinlichkeit ein Delta kleiner 10% aufweist.
+  +
+| *Eingabedaten* | TestProductA aus den Testdatensätzen im Zustand OP_COMP auf RouteA und Operation 0200.
+| *Ergebnis* | PASS
+| *To-dos* | /
+| *Korrekturstatus* | /
+|===
+
+.UC2 TID2: Pass
+image::TC_UC2_TIDD.png[]
+.UC2 TID2: Coverage Report
+image::coverage_uc2_tid2.png[]
+'''
+|===
+| *Test-ID* | 3 
+| *Zweck* | Verifikation Los bewegen (manuell)
+| *Testart* | manuell, Positiv-Test
+| *Vorbedingungen* | 
+  - Fertigungsleiter oder Mitarbeiter ist in der Web-Anwendung angemeldet
+  +
+  - der Button "Los bewegen" wurde angeklickt, sodass die Eingabemaske erscheint
+  +
+  - das Test-Los befidnet sich im Zustand OP_COMP
+| *Testdurchführung* | 
+ 1. Erstellung eines Test-Loses
+  +
+2. Bewegen des Loses durch den Fertigungsprozess durch mehrfaches Drücken des Buttons "Los bewegen"
+  +
+3. Prüfung des Los-Zustandes, des Zeitstempels (enteroper), der Route und der Operation auf der Datenbank mithilfe von: SELECT * FROM LOT WHERE lotid='PATE-14'. Der Abgleich erfolgt anhand der Testdatensätze und den dort hinterlegten Fertigungsplänen.
+  +
+4. Setzen des Los-Zustandes auf OP_COMP mithilfe von UPDATE lot SET "STATE"='OP_COMP' WHERE lotid='PATE-14'. Hierdurch wird immer wieder die Vorbedingung für das Bewegen des Loses geschaffen.
+  +
+5. Springe zu Punkt 2 bis das Los das Ende des Fertigungsprozesses erreicht
+| *Nachbedingungen* | 
+Bei erfolgreicher Testausführung befindet sich das Los am Ende im Zustand FIN und wurde fehlerfrei durch die Fertigung bewegt.
+  +
+| *Eingabedaten* | lotid=PATE-14 und product=TestProductA aus den Testdatensätzen im Zustand OP_COMP auf RouteA und Operation 0100.
+| *Ergebnis* | PASS
+| *To-dos* | /
+| *Korrekturstatus* | /
+|===
+'''
+|===
+| *Test-ID* | 4 
+| *Zweck* | Verifikation Los bewegen (manuell)
+| *Testart* | manuell, Negativ-Test
+| *Vorbedingungen* | 
+  - Fertigungsleiter oder Mitarbeiter ist in der Web-Anwendung angemeldet
+  +
+  - der Button "Los bewegen" wurde angeklickt, sodass die Eingabemaske erscheint
+  +
+  - Lose mit einem Zustand != OP_COMP
+  +
+| *Testdurchführung* | 
+ 1. Erstellung eines Test-Loses
+  +
+2. Los bewegen ausführen, obwohl sich das Los nicht im Zustand OP_COMP befindet und somit nicht bewegt werden darf
+  +
+| *Nachbedingungen* | 
+Bei erfolgreicher Testausführung wird das Los nicht bewegt und es erscheint eine deskriptive Fehlermeldung.
+  +
+| *Eingabedaten* | Verschiede Los-IDs mit unterschiedlichen Los-Zuständen.
+| *Ergebnis* | PASS
+| *To-dos* | /
+| *Korrekturstatus* | /
+|===
+
+== Test Case UC03 - Lose bearbeiten: 
+
+*Tests mit Fokus auf folgende Funktionalitäten:*
+
+* Los bearbeiten (manuell + Timer) und sauberes Setzen der Maschinen- und Loszustände
+* Tests auf spezifische Fehlerfälle (z.B. keine Maschine verfügbar)
+
+'''
+|===
+| *Test-ID* | 1 
+| *Zweck* | Verifikation Los bearbeiten (Timer)
+| *Testart* | Unit-Test, Positiv-Test
+| *Vorbedingungen* | 
+ - Aufruf des Projektes in der Entwicklungsumgebung und Start der Applikation
+ + 
+ - kein anderes Los darf sich vor TMachineA im Zustand WAIT befinden
+ 
+| *Testdurchführung* | 
+ 1. Ausführung des Moduls TC_UC3_TID1.py
+  +
+ 2. Der Testcase legt ein Test-Los in der Datenbank im Zustand WAIT an
+ +
+ 3. Der Zustand IDLE wird für das jeweilige Test-Tool gesetzt
+ +
+  4. Die Funktion tool_searches_for_lots() wird ausgeführt und im Anschluss schläft der Prozess bis die Bearbeitung abgeschlossen ist
+ + 
+  5. Abgleich des Los- und Maschinenzustands
+| *Nachbedingungen* | 
+ Der Test wurde erfolgreich ausgeführt, wenn das Test-Los nach der Bearbeitung in den Zustand OP_COMP und die Test-Maschine in den Zustand WAIT gewechselt ist
+| *Eingabedaten* | Ein Test-Los mit TestProductA aus den Testdatensätzen im Zustand WAIT auf RouteA und Operation 0100.
+| *Ergebnis* | PASS
+| *To-dos* | /
+| *Korrekturstatus* | /
+|===
+
+.UC3 TID1: PASS und Testausgaben
+image::TC_UC3_TID1.png[]
+.UC3 TID1: Coverage Report
+image::coverage_uc3_tid1.png[]
+'''
+|===
+| *Test-ID* | 2 
+| *Zweck* | Korrekte Los-Auswahl beim Bearbeiten eines Loses (FiFo-Prinzip)
+| *Testart* | Unit-Test, Positiv-Test
+| *Vorbedingungen* | 
+ - Aufruf des Projektes in der Entwicklungsumgebung und Start der Applikation
+ + 
+ - kein anderes Los darf sich vor TMachineA im Zustand WAIT befinden
+ 
+| *Testdurchführung* | 
+ 1. Ausführung des Moduls TC_UC3_TID2.py
+  +
+ 2. Der Testcase legt ein Test-Los-1 in der Datenbank im Zustand WAIT an und legt sich schlafen -> ein erster Zeitstempel für ENTEROPER ensteht
+ +
+ 3. Der Testcase legt ein Test-Los-2 in der Datenbank im Zustand WAIT an und legt sich schlafen -> ein zweiter Zeitstempel für ENTEROPER entsteht
++
+ 4. Der Zustand IDLE für das jeweilige Test-Tool gesetzt
+ +
+ 5. Im Anschluss wird der Zustand des Test-Loses 1 geprüft
+  Abgleich des Los- und Maschinenzustands
+| *Nachbedingungen* | 
+ Der Test gilt als erfolgreich, wenn das Test-Los-1 für die Bearbeitung ausgewählt worden ist (FiFo-Prinzip) und sich folglich im Zustand PROC befindet.
+| *Eingabedaten* | Zwei Test-Lose mit TestProductA aus den Testdatensätzen im Zustand WAIT auf RouteA und Operation 0100.
+| *Ergebnis* | PASS
+| *To-dos* | /
+| *Korrekturstatus* | /
+|===
+
+.UC3 TID2: PASS und Testausgaben
+image::TC_UC3_TID2.png[]
+.UC3 TID2: Coverage Report
+image::coverage_uc3_tid2.png[]
+
+'''
+|===
+| *Test-ID* | 3 
+| *Zweck* | Los bearbeiten (manuell) prüfen
+| *Testart* | manuell, Positiv-Test
+| *Vorbedingungen* | 
+ - Fertigungsleiter ist in der Web-Anwendung angemeldet
+ +
+ - der Button "Los bearbeiten" wurde angeklickt, sodass die Eingabemaske erscheint
+ +
+ - Lose befindet sich im Zustand WAIT und zugehörige Maschinen im Zustand IDLE
+| *Testdurchführung* | 
+ 1. Auswahl eines Loses im Zustand WAIT im Drop-Down-Menü.
+  +
+ 2. Drücken des Buttons "bearbeiten"
+ +
+ 3. Abgleich des Los- und Maschinenzustands
+| *Nachbedingungen* | 
+ Der Test gilt als erfolgreich, wenn die SUCCESS-Page erscheint und sich das Los und die Maschine im Zustand PROC befindet
+| *Eingabedaten* | Beliebiges Los, welches den Vorbedingungen entspricht
+| *Ergebnis* | PASS
+| *To-dos* | /
+| *Korrekturstatus* | /
+|===
+'''
+|===
+| *Test-ID* | 4 
+| *Zweck* | Los bearbeiten (manuell) prüfen; keine Maschine verfügbar
+| *Testart* | manuell, Negativ-Test
+| *Vorbedingungen* | 
+ - Fertigungsleiter ist in der Web-Anwendung angemeldet
+ +
+ - der Button "Los bearbeiten" wurde angeklickt, sodass die Eingabemaske erscheint
+ +
+ - Lose befindet sich im Zustand WAIT und zugehörige Maschine nicht im Zustand IDLE
+| *Testdurchführung* | 
+ 1. Auswahl eines Loses im Zustand WAIT im Drop-Down-Menü.
+  +
+ 2. Drücken des Buttons "bearbeiten"
+ +
+ 3. Abgleich des Loszustands
+| *Nachbedingungen* | 
+ Der Test gilt als erfolgreich, wenn die FAILURE-Page erscheint und das Los nicht bearbeitet werden konnte
+| *Eingabedaten* | Beliebiges Los, welches den Vorbedingungen entspricht
+| *Ergebnis* | PASS
+| *To-dos* | /
+| *Korrekturstatus* | /
+|===
+
+.UC3 TID4: korrekte Failure-Page
+image::TC_UC3_TID4.png[]
+
+'''
+|===
+| *Test-ID* | 5 
+| *Zweck* | Los bearbeiten (manuell) prüfen, Los nicht im Zustand WAIT
+| *Testart* | manuell, Negativ-Test
+| *Vorbedingungen* | 
+ - Fertigungsleiter ist in der Web-Anwendung angemeldet
+ +
+ - der Button "Los bearbeiten" wurde angeklickt, sodass die Eingabemaske erscheint
++
+ - Lose befindet sich nicht im Zustand WAIT
+| *Testdurchführung* | 
+ 1. Auswahl eines Loses im Zustand !WAIT im Drop-Down-Menü.
+  +
+ 2. Drücken des Buttons "bearbeiten"
+ +
+ 3. Abgleich des Loszustands
+| *Nachbedingungen* | 
+ Der Test gilt als erfolgreich, wenn die FAILURE-Page erscheint und das Los nicht bearbeitet werden konnte
+| *Eingabedaten* | Beliebiges Los, welches den Vorbedingungen entspricht
+| *Ergebnis* | PASS
+| *To-dos* | /
+| *Korrekturstatus* | /
+|===
+
+.UC3 TID5: korrekte Failure-Page
+image::TC_UC3_TID5.png[]
+
+== Test Case UC04/UC05 - Stammdaten anzeigen/bearbeiten: 
+
+*Tests mit Fokus auf folgende Funktionalitäten:*
+
+* Anzeige von Stammdaten
+* Bearbeitung von Stammdaten
+
+
+'''
+|===
+| *Test-ID* | 1 
+| *Zweck* | Verifikation Stammdaten bearbeiten/anzeigen
+| *Testart* | Manuell, Positiv-Test
+| *Vorbedingungen* | 
+  - Fertigungsleiter ist in der Web-Anwendung angemeldet
+  +
+  - der Button "Stammdaten" wurde angeklickt, sodass die Eingabemaske erscheint
+| *Testdurchführung* | 
+ 1. Auswahl einer Lot ID und Bestätigung über EditLot
+  +
+2. Prüfung, ob die Wertfelder korrekt befüllt werden
+  +
+3. Veränderung aller Wert-Felder (ID, Priority, Pieces, State, Product, Route, Operation, Customer, Order, Tool display, Duedate, Startdate, Operion entered, Process started)
+  +
+4. Kontrolle der veränderten Datensätze in der Anzeige-Tabelle und über SELECT-Befehl in pgAdmin
+| *Nachbedingungen* | 
+Bei erfolgreicher Testausführung konnten alle Attribute des Loses erfolgreich geändert und im Anschluss über die Tabelle ausgegeben werden. Außerdem wurden die Wertfelder zu Beginn der Bearbeitung korrekt befüllt und stimmen mit den Datensätzen aus der Los-Tabelle überein.
+| *Eingabedaten* | 
+
+ID:     Test394
+  +
+Priority: 1
+  +
+Pieces: 59
+  +
+State: WAIT
+  + 
+Product : TestProductA
+  + 
+Order: Testorder4
+  +
+Route: TestRoute409
+  +
+Customer: Paul
+  +
+Due date: 09.06.2024
+  +
+Start date: 09.06.2024
+  +
+Operation enterd: 08.05.2024-09,05.2024
+  +
+Process started: 08.05.2024-09,05.2024
+
+| *Ergebnis* | FAIL
+| *To-dos* | 
+- Invalid Data Format beim Eintragen von Process started und EnterOper. Der Zeitstempel enthält zusätzlich Stunden und Minuten und muss entsprechend angepasst werden.
+  +
+- Product-Änderung lädt ohne Ergebnis
+| *Korrekturstatus* | DONE
+|===
+
+.TID 1: Fehlermeldung TimeStamp
+image::TC_UC5_TID1_Value_Error.png[]
+
+'''
+== Test Case UC05/UC06 - Daten exportieren/importieren: 
+
+*Tests mit Fokus auf folgende Funktionalitäten:*
+
+* Datenexport
+* Datenimport
+
+
+'''
+|===
+| *Test-ID* | 1 
+| *Zweck* | Verifikation Daten exportieren
+| *Testart* | Manuell, Positiv-Test
+| *Vorbedingungen* | 
+  - Fertigungsleiter ist in der Web-Anwendung angemeldet
+  +
+  - der Button "Daten exportieren" wurde angeklickt
+| *Testdurchführung* | 
+ 1. Auswahl diverser LotID über Radiobutton
+  +
+2. Datensätze exportieren
+  +
+3. Kontrolle der erstellten Datei auf Korrektheit und Vollständigkeit der Daten sowie korrektes Dateiformat
+  +
+| *Nachbedingungen* | 
+Bei erfolgreicher Testausführung wurde eine CSV-Datei mit Header erstellt und alle Daten, die zuvor ausgewählt worden sind, in diese Datei geschrieben
+| *Eingabedaten* | 
+Auswahl von 3-5 Losen
+
+| *Ergebnis* | PASS
+| *To-dos* | /
+| *Korrekturstatus* | /
+|===
+
+'''
+|===
+| *Test-ID* | 2 
+| *Zweck* | Verifikation Daten importieren
+| *Testart* | Manuell, Negativ-Test
+| *Vorbedingungen* | 
+  - Fertigungsleiter ist in der Web-Anwendung angemeldet
+  +
+  - der Button "Daten importieren" wurde angeklickt
+  +
+  - pgAdmin wird ausgeführt
+| *Testdurchführung* | 
+ 1. Auswahl von verschiedenen CSV-Dateien
+  +
+2. Klicken des Buttons "Hinzufügen"
+  +
+3. SELECT-Befehl auf Los-Tabelle in pgAdmin zur Kontrolle, ob die Daten erfolgreich importiert worden sind
+  +
+| *Nachbedingungen* | 
+Bei erfolgreicher Testausführung wurden die Daten der CSV-Datei erfolgreich in die Datenbank übertragen
+| *Eingabedaten* | 
+- Exportierte Lostabelle aus unserem System
+  +
+- Lostabelle mit den Beispieldatensätzen von Herr Ringel
+| *Ergebnis* | FAIL
+| *To-dos* | 
+- Bei der *exportieren Lostabelle aus unserem System* kein Import möglich: Header beim Export sollte nach Möglichkeit den Beispieldatensätzen von Ringel entsprechen -> sonst kein Import. Das bedeutet: Exportdateien brauchen Spaltenüberschriten in Großbuchstaben und keine Leerzeichen zwischen den Kommata im Header
+  +
+- Fehlermeldungen überschneiden sich teilweise. Zum Beispiel, wenn ein Import mit einem falschen Header stattfindet (z.B. Export aus unserem System), dann gibt es eine Fehlermeldung und der Vorgang wird abgebrochen. Gleichzeitig wird die Ausgabe "File successfully imported" angezeigt.
+| *Korrekturstatus* | IN PROGRESS
+|===
+
+
+
+.TID 2: Fehldermeldung beim Import von einem Export aus unserem System inkl. sich überschneidender Fehlermeldungen
+image::TC_UC6_TID1_import mit falschem header.png[]
+
+'''
+
+== Test Case UC08 - Backup erstellen:
+
+*Tests mit Fokus auf folgende Funktionalitäten:*
+
+* Backup erstellen 
+
+'''
+|===
+| *Test-ID* | 1 
+| *Zweck* | Verifikation Backup erstellen 
+| *Testart* | Manuell, Positiv-Test
+| *Vorbedingungen* | 
+  - Fertigungsleiter oder Mitarbeiter ist in der Web-Anwendung angemeldet
+  +
+  - pgAdmin wird ausgeführt
+| *Testdurchführung* | 
+ 1. Starten des Backups durch Klicken des Buttons "Backup erstellen"
+  +
+2. Kontrolle der Anzahl von Datensätzen in allen Tabellen über SQL-Befehl in pgAdmin
+  +
+3. Prüfung, ob das Backup korrekt im vorgesehenen Verzeichnis hinterlegt worden ist
+  +
+4. Prüfung der Daten innerhalb der Backup-Dateien auf Korrektheit und Vollständigkeit
+| *Nachbedingungen* | 
+Bei erfolgreicher Testausführung befinden sich alle Backupdateien im Backup-Verzeichnis und die Anzahl der Datensätze entspricht den zuvor festgestellten Datensätzen.
+  +
+| *Eingabedaten* | 
+
+ Zählen der Beispieldatensätze: z.B.: SELECT COUNT(*) FROM lot;
+
+| *Ergebnis* | PASS
+| *To-dos* | /
+| *Korrekturstatus* | /
+|===
+
+== Test Case: Addional Testing: 
+
+*Tests mit Fokus auf folgende Funktionalitäten:*
+
+* zusätzliche Softwarebestandteile, die keine systemweiten Anforderungen und keinem UseCase zugehörig sind 
+
+'''
+|===
+| *Test-ID* | 1 
+| *Zweck* | Verifikation diverser Filter- und Sortieroptionen
+| *Testart* | Manuell, Positiv-Test
+| *Vorbedingungen* | 
+  Fertigungsleiter ist in der Web-Anwendung angemeldet
+| *Testdurchführung* | 
+ 1. Auswahl divereser Filter- und Sortieroptionen
+  +
+2. Prüfung, ob die zugehörigen Ausgabetabellen die gesetzte Auswahl korrekt umsetzt
+  +
+| *Nachbedingungen* | 
+Bei erfolgreicher Testausführung wurde die zugehörige Ausgabetabelle nach bestimmten Merkmalen sortiert/gefiltert
+| *Eingabedaten* | 
+z.B. absteigende LosID und Zustand WAIT im UseCase "Lost bearbeiten"
+| *Ergebnis* | PASS
+| *To-dos* | /
+| *Korrekturstatus* | /
+|===
+
+'''
+== Test Case System-Wide Requirements: 
+
+*Tests mit Fokus auf folgende Funktionalitäten:*
+
+* funktionale Anforderungen
+* nicht-funktionale Anforderungen
+
+'''
+|===
+| *Test-ID* | 1 
+| *Zweck* | Verifikation SWFA-1
+| *Testart* | Manuell, Negativ-Test
+| *Vorbedingungen* | 
+  - Login-Fenster der Anwendung ist aufgerufen
+| *Testdurchführung* | 
+ 1. Eingabe von Nutzerdaten für den Nutzer/Mitarbeiter
+  +
+2. Versuch, Use-Cases auszuführen, die nicht der Nutzerrolle entsprechen. Zum Beispiel das Importieren von Daten.
+  +
+| *Nachbedingungen* | 
+- Bei erfolgreicher Testausführung konnte keine UseCases ausgeführt werden, der nicht der Nutzerrolle entspricht
+| *Eingabedaten* | 
+
+user:     user2
+  +
+Passwort: pass2
+  +
+
+| *Ergebnis* | PASS
+| *To-dos* | /
+| *Korrekturstatus* | /
+|===
+
+'''
+|===
+| *Test-ID* | 2 
+| *Zweck* | Verifikation SWFA-2
+| *Testart* | Manuell, Positiv-Test
+| *Vorbedingungen* | 
+  - Fertigungsleiter oder Mitarbeiter ist in der Web-Anwendung angemeldet
+  +
+  - der Button "Los starten" wurde angeklickt, sodass die Eingabemaske erscheint
+| *Testdurchführung* | 
+ 1. Dokumentation der Kennzahlen des Cockpits
+  +
+2. Nach 30 Minuten erneute Dokumentation der Kennzahlen des Cockpits und Abgleich mit dem vorherigen Stand
+  +
+| *Nachbedingungen* | 
+Bei erfolgreicher Testausführung hat der Timer erfolgreich die Produktionsprozesse angestoßen und die Los- und Maschinenzustände haben sich geändert
+| *Eingabedaten* | /
+
+| *Ergebnis* | PASS
+| *To-dos* | /
+| *Korrekturstatus* | /
+|===
+
+'''
+|===
+| *Test-ID* | 3 
+| *Zweck* | Verifikation SWFA-3
+| *Testart* | Manuell, Positiv-Test
+| *Vorbedingungen* | 
+ - Aufruf des Projektes in der Entwicklungsumgebung und Start der Applikation mit python app.py
+  +
+  - Aufruf von pgAdmin zur Administration der Datenbank
+| *Testdurchführung* | 
+ 1. Einfügen eines Test-Loses mittels SQL
+  +
+2. Neustart des Systems
+  +
+3. Anzeigen des Test-Loses mittels SELECT-Befehl in pgAdmin
+| *Nachbedingungen* | 
+Bei erfolgreicher Testausführung wurde das Test-Los persistens in der Datenbank gespeichert
+| *Eingabedaten* | INSERT INTO LOT VALUES
+('TestLot', 44, 10, 'WAIT', 'TestProductA', 'RouteA', '0100', 'TestCustomer', '2024-07-06', '2024-02-02', NULL, NULL, NULL, NULL);
+
+| *Ergebnis* | PASS
+| *To-dos* | /
+| *Korrekturstatus* | /
+|===
+
+'''
+|===
+| *Test-ID* | 4 
+| *Zweck* | Verifikation SWFA-4
+| *Testart* | Manuell, Positiv-Test
+| *Vorbedingungen* | 
+ - Aufruf des Projektes in der Entwicklungsumgebung 
+  +
+  - Aufruf der Datei config.py
+| *Testdurchführung* | 
+ 1. Änderung der Variable PASSWORD_USER1 für user1
+  +
+2. Start der Anwendung durch python app.py
+  +
+3. Login in der Webanwendung durch Verwendung des neuen Passworts, welches in der Config-Datei eingestellt worden ist
+| *Nachbedingungen* | 
+Bei erfolgreicher Testausführung kann sich user1 erfolgreich anmelden
+| *Eingabedaten* | PASSWORD_USER1=root
+| *Ergebnis* | PASS
+| *To-dos* | /
+| *Korrekturstatus* | /
+|===
+
+'''
+|===
+| *Test-ID* | 5 
+| *Zweck* | Verifikation QAGU-1
+| *Testart* | Manuell, Positiv-Test
+| *Vorbedingungen* | 
+  - Fertigungsleiter oder Mitarbeiter ist in der Web-Anwendung angemeldet
+  +
+  - der Button "Los starten" wurde angeklickt, sodass die Eingabemaske erscheint
+| *Testdurchführung* | 
+ 1. Prüfung aller Buttons, ob Doppelbelegung vorkommen
+  +
+2. Prüfung, ob Spaltennamen der Tabellen eindeutig
+  +
+3. Prüfung, ob Filter deskriptiv benannt sind
+| *Nachbedingungen* | 
+Bei erfolgreicher Testausführung ist die Usability des Systems gegeben und die Gesamtheit der Interaktionselemente ist minimiert
+| *Eingabedaten* | /
+| *Ergebnis* | PASS
+| *To-dos* | /
+| *Korrekturstatus* | /
+|===
+
+'''
+|===
+| *Test-ID* | 6 
+| *Zweck* | Verifikation QAGZ-1
+| *Testart* | Manuell, Positiv-Test
+| *Vorbedingungen* | 
+ - Aufruf des Projektes in der Entwicklungsumgebung und Start der Applikation mit python app.py
+| *Testdurchführung* | 
+ 1. Dokumentation ausgewählter Maschinen- und Loszustände
+  +
+2. Erzwingen eines Verbindungsabbruches 
+  +
+3. 5 Minuten später erfolgt das Wiederherstellen der Verbindung 
+  +
+4. Kontrolle der dokumentierten Maschinen- und Loszustände
+| *Nachbedingungen* | 
+Bei erfolgreicher Testausführung stimmen die Daten überein und das System konnte die Konsistenz der Daten gewährleisten
+| *Eingabedaten* | /
+| *Ergebnis* | PASS
+| *To-dos* | /
+| *Korrekturstatus* | /
+|===
+
+'''
+|===
+| *Test-ID* | 7 
+| *Zweck* | Verifikation QAGW-1:
+| *Testart* | Manuell, Positiv-Test
+| *Vorbedingungen* | 
+ - Aufruf github Repository
+| *Testdurchführung* | 
+ 1. Prüfung der Entwickler - und Betriebsdokumentation
+  +
+2. Kontrolle auf Vollständigkeit, Korrektheit und Verständlichkeit
+  +
+| *Nachbedingungen* | 
+Bei erfolgreicher Testausführung ist durch die umfangreiche Dokumenation eine gute Wartbarkeit der Anwendung und ein gutes Verständnis bei auftretenden Fehlern gewährleistet 
+| *Eingabedaten* | /
+| *Ergebnis* | PASS
+| *To-dos* | /
+| *Korrekturstatus* | /
+|===
+
+
