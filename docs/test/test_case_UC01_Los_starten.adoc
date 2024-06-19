@@ -169,7 +169,7 @@ Das Filtern der Lose funktioniert nach dem Prinzip, dass alle Lose angezeigt wer
 |===
 
 .TID 5: Fehlerhafter Filter
-image::images/UC01_TID5_Filter.png[]
+image::UC01_TID5_Filter.png[]
 
 '''
 
