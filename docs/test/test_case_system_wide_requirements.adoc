@@ -140,7 +140,7 @@ Bei erfolgreicher Testausführung ist die Usability des Systems gegeben und die 
   +
 3. 5 Minuten später erfolgt das Wiederherstellen der Verbindung 
   +
-4. Kontrolle, der dokumentierten Maschinen- und Loszustände
+4. Kontrolle der dokumentierten Maschinen- und Loszustände
 | *Nachbedingungen* | 
 Bei erfolgreicher Testausführung stimmen die Daten überein und das System konnte die Konsistenz der Daten gewährleisten
 | *Eingabedaten* | /
