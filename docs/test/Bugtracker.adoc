@@ -4,7 +4,7 @@ Vorname Nachname <email@domain.org>; Vorname2 Nachname2 <email2@domain.org>; Vor
 include::../_includes/default-attributes.inc.adoc[]
 // Platzhalter für weitere Dokumenten-Attribute
 
-Der Bugtracker dient der schnellen Erfassung aller aufgetretenen Fehler und hält den jeweiligen Bearbeitungsstatus fest. Anhand der dokumentierten TestCases kann bei Bedarf mithilfe der Test-ID der konkrete Test inkl. Eingabedaten u.v.m. eingesehen werden. 
+Der Bugtracker dient der schnellen Erfassung aller aufgetretenen Fehler und hält den jeweiligen Bearbeitungsstatus fest. Anhand der dokumentierten TestCases kann bei Bedarf mithilfe der Test-ID der konkrete Test inkl. Eingabedaten u.v.m. eingesehen werden. Der Bugtracker dokumentiert zum Abschluss des Projektes ebenso den Ist-Fehlerzustand des Systems. Dies ist wichtig, weil die Anwendung zukünftig weiterentwickelt werden soll.
 
 *Test Case UC01 - Lose starten*
 
