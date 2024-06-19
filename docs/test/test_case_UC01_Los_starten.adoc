@@ -21,9 +21,9 @@
   +
 2. Auftragsanlage über Button "Register Order" abschließen
   +
-3. Prüfung, ob das Los im Zustand "init" in die Datenbank übertragen worden ist und alle Eingaben korrekt übertragen worden (SELECT * FROM LOT)
+3. Prüfung, ob das Los im Zustand INIT in die Datenbank übertragen worden ist und alle Eingaben korrekt übertragen worden (SELECT * FROM LOT)
 | *Nachbedingungen* | 
-- Bei erfolgreicher Testausführung befinden sich die zugehörigen Lose im Zustand "init" in der Datenbank
+- Bei erfolgreicher Testausführung befinden sich die zugehörigen Lose im Zustand INIT in der Datenbank
   +
 - alle Wertefelder müssen korrekt in der Datenbank in der Tabelle "Lot" übertragen worden sein
   +
