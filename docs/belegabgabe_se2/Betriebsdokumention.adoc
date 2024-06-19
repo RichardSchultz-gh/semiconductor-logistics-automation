@@ -28,7 +28,7 @@ Die Betriebsdokumentation enthält Anleitungen und Hilfestellungen zum Einrichte
 . Installation des Datenbankmanagementsystems PostgreSQL nach: +
 link:https://pimylifeup.com/raspberry-pi-postgresql/[Externem PostgreSQL-Tutorial] +
  + 
-Zu Beachten während der Installationsanleitung: +
+*! Zu Beachten während der Installation:* +
  +
 zu erstellender User: +
 _username:_ se-project +
