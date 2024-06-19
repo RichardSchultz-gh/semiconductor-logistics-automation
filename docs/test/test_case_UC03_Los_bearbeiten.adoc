@@ -20,7 +20,7 @@
   +
  2. Der Testcase legt ein Test-Los in der Datenbank im Zustand WAIT an
  +
- 3. Der Zustand IDLE für das jeweilige Test-Tool gesetzt
+ 3. Der Zustand IDLE wird für das jeweilige Test-Tool gesetzt
  +
   4. Die Funktion tool_searches_for_lots() wird ausgeführt und im Anschluss schläft der Prozess bis die Bearbeitung abgeschlossen ist
  + 
