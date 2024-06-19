@@ -79,7 +79,7 @@ Mit Beginn des zweiten Projektteils haben sich die Rollen etwas verschoben. Die 
 - Kommunikation könnte auch konkreter besprochen werden: nicht jeder war immer erreichbar, lange Antwortzeiten, teilweise nur Reaktion auf Angefragtes und kein proaktives Aufeinanderzugehen
 
 
-=== Misserfolg 2 - Verteilung
+=== Misserfolg 2 - Aufgabenverteilung
 
 Als zweiten Misserfolg im Projekt ist anzuführen, dass die Verteilung des Workload nicht immer geglückt ist. Einige Teammitglieder haben zu Zeiten deutlich mehr gemacht als andere. 
 
