@@ -34,7 +34,42 @@ include::{docs}/_includes/default-attributes.inc.adoc[]
 
 :imagesdir: {docs-test}/images
 
-// Bugtracker
-include::{docs-test}/Bugtracker.adoc[lines=1..1;4..-1,leveloffset=+1]
+// Testkonzept.adoc
+include::{docs-test}/Testkonzept.adoc.adoc[lines=1..1;4..-1,leveloffset=+1]
 <<<
 
+// test_case_UC01_Los_starten.adoc
+include::{docs-test}/test_case_UC01_Los_starten.adoc[lines=1..1;4..-1,leveloffset=+1]
+<<<
+
+// test_case_UC02_Los_bewegen.adoc
+include::{docs-test}/test_case_UC02_Los_bewegen.adoc[lines=1..1;4..-1,leveloffset=+1]
+<<<
+
+// test_case_UC03_Los_bearbeiten.adoc
+include::{docs-test}/test_case_UC03_Los_bearbeiten.adoc[lines=1..1;4..-1,leveloffset=+1]
+<<<
+
+// test_case_UC04_UC05_Stammdaten.adoc
+include::{docs-test}/test_case_UC04_UC05_Stammdaten.adoc[lines=1..1;4..-1,leveloffset=+1]
+<<<
+
+// test_case_UC06_UC07_Export_Import.adoc
+include::{docs-test}/test_case_UC06_UC07_Export_Import.adoc[lines=1..1;4..-1,leveloffset=+1]
+<<<
+
+// test_case_UC08_Backup.adoc
+include::{docs-test}/test_case_UC08_Backup.adoc[lines=1..1;4..-1,leveloffset=+1]
+<<<
+
+// test_case_system_wide_requirements.adoc
+include::{docs-test}/test_case_system_wide_requirements.adoc[lines=1..1;4..-1,leveloffset=+1]
+<<<
+
+// test_case_additional_testing.adoc
+include::{docs-test}/test_case_additional_testing.adoc[lines=1..1;4..-1,leveloffset=+1]
+<<<
+
+// testdatensätze.adoc
+include::{docs-test}/testdatensätze.adoc[lines=1..1;4..-1,leveloffset=+1]
+<<<
