@@ -26,7 +26,7 @@ include::{docs}/_includes/default-attributes.inc.adoc[]
 :experimental:
 // Folders
 :imagesdir-reset: {imagesdir}
-:docs-test: {docs}/requirements
+:docs-requirements: {docs}/requirements
 
 <<<
 
