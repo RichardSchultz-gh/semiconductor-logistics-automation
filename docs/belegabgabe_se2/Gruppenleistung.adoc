@@ -73,6 +73,10 @@ Mit Beginn des zweiten Projektteils haben sich die Rollen etwas verschoben. Die 
 
 //hier könnte man noch schreiben, dass die Aufgabenverteilung an die Personen besser angepasst wurden und daher die Strukturen anders waren. Nico und Yannik konnten die Paararbeit nicht so gut, deshalb machen sie dann einzelarbeiten und berichten an Nils als Head Develper. 
 
+*Kommentare/Ideen Misserfolg 3 (Paul):*
+- Gern auf die Konsequenzen eingehen: zu was führt wenig Austausch oder ein nicht stattgefundes Treffen in Bezug auf das Projekt (Zeitpläne nicht eingehalten, wir müssen und alle aufeinander verlassen können, da die Arbeit aufeinander aufbaut -> Implentierung setzt einige Entwurfsentscheidungen voraus)? 
+- Kommunikation könnte auch konkreter besprochen werden: nicht jeder war immer erreichbar, lange Antwortzeiten, teilweise nur Reaktion auf Angefragtes und kein proaktives Aufeinanderzugehen
+
 
 === Misserfolg 2 - Verteilung
 
