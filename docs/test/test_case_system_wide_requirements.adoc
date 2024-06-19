@@ -162,7 +162,7 @@ Bei erfolgreicher Testausführung stimmen die Daten überein und das System konn
 2. Kontrolle auf Vollständigkeit, Korrektheit und Verständlichkeit
   +
 | *Nachbedingungen* | 
-Bei erfolgreicher Testausführung ist durch die umfangreiche Dokumenation eine gute Wartbarkeitd der Anwendung und ein gutes Verständnis bei auftretenden Fehlern gewährleistet 
+Bei erfolgreicher Testausführung ist durch die umfangreiche Dokumenation eine gute Wartbarkeit der Anwendung und ein gutes Verständnis bei auftretenden Fehlern gewährleistet 
 | *Eingabedaten* | /
 | *Ergebnis* | PASS
 | *To-dos* | /
