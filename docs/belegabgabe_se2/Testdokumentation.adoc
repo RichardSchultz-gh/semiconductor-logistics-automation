@@ -35,7 +35,7 @@ include::{docs}/_includes/default-attributes.inc.adoc[]
 :imagesdir: {docs-test}/images
 
 // Testkonzept.adoc
-include::{docs-test}/Testkonzept.adoc.adoc[lines=1..1;4..-1,leveloffset=+1]
+include::{docs-test}/Testkonzept.adoc[lines=1..1;4..-1,leveloffset=+1]
 <<<
 
 // test_case_UC01_Los_starten.adoc
@@ -68,6 +68,10 @@ include::{docs-test}/test_case_system_wide_requirements.adoc[lines=1..1;4..-1,le
 
 // test_case_additional_testing.adoc
 include::{docs-test}/test_case_additional_testing.adoc[lines=1..1;4..-1,leveloffset=+1]
+<<<
+
+// Bugtracker.adoc
+include::{docs-test}/Bugtracker.adoc[lines=1..1;4..-1,leveloffset=+1]
 <<<
 
 // testdatensätze.adoc
