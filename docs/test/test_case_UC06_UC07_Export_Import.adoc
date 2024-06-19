@@ -1,4 +1,8 @@
-== Test Case UC05/UC06 - Daten exportieren/importieren
+== Test Case UC05/UC06 - Daten exportieren/importieren: {project-name}
+Vorname Nachname <email@domain.org>; Vorname2 Nachname2 <email2@domain.org>; Vorname3 Nachname3 <email3@domain.org>
+{localdatetime}
+include::../_includes/default-attributes.inc.adoc[]
+// Platzhalter für weitere Dokumenten-Attribute
 
 *Tests mit Fokus auf folgende Funktionalitäten:*
 
@@ -67,7 +71,7 @@ Bei erfolgreicher Testausführung wurden die Daten der CSV-Datei erfolgreich in 
 
 
 .TID 2: Fehldermeldung beim Import von einem Export aus unserem System inkl. sich überschneidender Fehlermeldungen
-image::images/TC_UC6_TID1_import mit falschem header.png[]
+image::TC_UC6_TID1_import mit falschem header.png[]
 
 '''
 
