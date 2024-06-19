@@ -4,7 +4,7 @@ Nils Generlich <s85449@htw-dresden.de>; Yannik-Joel Herrchen <s85585@htw-dresden
 // --- 3. Abgabedatum --------------------------
 26. Januar 2024
 // ---------------------------------------------
-:docs: ../docs
+:docs: ..
 include::{docs}/_includes/default-attributes.inc.adoc[]
 // ---
 :doctype: book
