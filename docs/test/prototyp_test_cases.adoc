@@ -4,6 +4,7 @@ Vorname Nachname <email@domain.org>; Vorname2 Nachname2 <email2@domain.org>; Vor
 include::../_includes/default-attributes.inc.adoc[]
 // Platzhalter für weitere Dokumenten-Attribute
 
+
 == Allgemeine Informationen
 
 Um die grundsätzliche Funktionsfähigkeit des vertikalen Protoypen sicherzustellen wurden 2 Test Cases durchgeführt. 
