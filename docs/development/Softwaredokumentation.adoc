@@ -41,7 +41,6 @@ Die HTML-Dateien enthalten die Darstellung der Webseite und die Interaktion mit 
 | Los bearbeiten | bearbeiten | los_bearbeiten.py | Bearbeiten eines bestehenden Loses (nur für Fertigungsleiter sichtbar).
 | Los bewegen | bewegen | los_bewegen.py | Bewegen eines Loses (nur für Fertigungsleiter sichtbar).
 | Stammdaten | Stammdaten | Stammdaten.py | Einsicht und Anpassung der Stammdaten.
-| Backup erstellen | Backup erstellen | backup.py | Erstellung eines Backups (nur für Fertigungsleiter sichtbar).
 | Daten exportieren | Daten exportieren | export_data.py | Export von Daten (nur für Fertigungsleiter sichtbar).
 | Daten importieren | Daten importieren | import_data.py | Import von Daten (nur für Fertigungsleiter sichtbar).
 |===
