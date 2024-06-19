@@ -78,6 +78,7 @@ Da die Anwendung auf einem RaspberryPi betrieben wird, ist die Architektur darau
 . Wir nutzen *Python* als Programmiersprache für die Middleware, da uns diese vorgegeben wurde und diese eine einfache und schnelle Entwicklung ermöglicht.
 . Wir benutzen *SQL-Alchemy* als Framework, da diese Bibliothek eine intuitive und effiziente Interaktion mit der PostgreSQL-Datenbank ermöglicht und vorraussichtlich auch in Zukunft weiterentwickelt wird.
 . Wir nutzen *Flask* als Web-Framework, da dieses ein recht leichtgewichtiges Framework ist, welches wenige Resourcen benötigt. Außerdem ist Flask einfach zu erlernen, da es aufgrund seiner aktiven Entwickler-Community viele Tutorials und Hilfestellungen gibt.
+. Als Schnittstelle zwischen Middleware und Web-GUI nutzen wir *RESTful API-Endpunkte*, da diese eine standardisierte und effiziente Kommunikation zwischen den beiden Systemteilen ermöglichen.
 . Wir nutzen *HTML und CSS* für die Benutzeroberfläche, da diese Technologien sehr gut mit Flask integrierbar sind. Diese Technologien ermöglichen die Entwicklung einer ansprechenden und interaktiven Benutzeroberfläche für die Anwendung. Zur Verbesserung der Interaktivität kann auch JavaScript genutzt werden.
 . Für die Generierung von dynamischen Inhalten in der Webanwendung benutzen wir die Template-Engine *Jinja2*. Diese ist weit verbreitet und ist direkt in Flask integriert.
 
@@ -117,14 +118,8 @@ https://www2.htw-dresden.de/~anke/openup/core.tech.common.extend_supp/guidances/
 ### Terminierung (Scheduling)
 - **Zweck:** Ermöglicht die Planung und Ausführung von Aufgaben zu bestimmten Zeiten oder unter bestimmten Bedingungen.
 - **Eigenschaften:** Unterstützt zeitgesteuerte und ereignisbasierte Aufgaben. Flexibel einsetzbar für regelmäßige oder einmalige Ereignisse.
-- **Funktion:** Im System ermöglicht dies die Automatisierung von Datenerfassung und Wartungsaufgaben, für zeitgesteuerte Datenbank-Updates.
+- **Funktion:** Im System ermöglicht dies die Automatisierung von Datenerfassung und die Gewährleistung des Fertigungsflusses, für zeitgesteuerte Datenbank-Updates.
 - **Ausschnit Zugehöriger SWFA:** SWFA-2
-
-### Archivierung (Archiving)
-- **Zweck:** Verschieben von Daten aus dem aktiven Speicher, wenn sie einen bestimmten Zustand erreicht haben.
-- **Eigenschaften:** Unterstützt Langzeitspeicherung und Entlastung des aktiven Speichers.
-- **Funktion:** Automatisiertes Verschieben alter oder selten genutzter Daten in Archivspeicher.
-- **Ausschnit Zugehöriger SWFA:** SWFA-3
 
 ### Fehlermanagement (Error Management)
 - **Zweck:** Erkennung, Weiterleitung und Berichterstattung von Fehlern.
@@ -145,9 +140,7 @@ Diese Architekturmechanismen sind essentiell für die Entwicklung einer robusten
 * *Entities*: enthält alle Informationen zu den MES Entitäten
 * *User*: enthält alle Fremdschlüssel zu Nutzerinformationen
 * *User_Information*: enthält alle Information, die keine Adressdaten sind
-* *Address*: enthält alle Adressinformationen
-* *Security*: enthält alle Informationen, die einem Nutzer das Anmelden ermöglichen
-* *Workflows*: beschreiben den Arbeitsablauf des Programms und bilden die Reihenfolge ab, mit welcher in einem Programm gearbeitet wird.
+* *Config*: enthält alle Informationen zu den Konfigurationen
 
 
 == Schichten oder Architektur-Framework
