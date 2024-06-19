@@ -448,6 +448,11 @@ Alle anderen `add_X`-Funktionen für X={Lot,ProdFlow,PTime,Tool,WorkFlow} sind f
 ==== Entities-Verwaltung (Prototyp)
 Die Datei `entities.py`, sowie die dazugehörige HTML-Datei `entities_page.html` sind lediglich ein Prototyp für die Benutzung der Schnittstellen dieses Systems. Hierbei wird die Möglichkeit gegeben, neue Entitäten zu erstellen, zu bearbeiten und zu löschen. Diese Funktionalität ist nicht im finalen System implementiert, sondern dient lediglich als Beispiel für die Benutzung der Schnittstellen.
 
+==== Konzept: Backup erstellen
+Das Konzept für das Erstellen eines Backups der Datenbank ist in der Datei `backup.py`, welche das Shellskript `backup.sh` aufruft. Hierbei wird ein Backup der Datenbank erstellt und in einem Backup-Ordner gespeichert. Das Backup wird als SQL-Datei gespeichert und enthält alle Tabellen und Daten der Datenbank. Das Backup kann bei Bedarf wiederhergestellt werden, um die Datenbank in einen früheren Zustand zu versetzen.
+Diese Funktionalität ist nicht im aktuell auf dem Raspberry Pi laufenden System implementiert, sondern dient als Konzept für die Sicherung der Datenbank. Die aktuelle Implementierung erstellt zwar bereits ein Backup der Datenbank, jedoch wird dieses in einem falschen Ordner gespeichert und bisher auch noch nicht durch einen CronJob regelmäßig ausgeführt.
+Die System-Version mit der Backup-Funktionalität ist in einem separaten Branch `backup` im link:https://github.com/leni04/i04-projekt-frau-holle[Repository] auf GitHub verfügbar. Außerdem liegt diese Version auch auf dem Raspberry Pi in einem separaten Verzeichnis und ist unter `~/Dokumente/i04-projekt-frau-holle-with-backup` zu finden.
+
 === Config-Datei
 Die Konfigurationsdatei `config.py` beinhaltet alle Konfigurationen, die für die Webapplikation benötigt werden. Hierzu zählen beispielsweise die Informationen für den Datenbankzugriff, die URL für den Webserver oder der Applikationsname. Die Konfigurationsdatei wird in den Python-Dateien mittels `from config import Config` importiert und die Konfigurationen können dann über die Klasse `Config` abgerufen werden.
 
