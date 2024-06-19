@@ -46,7 +46,7 @@ Die Testergebnisse wurden in separate Test-Cases gruppiert und dokumentiert. Fü
 
 Jeder zuvor definierte Use-Case wurde in einem eigenen Test-Case aufgegriffen. Die systemweite Anforderungen wurden in einem eigenen Dokument (test_case_system_wide_requirements.adoc) getestet. Ebenso wurden einzelne Funktionialitäten, die keinem UseCase zugeordnet werden konnten, getestet (test_case_additional_testing.adoc). 
 
-== Testmethoden und -arten:
+== Testmethoden und -arten
 
 *Manuelle und automatisierte Tests*
 
