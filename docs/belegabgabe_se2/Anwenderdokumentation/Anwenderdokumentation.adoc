@@ -68,7 +68,6 @@ image::Lose_bewegen.png[width=100%, align="center"]
 Hier wird durch Eingabe der Los-ID das manuelle Bewegen von Losen ermöglicht. Lose werden so von „opcomp“ entweder auf „wait“ oder, sollte das Ende des Prodflows für das angegebene Los erreicht sein, auf „fin“ gesetzt. Damit das reibungslos funktioniert, wird der Nutzer nach Betätigen des Buttons ‚Move Lot‘ entweder zu einer Erfolgsseite weitergeleitet, wenn alles gut verlief, oder zu einer Fehlerseite, auf der dem Nutzer genau angezeigt wird, was falsch lief.
 
 === 4. Backups anlegen & laden
-## hab noch kein Bild
 
 In diesen beiden Bildschirmen wird es dem Nutzer ermöglicht, Backups des aktuellen DB-Standes anzulegen und diese zu verwalten, ganz einfach über Knopfdruck.
 
