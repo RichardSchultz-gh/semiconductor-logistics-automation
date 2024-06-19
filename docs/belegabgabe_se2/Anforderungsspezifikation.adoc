@@ -30,7 +30,7 @@ include::{docs}/_includes/default-attributes.inc.adoc[]
 
 <<<
 
-
+:imagesdir: {docs-requirements}/images
 
 // Vision
 include::{docs-requirements}/vision.adoc[lines=1..1;4..-1,leveloffset=+1]
