@@ -649,9 +649,9 @@ Bei erfolgreicher Testausführung befinden sich alle Backupdateien im Backup-Ver
 | *Korrekturstatus* | /
 |===
 
-== Test Case: Addional Testing: 
+== Test Case: Addional Testing 
 
-*Tests mit Fokus auf folgende Funktionalitäten*
+*Tests mit Fokus auf folgende Funktionalitäten:*
 
 * zusätzliche Softwarebestandteile, die keine systemweiten Anforderungen und keinem UseCase zugehörig sind 
 
@@ -677,9 +677,9 @@ z.B. absteigende LosID und Zustand WAIT im UseCase "Lost bearbeiten"
 |===
 
 '''
-== Test Case System-Wide Requirements: 
+== Test Case System-Wide Requirements 
 
-*Tests mit Fokus auf folgende Funktionalitäten*
+*Tests mit Fokus auf folgende Funktionalitäten:*
 
 * funktionale Anforderungen
 * nicht-funktionale Anforderungen
