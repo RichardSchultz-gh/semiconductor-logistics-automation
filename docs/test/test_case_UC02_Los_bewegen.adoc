@@ -1,5 +1,9 @@
 
-== Test Case UC02 - Lose bewegen
+== Test Case UC02 - Lose bewegen: {project-name}
+Vorname Nachname <email@domain.org>; Vorname2 Nachname2 <email2@domain.org>; Vorname3 Nachname3 <email3@domain.org>
+{localdatetime}
+include::../_includes/default-attributes.inc.adoc[]
+// Platzhalter für weitere Dokumenten-Attribute
 
 *Tests mit Fokus auf folgende Funktionalitäten:*
 
@@ -32,11 +36,11 @@ Bei erfolgreicher Testausführung befindet sich das Los am Ende im Zustand FIN u
 |===
 
 .UC2 TID1: Pass
-image::images/TC_UC2_TID1.png[]
+image::TC_UC2_TID1.png[]
 
 
 .UC2 TID1: Coverage Report
-image::images/coverage_uc2_tid1.png[]
+image::coverage_uc2_tid1.png[]
 
 '''
 
@@ -65,9 +69,9 @@ Bei erfolgreicher Testausführung wird das Los mit einer bestimmten Wahrscheinli
 |===
 
 .UC2 TID2: Pass
-image::images/TC_UC2_TIDD.png[]
+image::TC_UC2_TIDD.png[]
 .UC2 TID2: Coverage Report
-image::images/coverage_uc2_tid2.png[]
+image::coverage_uc2_tid2.png[]
 '''
 |===
 | *Test-ID* | 3 
