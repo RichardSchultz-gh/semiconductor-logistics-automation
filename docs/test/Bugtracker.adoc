@@ -12,19 +12,19 @@ Der Bugtracker dient der schnellen Erfassung aller aufgetretenen Fehler und häl
 
 *Test Case UC02 - Lose bewegen*
 
-* Fehlende Funktionalität: Lose, die nach der Produktion auf HOLD gesetzt worden sind, müssen manuell geprüft werden. Der Use-Case muss es ermöglichen, dass der Folgezustand dieser Lose manuell auf SCRAP oder OP_COMP gesetzt werden kann (siehe im unteren Bereich von docs/test/docs/requirements/use_case_02_Hinweise_Implementierung.adoc.). Wir haben die UseCases etwas abweichend (aber gut!) von den Wireframes implementiert. Ursprünglich war ein LineEdit gedacht. Einfacher ist eventuell eine Lösung mit einem Dropdown mit allen Losen im Zustand HOLD. Wahlweise dann mit einem weiteren Dropdown der Zustände HOLD/SCRAP und einem Button zum Absenden oder kein Dropdown mit zwei unterschiedliche Button zum Setzen des Zustandes SCRAP oder OP_COMP. [DONE];
+* Fehlende Funktionalität: Lose, die nach der Produktion auf HOLD gesetzt worden sind, müssen manuell geprüft werden. Der Use-Case muss es ermöglichen, dass der Folgezustand dieser Lose manuell auf SCRAP oder OP_COMP gesetzt werden kann (siehe im unteren Bereich von docs/test/docs/requirements/use_case_02_Hinweise_Implementierung.adoc.). Wir haben die UseCases etwas abweichend (aber gut!) von den Wireframes implementiert. Ursprünglich war ein LineEdit gedacht. Einfacher ist eventuell eine Lösung mit einem Dropdown mit allen Losen im Zustand HOLD. Wahlweise dann mit einem weiteren Dropdown der Zustände HOLD/SCRAP und einem Button zum Absenden oder kein Dropdown mit zwei unterschiedliche Button zum Setzen des Zustandes SCRAP oder OP_COMP. [DONE]
 
 *Test Case UC03 - Lose bearbeiten*
 
 * *Nach Möglichkeit die grafische Oberfläche anpassen: Tabellenbreite expandieren und Trennlinien wie bei "Los starten" einfügen*
-* Datenbank mit inkosistenten Variablen: Lot-Tabelle mit Distool|varchar(10) und Tool-Tabelle mit Tool|varchar(15) -> kann dazu führen, dass korrekt eingepflegte Maschinen der Tool-Tabelle das "Los bearbeiten" zum Absturz bringen [DONE];
+* Datenbank mit inkosistenten Variablen: Lot-Tabelle mit Distool|varchar(10) und Tool-Tabelle mit Tool|varchar(15) -> kann dazu führen, dass korrekt eingepflegte Maschinen der Tool-Tabelle das "Los bearbeiten" zum Absturz bringen [DONE]
 
 *Test Case UC04 - UC05 Stammdaten anzeigen/bearbeiten*
 
-* TID1: Invalid Data Format beim Eintragen von Process started und EnterOper [DONE];
-* TID1: Customer lässt sich bei mir nicht editieren und lädt ohne Ergebnis [DONE];
-* NiceToHave: Tabellenhöhe auf mehr als 3 Zeilen erweitern -> bessere Lesbarkeit [DONE];
-* NiceToHave: Auto-Refresh der Tabelle, wenn der Button Submit gedrückt wird -> bessere Usability [DONE];
+* TID1: Invalid Data Format beim Eintragen von Process started und EnterOper [DONE]
+* TID1: Customer lässt sich bei mir nicht editieren und lädt ohne Ergebnis [DONE]
+* NiceToHave: Tabellenhöhe auf mehr als 3 Zeilen erweitern -> bessere Lesbarkeit [DONE]
+* NiceToHave: Auto-Refresh der Tabelle, wenn der Button Submit gedrückt wird -> bessere Usability [DONE]
 
 *Test Case UC06-UC07 Daten importieren/eportieren*
 
