@@ -4,7 +4,7 @@ Vorname Nachname <email@domain.org>; Vorname2 Nachname2 <email2@domain.org>; Vor
 include::../_includes/default-attributes.inc.adoc[]
 // Platzhalter für weitere Dokumenten-Attribute
 
-== Test Case UC01 - Lose starten:
+== Test Case UC01 - Lose starten
 
 *Tests mit Fokus auf folgende Funktionalitäten:*
 
@@ -199,7 +199,7 @@ Anlegen eines Loses und Setzen eines Startdatums<currenttime
 | *Korrekturstatus* | /
 |===
 
-== Test Case UC02 - Lose bewegen:
+== Test Case UC02 - Lose bewegen
 
 *Tests mit Fokus auf folgende Funktionalitäten:*
 
@@ -323,7 +323,7 @@ Bei erfolgreicher Testausführung wird das Los nicht bewegt und es erscheint ein
 | *Korrekturstatus* | /
 |===
 
-== Test Case UC03 - Lose bearbeiten: 
+== Test Case UC03 - Lose bearbeiten
 
 *Tests mit Fokus auf folgende Funktionalitäten:*
 
@@ -476,7 +476,7 @@ image::TC_UC3_TID4.png[]
 .UC3 TID5: korrekte Failure-Page
 image::TC_UC3_TID5.png[]
 
-== Test Case UC04/UC05 - Stammdaten anzeigen/bearbeiten: 
+== Test Case UC04/UC05 - Stammdaten anzeigen/bearbeiten 
 
 *Tests mit Fokus auf folgende Funktionalitäten:*
 
@@ -541,7 +541,7 @@ Process started: 08.05.2024-09,05.2024
 image::TC_UC5_TID1_Value_Error.png[]
 
 '''
-== Test Case UC05/UC06 - Daten exportieren/importieren: 
+== Test Case UC06/UC07 - Daten exportieren/importieren
 
 *Tests mit Fokus auf folgende Funktionalitäten:*
 
@@ -614,7 +614,7 @@ image::TC_UC6_TID1_import mit falschem header.png[]
 
 '''
 
-== Test Case UC08 - Backup erstellen:
+== Test Case UC08 - Backup erstellen
 
 *Tests mit Fokus auf folgende Funktionalitäten:*
 
@@ -651,7 +651,7 @@ Bei erfolgreicher Testausführung befinden sich alle Backupdateien im Backup-Ver
 
 == Test Case: Addional Testing: 
 
-*Tests mit Fokus auf folgende Funktionalitäten:*
+*Tests mit Fokus auf folgende Funktionalitäten*
 
 * zusätzliche Softwarebestandteile, die keine systemweiten Anforderungen und keinem UseCase zugehörig sind 
 
@@ -679,7 +679,7 @@ z.B. absteigende LosID und Zustand WAIT im UseCase "Lost bearbeiten"
 '''
 == Test Case System-Wide Requirements: 
 
-*Tests mit Fokus auf folgende Funktionalitäten:*
+*Tests mit Fokus auf folgende Funktionalitäten*
 
 * funktionale Anforderungen
 * nicht-funktionale Anforderungen
