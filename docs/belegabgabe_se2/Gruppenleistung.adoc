@@ -2,11 +2,12 @@
 
 == TOP 3 Erfolge
 
-=== Erfolg 1 - Workflow //Schluss fehlt noch
+=== Erfolg 1 - Workflow
 
 Mit dem zweiten Projektteil im Sommersemester begann die Implementierung der Use Cases. Da man Code nicht einfach runterschreibt und dann ist er abgabebereit, haben wir uns überlegt, wie man den Workflow angehen kann.
 
-Dabei waren wir uns einig, dass durch Pull-Requests der Code überprüft werden muss, bevor er ins Repository aufgenommen wird. So kann man zum einen die Funktionalitäten überprüfen und Fehler frühzeitig beheben, sodass der neue Code nicht den bisherigen Code beeinträchtigt. Entwickelt wird der Code, basierend auf der Anforderungsanalyse und Architekur. Sollte es notwendig sein, wird beides vorm Coden erneut über- oder erarbeitet.
+Dabei waren wir uns einig, dass durch Pull-Requests der Code überprüft werden muss, bevor er ins Repository aufgenommen wird. So kann man zum einen die Funktionalitäten überprüfen und Fehler frühzeitig beheben, sodass der neue Code nicht den bisherigen Code beeinträchtigt. 
+Entwickelt wird der Code, basierend auf der Anforderungsanalyse und Architekur. Sollte es notwendig sein, wird beides vorm Coden erneut über- oder erarbeitet.
 Danach muss der Code getestet werden und die Anmerkungen, die aus dem Testing entstehen, müssen bearbeitet werden und dann wieder zum Testing gehen. Als Letztes wird die Implementierung des Use Cases dem Auftraggeber vorgelegt. Anmerkungen daraus werden wieder nach dem Workflow behandelt. 
 
 Das Konzept eines Workflows, wie oben beschrieben, und eine erfolgreiche Umsetzung sind jedoch zwei unterschiedliche Dinge. 
@@ -14,9 +15,9 @@ Das Konzept eines Workflows, wie oben beschrieben, und eine erfolgreiche Umsetzu
 Als ein Erfolg im Projekt kann die Umsetzung des Workflows genannt werden. Die Teammitglieder haben sich an diesen Workflow gehalten und dynamisch Schritte wiederholt, wenn nötig. Es war den Mitgliedern klar, wer wann was tun muss. So wurden die Funktionen nach der Programmierung per Pull-Request hochgeladen, woraufhin diese von der zuständigen Person überprüft und übernommen (oder nicht übernommen) wurden. Bei Anmerkungen wurde die Aufgabe zurückgegeben und die Anmerkungen bearbeitet.
 Wenn ein Use Case fertig war, wurde dies dem Team mitgeteilt und vorgestellt. Daraufhin hat sich das Testing von alleine angesprochen gefühlt und hat mit dem Testing gestartet. Dabei hätte die Projektleitung nicht einmal die Aufgabe "offiziell" in dem Moment ans Testing verteilen müssen: Das entsprechende Mitglied hat sich bei der Fertigstellung der Use Cases direkt angesprochen gefühlt. 
 
-Dass das Team einen guten Workflow hat, wurde vor allem deutlich, als die Projektleitung für 1-2 Wochen während der "Construction Phase" krankheitsbedingt ausgefallen ist und nur sporadisch Dinge erledigen konnte, so z.B. die großen Aufgaben verteilen, jedoch keine kleinen zwischen Aufgaben. Während dieser Zeit waren die aktuellen Use Cases abgesprochen und die Teammitglieder haben fast komplett eigenständig die Use Cases fertiggestellt, also gecodet, geprüft und getestet, ohne dass die Projektleitung diese Einzelschritte jedes Mal neu zuweisen musste. Die Teammitglieder haben sich gegenseitig überprüft und vor allem geholfen. In dieser Zeit wurde klar, dass das Team im Essenz Alpha "Team" die XXX "Performing" umsetzt.
+Dass das Team einen guten Workflow hat, wurde vor allem deutlich, als die Projektleitung für 1-2 Wochen während der "Construction Phase" krankheitsbedingt ausgefallen ist und nur sporadisch Dinge erledigen konnte, so z.B. die großen Aufgaben verteilen, jedoch keine kleinen zwischen Aufgaben. Während dieser Zeit waren die aktuellen Use Cases abgesprochen und die Teammitglieder haben fast komplett eigenständig die Use Cases fertiggestellt, also gecodet, geprüft und getestet, ohne dass die Projektleitung diese Einzelschritte jedes Mal neu zuweisen musste. Die Teammitglieder haben sich gegenseitig überprüft und vor allem geholfen. In dieser Zeit wurde klar, dass das Team im Essenz Alpha "Team" den Zustand "Performing" erreicht hat.
 
-//Natürlich gab es ab und zu mal kleinere Probleme, bei denen der Workflow nicht komplett umgesetzt wurde, aber im Großen und Ganzen hat das Team einen guten und effektiven Workflow entwickelt und umgesetzt. 
+Natürlich gab es ab und zu mal kleinere Probleme, bei denen der Workflow nicht komplett umgesetzt wurde, aber im Großen und Ganzen hat das Team einen guten und effektiven Workflow entwickelt und umgesetzt. 
 
 === Erfolg 2 - Wissensaneignung
 
@@ -38,30 +39,32 @@ Dies ist unserer Meinung nach ein großer Erfolg des Projekts. Wir haben uns von
 
 Die Herausforderung dieses Projektes war, im Vergleich zu anderen Projekten im Studium, dass man keine feste Aufgabenstellung hatte, die einem zu Beginn des Projekts gegeben wurde. Stattdessen gibt es einen Auftragsgeber. In Gesprächen mit dem Auftragsgeber erschließt man sich als Team nach und nach das Ziel des Projekts. 
 
-...
+Für die Meetings mit dem Auftragsgeber haben für als Tool für diese effektive Zusammenarbeit vor jeden Meeting eine Agenda erstellt, was wir besprechen wollen, und diese an den Auftragsgeber geschickt. So wusste zum einem der Austragsgeber vor dem Meeting die Inhalte und konnte sich ggf. dazu weitere Gedanken machen. Zum anderen wusste das Team aber auch, welche Themen konkret besprochen werden und konnten sich so besser darauf vorbereiten.
 
 In der iterative Vorgehensweise wird ein regelmäßiges Meeting mit dem Auftragsgeber vorgesehen. Wir haben gemerkt, dass der "Zwang" dieses Meetings dazu führt, dass man produktiver arbeitet, da man dem Auftragsgeber etwas vorstellen möchte. Dadurch profitiert die Arbeit. 
+
+Da bei den Meetings viele Personen anwesend sein sollten, stellte sich die Terminfindung als komplex heraus. Damit alle benötigten Personen bei dem Meeting dabei sein konnten, haben wir die regelmäßigen Meetings Absprachen mit ausreichend Vorlauf getroffen. So konnten alle den Termin langfristig einplanen und konnten fast immer wahrgenommen werden. (Meetings mussten nur aus gesundheitlichen Gründen gelegendlich abgesagt werden.) 
+Um ein Termin zu finden, haben wir im groupware-Kalender der Hochschule nach möglochen Terminen des Auftragsgeber geschaut und dann intern über Umfragen geschaut, wo die entsprechenden Leute konnten. Durch den groupware-Kalender konnten wir schnell und ohne großes Hin-und-Her die Termine mit dem Auftragsgeber fest machen. 
 
 Gab es fragen, haben wir aber auch zwischendurch spontane Meetings gemacht, um Fragen zu klären, ohne die man nicht weiter arbeiten hätte können. (https://github.com/leni04/i04-projekt-frau-holle/blob/main/docs/project_management/iteration_plan_03.adoc#assessment)
 Diese enge Zusammenabreit mit dem Auftragsgeber hat dafür gesorgt, dass wir es viel überprüfen gab, ob das was wir machen im Sinne des Auftragsgeber ist. So haben wir verhindret in die falsche Richtigung zu arbeiten.
 
+... 
 
+ - offene und vor allem transparente Kommunikation mit Herr Ringe: Bei Hürden konnte ein offener Meinungsaustausch stattfinden -> es wurden folglich zeitgerechte Lösungen für Probleme erarbeitet
 
 ...
 
-*Kommentare/Ideen Erfolg 3 (Paul):*
+//*Kommentare/Ideen Erfolg 3 (Paul):*
 
-- Tools für effektive Zusammenarbeit: Agenda vor jedem Meeting erstellt und dem Auftraggeber zukommen lassen -> Win: bessere Vorbereitung und Thema des Meetings bereits konkret abgesteckt
-- Meetings müssen immer mit mehreren Personen abgesprochen werden. Nicht immer einfach: unterschiedliche Stundenpläne, voller Kalender des Auftraggebers. Lösung: Für die regelmäßigen Meetings Absprachen mit ausreichend Vorlauf. Interne Abstimmung bevor der Auftraggeber kontaktiert worden ist z.B. mithilfe von Abstimmungstools innerhalb WhatsApp. Win: Termine konnten mit Auftraggeber fast immer wahrgenommen und erfolglreich durchgeführt werden
-- offene und vor allem transparente Kommunikation mit Herr Ringe: Bei Hürden konnte ein offener Meinungsaustausch stattfinden -> es wurden folglich zeitgerechte Lösungen für Probleme erarbeitet
-
-
-
+//- Tools für effektive Zusammenarbeit: Agenda vor jedem Meeting erstellt und dem Auftraggeber zukommen lassen -> Win: bessere Vorbereitung und Thema des Meetings bereits konkret abgesteckt -> umgesetzt
+//- Meetings müssen immer mit mehreren Personen abgesprochen werden. Nicht immer einfach: unterschiedliche Stundenpläne, voller Kalender des Auftraggebers. Lösung: Für die regelmäßigen Meetings Absprachen mit ausreichend Vorlauf. Interne Abstimmung bevor der Auftraggeber kontaktiert worden ist z.B. mithilfe von Abstimmungstools innerhalb WhatsApp. Win: Termine konnten mit Auftraggeber fast immer wahrgenommen und erfolglreich durchgeführt werden -> umgesetzt
+//- offene und vor allem transparente Kommunikation mit Herr Ringe: Bei Hürden konnte ein offener Meinungsaustausch stattfinden -> es wurden folglich zeitgerechte Lösungen für Probleme erarbeitet
 
 
 == TOP 3 Misserfolge
 
-=== Misserfolg 1 - Kommunikation zwischen Architekten & Entwicklern
+=== Misserfolg 1 - Kommunikation zwischen Architekten & Entwicklern //work in progress
 
 Als ersten Misserfolg im Projekt lässt sich anführen, dass die Kommunikation zwischen Architekten und Entwicklern zu Beginn des Projekt eher schlecht war. 
 Als die Arbeit der Architekten und Entwickler gestartet ist, sollten diese sich für den Prototypen zusammensetzen und beraten. Da keines der Mitglieder vorher Erfahrung in der Entwicklung einer Architektur hatten, sollten sich alle vier zusammensetzen und beraten, was z.B. für die Implementierung am besten erscheint. 
