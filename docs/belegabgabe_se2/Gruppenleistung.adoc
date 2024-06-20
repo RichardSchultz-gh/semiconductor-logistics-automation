@@ -73,6 +73,10 @@ Jedoch kam trotz Bemühung Einzelner keine Kommunikation auf. Über die Weihnach
 
 Auch die Kommunikation zwischen den Architekten untereinander war zu Beginn mangelhaft. Aufgaben wurden nicht untereinander besprochen und es herrschte kein Austausch.
 
+Die schlechte Kommunikation zeichnete sich durch lange Antwortzeiten, Erreichbarkeit und wenig proaktives Auseinanderzugehen aus. Diese mangelhafte Kommunikation hat zu wenig Austausch geführt. Der geringe Austausch hat sich negativ auf das Projekt ausgewirkt, da die Implementierung auf den Entwurfentscheidungen aufbaut. Durch die fehlende Kommunikation konnten die Entwickler nicht weiterarbeiten und es kam zu Verzögerungen.
+
+
+
 Mit Beginn des zweiten Projektteils haben sich die Rollen etwas verschoben. Die Kommunikation unter diesen vieren wurde deutlich besser und gegen Ende des Projekts herrschte im Allgemeinen eine gute Kommunikation.
 
 //hier könnte man noch schreiben, dass die Aufgabenverteilung an die Personen besser angepasst wurden und daher die Strukturen anders waren. Nico und Yannik konnten die Paararbeit nicht so gut, deshalb machen sie dann einzelarbeiten und berichten an Nils als Head Develper. 
@@ -106,10 +110,15 @@ Um diese Probleme zu umgehen, könnte man einem Extrameeting zwischen "Vorarbeit
 
 *Kommentare/Ideen Misserfolg 3 (Paul):*
 
-- Absatz 1: Konkret auf unsere Projekt beziehen und nicht allgemein schildern.
+- Absatz 1: Konkret auf unsere Projekt beziehen und nicht allgemein schildern. -> Marlene: habe das ganze beim workflow ja schon irgendwie beschrieben und fands zu viel und wiederholend 
+
 - Absatz 2: Code-Verständnis ist beim Testing konkret beim Code Review zu Beginn des Semesters und bei den JUnit-Tests notwendig gewesen, die sich auf die programmierten Funktionen beziehen (nicht generell)
-- Absatz 2: Weitere Probleme beim Wissentransfer: Programmierer mussten die Use-Cases und die Geschäftslogik verstehen -> hier musste z.B. ein Verständnis für den Materialfluss (Loszustände) und die Maschinenzustände entstehen, um korrekt zu programmieren. Weiteres Problem beim Wissentragsfer von den Requirements zur Implementierung: In dem Dokument use_case_02_Hinweise_Implementierung.adoc wurde bspw. von mir eine ellenlange Anleitung zur genauen Implementierung aufgeschrieben -> das will aber in der Praxis keiner Lesen -> ein Teil der UseCase-Funktionalität (das manuelle Setzen von Losen im Zustand HOLD auf SCRAP oder OP_COMP) wurde dadurch bei der Programmierung vergessen
+
+- Absatz 2: Weitere Probleme beim Wissentransfer: Programmierer mussten die Use-Cases und die Geschäftslogik verstehen -> hier musste z.B. ein Verständnis für den Materialfluss (Loszustände) und die Maschinenzustände entstehen, um korrekt zu programmieren. 
+Weiteres Problem beim Wissentragsfer von den Requirements zur Implementierung: In dem Dokument use_case_02_Hinweise_Implementierung.adoc wurde bspw. von mir eine ellenlange Anleitung zur genauen Implementierung aufgeschrieben -> das will aber in der Praxis keiner Lesen -> ein Teil der UseCase-Funktionalität (das manuelle Setzen von Losen im Zustand HOLD auf SCRAP oder OP_COMP) wurde dadurch bei der Programmierung vergessen
+
 - Absatz 2: Es gab bestimmt auch Probleme beim Wissentransfer zwischen Entwurf und Implementierung, hier ggf. mit Nils sprechen
+-
 - Absatz 3: Ressourcen verschwendet deatiliert erklären: Bei einer Themen-Übergabe in einer kleinen Gruppe kann viel spezifischer ein konkretes Problem bearbeitet werden. Außerdem sind nur Personen anwesend, die von dem jeweiligen Thema betroffen sind -> Effizienz 
 
 - Generelles Problem beim Wissentransfer/Kommunikation war außerdem, dass Wissen häufig nur auf Nachfrage vermittelt worden ist und nicht gezielt und proaktiv platziert worden ist. Beispiel: Installation der Software hat jeder lokal bei sich vorgenommen, da hatten wir bestimmt viele Probleme doppelt (Pakete, Datenbankverbindung, Einrichtung pgAdmin etc.) -> da habe ich YoutubeTutorials geschaut, obwohl die Datenbank bei einigen aus dem Team schon lief -> hätte man ausführlicher dokumentieren können 
