@@ -49,10 +49,11 @@ Diese enge Zusammenabreit mit dem Auftragsgeber hat dafür gesorgt, dass wir es 
 
 ...
 
+*Kommentare/Ideen Erfolg 3 (Paul):*
 
-
-
-
+- Tools für effektive Zusammenarbeit: Agenda vor jedem Meeting erstellt und dem Auftraggeber zukommen lassen -> Win: bessere Vorbereitung und Thema des Meetings bereits konkret abgesteckt
+- Meetings müssen immer mit mehreren Personen abgesprochen werden. Nicht immer einfach: unterschiedliche Stundenpläne, voller Kalender des Auftraggebers. Lösung: Für die regelmäßigen Meetings Absprachen mit ausreichend Vorlauf. Interne Abstimmung bevor der Auftraggeber kontaktiert worden ist z.B. mithilfe von Abstimmungstools innerhalb WhatsApp. Win: Termine konnten mit Auftraggeber fast immer wahrgenommen und erfolglreich durchgeführt werden
+- offene und vor allem transparente Kommunikation mit Herr Ringe: Bei Hürden konnte ein offener Meinungsaustausch stattfinden -> es wurden folglich zeitgerechte Lösungen für Probleme erarbeitet
 
 
 
@@ -73,7 +74,13 @@ Mit Beginn des zweiten Projektteils haben sich die Rollen etwas verschoben. Die 
 
 //hier könnte man noch schreiben, dass die Aufgabenverteilung an die Personen besser angepasst wurden und daher die Strukturen anders waren. Nico und Yannik konnten die Paararbeit nicht so gut, deshalb machen sie dann einzelarbeiten und berichten an Nils als Head Develper. 
 
-=== Misserfolg 2 - Verteilung
+*Kommentare/Ideen Misserfolg 1 (Paul):*
+
+- Gern auf die Konsequenzen eingehen: zu was führt wenig Austausch oder ein nicht stattgefundes Treffen in Bezug auf das Projekt (Zeitpläne nicht eingehalten, wir müssen und alle aufeinander verlassen können, da die Arbeit aufeinander aufbaut -> Implentierung setzt einige Entwurfsentscheidungen voraus)? 
+- Kommunikation könnte auch konkreter besprochen werden: nicht jeder war immer erreichbar, lange Antwortzeiten, teilweise nur Reaktion auf Angefragtes und kein proaktives Aufeinanderzugehen
+
+
+=== Misserfolg 2 - Arbeitsverteilung
 
 Als zweiten Misserfolg im Projekt ist anzuführen, dass die Verteilung des Workload nicht immer geglückt ist. Einige Teammitglieder haben zu Zeiten deutlich mehr gemacht als andere. 
 
@@ -93,3 +100,14 @@ Beim Rückblick auf das Projekt ist uns aufgefallen, dass es zu wengi Wissenstra
 So musste sich der Tester z.B. aufwendig in den Code der Entwickler einlesen, um diesen zu verstehen und nur so auch testen zu können. Dadurch ist zeitlicher Mehraufwand entstanden und hat den Beginn des Testings verzögert. Zudem bietet dies Spielraum für Fehler. Wenn sich Sachverhalte der z.B. Analyse neu erschlossen werden müssen, können Fehlinterpretationen entstehen. 
 
 Um diese Probleme zu umgehen, könnte man einem Extrameeting zwischen "Vorarbeiter" und "Nacharbeiter" das Erarbeitete des "Vorarbeiters" im tieferen Detail besprechen. So können sich beide verständigen und so Missverständnisse vermeiden. Zwar könnte man auch das Teammeeting dafür nutzen, jedoch sind wir der Meinung, dass man dadurch Ressourcen verschwendet. Dies müsste man in einem folgenden Projekt ausprobieren und sehen, ob das Extrameeting sinnvoll ist und zur Effizienz des Teams beiträgt. 
+
+*Kommentare/Ideen Misserfolg 3 (Paul):*
+
+- Absatz 1: Konkret auf unsere Projekt beziehen und nicht allgemein schildern.
+- Absatz 2: Code-Verständnis ist beim Testing konkret beim Code Review zu Beginn des Semesters und bei den JUnit-Tests notwendig gewesen, die sich auf die programmierten Funktionen beziehen (nicht generell)
+- Absatz 2: Weitere Probleme beim Wissentransfer: Programmierer mussten die Use-Cases und die Geschäftslogik verstehen -> hier musste z.B. ein Verständnis für den Materialfluss (Loszustände) und die Maschinenzustände entstehen, um korrekt zu programmieren. Weiteres Problem beim Wissentragsfer von den Requirements zur Implementierung: In dem Dokument use_case_02_Hinweise_Implementierung.adoc wurde bspw. von mir eine ellenlange Anleitung zur genauen Implementierung aufgeschrieben -> das will aber in der Praxis keiner Lesen -> ein Teil der UseCase-Funktionalität (das manuelle Setzen von Losen im Zustand HOLD auf SCRAP oder OP_COMP) wurde dadurch bei der Programmierung vergessen
+- Absatz 2: Es gab bestimmt auch Probleme beim Wissentransfer zwischen Entwurf und Implementierung, hier ggf. mit Nils sprechen
+- Absatz 3: Ressourcen verschwendet deatiliert erklären: Bei einer Themen-Übergabe in einer kleinen Gruppe kann viel spezifischer ein konkretes Problem bearbeitet werden. Außerdem sind nur Personen anwesend, die von dem jeweiligen Thema betroffen sind -> Effizienz 
+
+- Generelles Problem beim Wissentransfer/Kommunikation war außerdem, dass Wissen häufig nur auf Nachfrage vermittelt worden ist und nicht gezielt und proaktiv platziert worden ist. Beispiel: Installation der Software hat jeder lokal bei sich vorgenommen, da hatten wir bestimmt viele Probleme doppelt (Pakete, Datenbankverbindung, Einrichtung pgAdmin etc.) -> da habe ich YoutubeTutorials geschaut, obwohl die Datenbank bei einigen aus dem Team schon lief -> hätte man ausführlicher dokumentieren können 
+
