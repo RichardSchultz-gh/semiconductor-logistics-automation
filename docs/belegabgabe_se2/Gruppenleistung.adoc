@@ -19,6 +19,9 @@ Dass das Team einen guten Workflow hat, wurde vor allem deutlich, als die Projek
 
 Natürlich gab es ab und zu mal kleinere Probleme, bei denen der Workflow nicht komplett umgesetzt wurde, aber im Großen und Ganzen hat das Team einen guten und effektiven Workflow entwickelt und umgesetzt. 
 
+//Kommentar/Idee (Nils):
+//Eventuell noch kurz darauf eingehen, dass wir durch den Workflow, auch mit genannten Problemen (wie krankheitsbedingte Ausfälle) immer nach jeder Iteration ein inkrementelles Ergebnis hatten, das wir dem Auftraggeber präsentieren konnten. (um auf die agile Vorgehensweise einzugehen)
+
 === Erfolg 2 - Wissensaneignung
 
 Als wir das Projekt angefangen haben, hatten die einzelnen Teammitglieder kaum bis keine Erfahrungen mit den Themen des Projekts oder wie man ein Projekt wie dieses angeht. 
@@ -27,7 +30,13 @@ Zu Beginn war es eine Herausforderung für alle Bereiche, ohne jegliches Wissen,
 
 Neben den Kompetenzen zur Projektdurchführung, war vor allem das Aneignen des technischen Wissens ein großer Erfolg des Projekts.
 
-Mit den uns vorgegebenen Sprachen und Techniken - Python, SQL, HTML, RaspberryPi - hatten wir bisher nur sporadisch oder gar nicht gearbeitet. Dies hat immer wieder eine Hürde dargestellt. In den Vorlesungen des Moduls lernten wir das benötigte Wissen zum Projektmanagement, der Analyse und der Architektur, die wichtig zum Vorgehen waren, jedoch wurden keine Techniken besprochen. (Techniken im Sinne von Sprachen etc.)
+Mit den uns vorgegebenen Sprachen und Techniken - Python, SQL, HTML, RaspberryPi - hatten wir bisher nur sporadisch oder gar nicht gearbeitet. Dies hat immer wieder eine Hürde dargestellt. In den Vorlesungen des Moduls lernten wir das benötigte Wissen zum Projektmanagement, der Analyse und der Architektur, die wichtig zum Vorgehen waren, jedoch wurden keine Techniken besprochen. (Techniken im Sinne von Sprachen etc.) 
+
+//Kommentare/Ideen (Nils):
+// - statt Techniken vielleicht besser von Technologien sprechen, da Techniken eher Methoden sind und Technologien die Sprachen und Tools sind, die wir benutzt haben
+// - in dem Abschnitt evt. auch darauf eingehen, dass wir durch das fehlende Wissen der vorgegebenen Technologien und Sprachen, auch eine große Schwierigkeit hatten, zu den Anforderungen passende Schnittstellen und Frameworks zu finden und zu implementieren. -> dabei hat uns die iterative Vorgehensweise und das Erstellen von Prototypen geholfen, da wir immer durch Feedback des Auftraggebers und des Teams wussten, ob diese Frameworks und Schnittstellen geeignet sind oder nicht
+// -> z.B. haben wir am Anfang vom 3. Semester erst Tkinter verwendet, aber nach Rücksprache mit dem Auftraggeber und dem Team haben wir uns für Flask entschieden, da es für unser Projekt besser geeignet war 
+// -> oder haben wir zwischen den beiden Semestern uns entschieden von psycopg2 auf SQLAlchemy zu wechseln
 
 Davon haben wir uns jedoch nicht aufhalten lassen. Immer wenn uns Wissen fehlte, haben wir uns das benötigte Wissen, entweder gesteuert durch das Projektmanagement oder aus Eigeninitiative, erarbeitet. 
 
@@ -47,7 +56,7 @@ Da bei den Meetings viele Personen anwesend sein sollten, stellte sich die Termi
 Um ein Termin zu finden, haben wir im groupware-Kalender der Hochschule nach möglochen Terminen des Auftragsgeber geschaut und dann intern über Umfragen geschaut, wo die entsprechenden Leute konnten. Durch den groupware-Kalender konnten wir schnell und ohne großes Hin-und-Her die Termine mit dem Auftragsgeber fest machen. 
 
 Gab es fragen, haben wir aber auch zwischendurch spontane Meetings gemacht, um Fragen zu klären, ohne die man nicht weiter arbeiten hätte können. (https://github.com/leni04/i04-projekt-frau-holle/blob/main/docs/project_management/iteration_plan_03.adoc#assessment)
-Diese enge Zusammenabreit mit dem Auftragsgeber hat dafür gesorgt, dass wir es viel überprüfen gab, ob das was wir machen im Sinne des Auftragsgeber ist. So haben wir verhindret in die falsche Richtigung zu arbeiten.
+Diese enge Zusammenarbeit mit dem Auftragsgeber hat dafür gesorgt, dass wir oft überprüften, ob das was wir machen im Sinne des Auftragsgeber ist. So haben wir verhindret in die falsche Richtigung zu arbeiten.
 
 ... 
 
@@ -81,11 +90,14 @@ Mit Beginn des zweiten Projektteils haben sich die Rollen etwas verschoben. Die 
 
 //hier könnte man noch schreiben, dass die Aufgabenverteilung an die Personen besser angepasst wurden und daher die Strukturen anders waren. Nico und Yannik konnten die Paararbeit nicht so gut, deshalb machen sie dann einzelarbeiten und berichten an Nils als Head Develper. 
 
+
 *Kommentare/Ideen Misserfolg 1 (Paul):*
 
 - Gern auf die Konsequenzen eingehen: zu was führt wenig Austausch oder ein nicht stattgefundes Treffen in Bezug auf das Projekt (Zeitpläne nicht eingehalten, wir müssen und alle aufeinander verlassen können, da die Arbeit aufeinander aufbaut -> Implentierung setzt einige Entwurfsentscheidungen voraus)? 
 - Kommunikation könnte auch konkreter besprochen werden: nicht jeder war immer erreichbar, lange Antwortzeiten, teilweise nur Reaktion auf Angefragtes und kein proaktives Aufeinanderzugehen
 
+//Kommentare/Ideen Misserfolg 1 (Nils):
+//- auch auf Konsequenz eingehen, dass durch fehlende Kommunikation sich die Architekturentscheidungen nicht nur verzögerten, sondern durch weniger Austausch auch weniger passend für das Projekt waren. Dadurch mussten die Entwickler teils mehr Zeit in die Implementierung stecken, da die Architektur nicht gesichert auf die Anforderungen passte. Auch mussten wir dadurch auch die Frameworks und Schnittstellen teils ändern (psycopg2 -> SQLAlchemy).
 
 === Misserfolg 2 - Arbeitsverteilung
 
@@ -94,9 +106,14 @@ Als zweiten Misserfolg im Projekt ist anzuführen, dass die Verteilung des Workl
 Zu Beginn der Projektarbeit haben die Analysten deutlich mehr Arbeit geleistet als andere Mitglieder. Der zeitliche Aufwand war im ersten Semester durch die Menge an Analysten-Aufgaben deutlich größer als der der z.B. Entwickler oder des Testing. Gegen Ende des Projekts hat sich das von den Analysten zu den Entwicklern gewandelt. Dort hat vor allem der Head-Developer zeitweise einen deutlich größeren zeitlichen Aufwand gehabt als andere Mitglieder. 
 
 Zum einen liegt dies natürlich daran, dass die Aufgaben im Laufe des Projekts ungleich auf die Rollen verteilt waren. Daran kann man nicht viel ändern oder verbessern.
+//*Kommentare/Ideen Misserfolg 2 (Nils):
+// - evt. könnte man dennoch etwas an der ungleichen Aufgabenverteilung ändern, indem bspw. die Entwickler zu beginn auch mit helfen, kleinere Analysteaufgaben zu übernehmen, um so die Analysten zu entlasten und die Entwickler schon frühzeitig in die Thematik einzuführen (bin mir aber unsicher, ob das hier gewollt ist, da wir ja auch die Rollenverteilung und die Aufgabenverteilung beachten sollten)
 Zum anderen kann es auch an fehlenden Erfahrungen in der Projektdurchführung liegen. Zu Beginn des Projekts wussten wir nicht was die Entwickler oder Tester machen müssen und was sie in dieser Zeit vielleicht schon vorbereiten hätten können. Zurückblickend können Architekten früher mit ihrer Arbeit anfangen, es braucht kein komplett analysiertes Projekt, um mit der Architektur beginnen zu können und die Entwickler könnten früher anfangen Wireframes umzusetzen oder Funktionen, die schnell ersichtlich sind, umzusetzen. Dadurch könnte man z.B. den Prototypen schneller fertigstellen und dann weiterarbeiten.
 
 Bei langfristigeren und größeren Projekten als diesem hier ist eine ungleiche Arbeitsverteilung nicht nachhaltig. Uns ist deutlich geworden, dass bei künftigen Projekten von Anfang an mehr darauf geachtet werden muss, welchen Arbeitsaufwand jemand hat und bei ungleicher Verteilung muss man versuchen so gut es geht die Aufgaben besser zu verteilen und ggf. den Rollenverteilung anzupassen.
+
+
+
 
 === Misserfolg 3 - Wissenstransfer //done but not really happy with it
 
