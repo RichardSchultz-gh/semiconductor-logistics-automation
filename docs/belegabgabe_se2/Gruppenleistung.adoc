@@ -21,6 +21,7 @@ Natürlich gab es ab und zu mal kleinere Probleme, bei denen der Workflow nicht 
 
 //Kommentar/Idee (Nils):
 //Eventuell noch kurz darauf eingehen, dass wir durch den Workflow, auch mit genannten Problemen (wie krankheitsbedingte Ausfälle) immer nach jeder Iteration ein inkrementelles Ergebnis hatten, das wir dem Auftraggeber präsentieren konnten. (um auf die agile Vorgehensweise einzugehen)
+//vllt noch eine kurze Erwähnung von GitHub Issues, die wir für die Aufgabenverteilung genutzt haben, um den Workflow zu unterstützen
 
 === Erfolg 2 - Wissensaneignung
 
