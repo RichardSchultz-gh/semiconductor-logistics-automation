@@ -49,9 +49,7 @@ Um ein Termin zu finden, haben wir im groupware-Kalender der Hochschule nach mö
 Gab es fragen, haben wir aber auch zwischendurch spontane Meetings gemacht, um Fragen zu klären, ohne die man nicht weiter arbeiten hätte können. (https://github.com/leni04/i04-projekt-frau-holle/blob/main/docs/project_management/iteration_plan_03.adoc#assessment)
 Diese enge Zusammenabreit mit dem Auftragsgeber hat dafür gesorgt, dass wir es viel überprüfen gab, ob das was wir machen im Sinne des Auftragsgeber ist. So haben wir verhindret in die falsche Richtigung zu arbeiten.
 
-... 
-
- - offene und vor allem transparente Kommunikation mit Herr Ringe: Bei Hürden konnte ein offener Meinungsaustausch stattfinden -> es wurden folglich zeitgerechte Lösungen für Probleme erarbeitet
+Ein weiterer Punkt ist die offene und vor allem transparente Kommunikation mit dem Auftragsgeber. Das Team hat offen Probleme kommuniziert, weshalb stehts ein offener Meinungsaustausch stattfand. So war der Auftragsgeber immer informiert über den Stand und die Hürden des Projekts und es konnten gemeinsam zeitgerechte Lösungen für diese Probleme erarbeitet werden. Diese offene Kommunikation hat dem Team aber vermutlich auch dem Auftragsgeber geholfen, da so keine unrealistischen Erwartungen entstanden sind. 
 
 ...
 
@@ -76,7 +74,6 @@ Auch die Kommunikation zwischen den Architekten untereinander war zu Beginn mang
 Die schlechte Kommunikation zeichnete sich durch lange Antwortzeiten, Erreichbarkeit und wenig proaktives Auseinanderzugehen aus. Diese mangelhafte Kommunikation hat zu wenig Austausch geführt. Der geringe Austausch hat sich negativ auf das Projekt ausgewirkt, da die Implementierung auf den Entwurfentscheidungen aufbaut. Durch die fehlende Kommunikation konnten die Entwickler nicht weiterarbeiten und es kam zu Verzögerungen.
 
 
-
 Mit Beginn des zweiten Projektteils haben sich die Rollen etwas verschoben. Die Kommunikation unter diesen vieren wurde deutlich besser und gegen Ende des Projekts herrschte im Allgemeinen eine gute Kommunikation.
 
 //hier könnte man noch schreiben, dass die Aufgabenverteilung an die Personen besser angepasst wurden und daher die Strukturen anders waren. Nico und Yannik konnten die Paararbeit nicht so gut, deshalb machen sie dann einzelarbeiten und berichten an Nils als Head Develper. 
@@ -98,27 +95,30 @@ Zum anderen kann es auch an fehlenden Erfahrungen in der Projektdurchführung li
 
 Bei langfristigeren und größeren Projekten als diesem hier ist eine ungleiche Arbeitsverteilung nicht nachhaltig. Uns ist deutlich geworden, dass bei künftigen Projekten von Anfang an mehr darauf geachtet werden muss, welchen Arbeitsaufwand jemand hat und bei ungleicher Verteilung muss man versuchen so gut es geht die Aufgaben besser zu verteilen und ggf. den Rollenverteilung anzupassen.
 
-=== Misserfolg 3 - Wissenstransfer //done but not really happy with it
+=== Misserfolg 3 - Wissenstransfer //work in progress
 
-Bei einem Projekt wie diesem arbeiten mehrere Personen in ihren Rollen an einem Sachverhalt auf verschiedenen Ebenen. Zuerst stellen die Analysten die Anforderungsanalyse auf, daraus wird die Architektur erstellt, woraus wiederum die Umsetzung in Code folgt. Mit dem entstandenen Code arbeitet dann das Testing. 
+Bei unserem Projekt arbeiteten mehrere Personen in verschiedenen Rollen an einem Sachverhalt auf verschiedenen Ebenen. Zuerst stellten die Analysten die Anforderungsanalyse auf, daraus wurde die Architektur erstellt, woraus wiederum die Umsetzung in Code folgte. Mit dem entstandenen Code arbeitete dann das Testing. 
 Die einzelnen Schritte werden von verschiedenen Rollen und damit oft verschiedenen Personen übernommen. Dabei ist ein flüssiger Übergang zwischen den Schritten und Rollen wichtig, damit das Projekt möglichst effizient abläuft. 
 
 Beim Rückblick auf das Projekt ist uns aufgefallen, dass es zu wengi Wissenstransfer zwischen den Rollen unterschiedlicher Schritte gegeben hat. Dies hat den flüssigen Übergang zwischen den Schritten gestört.
-So musste sich der Tester z.B. aufwendig in den Code der Entwickler einlesen, um diesen zu verstehen und nur so auch testen zu können. Dadurch ist zeitlicher Mehraufwand entstanden und hat den Beginn des Testings verzögert. Zudem bietet dies Spielraum für Fehler. Wenn sich Sachverhalte der z.B. Analyse neu erschlossen werden müssen, können Fehlinterpretationen entstehen. 
+
+So musste sich der Testen beim Code Review und für die JUnit-Tests den Code aufwendig selber erschließen, um die programmierten Funktionen testen zu können. 
+Dadurch ist zeitlicher Mehraufwand entstanden und hat den Beginn des Testings verzögert. Zudem bietet dies Spielraum für Fehler. Wenn sich Sachverhalte der z.B. Analyse neu erschlossen werden müssen, können Fehlinterpretationen entstehen. 
+Ein anderes Beispiel ist, dass die Entwickler sich die Use-Cases und die Geschäftslogik eigenständig erschließen mussten. Damit die Use Cases korrekt implemetiert werden können, ist ein Verständnis für den Materialfluss und der Maschinenzustände in der Halbleiterproduktion essenziell. Durch fehlenden Wissenstransfer mussten die Entwickler sich dies selber erschließen und hatten so einen größeren Zeitaufwand. 
 
 Um diese Probleme zu umgehen, könnte man einem Extrameeting zwischen "Vorarbeiter" und "Nacharbeiter" das Erarbeitete des "Vorarbeiters" im tieferen Detail besprechen. So können sich beide verständigen und so Missverständnisse vermeiden. Zwar könnte man auch das Teammeeting dafür nutzen, jedoch sind wir der Meinung, dass man dadurch Ressourcen verschwendet. Dies müsste man in einem folgenden Projekt ausprobieren und sehen, ob das Extrameeting sinnvoll ist und zur Effizienz des Teams beiträgt. 
 
 *Kommentare/Ideen Misserfolg 3 (Paul):*
 
-- Absatz 1: Konkret auf unsere Projekt beziehen und nicht allgemein schildern. -> Marlene: habe das ganze beim workflow ja schon irgendwie beschrieben und fands zu viel und wiederholend 
+//- Absatz 1: Konkret auf unsere Projekt beziehen und nicht allgemein schildern. -> Marlene: habe das ganze beim workflow ja schon irgendwie beschrieben und fands zu viel und wiederholend 
 
-- Absatz 2: Code-Verständnis ist beim Testing konkret beim Code Review zu Beginn des Semesters und bei den JUnit-Tests notwendig gewesen, die sich auf die programmierten Funktionen beziehen (nicht generell)
+//- Absatz 2: Code-Verständnis ist beim Testing konkret beim Code Review zu Beginn des Semesters und bei den JUnit-Tests notwendig gewesen, die sich auf die programmierten Funktionen beziehen (nicht generell)
 
-- Absatz 2: Weitere Probleme beim Wissentransfer: Programmierer mussten die Use-Cases und die Geschäftslogik verstehen -> hier musste z.B. ein Verständnis für den Materialfluss (Loszustände) und die Maschinenzustände entstehen, um korrekt zu programmieren. 
-Weiteres Problem beim Wissentragsfer von den Requirements zur Implementierung: In dem Dokument use_case_02_Hinweise_Implementierung.adoc wurde bspw. von mir eine ellenlange Anleitung zur genauen Implementierung aufgeschrieben -> das will aber in der Praxis keiner Lesen -> ein Teil der UseCase-Funktionalität (das manuelle Setzen von Losen im Zustand HOLD auf SCRAP oder OP_COMP) wurde dadurch bei der Programmierung vergessen
+//- Absatz 2: Weitere Probleme beim Wissentransfer: Programmierer mussten die Use-Cases und die Geschäftslogik verstehen -> hier musste z.B. ein Verständnis für den Materialfluss (Loszustände) und die Maschinenzustände entstehen, um korrekt zu programmieren. 
+//Weiteres Problem beim Wissentragsfer von den Requirements zur Implementierung: In dem Dokument use_case_02_Hinweise_Implementierung.adoc wurde bspw. von mir eine ellenlange Anleitung zur genauen Implementierung aufgeschrieben -> das will aber in der Praxis keiner Lesen -> ein Teil der UseCase-Funktionalität (das manuelle Setzen von Losen im Zustand HOLD auf SCRAP oder OP_COMP) wurde dadurch bei der Programmierung vergessen
 
-- Absatz 2: Es gab bestimmt auch Probleme beim Wissentransfer zwischen Entwurf und Implementierung, hier ggf. mit Nils sprechen
--
+//- Absatz 2: Es gab bestimmt auch Probleme beim Wissentransfer zwischen Entwurf und Implementierung, hier ggf. mit Nils sprechen
+
 - Absatz 3: Ressourcen verschwendet deatiliert erklären: Bei einer Themen-Übergabe in einer kleinen Gruppe kann viel spezifischer ein konkretes Problem bearbeitet werden. Außerdem sind nur Personen anwesend, die von dem jeweiligen Thema betroffen sind -> Effizienz 
 
 - Generelles Problem beim Wissentransfer/Kommunikation war außerdem, dass Wissen häufig nur auf Nachfrage vermittelt worden ist und nicht gezielt und proaktiv platziert worden ist. Beispiel: Installation der Software hat jeder lokal bei sich vorgenommen, da hatten wir bestimmt viele Probleme doppelt (Pakete, Datenbankverbindung, Einrichtung pgAdmin etc.) -> da habe ich YoutubeTutorials geschaut, obwohl die Datenbank bei einigen aus dem Team schon lief -> hätte man ausführlicher dokumentieren können 

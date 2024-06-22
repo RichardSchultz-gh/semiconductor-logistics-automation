@@ -37,3 +37,9 @@ In größeren Projekten, welche in einem Team und einem größeren Zeitraum bear
 Die Herausforderung im Aufgabenmanagement liegt also zum einen an den sich ändernden Voraussetzungen, sowie der Koordination der Teammitglieder und derer Zusammenarbeit. Da ein Projekt immer zeitlich begrenzt ist, muss das Aufgabenmanagement immer ein Auge auf das Zeitmanagement haben und abhängig davon Aufgaben anpassen.
 
 In diesem Projekt habe ich das Projektmanagement nach agilen, iterativen Methoden durchgeführt. Das nutzen agiler Methoden des Software Engineering war im Projekt vorgegeben und die entsprechenden Methoden wurden in der Vorlesung behandelt. 
+
+
+
+
+
+
