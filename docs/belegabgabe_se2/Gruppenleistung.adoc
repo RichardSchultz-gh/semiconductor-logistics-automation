@@ -51,7 +51,7 @@ Diese enge Zusammenabreit mit dem Auftragsgeber hat dafür gesorgt, dass wir es 
 
 Ein weiterer Punkt ist die offene und vor allem transparente Kommunikation mit dem Auftragsgeber. Das Team hat offen Probleme kommuniziert, weshalb stehts ein offener Meinungsaustausch stattfand. So war der Auftragsgeber immer informiert über den Stand und die Hürden des Projekts und es konnten gemeinsam zeitgerechte Lösungen für diese Probleme erarbeitet werden. Diese offene Kommunikation hat dem Team aber vermutlich auch dem Auftragsgeber geholfen, da so keine unrealistischen Erwartungen entstanden sind. 
 
-...
+//hier muss noch ein Fazit hin
 
 //*Kommentare/Ideen Erfolg 3 (Paul):*
 
@@ -95,20 +95,26 @@ Zum anderen kann es auch an fehlenden Erfahrungen in der Projektdurchführung li
 
 Bei langfristigeren und größeren Projekten als diesem hier ist eine ungleiche Arbeitsverteilung nicht nachhaltig. Uns ist deutlich geworden, dass bei künftigen Projekten von Anfang an mehr darauf geachtet werden muss, welchen Arbeitsaufwand jemand hat und bei ungleicher Verteilung muss man versuchen so gut es geht die Aufgaben besser zu verteilen und ggf. den Rollenverteilung anzupassen.
 
-=== Misserfolg 3 - Wissenstransfer //work in progress
+=== Misserfolg 3 - Wissenstransfer 
 
 Bei unserem Projekt arbeiteten mehrere Personen in verschiedenen Rollen an einem Sachverhalt auf verschiedenen Ebenen. Zuerst stellten die Analysten die Anforderungsanalyse auf, daraus wurde die Architektur erstellt, woraus wiederum die Umsetzung in Code folgte. Mit dem entstandenen Code arbeitete dann das Testing. 
 Die einzelnen Schritte werden von verschiedenen Rollen und damit oft verschiedenen Personen übernommen. Dabei ist ein flüssiger Übergang zwischen den Schritten und Rollen wichtig, damit das Projekt möglichst effizient abläuft. 
 
-Beim Rückblick auf das Projekt ist uns aufgefallen, dass es zu wengi Wissenstransfer zwischen den Rollen unterschiedlicher Schritte gegeben hat. Dies hat den flüssigen Übergang zwischen den Schritten gestört.
+Beim Rückblick auf das Projekt ist uns aufgefallen, dass es zu wenig Wissenstransfer zwischen den Rollen unterschiedlicher Schritte gegeben hat. Dies hat den flüssigen Übergang zwischen den Schritten gestört.
 
 So musste sich der Testen beim Code Review und für die JUnit-Tests den Code aufwendig selber erschließen, um die programmierten Funktionen testen zu können. 
 Dadurch ist zeitlicher Mehraufwand entstanden und hat den Beginn des Testings verzögert. Zudem bietet dies Spielraum für Fehler. Wenn sich Sachverhalte der z.B. Analyse neu erschlossen werden müssen, können Fehlinterpretationen entstehen. 
 Ein anderes Beispiel ist, dass die Entwickler sich die Use-Cases und die Geschäftslogik eigenständig erschließen mussten. Damit die Use Cases korrekt implemetiert werden können, ist ein Verständnis für den Materialfluss und der Maschinenzustände in der Halbleiterproduktion essenziell. Durch fehlenden Wissenstransfer mussten die Entwickler sich dies selber erschließen und hatten so einen größeren Zeitaufwand. 
 
-Um diese Probleme zu umgehen, könnte man einem Extrameeting zwischen "Vorarbeiter" und "Nacharbeiter" das Erarbeitete des "Vorarbeiters" im tieferen Detail besprechen. So können sich beide verständigen und so Missverständnisse vermeiden. Zwar könnte man auch das Teammeeting dafür nutzen, jedoch sind wir der Meinung, dass man dadurch Ressourcen verschwendet. Dies müsste man in einem folgenden Projekt ausprobieren und sehen, ob das Extrameeting sinnvoll ist und zur Effizienz des Teams beiträgt. 
+Zusätzlich fehlte Wissenstransfer bei der lokalen Installation der Software. Jedes Mitglied musste sich unter anderem die Datenbank eigenständig einrichten. Da hier kaum bis kein Wissenstranfer stattfand, hatten viele Mitglieder ähnliche Probleme mit z.B. Paketen, der Datenbankverbindung oder der Einrichtung des pgAdmin. Mitglieder mussten sich mit großen Zeitaufwand diese Dinge selbererschließen, obwohl andere Mitglieder dies bereits geschaft hatten. Eine ausführlichere Dokumentation oder ein Treffen hätten da viel Zeit gespart.
 
-*Kommentare/Ideen Misserfolg 3 (Paul):*
+Um diese Probleme zu umgehen, könnte man einem Extrameeting zwischen "Vorarbeiter" und "Nacharbeiter" das Erarbeitete des "Vorarbeiters" im tieferen Detail besprechen. So können sich beide verständigen und so Missverständnisse vermeiden. In einer kleineren Gruppe kann man viel spezifischer und detailierter ein konkretes Problem bearbeiten. Zwar könnte man auch das Teammeeting dafür nutzen, jedoch sind wir der Meinung, dass man dadurch Ressourcen verschwendet. Bei dem vorgeschlagenden Extrameeting wären nur die Personen anwesend, die vom dem jeweiligen Thema betroffen sind, was die Effizienz fördert.
+Dies müsste man in einem folgenden Projekt ausprobieren und sehen, ob das Extrameeting sinnvoll ist und wirklich zur Effizienz des Teams beiträgt. 
+
+
+
+
+//*Kommentare/Ideen Misserfolg 3 (Paul):*
 
 //- Absatz 1: Konkret auf unsere Projekt beziehen und nicht allgemein schildern. -> Marlene: habe das ganze beim workflow ja schon irgendwie beschrieben und fands zu viel und wiederholend 
 
@@ -119,7 +125,7 @@ Um diese Probleme zu umgehen, könnte man einem Extrameeting zwischen "Vorarbeit
 
 //- Absatz 2: Es gab bestimmt auch Probleme beim Wissentransfer zwischen Entwurf und Implementierung, hier ggf. mit Nils sprechen
 
-- Absatz 3: Ressourcen verschwendet deatiliert erklären: Bei einer Themen-Übergabe in einer kleinen Gruppe kann viel spezifischer ein konkretes Problem bearbeitet werden. Außerdem sind nur Personen anwesend, die von dem jeweiligen Thema betroffen sind -> Effizienz 
+//- Absatz 3: Ressourcen verschwendet deatiliert erklären: Bei einer Themen-Übergabe in einer kleinen Gruppe kann viel spezifischer ein konkretes Problem bearbeitet werden. Außerdem sind nur Personen anwesend, die von dem jeweiligen Thema betroffen sind -> Effizienz 
 
-- Generelles Problem beim Wissentransfer/Kommunikation war außerdem, dass Wissen häufig nur auf Nachfrage vermittelt worden ist und nicht gezielt und proaktiv platziert worden ist. Beispiel: Installation der Software hat jeder lokal bei sich vorgenommen, da hatten wir bestimmt viele Probleme doppelt (Pakete, Datenbankverbindung, Einrichtung pgAdmin etc.) -> da habe ich YoutubeTutorials geschaut, obwohl die Datenbank bei einigen aus dem Team schon lief -> hätte man ausführlicher dokumentieren können 
+//- Generelles Problem beim Wissentransfer/Kommunikation war außerdem, dass Wissen häufig nur auf Nachfrage vermittelt worden ist und nicht gezielt und proaktiv platziert worden ist. Beispiel: Installation der Software hat jeder lokal bei sich vorgenommen, da hatten wir bestimmt viele Probleme doppelt (Pakete, Datenbankverbindung, Einrichtung pgAdmin etc.) -> da habe ich YoutubeTutorials geschaut, obwohl die Datenbank bei einigen aus dem Team schon lief -> hätte man ausführlicher dokumentieren können 
 
