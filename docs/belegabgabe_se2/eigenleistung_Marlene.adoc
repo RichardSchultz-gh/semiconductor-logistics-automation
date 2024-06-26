@@ -4,8 +4,8 @@ Thema: Aufgabenmanagement mit iterativem, agilem Vorgehen
 
 Im SE-Projekt habe ich die Rolle der Projektleitung übernommen. Dabei war eine zentrale Aufgabe das Aufgaben- und Zeitmanagement, also die Planung und Verteilung der Aufgaben, sodass der Projekt möglichst effizent und effektiv abläuft.
 
-In größeren Projekten, welche in einem Team und einem größeren Zeitraum bearbeitet werden, ist das Aufgabenmanagement eine Herausforderung. Dabei muss vor allem immer Augenmerk auf die Wünsche des Auftragsgeber gelegt werden, wodurch neue Anforderungen entstehen können und sich darauffolgend sich Aufgaben verändern oder neu bilden.
-Die Herausforderung im Aufgabenmanagement liegt also zum einen an den sich ändernden Voraussetzungen, sowie der Koordination der Teammitglieder und derer Zusammenarbeit. Da ein Projekt immer zeitlich begrenzt ist, muss das Aufgabenmanagement immer ein Auge auf das Zeitmanagement haben und abhängig davon Aufgaben anpassen.
+In größeren Projekten, welche in einem Team und einem größeren Zeitraum bearbeitet werden, ist das Aufgabenmanagement eine Herausforderung. Dabei muss vor allem immer Augenmerk auf die Wünsche des Auftragsgeber gelegt werden, wodurch neue Anforderungen entstehen können und darausfolgend sich Aufgaben verändern oder neu bilden.
+Die Herausforderung im Aufgabenmanagement liegt an den sich ändernden Voraussetzungen, sowie der Koordination der Teammitglieder und derer Zusammenarbeit. Da ein Projekt immer zeitlich begrenzt ist, muss das Aufgabenmanagement immer ein Auge auf das Zeitmanagement haben und abhängig davon Aufgaben anpassen.
 
 In diesem Projekt habe ich das Projektmanagement nach agilen, iterativen Methoden durchgeführt. 
 
@@ -14,14 +14,16 @@ Aus den Ziele habe ich dann die detailierteren Aufgaben abgeleitet und per Git I
 Bei jedem Teammeeting wurden die Aufgaben dann besprochen und es haben sich ggf. neue Aufgaben ergeben, die zur Erreichung der Interationsziele führten. 
 Am Ende einer Iteration habe ich dann die Bearbeitung der Aufgaben bewertet. Dabei habe ich mir die Bewertungskriterien angeschaut und verglichen, ob diese erfüllt wurden. 
 
-Durch die Meetings mit dem Auftragsgeber haben sich oft innerhalb einer Iteration neue Erkenntnisse ergeben, die die Aufgabenplanung beeinträchtigt haben und z.T. zu einer Änderung führten. 
-
+Durch die Meetings mit dem Auftragsgeber haben sich oft innerhalb einer Iteration neue Erkenntnisse ergeben, die die Aufgabenplanung beeinträchtigt haben und z.T. zu einer Änderung führten. Rückblickend würde ich das Auftragsgeber Meeting, wenn möglich, immer am Ende der Iteration machen. So kann man die Erkenntnisse aus dem Meeting in den neuen Iterationsplan übernehmen. Ich sehe dies als vorteilhafter an, da sonst die neuen Erkenntnisse den aktuellen Plan beeinflussen.
 
 Eine Hürde des Aufgabenmanagements war für mich die Einschätzung wie lange eine Aufgabe berauchen würde. Oft konnte ich nicht einschätzen, wie komplex sich die Aufgabe herausstellen würde. Dies hat die Planung der Aufgaben erschwert, da oft Aufgaben aufeinander aufbauen, bzw. baut das Testing auf die Entwicklung auf. Wenn sich die Implementierung eines Use Cases als komplizierter herausstellte, konnten die Ziele des Testings nicht erreicht werden. Nach einiger Zeit habe ich ein grobes Gefühl dafür gekommen, wie lange Aufgaben dauern und konnte es besser einschätzen, jedoch kam es immer wieder zu Verzögerungen, da eine Aufgabe doch länger gedauert hat. Da wir iterativ geplant haben, konnte man diese Verzögerungen in die Planung der nächsten Iteration mitaufnehmen.
 
 Mir ist während es Projekts aufgefallen, wie wichtig es ist für die Aufgabenverteilung und die daraus folgende gute Bearbeitung einer Aufgabe, wie die Person, die die Aufgabe bekommt, ist. Nicht jede Person kann jede Art von Aufgaben passend ausfüllen. Am Beispiel in diesem Projekt gab es eine Person, die im ersten Teil des Projekts nach der Rollenverteilung die Aufgaben der Architekten mit einer anderen Person zusammen hatte. Die Arbeit in der Architektenrolle lief leider nicht so gut. Im zweiten Teil hat diese Person dann Aufgaben der Implementierung bekommen. Zunächst habe ich der Person nur kleine Aufgaben übergeben, da die Arbeit in der Architektenrolle so mangelhaft war. Jedoch hat mich die Person überrascht und motiviert sich an die Aufgabe gesetzt und sogar mehr gemacht als sie eigentlich sollte. Daran habe ich gemerkt, dass nicht jede Person zu jedem Aufgabentyp passt und habe im weitern Projekt verstärkt darauf geachtet den Mitgliedern Aufgaben zu übergeben, die den Personen zusprechen und zu deren Person passen.
 
-Im Allgemeinen schätze ich das Aufgabenmanagement als geglückt ein. ...
+Im Allgemeinen schätze ich das Aufgabenmanagement als geglückt ein.
+
+3-4 Sätze warum geglückt
+
 Ein Indikator ist meiner Meinung nach, dass das Aufgabenmanagement zu Beginn dazu geführt hat, dass sich ein Workflow gebildet hat. (Beschrieben in der Gruppenleistung Erfolg 1) 
 
 Während des Projekts habe ich einen Einblick in das Projektmanagement bekommen und viel neues dafür gelernt.
