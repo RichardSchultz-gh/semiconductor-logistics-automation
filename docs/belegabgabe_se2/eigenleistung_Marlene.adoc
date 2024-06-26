@@ -1,49 +1,5 @@
 = Eigenleistung Marlene
 
-
-== Notizen:
-    Ausgangssituation/Problemlage
-    Lösungsansatz
-    Erfolg/Misserfolg und Begründung für dieses Ergebnis 
-
-Umfang: 
-    1 bis max. 2 Seiten 
-
-Bewertungskriterien:
-    − Fachlich korrekte Beschreibung der Aufgabenstellung / Herausforderung → Nutzung der Begriffe, Konzepte, Methoden aus Vorlesung und Praktikum
-    − Referenzieren konkreter Code-Bestandteile, Modelle, Dokumente usw. aus dem Projekt
-
-Thema: Projektmanagement mit iterativem, agilem Vorgehen
-
-Problemlage: Aufgaben- und Zeitmanagment in größeren Projekten von Teams über einen längeren zeitraum möglichst effektiv und effizient gestalten, 
-sodass die Wünsche des Auftragsgeber bestmöglich umgesetzt werden
-
-Lösungsansatz: agile und iterative Planung der Aufgaben, dadurch Risiken wie Missverständnisse und vor allem deren Auswirkungen verringern
-
-Mein Beitrag: Nutzung der Vorteile (hier würden dazu Beisppiele angeführt werden wo ich das in der Planung gemacht habe) der agilen, iterativen
-Planung bei Durchführung dieser. 
-- schnelles reagieren auf Anmerkungen vom Auftragsgeber (Beispiel)
-- ...
-
-Erfolge und Misserfolge aus Iterationsplänen suchen/analysieren.
-
-
-
-
-
-- Ausgangssituation: Was ist die konkrete Problemlage im Projekt?
-• Einordnung in SE-Prozess / Aktivitäten, d.h. Analyse, Entwurf, Implementierung, Test, 
-Projektmanagement
-− Lösungsweg: Wie bin ich diese Herausforderung angegangen? 
-• Bezug zu behandelten Konzepten, Methoden und Praktiken, z.B. Iterative Entwicklung, 
-Use Cases, Wireframes, Architekturmechanismen, Entwurfsprinzipien, C4-Modell, UnitTest, Planning Poker, Retrospektive, Pull Requests, …
-• Belege zur eigenen Arbeit für den Lösungsweg angeben, z.B. Code, Modelle, 
-Dokumente, Issues (nur Links zum Repository!)
-− Bewertung: Hat meine Lösung funktioniert? Warum (nicht)? Was habe ich 
-daraus gelernt?
-
-***
-
 Thema: Aufgabenmanagement mit iterativem, agilem Vorgehen
 
 Im SE-Projekt habe ich die Rolle der Projektleitung übernommen. Dabei war eine zentrale Aufgabe das Aufgaben- und Zeitmanagement, also die Planung und Verteilung der Aufgaben, sodass der Projekt möglichst effizent und effektiv abläuft.
@@ -54,29 +10,18 @@ Die Herausforderung im Aufgabenmanagement liegt also zum einen an den sich ände
 In diesem Projekt habe ich das Projektmanagement nach agilen, iterativen Methoden durchgeführt. 
 
 Ich habe alle zwei Wochen, zu Beginn einer Iteration, einen Iterationsplan aufgestellt. Dabei wurden die Ziele der Iteration festgelegt, welche wir am Ende der Iteration erreicht haben wollen. Ergeben haben sich die Ziele aus Absprachen mit dem Auftragsgeber und dem Team. Zusätzlich habe ich mir Bewertungskriterien überlegt, an denen ich messen konnte, ob eine Aufgabe erfüllt war. Beispielhaft kann man dies im Iterationsplan 4 https://github.com/leni04/i04-projekt-frau-holle/blob/main/docs/project_management/iteration_plan_04.adoc sehen. 
-Aus den Ziele habe ich dann die detailierteren Aufgaben abgeleitet und per Git Issues den Mitgliedern zugeordnet. (z.B. https://github.com/leni04/i04-projekt-frau-holle/blob/main/docs/project_management/images/Iteration4_issues.png im Projekt https://github.com/leni04/i04-projekt-frau-holle/projects?query=is%3Aopen). Dabei haben die Aufgaben entweder ein Enddatum bekommen, bis wann die Aufgaben erledigt sein sollten oder wenn es kein Datum gab, bis zum nächsten Teammeeting (laut Abprache mit dem Team). 
+Aus den Ziele habe ich dann die detailierteren Aufgaben abgeleitet und per Git Issues den Mitgliedern zugeordnet(z.B. https://github.com/leni04/i04-projekt-frau-holle/blob/main/docs/project_management/images/Iteration4_issues.png im Projekt https://github.com/leni04/i04-projekt-frau-holle/projects?query=is%3Aopen). Die Verteilung der Aufgaben folge zum einen den Rollenverteilungen aber auch Interessen der Mitglieder. Dadurch das Mitglieder eine Aufgabe übernehmen, die sie interessiert bzw. anpricht, arbeiten sie lieber an der Aufgabe, wodurch ich mir ein positiveres Ergebnis erhoft habe. Bei der Aufgabenverteilung haben die Aufgaben entweder ein Enddatum bekommen, bis wann die Aufgaben erledigt sein sollten oder wenn es kein Datum gab, bis zum nächsten Teammeeting (laut Abprache mit dem Team). 
 Bei jedem Teammeeting wurden die Aufgaben dann besprochen und es haben sich ggf. neue Aufgaben ergeben, die zur Erreichung der Interationsziele führten. 
 Am Ende einer Iteration habe ich dann die Bearbeitung der Aufgaben bewertet. Dabei habe ich mir die Bewertungskriterien angeschaut und verglichen, ob diese erfüllt wurden. 
 
 Durch die Meetings mit dem Auftragsgeber haben sich oft innerhalb einer Iteration neue Erkenntnisse ergeben, die die Aufgabenplanung beeinträchtigt haben und z.T. zu einer Änderung führten. 
 
 
+Eine Hürde des Aufgabenmanagements war für mich die Einschätzung wie lange eine Aufgabe berauchen würde. Oft konnte ich nicht einschätzen, wie komplex sich die Aufgabe herausstellen würde. Dies hat die Planung der Aufgaben erschwert, da oft Aufgaben aufeinander aufbauen, bzw. baut das Testing auf die Entwicklung auf. Wenn sich die Implementierung eines Use Cases als komplizierter herausstellte, konnten die Ziele des Testings nicht erreicht werden. Nach einiger Zeit habe ich ein grobes Gefühl dafür gekommen, wie lange Aufgaben dauern und konnte es besser einschätzen, jedoch kam es immer wieder zu Verzögerungen, da eine Aufgabe doch länger gedauert hat. Da wir iterativ geplant haben, konnte man diese Verzögerungen in die Planung der nächsten Iteration mitaufnehmen.
 
-
-
-- nach fertigen aufgaben meeting mit ringel planen um nächste schritte erschließen zu können
-
-- verteilung in absprache, wer hat wo interessen 
-
-- iteratives umgesetzt -> jede 2 Wochen neuen Plan was zu tun ist 
--> dabei habe öfter mal sogar nach 1 Woche auf änderungen die Aufgaben neu verteilt
-
-
-- Nico konnte nicht die architektur rolle ausfüllen, war aber in der programmierung gut dabei -> rausfinden, was zu wem passt -> am anfang wusste ich nicht wie die menschen arbeiten, durch die iterationen und die nicht festen rollen konnte ich aber die aufgaben verteilung anpassen, so dass ein nico z.B. programmiert statt den entwurf, da er den nicht so intuitiv in der zusammenarbeit mit Yannik konnte
--> am anfang keine passenden aufgaben verteilt, was zu zeitverlust führte
-
-
-Eine Hürde des Aufgabenmanagements war für mich die Einschätzung wie lange eine Aufgabe berauchen würde. Oft konnte ich nicht einschätzen, wie komplex sich die Aufgabe herausstellen würde. Dies hat die Planung der Aufgaben erschwert, da oft Aufgaben aufeinander aufbauen, bzw. baut das Testing auf die Entwicklung auf. Wenn sich die Implementierung eines Use Cases als komplizierter herausstellte, konnten die Ziele des Testings nicht erreicht werden. 
+Mir ist während es Projekts aufgefallen, wie wichtig es ist für die Aufgabenverteilung und die daraus folgende gute Bearbeitung einer Aufgabe, wie die Person, die die Aufgabe bekommt, ist. Nicht jede Person kann jede Art von Aufgaben passend ausfüllen. Am Beispiel in diesem Projekt gab es eine Person, die im ersten Teil des Projekts nach der Rollenverteilung die Aufgaben der Architekten mit einer anderen Person zusammen hatte. Die Arbeit in der Architektenrolle lief leider nicht so gut. Im zweiten Teil hat diese Person dann Aufgaben der Implementierung bekommen. Zunächst habe ich der Person nur kleine Aufgaben übergeben, da die Arbeit in der Architektenrolle so mangelhaft war. Jedoch hat mich die Person überrascht und motiviert sich an die Aufgabe gesetzt und sogar mehr gemacht als sie eigentlich sollte. Daran habe ich gemerkt, dass nicht jede Person zu jedem Aufgabentyp passt und habe im weitern Projekt verstärkt darauf geachtet den Mitgliedern Aufgaben zu übergeben, die den Personen zusprechen und zu deren Person passen.
 
 Im Allgemeinen schätze ich das Aufgabenmanagement als geglückt ein. ...
 Ein Indikator ist meiner Meinung nach, dass das Aufgabenmanagement zu Beginn dazu geführt hat, dass sich ein Workflow gebildet hat. (Beschrieben in der Gruppenleistung Erfolg 1) 
+
+Während des Projekts habe ich einen Einblick in das Projektmanagement bekommen und viel neues dafür gelernt.
