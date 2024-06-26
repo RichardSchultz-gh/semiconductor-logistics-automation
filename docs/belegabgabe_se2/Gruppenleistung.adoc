@@ -33,11 +33,11 @@ Zu Beginn war es eine Herausforderung für alle Bereiche, ohne jegliches Wissen,
 
 Neben den Kompetenzen zur Projektdurchführung, war vor allem das Aneignen des technischen Wissens ein großer Erfolg des Projekts.
 
-Mit den uns vorgegebenen Sprachen und Technologien - Python, SQL, HTML, RaspberryPi - hatten wir bisher nur sporadisch oder gar nicht gearbeitet. Dies hat immer wieder eine Hürde dargestellt. In den Vorlesungen des Moduls lernten wir das benötigte Wissen zum Projektmanagement, der Analyse und der Architektur, die wichtig zum Vorgehen waren, jedoch wurden keine Technologien besprochen. (Technologien im Sinne von Sprachen etc.) 
+Mit den uns vorgegebenen Sprachen und Technologien - Python, SQL, HTML, RaspberryPi - hatten wir bisher nur sporadisch oder gar nicht gearbeitet. Dies hat immer wieder eine Hürde dargestellt. In den Vorlesungen des Moduls lernten wir das benötigte Wissen zum Projektmanagement, der Analyse und der Architektur, die wichtig zum Vorgehen waren, jedoch wurden keine Technologien besprochen. Durch das fehlende Wissen der vorgebenen Sprachen und Technologien hatten wir große Schwierigkeit z.B. passende Schnittstellen und Frameworks zu finden und zu implementieren. Dabei hat uns die iterative Vorgehensweise und das Erstellen des Prototypen geholfen, da wir so immer durch Feedback des Auftraggebers und des Teams wussten, ob diese Frameworks und Schnittstellen geeignet sind oder nicht.
 
 //Kommentare/Ideen (Nils):
 // - statt Techniken vielleicht besser von Technologien sprechen, da Techniken eher Methoden sind und Technologien die Sprachen und Tools sind, die wir benutzt haben -> Marlene: danke für den Begriff, das hatte mich auch gestört
-- in dem Abschnitt evt. auch darauf eingehen, dass wir durch das fehlende Wissen der vorgegebenen Technologien und Sprachen, auch eine große Schwierigkeit hatten, zu den Anforderungen passende Schnittstellen und Frameworks zu finden und zu implementieren. -> dabei hat uns die iterative Vorgehensweise und das Erstellen von Prototypen geholfen, da wir immer durch Feedback des Auftraggebers und des Teams wussten, ob diese Frameworks und Schnittstellen geeignet sind oder nicht
+//- in dem Abschnitt evt. auch darauf eingehen, dass wir durch das fehlende Wissen der vorgegebenen Technologien und Sprachen, auch eine große Schwierigkeit hatten, zu den Anforderungen passende Schnittstellen und Frameworks zu finden und zu implementieren. -> dabei hat uns die iterative Vorgehensweise und das Erstellen von Prototypen geholfen, da wir immer durch Feedback des Auftraggebers und des Teams wussten, ob diese Frameworks und Schnittstellen geeignet sind oder nicht
 // -> z.B. haben wir am Anfang vom 3. Semester erst Tkinter verwendet, aber nach Rücksprache mit dem Auftraggeber und dem Team haben wir uns für Flask entschieden, da es für unser Projekt besser geeignet war 
 // -> oder haben wir zwischen den beiden Semestern uns entschieden von psycopg2 auf SQLAlchemy zu wechseln
 
@@ -63,7 +63,7 @@ Diese enge Zusammenarbeit mit dem Auftragsgeber hat dafür gesorgt, dass wir oft
 
 Ein weiterer Punkt ist die offene und vor allem transparente Kommunikation mit dem Auftragsgeber. Das Team hat offen Probleme kommuniziert, weshalb stehts ein offener Meinungsaustausch stattfand. So war der Auftragsgeber immer informiert über den Stand und die Hürden des Projekts und es konnten gemeinsam zeitgerechte Lösungen für diese Probleme erarbeitet werden. Diese offene Kommunikation hat dem Team aber vermutlich auch dem Auftragsgeber geholfen, da so keine unrealistischen Erwartungen entstanden sind. 
 
-hier muss noch ein Fazit hin
+Es lässt sich klar sagen, dass die gute Zusammenarbeit mit dem Auftragsgeber massiv zum Erfolg des Projekts beigetragen hat. Es konnte eine Software entwickelt werden, die den Ansprüchen des Auftragsgeber gerecht wird und zu aller Zufriendenheit ist.
 
 //*Kommentare/Ideen Erfolg 3 (Paul):*
 

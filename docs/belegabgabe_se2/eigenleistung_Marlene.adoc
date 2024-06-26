@@ -27,19 +27,56 @@ Planung bei Durchführung dieser.
 
 Erfolge und Misserfolge aus Iterationsplänen suchen/analysieren.
 
+
+
+
+
+- Ausgangssituation: Was ist die konkrete Problemlage im Projekt?
+• Einordnung in SE-Prozess / Aktivitäten, d.h. Analyse, Entwurf, Implementierung, Test, 
+Projektmanagement
+− Lösungsweg: Wie bin ich diese Herausforderung angegangen? 
+• Bezug zu behandelten Konzepten, Methoden und Praktiken, z.B. Iterative Entwicklung, 
+Use Cases, Wireframes, Architekturmechanismen, Entwurfsprinzipien, C4-Modell, UnitTest, Planning Poker, Retrospektive, Pull Requests, …
+• Belege zur eigenen Arbeit für den Lösungsweg angeben, z.B. Code, Modelle, 
+Dokumente, Issues (nur Links zum Repository!)
+− Bewertung: Hat meine Lösung funktioniert? Warum (nicht)? Was habe ich 
+daraus gelernt?
+
 ***
 
-Thema: Projektmanagement mit iterativem, agilem Vorgehen
+Thema: Aufgabenmanagement mit iterativem, agilem Vorgehen
 
 Im SE-Projekt habe ich die Rolle der Projektleitung übernommen. Dabei war eine zentrale Aufgabe das Aufgaben- und Zeitmanagement, also die Planung und Verteilung der Aufgaben, sodass der Projekt möglichst effizent und effektiv abläuft.
 
-In größeren Projekten, welche in einem Team und einem größeren Zeitraum bearbeitet werden, ist das Aufgabenmanagement eine Herausforderung. Dabei muss vor allem immer Augenmerk auf die Wünsche des Auftragsgeber gelegt werden, wodurch neue Anforderungen antstehen können und sich darauffolgend sich Aufgaben verändern oder neu bilden.
+In größeren Projekten, welche in einem Team und einem größeren Zeitraum bearbeitet werden, ist das Aufgabenmanagement eine Herausforderung. Dabei muss vor allem immer Augenmerk auf die Wünsche des Auftragsgeber gelegt werden, wodurch neue Anforderungen entstehen können und sich darauffolgend sich Aufgaben verändern oder neu bilden.
 Die Herausforderung im Aufgabenmanagement liegt also zum einen an den sich ändernden Voraussetzungen, sowie der Koordination der Teammitglieder und derer Zusammenarbeit. Da ein Projekt immer zeitlich begrenzt ist, muss das Aufgabenmanagement immer ein Auge auf das Zeitmanagement haben und abhängig davon Aufgaben anpassen.
 
-In diesem Projekt habe ich das Projektmanagement nach agilen, iterativen Methoden durchgeführt. Das nutzen agiler Methoden des Software Engineering war im Projekt vorgegeben und die entsprechenden Methoden wurden in der Vorlesung behandelt. 
+In diesem Projekt habe ich das Projektmanagement nach agilen, iterativen Methoden durchgeführt. 
+
+Ich habe alle zwei Wochen, zu Beginn einer Iteration, einen Iterationsplan aufgestellt. Dabei wurden die Ziele der Iteration festgelegt, welche wir am Ende der Iteration erreicht haben wollen. Ergeben haben sich die Ziele aus Absprachen mit dem Auftragsgeber und dem Team. Zusätzlich habe ich mir Bewertungskriterien überlegt, an denen ich messen konnte, ob eine Aufgabe erfüllt war. Beispielhaft kann man dies im Iterationsplan 4 https://github.com/leni04/i04-projekt-frau-holle/blob/main/docs/project_management/iteration_plan_04.adoc sehen. 
+Aus den Ziele habe ich dann die detailierteren Aufgaben abgeleitet und per Git Issues den Mitgliedern zugeordnet. (z.B. https://github.com/leni04/i04-projekt-frau-holle/blob/main/docs/project_management/images/Iteration4_issues.png im Projekt https://github.com/leni04/i04-projekt-frau-holle/projects?query=is%3Aopen). Dabei haben die Aufgaben entweder ein Enddatum bekommen, bis wann die Aufgaben erledigt sein sollten oder wenn es kein Datum gab, bis zum nächsten Teammeeting (laut Abprache mit dem Team). 
+Bei jedem Teammeeting wurden die Aufgaben dann besprochen und es haben sich ggf. neue Aufgaben ergeben, die zur Erreichung der Interationsziele führten. 
+Am Ende einer Iteration habe ich dann die Bearbeitung der Aufgaben bewertet. Dabei habe ich mir die Bewertungskriterien angeschaut und verglichen, ob diese erfüllt wurden. 
+
+Durch die Meetings mit dem Auftragsgeber haben sich oft innerhalb einer Iteration neue Erkenntnisse ergeben, die die Aufgabenplanung beeinträchtigt haben und z.T. zu einer Änderung führten. 
 
 
 
 
 
+- nach fertigen aufgaben meeting mit ringel planen um nächste schritte erschließen zu können
 
+- verteilung in absprache, wer hat wo interessen 
+
+- iteratives umgesetzt -> jede 2 Wochen neuen Plan was zu tun ist 
+-> dabei habe öfter mal sogar nach 1 Woche auf änderungen die Aufgaben neu verteilt
+
+
+- Nico konnte nicht die architektur rolle ausfüllen, war aber in der programmierung gut dabei -> rausfinden, was zu wem passt -> am anfang wusste ich nicht wie die menschen arbeiten, durch die iterationen und die nicht festen rollen konnte ich aber die aufgaben verteilung anpassen, so dass ein nico z.B. programmiert statt den entwurf, da er den nicht so intuitiv in der zusammenarbeit mit Yannik konnte
+-> am anfang keine passenden aufgaben verteilt, was zu zeitverlust führte
+
+
+Eine Hürde des Aufgabenmanagements war für mich die Einschätzung wie lange eine Aufgabe berauchen würde. Oft konnte ich nicht einschätzen, wie komplex sich die Aufgabe herausstellen würde. Dies hat die Planung der Aufgaben erschwert, da oft Aufgaben aufeinander aufbauen, bzw. baut das Testing auf die Entwicklung auf. Wenn sich die Implementierung eines Use Cases als komplizierter herausstellte, konnten die Ziele des Testings nicht erreicht werden. 
+
+Im Allgemeinen schätze ich das Aufgabenmanagement als geglückt ein. ...
+Ein Indikator ist meiner Meinung nach, dass das Aufgabenmanagement zu Beginn dazu geführt hat, dass sich ein Workflow gebildet hat. (Beschrieben in der Gruppenleistung Erfolg 1) 
