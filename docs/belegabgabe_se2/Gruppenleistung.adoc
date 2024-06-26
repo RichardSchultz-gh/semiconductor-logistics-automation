@@ -122,7 +122,7 @@ Die einzelnen Schritte werden von verschiedenen Rollen und damit oft verschieden
 
 Beim Rückblick auf das Projekt ist uns aufgefallen, dass es zu wenig Wissenstransfer zwischen den Rollen unterschiedlicher Schritte gegeben hat. Dies hat den flüssigen Übergang zwischen den Schritten gestört.
 
-So musste sich der Testen beim Code Review und für die JUnit-Tests den Code aufwendig selber erschließen, um die programmierten Funktionen testen zu können. 
+So musste sich der Tester beim Code Review und für die Unit-Tests den Code aufwendig selber erschließen, um die programmierten Funktionen testen zu können. 
 Dadurch ist zeitlicher Mehraufwand entstanden und hat den Beginn des Testings verzögert. Zudem bietet dies Spielraum für Fehler. Wenn sich Sachverhalte der z.B. Analyse neu erschlossen werden müssen, können Fehlinterpretationen entstehen. 
 Ein anderes Beispiel ist, dass die Entwickler sich die Use-Cases und die Geschäftslogik eigenständig erschließen mussten. Damit die Use Cases korrekt implemetiert werden können, ist ein Verständnis für den Materialfluss und der Maschinenzustände in der Halbleiterproduktion essenziell. Durch fehlenden Wissenstransfer mussten die Entwickler sich dies selber erschließen und hatten so einen größeren Zeitaufwand. 
 
