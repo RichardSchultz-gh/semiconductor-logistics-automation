@@ -53,7 +53,7 @@ Ein wesentlicher Aspekt meiner Arbeit war die Sicherstellung der Code-Qualität.
 
 * Zu wenig Struktur: Zu Beginn traten strukturelle Schwierigkeiten auf, weil meine Arbeitsweise nicht strukturiert war und ich die Aufgabe unterschätzte. Dadurch kam es zu Verzögerungen und weiteren Anpassungen.
 * Nicht Einhalten der Architektur: Es gab Komplikationen aufgrund der ersten Abweichungen von der geplanten Architektur. Diese konnten erst durch eine Neugestaltung des Codes korrigiert werden.
-* Kommunikationsprobleme: Es gab zunächst Kommunikationsprobleme, die zu Verzögerungen führten, obwohl regelmäßige Treffen stattfanden. Im Verlauf des Projekts haben sich diese allerdings durch deutlichere Strukturen und eine verbesserte Dokumentation verbessert.
+* kompatibilität: Leider konnte die Backup-Funktion nicht in das Projekt integriert werden, da es bei der Umsetzung auf dem RaspberryPi Probleme gab und diese letztendlich nicht bis zur Deadline behoben werden konnten. (Alles funktioniert (Windows.Linux), mit Ausnahme des RaspberryPi.)
 
 == Fazit
 
