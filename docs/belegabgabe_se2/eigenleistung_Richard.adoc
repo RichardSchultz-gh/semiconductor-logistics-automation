@@ -1,6 +1,6 @@
 = Eigenleistung Richard
 
-Meine Aufgabe bestand darin, die Stammdaten unserer Datenbank(DB) kompakt und übersichtlich darzustellen. Dazu sollte es eine Möglichkeit geben diese, zu bearbeiten. Diese Aufgabe bestand aus zwei Use Cases: dem UC04 Stammdaten anzeigen und UC05 Stammdaten bearbeiten.
+Meine Aufgabe bestand darin, die Stammdaten unserer Datenbank(DB) kompakt und übersichtlich darzustellen. Dazu sollte es eine Möglichkeit geben, diese zu bearbeiten. Die Aufgabe bestand aus zwei Use Cases: dem UC04 Stammdaten anzeigen und UC05 Stammdaten bearbeiten.
 
 == Ausgangssituation
 
@@ -11,7 +11,7 @@ Zu Beginn der Aufgabe gab es einige Vorgaben, die ich einhalten musste. Diese wa
 * Stammdaten mittels SQL-Mapper(SQLAlchemy) abfragen
 * Button auf der Startseite der Anwendung zur Stammdatenseite
 
-Die Aufgabe hatte in unsere Product Backlog eine sehr niedrige Priorität, weswegen es zu der Aufgabe keine große Vorleistung von Teammitgliedern gab, außer ein bestehender, aber minimalisten Use Case. Deswegen musste ich die Analyse, den Entwurf und die Implementierung selbst durchführen. Es gab zu der Aufgabenstellung folgende Issues: +
+Die Aufgabe hatte in unsere Product Backlog eine sehr niedrige Priorität, weswegen es zu der Aufgabe keine große Vorleistung von Teammitgliedern gab, außer zwei bestehenden, aber minimalistischen Use Cases. Deswegen musste ich die Analyse, den Entwurf und die Implementierung selbst durchführen. Es gab zu der Aufgabenstellung folgende Issues: +
 UC 04 Stammdaten anzeigen - https://github.com/leni04/i04-projekt-frau-holle/issues/108 +
 UC 05 Stammdaten bearbeiten - https://github.com/leni04/i04-projekt-frau-holle/issues/109 +
 
