@@ -1,1 +1,60 @@
 = Eigenleistung Yannik
+
+Meine Aufgabe ist mir zunächst etwas zufällig zugefallen, nachdem ich kleinere Aufgaben in den Anwendungsfällen 02 & 03 erledigt hatte, wurde mir ein größeres Projekt zugeteilt: die Implementierung eines automatisierten Backup-Systems für die Datenbank. Dies umfasste die Entwicklung von Skripten in Python und Bash, um die Datenbanksicherungen regelmäßig durchzuführen und zu verwalten. Ziel war es, Datenverlust zu verhindern und die Datenintegrität zu gewährleisten. Diese Aufgabe wurde mir übertragen, um sicherzustellen, dass die Backups regelmäßig und zuverlässig durchgeführt werden, ohne dass manuelle Eingriffe erforderlich sind.
+
+== Ausgangssituation
+
+Am Anfang musste ich darauf achten, die vorhandene Architektur beizubehalten, dazu gehörte:
+
+* Python als Programmiersprache
+* Bash für die Automatisierung der Backup-Prozesse
+* Nutzung der pg_dump-Funktion zur Erstellung der Datenbank-Backups
+* Sicherstellung der Integration zwischen Python-Skript und Bash-Skript
+
+== Lösungsansatz
+
+Der zentrale Bestandteil meines Beitrags war die Implementierung eines automatisierten Backup-Systems für die Datenbank. Dies umfasste die Entwicklung von Skripten in Python und Bash, um die Datenbanksicherungen regelmäßig durchzuführen und zu verwalten. Diese Automatisierung sollte jedoch manuelle Eingriffe ermöglichen.
+
+Zunächst musste ich mich mit dem gesamten Thema der Erstellung eines Backups einer Datenbank und den daraus entstehenden Anforderungen vertraut machen. Nach kurzer Recherche stieß ich auf die pg_dump-Funktion, die es ermöglicht, ein Backup einer gesamten PostgreSQL-Datenbank zu erstellen. Diese Funktion sollte die Grundlage für meine Backup-Funktion bilden.
+
+== Mein Beitrag
+
+=== Entwicklung des Backup-Systems
+
+Meine nächste Aufgabe war es, einen Python-Code zu schreiben, der die pg_dump-Funktion aufruft und somit die Sicherung der Datenbank automatisiert. Dazu musste der Python-Code die notwendigen Parameter und Umgebungsvariablen an das Shell-Skript übergeben. Ein wichtiger Aspekt war dabei die Beachtung der Schnittstellen zwischen Python und dem Shell-Skript, um eine nahtlose Integration und eine zuverlässige Ausführung der Backups sicherzustellen.
+
+Ein zentraler Bestandteil meines Beitrags war somit die Entwicklung eines Python-Skripts, das die Sicherung der Datenbank automatisiert und die Ergebnisse in einer Log-Datei dokumentiert. Ergänzt wurde dieses Python-Skript durch ein Bash-Skript, das sicherstellt, dass die Sicherungen regelmäßig und zuverlässig durchgeführt werden.
+
+Hierbei handelt es sich um die Implementierung des Python-Skripts, das die pg_dump-Funktion aufruft und die Ergebnisse in einer Log-Datei dokumentiert:
+
+https://github.com/leni04/i04-projekt-frau-holle/blob/backup/src/backup.py
+
+Der Bash-Skript-Teil ergänzt das Python-Skript und stellt sicher, dass die Sicherungen regelmäßig und zuverlässig durchgeführt werden:
+
+https://github.com/leni04/i04-projekt-frau-holle/blob/backup/src/backup.sh
+
+=== Sicherstellung der Code-Qualität
+
+Ein wesentlicher Aspekt meiner Arbeit war die Sicherstellung der Code-Qualität. Hierzu habe ich folgende Maßnahmen ergriffen:
+
+* Lesbarkeit: Einheitlicher und konsistenter Code-Stil, um die Verständlichkeit des Codes zu verbessern. Im Python-Skript habe ich darauf geachtet, dass Variablen- und Funktionsnamen aussagekräftig sind und die Struktur des Codes klar und nachvollziehbar ist. Dies erleichtert anderen Entwicklern das Verständnis und die Wartung des Codes.
+* Wartbarkeit: Vermeidung von Code-Duplikaten und klare Strukturierung des Codes durch Verwendung von Funktionen und Modulen. Das Python-Skript ist in sinnvolle Funktionsblöcke unterteilt, die jeweils eine klar definierte Aufgabe erfüllen.
+* Modularität: Aufteilung des Codes in wiederverwendbare Module und die Definition klarer Schnittstellen zur Erhöhung der Flexibilität. Sowohl das Python- als auch das Bash-Skript sind modular aufgebaut und können leicht angepasst oder erweitert werden, ohne dass die Gesamtstruktur beeinträchtigt wird.
+* Unit-Tests: Umfangreiche Unit-Tests halfen uns, die Funktionalität einzelner Module sicherzustellen und Fehler frühzeitig zu erkennen. Diese Tests wurden regelmäßig durchgeführt, um sicherzustellen, dass Änderungen am Code keine unerwünschten Nebenwirkungen hatten.
+
+== Erfolg/Misserfolg und Begründung
+
+=== Erfolge
+
+* Kundenzufriedenheit: Dank des iterativen Vorgehens und der schnellen Reaktion auf Feedback konnten wir die Erwartungen des Kunden erfüllen. Dies spiegelte sich in der positiven Rückmeldung und der Abnahme des Projekts wider.
+* Verständnis über Python: Durch die intensive Arbeit mit Python konnte ich meine Kenntnisse und Fähigkeiten in dieser Programmiersprache erheblich erweitern und vertiefen.
+
+=== Misserfolge
+
+* Zu wenig Struktur: Anfänglich gab es strukturelle Probleme, da ich nicht strukturiert arbeitete und die Aufgabe unterschätzte. Dies führte zu Verzögerungen und zusätzlichen Anpassungen.
+* Nicht Einhalten der Architektur: Die anfänglichen Abweichungen von der geplanten Architektur verursachten Komplikationen, die erst durch eine Umschreibung des Codes behoben werden konnten.
+* Kommunikationsprobleme: Trotz regelmäßiger Meetings gab es anfänglich Kommunikationsprobleme, die zu Verzögerungen führten. Diese verbesserten sich jedoch im Laufe des Projekts durch klarere Strukturen und bessere Dokumentation.
+
+== Fazit
+
+Anfangs hatte ich Schwierigkeiten, mit dem Stoff Schritt zu halten, insbesondere bei der Implementierung von Backup-Lösungen und dem Verständnis der Schnittstellen zwischen Python und Bash. Durch kontinuierliches Lernen und die Anwendung der im Modul „Software Engineering II“ behandelten Konzepte konnte ich jedoch ein solides Verständnis für Python entwickeln. Dies half mir erheblich bei der Bewältigung meiner Aufgaben und der Sicherstellung einer hohen Code-Qualität. Die Kombination aus flexibler Planung und technischer Exzellenz ermöglichte es mir, die Projektziele zu erreichen und wertvolle Erfahrungen im Bereich Software Engineering zu sammeln. Die gewonnenen Erkenntnisse werden in zukünftigen Projekten dazu beitragen, Prozesse weiter zu optimieren und die Zusammenarbeit im Team zu verbessern.
