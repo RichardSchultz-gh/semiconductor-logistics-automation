@@ -1,4 +1,5 @@
 = Teil 2: Eigenleistungen
+:doctype: book
 
 <<<
 include::eigenleistung_Nils.adoc[]

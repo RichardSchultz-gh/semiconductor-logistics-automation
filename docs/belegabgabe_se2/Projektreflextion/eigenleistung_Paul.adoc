@@ -1,6 +1,7 @@
-= Eigenleistung Paul Marx
+== Eigenleistung Paul Marx
+:doctype: book
 
-== Thema: Testorganisation im Rahmen einer iterativen Softwareenwicklung mit OpenUP
+*Thema:* Testorganisation im Rahmen einer iterativen Softwareenwicklung mit OpenUP
 
 Bei der Entwicklung unserer Web-Anwendung stand die Testorganisation vor einer Vielzahl von Herausforderungen, die typisch für iterative Entwicklungsprozesse sind. Die iterative Entwicklung zeichnet sich durch wiederholte Zyklen von Planung, Design, Implementierung und Testen aus, die als Iterationen bezeichnet werden können. Die konkrete Problemlage bestand darin, dass auf geänderte Anforderungen reagiert werden musste und neue Funktionen in kurzen Abständen implementiert und getestet werden mussten. Insbesondere mussten für die Strukturierung der Tests, das Zeitmanagement und die Kommunikation mit den Entwicklern Lösungen entwickelt werden.
 

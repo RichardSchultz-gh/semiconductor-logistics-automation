@@ -1,45 +1,52 @@
-= Eigenleistung Nico
+== Eigenleistung Nico Kroll
+:doctype: book
 
-# Erstellung einiger HTML- und CSS-Dateien, um eine möglichst benutzerfreundliche, ansprechende und einheitliche Benutzeroberfläche zu gestalten
+*Thema:* Erstellung einiger HTML- und CSS-Dateien, um eine möglichst benutzerfreundliche, ansprechende und einheitliche Benutzeroberfläche zu gestalten
 
-## Ausgangssituation
+*Ausgangssituation*
 Diese Aufgabe ist mir eher zufällig zugefallen, nachdem ich den ersten Entwurf für den Login entwickelt hatte und das Aussehen den meisten gefallen hatte. Daraufhin erhielt ich immer häufiger Aufgaben für die Oberflächengestaltung.
 
-## Problemlage im Projekt
+*Problemlage im Projekt*
 Im Projekt bestand die konkrete Problemlage darin, eine benutzerfreundliche und einheitliche Benutzeroberfläche zu erstellen. Diese Aufgabe fiel zum Großteil mir zu, wie zuvor beschrieben.
 
-## Einordnung in den SE-Prozess / Aktivitäten
+*Einordnung in den SE-Prozess / Aktivitäten*
+
 - **Analyse**: Wireframes wurden als grobe Vorlage genutzt (waren leicht veraltet) und leichtes Einarbeiten in die Backendarbeit, um diese angemessen mit dem Frontend zu verbinden.
 - **Implementierung**: Entwicklung der HTML- und CSS-Dateien für die Benutzeroberfläche.
 - **Test**: Erste Usability-Tests beim Entwickeln, ob die Seite an sich funktioniert und macht, was sie soll.
 - **Projektmanagement**: Abstimmung mit dem Head Developer und anderen Teammitgliedern sowie Feedback-Schleifen mit dem Kunden.
 
-## Lösungsweg: Wie bin ich diese Herausforderung angegangen?
+*Lösungsweg: Wie bin ich diese Herausforderung angegangen?*
+
 - **Wireframes**: Übernahme mit Anpassungen der vom Tester bereitgestellten Wireframes.
 - **Iterative Entwicklung**: Implementierung der Benutzeroberfläche in überprüfbaren Schritten mittels Pull Requests.
 - **Feedback-Schleifen**: Kontinuierliche Überprüfung und Anpassung der Entwürfe basierend auf Feedback vom Head Developer und vom Kunden.
 - **Kollaboration**: Enge Zusammenarbeit mit den Backend-Entwicklern zur Sicherstellung der reibungslosen Integration.
 
-### Beispiele aus dem GitHub-Repo
+_Beispiele aus dem GitHub-Repo_
+
 - **Umsetzung Wireframe "Los bearbeiten" #79**
   - [Issue #79](https://github.com/leni04/i04-projekt-frau-holle/issues/79)
 - **Zugehörige Pull Request (nicht final übernommene Version)**
   - [Pull Request #101](https://github.com/leni04/i04-projekt-frau-holle/pull/101)
 
-## Bewertung: Hat meine Lösung funktioniert? Warum (nicht)? Was habe ich daraus gelernt?
+*Bewertung: Hat meine Lösung funktioniert? Warum (nicht)? Was habe ich daraus gelernt?*
 
-### Erfolge
+_Erfolge_
+
 - Die iterative Entwicklung und das regelmäßige Feedback ermöglichten es, frühzeitig Fehler zu erkennen und zu beheben.
 - Das endgültige Design wurde vom Kunden akzeptiert und entsprach den gestellten Anforderungen.
 - Ich habe mich selbst entwickelt und gelernt, wie wichtig Prinzipien des Software-Engineering bei solchen Projekten sind.
 
-### Misserfolge
+_Misserfolge_
+
 - Die Integration zwischen Frontend und Backend gestaltete sich schwierig, insbesondere die Filteroptionen der Tabellen. Diese Herausforderungen erforderten umfangreiche Absprachen und kosteten viel Zeit.
 - Meine zurückhaltende Kommunikation erschwerte den Entwicklungsprozess anfangs. Dies verbesserte sich nach dem Kennenlernen der Gruppe, ist aber weiterhin ein Bereich, in dem ich mich verbessern kann.
 
-## Bezug zu Lernzielen der Module SE I + II
+*Bezug zu Lernzielen der Module SE I + II*
 
-### SE I
+_SE I_
+
 - **Erhebung und Analyse von Anforderungen**: Anpassung und Aktualisierung der Wireframes.
 - **Spezifikation des Systems**: Erstellung der HTML- und CSS-Dateien basierend auf aktualisierten Wireframes.
 - **Anwendung von etablierten Techniken**: Einsatz von Pull Requests und iterativer Entwicklung.
@@ -47,7 +54,8 @@ Im Projekt bestand die konkrete Problemlage darin, eine benutzerfreundliche und 
 - **Kooperative Softwareentwicklung im Team**: Zusammenarbeit mit Backend-Entwicklern und dem Head Developer.
 - **Kommunikation**: Verbesserung der Kommunikation im Team, um die agile Entwicklung zu unterstützen.
 
-### SE II
+_SE II_
+
 - **Konzeption gut strukturierter Systementwürfe**: Entwicklung einer einheitlichen Benutzeroberfläche.
 - **Umsetzung in lauffähige Software**: Erstellung von HTML- und CSS-Dateien.
 - **Schnittstellen erkennen und definieren**: Zusammenarbeit mit Backend-Entwicklern zur Integration.

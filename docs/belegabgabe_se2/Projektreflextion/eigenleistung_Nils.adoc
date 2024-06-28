@@ -1,8 +1,12 @@
-= Eigenleistung Nils
+== Eigenleistung Nils Generlich
+:doctype: book
+
+*Thema:* Entwurf und Implementierung Timer
 
 In dem Projekt "Frau Holle- Modell eines automatisierten Fabrikbetriebs" war ich unter Anderem für den Entwurf und die Implementierung des Timers und seiner Unterkomponenten zuständig.
 Der Timer sollte das Starten, Bewegen und Bearbeiten der in der Datenbank eingepflegten Lose automatisch und zeitgesteuert realisieren. 
 Da dies eine unentbehrliche Grundlage für das Modell eines automatisierten Fabrikbetriebes ist, wurde der Timer als systemweite Anforderung link:https://github.com/leni04/i04-projekt-frau-holle/blob/main/docs/requirements/system-wide_requirements.adoc[SWFA-2] notiert, um durch spezielle Tests messbar bewertet zu werden.
+
 
 In den ersten Iterationen erstellten wir eine erste Version an Sichten des C4-Modells, um die Lage der Komponenten im Gesamtsystem zu verstehen und erste Schnittstellen zu finden. Dabei nutzten wir das Architekturmuster der Schichtenarchitektur mit einer Webanwendung als UI, Python als Middleware und einer Datenbank für die Produktionsdaten. Die von mir in einer späteren Iteration für eine detaillierte Systembetrachtung erstellte link:https://github.com/leni04/i04-projekt-frau-holle/blob/main/docs/architecture/images/C3.png[Komponentensicht] half mir, 
 die mit der Timerkomponente interagierenden Komponenten und Schnittstellen  in der Middleware zu identifizieren. Im Laufe unserer agilen Entwicklung brachen die Sichten des C4-Modells die Komplexität der Architektur immer weiter in überschaubarere Teile herunter und wurden bei neuen Architektur-Entscheidungen inkrementell angepasst. 
@@ -23,3 +27,4 @@ Da ich den Timer allerdings prozedural implementierte, konnte ich die Vorteile e
 Dennoch kommt es auch aus dem Grund bei den unabhängig von der Timerkomponente entwickelten Komponenten mit ähnlicher, aber nun mit auf Benutzereingaben aus dem UI reagierender Funktionalität zu Redundanz. Dies wäre durch effektiveres Coderefactoring, mit welchem ich redundante Stellen zusammengefasst hätte, zu vermeiden gewesen. Dies war mir aber aus Zeitgründen nicht mehr möglich. In einem weiteren Projekt würde ich mich daher stärker am UML-Klassendiagramm orientieren und die Timerkomponente gänzlich objektorientiert implementieren, um die Vorteile der Wiederverwendbarkeit für weitere Systemkomponenten voll auszuschöpfen.
 
 Trotz der Selbstkritik an meiner Lösung, erfüllte die Timerkomponente vollumfänglich die Anforderungen des Auftraggebers und setzte erfolgreich die Geschäftslogik des Produktionsablaufs um. Der iterativ-inkrementelle Entwicklungsprozess, Dokumentationen, die eigene Entwürfe und Implementierungen in Modellen festhalten und die Weiterarbeit durch anderen Projektteams ermöglichen, sowie regelmäßige Teamkommunikation waren entscheidend für den Erfolg der Timerumsetzung. Indem ich Methoden und Prinzipien der Softwareentwicklung, wie beispielsweise Entwurfsprinzipien, das C4-Modell oder eine agile Arbeitsweise, anwandte, konnte ich die Timerkomponente erfolgreich realisieren und in das Gesamtsystem integrieren.
+

@@ -1,9 +1,0 @@
-= Projektreflexion
-
-<<<
-include::Gruppenleistung.adoc[]
-
-<<<
-include::Eigenleistungen.adoc[]
-
-
