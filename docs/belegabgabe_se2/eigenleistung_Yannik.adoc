@@ -1,6 +1,6 @@
 = Eigenleistung Yannik
 
-Meine Aufgabe ist mir erstmal etwas zufällig zugefallen, nachdem ich kleinere Aufgaben in den Use Cases 02 & 03 erledigt hatte, wurde mir ein größeres Projekt zugeteilt: die Implementierung eines Backup Systems für die Datenbank
+Meine Aufgabe ist mir erstmal etwas zufällig zugefallen, nachdem ich kleinere Aufgaben in den Use Cases 02 & 03 erledigt hatte, wurde mir ein größeres Projekt zugeteilt: die Implementierung eines Backup Systems für die Datenbank.
 
 == Ausgangssituation
 
