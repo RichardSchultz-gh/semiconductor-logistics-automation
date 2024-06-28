@@ -86,7 +86,7 @@ Hier möchten wir auch nochmal sagen, dass diese Zusammenarbeit nur so möglich 
 
 == TOP 3 Misserfolge
 
-=== Misserfolg 1 - Kommunikation zwischen Architekten & Entwicklern //work in progress
+=== Misserfolg 1 - Kommunikation zwischen Architekten & Entwicklern 
 
 Als ersten Misserfolg im Projekt lässt sich anführen, dass die Kommunikation zwischen Architekten und Entwicklern zu Beginn des Projekts eher schlecht war. 
 
