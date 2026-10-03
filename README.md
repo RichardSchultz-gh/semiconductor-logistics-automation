@@ -1,151 +1,100 @@
-# Vorlage Projektstruktur & OpenUP-Templates
+# Frau Holle – Produktionssteuerungssystem für eine Halbleiterfertigung
 
-Das Repository enthält die Vorlage einer Projektstruktur und Template-Dokumente im AsciiDoc-Format. Dies wird für die Bearbeitung der Belegarbeit in Software Engineering I und II benötigt. Im Detail wären dies:
+Teamprojekt im Rahmen der Module *Software Engineering I & II* (HTW Dresden). Entwickelt nach dem **Unified Process (OpenUP)** mit echten Anforderungsworkshops, iterativer Entwicklung und einem simulierten Auftraggeber (gespielt vom betreuenden Professor) für die fiktive Halbleiterfabrik "Frau Holle".
 
-- Projektstruktur anhand der Work Products im OpenUP
-- Templates der benötigten OpenUP-Dokumente (AsciiDoc-Format)
-- Vorlage für die Belegabgabe in SE I (AsciiDoc-Format)
+> Dies ist mein persönlicher Fork des Team-Repositories zu Portfolio-Zwecken. Original: [leni04/i04-projekt-frau-holle](https://github.com/leni04/i04-projekt-frau-holle)
 
-_Hinweis: Dieses Repository enthält keinen Code._
+## Über das Projekt
 
+Die Fertigung von Halbleitern ist ein komplexer, 30–80 Tage dauernder Prozess: Silizium-Scheiben werden zu **Losen** zusammengefasst und durchlaufen wiederholt Produktionsschritte (Fotolack auftragen, belichten, ätzen, beschichten) bis zur fertigen Verdrahtung. Bisher gab es dafür keine Software — die Fabrik hatte keine Transparenz über den Fertigungsfortschritt.
 
+**Ziel des Projekts:** Eine Datenbankanwendung, die die Fertigungsabläufe, Anlagen-Ressourcen und Materialverwaltung digital abbildet und den Mitarbeitern/Fertigungsleitern einen Echtzeit-Überblick über den Produktionsstatus gibt.
 
-**Inhaltsverzeichnis**
-- [Projektstruktur](#projektstruktur)
-- [Unified Process - Templates](#unified-process---templates)
-- [Hinweise zu AsciiDoc](#hinweise-zu-asciidoc)
-- [Belegabgabe in SE I](#belegabgabe-in-se-i)
-- [Lizenz](#lizenz)
+## Umgesetzte Funktionen (Use Cases)
 
+| UC | Funktion | Status |
+|----|----------|--------|
+| UC01 | Los starten | ✅ implementiert & vom Auftraggeber abgenommen |
+| UC02 | Los zwischen Produktionsschritten bewegen | ✅ implementiert & abgenommen |
+| UC03 | Los bearbeiten | ✅ implementiert & abgenommen |
+| UC04 | Stammdaten anzeigen | ✅ implementiert & abgenommen *(mein Beitrag)* |
+| UC05 | Stammdaten bearbeiten | ✅ implementiert & abgenommen *(mein Beitrag)* |
+| UC06 | Daten exportieren (CSV) | ✅ implementiert & abgenommen |
+| UC07 | Daten importieren (CSV) | ✅ implementiert & abgenommen |
+| UC08 | Backup erstellen | 🧩 nur Konzept (zeitlich nicht mehr umgesetzt) |
+| UC09 | Report erstellen | 📝 Anforderungen analysiert, nicht implementiert |
+| UC10 | Maschine bearbeiten | 📝 Anforderungen analysiert, nicht implementiert |
+| UC11 | Daten visualisieren | 📝 Anforderungen analysiert, nicht implementiert |
 
-## Projektstruktur
-Die Projektstruktur im Verzeichnis **docs** orientiert sich an den <ins>Work Products</ins> im OpenUP und den für die <ins>Abgabe im SE 1 Beleg</ins> geforderten Dokumenten.
+Zwei Nutzerrollen mit unterschiedlichen Rechten: **Mitarbeiter** (nur Einsicht) und **Fertigungsleiter** (Einsicht + Bearbeitung).
 
-```
-docs
-├── architecture
-│   └── architecture_notebook.adoc
-├── deployment
-├── development
-│   └── design.adoc
-├── environment
-├── project_management
-│   ├── iteration_plan_01.adoc
-│   ├── project_plan.adoc
-│   ├── risk_list.adoc
-│   └── risks.csv
-├── requirements
-│   ├── domain_model.adoc
-│   ├── glossary.adoc
-│   ├── system-wide_requirements.adoc
-│   ├── use-case_model.adoc
-│   ├── use_case_01.inc.adoc
-│   └── vision.adoc
-└── test
-    └── test_cases.adoc
-```
+## Mein Beitrag
 
+Ich war verantwortlich für **UC04 (Stammdaten anzeigen)** und **UC05 (Stammdaten bearbeiten)**:
 
-## Unified Process - Templates
-Dieses Repositority enthält Vorlagen im AsciiDoc-Format für die Arbeit mit dem Open Unified Process. Die Vorlagen basieren auf den Templates der offiziellen OpenUP Dokumentation in der Version 1.5x aus dem Eclipse Process Framework (EPF) und wurden bis auf geringe inhaltliche / strukturelle Anpassungen lediglich auf deutsch übersetzt.
+- Konzeption und Umsetzung der Stammdaten-Übersicht (Analyse, Entwurf und Implementierung eigenständig, da zu Projektbeginn kaum Vorarbeit existierte)
+- Wireframes erstellt und nach Kundenfeedback mehrfach iteriert — von einer überladenen Einzelseite zu einer übersichtlichen Navigationsstruktur mit fokussierter Lot-Stammdatenseite als Vorlage für nachfolgende Teams
+- Bearbeitungsfunktion für alle Attribute inkl. rollenbasierter Ausblendung der Bearbeitungsfelder für die Rolle "Mitarbeiter"
+- Spaltensortierung per Klick auf den Tabellenkopf per JavaScript umgesetzt (dafür JS im Projekt neu angeeignet)
+- Vier Entwicklungsiterationen mit regelmäßigem Pull-Request-Workflow gegen den `main`-Branch
 
-### Hinweise
-* Im Unified Process gibt es eine "Supplementary Specification", die Anforderungen enthält, die nicht als Use Case Model spezifiziert werden können. Das sind z.B. nicht-funktionale und systemweite Anforderungen. Im OpenUP (und in diesem Repository) heißt dieses Dokument "System-wide Requirements".
-* Falls Sie Fehler korrigieren oder Verbesserungen machen möchten, können Sie dies gern über einen _Pull Request_ tun.
+(Ausführliche Reflexion inkl. Lessons Learned: [`docs/belegabgabe_se2/Projektreflextion/eigenleistung_Richard.adoc`](docs/belegabgabe_se2/Projektreflextion/eigenleistung_Richard.adoc))
 
-### Referenzen
-* [Eclipse Process Framework](https://www.eclipse.org/epf/downloads/configurations/pubconfig_downloads.php)
-* [Open Unified Process 1.5 Dokumentation](https://www2.htw-dresden.de/~anke/openup/index.htm)
+## Tech-Stack
 
-## Hinweise zu AsciiDoc
-Die Datei _default-attributes.inc.adoc_ im **docs/\_includes** Verzeichnis enthält die gemeinsamen Dokumentenattribute für alle AsciiDoc-Dokumente. In jedem Dokument selbst können, nach dem include der Datei, entsprechend noch extra benötigte Attribute mit aufgenommen werden.
+- **Backend:** Python 3.12, Flask (modular über Blueprints), SQLAlchemy (ORM)
+- **Datenbank:** PostgreSQL
+- **Frontend:** Serverseitig gerenderte HTML-Templates (Jinja2), CSS, JavaScript
+- **Zielplattform:** Raspberry Pi (Raspbian/Linux)
+- **Vorgehensmodell:** Unified Process / OpenUP, iterativ-inkrementell mit regelmäßigen Kundenmeetings
 
-### Projektnamen definieren
+## Architektur
 
-In der _default-attributes.inc.adoc_ Datei ist am Anfang der **Projektname** definiert, welcher in jedem Dokument im Title verwendet wird. Ersetzen Sie hier bitte `<Projektname (T00)>` mit Ihrem Belegthema:
+Die Anwendung ist in Flask-Blueprints je Funktionsbereich strukturiert (`login`, `los_starten`, `los_bewegen`, `los_bearbeiten`, `Stammdaten`, `import_data`, `export_data`, `entities`). Vollständige Architekturdokumentation (C4-Modell, ER-Modell, Klassendiagramme) liegt unter [`docs/architecture`](docs/architecture).
 
-```
-// Meta
-:project-name: <Projektname (T00)>
-```
-* `T` ... steht als Platzhalter für `I` ein internes bzw. `E` für ein externes Projektthema
+## Setup / Lokale Ausführung
 
-### Bilder einbinden
+```bash
+# 1. Repository klonen
+git clone https://github.com/RichardSchultz-gh/semiconductor-logistics-automation.git
+cd semiconductor-logistics-automation/src
 
-In dem Dokumentenattribut `:imagesdir: images` ist das Standardverzeichnis für die Bilder festgelegt. Somit reicht es, in den jeweiligen Dokumenten, die Bilder ohne Angabe des **images** Verzeichnis einzubinden:
+# 2. Abhängigkeiten installieren
+pip install flask sqlalchemy psycopg2-binary
 
-```
-requirements
-├── images
-│   └── example.jpg
-└── vision.adoc
-```
-```
-// vision.adoc
-image::example.jpg[Beispielbild]
+# 3. PostgreSQL-Datenbank anlegen
+# Tabellen + Testdaten via docs/development/DB_Tabellen_erstellen/DBanlegen.sql
+# (CSV-Testdaten liegen im gleichen Ordner)
+
+# 4. Datenbankzugang ggf. in src/config.py anpassen (Standard: localhost:5432)
+
+# 5. Anwendung starten
+python app.py
 ```
 
+Die Anwendung ist anschließend über die in der Konsole ausgegebene IP erreichbar (Flask-Testserver). Test-Logins: `user1`/`pass1` (Fertigungsleiter), `user2`/`pass2` (Mitarbeiter) — reine Entwicklungs-Zugangsdaten, keine echten Secrets.
 
-## Belegabgabe in SE I
+## Tests
 
-Im Verzeichnis **belegabgabe_se1** finden Sie die Vorlagedatei *se1_belegabgabe_t00.adoc*, welche alle Ihre erzeugten Dokumente für die Abgabe als PDF in <ins>ein</ins> Dokument bündelt.
+Test-Fälle je Use Case liegen in [`src/testing`](src/testing), ausführliche Testdokumentation (inkl. Bugtracker) unter [`docs/test`](docs/test).
 
-(Nutzen Sie nicht die Projektvorlage **Projektstruktur_OpenUP-Templates**, kopieren sie sich die Vorlagedatei *se1_belegabgabe_t00.adoc* in Ihr Projektrepository)
+## Projektdokumentation
 
-Folgende Schritte sind für eine Belegabgabe durchzuführen:
+Das Projekt wurde vollständig nach OpenUP dokumentiert — Anforderungen, Architektur, Testkonzept, Iterationspläne und Kundenmeeting-Protokolle liegen unter [`docs/`](docs). Das zeigt den kompletten Software-Engineering-Prozess, nicht nur den Code.
 
-1. Ändern Sie die Themennummer **t00** in der Vorlagedatei *se1_belegabgabe_t00.adoc* in Ihre Themennummer (i01, i02, ..., e01, e02, ...).
-3. Inhalt der Vorlagedatei anpassen:
-    - Ist in Ihrem Projekt in der Datei _docs/\_includes/default-attributes.inc.adoc_ der Projektname im Attribut `:project-name:` nicht gesetzt bzw. nutzen Sie eine andere Struktur, können Sie im Dokumententitel nach dem `:` das `{project-name}` mit Ihrem Projektthema ersetzen:
+## Team (I04)
 
-        ```
-        // --- 1. Projektthema -------------------------
-        = SE I - Belegabgabe: {project-name}
-        ```
-
-    - Tragen Sie **alle** Teammitglieder als Autoren ein:
-
-        ```
-        // --- 2. Teammitglieder -----------------------
-        Vorname Nachname <s00000@htw-dresden.de>; Vorname Nachname <s00000@htw-dresden.de>; ...
-        ```
-        > Lange Autorennamen (mehr als 3 Teile) in den Dokumentenattributen müssen mit einem `_` (Unterstrich) zu einer Gruppe von Vor- bzw. Nachnamen zusammengefasst werden. Es treten sonst Formatierungsfehler beim erzeugen der HTML- oder PDF-Dokumente auf. Der `_` (Unterstrich) wird im erzeugten Dokument nicht dargestellt.
-        >
-        > - `Vorname1_Vorname2 Nachname1_Nachname2 <mail@example.com>`
-        > - `Vorname Nachname1_Nachname2_Nachname3 <mail@example.com>`
-
-    - Tragen Sie als Versionsdatum Ihr **Abgabedatum** ein:
-
-        ```
-        // --- 3. Abgabedatum --------------------------
-        01. Januar 2020
-        ```
-
-    - Passen Sie bei abweichender Projektstruktur die **include-Pfade** und **Dateinamen** zu den einzelnen Dateien (*path/to/file.adoc*) an bzw. erweitern Sie es für zusätzliche Dokumente:
-
-        ```
-        include::path/to/file.adoc[lines=1..1;4..-1,leveloffset=+1]
-        ```
-        > Beim `include` wird über die `lines=1..1;4..-1` Angabe jeweils die 1. und alles ab der 4. Zeile übernommen. Jedes Dokument ist eigenständig und somit werden über die Zeilen 2 und 3 die jeweiligen Authoren und das Versionsdatum nicht mit übernommen.
-
-4. Erzeugen Sie das Abgabe-PDF _*se1_belegabgabe_t00.pdf*_ ([Hinweise aus dem Praktikum](https://www.informatik.htw-dresden.de/~zirkelba/praktika/se/arbeiten-mit-git-und-asciidoc/praktikumsaufgaben-teil-2.html#_2_generieren_des_ausgabeformates)):
-
-    ```sh
-    $ asciidoctor-pdf se1_belegabgabe_t00.adoc
-    ```
-    oder:
-    ```sh
-    $ asciidoctor -r asciidoctor-pdf -b pdf se1_belegabgabe_t00.adoc
-    ```
-5. Prüfen Sie, dass das korrekte **Projektthema**, alle **Teammitglieder** und das **Abgabedatum** auf dem Deckblatt stehen und dass ebefalls alle erforderlichen **Dokumente** mit ihren Inhalten enthalten sind.
-
-6. Geben Sie das finale Abgabe-PDF _*se1_belegabgabe_t00.pdf*_ über den mitgeteilten Weg ab.
-
+| Name | GitHub |
+|------|--------|
+| Richard Schultz | [@RichardSchult-gh](https://github.com/RichardSchult-gh) |
+| Marlene Winter | [@leni04](https://github.com/leni04) |
+| Nils Generlich | [@nilsgnh](https://github.com/nilsgnh) |
+| Yannik-Joel Herrchen | [@yjh-4](https://github.com/yjh-4) |
+| Nico Kroll | [@s85210](https://github.com/s85210) |
+| Paul Marx | [@pmx1994-dev](https://github.com/pmx1994-dev) |
+| Enrico Kersten | [@EnricoKersten](https://github.com/EnricoKersten) |
+| Hoang Nguyen Sy | [@Hoang84222](https://github.com/Hoang84222) |
 
 ## Lizenz
 
-### Dokumentation
-Die OpenUP Templates im Ordner `docs` und `belegabgabe_se1` unterliegen der [CC-BY-4.0](https://choosealicense.com/licenses/cc-by-4.0/) Lizenz.
-
-### Quellcode / Anderes
-Für das Repository bzw. die entstehende Software kann/muss eine separate Lizenz festgelegt werden.
+MIT
